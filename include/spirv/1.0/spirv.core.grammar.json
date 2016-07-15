@@ -177,8 +177,16 @@
       "opcode" : 21,
       "operands" : [
         { "kind" : "IdResult" },
-        { "kind" : "LiteralInteger", "name" : "'Width'" },
-        { "kind" : "LiteralInteger", "name" : "'Signedness'" }
+        { "kind" : "LiteralInteger",
+          "name" : "'Width'" ,
+          "options" : [ { "val" : 8,  "capabilities" : "Int8"},
+                        { "val" : 16, "capabilities" : "Int16"},
+                        { "val" : 32 },
+                        { "val" : 64, "capabilities" : "Int64"}]},
+        { "kind" : "LiteralInteger",
+          "name" : "'Signedness'",
+          "options" : [ { "val" : 0, "docs" : "unsigned, or no signedness semantics" },
+                        { "val" : 1, "docs" : "signed semantics" } ]}
       ]
     },
     {
@@ -186,8 +194,11 @@
       "opcode" : 22,
       "operands" : [
         { "kind" : "IdResult" },
-        { "kind" : "LiteralInteger", "name" : "'Width'" }
-      ]
+        { "kind" : "LiteralInteger",
+          "name" : "'Width'" ,
+          "options" : [ { "val" : 32 },
+                        { "val" : 16, "capabilities" : "float16"},
+                        { "val" : 64, "capabilities" : "float64"}]}]
     },
     {
       "opname" : "OpTypeVector",
@@ -195,7 +206,13 @@
       "operands" : [
         { "kind" : "IdResult" },
         { "kind" : "IdRef",          "name" : "'Component Type'" },
-        { "kind" : "LiteralInteger", "name" : "'Component Count'" }
+        { "kind" : "LiteralInteger",
+          "name" : "'Component Count'",
+          "options" : [ { "val" : 2 },
+                        { "val" : 3 },
+                        { "val" : 4 },
+                        { "val" : 8 , "capabilities" : "Vector16"},
+                        { "val" : 16, "capabilities" : "Vector16"}]}
       ]
     },
     {
@@ -204,7 +221,11 @@
       "operands" : [
         { "kind" : "IdResult" },
         { "kind" : "IdRef",          "name" : "'Column Type'" },
-        { "kind" : "LiteralInteger", "name" : "'Column Count'" }
+        { "kind" : "LiteralInteger",
+          "name" : "'Column Count'",
+          "options": [ { "val" : 2 },
+                       { "val" : 3 },
+                       { "val" : 4 }]}
       ],
       "capabilities" : [ "Matrix" ]
     },
@@ -215,10 +236,27 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",                               "name" : "'Sampled Type'" },
         { "kind" : "Dim" },
-        { "kind" : "LiteralInteger",                      "name" : "'Depth'" },
-        { "kind" : "LiteralInteger",                      "name" : "'Arrayed'" },
-        { "kind" : "LiteralInteger",                      "name" : "'MS'" },
-        { "kind" : "LiteralInteger",                      "name" : "'Sampled'" },
+        { "kind" : "LiteralInteger",
+          "name" : "'Depth'",
+          "options": [ { "val" : 0, "docs" : "non-depth image" },
+                       { "val" : 1, "docs" : "depth image" },
+                       { "val" : 2, "docs" : "undefined depth image" }]},
+        { "kind" : "LiteralInteger",
+          "name" : "'Arrayed'",
+          "options" : [ { "val" : 0, "docs" : "non-arrayed content" },
+                        { "val" : 1, "docs" : "arrayed content" }]
+        },
+        { "kind" : "LiteralInteger",
+          "name" : "'MS'",
+          "options" : [ { "val" : 0, "docs" : "single-sampled content" },
+                        { "val" : 1, "docs" : "multisampled content" }]
+        },
+        { "kind" : "LiteralInteger",
+          "name" : "'Sampled'",
+          "options": [ { "val" : 0, "docs" : "this is only known at runtime" },
+                       { "val" : 1, "docs" : "will be used with sampler" },
+                       { "val" : 2, "docs" : "will be used without sampler" }]
+        },
         { "kind" : "ImageFormat" },
         { "kind" : "AccessQualifier", "quantifier" : "?" }
       ]
@@ -2302,7 +2340,11 @@
       "opcode" : 256,
       "operands" : [
         { "kind" : "IdRef",          "name" : "'Pointer'" },
-        { "kind" : "LiteralInteger", "name" : "'Size'" }
+        { "kind" : "LiteralInteger",
+          "name" : "'Size'",
+          "options": [ { "val" : "*" },
+                       { "val" : 0,   "capabilities" : "!Addresses"}]
+        }
       ],
       "capabilities" : [ "Kernel" ]
     },
@@ -2311,7 +2353,11 @@
       "opcode" : 257,
       "operands" : [
         { "kind" : "IdRef",          "name" : "'Pointer'" },
-        { "kind" : "LiteralInteger", "name" : "'Size'" }
+        { "kind" : "LiteralInteger",
+          "name" : "'Size'",
+          "options": [ { "val" : "*" },
+                       { "val" : 0,   "capabilities" : "!Addresses"}]
+        }
       ],
       "capabilities" : [ "Kernel" ]
     },
@@ -3550,7 +3596,16 @@
           "value" : 30,
           "capabilities" : [ "Kernel" ],
           "parameters" : [
-            { "kind" : "LiteralInteger", "name" : "'Vector type'" }
+            { "kind" : "LiteralInteger",
+              "name" : "'Vector type'",
+              "options": [ { "val" : 0, "docs" : "an 8-bit integer value" },
+                           { "val" : 1, "docs" : "an 16-bit integer value" },
+                           { "val" : 2, "docs" : "an 32-bit integer value" },
+                           { "val" : 3, "docs" : "an 64-bit integer value" },
+                           { "val" : 4, "docs" : "an 16-bit float value" },
+                           { "val" : 5, "docs" : "an 32-bit float value" },
+                           { "val" : 6, "docs" : "an 64-bit float value" }]
+            }
           ]
         },
         {
