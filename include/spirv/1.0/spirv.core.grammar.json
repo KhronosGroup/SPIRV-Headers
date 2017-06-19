@@ -3072,6 +3072,102 @@
         { "kind" : "IdRef", "name" : "'Index'" }
       ],
       "capabilities" : [ "SubgroupBallotKHR" ]
+    },
+    {
+      "opname" : "OpGroupIAddNonUniformAMD",
+      "opcode" : 5000,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdScope",        "name" : "'Execution'" },
+        { "kind" : "GroupOperation", "name" : "'Operation'" },
+        { "kind" : "IdRef",          "name" : "'X'" }
+      ],
+      "capabilities" : [ "Groups" ]
+    },
+    {
+      "opname" : "OpGroupFAddNonUniformAMD",
+      "opcode" : 5001,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdScope",        "name" : "'Execution'" },
+        { "kind" : "GroupOperation", "name" : "'Operation'" },
+        { "kind" : "IdRef",          "name" : "'X'" }
+      ],
+      "capabilities" : [ "Groups" ]
+    },
+    {
+      "opname" : "OpGroupFMinNonUniformAMD",
+      "opcode" : 5002,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdScope",        "name" : "'Execution'" },
+        { "kind" : "GroupOperation", "name" : "'Operation'" },
+        { "kind" : "IdRef",          "name" : "X" }
+      ],
+      "capabilities" : [ "Groups" ]
+    },
+    {
+      "opname" : "OpGroupUMinNonUniformAMD",
+      "opcode" : 5003,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdScope",        "name" : "'Execution'" },
+        { "kind" : "GroupOperation", "name" : "'Operation'" },
+        { "kind" : "IdRef",          "name" : "'X'" }
+      ],
+      "capabilities" : [ "Groups" ]
+    },
+    {
+      "opname" : "OpGroupSMinNonUniformAMD",
+      "opcode" : 5004,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdScope",        "name" : "'Execution'" },
+        { "kind" : "GroupOperation", "name" : "'Operation'" },
+        { "kind" : "IdRef",          "name" : "X" }
+      ],
+      "capabilities" : [ "Groups" ]
+    },
+    {
+      "opname" : "OpGroupFMaxNonUniformAMD",
+      "opcode" : 5005,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdScope",        "name" : "'Execution'" },
+        { "kind" : "GroupOperation", "name" : "'Operation'" },
+        { "kind" : "IdRef",          "name" : "X" }
+      ],
+      "capabilities" : [ "Groups" ]
+    },
+    {
+      "opname" : "OpGroupUMaxNonUniformAMD",
+      "opcode" : 5006,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdScope",        "name" : "'Execution'" },
+        { "kind" : "GroupOperation", "name" : "'Operation'" },
+        { "kind" : "IdRef",          "name" : "X" }
+      ],
+      "capabilities" : [ "Groups" ]
+    },
+    {
+      "opname" : "OpGroupSMaxNonUniformAMD",
+      "opcode" : 5007,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdScope",        "name" : "'Execution'" },
+        { "kind" : "GroupOperation", "name" : "'Operation'" },
+        { "kind" : "IdRef",          "name" : "X" }
+      ],
+      "capabilities" : [ "Groups" ]
     }
   ],
   "operand_kinds" : [
@@ -4595,6 +4691,10 @@
           ]
         },
         {
+          "enumerant" : "ExplicitInterpAMD",
+          "value" : 4999,
+        },
+        {
           "enumerant" : "OverrideCoverageNV",
           "value" : 5248,
           "capabilities" : [ "SampleMaskOverrideCoverageNV" ]
@@ -4871,6 +4971,34 @@
           "enumerant" : "ViewIndex",
           "value" : 4440,
           "capabilities" : [ "MultiView" ]
+        },
+        {
+          "enumerant" : "BaryCoordNoPerspAMD",
+          "value" : 4992,
+        },
+        {
+          "enumerant" : "BaryCoordNoPerspCentroidAMD",
+          "value" : 4993,
+        },
+        {
+          "enumerant" : "BaryCoordNoPerspSampleAMD",
+          "value" : 4994,
+        },
+        {
+          "enumerant" : "BaryCoordSmoothAMD",
+          "value" : 4995,
+        },
+        {
+          "enumerant" : "BaryCoordSmoothCentroidAMD",
+          "value" : 4996,
+        },
+        {
+          "enumerant" : "BaryCoordSmoothSampleAMD",
+          "value" : 4997,
+        },
+        {
+          "enumerant" : "BaryCoordPullModelAMD",
+          "value" : 4998,
         },
         {
           "enumerant" : "ViewportMaskNV",
@@ -5315,6 +5443,11 @@
           "value" : 4442,
           "capabilities" : [ "VariablePointersStorageBuffer" ],
           "extensions" : [ "SPV_KHR_variable_pointers" ]
+        },
+        {
+          "enumerant" : "ImageGatherBiasLodAMD",
+          "value" : 5009,
+          "extensions" : [ "SPV_AMD_texture_gather_bias_lod" ]
         },
         {
           "enumerant" : "SampleMaskOverrideCoverageNV",
