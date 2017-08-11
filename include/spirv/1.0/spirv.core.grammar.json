@@ -4978,6 +4978,11 @@
           "capabilities" : [ "MultiView" ]
         },
         {
+          "enumerant" : "FragStencilRefEXT",
+          "value" : 5014,
+          "capabilities" : [ "StencilExportEXT" ]
+        },
+        {
           "enumerant" : "BaryCoordNoPerspAMD",
           "value" : 4992
         },
@@ -5452,6 +5457,12 @@
         {          "enumerant" : "AtomicStorageOps",
           "value" : 4445,
           "extensions" : [ "SPV_KHR_shader_atomic_counter_ops" ]
+        },
+        {
+          "enumerant" : "StencilExportEXT",
+          "value" : 5013,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_EXT_shader_stencil_export" ]
         },
         {
           "enumerant" : "SampleMaskPostDepthCoverage",
