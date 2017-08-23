@@ -3727,6 +3727,11 @@
           "enumerant" : "PostDepthCoverage",
           "value" : 4446,
           "capabilities" : [ "SampleMaskPostDepthCoverage" ]
+        },
+        {
+          "enumerant" : "StencilRefReplacingEXT",
+          "value" : 5027,
+          "capabilities" : [ "StencilExportEXT" ]
         }
       ]
     },
@@ -5454,7 +5459,8 @@
           "capabilities" : [ "VariablePointersStorageBuffer" ],
           "extensions" : [ "SPV_KHR_variable_pointers" ]
         },
-        {          "enumerant" : "AtomicStorageOps",
+        {
+          "enumerant" : "AtomicStorageOps",
           "value" : 4445,
           "extensions" : [ "SPV_KHR_shader_atomic_counter_ops" ]
         },
@@ -5474,6 +5480,12 @@
           "value" : 5013,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_EXT_shader_stencil_export" ]
+        },
+        {
+          "enumerant" : "ImageReadWriteLodAMD",
+          "value" : 5015,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_AMD_shader_image_load_store_lod" ]
         },
         {
           "enumerant" : "SampleMaskOverrideCoverageNV",
