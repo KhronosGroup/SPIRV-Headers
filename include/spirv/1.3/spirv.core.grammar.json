@@ -6174,16 +6174,16 @@
           "extensions" : [ "SPV_NV_geometry_shader_passthrough" ]
         },
         {
-          "enumerant" : "ShaderViewportIndexLayerNV",
-          "value" : 5254,
-          "capabilities" : [ "MultiViewport" ],
-          "extensions" : [ "SPV_NV_viewport_array2" ]
-        },
-        {
           "enumerant" : "ShaderViewportIndexLayerEXT",
           "value" : 5254,
           "capabilities" : [ "MultiViewport" ],
           "extensions" : [ "SPV_EXT_shader_viewport_index_layer" ]
+        },
+        {
+          "enumerant" : "ShaderViewportIndexLayerNV",
+          "value" : 5254,
+          "capabilities" : [ "MultiViewport" ],
+          "extensions" : [ "SPV_NV_viewport_array2" ]
         },
         {
           "enumerant" : "ShaderViewportMaskNV",
