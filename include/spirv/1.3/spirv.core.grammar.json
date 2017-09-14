@@ -3700,6 +3700,29 @@
         { "kind" : "IdRef",          "name" : "'X'" }
       ],
       "capabilities" : [ "Groups" ]
+    },
+    {
+      "opname" : "OpFragmentMaskFetchAMD",
+      "opcode" : 5011,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Image'" },
+        { "kind" : "IdRef", "name" : "'Coordinate'" }
+      ],
+      "capabilities" : [ "FragmentMaskAMD" ]
+    },
+    {
+      "opname" : "OpFragmentFetchAMD",
+      "opcode" : 5012,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Image'" },
+        { "kind" : "IdRef", "name" : "'Coordinate'" },
+        { "kind" : "IdRef", "name" : "'Fragment Index'" }
+      ],
+      "capabilities" : [ "FragmentMaskAMD" ]
     }
   ],
   "operand_kinds" : [
@@ -6129,6 +6152,12 @@
           "value" : 5009,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_AMD_texture_gather_bias_lod" ]
+        },
+        {
+          "enumerant" : "FragmentMaskAMD",
+          "value" : 5010,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_AMD_shader_fragment_mask" ]
         },
         {
           "enumerant" : "StencilExportEXT",

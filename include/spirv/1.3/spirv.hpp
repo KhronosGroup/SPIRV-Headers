@@ -673,6 +673,7 @@ enum Capability {
     CapabilityAtomicStorageOps = 4445,
     CapabilitySampleMaskPostDepthCoverage = 4447,
     CapabilityImageGatherBiasLodAMD = 5009,
+    CapabilityFragmentMaskAMD = 5010,
     CapabilityStencilExportEXT = 5013,
     CapabilityImageReadWriteLodAMD = 5015,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
@@ -1040,6 +1041,8 @@ enum Op {
     OpGroupFMaxNonUniformAMD = 5005,
     OpGroupUMaxNonUniformAMD = 5006,
     OpGroupSMaxNonUniformAMD = 5007,
+    OpFragmentMaskFetchAMD = 5011,
+    OpFragmentFetchAMD = 5012,
     OpMax = 0x7fffffff,
 };
 
