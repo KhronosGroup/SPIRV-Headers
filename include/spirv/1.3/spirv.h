@@ -134,6 +134,7 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeLocalSizeId = 38,
     SpvExecutionModeLocalSizeHintId = 39,
     SpvExecutionModePostDepthCoverage = 4446,
+    SpvExecutionModeStencilRefReplacingEXT = 5027,
     SpvExecutionModeMax = 0x7fffffff,
 } SpvExecutionMode;
 
@@ -677,6 +678,7 @@ typedef enum SpvCapability_ {
     SpvCapabilitySampleMaskPostDepthCoverage = 4447,
     SpvCapabilityImageGatherBiasLodAMD = 5009,
     SpvCapabilityStencilExportEXT = 5013,
+    SpvCapabilityImageReadWriteLodAMD = 5015,
     SpvCapabilitySampleMaskOverrideCoverageNV = 5249,
     SpvCapabilityGeometryShaderPassthroughNV = 5251,
     SpvCapabilityShaderViewportIndexLayerEXT = 5254,

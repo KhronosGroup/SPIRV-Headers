@@ -4322,6 +4322,11 @@
           "enumerant" : "PostDepthCoverage",
           "value" : 4446,
           "capabilities" : [ "SampleMaskPostDepthCoverage" ]
+        },
+        {
+          "enumerant" : "StencilRefReplacingEXT",
+          "value" : 5027,
+          "capabilities" : [ "StencilExportEXT" ]
         }
       ]
     },
@@ -4884,43 +4889,19 @@
       "enumerants" : [
         {
           "enumerant" : "RTE",
-          "value" : 0,
-          "capabilities" : [
-            "StorageUniformBufferBlock16",
-            "StorageUniform16",
-            "StoragePushConstant16",
-            "StorageInputOutput16"
-          ]
+          "value" : 0
         },
         {
           "enumerant" : "RTZ",
-          "value" : 1,
-          "capabilities" : [
-            "StorageUniformBufferBlock16",
-            "StorageUniform16",
-            "StoragePushConstant16",
-            "StorageInputOutput16"
-          ]
+          "value" : 1
         },
         {
           "enumerant" : "RTP",
-          "value" : 2,
-          "capabilities" : [
-            "StorageUniformBufferBlock16",
-            "StorageUniform16",
-            "StoragePushConstant16",
-            "StorageInputOutput16"
-          ]
+          "value" : 2
         },
         {
           "enumerant" : "RTN",
-          "value" : 3,
-          "capabilities" : [
-            "StorageUniformBufferBlock16",
-            "StorageUniform16",
-            "StoragePushConstant16",
-            "StorageInputOutput16"
-          ]
+          "value" : 3
         }
       ]
     },
@@ -5234,12 +5215,6 @@
         {
           "enumerant" : "FPRoundingMode",
           "value" : 39,
-          "capabilities" : [
-            "StorageUniformBufferBlock16",
-            "StorageUniform16",
-            "StoragePushConstant16",
-            "StorageInputOutput16"
-          ],
           "parameters" : [
             { "kind" : "FPRoundingMode", "name" : "'Floating-Point Rounding Mode'" }
           ]
@@ -6160,6 +6135,12 @@
           "value" : 5013,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_EXT_shader_stencil_export" ]
+        },
+        {
+          "enumerant" : "ImageReadWriteLodAMD",
+          "value" : 5015,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_AMD_shader_image_load_store_lod" ]
         },
         {
           "enumerant" : "SampleMaskOverrideCoverageNV",

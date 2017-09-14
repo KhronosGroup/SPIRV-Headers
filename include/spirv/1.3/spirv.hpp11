@@ -130,6 +130,7 @@ enum class ExecutionMode : unsigned {
     LocalSizeId = 38,
     LocalSizeHintId = 39,
     PostDepthCoverage = 4446,
+    StencilRefReplacingEXT = 5027,
     Max = 0x7fffffff,
 };
 
@@ -673,6 +674,7 @@ enum class Capability : unsigned {
     SampleMaskPostDepthCoverage = 4447,
     ImageGatherBiasLodAMD = 5009,
     StencilExportEXT = 5013,
+    ImageReadWriteLodAMD = 5015,
     SampleMaskOverrideCoverageNV = 5249,
     GeometryShaderPassthroughNV = 5251,
     ShaderViewportIndexLayerEXT = 5254,
