@@ -3309,6 +3309,92 @@
         { "kind" : "IdRef", "name" : "'Fragment Index'" }
       ],
       "capabilities" : [ "FragmentMaskAMD" ]
+    },
+    {
+      "opname" : "OpSubgroupShuffleINTEL",
+      "opcode" : 5571,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Data'" },
+        { "kind" : "IdRef", "name" : "'InvocationId'" }
+      ],
+      "capabilities" : [ "SubgroupShuffleINTEL" ]
+    },
+    {
+      "opname" : "OpSubgroupShuffleDownINTEL",
+      "opcode" : 5572,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Current'" },
+        { "kind" : "IdRef", "name" : "'Next'" },
+        { "kind" : "IdRef", "name" : "'Delta'" }
+      ],
+      "capabilities" : [ "SubgroupShuffleINTEL" ]
+    },
+    {
+      "opname" : "OpSubgroupShuffleUpINTEL",
+      "opcode" : 5573,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Previous'" },
+        { "kind" : "IdRef", "name" : "'Current'" },
+        { "kind" : "IdRef", "name" : "'Delta'" }
+      ],
+      "capabilities" : [ "SubgroupShuffleINTEL" ]
+    },
+    {
+      "opname" : "OpSubgroupShuffleXorINTEL",
+      "opcode" : 5574,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Data'" },
+        { "kind" : "IdRef", "name" : "'Value'" }
+      ],
+      "capabilities" : [ "SubgroupShuffleINTEL" ]
+    },
+    {
+      "opname" : "OpSubgroupBlockReadINTEL",
+      "opcode" : 5575,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Ptr'" }
+      ],
+      "capabilities" : [ "SubgroupBufferBlockIOINTEL" ]
+    },
+    {
+      "opname" : "OpSubgroupBlockWriteINTEL",
+      "opcode" : 5576,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Ptr'" },
+        { "kind" : "IdRef", "name" : "'Data'" }
+      ],
+      "capabilities" : [ "SubgroupBufferBlockIOINTEL" ]
+    },
+    {
+      "opname" : "OpSubgroupImageBlockReadINTEL",
+      "opcode" : 5577,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Image'" },
+        { "kind" : "IdRef", "name" : "'Coordinate'" }
+      ],
+      "capabilities" : [ "SubgroupImageBlockIOINTEL" ]
+    },
+    {
+      "opname" : "OpSubgroupImageBlockWriteINTEL",
+      "opcode" : 5578,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Image'" },
+        { "kind" : "IdRef", "name" : "'Coordinate'" },
+        { "kind" : "IdRef", "name" : "'Data'" }
+      ],
+      "capabilities" : [ "SubgroupImageBlockIOINTEL" ]
     }
   ],
   "operand_kinds" : [
@@ -5778,6 +5864,21 @@
           "value" : 5260,
           "capabilities" : [ "MultiView" ],
           "extensions" : [ "SPV_NVX_multiview_per_view_attributes" ]
+        },
+        {
+          "enumerant" : "SubgroupShuffleINTEL",
+          "value" : 5568,
+          "extensions" : [ "SPV_INTEL_subgroups" ]
+        },
+        {
+          "enumerant" : "SubgroupBufferBlockIOINTEL",
+          "value" : 5569,
+          "extensions" : [ "SPV_INTEL_subgroups" ]
+        },
+        {
+          "enumerant" : "SubgroupImageBlockIOINTEL",
+          "value" : 5570,
+          "extensions" : [ "SPV_INTEL_subgroups" ]
         }
       ]
     },

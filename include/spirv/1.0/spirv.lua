@@ -614,6 +614,9 @@ spv = {
         ShaderViewportMaskNV = 5255,
         ShaderStereoViewNV = 5259,
         PerViewAttributesNV = 5260,
+        SubgroupShuffleINTEL = 5568,
+        SubgroupBufferBlockIOINTEL = 5569,
+        SubgroupImageBlockIOINTEL = 5570,
     },
 
     Op = {
@@ -927,6 +930,14 @@ spv = {
         OpGroupSMaxNonUniformAMD = 5007,
         OpFragmentMaskFetchAMD = 5011,
         OpFragmentFetchAMD = 5012,
+        OpSubgroupShuffleINTEL = 5571,
+        OpSubgroupShuffleDownINTEL = 5572,
+        OpSubgroupShuffleUpINTEL = 5573,
+        OpSubgroupShuffleXorINTEL = 5574,
+        OpSubgroupBlockReadINTEL = 5575,
+        OpSubgroupBlockWriteINTEL = 5576,
+        OpSubgroupImageBlockReadINTEL = 5577,
+        OpSubgroupImageBlockWriteINTEL = 5578,
     },
 
 }
