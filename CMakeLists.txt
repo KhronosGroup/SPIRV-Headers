@@ -68,16 +68,16 @@ if (SPIRV_HEADERS_ENABLE_EXAMPLES)
   add_subdirectory(example)
 endif()
 
-include(GNUInstallDirs)
-add_library(${PROJECT_NAME} INTERFACE)
-target_include_directories(${PROJECT_NAME} INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-)
-
 # Installation
 
 if (SPIRV_HEADERS_ENABLE_INSTALL)
     message(STATUS "Installing SPIRV-Header")
+
+    include(GNUInstallDirs)
+    add_library(${PROJECT_NAME} INTERFACE)
+    target_include_directories(${PROJECT_NAME} INTERFACE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    )
 
     set(config_install_dir "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
 
