@@ -7118,6 +7118,7 @@
           "enumerant" : "Vulkan",
           "value" : 3,
           "capabilities" : [ "VulkanMemoryModel" ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
