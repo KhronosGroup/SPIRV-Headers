@@ -4891,6 +4891,7 @@
     },
     {
       "opname" : "OpDecorateString",
+      "aliases" : ["OpDecorateStringGOOGLE"],
       "class"  : "Annotation",
       "opcode" : 5632,
       "operands" : [
@@ -4913,6 +4914,7 @@
     },
     {
       "opname" : "OpMemberDecorateString",
+      "aliases" : ["OpMemberDecorateStringGOOGLE"],
       "class"  : "Annotation",
       "opcode" : 5633,
       "operands" : [
@@ -6525,11 +6527,13 @@
         },
         {
           "enumerant" : "MakeTexelAvailable",
+          "aliases" : ["MakeTexelAvailableKHR"],
           "value" : "0x0100",
           "capabilities" : [ "VulkanMemoryModel" ],
           "parameters" : [
             { "kind" : "IdScope" }
           ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -6544,11 +6548,13 @@
         },
         {
           "enumerant" : "MakeTexelVisible",
+          "aliases" : ["MakeTexelVisibleKHR"],
           "value" : "0x0200",
           "capabilities" : [ "VulkanMemoryModel" ],
           "parameters" : [
             { "kind" : "IdScope" }
           ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -6563,8 +6569,10 @@
         },
         {
           "enumerant" : "NonPrivateTexel",
+          "aliases" : ["NonPrivateTexelKHR"],
           "value" : "0x0400",
           "capabilities" : [ "VulkanMemoryModel" ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -6576,8 +6584,10 @@
         },
         {
           "enumerant" : "VolatileTexel",
+          "aliases" : ["VolatileTexelKHR"],
           "value" : "0x0800",
           "capabilities" : [ "VulkanMemoryModel" ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -6755,6 +6765,7 @@
       "enumerants" : [
         {
           "enumerant" : "Relaxed",
+          "aliases": ["None"],
           "value" : "0x0000"
         },
         {
@@ -6805,8 +6816,10 @@
         },
         {
           "enumerant" : "OutputMemory",
+          "aliases" : ["OutputMemoryKHR"],
           "value" : "0x1000",
           "capabilities" : [ "VulkanMemoryModel" ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -6818,8 +6831,10 @@
         },
         {
           "enumerant" : "MakeAvailable",
+          "aliases" : ["MakeAvailableKHR"],
           "value" : "0x2000",
           "capabilities" : [ "VulkanMemoryModel" ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -6831,8 +6846,10 @@
         },
         {
           "enumerant" : "MakeVisible",
+          "aliases" : ["MakeVisibleKHR"],
           "value" : "0x4000",
           "capabilities" : [ "VulkanMemoryModel" ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -6876,11 +6893,13 @@
         },
         {
           "enumerant" : "MakePointerAvailable",
+          "aliases" : ["MakePointerAvailableKHR"],
           "value" : "0x0008",
           "parameters" : [
             { "kind" : "IdScope" }
           ],
           "capabilities" : [ "VulkanMemoryModel" ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -6895,11 +6914,13 @@
         },
         {
           "enumerant" : "MakePointerVisible",
+          "aliases" : ["MakePointerVisibleKHR"],
           "value" : "0x0010",
           "parameters" : [
             { "kind" : "IdScope" }
           ],
           "capabilities" : [ "VulkanMemoryModel" ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -6914,8 +6935,10 @@
         },
         {
           "enumerant" : "NonPrivatePointer",
+          "aliases" : ["NonPrivatePointerKHR"],
           "value" : "0x0020",
           "capabilities" : [ "VulkanMemoryModel" ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -7081,6 +7104,7 @@
         },
         {
           "enumerant" : "PhysicalStorageBuffer64",
+          "aliases" : ["PhysicalStorageBuffer64EXT"],
           "value" : 5348,
           "extensions" : [ "SPV_EXT_physical_storage_buffer", "SPV_KHR_physical_storage_buffer" ],
           "capabilities" : [ "PhysicalStorageBufferAddresses" ],
@@ -7116,8 +7140,10 @@
         },
         {
           "enumerant" : "Vulkan",
+          "aliases" : ["VulkanKHR"],
           "value" : 3,
           "capabilities" : [ "VulkanMemoryModel" ],
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -7622,6 +7648,7 @@
         },
         {
           "enumerant" : "PhysicalStorageBuffer",
+          "aliases" : ["PhysicalStorageBufferEXT"],
           "value" : 5349,
           "extensions" : [ "SPV_EXT_physical_storage_buffer", "SPV_KHR_physical_storage_buffer" ],
           "capabilities" : [ "PhysicalStorageBufferAddresses" ],
@@ -8614,8 +8641,10 @@
         },
         {
           "enumerant" : "NonUniform",
+          "aliases" : ["NonUniformEXT"],
           "value" : 5300,
           "capabilities" : [ "ShaderNonUniform" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -8627,6 +8656,7 @@
         },
         {
           "enumerant" : "RestrictPointer",
+          "aliases" : ["RestrictPointerEXT"],
           "value" : 5355,
           "capabilities" : [ "PhysicalStorageBufferAddresses" ],
           "extensions" : [ "SPV_EXT_physical_storage_buffer", "SPV_KHR_physical_storage_buffer" ],
@@ -8641,6 +8671,7 @@
         },
         {
           "enumerant" : "AliasedPointer",
+          "aliases" : ["AliasedPointerEXT"],
           "value" : 5356,
           "capabilities" : [ "PhysicalStorageBufferAddresses" ],
           "extensions" : [ "SPV_EXT_physical_storage_buffer", "SPV_KHR_physical_storage_buffer" ],
@@ -8655,10 +8686,12 @@
         },
         {
           "enumerant" : "CounterBuffer",
+          "aliases" : ["HlslCounterBufferGOOGLE"],
           "value" : 5634,
           "parameters" : [
             { "kind" : "IdRef", "name" : "'Counter Buffer'" }
           ],
+          "extensions" : [ "SPV_GOOGLE_hlsl_functionality1" ],
           "version" : "1.4"
         },
         {
@@ -8672,10 +8705,12 @@
         },
         {
           "enumerant" : "UserSemantic",
+          "aliases" : ["HlslSemanticGOOGLE"],
           "value" : 5635,
           "parameters" : [
             { "kind" : "LiteralString", "name" : "'Semantic'" }
           ],
+          "extensions" : [ "SPV_GOOGLE_hlsl_functionality1" ],
           "version" : "1.4"
         },
         {
@@ -8903,32 +8938,42 @@
         },
         {
           "enumerant" : "SubgroupEqMask",
+          "aliases" : ["SubgroupEqMaskKHR"],
           "value" : 4416,
           "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
+          "extensions" : [ "SPV_KHR_shader_ballot" ],
           "version" : "1.3"
         },
         {
           "enumerant" : "SubgroupGeMask",
+          "aliases" : ["SubgroupGeMaskKHR"],
           "value" : 4417,
           "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
+          "extensions" : [ "SPV_KHR_shader_ballot" ],
           "version" : "1.3"
         },
         {
           "enumerant" : "SubgroupGtMask",
+          "aliases" : ["SubgroupGtMaskKHR"],
           "value" : 4418,
           "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
+          "extensions" : [ "SPV_KHR_shader_ballot" ],
           "version" : "1.3"
         },
         {
           "enumerant" : "SubgroupLeMask",
+          "aliases" : ["SubgroupLeMaskKHR"],
           "value" : 4419,
           "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
+          "extensions" : [ "SPV_KHR_shader_ballot" ],
           "version" : "1.3"
         },
         {
           "enumerant" : "SubgroupLtMask",
+          "aliases" : ["SubgroupLtMaskKHR"],
           "value" : 4420,
           "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
+          "extensions" : [ "SPV_KHR_shader_ballot" ],
           "version" : "1.3"
         },
         {
@@ -9164,6 +9209,7 @@
         },
         {
           "enumerant" : "FragSizeEXT",
+          "aliases" : ["FragmentSizeNV"],
           "value" : 5292 ,
           "capabilities" : [ "FragmentDensityEXT", "ShadingRateNV" ],
           "extensions" : [ "SPV_EXT_fragment_invocation_density", "SPV_NV_shading_rate" ],
@@ -9178,6 +9224,7 @@
         },
         {
           "enumerant" : "FragInvocationCountEXT",
+          "aliases" : ["InvocationsPerPixelNV"],
           "value" : 5293,
           "capabilities" : [ "FragmentDensityEXT", "ShadingRateNV" ],
           "extensions" : [ "SPV_EXT_fragment_invocation_density", "SPV_NV_shading_rate" ],
@@ -9344,6 +9391,7 @@
         },
         {
           "enumerant" : "QueueFamily",
+          "aliases" : ["QueueFamilyKHR"],
           "value" : 5,
           "capabilities" : [ "VulkanMemoryModel" ],
           "version" : "1.5"
@@ -9794,6 +9842,7 @@
         },
         {
           "enumerant" : "StorageBuffer16BitAccess",
+          "aliases" : ["StorageUniformBufferBlock16"],
           "value" : 4433,
           "extensions" : [ "SPV_KHR_16bit_storage" ],
           "version" : "1.3"
@@ -9816,6 +9865,7 @@
         },
         {
           "enumerant" : "StorageUniform16",
+          "aliases" : ["UniformAndStorageBuffer16BitAccess"],
           "value" : 4434,
           "capabilities" : [
             "StorageBuffer16BitAccess",
@@ -9982,9 +10032,10 @@
         },
         {
           "enumerant" : "ShaderViewportIndexLayerEXT",
+          "aliases" : ["ShaderViewportIndexLayerNV"],
           "value" : 5254,
           "capabilities" : [ "MultiViewport" ],
-          "extensions" : [ "SPV_EXT_shader_viewport_index_layer" ],
+          "extensions" : [ "SPV_EXT_shader_viewport_index_layer", "SPV_NV_viewport_array2" ],
           "version" : "None"
         },
         {
@@ -10049,6 +10100,7 @@
         },
         {
           "enumerant" : "FragmentDensityEXT",
+          "aliases" : ["ShadingRateNV"],
           "value" : 5291,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_EXT_fragment_invocation_density", "SPV_NV_shading_rate" ],
@@ -10069,8 +10121,10 @@
         },
         {
           "enumerant" : "ShaderNonUniform",
+          "aliases" : ["ShaderNonUniformEXT"],
           "value" : 5301,
           "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10082,8 +10136,10 @@
         },
         {
           "enumerant" : "RuntimeDescriptorArray",
+          "aliases" : ["RuntimeDescriptorArrayEXT"],
           "value" : 5302,
           "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10095,8 +10151,10 @@
         },
         {
           "enumerant" : "InputAttachmentArrayDynamicIndexing",
+          "aliases" : ["InputAttachmentArrayDynamicIndexingEXT"],
           "value" : 5303,
           "capabilities" : [ "InputAttachment" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10108,8 +10166,10 @@
         },
         {
           "enumerant" : "UniformTexelBufferArrayDynamicIndexing",
+          "aliases" : ["UniformTexelBufferArrayDynamicIndexingEXT"],
           "value" : 5304,
           "capabilities" : [ "SampledBuffer" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10121,8 +10181,10 @@
         },
         {
           "enumerant" : "StorageTexelBufferArrayDynamicIndexing",
+          "aliases" : ["StorageTexelBufferArrayDynamicIndexingEXT"],
           "value" : 5305,
           "capabilities" : [ "ImageBuffer" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10134,8 +10196,10 @@
         },
         {
           "enumerant" : "UniformBufferArrayNonUniformIndexing",
+          "aliases" : ["UniformBufferArrayNonUniformIndexingEXT"],
           "value" : 5306,
           "capabilities" : [ "ShaderNonUniform" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10147,8 +10211,10 @@
         },
         {
           "enumerant" : "SampledImageArrayNonUniformIndexing",
+          "aliases" : ["SampledImageArrayNonUniformIndexingEXT"],
           "value" : 5307,
           "capabilities" : [ "ShaderNonUniform" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10160,8 +10226,10 @@
         },
         {
           "enumerant" : "StorageBufferArrayNonUniformIndexing",
+          "aliases" : ["StorageBufferArrayNonUniformIndexingEXT"],
           "value" : 5308,
           "capabilities" : [ "ShaderNonUniform" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10173,8 +10241,10 @@
         },
         {
           "enumerant" : "StorageImageArrayNonUniformIndexing",
+          "aliases" : ["StorageImageArrayNonUniformIndexingEXT"],
           "value" : 5309,
           "capabilities" : [ "ShaderNonUniform" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10186,8 +10256,10 @@
         },
         {
           "enumerant" : "InputAttachmentArrayNonUniformIndexing",
+          "aliases" : ["InputAttachmentArrayNonUniformIndexingEXT"],
           "value" : 5310,
           "capabilities" : [ "InputAttachment", "ShaderNonUniform" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10199,8 +10271,10 @@
         },
         {
           "enumerant" : "UniformTexelBufferArrayNonUniformIndexing",
+          "aliases" : ["UniformTexelBufferArrayNonUniformIndexingEXT"],
           "value" : 5311,
           "capabilities" : [ "SampledBuffer", "ShaderNonUniform" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10212,8 +10286,10 @@
         },
         {
           "enumerant" : "StorageTexelBufferArrayNonUniformIndexing",
+          "aliases" : ["StorageTexelBufferArrayNonUniformIndexingEXT"],
           "value" : 5312,
           "capabilities" : [ "ImageBuffer", "ShaderNonUniform" ],
+          "extensions" : [ "SPV_EXT_descriptor_indexing" ],
           "version" : "1.5"
         },
         {
@@ -10232,7 +10308,9 @@
         },
         {
           "enumerant" : "VulkanMemoryModel",
+          "aliases" : ["VulkanMemoryModelKHR"],
           "value" : 5345,
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -10243,7 +10321,9 @@
         },
         {
           "enumerant" : "VulkanMemoryModelDeviceScope",
+          "aliases" : ["VulkanMemoryModelDeviceScopeKHR"],
           "value" : 5346,
+          "extensions" : [ "SPV_KHR_vulkan_memory_model" ],
           "version" : "1.5"
         },
         {
@@ -10254,6 +10334,7 @@
         },
         {
           "enumerant" : "PhysicalStorageBufferAddresses",
+          "aliases" : ["PhysicalStorageBufferAddressesEXT"],
           "value" : 5347,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_EXT_physical_storage_buffer", "SPV_KHR_physical_storage_buffer" ],
