@@ -147,7 +147,7 @@ The C/C++ header for each of the other extended instruction sets
 is generated from the corresponding JSON grammar file.  For example, the
 [OpenCLDebugInfo100.h](include/spirv/unified1/OpenCLDebugInfo100.h) header
 is generated from the
-[extinst.opencl.debuginfo.100.grammar.json](include/spirv/unified1/opencl.debuginfo.100.grammar.json)
+[extinst.opencl.debuginfo.100.grammar.json](include/spirv/unified1/extinst.opencl.debuginfo.100.grammar.json)
 grammar file.
 
 To generate these C/C++ headers, first make sure `python3` is in your PATH, then
