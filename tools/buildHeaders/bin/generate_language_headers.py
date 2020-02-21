@@ -161,6 +161,9 @@ class LangGenerator:
         if self.uses_guards:
             parts.append('#endif // {}'.format(guard))
 
+        # Ensre the file ends in an end of line
+        parts.append('')
+
         return '\n'.join(parts)
 
 
