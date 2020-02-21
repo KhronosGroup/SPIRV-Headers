@@ -25,8 +25,8 @@
 // MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
 // 
 
-#ifndef SPIRV_EXTINST_AMD_shader_epxlicit_vertex_parameter_H_
-#define SPIRV_EXTINST_AMD_shader_epxlicit_vertex_parameter_H_
+#ifndef SPIRV_UNIFIED1_AMD_shader_epxlicit_vertex_parameter_H_
+#define SPIRV_UNIFIED1_AMD_shader_epxlicit_vertex_parameter_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,4 +44,4 @@ enum AMD_shader_epxlicit_vertex_parameterInstructions {
 }
 #endif
 
-#endif // SPIRV_EXTINST_AMD_shader_epxlicit_vertex_parameter_H_
+#endif // SPIRV_UNIFIED1_AMD_shader_epxlicit_vertex_parameter_H_

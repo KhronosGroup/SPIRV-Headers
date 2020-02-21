@@ -125,7 +125,7 @@ class LangGenerator:
             parts.extend(["{}{}".format(self.comment_prefix(), f) for f in grammar.copyright])
         parts.append('')
 
-        guard = 'SPIRV_EXTINST_{}_H_'.format(grammar.name)
+        guard = 'SPIRV_UNIFIED1_{}_H_'.format(grammar.name)
         if self.uses_guards:
             parts.append('#ifndef {}'.format(guard))
             parts.append('#define {}'.format(guard))

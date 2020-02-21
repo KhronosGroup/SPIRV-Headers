@@ -22,8 +22,8 @@
 // FROM,OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS
 // IN THE MATERIALS.
 
-#ifndef SPIRV_EXTINST_DebugInfo_H_
-#define SPIRV_EXTINST_DebugInfo_H_
+#ifndef SPIRV_UNIFIED1_DebugInfo_H_
+#define SPIRV_UNIFIED1_DebugInfo_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -134,4 +134,4 @@ enum DebugInfoDebugOperation {
 }
 #endif
 
-#endif // SPIRV_EXTINST_DebugInfo_H_
+#endif // SPIRV_UNIFIED1_DebugInfo_H_

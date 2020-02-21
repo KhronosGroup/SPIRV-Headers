@@ -25,8 +25,8 @@
 // MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
 // 
 
-#ifndef SPIRV_EXTINST_AMD_gcn_shader_H_
-#define SPIRV_EXTINST_AMD_gcn_shader_H_
+#ifndef SPIRV_UNIFIED1_AMD_gcn_shader_H_
+#define SPIRV_UNIFIED1_AMD_gcn_shader_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -46,4 +46,4 @@ enum AMD_gcn_shaderInstructions {
 }
 #endif
 
-#endif // SPIRV_EXTINST_AMD_gcn_shader_H_
+#endif // SPIRV_UNIFIED1_AMD_gcn_shader_H_

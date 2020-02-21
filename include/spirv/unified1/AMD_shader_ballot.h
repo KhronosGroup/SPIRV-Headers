@@ -25,8 +25,8 @@
 // MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
 // 
 
-#ifndef SPIRV_EXTINST_AMD_shader_ballot_H_
-#define SPIRV_EXTINST_AMD_shader_ballot_H_
+#ifndef SPIRV_UNIFIED1_AMD_shader_ballot_H_
+#define SPIRV_UNIFIED1_AMD_shader_ballot_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -47,4 +47,4 @@ enum AMD_shader_ballotInstructions {
 }
 #endif
 
-#endif // SPIRV_EXTINST_AMD_shader_ballot_H_
+#endif // SPIRV_UNIFIED1_AMD_shader_ballot_H_
