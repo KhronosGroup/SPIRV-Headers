@@ -13,7 +13,6 @@ function mk_extinst() {
 mk_extinst DebugInfo extinst.debuginfo.grammar.json
 mk_extinst OpenCLDebugInfo100 extinst.opencl.debuginfo.100.grammar.json
 mk_extinst AMD_gcn_shader extinst.spv-amd-gcn-shader.grammar.json
-mk_extinst AMD_gcn_shader extinst.spv-amd-gcn-shader.grammar.json
 mk_extinst AMD_shader_ballot extinst.spv-amd-shader-ballot.grammar.json
 mk_extinst AMD_shader_explicit_vertex_parameter extinst.spv-amd-shader-explicit-vertex-parameter.grammar.json
 mk_extinst AMD_shader_trinary_minmax extinst.spv-amd-shader-trinary-minmax.grammar.json

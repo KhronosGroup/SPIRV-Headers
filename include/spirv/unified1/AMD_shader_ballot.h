@@ -32,7 +32,10 @@
 extern "C" {
 #endif
 
-enum { AMD_shader_ballotRevision = 5, AMD_shader_ballotRevision_BitWidthPadding = 0x7fffffff };
+enum {
+   AMD_shader_ballotRevision = 5,
+   AMD_shader_ballotRevision_BitWidthPadding = 0x7fffffff
+};
 
 enum AMD_shader_ballotInstructions {
     AMD_shader_ballotSwizzleInvocationsAMD = 1,

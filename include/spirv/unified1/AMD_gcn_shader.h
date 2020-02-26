@@ -32,7 +32,10 @@
 extern "C" {
 #endif
 
-enum { AMD_gcn_shaderRevision = 2, AMD_gcn_shaderRevision_BitWidthPadding = 0x7fffffff };
+enum {
+   AMD_gcn_shaderRevision = 2,
+   AMD_gcn_shaderRevision_BitWidthPadding = 0x7fffffff
+};
 
 enum AMD_gcn_shaderInstructions {
     AMD_gcn_shaderCubeFaceIndexAMD = 1,

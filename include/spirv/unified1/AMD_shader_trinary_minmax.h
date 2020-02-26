@@ -32,7 +32,10 @@
 extern "C" {
 #endif
 
-enum { AMD_shader_trinary_minmaxRevision = 4, AMD_shader_trinary_minmaxRevision_BitWidthPadding = 0x7fffffff };
+enum {
+   AMD_shader_trinary_minmaxRevision = 4,
+   AMD_shader_trinary_minmaxRevision_BitWidthPadding = 0x7fffffff
+};
 
 enum AMD_shader_trinary_minmaxInstructions {
     AMD_shader_trinary_minmaxFMin3AMD = 1,
