@@ -154,7 +154,7 @@ To generate these C/C++ headers, first make sure `python3` is in your PATH, then
 invoke the build script as follows:
 ```
 cd tools/buildHeaders
-sh bin/makeExtinstHeaders
+python3 bin/makeExtinstHeaders.py
 ```
 
 ## FAQ
