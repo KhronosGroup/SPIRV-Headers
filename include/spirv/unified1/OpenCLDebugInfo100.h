@@ -30,12 +30,12 @@ extern "C" {
 #endif
 
 enum {
-   OpenCLDebugInfo100Version = 200,
-   OpenCLDebugInfo100Version_BitWidthPadding = 0x7fffffff
+    OpenCLDebugInfo100Version = 200,
+    OpenCLDebugInfo100Version_BitWidthPadding = 0x7fffffff
 };
 enum {
-   OpenCLDebugInfo100Revision = 2,
-   OpenCLDebugInfo100Revision_BitWidthPadding = 0x7fffffff
+    OpenCLDebugInfo100Revision = 2,
+    OpenCLDebugInfo100Revision_BitWidthPadding = 0x7fffffff
 };
 
 enum OpenCLDebugInfo100Instructions {

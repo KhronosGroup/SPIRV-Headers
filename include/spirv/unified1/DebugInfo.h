@@ -30,12 +30,12 @@ extern "C" {
 #endif
 
 enum {
-   DebugInfoVersion = 100,
-   DebugInfoVersion_BitWidthPadding = 0x7fffffff
+    DebugInfoVersion = 100,
+    DebugInfoVersion_BitWidthPadding = 0x7fffffff
 };
 enum {
-   DebugInfoRevision = 1,
-   DebugInfoRevision_BitWidthPadding = 0x7fffffff
+    DebugInfoRevision = 1,
+    DebugInfoRevision_BitWidthPadding = 0x7fffffff
 };
 
 enum DebugInfoInstructions {

@@ -33,8 +33,8 @@ extern "C" {
 #endif
 
 enum {
-   AMD_shader_explicit_vertex_parameterRevision = 4,
-   AMD_shader_explicit_vertex_parameterRevision_BitWidthPadding = 0x7fffffff
+    AMD_shader_explicit_vertex_parameterRevision = 4,
+    AMD_shader_explicit_vertex_parameterRevision_BitWidthPadding = 0x7fffffff
 };
 
 enum AMD_shader_explicit_vertex_parameterInstructions {
