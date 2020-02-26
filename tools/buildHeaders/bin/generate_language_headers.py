@@ -177,8 +177,8 @@ class CLikeGenerator(LangGenerator):
     def const_definition(self, prefix, var, value):
         # Use an anonymous enum.  Don't use a static const int variable because
         # that can bloat binary size.
-        return 'enum {0} {1}{2} = {3}, {1}{2}_BitWidthPadding = 0x7fffffff {4};'.format(
-               '{', prefix, var, value, '}')
+        return 'enum {0}{1}{2}{3} = {4},{1}{2}{3}_BitWidthPadding = 0x7fffffff{5};'.format(
+               '{', '\n   ', prefix, var, value, '\n}')
 
     def enum_prefix(self, prefix, name):
         return 'enum {}{} {}'.format(prefix, name, '{')
