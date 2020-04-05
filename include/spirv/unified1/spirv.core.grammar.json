@@ -6689,6 +6689,71 @@
       "version" : "None"
     },
     {
+      "opname" : "OpSubgroupAvcSicGetInterRawSadsINTEL",
+      "class"  : "@exclude",
+      "opcode" : 5816,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Payload'" }
+      ],
+      "capabilities" : [ "SubgroupAvcMotionEstimationINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpLoopControlINTEL",
+      "class"  : "Reserved",
+      "opcode" : 5887,
+      "operands" : [
+        { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "'Loop Control Parameters'" }
+      ],
+      "capabilities" : [ "UnstructuredLoopControlsINTEL" ],
+      "extensions" : [ "SPV_INTEL_unstructured_loop_controls" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpReadPipeBlockingINTEL",
+      "class"  : "Pipe",
+      "opcode" : 5946,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Packet Size'" },
+        { "kind" : "IdRef", "name" : "'Packet Alignment'" }
+      ],
+      "capabilities" : [ "BlockingPipesINTEL" ],
+      "extensions" : [ "SPV_INTEL_blocking_pipes" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpWritePipeBlockingINTEL",
+      "class"  : "Pipe",
+      "opcode" : 5947,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Packet Size'" },
+        { "kind" : "IdRef", "name" : "'Packet Alignment'" }
+      ],
+      "capabilities" : [ "BlockingPipesINTEL" ],
+      "extensions" : [ "SPV_INTEL_blocking_pipes" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpFPGARegINTEL",
+      "class"  : "Reserved",
+      "opcode" : 5949,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Result'" },
+        { "kind" : "IdRef", "name" : "'Input'" }
+      ],
+      "capabilities" : [ "FPGARegINTEL" ],
+      "extensions" : [ "SPV_INTEL_fpga_reg" ],
+      "version" : "None"
+    },
+    {
         "opname" : "OpRayQueryGetRayTMinKHR",
         "class" : "Reserved",
         "opcode" : 6016,
@@ -7276,6 +7341,76 @@
             { "kind" : "LiteralInteger" }
           ],
           "version" : "1.4"
+        },
+        {
+          "enumerant" : "InitiationIntervalINTEL",
+          "value" : "0x10000",
+          "parameters" : [
+            { "kind" : "LiteralInteger" }
+          ],
+          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxConcurrencyINTEL",
+          "value" : "0x20000",
+          "parameters" : [
+            { "kind" : "LiteralInteger" }
+          ],
+          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DependencyArrayINTEL",
+          "value" : "0x40000",
+          "parameters" : [
+            { "kind" : "LiteralInteger" }
+          ],
+          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PipelineEnableINTEL",
+          "value" : "0x80000",
+          "parameters" : [
+            { "kind" : "LiteralInteger" }
+          ],
+          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "LoopCoalesceINTEL",
+          "value" : "0x100000",
+          "parameters" : [
+            { "kind" : "LiteralInteger" }
+          ],
+          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxInterleavingINTEL",
+          "value" : "0x200000",
+          "parameters" : [
+            { "kind" : "LiteralInteger" }
+          ],
+          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SpeculatedIterationsINTEL",
+          "value" : "0x400000",
+          "parameters" : [
+            { "kind" : "LiteralInteger" }
+          ],
+          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "version" : "None"
         }
       ]
     },
@@ -8170,6 +8305,45 @@
           "value" : 5371,
           "capabilities" : [ "FragmentShaderShadingRateInterlockEXT" ],
           "extensions" : [ "SPV_EXT_fragment_shader_interlock" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxWorkgroupSizeINTEL",
+          "value" : 5893,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'max_x_size'" },
+            { "kind" : "LiteralInteger", "name" : "'max_y_size'" },
+            { "kind" : "LiteralInteger", "name" : "'max_z_size'" }
+          ],
+          "capabilities" : [ "KernelAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxWorkDimINTEL",
+          "value" : 5894,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'max_dimensions'" }
+          ],
+          "capabilities" : [ "KernelAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "NoGlobalOffsetINTEL",
+          "value" : 5895,
+          "capabilities" : [ "KernelAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "NumSIMDWorkitemsINTEL",
+          "value" : 5896,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'vector_width'" }
+          ],
+          "capabilities" : [ "FPGAKernelAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
           "version" : "None"
         }
       ]
@@ -9414,6 +9588,115 @@
             { "kind" : "LiteralString", "name" : "'User Type'" }
           ],
           "extensions" : [ "SPV_GOOGLE_user_type" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RegisterINTEL",
+          "value" : 5825,
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MemoryINTEL",
+          "value" : 5826,
+          "parameters" : [
+            { "kind" : "LiteralString", "name" : "'Memory Type'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "NumbanksINTEL",
+          "value" : 5827,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Banks'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BankwidthINTEL",
+          "value" : 5828,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Bank Width'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxPrivateCopiesINTEL",
+          "value" : 5829,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Maximum Copies'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SinglepumpINTEL",
+          "value" : 5830,
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DoublepumpINTEL",
+          "value" : 5831,
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxReplicatesINTEL",
+          "value" : 5832,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Maximum Replicates'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SimpleDualPortINTEL",
+          "value" : 5833,
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MergeINTEL",
+          "value" : 5834,
+          "parameters" : [
+            { "kind" : "LiteralString", "name" : "'Merge Key'" },
+            { "kind" : "LiteralString", "name" : "'Merge Type'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BankBitsINTEL",
+          "value" : 5835,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "'Bank Bits'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ForcePow2DepthINTEL",
+          "value" : 5836,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Force Key'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
           "version" : "None"
         }
       ]
@@ -11225,6 +11508,48 @@
           "enumerant" : "SubgroupAvcMotionEstimationChromaINTEL",
           "value" : 5698,
           "extensions" : [ "SPV_INTEL_device_side_avc_motion_estimation" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGAMemoryAttributesINTEL",
+          "value" : 5824,
+          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "UnstructuredLoopControlsINTEL",
+          "value" : 5886,
+          "extensions" : [ "SPV_INTEL_unstructured_loop_controls" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGALoopControlsINTEL",
+          "value" : 5888,
+          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BlockingPipesINTEL",
+          "value" : 5945,
+          "extensions" : [ "SPV_INTEL_blocking_pipes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGARegINTEL",
+          "value" : 5948,
+          "extensions" : [ "SPV_INTEL_fpga_reg" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "KernelAttributesINTEL",
+          "value" : 5892,
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGAKernelAttributesINTEL",
+          "value" : 5897,
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
           "version" : "None"
         }
       ]
