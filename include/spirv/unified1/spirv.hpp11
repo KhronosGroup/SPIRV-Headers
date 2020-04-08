@@ -931,6 +931,8 @@ enum class Capability : unsigned {
     SubgroupAvcMotionEstimationINTEL = 5696,
     SubgroupAvcMotionEstimationIntraINTEL = 5697,
     SubgroupAvcMotionEstimationChromaINTEL = 5698,
+    AtomicFloatEXT = 6033,
+    AtomicDoubleEXT = 6034,
     Max = 0x7fffffff,
 };
 
@@ -1537,6 +1539,7 @@ enum class Op : unsigned {
     OpRayQueryGetWorldRayOriginKHR = 6030,
     OpRayQueryGetIntersectionObjectToWorldKHR = 6031,
     OpRayQueryGetIntersectionWorldToObjectKHR = 6032,
+    OpAtomicFAddEXT = 6035,
     Max = 0x7fffffff,
 };
 
@@ -1768,6 +1771,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpAtomicAnd: *hasResult = true; *hasResultType = true; break;
     case Op::OpAtomicOr: *hasResult = true; *hasResultType = true; break;
     case Op::OpAtomicXor: *hasResult = true; *hasResultType = true; break;
+    case Op::OpAtomicFAddEXT: *hasResult = true; *hasResultType = true; break;
     case Op::OpPhi: *hasResult = true; *hasResultType = true; break;
     case Op::OpLoopMerge: *hasResult = false; *hasResultType = false; break;
     case Op::OpSelectionMerge: *hasResult = false; *hasResultType = false; break;

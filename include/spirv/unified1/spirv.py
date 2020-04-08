@@ -893,6 +893,8 @@ spv = {
         'SubgroupAvcMotionEstimationINTEL' : 5696,
         'SubgroupAvcMotionEstimationIntraINTEL' : 5697,
         'SubgroupAvcMotionEstimationChromaINTEL' : 5698,
+        'AtomicFloatEXT' : 6033,
+        'AtomicDoubleEXT' : 6034,
     },
 
     'RayFlagsShift' : {
@@ -1494,6 +1496,7 @@ spv = {
         'OpRayQueryGetWorldRayOriginKHR' : 6030,
         'OpRayQueryGetIntersectionObjectToWorldKHR' : 6031,
         'OpRayQueryGetIntersectionWorldToObjectKHR' : 6032,
+        'OpAtomicFAddEXT' : 6035,
     },
 
 }

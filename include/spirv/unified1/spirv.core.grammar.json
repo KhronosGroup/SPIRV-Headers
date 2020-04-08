@@ -2564,6 +2564,22 @@
       ]
     },
     {
+      "opname" : "OpAtomicFAddEXT",
+      "class"  : "Atomic",
+      "opcode" : 6035,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdScope",           "name" : "'Memory'" },
+        { "kind" : "IdMemorySemantics", "name" : "'Semantics'" },
+        { "kind" : "IdRef",             "name" : "'Value'" }
+      ],
+      "capabilities" : [ "AtomicFloatEXT", "AtomicDoubleEXT" ],
+      "extensions" : [ "SPV_EXT_shader_atomic_float" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpPhi",
       "class"  : "Control-Flow",
       "opcode" : 245,
@@ -11162,6 +11178,20 @@
           "enumerant" : "SubgroupAvcMotionEstimationChromaINTEL",
           "value" : 5698,
           "extensions" : [ "SPV_INTEL_device_side_avc_motion_estimation" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AtomicFloatEXT",
+          "value" : 6033,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_EXT_shader_atomic_float" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AtomicDoubleEXT",
+          "value" : 6034,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_EXT_shader_atomic_float" ],
           "version" : "None"
         }
       ]

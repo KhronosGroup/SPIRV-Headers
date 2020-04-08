@@ -938,6 +938,8 @@ enum Capability : uint
     SubgroupAvcMotionEstimationINTEL = 5696,
     SubgroupAvcMotionEstimationIntraINTEL = 5697,
     SubgroupAvcMotionEstimationChromaINTEL = 5698,
+    AtomicFloatEXT = 6033,
+    AtomicDoubleEXT = 6034,
 }
 
 enum RayFlagsShift : uint
@@ -1545,6 +1547,7 @@ enum Op : uint
     OpRayQueryGetWorldRayOriginKHR = 6030,
     OpRayQueryGetIntersectionObjectToWorldKHR = 6031,
     OpRayQueryGetIntersectionWorldToObjectKHR = 6032,
+    OpAtomicFAddEXT = 6035,
 }
 
 
