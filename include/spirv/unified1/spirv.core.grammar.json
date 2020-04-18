@@ -682,7 +682,6 @@
         { "kind" : "IdRef",                            "name" : "'Target'" },
         { "kind" : "IdRef",                            "name" : "'Source'" },
         { "kind" : "MemoryAccess", "quantifier" : "?" },
-        { "kind" : "MemoryAccess", "quantifier" : "?" }
       ]
     },
     {
@@ -694,7 +693,6 @@
         { "kind" : "IdRef",                            "name" : "'Source'" },
         { "kind" : "IdRef",                            "name" : "'Size'" },
         { "kind" : "MemoryAccess", "quantifier" : "?" },
-        { "kind" : "MemoryAccess", "quantifier" : "?" }
       ],
       "capabilities" : [ "Addresses" ]
     },
