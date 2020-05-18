@@ -273,6 +273,8 @@ enum ImageFormat : uint
     Rg8ui = 37,
     R16ui = 38,
     R8ui = 39,
+    R64ui = 40,
+    R64i = 41,
 }
 
 enum ImageChannelOrder : uint
@@ -907,6 +909,7 @@ enum Capability : uint
     FragmentMaskAMD = 5010,
     StencilExportEXT = 5013,
     ImageReadWriteLodAMD = 5015,
+    Int64ImageEXT = 5016,
     ShaderClockKHR = 5055,
     SampleMaskOverrideCoverageNV = 5249,
     GeometryShaderPassthroughNV = 5251,

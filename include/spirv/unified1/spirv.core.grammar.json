@@ -8826,6 +8826,16 @@
           "enumerant" : "R8ui",
           "value" : 39,
           "capabilities" : [ "StorageImageExtendedFormats" ]
+        },
+	{
+          "enumerant" : "R64ui",
+          "value" : 40,
+          "capabilities" : [ "Int64ImageEXT" ]
+        },
+        {
+          "enumerant" : "R64i",
+          "value" : 41,
+          "capabilities" : [ "Int64ImageEXT" ]
         }
       ]
     },
@@ -11099,6 +11109,13 @@
           "value" : 5015,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_AMD_shader_image_load_store_lod" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Int64ImageEXT",
+          "value" : 5016,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_EXT_shader_image_int64" ],
           "version" : "None"
         },
         {
