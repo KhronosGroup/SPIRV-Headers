@@ -4128,6 +4128,16 @@
       "version" : "None"
     },
     {
+      "opname" : "OpTerminateInvocation",
+      "class"  : "Control-Flow",
+      "opcode" : 4416,
+      "extensions" : [
+        "SPV_KHR_terminate_invocation"
+      ],
+      "capabilities" : [ "Shader" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpSubgroupAllKHR",
       "class"  : "Group",
       "opcode" : 4428,
