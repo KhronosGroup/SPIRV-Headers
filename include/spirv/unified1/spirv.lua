@@ -137,6 +137,7 @@ spv = {
         SubgroupsPerWorkgroupId = 37,
         LocalSizeId = 38,
         LocalSizeHintId = 39,
+        SubgroupUniformControlFlowKHR = 4421,
         PostDepthCoverage = 4446,
         DenormPreserve = 4459,
         DenormFlushToZero = 4460,
