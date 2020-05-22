@@ -95,6 +95,7 @@ enum OperandClass {
     OperandFPOperationMode,
     OperandQuantizationModes,
     OperandOverflowModes,
+    OperandPackedVectorFormat,
 
     OperandOpcode,
 
