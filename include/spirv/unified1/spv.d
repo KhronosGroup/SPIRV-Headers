@@ -198,6 +198,7 @@ enum StorageClass : uint
     ShaderRecordBufferNV = 5343,
     PhysicalStorageBuffer = 5349,
     PhysicalStorageBufferEXT = 5349,
+    CodeSectionINTEL = 5605,
 }
 
 enum Dim : uint
@@ -478,6 +479,7 @@ enum Decoration : uint
     RestrictPointerEXT = 5355,
     AliasedPointer = 5356,
     AliasedPointerEXT = 5356,
+    ReferencedIndirectlyINTEL = 5602,
     CounterBuffer = 5634,
     HlslCounterBufferGOOGLE = 5634,
     HlslSemanticGOOGLE = 5635,
@@ -935,6 +937,8 @@ enum Capability : uint
     SubgroupImageBlockIOINTEL = 5570,
     SubgroupImageMediaBlockIOINTEL = 5579,
     IntegerFunctions2INTEL = 5584,
+    FunctionPointersINTEL = 5603,
+    IndirectReferencesINTEL = 5604,
     SubgroupAvcMotionEstimationINTEL = 5696,
     SubgroupAvcMotionEstimationIntraINTEL = 5697,
     SubgroupAvcMotionEstimationChromaINTEL = 5698,
@@ -1406,6 +1410,8 @@ enum Op : uint
     OpUSubSatINTEL = 5596,
     OpIMul32x16INTEL = 5597,
     OpUMul32x16INTEL = 5598,
+    OpFunctionPointerINTEL = 5600,
+    OpFunctionPointerCallINTEL = 5601,
     OpDecorateString = 5632,
     OpDecorateStringGOOGLE = 5632,
     OpMemberDecorateString = 5633,

@@ -199,6 +199,7 @@ enum class StorageClass : unsigned {
     ShaderRecordBufferNV = 5343,
     PhysicalStorageBuffer = 5349,
     PhysicalStorageBufferEXT = 5349,
+    CodeSectionINTEL = 5605,
     Max = 0x7fffffff,
 };
 
@@ -477,6 +478,7 @@ enum class Decoration : unsigned {
     RestrictPointerEXT = 5355,
     AliasedPointer = 5356,
     AliasedPointerEXT = 5356,
+    ReferencedIndirectlyINTEL = 5602,
     CounterBuffer = 5634,
     HlslCounterBufferGOOGLE = 5634,
     HlslSemanticGOOGLE = 5635,
@@ -928,6 +930,8 @@ enum class Capability : unsigned {
     SubgroupImageBlockIOINTEL = 5570,
     SubgroupImageMediaBlockIOINTEL = 5579,
     IntegerFunctions2INTEL = 5584,
+    FunctionPointersINTEL = 5603,
+    IndirectReferencesINTEL = 5604,
     SubgroupAvcMotionEstimationINTEL = 5696,
     SubgroupAvcMotionEstimationIntraINTEL = 5697,
     SubgroupAvcMotionEstimationChromaINTEL = 5698,
@@ -1398,6 +1402,8 @@ enum class Op : unsigned {
     OpUSubSatINTEL = 5596,
     OpIMul32x16INTEL = 5597,
     OpUMul32x16INTEL = 5598,
+    OpFunctionPointerINTEL = 5600,
+    OpFunctionPointerCallINTEL = 5601,
     OpDecorateString = 5632,
     OpDecorateStringGOOGLE = 5632,
     OpMemberDecorateString = 5633,
@@ -1955,6 +1961,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpUSubSatINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpIMul32x16INTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpUMul32x16INTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpFunctionPointerINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpFunctionPointerCallINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpDecorateString: *hasResult = false; *hasResultType = false; break;
     case Op::OpMemberDecorateString: *hasResult = false; *hasResultType = false; break;
     case Op::OpVmeImageINTEL: *hasResult = true; *hasResultType = true; break;
