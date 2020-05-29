@@ -172,6 +172,10 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeSampleInterlockUnorderedEXT = 5369,
     SpvExecutionModeShadingRateInterlockOrderedEXT = 5370,
     SpvExecutionModeShadingRateInterlockUnorderedEXT = 5371,
+    SpvExecutionModeMaxWorkgroupSizeINTEL = 5893,
+    SpvExecutionModeMaxWorkDimINTEL = 5894,
+    SpvExecutionModeNoGlobalOffsetINTEL = 5895,
+    SpvExecutionModeNumSIMDWorkitemsINTEL = 5896,
     SpvExecutionModeMax = 0x7fffffff,
 } SpvExecutionMode;
 
@@ -488,6 +492,18 @@ typedef enum SpvDecoration_ {
     SpvDecorationHlslSemanticGOOGLE = 5635,
     SpvDecorationUserSemantic = 5635,
     SpvDecorationUserTypeGOOGLE = 5636,
+    SpvDecorationRegisterINTEL = 5825,
+    SpvDecorationMemoryINTEL = 5826,
+    SpvDecorationNumbanksINTEL = 5827,
+    SpvDecorationBankwidthINTEL = 5828,
+    SpvDecorationMaxPrivateCopiesINTEL = 5829,
+    SpvDecorationSinglepumpINTEL = 5830,
+    SpvDecorationDoublepumpINTEL = 5831,
+    SpvDecorationMaxReplicatesINTEL = 5832,
+    SpvDecorationSimpleDualPortINTEL = 5833,
+    SpvDecorationMergeINTEL = 5834,
+    SpvDecorationBankBitsINTEL = 5835,
+    SpvDecorationForcePow2DepthINTEL = 5836,
     SpvDecorationMax = 0x7fffffff,
 } SpvDecoration;
 
@@ -634,6 +650,13 @@ typedef enum SpvLoopControlShift_ {
     SpvLoopControlIterationMultipleShift = 6,
     SpvLoopControlPeelCountShift = 7,
     SpvLoopControlPartialCountShift = 8,
+    SpvLoopControlInitiationIntervalINTELShift = 16,
+    SpvLoopControlMaxConcurrencyINTELShift = 17,
+    SpvLoopControlDependencyArrayINTELShift = 18,
+    SpvLoopControlPipelineEnableINTELShift = 19,
+    SpvLoopControlLoopCoalesceINTELShift = 20,
+    SpvLoopControlMaxInterleavingINTELShift = 21,
+    SpvLoopControlSpeculatedIterationsINTELShift = 22,
     SpvLoopControlMax = 0x7fffffff,
 } SpvLoopControlShift;
 
@@ -648,6 +671,13 @@ typedef enum SpvLoopControlMask_ {
     SpvLoopControlIterationMultipleMask = 0x00000040,
     SpvLoopControlPeelCountMask = 0x00000080,
     SpvLoopControlPartialCountMask = 0x00000100,
+    SpvLoopControlInitiationIntervalINTELMask = 0x00010000,
+    SpvLoopControlMaxConcurrencyINTELMask = 0x00020000,
+    SpvLoopControlDependencyArrayINTELMask = 0x00040000,
+    SpvLoopControlPipelineEnableINTELMask = 0x00080000,
+    SpvLoopControlLoopCoalesceINTELMask = 0x00100000,
+    SpvLoopControlMaxInterleavingINTELMask = 0x00200000,
+    SpvLoopControlSpeculatedIterationsINTELMask = 0x00400000,
 } SpvLoopControlMask;
 
 typedef enum SpvFunctionControlShift_ {
@@ -939,6 +969,13 @@ typedef enum SpvCapability_ {
     SpvCapabilitySubgroupAvcMotionEstimationINTEL = 5696,
     SpvCapabilitySubgroupAvcMotionEstimationIntraINTEL = 5697,
     SpvCapabilitySubgroupAvcMotionEstimationChromaINTEL = 5698,
+    SpvCapabilityFPGAMemoryAttributesINTEL = 5824,
+    SpvCapabilityUnstructuredLoopControlsINTEL = 5886,
+    SpvCapabilityFPGALoopControlsINTEL = 5888,
+    SpvCapabilityKernelAttributesINTEL = 5892,
+    SpvCapabilityFPGAKernelAttributesINTEL = 5897,
+    SpvCapabilityBlockingPipesINTEL = 5945,
+    SpvCapabilityFPGARegINTEL = 5948,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
 
@@ -1530,6 +1567,10 @@ typedef enum SpvOp_ {
     SpvOpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL = 5814,
     SpvOpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL = 5815,
     SpvOpSubgroupAvcSicGetInterRawSadsINTEL = 5816,
+    SpvOpLoopControlINTEL = 5887,
+    SpvOpReadPipeBlockingINTEL = 5946,
+    SpvOpWritePipeBlockingINTEL = 5947,
+    SpvOpFPGARegINTEL = 5949,
     SpvOpRayQueryGetRayTMinKHR = 6016,
     SpvOpRayQueryGetRayFlagsKHR = 6017,
     SpvOpRayQueryGetIntersectionTKHR = 6018,
@@ -2087,6 +2128,10 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAvcSicGetInterRawSadsINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpLoopControlINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpReadPipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpWritePipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFPGARegINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpRayQueryGetRayTMinKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpRayQueryGetRayFlagsKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpRayQueryGetIntersectionTKHR: *hasResult = true; *hasResultType = true; break;
