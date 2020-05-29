@@ -6689,18 +6689,6 @@
       "version" : "None"
     },
     {
-      "opname" : "OpSubgroupAvcSicGetInterRawSadsINTEL",
-      "class"  : "@exclude",
-      "opcode" : 5816,
-      "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef", "name" : "'Payload'" }
-      ],
-      "capabilities" : [ "SubgroupAvcMotionEstimationINTEL" ],
-      "version" : "None"
-    },
-    {
       "opname" : "OpLoopControlINTEL",
       "class"  : "Reserved",
       "opcode" : 5887,
@@ -11529,18 +11517,6 @@
           "version" : "None"
         },
         {
-          "enumerant" : "BlockingPipesINTEL",
-          "value" : 5945,
-          "extensions" : [ "SPV_INTEL_blocking_pipes" ],
-          "version" : "None"
-        },
-        {
-          "enumerant" : "FPGARegINTEL",
-          "value" : 5948,
-          "extensions" : [ "SPV_INTEL_fpga_reg" ],
-          "version" : "None"
-        },
-        {
           "enumerant" : "KernelAttributesINTEL",
           "value" : 5892,
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
@@ -11550,6 +11526,18 @@
           "enumerant" : "FPGAKernelAttributesINTEL",
           "value" : 5897,
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BlockingPipesINTEL",
+          "value" : 5945,
+          "extensions" : [ "SPV_INTEL_blocking_pipes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGARegINTEL",
+          "value" : 5948,
+          "extensions" : [ "SPV_INTEL_fpga_reg" ],
           "version" : "None"
         }
       ]
