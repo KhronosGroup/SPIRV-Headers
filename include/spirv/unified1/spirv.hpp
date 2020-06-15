@@ -1398,6 +1398,9 @@ enum Op {
     OpSubgroupAnyKHR = 4429,
     OpSubgroupAllEqualKHR = 4430,
     OpSubgroupReadInvocationKHR = 4432,
+    OpTraceRayKHR = 4445,
+    OpExecuteCallableKHR = 4446,
+    OpConvertUToAccelerationStructureKHR = 4447,
     OpTypeRayQueryProvisionalKHR = 4472,
     OpRayQueryInitializeKHR = 4473,
     OpRayQueryTerminateKHR = 4474,
@@ -1426,10 +1429,8 @@ enum Op {
     OpTerminateRayKHR = 5336,
     OpTerminateRayNV = 5336,
     OpTraceNV = 5337,
-    OpTraceRayKHR = 5337,
     OpTypeAccelerationStructureKHR = 5341,
     OpTypeAccelerationStructureNV = 5341,
-    OpExecuteCallableKHR = 5344,
     OpExecuteCallableNV = 5344,
     OpTypeCooperativeMatrixNV = 5358,
     OpCooperativeMatrixLoadNV = 5359,
@@ -1969,6 +1970,9 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupReadInvocationKHR: *hasResult = true; *hasResultType = true; break;
+    case OpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
+    case OpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;
+    case OpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
     case OpTypeRayQueryProvisionalKHR: *hasResult = true; *hasResultType = false; break;
     case OpRayQueryInitializeKHR: *hasResult = false; *hasResultType = false; break;
     case OpRayQueryTerminateKHR: *hasResult = false; *hasResultType = false; break;

@@ -4197,6 +4197,51 @@
       "version" : "None"
     },
     {
+      "opname" : "OpTraceRayKHR",
+      "class"  : "Reserved",
+      "opcode" : 4445,
+      "operands" : [
+
+        { "kind" : "IdRef", "name" : "'Accel'" },
+        { "kind" : "IdRef", "name" : "'Ray Flags'" },
+        { "kind" : "IdRef", "name" : "'Cull Mask'" },
+        { "kind" : "IdRef", "name" : "'SBT Offset'" },
+        { "kind" : "IdRef", "name" : "'SBT Stride'" },
+        { "kind" : "IdRef", "name" : "'Miss Index'" },
+        { "kind" : "IdRef", "name" : "'Ray Origin'" },
+        { "kind" : "IdRef", "name" : "'Ray Tmin'" },
+        { "kind" : "IdRef", "name" : "'Ray Direction'" },
+        { "kind" : "IdRef", "name" : "'Ray Tmax'" },
+        { "kind" : "IdRef", "name" : "'Payload'" }
+      ],
+      "capabilities" : [ "RayTracingProvisionalKHR" ],
+      "extensions" : [ "SPV_KHR_ray_tracing" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpExecuteCallableKHR",
+      "class"  : "Reserved",
+      "opcode" : 4446,
+      "operands" : [
+
+        { "kind" : "IdRef", "name" : "'SBT Index'" },
+        { "kind" : "IdRef", "name" : "'Callable Data'" }
+      ],
+      "capabilities" : [ "RayTracingProvisionalKHR" ],
+      "extensions" : [ "SPV_KHR_ray_tracing" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConvertUToAccelerationStructureKHR",
+      "class"  : "Reserved",
+      "opcode" : 4447,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "'Operand'" }
+      ]
+    },
+    {
         "opname" : "OpTypeRayQueryProvisionalKHR",
         "class" : "Reserved",
         "opcode" : 4472,
@@ -4614,30 +4659,8 @@
         { "kind" : "IdRef", "name" : "'Ray Tmax'" },
         { "kind" : "IdRef", "name" : "'PayloadId'" }
       ],
-      "capabilities" : [ "RayTracingNV" , "RayTracingProvisionalKHR" ],
-      "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
-      "version" : "None"
-    },
-    {
-      "opname" : "OpTraceRayKHR",
-      "class"  : "Reserved",
-      "opcode" : 5337,
-      "operands" : [
-
-        { "kind" : "IdRef", "name" : "'Accel'" },
-        { "kind" : "IdRef", "name" : "'Ray Flags'" },
-        { "kind" : "IdRef", "name" : "'Cull Mask'" },
-        { "kind" : "IdRef", "name" : "'SBT Offset'" },
-        { "kind" : "IdRef", "name" : "'SBT Stride'" },
-        { "kind" : "IdRef", "name" : "'Miss Index'" },
-        { "kind" : "IdRef", "name" : "'Ray Origin'" },
-        { "kind" : "IdRef", "name" : "'Ray Tmin'" },
-        { "kind" : "IdRef", "name" : "'Ray Direction'" },
-        { "kind" : "IdRef", "name" : "'Ray Tmax'" },
-        { "kind" : "IdRef", "name" : "'PayloadId'" }
-      ],
-      "capabilities" : [ "RayTracingNV" , "RayTracingProvisionalKHR" ],
-      "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
+      "capabilities" : [ "RayTracingNV" ],
+      "extensions" : [ "SPV_NV_ray_tracing" ],
       "version" : "None"
     },
     {
@@ -4671,21 +4694,8 @@
         { "kind" : "IdRef", "name" : "'SBT Index'" },
         { "kind" : "IdRef", "name" : "'Callable DataId'" }
       ],
-      "capabilities" : [ "RayTracingNV" , "RayTracingProvisionalKHR" ],
-      "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
-      "version" : "None"
-    },
-    {
-      "opname" : "OpExecuteCallableKHR",
-      "class"  : "Reserved",
-      "opcode" : 5344,
-      "operands" : [
-
-        { "kind" : "IdRef", "name" : "'SBT Index'" },
-        { "kind" : "IdRef", "name" : "'Callable DataId'" }
-      ],
-      "capabilities" : [ "RayTracingNV" , "RayTracingProvisionalKHR" ],
-      "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
+      "capabilities" : [ "RayTracingNV" ],
+      "extensions" : [ "SPV_NV_ray_tracing" ],
       "version" : "None"
     },
     {
