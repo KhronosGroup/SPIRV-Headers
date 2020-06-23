@@ -559,8 +559,10 @@ enum BuiltIn : uint
     BaseVertex = 4424,
     BaseInstance = 4425,
     DrawIndex = 4426,
+    PrimitiveShadingRateKHR = 4432,
     DeviceIndex = 4438,
     ViewIndex = 4440,
+    ShadingRateKHR = 4444,
     BaryCoordNoPerspAMD = 4992,
     BaryCoordNoPerspCentroidAMD = 4993,
     BaryCoordNoPerspSampleAMD = 4994,
@@ -877,6 +879,7 @@ enum Capability : uint
     GroupNonUniformQuad = 68,
     ShaderLayer = 69,
     ShaderViewportIndex = 70,
+    FragmentShadingRateKHR = 4422,
     SubgroupBallotKHR = 4423,
     DrawParameters = 4427,
     SubgroupVoteKHR = 4431,
@@ -1029,6 +1032,23 @@ enum RayQueryCandidateIntersectionType : uint
 {
     RayQueryCandidateIntersectionTriangleKHR = 0,
     RayQueryCandidateIntersectionAABBKHR = 1,
+}
+
+enum FragmentShadingRateShift : uint
+{
+    Vertical2Pixels = 0,
+    Vertical4Pixels = 1,
+    Horizontal2Pixels = 2,
+    Horizontal4Pixels = 3,
+}
+
+enum FragmentShadingRateMask : uint
+{
+    MaskNone = 0,
+    Vertical2Pixels = 0x00000001,
+    Vertical4Pixels = 0x00000002,
+    Horizontal2Pixels = 0x00000004,
+    Horizontal4Pixels = 0x00000008,
 }
 
 enum Op : uint

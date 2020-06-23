@@ -530,8 +530,10 @@ spv = {
         'BaseVertex' : 4424,
         'BaseInstance' : 4425,
         'DrawIndex' : 4426,
+        'PrimitiveShadingRateKHR' : 4432,
         'DeviceIndex' : 4438,
         'ViewIndex' : 4440,
+        'ShadingRateKHR' : 4444,
         'BaryCoordNoPerspAMD' : 4992,
         'BaryCoordNoPerspCentroidAMD' : 4993,
         'BaryCoordNoPerspSampleAMD' : 4994,
@@ -832,6 +834,7 @@ spv = {
         'GroupNonUniformQuad' : 68,
         'ShaderLayer' : 69,
         'ShaderViewportIndex' : 70,
+        'FragmentShadingRateKHR' : 4422,
         'SubgroupBallotKHR' : 4423,
         'DrawParameters' : 4427,
         'SubgroupVoteKHR' : 4431,
@@ -979,6 +982,21 @@ spv = {
     'RayQueryCandidateIntersectionType' : {
         'RayQueryCandidateIntersectionTriangleKHR' : 0,
         'RayQueryCandidateIntersectionAABBKHR' : 1,
+    },
+
+    'FragmentShadingRateShift' : {
+        'Vertical2Pixels' : 0,
+        'Vertical4Pixels' : 1,
+        'Horizontal2Pixels' : 2,
+        'Horizontal4Pixels' : 3,
+    },
+
+    'FragmentShadingRateMask' : {
+        'MaskNone' : 0,
+        'Vertical2Pixels' : 0x00000001,
+        'Vertical4Pixels' : 0x00000002,
+        'Horizontal2Pixels' : 0x00000004,
+        'Horizontal4Pixels' : 0x00000008,
     },
 
     'Op' : {
