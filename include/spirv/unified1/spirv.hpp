@@ -899,7 +899,9 @@ enum Capability {
     CapabilityRoundingModeRTE = 4467,
     CapabilityRoundingModeRTZ = 4468,
     CapabilityRayQueryProvisionalKHR = 4471,
-    CapabilityRayTraversalPrimitiveCullingProvisionalKHR = 4478,
+    CapabilityRayQueryKHR = 4472,
+    CapabilityRayTraversalPrimitiveCullingKHR = 4478,
+    CapabilityRayTracingKHR = 4479,
     CapabilityFloat16ImageAMD = 5008,
     CapabilityImageGatherBiasLodAMD = 5009,
     CapabilityFragmentMaskAMD = 5010,
@@ -1401,7 +1403,7 @@ enum Op {
     OpTraceRayKHR = 4445,
     OpExecuteCallableKHR = 4446,
     OpConvertUToAccelerationStructureKHR = 4447,
-    OpTypeRayQueryProvisionalKHR = 4472,
+    OpTypeRayQueryKHR = 4472,
     OpRayQueryInitializeKHR = 4473,
     OpRayQueryTerminateKHR = 4474,
     OpRayQueryGenerateIntersectionKHR = 4475,
@@ -1973,7 +1975,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
     case OpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;
     case OpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
-    case OpTypeRayQueryProvisionalKHR: *hasResult = true; *hasResultType = false; break;
+    case OpTypeRayQueryKHR: *hasResult = true; *hasResultType = false; break;
     case OpRayQueryInitializeKHR: *hasResult = false; *hasResultType = false; break;
     case OpRayQueryTerminateKHR: *hasResult = false; *hasResultType = false; break;
     case OpRayQueryGenerateIntersectionKHR: *hasResult = false; *hasResultType = false; break;
