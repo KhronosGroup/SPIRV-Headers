@@ -5219,6 +5219,31 @@
       "version" : "None"
     },
     {
+      "opname" : "OpAssumeTrueKHR",
+      "class"  : "Miscellaneous",
+      "opcode" : 5630,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Condition'" }
+      ],
+      "capabilities" : [ "ExpectAssumeKHR" ],
+      "extensions" : [ "SPV_KHR_expect_assume" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpExpectKHR",
+      "class"  : "Miscellaneous",
+      "opcode" : 5631,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Value'" },
+        { "kind" : "IdRef", "name" : "'ExpectedValue'" }
+      ],
+      "capabilities" : [ "ExpectAssumeKHR" ],
+      "extensions" : [ "SPV_KHR_expect_assume" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpDecorateString",
       "class"  : "Annotation",
       "opcode" : 5632,
@@ -12128,6 +12153,12 @@
           "enumerant" : "VectorAnyINTEL",
           "value" : 5619,
           "extensions" : [ "SPV_INTEL_vector_compute" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ExpectAssumeKHR",
+          "value" : 5629,
+          "extensions" : [ "SPV_KHR_expect_assume" ],
           "version" : "None"
         },
         {
