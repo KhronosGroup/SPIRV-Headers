@@ -9411,6 +9411,13 @@
           "enumerant" : "Import",
           "value" : 1,
           "capabilities" : [ "Linkage" ]
+        },
+        {
+          "enumerant" : "LinkOnceODR",
+          "value" : 2,
+          "capabilities" : [ "Linkage" ],
+          "extensions" : [ "SPV_KHR_linkonce_odr" ],
+          "version" : "None"
         }
       ]
     },

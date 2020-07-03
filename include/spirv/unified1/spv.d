@@ -410,6 +410,7 @@ enum LinkageType : uint
 {
     Export = 0,
     Import = 1,
+    LinkOnceODR = 2,
 }
 
 enum AccessQualifier : uint

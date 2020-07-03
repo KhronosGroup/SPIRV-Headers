@@ -407,6 +407,7 @@ namespace Spv
         {
             Export = 0,
             Import = 1,
+            LinkOnceODR = 2,
         }
 
         public enum AccessQualifier

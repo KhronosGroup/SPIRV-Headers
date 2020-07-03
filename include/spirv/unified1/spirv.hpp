@@ -409,6 +409,7 @@ enum FPRoundingMode {
 enum LinkageType {
     LinkageTypeExport = 0,
     LinkageTypeImport = 1,
+    LinkageTypeLinkOnceODR = 2,
     LinkageTypeMax = 0x7fffffff,
 };
 

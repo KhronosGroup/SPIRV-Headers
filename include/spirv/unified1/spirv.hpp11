@@ -409,6 +409,7 @@ enum class FPRoundingMode : unsigned {
 enum class LinkageType : unsigned {
     Export = 0,
     Import = 1,
+    LinkOnceODR = 2,
     Max = 0x7fffffff,
 };
 

@@ -413,6 +413,7 @@ typedef enum SpvFPRoundingMode_ {
 typedef enum SpvLinkageType_ {
     SpvLinkageTypeExport = 0,
     SpvLinkageTypeImport = 1,
+    SpvLinkageTypeLinkOnceODR = 2,
     SpvLinkageTypeMax = 0x7fffffff,
 } SpvLinkageType;
 
