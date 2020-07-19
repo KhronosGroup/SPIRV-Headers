@@ -972,6 +972,8 @@ enum Capability {
     CapabilityFPGAKernelAttributesINTEL = 5897,
     CapabilityBlockingPipesINTEL = 5945,
     CapabilityFPGARegINTEL = 5948,
+    CapabilityAtomicFloat32AddEXT = 6033,
+    CapabilityAtomicFloat64AddEXT = 6034,
     CapabilityMax = 0x7fffffff,
 };
 
@@ -1584,6 +1586,7 @@ enum Op {
     OpRayQueryGetWorldRayOriginKHR = 6030,
     OpRayQueryGetIntersectionObjectToWorldKHR = 6031,
     OpRayQueryGetIntersectionWorldToObjectKHR = 6032,
+    OpAtomicFAddEXT = 6035,
     OpMax = 0x7fffffff,
 };
 
@@ -2145,6 +2148,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpRayQueryGetWorldRayOriginKHR: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetIntersectionObjectToWorldKHR: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetIntersectionWorldToObjectKHR: *hasResult = true; *hasResultType = true; break;
+    case OpAtomicFAddEXT: *hasResult = true; *hasResultType = true; break;
     }
 }
 #endif /* SPV_ENABLE_UTILITY_CODE */

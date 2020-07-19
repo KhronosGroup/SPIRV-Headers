@@ -976,6 +976,8 @@ namespace Spv
             FPGAKernelAttributesINTEL = 5897,
             BlockingPipesINTEL = 5945,
             FPGARegINTEL = 5948,
+            AtomicFloat32AddEXT = 6033,
+            AtomicFloat64AddEXT = 6034,
         }
 
         public enum RayFlagsShift
@@ -1589,6 +1591,7 @@ namespace Spv
             OpRayQueryGetWorldRayOriginKHR = 6030,
             OpRayQueryGetIntersectionObjectToWorldKHR = 6031,
             OpRayQueryGetIntersectionWorldToObjectKHR = 6032,
+            OpAtomicFAddEXT = 6035,
         }
     }
 }

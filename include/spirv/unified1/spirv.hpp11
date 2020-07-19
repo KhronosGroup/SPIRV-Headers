@@ -972,6 +972,8 @@ enum class Capability : unsigned {
     FPGAKernelAttributesINTEL = 5897,
     BlockingPipesINTEL = 5945,
     FPGARegINTEL = 5948,
+    AtomicFloat32AddEXT = 6033,
+    AtomicFloat64AddEXT = 6034,
     Max = 0x7fffffff,
 };
 
@@ -1584,6 +1586,7 @@ enum class Op : unsigned {
     OpRayQueryGetWorldRayOriginKHR = 6030,
     OpRayQueryGetIntersectionObjectToWorldKHR = 6031,
     OpRayQueryGetIntersectionWorldToObjectKHR = 6032,
+    OpAtomicFAddEXT = 6035,
     Max = 0x7fffffff,
 };
 
@@ -2145,6 +2148,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpRayQueryGetWorldRayOriginKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpRayQueryGetIntersectionObjectToWorldKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpRayQueryGetIntersectionWorldToObjectKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpAtomicFAddEXT: *hasResult = true; *hasResultType = true; break;
     }
 }
 #endif /* SPV_ENABLE_UTILITY_CODE */
