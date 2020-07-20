@@ -976,6 +976,8 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGAKernelAttributesINTEL = 5897,
     SpvCapabilityBlockingPipesINTEL = 5945,
     SpvCapabilityFPGARegINTEL = 5948,
+    SpvCapabilityAtomicFloat32AddEXT = 6033,
+    SpvCapabilityAtomicFloat64AddEXT = 6034,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
 
@@ -1588,6 +1590,7 @@ typedef enum SpvOp_ {
     SpvOpRayQueryGetWorldRayOriginKHR = 6030,
     SpvOpRayQueryGetIntersectionObjectToWorldKHR = 6031,
     SpvOpRayQueryGetIntersectionWorldToObjectKHR = 6032,
+    SpvOpAtomicFAddEXT = 6035,
     SpvOpMax = 0x7fffffff,
 } SpvOp;
 
@@ -2149,6 +2152,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpRayQueryGetWorldRayOriginKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpRayQueryGetIntersectionObjectToWorldKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpRayQueryGetIntersectionWorldToObjectKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpAtomicFAddEXT: *hasResult = true; *hasResultType = true; break;
     }
 }
 #endif /* SPV_ENABLE_UTILITY_CODE */
