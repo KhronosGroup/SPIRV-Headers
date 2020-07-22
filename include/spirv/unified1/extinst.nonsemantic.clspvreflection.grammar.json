@@ -169,7 +169,7 @@
       "opcode" : 17,
       "operands" : [
         { "kind" : "IdRef", "name" : "Offset" },
-        { "size" : "IdRef", "name" : "Size" }
+        { "kind" : "IdRef", "name" : "Size" }
       ]
     },
     {
@@ -177,7 +177,7 @@
       "opcode" : 18,
       "operands" : [
         { "kind" : "IdRef", "name" : "Offset" },
-        { "size" : "IdRef", "name" : "Size" }
+        { "kind" : "IdRef", "name" : "Size" }
       ]
     },
     {
@@ -185,7 +185,7 @@
       "opcode" : 19,
       "operands" : [
         { "kind" : "IdRef", "name" : "Offset" },
-        { "size" : "IdRef", "name" : "Size" }
+        { "kind" : "IdRef", "name" : "Size" }
       ]
     },
     {
@@ -193,7 +193,7 @@
       "opcode" : 20,
       "operands" : [
         { "kind" : "IdRef", "name" : "Offset" },
-        { "size" : "IdRef", "name" : "Size" }
+        { "kind" : "IdRef", "name" : "Size" }
       ]
     },
     {
