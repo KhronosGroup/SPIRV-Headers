@@ -4245,6 +4245,22 @@
       "version" : "None"
     },
     {
+      "opname" : "OpIgnoreIntersectionKHR",
+      "class"  : "Reserved",
+      "opcode" : 4448,
+      "capabilities" : [ "RayTracingKHR" ],
+      "extensions" : [ "SPV_KHR_ray_tracing" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTerminateRayKHR",
+      "class"  : "Reserved",
+      "opcode" : 4449,
+      "capabilities" : [ "RayTracingKHR" ],
+      "extensions" : [ "SPV_KHR_ray_tracing" ],
+      "version" : "None"
+    },
+    {
         "opname" : "OpTypeRayQueryKHR",
         "class" : "Reserved",
         "opcode" : 4472,
@@ -4616,32 +4632,16 @@
       "opname" : "OpIgnoreIntersectionNV",
       "class"  : "Reserved",
       "opcode" : 5335,
-      "capabilities" : [ "RayTracingNV" , "RayTracingKHR" ],
-      "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
-      "version" : "None"
-    },
-    {
-      "opname" : "OpIgnoreIntersectionKHR",
-      "class"  : "Reserved",
-      "opcode" : 5335,
-      "capabilities" : [ "RayTracingNV" , "RayTracingKHR" ],
-      "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
+      "capabilities" : [ "RayTracingNV" ],
+      "extensions" : [ "SPV_NV_ray_tracing" ],
       "version" : "None"
     },
     {
       "opname" : "OpTerminateRayNV",
       "class"  : "Reserved",
       "opcode" : 5336,
-      "capabilities" : [ "RayTracingNV" , "RayTracingKHR" ],
-      "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
-      "version" : "None"
-    },
-    {
-      "opname" : "OpTerminateRayKHR",
-      "class"  : "Reserved",
-      "opcode" : 5336,
-      "capabilities" : [ "RayTracingNV" , "RayTracingKHR" ],
-      "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
+      "capabilities" : [ "RayTracingNV" ],
+      "extensions" : [ "SPV_NV_ray_tracing" ],
       "version" : "None"
     },
     {

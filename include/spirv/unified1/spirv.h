@@ -1407,6 +1407,8 @@ typedef enum SpvOp_ {
     SpvOpTraceRayKHR = 4445,
     SpvOpExecuteCallableKHR = 4446,
     SpvOpConvertUToAccelerationStructureKHR = 4447,
+    SpvOpIgnoreIntersectionKHR = 4448,
+    SpvOpTerminateRayKHR = 4449,
     SpvOpTypeRayQueryKHR = 4472,
     SpvOpRayQueryInitializeKHR = 4473,
     SpvOpRayQueryTerminateKHR = 4474,
@@ -1430,9 +1432,7 @@ typedef enum SpvOp_ {
     SpvOpWritePackedPrimitiveIndices4x8NV = 5299,
     SpvOpReportIntersectionKHR = 5334,
     SpvOpReportIntersectionNV = 5334,
-    SpvOpIgnoreIntersectionKHR = 5335,
     SpvOpIgnoreIntersectionNV = 5335,
-    SpvOpTerminateRayKHR = 5336,
     SpvOpTerminateRayNV = 5336,
     SpvOpTraceNV = 5337,
     SpvOpTypeAccelerationStructureKHR = 5341,
@@ -1979,6 +1979,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpIgnoreIntersectionKHR: *hasResult = false; *hasResultType = false; break;
+    case SpvOpTerminateRayKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpTypeRayQueryKHR: *hasResult = true; *hasResultType = false; break;
     case SpvOpRayQueryInitializeKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpRayQueryTerminateKHR: *hasResult = false; *hasResultType = false; break;
