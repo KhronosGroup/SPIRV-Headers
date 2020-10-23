@@ -27,7 +27,7 @@
   "magic_number" : "0x07230203",
   "major_version" : 1,
   "minor_version" : 5,
-  "revision" : 3,
+  "revision" : 4,
   "instruction_printing_class" : [
     {
       "tag"     : "@exclude"
