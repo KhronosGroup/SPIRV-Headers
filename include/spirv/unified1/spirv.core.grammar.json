@@ -9765,6 +9765,16 @@
           "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
           "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "BufferLocationINTEL",
+          "value" : 5921,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Buffer Location ID'" }
+          ],
+          "capabilities" : [ "FPGABufferLocationINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_buffer_location" ],
+          "version" : "None"
         }
       ]
     },
@@ -11640,6 +11650,12 @@
           "enumerant" : "FPGAKernelAttributesINTEL",
           "value" : 5897,
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGABufferLocationINTEL",
+          "value" : 5920,
+          "extensions" : [ "SPV_INTEL_fpga_buffer_location" ],
           "version" : "None"
         },
         {
