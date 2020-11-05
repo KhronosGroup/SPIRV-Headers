@@ -6766,6 +6766,32 @@
       "version" : "None"
     },
     {
+      "opname" : "OpPtrCastToCrossWorkgroupINTEL",
+      "class"  : "@exclude",
+      "opcode" : 5934,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Pointer'" }
+      ],
+      "capabilities" : [ "USMStorageClassesINTEL" ],
+      "extensions" : [ "SPV_INTEL_usm_storage_classes" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCrossWorkgroupCastToPtrINTEL",
+      "class"  : "@exclude",
+      "opcode" : 5938,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Pointer'" }
+      ],
+      "capabilities" : [ "USMStorageClassesINTEL" ],
+      "extensions" : [ "SPV_INTEL_usm_storage_classes" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpReadPipeBlockingINTEL",
       "class"  : "Pipe",
       "opcode" : 5946,
@@ -8619,6 +8645,24 @@
           "value" : 5605,
           "extensions" : [ "SPV_INTEL_function_pointers" ],
           "capabilities" : [ "FunctionPointersINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DeviceOnlyINTEL",
+          "value" : 5936,
+          "extensions" : [
+            "SPV_INTEL_usm_storage_classes"
+          ],
+          "capabilities" : [ "USMStorageClassesINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HostOnlyINTEL",
+          "value" : 5937,
+          "extensions" : [
+            "SPV_INTEL_usm_storage_classes"
+          ],
+          "capabilities" : [ "USMStorageClassesINTEL" ],
           "version" : "None"
         }
       ]
@@ -11728,6 +11772,12 @@
           "enumerant" : "FPGABufferLocationINTEL",
           "value" : 5920,
           "extensions" : [ "SPV_INTEL_fpga_buffer_location" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "USMStorageClassesINTEL",
+          "value" : 5935,
+          "extensions" : [ "SPV_INTEL_usm_storage_classes" ],
           "version" : "None"
         },
         {
