@@ -6755,6 +6755,42 @@
       "version" : "None"
     },
     {
+      "opname" : "OpVariableLengthArrayINTEL",
+      "class"  : "@exclude",
+      "opcode" : 5818,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Lenght'" }
+      ],
+      "capabilities" : [ "VariableLengthArrayINTEL" ],
+      "extensions" : [ "SPV_INTEL_variable_length_array" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSaveMemoryINTEL",
+      "class"  : "@exclude",
+      "opcode" : 5819,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "VariableLengthArrayINTEL" ],
+      "extensions" : [ "SPV_INTEL_variable_length_array" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRestoreMemoryINTEL",
+      "class"  : "@exclude",
+      "opcode" : 5820,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Ptr'" }
+      ],
+      "capabilities" : [ "VariableLengthArrayINTEL" ],
+      "extensions" : [ "SPV_INTEL_variable_length_array" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpLoopControlINTEL",
       "class"  : "Reserved",
       "opcode" : 5887,
@@ -11730,6 +11766,12 @@
           "enumerant" : "SubgroupAvcMotionEstimationChromaINTEL",
           "value" : 5698,
           "extensions" : [ "SPV_INTEL_device_side_avc_motion_estimation" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "VariableLengthArrayINTEL",
+          "value" : 5817,
+          "extensions" : [ "SPV_INTEL_variable_length_array" ],
           "version" : "None"
         },
         {
