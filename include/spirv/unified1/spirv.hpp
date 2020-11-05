@@ -406,6 +406,38 @@ enum FPRoundingMode {
     FPRoundingModeMax = 0x7fffffff,
 };
 
+enum FPDenormMode {
+    FPDenormModePreserve = 0,
+    FPDenormModeFlushToZero = 1,
+    FPDenormModeMax = 0x7fffffff,
+};
+
+enum FPOperationMode {
+    FPOperationModeIEEE = 0,
+    FPOperationModeALT = 1,
+    FPOperationModeMax = 0x7fffffff,
+};
+
+enum QuantizationModes {
+    QuantizationModesTRN = 0,
+    QuantizationModesTRN_ZERO = 1,
+    QuantizationModesRND = 2,
+    QuantizationModesRND_ZERO = 3,
+    QuantizationModesRND_INF = 4,
+    QuantizationModesRND_MIN_INF = 5,
+    QuantizationModesRND_CONV = 6,
+    QuantizationModesRND_CONV_ODD = 7,
+    QuantizationModesMax = 0x7fffffff,
+};
+
+enum OverflowModes {
+    OverflowModesWRAP = 0,
+    OverflowModesSAT = 1,
+    OverflowModesSAT_ZERO = 2,
+    OverflowModesSAT_SYM = 3,
+    OverflowModesMax = 0x7fffffff,
+};
+
 enum LinkageType {
     LinkageTypeExport = 0,
     LinkageTypeImport = 1,
@@ -1025,6 +1057,7 @@ enum Capability {
     CapabilityFPGAMemoryAttributesINTEL = 5824,
     CapabilityFPFastMathModeINTEL = 5837,
     CapabilityArbitraryPrecisionIntegersINTEL = 5844,
+    CapabilityArbitraryPrecisionFloatingPointINTEL = 5845,
     CapabilityUnstructuredLoopControlsINTEL = 5886,
     CapabilityFPGALoopControlsINTEL = 5888,
     CapabilityKernelAttributesINTEL = 5892,
@@ -1033,6 +1066,7 @@ enum Capability {
     CapabilityFPGAClusterAttributesINTEL = 5904,
     CapabilityLoopFuseINTEL = 5906,
     CapabilityFPGABufferLocationINTEL = 5920,
+    CapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     CapabilityUSMStorageClassesINTEL = 5935,
     CapabilityIOPipesINTEL = 5943,
     CapabilityBlockingPipesINTEL = 5945,
@@ -1104,18 +1138,6 @@ enum FragmentShadingRateMask {
     FragmentShadingRateVertical4PixelsMask = 0x00000002,
     FragmentShadingRateHorizontal2PixelsMask = 0x00000004,
     FragmentShadingRateHorizontal4PixelsMask = 0x00000008,
-};
-
-enum FPDenormMode {
-    FPDenormModePreserve = 0,
-    FPDenormModeFlushToZero = 1,
-    FPDenormModeMax = 0x7fffffff,
-};
-
-enum FPOperationMode {
-    FPOperationModeIEEE = 0,
-    FPOperationModeALT = 1,
-    FPOperationModeMax = 0x7fffffff,
 };
 
 enum Op {
@@ -1671,7 +1693,59 @@ enum Op {
     OpVariableLengthArrayINTEL = 5818,
     OpSaveMemoryINTEL = 5819,
     OpRestoreMemoryINTEL = 5820,
+    OpArbitraryFloatSinCosPiINTEL = 5840,
+    OpArbitraryFloatCastINTEL = 5841,
+    OpArbitraryFloatCastFromIntINTEL = 5842,
+    OpArbitraryFloatCastToIntINTEL = 5843,
+    OpArbitraryFloatAddINTEL = 5846,
+    OpArbitraryFloatSubINTEL = 5847,
+    OpArbitraryFloatMulINTEL = 5848,
+    OpArbitraryFloatDivINTEL = 5849,
+    OpArbitraryFloatGTINTEL = 5850,
+    OpArbitraryFloatGEINTEL = 5851,
+    OpArbitraryFloatLTINTEL = 5852,
+    OpArbitraryFloatLEINTEL = 5853,
+    OpArbitraryFloatEQINTEL = 5854,
+    OpArbitraryFloatRecipINTEL = 5855,
+    OpArbitraryFloatRSqrtINTEL = 5856,
+    OpArbitraryFloatCbrtINTEL = 5857,
+    OpArbitraryFloatHypotINTEL = 5858,
+    OpArbitraryFloatSqrtINTEL = 5859,
+    OpArbitraryFloatLogINTEL = 5860,
+    OpArbitraryFloatLog2INTEL = 5861,
+    OpArbitraryFloatLog10INTEL = 5862,
+    OpArbitraryFloatLog1pINTEL = 5863,
+    OpArbitraryFloatExpINTEL = 5864,
+    OpArbitraryFloatExp2INTEL = 5865,
+    OpArbitraryFloatExp10INTEL = 5866,
+    OpArbitraryFloatExpm1INTEL = 5867,
+    OpArbitraryFloatSinINTEL = 5868,
+    OpArbitraryFloatCosINTEL = 5869,
+    OpArbitraryFloatSinCosINTEL = 5870,
+    OpArbitraryFloatSinPiINTEL = 5871,
+    OpArbitraryFloatCosPiINTEL = 5872,
+    OpArbitraryFloatASinINTEL = 5873,
+    OpArbitraryFloatASinPiINTEL = 5874,
+    OpArbitraryFloatACosINTEL = 5875,
+    OpArbitraryFloatACosPiINTEL = 5876,
+    OpArbitraryFloatATanINTEL = 5877,
+    OpArbitraryFloatATanPiINTEL = 5878,
+    OpArbitraryFloatATan2INTEL = 5879,
+    OpArbitraryFloatPowINTEL = 5880,
+    OpArbitraryFloatPowRINTEL = 5881,
+    OpArbitraryFloatPowNINTEL = 5882,
     OpLoopControlINTEL = 5887,
+    OpFixedSqrtINTEL = 5923,
+    OpFixedRecipINTEL = 5924,
+    OpFixedRsqrtINTEL = 5925,
+    OpFixedSinINTEL = 5926,
+    OpFixedCosINTEL = 5927,
+    OpFixedSinCosINTEL = 5928,
+    OpFixedSinPiINTEL = 5929,
+    OpFixedCosPiINTEL = 5930,
+    OpFixedSinCosPiINTEL = 5931,
+    OpFixedLogINTEL = 5932,
+    OpFixedExpINTEL = 5933,
     OpPtrCastToCrossWorkgroupINTEL = 5934,
     OpCrossWorkgroupCastToPtrINTEL = 5938,
     OpReadPipeBlockingINTEL = 5946,
@@ -2255,9 +2329,61 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpVariableLengthArrayINTEL: *hasResult = true; *hasResultType = true; break;
     case OpSaveMemoryINTEL: *hasResult = true; *hasResultType = true; break;
     case OpRestoreMemoryINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpArbitraryFloatSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatCastINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatCastFromIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatCastToIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatAddINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatSubINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatMulINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatDivINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatGTINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatGEINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatLTINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatLEINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatEQINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatRecipINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatRSqrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatCbrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatHypotINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatSqrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatLogINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatLog2INTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatLog10INTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatLog1pINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatExpINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatExp2INTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatExp10INTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatExpm1INTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatSinINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatCosINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatSinCosINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatSinPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatCosPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatASinINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatASinPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatACosINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatACosPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatATanINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatATanPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatATan2INTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatPowINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatPowRINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatPowNINTEL: *hasResult = true; *hasResultType = true; break;
     case OpLoopControlINTEL: *hasResult = false; *hasResultType = false; break;
     case OpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
     case OpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedSqrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedRecipINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedRsqrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedSinINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedCosINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedSinCosINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedSinPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedCosPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedLogINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedExpINTEL: *hasResult = true; *hasResultType = true; break;
     case OpReadPipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
     case OpWritePipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
     case OpFPGARegINTEL: *hasResult = true; *hasResultType = true; break;

@@ -403,6 +403,38 @@ namespace Spv
             RTN = 3,
         }
 
+        public enum FPDenormMode
+        {
+            Preserve = 0,
+            FlushToZero = 1,
+        }
+
+        public enum FPOperationMode
+        {
+            IEEE = 0,
+            ALT = 1,
+        }
+
+        public enum QuantizationModes
+        {
+            TRN = 0,
+            TRN_ZERO = 1,
+            RND = 2,
+            RND_ZERO = 3,
+            RND_INF = 4,
+            RND_MIN_INF = 5,
+            RND_CONV = 6,
+            RND_CONV_ODD = 7,
+        }
+
+        public enum OverflowModes
+        {
+            WRAP = 0,
+            SAT = 1,
+            SAT_ZERO = 2,
+            SAT_SYM = 3,
+        }
+
         public enum LinkageType
         {
             Export = 0,
@@ -1029,6 +1061,7 @@ namespace Spv
             FPGAMemoryAttributesINTEL = 5824,
             FPFastMathModeINTEL = 5837,
             ArbitraryPrecisionIntegersINTEL = 5844,
+            ArbitraryPrecisionFloatingPointINTEL = 5845,
             UnstructuredLoopControlsINTEL = 5886,
             FPGALoopControlsINTEL = 5888,
             KernelAttributesINTEL = 5892,
@@ -1037,6 +1070,7 @@ namespace Spv
             FPGAClusterAttributesINTEL = 5904,
             LoopFuseINTEL = 5906,
             FPGABufferLocationINTEL = 5920,
+            ArbitraryPrecisionFixedPointINTEL = 5922,
             USMStorageClassesINTEL = 5935,
             IOPipesINTEL = 5943,
             BlockingPipesINTEL = 5945,
@@ -1109,18 +1143,6 @@ namespace Spv
             Vertical4Pixels = 0x00000002,
             Horizontal2Pixels = 0x00000004,
             Horizontal4Pixels = 0x00000008,
-        }
-
-        public enum FPDenormMode
-        {
-            Preserve = 0,
-            FlushToZero = 1,
-        }
-
-        public enum FPOperationMode
-        {
-            IEEE = 0,
-            ALT = 1,
         }
 
         public enum Op
@@ -1677,7 +1699,59 @@ namespace Spv
             OpVariableLengthArrayINTEL = 5818,
             OpSaveMemoryINTEL = 5819,
             OpRestoreMemoryINTEL = 5820,
+            OpArbitraryFloatSinCosPiINTEL = 5840,
+            OpArbitraryFloatCastINTEL = 5841,
+            OpArbitraryFloatCastFromIntINTEL = 5842,
+            OpArbitraryFloatCastToIntINTEL = 5843,
+            OpArbitraryFloatAddINTEL = 5846,
+            OpArbitraryFloatSubINTEL = 5847,
+            OpArbitraryFloatMulINTEL = 5848,
+            OpArbitraryFloatDivINTEL = 5849,
+            OpArbitraryFloatGTINTEL = 5850,
+            OpArbitraryFloatGEINTEL = 5851,
+            OpArbitraryFloatLTINTEL = 5852,
+            OpArbitraryFloatLEINTEL = 5853,
+            OpArbitraryFloatEQINTEL = 5854,
+            OpArbitraryFloatRecipINTEL = 5855,
+            OpArbitraryFloatRSqrtINTEL = 5856,
+            OpArbitraryFloatCbrtINTEL = 5857,
+            OpArbitraryFloatHypotINTEL = 5858,
+            OpArbitraryFloatSqrtINTEL = 5859,
+            OpArbitraryFloatLogINTEL = 5860,
+            OpArbitraryFloatLog2INTEL = 5861,
+            OpArbitraryFloatLog10INTEL = 5862,
+            OpArbitraryFloatLog1pINTEL = 5863,
+            OpArbitraryFloatExpINTEL = 5864,
+            OpArbitraryFloatExp2INTEL = 5865,
+            OpArbitraryFloatExp10INTEL = 5866,
+            OpArbitraryFloatExpm1INTEL = 5867,
+            OpArbitraryFloatSinINTEL = 5868,
+            OpArbitraryFloatCosINTEL = 5869,
+            OpArbitraryFloatSinCosINTEL = 5870,
+            OpArbitraryFloatSinPiINTEL = 5871,
+            OpArbitraryFloatCosPiINTEL = 5872,
+            OpArbitraryFloatASinINTEL = 5873,
+            OpArbitraryFloatASinPiINTEL = 5874,
+            OpArbitraryFloatACosINTEL = 5875,
+            OpArbitraryFloatACosPiINTEL = 5876,
+            OpArbitraryFloatATanINTEL = 5877,
+            OpArbitraryFloatATanPiINTEL = 5878,
+            OpArbitraryFloatATan2INTEL = 5879,
+            OpArbitraryFloatPowINTEL = 5880,
+            OpArbitraryFloatPowRINTEL = 5881,
+            OpArbitraryFloatPowNINTEL = 5882,
             OpLoopControlINTEL = 5887,
+            OpFixedSqrtINTEL = 5923,
+            OpFixedRecipINTEL = 5924,
+            OpFixedRsqrtINTEL = 5925,
+            OpFixedSinINTEL = 5926,
+            OpFixedCosINTEL = 5927,
+            OpFixedSinCosINTEL = 5928,
+            OpFixedSinPiINTEL = 5929,
+            OpFixedCosPiINTEL = 5930,
+            OpFixedSinCosPiINTEL = 5931,
+            OpFixedLogINTEL = 5932,
+            OpFixedExpINTEL = 5933,
             OpPtrCastToCrossWorkgroupINTEL = 5934,
             OpCrossWorkgroupCastToPtrINTEL = 5938,
             OpReadPipeBlockingINTEL = 5946,
