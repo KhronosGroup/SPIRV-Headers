@@ -9915,6 +9915,16 @@
           "capabilities" : [ "FPGABufferLocationINTEL" ],
           "extensions" : [ "SPV_INTEL_fpga_buffer_location" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "IOPipeStorageINTEL",
+          "value" : 5944,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'IO Pipe ID'" }
+          ],
+          "capabilities" : [ "IOPipesINTEL" ],
+          "extensions" : [ "SPV_INTEL_io_pipes" ],
+          "version" : "None"
         }
       ]
     },
@@ -11820,6 +11830,12 @@
           "enumerant" : "USMStorageClassesINTEL",
           "value" : 5935,
           "extensions" : [ "SPV_INTEL_usm_storage_classes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "IOPipesINTEL",
+          "value" : 5943,
+          "extensions" : [ "SPV_INTEL_io_pipes" ],
           "version" : "None"
         },
         {
