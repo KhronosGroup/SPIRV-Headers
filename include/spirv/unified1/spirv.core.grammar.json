@@ -9907,6 +9907,40 @@
           "version" : "None"
         },
         {
+          "enumerant" : "BurstCoalesceINTEL",
+          "value" : 5899,
+          "capabilities" : [ "FPGAMemoryAccessesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_accesses" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CacheSizeINTEL",
+          "value" : 5900,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Cache Size in bytes'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAccessesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_accesses" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DontStaticallyCoalesceINTEL",
+          "value" : 5901,
+          "capabilities" : [ "FPGAMemoryAccessesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_accesses" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PrefetchINTEL",
+          "value" : 5902,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Prefetcher Size in bytes'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAccessesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_memory_accesses" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "BufferLocationINTEL",
           "value" : 5921,
           "parameters" : [
@@ -11818,6 +11852,12 @@
           "enumerant" : "FPGAKernelAttributesINTEL",
           "value" : 5897,
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGAMemoryAccessesINTEL",
+          "value" : 5898,
+          "extensions" : [ "SPV_INTEL_fpga_memory_accesses" ],
           "version" : "None"
         },
         {
