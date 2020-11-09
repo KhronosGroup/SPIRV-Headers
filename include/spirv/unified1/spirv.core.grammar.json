@@ -8490,6 +8490,46 @@
           "version" : "None"
         },
         {
+          "enumerant" : "RoundingModeRTPINTEL",
+          "value" : 5620,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Target Width'" }
+          ],
+          "capabilities" : [ "RoundToInfinityINTEL" ],
+          "extensions" : [ "SPV_INTEL_float_controls2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RoundingModeRTNINTEL",
+          "value" : 5621,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Target Width'" }
+          ],
+          "capabilities" : [ "RoundToInfinityINTEL" ],
+          "extensions" : [ "SPV_INTEL_float_controls2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FloatingPointModeALTINTEL",
+          "value" : 5622,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Target Width'" }
+          ],
+          "capabilities" : [ "RoundToInfinityINTEL" ],
+          "extensions" : [ "SPV_INTEL_float_controls2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FloatingPointModeIEEEINTEL",
+          "value" : 5623,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Target Width'" }
+          ],
+          "capabilities" : [ "RoundToInfinityINTEL" ],
+          "extensions" : [ "SPV_INTEL_float_controls2" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "MaxWorkgroupSizeINTEL",
           "value" : 5893,
           "parameters" : [
@@ -9246,6 +9286,34 @@
     },
     {
       "category" : "ValueEnum",
+      "kind" : "FPDenormMode",
+      "enumerants" : [
+        {
+          "enumerant" : "Preserve",
+          "value" : 0
+        },
+        {
+          "enumerant" : "FlushToZero",
+          "value" : 1
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "FPOperationMode",
+      "enumerants" : [
+        {
+          "enumerant" : "IEEE",
+          "value" : 0
+        },
+        {
+          "enumerant" : "ALT",
+          "value" : 1
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
       "kind" : "LinkageType",
       "enumerants" : [
         {
@@ -9869,6 +9937,28 @@
           "version" : "None"
         },
         {
+          "enumerant" : "FunctionRoundingModeINTEL",
+          "value" : 5822,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Target Width'" },
+            { "kind" : "FPRoundingMode", "name" : "'FP Rounding Mode'" }
+          ],
+          "capabilities" : [ "FunctionFloatControlINTEL" ],
+          "extensions" : [ "SPV_INTEL_float_controls2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FunctionDenormModeINTEL",
+          "value" : 5823,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Target Width'" },
+            { "kind" : "FPDenormMode", "name" : "'FP Denorm Mode'" }
+          ],
+          "capabilities" : [ "FunctionFloatControlINTEL" ],
+          "extensions" : [ "SPV_INTEL_float_controls2" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "RegisterINTEL",
           "value" : 5825,
           "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
@@ -10029,6 +10119,17 @@
           ],
           "capabilities" : [ "IOPipesINTEL" ],
           "extensions" : [ "SPV_INTEL_io_pipes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FunctionFloatingPointModeINTEL",
+          "value" : 6080,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Target Width'" },
+            { "kind" : "FPOperationMode", "name" : "'FP Operation Mode'" }
+          ],
+          "capabilities" : [ "FunctionFloatControlINTEL" ],
+          "extensions" : [ "SPV_INTEL_float_controls2" ],
           "version" : "None"
         },
         {
@@ -11855,6 +11956,18 @@
           "version" : "None"
         },
         {
+          "enumerant" : "RoundToInfinityINTEL",
+          "value" : 5582,
+          "extensions" : [ "SPV_INTEL_float_controls2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FloatingPointModeINTEL",
+          "value" : 5583,
+          "extensions" : [ "SPV_INTEL_float_controls2" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "IntegerFunctions2INTEL",
           "value" : 5584,
           "capabilities" : [ "Shader" ],
@@ -11914,6 +12027,12 @@
           "enumerant" : "VariableLengthArrayINTEL",
           "value" : 5817,
           "extensions" : [ "SPV_INTEL_variable_length_array" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FunctionFloatControlINTEL",
+          "value" : 5821,
+          "extensions" : [ "SPV_INTEL_float_controls2" ],
           "version" : "None"
         },
         {
