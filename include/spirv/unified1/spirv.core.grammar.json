@@ -7204,6 +7204,16 @@
       "capabilities" : [ "AtomicFloat32AddEXT", "AtomicFloat64AddEXT" ],
       "extensions" : [ "SPV_EXT_shader_atomic_float_add" ],
       "version" : "None"
+    },
+    {
+      "opname" : "OpTypeBufferSurfaceINTEL",
+      "class"  : "Type-Declaration",
+      "opcode" : 6086,
+      "operands" : [
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "VectorComputeINTEL" ],
+      "version" : "None"
     }
   ],
   "operand_kinds" : [
@@ -8470,6 +8480,16 @@
           "version" : "None"
         },
         {
+          "enumerant" : "SharedLocalMemorySizeINTEL",
+          "value" : 5618,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Size'" }
+          ],
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "MaxWorkgroupSizeINTEL",
           "value" : 5893,
           "parameters" : [
@@ -9731,6 +9751,16 @@
           "version" : "1.5"
         },
         {
+          "enumerant" : "SIMTCallINTEL",
+          "value" : 5599,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'N'" }
+          ],
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "ReferencedIndirectlyINTEL",
           "value" : 5602,
           "capabilities" : [ "IndirectReferencesINTEL" ],
@@ -9752,6 +9782,47 @@
           "value" : 5608,
           "capabilities" : [ "AsmINTEL" ],
           "extensions" : [ "SPV_INTEL_inline_assembly" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "VectorComputeVariableINTEL",
+          "value" : 5624,
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FuncParamIOKindINTEL",
+          "value" : 5625,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Kind'" }
+          ],
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "VectorComputeFunctionINTEL",
+          "value" : 5626,
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "StackCallINTEL",
+          "value" : 5627,
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GlobalVariableOffsetINTEL",
+          "value" : 5628,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Offset'" }
+          ],
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
           "version" : "None"
         },
         {
@@ -9958,6 +10029,20 @@
           ],
           "capabilities" : [ "IOPipesINTEL" ],
           "extensions" : [ "SPV_INTEL_io_pipes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SingleElementVectorINTEL",
+          "value" : 6085,
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "VectorComputeCallableFunctionINTEL",
+          "value" : 6087,
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
           "version" : "None"
         }
       ]
@@ -11783,15 +11868,28 @@
           "version" : "None"
         },
         {
+          "enumerant" : "IndirectReferencesINTEL",
+          "value" : 5604,
+          "extensions" : [ "SPV_INTEL_function_pointers" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "AsmINTEL",
           "value" : 5606,
           "extensions" : [ "SPV_INTEL_inline_assembly" ],
           "version" : "None"
         },
         {
-          "enumerant" : "IndirectReferencesINTEL",
-          "value" : 5604,
-          "extensions" : [ "SPV_INTEL_function_pointers" ],
+          "enumerant" : "VectorComputeINTEL",
+          "value" : 5617,
+          "capabilities" : [ "VectorAnyINTEL" ],
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "VectorAnyINTEL",
+          "value" : 5619,
+          "extensions" : [ "SPV_INTEL_vector_compute" ],
           "version" : "None"
         },
         {
