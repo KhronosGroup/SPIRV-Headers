@@ -8567,6 +8567,16 @@
           "capabilities" : [ "FPGAKernelAttributesINTEL" ],
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "SchedulerTargetFmaxMhzINTEL",
+          "value" : 5903,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'target_fmax'" }
+          ],
+          "capabilities" : [ "FPGAKernelAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
         }
       ]
     },
