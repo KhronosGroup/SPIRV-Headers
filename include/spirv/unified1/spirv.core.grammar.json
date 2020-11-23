@@ -7553,6 +7553,16 @@
           "capabilities" : [ "FPGALoopControlsINTEL" ],
           "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "NoFusionINTEL",
+          "value" : "0x800000",
+          "parameters" : [
+            { "kind" : "LiteralInteger" }
+          ],
+          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "version" : "None"
         }
       ]
     },
