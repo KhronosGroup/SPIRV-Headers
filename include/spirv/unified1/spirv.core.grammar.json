@@ -7394,6 +7394,18 @@
           "enumerant" : "Fast",
           "value" : "0x0010",
           "capabilities" : [ "Kernel" ]
+        },
+        {
+          "enumerant" : "AllowContractFastINTEL",
+          "value" : "0x10000",
+          "capabilities" : [ "FPFastMathModeINTEL" ],
+          "extensions" : [ "SPV_INTEL_fp_fast_math_mode" ]
+        },
+        {
+          "enumerant" : "AllowReassocINTEL",
+          "value" : "0x20000",
+          "capabilities" : [ "FPFastMathModeINTEL" ],
+          "extensions" : [ "SPV_INTEL_fp_fast_math_mode" ]
         }
       ]
     },
@@ -10122,6 +10134,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "StallEnableINTEL",
+          "value" : 5905,
+          "capabilities" : [ "FPGAClusterAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_cluster_attributes" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "BufferLocationINTEL",
           "value" : 5921,
           "parameters" : [
@@ -12062,6 +12081,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "FPFastMathModeINTEL",
+          "value" : 5837,
+          "capabilities" : [ "Kernel" ],
+          "extensions" : [ "SPV_INTEL_fp_fast_math_mode" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "ArbitraryPrecisionIntegersINTEL",
           "value" : 5844,
           "extensions" : [ "SPV_INTEL_arbitrary_precision_integers" ],
@@ -12095,6 +12121,12 @@
           "enumerant" : "FPGAMemoryAccessesINTEL",
           "value" : 5898,
           "extensions" : [ "SPV_INTEL_fpga_memory_accesses" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGAClusterAttributesINTEL",
+          "value" : 5904,
+          "extensions" : [ "SPV_INTEL_fpga_cluster_attributes" ],
           "version" : "None"
         },
         {
