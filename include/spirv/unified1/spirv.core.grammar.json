@@ -10431,15 +10431,8 @@
         {
           "enumerant" : "HitTNV",
           "value" : 5332,
-          "capabilities" : [ "RayTracingNV" , "RayTracingKHR" ],
-          "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
-          "version" : "None"
-        },
-        {
-          "enumerant" : "HitTKHR",
-          "value" : 5332,
-          "capabilities" : [ "RayTracingNV" , "RayTracingKHR" ],
-          "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
+          "capabilities" : [ "RayTracingNV" ],
+          "extensions" : [ "SPV_NV_ray_tracing" ],
           "version" : "None"
         },
         {
