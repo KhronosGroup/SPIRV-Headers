@@ -618,7 +618,6 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInObjectToWorldNV = 5330,
     SpvBuiltInWorldToObjectKHR = 5331,
     SpvBuiltInWorldToObjectNV = 5331,
-    SpvBuiltInHitTKHR = 5332,
     SpvBuiltInHitTNV = 5332,
     SpvBuiltInHitKindKHR = 5333,
     SpvBuiltInHitKindNV = 5333,

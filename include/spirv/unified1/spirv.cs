@@ -612,7 +612,6 @@ namespace Spv
             ObjectToWorldNV = 5330,
             WorldToObjectKHR = 5331,
             WorldToObjectNV = 5331,
-            HitTKHR = 5332,
             HitTNV = 5332,
             HitKindKHR = 5333,
             HitKindNV = 5333,
