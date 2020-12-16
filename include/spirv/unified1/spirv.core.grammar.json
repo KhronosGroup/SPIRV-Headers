@@ -7214,6 +7214,36 @@
       ],
       "capabilities" : [ "VectorComputeINTEL" ],
       "version" : "None"
+    },
+    {
+      "opname" : "OpTypeStructContinuedINTEL",
+      "class"  : "Type-Declaration",
+      "opcode" : 6090,
+      "operands" : [
+        { "kind" : "IdRef",    "quantifier" : "*", "name" : "'Member 0 type', +\n'member 1 type', +\n..." }
+      ],
+      "capabilities" : [ "LongConstantCompositeINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConstantCompositeContinuedINTEL",
+      "class"  : "Constant-Creation",
+      "opcode" : 6091,
+      "operands" : [
+        { "kind" : "IdRef",        "quantifier" : "*", "name" : "'Constituents'" }
+      ],
+      "capabilities" : [ "LongConstantCompositeINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSpecConstantCompositeContinuedINTEL",
+      "class"  : "Constant-Creation",
+      "opcode" : 6092,
+      "operands" : [
+        { "kind" : "IdRef",        "quantifier" : "*", "name" : "'Constituents'" }
+      ],
+      "capabilities" : [ "LongConstantCompositeINTEL" ],
+      "version" : "None"
     }
   ],
   "operand_kinds" : [
@@ -12184,6 +12214,12 @@
           "value" : 6034,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_EXT_shader_atomic_float_add" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "LongConstantCompositeINTEL",
+          "value" : 6089,
+          "extensions" : [ "SPV_INTEL_long_constant_composite" ],
           "version" : "None"
         }
       ]
