@@ -10141,6 +10141,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "FuseLoopsInFunctionINTEL",
+          "value" : 5907,
+          "capabilities" : [ "LoopFuseINTEL" ],
+          "extensions" : [ "SPV_INTEL_loop_fuse" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "BufferLocationINTEL",
           "value" : 5921,
           "parameters" : [
@@ -12127,6 +12134,12 @@
           "enumerant" : "FPGAClusterAttributesINTEL",
           "value" : 5904,
           "extensions" : [ "SPV_INTEL_fpga_cluster_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "LoopFuseINTEL",
+          "value" : 5906,
+          "extensions" : [ "SPV_INTEL_loop_fuse" ],
           "version" : "None"
         },
         {
