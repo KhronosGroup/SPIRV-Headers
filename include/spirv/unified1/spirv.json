@@ -1030,7 +1030,8 @@
                     "FPGARegINTEL": 5948,
                     "AtomicFloat32AddEXT": 6033,
                     "AtomicFloat64AddEXT": 6034,
-                    "LongConstantCompositeINTEL": 6089
+                    "LongConstantCompositeINTEL": 6089,
+                    "AtomicFloat16AddEXT": 6095
                 }
             },
             {

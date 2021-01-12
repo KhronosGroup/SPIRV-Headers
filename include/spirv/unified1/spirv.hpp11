@@ -1044,6 +1044,7 @@ enum class Capability : unsigned {
     AtomicFloat32AddEXT = 6033,
     AtomicFloat64AddEXT = 6034,
     LongConstantCompositeINTEL = 6089,
+    AtomicFloat16AddEXT = 6095,
     Max = 0x7fffffff,
 };
 

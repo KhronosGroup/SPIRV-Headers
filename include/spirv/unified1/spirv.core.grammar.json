@@ -8168,7 +8168,7 @@
         { "kind" : "IdMemorySemantics", "name" : "'Semantics'" },
         { "kind" : "IdRef",             "name" : "'Value'" }
       ],
-      "capabilities" : [ "AtomicFloat32AddEXT", "AtomicFloat64AddEXT" ],
+      "capabilities" : [ "AtomicFloat16AddEXT", "AtomicFloat32AddEXT", "AtomicFloat64AddEXT" ],
       "extensions" : [ "SPV_EXT_shader_atomic_float_add" ],
       "version" : "None"
     },
@@ -13307,6 +13307,13 @@
           "enumerant" : "LongConstantCompositeINTEL",
           "value" : 6089,
           "extensions" : [ "SPV_INTEL_long_constant_composite" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AtomicFloat16AddEXT",
+          "value" : 6095,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_EXT_shader_atomic_float16_add" ],
           "version" : "None"
         }
       ]

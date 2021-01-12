@@ -1048,6 +1048,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityAtomicFloat32AddEXT = 6033,
     SpvCapabilityAtomicFloat64AddEXT = 6034,
     SpvCapabilityLongConstantCompositeINTEL = 6089,
+    SpvCapabilityAtomicFloat16AddEXT = 6095,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
 
