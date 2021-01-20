@@ -410,18 +410,6 @@ typedef enum SpvFPRoundingMode_ {
     SpvFPRoundingModeMax = 0x7fffffff,
 } SpvFPRoundingMode;
 
-typedef enum SpvFPDenormMode_ {
-    SpvFPDenormModePreserve = 0,
-    SpvFPDenormModeFlushToZero = 1,
-    SpvFPDenormModeMax = 0x7fffffff,
-} SpvFPDenormMode;
-
-typedef enum SpvFPOperationMode_ {
-    SpvFPOperationModeIEEE = 0,
-    SpvFPOperationModeALT = 1,
-    SpvFPOperationModeMax = 0x7fffffff,
-} SpvFPOperationMode;
-
 typedef enum SpvLinkageType_ {
     SpvLinkageTypeExport = 0,
     SpvLinkageTypeImport = 1,
@@ -1113,6 +1101,18 @@ typedef enum SpvFragmentShadingRateMask_ {
     SpvFragmentShadingRateHorizontal2PixelsMask = 0x00000004,
     SpvFragmentShadingRateHorizontal4PixelsMask = 0x00000008,
 } SpvFragmentShadingRateMask;
+
+typedef enum SpvFPDenormMode_ {
+  SpvFPDenormModePreserve = 0,
+  SpvFPDenormModeFlushToZero = 1,
+  SpvFPDenormModeMax = 0x7fffffff,
+} SpvFPDenormMode;
+
+typedef enum SpvFPOperationMode_ {
+  SpvFPOperationModeIEEE = 0,
+  SpvFPOperationModeALT = 1,
+  SpvFPOperationModeMax = 0x7fffffff,
+} SpvFPOperationMode;
 
 typedef enum SpvOp_ {
     SpvOpNop = 0,

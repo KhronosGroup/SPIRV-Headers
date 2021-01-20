@@ -422,24 +422,6 @@
                 }
             },
             {
-                "Name": "FPDenormMode",
-                "Type": "Value",
-                "Values":
-                {
-                    "Preserve": 0,
-                    "FlushToZero": 1
-                }
-            },
-            {
-                "Name": "FPOperationMode",
-                "Type": "Value",
-                "Values":
-                {
-                    "IEEE": 0,
-                    "ALT": 1
-                }
-            },
-            {
                 "Name": "LinkageType",
                 "Type": "Value",
                 "Values":
@@ -1093,6 +1075,24 @@
                     "Vertical4Pixels": 1,
                     "Horizontal2Pixels": 2,
                     "Horizontal4Pixels": 3
+                }
+            },
+            {
+                "Name": "FPDenormMode",
+                "Type": "Value",
+                "Values":
+                {
+                    "Preserve": 0,
+                    "FlushToZero": 1
+                }
+            },
+            {
+                "Name": "FPOperationMode",
+                "Type": "Value",
+                "Values":
+                {
+                    "IEEE": 0,
+                    "ALT": 1
                 }
             },
             {
