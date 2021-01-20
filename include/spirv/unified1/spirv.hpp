@@ -1102,15 +1102,15 @@ enum FragmentShadingRateMask {
 };
 
 enum FPDenormMode {
-  FPDenormModePreserve = 0,
-  FPDenormModeFlushToZero = 1,
-  FPDenormModeMax = 0x7fffffff,
+    FPDenormModePreserve = 0,
+    FPDenormModeFlushToZero = 1,
+    FPDenormModeMax = 0x7fffffff,
 };
 
 enum FPOperationMode {
-  FPOperationModeIEEE = 0,
-  FPOperationModeALT = 1,
-  FPOperationModeMax = 0x7fffffff,
+    FPOperationModeIEEE = 0,
+    FPOperationModeALT = 1,
+    FPOperationModeMax = 0x7fffffff,
 };
 
 enum Op {

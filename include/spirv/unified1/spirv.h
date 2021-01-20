@@ -1106,15 +1106,15 @@ typedef enum SpvFragmentShadingRateMask_ {
 } SpvFragmentShadingRateMask;
 
 typedef enum SpvFPDenormMode_ {
-  SpvFPDenormModePreserve = 0,
-  SpvFPDenormModeFlushToZero = 1,
-  SpvFPDenormModeMax = 0x7fffffff,
+    SpvFPDenormModePreserve = 0,
+    SpvFPDenormModeFlushToZero = 1,
+    SpvFPDenormModeMax = 0x7fffffff,
 } SpvFPDenormMode;
 
 typedef enum SpvFPOperationMode_ {
-  SpvFPOperationModeIEEE = 0,
-  SpvFPOperationModeALT = 1,
-  SpvFPOperationModeMax = 0x7fffffff,
+    SpvFPOperationModeIEEE = 0,
+    SpvFPOperationModeALT = 1,
+    SpvFPOperationModeMax = 0x7fffffff,
 } SpvFPOperationMode;
 
 typedef enum SpvOp_ {

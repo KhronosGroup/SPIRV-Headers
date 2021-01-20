@@ -10407,34 +10407,16 @@
           "version" : "1.3"
         },
         {
-          "enumerant" : "SubgroupGeMask",
-          "value" : 4417,
-          "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
-          "version" : "1.3"
-        },
-        {
-          "enumerant" : "SubgroupGtMask",
-          "value" : 4418,
-          "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
-          "version" : "1.3"
-        },
-        {
-          "enumerant" : "SubgroupLeMask",
-          "value" : 4419,
-          "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
-          "version" : "1.3"
-        },
-        {
-          "enumerant" : "SubgroupLtMask",
-          "value" : 4420,
-          "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
-          "version" : "1.3"
-        },
-        {
           "enumerant" : "SubgroupEqMaskKHR",
           "value" : 4416,
           "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
           "extensions" : [ "SPV_KHR_shader_ballot" ],
+          "version" : "1.3"
+        },
+        {
+          "enumerant" : "SubgroupGeMask",
+          "value" : 4417,
+          "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
           "version" : "1.3"
         },
         {
@@ -10445,6 +10427,12 @@
           "version" : "1.3"
         },
         {
+          "enumerant" : "SubgroupGtMask",
+          "value" : 4418,
+          "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
+          "version" : "1.3"
+        },
+        {
           "enumerant" : "SubgroupGtMaskKHR",
           "value" : 4418,
           "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
@@ -10452,10 +10440,22 @@
           "version" : "1.3"
         },
         {
+          "enumerant" : "SubgroupLeMask",
+          "value" : 4419,
+          "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
+          "version" : "1.3"
+        },
+        {
           "enumerant" : "SubgroupLeMaskKHR",
           "value" : 4419,
           "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
           "extensions" : [ "SPV_KHR_shader_ballot" ],
+          "version" : "1.3"
+        },
+        {
+          "enumerant" : "SubgroupLtMask",
+          "value" : 4420,
+          "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
           "version" : "1.3"
         },
         {
