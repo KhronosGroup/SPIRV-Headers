@@ -406,18 +406,6 @@ enum class FPRoundingMode : unsigned {
     Max = 0x7fffffff,
 };
 
-enum class FPDenormMode : unsigned {
-    Preserve = 0,
-    FlushToZero = 1,
-    Max = 0x7fffffff,
-};
-
-enum class FPOperationMode : unsigned {
-    IEEE = 0,
-    ALT = 1,
-    Max = 0x7fffffff,
-};
-
 enum class LinkageType : unsigned {
     Export = 0,
     Import = 1,
@@ -1108,6 +1096,18 @@ enum class FragmentShadingRateMask : unsigned {
     Vertical4Pixels = 0x00000002,
     Horizontal2Pixels = 0x00000004,
     Horizontal4Pixels = 0x00000008,
+};
+
+enum class FPDenormMode : unsigned {
+    Preserve = 0,
+    FlushToZero = 1,
+    Max = 0x7fffffff,
+};
+
+enum class FPOperationMode : unsigned {
+    IEEE = 0,
+    ALT = 1,
+    Max = 0x7fffffff,
 };
 
 enum class Op : unsigned {

@@ -406,18 +406,6 @@ enum FPRoundingMode : uint
     RTN = 3,
 }
 
-enum FPDenormMode : uint
-{
-    Preserve = 0,
-    FlushToZero = 1,
-}
-
-enum FPOperationMode : uint
-{
-    IEEE = 0,
-    ALT = 1,
-}
-
 enum LinkageType : uint
 {
     Export = 0,
@@ -1116,6 +1104,18 @@ enum FragmentShadingRateMask : uint
     Vertical4Pixels = 0x00000002,
     Horizontal2Pixels = 0x00000004,
     Horizontal4Pixels = 0x00000008,
+}
+
+enum FPDenormMode : uint
+{
+    Preserve = 0,
+    FlushToZero = 1,
+}
+
+enum FPOperationMode : uint
+{
+    IEEE = 0,
+    ALT = 1,
 }
 
 enum Op : uint

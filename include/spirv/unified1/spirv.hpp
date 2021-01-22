@@ -406,18 +406,6 @@ enum FPRoundingMode {
     FPRoundingModeMax = 0x7fffffff,
 };
 
-enum FPDenormMode {
-    FPDenormModePreserve = 0,
-    FPDenormModeFlushToZero = 1,
-    FPDenormModeMax = 0x7fffffff,
-};
-
-enum FPOperationMode {
-    FPOperationModeIEEE = 0,
-    FPOperationModeALT = 1,
-    FPOperationModeMax = 0x7fffffff,
-};
-
 enum LinkageType {
     LinkageTypeExport = 0,
     LinkageTypeImport = 1,
@@ -1108,6 +1096,18 @@ enum FragmentShadingRateMask {
     FragmentShadingRateVertical4PixelsMask = 0x00000002,
     FragmentShadingRateHorizontal2PixelsMask = 0x00000004,
     FragmentShadingRateHorizontal4PixelsMask = 0x00000008,
+};
+
+enum FPDenormMode {
+  FPDenormModePreserve = 0,
+  FPDenormModeFlushToZero = 1,
+  FPDenormModeMax = 0x7fffffff,
+};
+
+enum FPOperationMode {
+  FPOperationModeIEEE = 0,
+  FPOperationModeALT = 1,
+  FPOperationModeMax = 0x7fffffff,
 };
 
 enum Op {

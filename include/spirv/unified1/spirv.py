@@ -382,16 +382,6 @@ spv = {
         'RTN' : 3,
     },
 
-    'FPDenormMode' : {
-        'Preserve' : 0,
-        'FlushToZero' : 1,
-    },
-
-    'FPOperationMode' : {
-        'IEEE' : 0,
-        'ALT' : 1,
-    },
-
     'LinkageType' : {
         'Export' : 0,
         'Import' : 1,
@@ -1062,6 +1052,16 @@ spv = {
         'Vertical4Pixels' : 0x00000002,
         'Horizontal2Pixels' : 0x00000004,
         'Horizontal4Pixels' : 0x00000008,
+    },
+
+    'FPDenormMode' : {
+        'Preserve' : 0,
+        'FlushToZero' : 1,
+    },
+
+    'FPOperationMode' : {
+        'IEEE' : 0,
+        'ALT' : 1,
     },
 
     'Op' : {
