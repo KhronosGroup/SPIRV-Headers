@@ -11411,6 +11411,27 @@
           "version" : "1.3"
         },
         {
+          "enumerant" : "WorkgroupMemoryExplicitLayoutKHR",
+          "value" : 4428,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_KHR_workgroup_memory_explicit_layout" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "WorkgroupMemoryExplicitLayout8BitAccessKHR",
+          "value" : 4429,
+          "capabilities" : [ "WorkgroupMemoryExplicitLayoutKHR" ],
+          "extensions" : [ "SPV_KHR_workgroup_memory_explicit_layout" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "WorkgroupMemoryExplicitLayout16BitAccessKHR",
+          "value" : 4430,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_KHR_workgroup_memory_explicit_layout" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "SubgroupVoteKHR",
           "value" : 4431,
           "extensions" : [ "SPV_KHR_subgroup_vote" ],
