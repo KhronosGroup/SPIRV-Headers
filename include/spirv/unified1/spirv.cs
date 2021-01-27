@@ -1106,14 +1106,16 @@ namespace Spv
             Horizontal4Pixels = 0x00000008,
         }
 
-        public enum FPDenormMode {
-          Preserve = 0,
-          FlushToZero = 1,
+        public enum FPDenormMode
+        {
+            Preserve = 0,
+            FlushToZero = 1,
         }
 
-        public enum FPOperationMode {
-          IEEE = 0,
-          ALT = 1,
+        public enum FPOperationMode
+        {
+            IEEE = 0,
+            ALT = 1,
         }
 
         public enum Op
