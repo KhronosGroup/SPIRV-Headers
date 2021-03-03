@@ -4552,7 +4552,7 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdScope", "name" : "'Execution'" }
+        { "kind" : "IdScope", "name" : "'Scope'" }
       ],
       "capabilities" : [ "ShaderClockKHR" ],
       "extensions" : [ "SPV_KHR_shader_clock" ],
