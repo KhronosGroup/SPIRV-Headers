@@ -224,4 +224,25 @@
     <ids type="FPFastMathMode" start="16" end="17" vendor="Intel" comment="Contact michael.kinsner@intel.com"/>
     <ids type="FPFastMathMode" start="18" end="31" comment="Unreserved bits reservable for use by vendors"/>
 
+
+    <!-- SECTION: SPIR-V Memory Operand Bit Reservations -->
+    <!-- Reserve ranges of bits in the memory operands bitfield.
+
+         Each vendor determines the use of values in their own ranges.
+         Vendors are not required to disclose those uses.  If the use of a
+         value is included in an extension that is adopted by a Khronos
+         extension or specification, then that value's use may be permanently
+         fixed as if originally reserved in a Khronos range.
+
+         The SPIR Working Group strongly recommends:
+         - Each value is used for only one purpose.
+         - All values in a range should be used before allocating a new range.
+         -->
+
+    <!-- Reserved memory operand bits -->
+    <ids type="MemoryOperand" start="0" end="15" vendor="Khronos" comment="Reserved MemoryOperand bits, not available to vendors - see the SPIR-V Specification"/>
+    <ids type="MemoryOperand" start="16" end="17" vendor="Intel" comment="Contact michael.kinsner@intel.com"/>
+    <ids type="MemoryOperand" start="18" end="30" comment="Unreserved bits reservable for use by vendors"/>
+    <ids type="MemoryOperand" start="31" end="31" vendor="Khronos" comment="Reserved MemoryOperand bit, not available to vendors"/>
+
 </registry>
