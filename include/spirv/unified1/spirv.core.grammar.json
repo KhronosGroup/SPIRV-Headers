@@ -7257,9 +7257,14 @@
       "class"  : "Type-Declaration",
       "opcode" : 6086,
       "operands" : [
-        { "kind" : "IdResult" }
+        { "kind" : "IdResult" },
+        {
+          "kind" : "AccessQualifier",
+          "name" : "'AccessQualifier'"
+        }
       ],
       "capabilities" : [ "VectorComputeINTEL" ],
+      "extensions" : [ "SPV_INTEL_vector_compute" ],
       "version" : "None"
     },
     {
