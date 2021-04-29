@@ -7264,7 +7264,6 @@
         }
       ],
       "capabilities" : [ "VectorComputeINTEL" ],
-      "extensions" : [ "SPV_INTEL_vector_compute" ],
       "version" : "None"
     },
     {
