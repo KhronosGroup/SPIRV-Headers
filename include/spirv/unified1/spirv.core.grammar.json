@@ -8706,7 +8706,7 @@
         {
           "enumerant" : "Private",
           "value" : 6,
-          "capabilities" : [ "Shader" ]
+          "capabilities" : [ "Shader", "VectorComputeINTEL" ]
         },
         {
           "enumerant" : "Function",
