@@ -125,9 +125,9 @@ if (SPIRV_HEADERS_ENABLE_INSTALL)
         DESTINATION "${config_install_dir}"
     )
 
-    configure_file(${CMAKE_SOURCE_DIR}/spirv-headers.pc.in ${CMAKE_BINARY_DIR}/spirv-headers.pc @ONLY)
+    configure_file(${CMAKE_SOURCE_DIR}/SPIRV-Headers.pc.in ${CMAKE_BINARY_DIR}/SPIRV-Headers.pc @ONLY)
     install(
-        FILES "${CMAKE_BINARY_DIR}/spirv-headers.pc"
+        FILES "${CMAKE_BINARY_DIR}/SPIRV-Headers.pc"
         DESTINATION ${CMAKE_INSTALL_DATADIR}/pkgconfig
     )
 endif()
