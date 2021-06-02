@@ -147,8 +147,9 @@
       "opname" : "OpExecutionMode",
       "opcode" : 16,
       "operands" : [
-        { "kind" : "IdRef",         "name" : "'Entry Point'" },
-        { "kind" : "ExecutionMode", "name" : "'Mode'" }
+        { "kind" : "IdRef",                              "name" : "'Entry Point'" },
+        { "kind" : "ExecutionMode",                      "name" : "'Mode'" },
+        { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "'Operands'" }
       ]
     },
     {
