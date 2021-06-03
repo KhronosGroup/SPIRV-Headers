@@ -6849,6 +6849,7 @@
         { "kind" : "IdRef", "name" : "'A'" },
         { "kind" : "LiteralInteger", "name" : "'M1'" },
         { "kind" : "LiteralInteger", "name" : "'Mout'" },
+        { "kind" : "LiteralInteger", "name" : "'FromSign'" },
         { "kind" : "LiteralInteger", "name" : "'EnableSubnormals'" },
         { "kind" : "LiteralInteger", "name" : "'RoundingMode'" },
         { "kind" : "LiteralInteger", "name" : "'RoundingAccuracy'" }
@@ -6882,6 +6883,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "'A'" },
         { "kind" : "LiteralInteger", "name" : "'Mout'" },
+        { "kind" : "LiteralInteger", "name" : "'FromSign'" },
         { "kind" : "LiteralInteger", "name" : "'EnableSubnormals'" },
         { "kind" : "LiteralInteger", "name" : "'RoundingMode'" },
         { "kind" : "LiteralInteger", "name" : "'RoundingAccuracy'" }
