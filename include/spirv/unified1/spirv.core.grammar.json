@@ -8007,6 +8007,10 @@
         {
           "enumerant" : "HLSL",
           "value" : 5
+        },
+        {
+          "enumerant" : "CPP_for_OpenCL",
+          "value" : 6
         }
       ]
     },
