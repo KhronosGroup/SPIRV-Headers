@@ -93,6 +93,8 @@ enum OperandClass {
     OperandFragmentShadingRate,
     OperandFPDenormMode,
     OperandFPOperationMode,
+    OperandQuantizationModes,
+    OperandOverflowModes,
 
     OperandOpcode,
 

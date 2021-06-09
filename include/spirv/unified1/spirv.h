@@ -410,6 +410,38 @@ typedef enum SpvFPRoundingMode_ {
     SpvFPRoundingModeMax = 0x7fffffff,
 } SpvFPRoundingMode;
 
+typedef enum SpvFPDenormMode_ {
+    SpvFPDenormModePreserve = 0,
+    SpvFPDenormModeFlushToZero = 1,
+    SpvFPDenormModeMax = 0x7fffffff,
+} SpvFPDenormMode;
+
+typedef enum SpvFPOperationMode_ {
+    SpvFPOperationModeIEEE = 0,
+    SpvFPOperationModeALT = 1,
+    SpvFPOperationModeMax = 0x7fffffff,
+} SpvFPOperationMode;
+
+typedef enum SpvQuantizationModes_ {
+    SpvQuantizationModesTRN = 0,
+    SpvQuantizationModesTRN_ZERO = 1,
+    SpvQuantizationModesRND = 2,
+    SpvQuantizationModesRND_ZERO = 3,
+    SpvQuantizationModesRND_INF = 4,
+    SpvQuantizationModesRND_MIN_INF = 5,
+    SpvQuantizationModesRND_CONV = 6,
+    SpvQuantizationModesRND_CONV_ODD = 7,
+    SpvQuantizationModesMax = 0x7fffffff,
+} SpvQuantizationModes;
+
+typedef enum SpvOverflowModes_ {
+    SpvOverflowModesWRAP = 0,
+    SpvOverflowModesSAT = 1,
+    SpvOverflowModesSAT_ZERO = 2,
+    SpvOverflowModesSAT_SYM = 3,
+    SpvOverflowModesMax = 0x7fffffff,
+} SpvOverflowModes;
+
 typedef enum SpvLinkageType_ {
     SpvLinkageTypeExport = 0,
     SpvLinkageTypeImport = 1,
@@ -1029,6 +1061,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGAMemoryAttributesINTEL = 5824,
     SpvCapabilityFPFastMathModeINTEL = 5837,
     SpvCapabilityArbitraryPrecisionIntegersINTEL = 5844,
+    SpvCapabilityArbitraryPrecisionFloatingPointINTEL = 5845,
     SpvCapabilityUnstructuredLoopControlsINTEL = 5886,
     SpvCapabilityFPGALoopControlsINTEL = 5888,
     SpvCapabilityKernelAttributesINTEL = 5892,
@@ -1037,6 +1070,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGAClusterAttributesINTEL = 5904,
     SpvCapabilityLoopFuseINTEL = 5906,
     SpvCapabilityFPGABufferLocationINTEL = 5920,
+    SpvCapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     SpvCapabilityUSMStorageClassesINTEL = 5935,
     SpvCapabilityIOPipesINTEL = 5943,
     SpvCapabilityBlockingPipesINTEL = 5945,
@@ -1109,18 +1143,6 @@ typedef enum SpvFragmentShadingRateMask_ {
     SpvFragmentShadingRateHorizontal2PixelsMask = 0x00000004,
     SpvFragmentShadingRateHorizontal4PixelsMask = 0x00000008,
 } SpvFragmentShadingRateMask;
-
-typedef enum SpvFPDenormMode_ {
-    SpvFPDenormModePreserve = 0,
-    SpvFPDenormModeFlushToZero = 1,
-    SpvFPDenormModeMax = 0x7fffffff,
-} SpvFPDenormMode;
-
-typedef enum SpvFPOperationMode_ {
-    SpvFPOperationModeIEEE = 0,
-    SpvFPOperationModeALT = 1,
-    SpvFPOperationModeMax = 0x7fffffff,
-} SpvFPOperationMode;
 
 typedef enum SpvOp_ {
     SpvOpNop = 0,
@@ -1675,7 +1697,59 @@ typedef enum SpvOp_ {
     SpvOpVariableLengthArrayINTEL = 5818,
     SpvOpSaveMemoryINTEL = 5819,
     SpvOpRestoreMemoryINTEL = 5820,
+    SpvOpArbitraryFloatSinCosPiINTEL = 5840,
+    SpvOpArbitraryFloatCastINTEL = 5841,
+    SpvOpArbitraryFloatCastFromIntINTEL = 5842,
+    SpvOpArbitraryFloatCastToIntINTEL = 5843,
+    SpvOpArbitraryFloatAddINTEL = 5846,
+    SpvOpArbitraryFloatSubINTEL = 5847,
+    SpvOpArbitraryFloatMulINTEL = 5848,
+    SpvOpArbitraryFloatDivINTEL = 5849,
+    SpvOpArbitraryFloatGTINTEL = 5850,
+    SpvOpArbitraryFloatGEINTEL = 5851,
+    SpvOpArbitraryFloatLTINTEL = 5852,
+    SpvOpArbitraryFloatLEINTEL = 5853,
+    SpvOpArbitraryFloatEQINTEL = 5854,
+    SpvOpArbitraryFloatRecipINTEL = 5855,
+    SpvOpArbitraryFloatRSqrtINTEL = 5856,
+    SpvOpArbitraryFloatCbrtINTEL = 5857,
+    SpvOpArbitraryFloatHypotINTEL = 5858,
+    SpvOpArbitraryFloatSqrtINTEL = 5859,
+    SpvOpArbitraryFloatLogINTEL = 5860,
+    SpvOpArbitraryFloatLog2INTEL = 5861,
+    SpvOpArbitraryFloatLog10INTEL = 5862,
+    SpvOpArbitraryFloatLog1pINTEL = 5863,
+    SpvOpArbitraryFloatExpINTEL = 5864,
+    SpvOpArbitraryFloatExp2INTEL = 5865,
+    SpvOpArbitraryFloatExp10INTEL = 5866,
+    SpvOpArbitraryFloatExpm1INTEL = 5867,
+    SpvOpArbitraryFloatSinINTEL = 5868,
+    SpvOpArbitraryFloatCosINTEL = 5869,
+    SpvOpArbitraryFloatSinCosINTEL = 5870,
+    SpvOpArbitraryFloatSinPiINTEL = 5871,
+    SpvOpArbitraryFloatCosPiINTEL = 5872,
+    SpvOpArbitraryFloatASinINTEL = 5873,
+    SpvOpArbitraryFloatASinPiINTEL = 5874,
+    SpvOpArbitraryFloatACosINTEL = 5875,
+    SpvOpArbitraryFloatACosPiINTEL = 5876,
+    SpvOpArbitraryFloatATanINTEL = 5877,
+    SpvOpArbitraryFloatATanPiINTEL = 5878,
+    SpvOpArbitraryFloatATan2INTEL = 5879,
+    SpvOpArbitraryFloatPowINTEL = 5880,
+    SpvOpArbitraryFloatPowRINTEL = 5881,
+    SpvOpArbitraryFloatPowNINTEL = 5882,
     SpvOpLoopControlINTEL = 5887,
+    SpvOpFixedSqrtINTEL = 5923,
+    SpvOpFixedRecipINTEL = 5924,
+    SpvOpFixedRsqrtINTEL = 5925,
+    SpvOpFixedSinINTEL = 5926,
+    SpvOpFixedCosINTEL = 5927,
+    SpvOpFixedSinCosINTEL = 5928,
+    SpvOpFixedSinPiINTEL = 5929,
+    SpvOpFixedCosPiINTEL = 5930,
+    SpvOpFixedSinCosPiINTEL = 5931,
+    SpvOpFixedLogINTEL = 5932,
+    SpvOpFixedExpINTEL = 5933,
     SpvOpPtrCastToCrossWorkgroupINTEL = 5934,
     SpvOpCrossWorkgroupCastToPtrINTEL = 5938,
     SpvOpReadPipeBlockingINTEL = 5946,
@@ -2259,9 +2333,61 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpVariableLengthArrayINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSaveMemoryINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpRestoreMemoryINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpArbitraryFloatSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCastINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCastFromIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCastToIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatAddINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatSubINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatMulINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatDivINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatGTINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatGEINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatLTINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatLEINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatEQINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatRecipINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatRSqrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCbrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatHypotINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatSqrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatLogINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatLog2INTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatLog10INTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatLog1pINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatExpINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatExp2INTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatExp10INTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatExpm1INTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatSinINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCosINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatSinCosINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatSinPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCosPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatASinINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatASinPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatACosINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatACosPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatATanINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatATanPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatATan2INTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatPowINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatPowRINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatPowNINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpLoopControlINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedSqrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedRecipINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedRsqrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedSinINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedCosINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedSinCosINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedSinPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedCosPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedLogINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedExpINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpReadPipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpWritePipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpFPGARegINTEL: *hasResult = true; *hasResultType = true; break;
