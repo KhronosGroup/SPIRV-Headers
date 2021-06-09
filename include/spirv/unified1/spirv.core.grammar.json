@@ -9363,6 +9363,13 @@
           "version" : "1.2"
         },
         {
+          "enumerant" : "SubgroupUniformControlFlowKHR",
+          "value" : 4421,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_KHR_subgroup_uniform_control_flow" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "PostDepthCoverage",
           "value" : 4446,
           "capabilities" : [ "SampleMaskPostDepthCoverage" ],
