@@ -64,6 +64,7 @@ enum SourceLanguage : uint
     OpenCL_C = 3,
     OpenCL_CPP = 4,
     HLSL = 5,
+    CPP_for_OpenCL = 6,
 }
 
 enum ExecutionModel : uint
