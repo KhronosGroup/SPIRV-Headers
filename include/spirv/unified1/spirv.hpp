@@ -1075,6 +1075,7 @@ enum Capability {
     CapabilityRoundingModeRTZ = 4468,
     CapabilityRayQueryProvisionalKHR = 4471,
     CapabilityRayQueryKHR = 4472,
+    CapabilityUntypedPointersKHR = 4473,
     CapabilityRayTraversalPrimitiveCullingKHR = 4478,
     CapabilityRayTracingKHR = 4479,
     CapabilityTextureSampleWeightedQCOM = 4484,
@@ -1772,8 +1773,15 @@ enum Op {
     OpDepthAttachmentReadEXT = 4161,
     OpStencilAttachmentReadEXT = 4162,
     OpTerminateInvocation = 4416,
+    OpTypeUntypedPointerKHR = 4417,
+    OpUntypedVariableKHR = 4418,
+    OpUntypedAccessChainKHR = 4419,
+    OpUntypedInBoundsAccessChainKHR = 4420,
     OpSubgroupBallotKHR = 4421,
     OpSubgroupFirstInvocationKHR = 4422,
+    OpUntypedPtrAccessChainKHR = 4423,
+    OpUntypedInBoundsPtrAccessChainKHR = 4424,
+    OpUntypedArrayLengthKHR = 4425,
     OpSubgroupAllKHR = 4428,
     OpSubgroupAnyKHR = 4429,
     OpSubgroupAllEqualKHR = 4430,
@@ -2520,8 +2528,15 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpDepthAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
     case OpStencilAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
     case OpTerminateInvocation: *hasResult = false; *hasResultType = false; break;
+    case OpTypeUntypedPointerKHR: *hasResult = true; *hasResultType = false; break;
+    case OpUntypedVariableKHR: *hasResult = true; *hasResultType = true; break;
+    case OpUntypedAccessChainKHR: *hasResult = true; *hasResultType = true; break;
+    case OpUntypedInBoundsAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupBallotKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupFirstInvocationKHR: *hasResult = true; *hasResultType = true; break;
+    case OpUntypedPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
+    case OpUntypedInBoundsPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
+    case OpUntypedArrayLengthKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
