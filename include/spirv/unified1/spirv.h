@@ -1973,7 +1973,10 @@ typedef enum SpvOp_ {
     SpvOpUntypedPtrAccessChainKHR = 4423,
     SpvOpUntypedInBoundsPtrAccessChainKHR = 4424,
     SpvOpUntypedArrayLengthKHR = 4425,
+<<<<<<< HEAD
     SpvOpUntypedPrefetchKHR = 4426,
+=======
+>>>>>>> 13f21a2 (Support for SPV_KHR_untyped_pointers)
     SpvOpSubgroupAllKHR = 4428,
     SpvOpSubgroupAnyKHR = 4429,
     SpvOpSubgroupAllEqualKHR = 4430,
@@ -2814,7 +2817,10 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpUntypedPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpUntypedInBoundsPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpUntypedArrayLengthKHR: *hasResult = true; *hasResultType = true; break;
+<<<<<<< HEAD
     case SpvOpUntypedPrefetchKHR: *hasResult = false; *hasResultType = false; break;
+=======
+>>>>>>> 13f21a2 (Support for SPV_KHR_untyped_pointers)
     case SpvOpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;

@@ -1969,7 +1969,10 @@ enum Op {
     OpUntypedPtrAccessChainKHR = 4423,
     OpUntypedInBoundsPtrAccessChainKHR = 4424,
     OpUntypedArrayLengthKHR = 4425,
+<<<<<<< HEAD
     OpUntypedPrefetchKHR = 4426,
+=======
+>>>>>>> 13f21a2 (Support for SPV_KHR_untyped_pointers)
     OpSubgroupAllKHR = 4428,
     OpSubgroupAnyKHR = 4429,
     OpSubgroupAllEqualKHR = 4430,
@@ -2810,7 +2813,10 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpUntypedPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case OpUntypedInBoundsPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case OpUntypedArrayLengthKHR: *hasResult = true; *hasResultType = true; break;
+<<<<<<< HEAD
     case OpUntypedPrefetchKHR: *hasResult = false; *hasResultType = false; break;
+=======
+>>>>>>> 13f21a2 (Support for SPV_KHR_untyped_pointers)
     case OpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
