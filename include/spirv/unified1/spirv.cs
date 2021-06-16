@@ -405,38 +405,6 @@ namespace Spv
             RTN = 3,
         }
 
-        public enum FPDenormMode
-        {
-            Preserve = 0,
-            FlushToZero = 1,
-        }
-
-        public enum FPOperationMode
-        {
-            IEEE = 0,
-            ALT = 1,
-        }
-
-        public enum QuantizationModes
-        {
-            TRN = 0,
-            TRN_ZERO = 1,
-            RND = 2,
-            RND_ZERO = 3,
-            RND_INF = 4,
-            RND_MIN_INF = 5,
-            RND_CONV = 6,
-            RND_CONV_ODD = 7,
-        }
-
-        public enum OverflowModes
-        {
-            WRAP = 0,
-            SAT = 1,
-            SAT_ZERO = 2,
-            SAT_SYM = 3,
-        }
-
         public enum LinkageType
         {
             Export = 0,
@@ -1145,6 +1113,38 @@ namespace Spv
             Vertical4Pixels = 0x00000002,
             Horizontal2Pixels = 0x00000004,
             Horizontal4Pixels = 0x00000008,
+        }
+
+        public enum FPDenormMode
+        {
+            Preserve = 0,
+            FlushToZero = 1,
+        }
+
+        public enum FPOperationMode
+        {
+            IEEE = 0,
+            ALT = 1,
+        }
+
+        public enum QuantizationModes
+        {
+            TRN = 0,
+            TRN_ZERO = 1,
+            RND = 2,
+            RND_ZERO = 3,
+            RND_INF = 4,
+            RND_MIN_INF = 5,
+            RND_CONV = 6,
+            RND_CONV_ODD = 7,
+        }
+
+        public enum OverflowModes
+        {
+            WRAP = 0,
+            SAT = 1,
+            SAT_ZERO = 2,
+            SAT_SYM = 3,
         }
 
         public enum Op

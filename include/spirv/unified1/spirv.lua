@@ -384,34 +384,6 @@ spv = {
         RTN = 3,
     },
 
-    FPDenormMode = {
-        Preserve = 0,
-        FlushToZero = 1,
-    },
-
-    FPOperationMode = {
-        IEEE = 0,
-        ALT = 1,
-    },
-
-    QuantizationModes = {
-        TRN = 0,
-        TRN_ZERO = 1,
-        RND = 2,
-        RND_ZERO = 3,
-        RND_INF = 4,
-        RND_MIN_INF = 5,
-        RND_CONV = 6,
-        RND_CONV_ODD = 7,
-    },
-
-    OverflowModes = {
-        WRAP = 0,
-        SAT = 1,
-        SAT_ZERO = 2,
-        SAT_SYM = 3,
-    },
-
     LinkageType = {
         Export = 0,
         Import = 1,
@@ -1092,6 +1064,34 @@ spv = {
         Vertical4Pixels = 0x00000002,
         Horizontal2Pixels = 0x00000004,
         Horizontal4Pixels = 0x00000008,
+    },
+
+    FPDenormMode = {
+        Preserve = 0,
+        FlushToZero = 1,
+    },
+
+    FPOperationMode = {
+        IEEE = 0,
+        ALT = 1,
+    },
+
+    QuantizationModes = {
+        TRN = 0,
+        TRN_ZERO = 1,
+        RND = 2,
+        RND_ZERO = 3,
+        RND_INF = 4,
+        RND_MIN_INF = 5,
+        RND_CONV = 6,
+        RND_CONV_ODD = 7,
+    },
+
+    OverflowModes = {
+        WRAP = 0,
+        SAT = 1,
+        SAT_ZERO = 2,
+        SAT_SYM = 3,
     },
 
     Op = {

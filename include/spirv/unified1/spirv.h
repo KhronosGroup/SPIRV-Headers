@@ -412,38 +412,6 @@ typedef enum SpvFPRoundingMode_ {
     SpvFPRoundingModeMax = 0x7fffffff,
 } SpvFPRoundingMode;
 
-typedef enum SpvFPDenormMode_ {
-    SpvFPDenormModePreserve = 0,
-    SpvFPDenormModeFlushToZero = 1,
-    SpvFPDenormModeMax = 0x7fffffff,
-} SpvFPDenormMode;
-
-typedef enum SpvFPOperationMode_ {
-    SpvFPOperationModeIEEE = 0,
-    SpvFPOperationModeALT = 1,
-    SpvFPOperationModeMax = 0x7fffffff,
-} SpvFPOperationMode;
-
-typedef enum SpvQuantizationModes_ {
-    SpvQuantizationModesTRN = 0,
-    SpvQuantizationModesTRN_ZERO = 1,
-    SpvQuantizationModesRND = 2,
-    SpvQuantizationModesRND_ZERO = 3,
-    SpvQuantizationModesRND_INF = 4,
-    SpvQuantizationModesRND_MIN_INF = 5,
-    SpvQuantizationModesRND_CONV = 6,
-    SpvQuantizationModesRND_CONV_ODD = 7,
-    SpvQuantizationModesMax = 0x7fffffff,
-} SpvQuantizationModes;
-
-typedef enum SpvOverflowModes_ {
-    SpvOverflowModesWRAP = 0,
-    SpvOverflowModesSAT = 1,
-    SpvOverflowModesSAT_ZERO = 2,
-    SpvOverflowModesSAT_SYM = 3,
-    SpvOverflowModesMax = 0x7fffffff,
-} SpvOverflowModes;
-
 typedef enum SpvLinkageType_ {
     SpvLinkageTypeExport = 0,
     SpvLinkageTypeImport = 1,
@@ -1145,6 +1113,38 @@ typedef enum SpvFragmentShadingRateMask_ {
     SpvFragmentShadingRateHorizontal2PixelsMask = 0x00000004,
     SpvFragmentShadingRateHorizontal4PixelsMask = 0x00000008,
 } SpvFragmentShadingRateMask;
+
+typedef enum SpvFPDenormMode_ {
+    SpvFPDenormModePreserve = 0,
+    SpvFPDenormModeFlushToZero = 1,
+    SpvFPDenormModeMax = 0x7fffffff,
+} SpvFPDenormMode;
+
+typedef enum SpvFPOperationMode_ {
+    SpvFPOperationModeIEEE = 0,
+    SpvFPOperationModeALT = 1,
+    SpvFPOperationModeMax = 0x7fffffff,
+} SpvFPOperationMode;
+
+typedef enum SpvQuantizationModes_ {
+    SpvQuantizationModesTRN = 0,
+    SpvQuantizationModesTRN_ZERO = 1,
+    SpvQuantizationModesRND = 2,
+    SpvQuantizationModesRND_ZERO = 3,
+    SpvQuantizationModesRND_INF = 4,
+    SpvQuantizationModesRND_MIN_INF = 5,
+    SpvQuantizationModesRND_CONV = 6,
+    SpvQuantizationModesRND_CONV_ODD = 7,
+    SpvQuantizationModesMax = 0x7fffffff,
+} SpvQuantizationModes;
+
+typedef enum SpvOverflowModes_ {
+    SpvOverflowModesWRAP = 0,
+    SpvOverflowModesSAT = 1,
+    SpvOverflowModesSAT_ZERO = 2,
+    SpvOverflowModesSAT_SYM = 3,
+    SpvOverflowModesMax = 0x7fffffff,
+} SpvOverflowModes;
 
 typedef enum SpvOp_ {
     SpvOpNop = 0,
@@ -2377,8 +2377,6 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpArbitraryFloatPowRINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpArbitraryFloatPowNINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpLoopControlINTEL: *hasResult = false; *hasResultType = false; break;
-    case SpvOpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpFixedSqrtINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpFixedRecipINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpFixedRsqrtINTEL: *hasResult = true; *hasResultType = true; break;
@@ -2390,6 +2388,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpFixedSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpFixedLogINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpFixedExpINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpReadPipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpWritePipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpFPGARegINTEL: *hasResult = true; *hasResultType = true; break;

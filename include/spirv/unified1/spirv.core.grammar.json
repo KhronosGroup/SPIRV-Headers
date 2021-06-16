@@ -7573,30 +7573,6 @@
       "version" : "None"
     },
     {
-      "opname" : "OpPtrCastToCrossWorkgroupINTEL",
-      "class"  : "@exclude",
-      "opcode" : 5934,
-      "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef", "name" : "'Pointer'" }
-      ],
-      "capabilities" : [ "USMStorageClassesINTEL" ],
-      "version" : "None"
-    },
-    {
-      "opname" : "OpCrossWorkgroupCastToPtrINTEL",
-      "class"  : "@exclude",
-      "opcode" : 5938,
-      "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef", "name" : "'Pointer'" }
-      ],
-      "capabilities" : [ "USMStorageClassesINTEL" ],
-      "version" : "None"
-    },
-    {
       "opname" : "OpFixedSqrtINTEL",
       "class"  : "@exclude",
       "opcode" : 5923,
@@ -7792,6 +7768,30 @@
         { "kind" : "LiteralInteger", "name" : "'O'" }
       ],
       "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpPtrCastToCrossWorkgroupINTEL",
+      "class"  : "@exclude",
+      "opcode" : 5934,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Pointer'" }
+      ],
+      "capabilities" : [ "USMStorageClassesINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCrossWorkgroupCastToPtrINTEL",
+      "class"  : "@exclude",
+      "opcode" : 5938,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Pointer'" }
+      ],
+      "capabilities" : [ "USMStorageClassesINTEL" ],
       "version" : "None"
     },
     {
@@ -13260,6 +13260,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "ArbitraryPrecisionFixedPointINTEL",
+          "value" : 5922,
+          "extensions" : [ "SPV_INTEL_arbitrary_precision_fixed_point" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "USMStorageClassesINTEL",
           "value" : 5935,
           "extensions" : [ "SPV_INTEL_usm_storage_classes" ],
@@ -13269,12 +13275,6 @@
           "enumerant" : "IOPipesINTEL",
           "value" : 5943,
           "extensions" : [ "SPV_INTEL_io_pipes" ],
-          "version" : "None"
-        },
-        {
-          "enumerant" : "ArbitraryPrecisionFixedPointINTEL",
-          "value" : 5922,
-          "extensions" : [ "SPV_INTEL_arbitrary_precision_fixed_point" ],
           "version" : "None"
         },
         {

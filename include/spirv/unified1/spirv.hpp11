@@ -408,38 +408,6 @@ enum class FPRoundingMode : unsigned {
     Max = 0x7fffffff,
 };
 
-enum class FPDenormMode : unsigned {
-    Preserve = 0,
-    FlushToZero = 1,
-    Max = 0x7fffffff,
-};
-
-enum class FPOperationMode : unsigned {
-    IEEE = 0,
-    ALT = 1,
-    Max = 0x7fffffff,
-};
-
-enum class QuantizationModes : unsigned {
-    TRN = 0,
-    TRN_ZERO = 1,
-    RND = 2,
-    RND_ZERO = 3,
-    RND_INF = 4,
-    RND_MIN_INF = 5,
-    RND_CONV = 6,
-    RND_CONV_ODD = 7,
-    Max = 0x7fffffff,
-};
-
-enum class OverflowModes : unsigned {
-    WRAP = 0,
-    SAT = 1,
-    SAT_ZERO = 2,
-    SAT_SYM = 3,
-    Max = 0x7fffffff,
-};
-
 enum class LinkageType : unsigned {
     Export = 0,
     Import = 1,
@@ -1140,6 +1108,38 @@ enum class FragmentShadingRateMask : unsigned {
     Vertical4Pixels = 0x00000002,
     Horizontal2Pixels = 0x00000004,
     Horizontal4Pixels = 0x00000008,
+};
+
+enum class FPDenormMode : unsigned {
+    Preserve = 0,
+    FlushToZero = 1,
+    Max = 0x7fffffff,
+};
+
+enum class FPOperationMode : unsigned {
+    IEEE = 0,
+    ALT = 1,
+    Max = 0x7fffffff,
+};
+
+enum class QuantizationModes : unsigned {
+    TRN = 0,
+    TRN_ZERO = 1,
+    RND = 2,
+    RND_ZERO = 3,
+    RND_INF = 4,
+    RND_MIN_INF = 5,
+    RND_CONV = 6,
+    RND_CONV_ODD = 7,
+    Max = 0x7fffffff,
+};
+
+enum class OverflowModes : unsigned {
+    WRAP = 0,
+    SAT = 1,
+    SAT_ZERO = 2,
+    SAT_SYM = 3,
+    Max = 0x7fffffff,
 };
 
 enum class Op : unsigned {
@@ -2373,8 +2373,6 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpArbitraryFloatPowRINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpArbitraryFloatPowNINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpLoopControlINTEL: *hasResult = false; *hasResultType = false; break;
-    case Op::OpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpFixedSqrtINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpFixedRecipINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpFixedRsqrtINTEL: *hasResult = true; *hasResultType = true; break;
@@ -2386,6 +2384,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpFixedSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpFixedLogINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpFixedExpINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpReadPipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpWritePipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpFPGARegINTEL: *hasResult = true; *hasResultType = true; break;
