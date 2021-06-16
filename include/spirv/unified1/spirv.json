@@ -424,50 +424,6 @@
                 }
             },
             {
-                "Name": "FPDenormMode",
-                "Type": "Value",
-                "Values":
-                {
-                    "Preserve": 0,
-                    "FlushToZero": 1
-                }
-            },
-            {
-                "Name": "FPOperationMode",
-                "Type": "Value",
-                "Values":
-                {
-                    "IEEE": 0,
-                    "ALT": 1
-                }
-            },
-            {
-                "Name": "QuantizationModes",
-                "Type": "Value",
-                "Values":
-                {
-                    "TRN": 0,
-                    "TRN_ZERO": 1,
-                    "RND": 2,
-                    "RND_ZERO": 3,
-                    "RND_INF": 4,
-                    "RND_MIN_INF": 5,
-                    "RND_CONV": 6,
-                    "RND_CONV_ODD": 7
-                }
-            },
-            {
-                "Name": "OverflowModes",
-                "Type": "Value",
-                "Values":
-                {
-                    "WRAP": 0,
-                    "SAT": 1,
-                    "SAT_ZERO": 2,
-                    "SAT_SYM": 3
-                }
-            },
-            {
                 "Name": "LinkageType",
                 "Type": "Value",
                 "Values":
@@ -1131,6 +1087,50 @@
                     "Vertical4Pixels": 1,
                     "Horizontal2Pixels": 2,
                     "Horizontal4Pixels": 3
+                }
+            },
+            {
+                "Name": "FPDenormMode",
+                "Type": "Value",
+                "Values":
+                {
+                    "Preserve": 0,
+                    "FlushToZero": 1
+                }
+            },
+            {
+                "Name": "FPOperationMode",
+                "Type": "Value",
+                "Values":
+                {
+                    "IEEE": 0,
+                    "ALT": 1
+                }
+            },
+            {
+                "Name": "QuantizationModes",
+                "Type": "Value",
+                "Values":
+                {
+                    "TRN": 0,
+                    "TRN_ZERO": 1,
+                    "RND": 2,
+                    "RND_ZERO": 3,
+                    "RND_INF": 4,
+                    "RND_MIN_INF": 5,
+                    "RND_CONV": 6,
+                    "RND_CONV_ODD": 7
+                }
+            },
+            {
+                "Name": "OverflowModes",
+                "Type": "Value",
+                "Values":
+                {
+                    "WRAP": 0,
+                    "SAT": 1,
+                    "SAT_ZERO": 2,
+                    "SAT_SYM": 3
                 }
             },
             {

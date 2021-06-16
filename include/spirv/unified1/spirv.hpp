@@ -408,38 +408,6 @@ enum FPRoundingMode {
     FPRoundingModeMax = 0x7fffffff,
 };
 
-enum FPDenormMode {
-    FPDenormModePreserve = 0,
-    FPDenormModeFlushToZero = 1,
-    FPDenormModeMax = 0x7fffffff,
-};
-
-enum FPOperationMode {
-    FPOperationModeIEEE = 0,
-    FPOperationModeALT = 1,
-    FPOperationModeMax = 0x7fffffff,
-};
-
-enum QuantizationModes {
-    QuantizationModesTRN = 0,
-    QuantizationModesTRN_ZERO = 1,
-    QuantizationModesRND = 2,
-    QuantizationModesRND_ZERO = 3,
-    QuantizationModesRND_INF = 4,
-    QuantizationModesRND_MIN_INF = 5,
-    QuantizationModesRND_CONV = 6,
-    QuantizationModesRND_CONV_ODD = 7,
-    QuantizationModesMax = 0x7fffffff,
-};
-
-enum OverflowModes {
-    OverflowModesWRAP = 0,
-    OverflowModesSAT = 1,
-    OverflowModesSAT_ZERO = 2,
-    OverflowModesSAT_SYM = 3,
-    OverflowModesMax = 0x7fffffff,
-};
-
 enum LinkageType {
     LinkageTypeExport = 0,
     LinkageTypeImport = 1,
@@ -1140,6 +1108,38 @@ enum FragmentShadingRateMask {
     FragmentShadingRateVertical4PixelsMask = 0x00000002,
     FragmentShadingRateHorizontal2PixelsMask = 0x00000004,
     FragmentShadingRateHorizontal4PixelsMask = 0x00000008,
+};
+
+enum FPDenormMode {
+    FPDenormModePreserve = 0,
+    FPDenormModeFlushToZero = 1,
+    FPDenormModeMax = 0x7fffffff,
+};
+
+enum FPOperationMode {
+    FPOperationModeIEEE = 0,
+    FPOperationModeALT = 1,
+    FPOperationModeMax = 0x7fffffff,
+};
+
+enum QuantizationModes {
+    QuantizationModesTRN = 0,
+    QuantizationModesTRN_ZERO = 1,
+    QuantizationModesRND = 2,
+    QuantizationModesRND_ZERO = 3,
+    QuantizationModesRND_INF = 4,
+    QuantizationModesRND_MIN_INF = 5,
+    QuantizationModesRND_CONV = 6,
+    QuantizationModesRND_CONV_ODD = 7,
+    QuantizationModesMax = 0x7fffffff,
+};
+
+enum OverflowModes {
+    OverflowModesWRAP = 0,
+    OverflowModesSAT = 1,
+    OverflowModesSAT_ZERO = 2,
+    OverflowModesSAT_SYM = 3,
+    OverflowModesMax = 0x7fffffff,
 };
 
 enum Op {
@@ -2373,8 +2373,6 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpArbitraryFloatPowRINTEL: *hasResult = true; *hasResultType = true; break;
     case OpArbitraryFloatPowNINTEL: *hasResult = true; *hasResultType = true; break;
     case OpLoopControlINTEL: *hasResult = false; *hasResultType = false; break;
-    case OpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
     case OpFixedSqrtINTEL: *hasResult = true; *hasResultType = true; break;
     case OpFixedRecipINTEL: *hasResult = true; *hasResultType = true; break;
     case OpFixedRsqrtINTEL: *hasResult = true; *hasResultType = true; break;
@@ -2386,6 +2384,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFixedSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
     case OpFixedLogINTEL: *hasResult = true; *hasResultType = true; break;
     case OpFixedExpINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
     case OpReadPipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
     case OpWritePipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
     case OpFPGARegINTEL: *hasResult = true; *hasResultType = true; break;
