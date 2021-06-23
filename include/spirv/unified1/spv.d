@@ -1055,6 +1055,7 @@ enum Capability : uint
     AtomicFloat32AddEXT = 6033,
     AtomicFloat64AddEXT = 6034,
     LongConstantCompositeINTEL = 6089,
+    AtomicFloat16AddEXT = 6095,
 }
 
 enum RayFlagsShift : uint
