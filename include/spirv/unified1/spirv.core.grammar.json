@@ -4261,6 +4261,93 @@
       "version" : "None"
     },
     {
+      "opname" : "OpSDotKHR",
+      "class"  : "Arithmetic",
+      "opcode" : 4450,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProductKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpUDotKHR",
+      "class"  : "Arithmetic",
+      "opcode" : 4451,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProductKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSUDotKHR",
+      "class"  : "Arithmetic",
+      "opcode" : 4452,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProductKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSDotAccSatKHR",
+      "class"  : "Arithmetic",
+      "opcode" : 4453,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "IdRef", "name" : "'Accumulator'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProductKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpUDotAccSatKHR",
+      "class"  : "Arithmetic",
+      "opcode" : 4454,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "IdRef", "name" : "'Accumulator'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProductKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSUDotAccSatKHR",
+      "class"  : "Arithmetic",
+      "opcode" : 4455,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Vector 1'" },
+        { "kind" : "IdRef", "name" : "'Vector 2'" },
+        { "kind" : "IdRef", "name" : "'Accumulator'" },
+        { "kind" : "PackedVectorFormat", "name" : "'Packed Vector Format'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "DotProductKHR" ],
+      "version" : "None"
+    },
+    {
         "opname" : "OpTypeRayQueryKHR",
         "class" : "Reserved",
         "opcode" : 4472,
@@ -13290,6 +13377,31 @@
           "version" : "None"
         },
         {
+          "enumerant" : "DotProductInputAllKHR",
+          "value" : 6016,
+          "extensions" : [ "SPV_KHR_integer_dot_product" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DotProductInput4x8BitKHR",
+          "value" : 6017,
+          "capabilities" : [ "Int8" ],
+          "extensions" : [ "SPV_KHR_integer_dot_product" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DotProductInput4x8BitPackedKHR",
+          "value" : 6018,
+          "extensions" : [ "SPV_KHR_integer_dot_product" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DotProductKHR",
+          "value" : 6019,
+          "extensions" : [ "SPV_KHR_integer_dot_product" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "AtomicFloat32AddEXT",
           "value" : 6033,
           "capabilities" : [ "Shader" ],
@@ -13367,6 +13479,18 @@
           "enumerant" : "RayQueryCandidateIntersectionAABBKHR",
           "value" : 1,
           "capabilities" : [ "RayQueryKHR" ],
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "PackedVectorFormat",
+      "enumerants" : [
+        {
+          "enumerant" : "PackedVectorFormat4x8BitKHR",
+          "value" : 0,
+          "capabilities" : [ "DotProductInput4x8BitPackedKHR" ],
           "version" : "None"
         }
       ]
