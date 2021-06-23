@@ -2157,7 +2157,7 @@
         { "kind" : "IdRef",        "name" : "'Offset'" },
         { "kind" : "IdRef",        "name" : "'Count'" }
       ],
-      "capabilities" : [ "Shader" ]
+      "capabilities" : [ "Shader", "BitInstructions" ]
     },
     {
       "opname" : "OpBitFieldSExtract",
@@ -2170,7 +2170,7 @@
         { "kind" : "IdRef",        "name" : "'Offset'" },
         { "kind" : "IdRef",        "name" : "'Count'" }
       ],
-      "capabilities" : [ "Shader" ]
+      "capabilities" : [ "Shader", "BitInstructions" ]
     },
     {
       "opname" : "OpBitFieldUExtract",
@@ -2183,7 +2183,7 @@
         { "kind" : "IdRef",        "name" : "'Offset'" },
         { "kind" : "IdRef",        "name" : "'Count'" }
       ],
-      "capabilities" : [ "Shader" ]
+      "capabilities" : [ "Shader", "BitInstructions" ]
     },
     {
       "opname" : "OpBitReverse",
@@ -2194,7 +2194,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "'Base'" }
       ],
-      "capabilities" : [ "Shader" ]
+      "capabilities" : [ "Shader", "BitInstructions" ]
     },
     {
       "opname" : "OpBitCount",
@@ -13399,6 +13399,12 @@
           "enumerant" : "DotProductKHR",
           "value" : 6019,
           "extensions" : [ "SPV_KHR_integer_dot_product" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BitInstructions",
+          "value" : 6025,
+          "extensions" : [ "SPV_KHR_bit_instructions" ],
           "version" : "None"
         },
         {
