@@ -13427,6 +13427,12 @@
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_EXT_shader_atomic_float16_add" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "DebugInfoModuleINTEL",
+          "value" : 6114,
+          "extensions" : [ "SPV_INTEL_debug_module" ],
+          "version" : "None"
         }
       ]
     },

@@ -1049,6 +1049,7 @@ enum Capability {
     CapabilityAtomicFloat64AddEXT = 6034,
     CapabilityLongConstantCompositeINTEL = 6089,
     CapabilityAtomicFloat16AddEXT = 6095,
+    CapabilityDebugInfoModuleINTEL = 6114,
     CapabilityMax = 0x7fffffff,
 };
 
