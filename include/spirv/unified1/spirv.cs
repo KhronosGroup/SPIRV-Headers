@@ -1049,6 +1049,7 @@ namespace Spv
             DotProductInput4x8BitKHR = 6017,
             DotProductInput4x8BitPackedKHR = 6018,
             DotProductKHR = 6019,
+            BitInstructions = 6025,
             AtomicFloat32AddEXT = 6033,
             AtomicFloat64AddEXT = 6034,
             LongConstantCompositeINTEL = 6089,

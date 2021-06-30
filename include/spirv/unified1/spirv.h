@@ -1049,6 +1049,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityDotProductInput4x8BitKHR = 6017,
     SpvCapabilityDotProductInput4x8BitPackedKHR = 6018,
     SpvCapabilityDotProductKHR = 6019,
+    SpvCapabilityBitInstructions = 6025,
     SpvCapabilityAtomicFloat32AddEXT = 6033,
     SpvCapabilityAtomicFloat64AddEXT = 6034,
     SpvCapabilityLongConstantCompositeINTEL = 6089,
