@@ -13509,7 +13509,7 @@
         {
           "enumerant" : "PackedVectorFormat4x8BitKHR",
           "value" : 0,
-          "capabilities" : [ "DotProductInput4x8BitPackedKHR" ],
+          "extensions" : [ "SPV_KHR_integer_dot_product" ],
           "version" : "None"
         }
       ]
