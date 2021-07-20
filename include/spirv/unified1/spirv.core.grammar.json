@@ -9445,7 +9445,9 @@
           "value" : 39,
           "capabilities" : [ "Kernel" ],
           "parameters" : [
-            { "kind" : "IdRef", "name" : "'Local Size Hint'" }
+            { "kind" : "IdRef", "name" : "'x size hint'" },
+            { "kind" : "IdRef", "name" : "'y size hint'" },
+            { "kind" : "IdRef", "name" : "'z size hint'" }
           ],
           "version" : "1.2"
         },
