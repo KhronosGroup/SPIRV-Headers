@@ -8738,7 +8738,9 @@
         },
         {
           "enumerant" : "OptNoneINTEL",
-          "value" : "0x10000"
+          "value" : "0x10000",
+          "capabilities" : [  "OptNoneINTEL" ],
+          "version" : "None"
         }
       ]
     },
