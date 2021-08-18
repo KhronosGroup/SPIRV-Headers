@@ -7677,24 +7677,6 @@
       "version" : "None"
     },
     {
-      "opname" : "OpArbitraryFloatPowNINTEL",
-      "class"  : "@exclude",
-      "opcode" : 5882,
-      "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef", "name" : "'A'" },
-        { "kind" : "LiteralInteger", "name" : "'M1'" },
-        { "kind" : "IdRef", "name" : "'B'" },
-        { "kind" : "LiteralInteger", "name" : "'Mout'" },
-        { "kind" : "LiteralInteger", "name" : "'EnableSubnormals'" },
-        { "kind" : "LiteralInteger", "name" : "'RoundingMode'" },
-        { "kind" : "LiteralInteger", "name" : "'RoundingAccuracy'" }
-      ],
-      "capabilities" : [ "ArbitraryPrecisionFloatingPointINTEL" ],
-      "version" : "None"
-    },
-    {
       "opname" : "OpLoopControlINTEL",
       "class"  : "Reserved",
       "opcode" : 5887,
