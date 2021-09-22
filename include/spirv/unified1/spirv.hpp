@@ -1800,7 +1800,7 @@ enum Op {
     OpTypeStructContinuedINTEL = 6090,
     OpConstantCompositeContinuedINTEL = 6091,
     OpSpecConstantCompositeContinuedINTEL = 6092,
-    OpMax = 0x7fffffff,
+    OpMax = 0x7fff,
 };
 
 #ifdef SPV_ENABLE_UTILITY_CODE

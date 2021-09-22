@@ -82,6 +82,7 @@ namespace {
             enumShift,
             enumMask,
             enumHex,
+            enumShortHex,
         };
 
         static std::string styleStr(enumStyle_t s) {
@@ -163,6 +164,8 @@ namespace {
             return fmtNum("0x%08x", 1<<v);
         case enumHex:
             return fmtNum("0x%08x", v);
+        case enumShortHex:
+            return fmtNum("0x%04x", v);
         default:
             return std::to_string(v);
         }
@@ -343,7 +346,10 @@ namespace {
 
                 const auto sorted = getSortedVals((*opClass)["Values"]);
 
-                std::string maxEnum = maxEnumFmt(opName, valpair_t(0x7FFFFFFF, "Max"), enumHex);
+                // Opcodes are only 16 bits by definition. Use only short unsigned value
+                std::string maxEnum = opName == "Op" ?
+                    maxEnumFmt(opName, valpair_t(0x7fff, "Max"), enumShortHex) : 
+                    maxEnumFmt(opName, valpair_t(0x7FFFFFFF, "Max"), enumHex);
 
                 bool printMax = (style != enumMask && maxEnum.size() > 0);
 

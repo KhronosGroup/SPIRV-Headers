@@ -1804,7 +1804,7 @@ typedef enum SpvOp_ {
     SpvOpTypeStructContinuedINTEL = 6090,
     SpvOpConstantCompositeContinuedINTEL = 6091,
     SpvOpSpecConstantCompositeContinuedINTEL = 6092,
-    SpvOpMax = 0x7fffffff,
+    SpvOpMax = 0x7fff,
 } SpvOp;
 
 #ifdef SPV_ENABLE_UTILITY_CODE
