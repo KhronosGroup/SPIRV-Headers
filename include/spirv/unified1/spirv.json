@@ -395,7 +395,8 @@
                     "VolatileTexel": 11,
                     "VolatileTexelKHR": 11,
                     "SignExtend": 12,
-                    "ZeroExtend": 13
+                    "ZeroExtend": 13,
+                    "Offsets": 16
                 }
             },
             {

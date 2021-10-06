@@ -8475,6 +8475,13 @@
           "enumerant" : "ZeroExtend",
           "value" : "0x2000",
           "version" : "1.4"
+        },
+        {
+          "enumerant" : "Offsets",
+          "value" : "0x10000",
+          "parameters" : [
+            { "kind" : "IdRef" }
+          ]
         }
       ]
     },
