@@ -353,6 +353,7 @@ enum ImageOperandsShift {
     ImageOperandsVolatileTexelKHRShift = 11,
     ImageOperandsSignExtendShift = 12,
     ImageOperandsZeroExtendShift = 13,
+    ImageOperandsOffsetsShift = 16,
     ImageOperandsMax = 0x7fffffff,
 };
 
@@ -376,6 +377,7 @@ enum ImageOperandsMask {
     ImageOperandsVolatileTexelKHRMask = 0x00000800,
     ImageOperandsSignExtendMask = 0x00001000,
     ImageOperandsZeroExtendMask = 0x00002000,
+    ImageOperandsOffsetsMask = 0x00010000,
 };
 
 enum FPFastMathModeShift {
