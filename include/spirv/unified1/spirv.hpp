@@ -677,6 +677,7 @@ enum BuiltIn {
     BuiltInSMCountNV = 5375,
     BuiltInWarpIDNV = 5376,
     BuiltInSMIDNV = 5377,
+    BuiltInCullMaskKHR = 6021,
     BuiltInMax = 0x7fffffff,
 };
 
@@ -1078,6 +1079,7 @@ enum Capability {
     CapabilityDotProductInput4x8BitPackedKHR = 6018,
     CapabilityDotProduct = 6019,
     CapabilityDotProductKHR = 6019,
+    CapabilityRayCullMaskKHR = 6020,
     CapabilityBitInstructions = 6025,
     CapabilityGroupNonUniformRotateKHR = 6026,
     CapabilityAtomicFloat32AddEXT = 6033,

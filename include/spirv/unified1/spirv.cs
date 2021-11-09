@@ -675,6 +675,7 @@ namespace Spv
             SMCountNV = 5375,
             WarpIDNV = 5376,
             SMIDNV = 5377,
+            CullMaskKHR = 6021,
         }
 
         public enum SelectionControlShift
@@ -1082,6 +1083,7 @@ namespace Spv
             DotProductInput4x8BitPackedKHR = 6018,
             DotProduct = 6019,
             DotProductKHR = 6019,
+            RayCullMaskKHR = 6020,
             BitInstructions = 6025,
             GroupNonUniformRotateKHR = 6026,
             AtomicFloat32AddEXT = 6033,
