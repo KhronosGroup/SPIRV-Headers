@@ -548,6 +548,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationFunctionFloatingPointModeINTEL = 6080,
     SpvDecorationSingleElementVectorINTEL = 6085,
     SpvDecorationVectorComputeCallableFunctionINTEL = 6087,
+    SpvDecorationMediaBlockIOINTEL = 6140,
     SpvDecorationMax = 0x7fffffff,
 } SpvDecoration;
 
