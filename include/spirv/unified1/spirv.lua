@@ -517,6 +517,7 @@ spv = {
         FunctionFloatingPointModeINTEL = 6080,
         SingleElementVectorINTEL = 6085,
         VectorComputeCallableFunctionINTEL = 6087,
+        MediaBlockIOINTEL = 6140,
     },
 
     BuiltIn = {

@@ -545,6 +545,7 @@ enum Decoration : uint
     FunctionFloatingPointModeINTEL = 6080,
     SingleElementVectorINTEL = 6085,
     VectorComputeCallableFunctionINTEL = 6087,
+    MediaBlockIOINTEL = 6140,
 }
 
 enum BuiltIn : uint

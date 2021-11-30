@@ -11506,6 +11506,12 @@
           "value" : 6087,
           "capabilities" : [ "VectorComputeINTEL" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "MediaBlockIOINTEL",
+          "value" : 6140,
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "version" : "None"
         }
       ]
     },

@@ -542,6 +542,7 @@ namespace Spv
             FunctionFloatingPointModeINTEL = 6080,
             SingleElementVectorINTEL = 6085,
             VectorComputeCallableFunctionINTEL = 6087,
+            MediaBlockIOINTEL = 6140,
         }
 
         public enum BuiltIn
