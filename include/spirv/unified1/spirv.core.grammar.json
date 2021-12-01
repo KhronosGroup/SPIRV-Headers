@@ -13604,14 +13604,12 @@
         {
           "enumerant" : "AtomicFloat32AddEXT",
           "value" : 6033,
-          "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_EXT_shader_atomic_float_add" ],
           "version" : "None"
         },
         {
           "enumerant" : "AtomicFloat64AddEXT",
           "value" : 6034,
-          "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_EXT_shader_atomic_float_add" ],
           "version" : "None"
         },
@@ -13630,7 +13628,6 @@
         {
           "enumerant" : "AtomicFloat16AddEXT",
           "value" : 6095,
-          "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_EXT_shader_atomic_float16_add" ],
           "version" : "None"
         },
