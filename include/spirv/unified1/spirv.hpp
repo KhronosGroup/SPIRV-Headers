@@ -208,6 +208,7 @@ enum ExecutionMode {
     ExecutionModeNoGlobalOffsetINTEL = 5895,
     ExecutionModeNumSIMDWorkitemsINTEL = 5896,
     ExecutionModeSchedulerTargetFmaxMhzINTEL = 5903,
+    ExecutionModeMaximallyReconvergesKHR = 6023,
     ExecutionModeStreamingInterfaceINTEL = 6154,
     ExecutionModeRegisterMapInterfaceINTEL = 6160,
     ExecutionModeNamedBarrierCountINTEL = 6417,
