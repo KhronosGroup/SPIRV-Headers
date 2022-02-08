@@ -1843,8 +1843,8 @@ typedef enum SpvOp_ {
 } SpvOp;
 
 #ifdef SPV_ENABLE_UTILITY_CODE
-#if !defined(__cplusplus) && !defined(bool)
-# include <stdbool.h>
+#ifndef __cplusplus
+#include <stdbool.h>
 #endif
 inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultType) {
     *hasResult = *hasResultType = false;
