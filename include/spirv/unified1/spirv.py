@@ -1045,6 +1045,7 @@ spv = {
         'OptNoneINTEL' : 6094,
         'AtomicFloat16AddEXT' : 6095,
         'DebugInfoModuleINTEL' : 6114,
+        'GroupUniformArithmeticKHR' : 6400,
     },
 
     'RayFlagsShift' : {
@@ -1796,6 +1797,14 @@ spv = {
         'OpTypeStructContinuedINTEL' : 6090,
         'OpConstantCompositeContinuedINTEL' : 6091,
         'OpSpecConstantCompositeContinuedINTEL' : 6092,
+        'OpGroupIMulKHR' : 6401,
+        'OpGroupFMulKHR' : 6402,
+        'OpGroupBitwiseAndKHR' : 6403,
+        'OpGroupBitwiseOrKHR' : 6404,
+        'OpGroupBitwiseXorKHR' : 6405,
+        'OpGroupLogicalAndKHR' : 6406,
+        'OpGroupLogicalOrKHR' : 6407,
+        'OpGroupLogicalXorKHR' : 6408,
     },
 
 }

@@ -1087,6 +1087,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityOptNoneINTEL = 6094,
     SpvCapabilityAtomicFloat16AddEXT = 6095,
     SpvCapabilityDebugInfoModuleINTEL = 6114,
+    SpvCapabilityGroupUniformArithmeticKHR = 6400,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
 
@@ -1849,6 +1850,14 @@ typedef enum SpvOp_ {
     SpvOpTypeStructContinuedINTEL = 6090,
     SpvOpConstantCompositeContinuedINTEL = 6091,
     SpvOpSpecConstantCompositeContinuedINTEL = 6092,
+    SpvOpGroupIMulKHR = 6401,
+    SpvOpGroupFMulKHR = 6402,
+    SpvOpGroupBitwiseAndKHR = 6403,
+    SpvOpGroupBitwiseOrKHR = 6404,
+    SpvOpGroupBitwiseXorKHR = 6405,
+    SpvOpGroupLogicalAndKHR = 6406,
+    SpvOpGroupLogicalOrKHR = 6407,
+    SpvOpGroupLogicalXorKHR = 6408,
     SpvOpMax = 0x7fffffff,
 } SpvOp;
 
@@ -2503,6 +2512,14 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpTypeStructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpSpecConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupBitwiseOrKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupBitwiseXorKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupLogicalAndKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupLogicalOrKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
     }
 }
 #endif /* SPV_ENABLE_UTILITY_CODE */
