@@ -8549,6 +8549,30 @@
       ],
       "capabilities" : [ "LongConstantCompositeINTEL" ],
       "version" : "None"
+    },
+    {
+      "opname" : "OpControlBarrierArriveINTEL",
+      "class"  : "Barrier",
+      "opcode" : 6142,
+      "operands" : [
+        { "kind" : "IdScope",           "name" : "'Execution'" },
+        { "kind" : "IdScope",           "name" : "'Memory'" },
+        { "kind" : "IdMemorySemantics", "name" : "'Semantics'" }
+      ],
+      "capabilities" : [ "SplitBarrierINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpControlBarrierWaitINTEL",
+      "class"  : "Barrier",
+      "opcode" : 6143,
+      "operands" : [
+        { "kind" : "IdScope",           "name" : "'Execution'" },
+        { "kind" : "IdScope",           "name" : "'Memory'" },
+        { "kind" : "IdMemorySemantics", "name" : "'Semantics'" }
+      ],
+      "capabilities" : [ "SplitBarrierINTEL" ],
+      "version" : "None"
     }
   ],
   "operand_kinds" : [
@@ -13880,6 +13904,12 @@
           "enumerant" : "DebugInfoModuleINTEL",
           "value" : 6114,
           "extensions" : [ "SPV_INTEL_debug_module" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SplitBarrierINTEL",
+          "value" : 6141,
+          "extensions" : [ "SPV_INTEL_split_barrier" ],
           "version" : "None"
         }
       ]
