@@ -1087,6 +1087,7 @@ namespace Spv
             OptNoneINTEL = 6094,
             AtomicFloat16AddEXT = 6095,
             DebugInfoModuleINTEL = 6114,
+            SplitBarrierINTEL = 6141,
             GroupUniformArithmeticKHR = 6400,
         }
 
@@ -1852,6 +1853,8 @@ namespace Spv
             OpTypeStructContinuedINTEL = 6090,
             OpConstantCompositeContinuedINTEL = 6091,
             OpSpecConstantCompositeContinuedINTEL = 6092,
+            OpControlBarrierArriveINTEL = 6142,
+            OpControlBarrierWaitINTEL = 6143,
             OpGroupIMulKHR = 6401,
             OpGroupFMulKHR = 6402,
             OpGroupBitwiseAndKHR = 6403,
