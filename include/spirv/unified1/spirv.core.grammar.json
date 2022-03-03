@@ -8586,7 +8586,6 @@
         { "kind" : "IdRef",          "name" : "'X'" }
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
-      "extensions" : [ "SPV_KHR_uniform_group_instructions" ],
       "version" : "None"
     },
     {
@@ -8601,7 +8600,6 @@
         { "kind" : "IdRef",          "name" : "'X'" }
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
-      "extensions" : [ "SPV_KHR_uniform_group_instructions" ],
       "version" : "None"
     },
     {
@@ -8616,7 +8614,6 @@
         { "kind" : "IdRef",          "name" : "'X'" }
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
-      "extensions" : [ "SPV_KHR_uniform_group_instructions" ],
       "version" : "None"
     },
     {
@@ -8631,7 +8628,6 @@
         { "kind" : "IdRef",          "name" : "'X'" }
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
-      "extensions" : [ "SPV_KHR_uniform_group_instructions" ],
       "version" : "None"
     },
     {
@@ -8646,7 +8642,6 @@
         { "kind" : "IdRef",          "name" : "'X'" }
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
-      "extensions" : [ "SPV_KHR_uniform_group_instructions" ],
       "version" : "None"
     },
     {
@@ -8661,7 +8656,6 @@
         { "kind" : "IdRef",          "name" : "'X'" }
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
-      "extensions" : [ "SPV_KHR_uniform_group_instructions" ],
       "version" : "None"
     },
     {
@@ -8676,7 +8670,6 @@
         { "kind" : "IdRef",          "name" : "'X'" }
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
-      "extensions" : [ "SPV_KHR_uniform_group_instructions" ],
       "version" : "None"
     },
     {
@@ -8691,7 +8684,6 @@
         { "kind" : "IdRef",          "name" : "'X'" }
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
-      "extensions" : [ "SPV_KHR_uniform_group_instructions" ],
       "version" : "None"
     }
   ],
