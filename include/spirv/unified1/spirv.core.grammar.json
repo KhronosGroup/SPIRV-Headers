@@ -9434,6 +9434,10 @@
         {
           "enumerant" : "CPP_for_OpenCL",
           "value" : 6
+        },
+        {
+          "enumerant" : "SYCL",
+          "value" : 7
         }
       ]
     },
