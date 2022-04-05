@@ -198,7 +198,8 @@
                     "MaxWorkDimINTEL": 5894,
                     "NoGlobalOffsetINTEL": 5895,
                     "NumSIMDWorkitemsINTEL": 5896,
-                    "SchedulerTargetFmaxMhzINTEL": 5903
+                    "SchedulerTargetFmaxMhzINTEL": 5903,
+                    "NamedBarrierCountINTEL": 6417
                 }
             },
             {
