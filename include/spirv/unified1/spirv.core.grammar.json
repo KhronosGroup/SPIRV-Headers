@@ -10110,6 +10110,15 @@
           ],
           "capabilities" : [ "FPGAKernelAttributesINTEL" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "NamedBarrierCountINTEL",
+          "value" : 6417,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Barrier Count'" }
+          ],
+          "capabilities" : [ "VectorComputeINTEL" ],
+          "version" : "None"
         }
       ]
     },
