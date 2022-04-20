@@ -4184,6 +4184,21 @@
       "version" : "None"
     },
     {
+      "opname" : "OpGroupNonUniformRotateKHR",
+      "class"  : "Group",
+      "opcode" : 4431,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdScope", "name" : "'Execution'" },
+        { "kind" : "IdRef", "name" : "'Value'" },
+        { "kind" : "IdRef", "name" : "'Delta'" },
+        { "kind" : "IdRef", "name" : "'ClusterSize'", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "GroupNonUniformRotateKHR" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpSubgroupReadInvocationKHR",
       "class"  : "Group",
       "opcode" : 4432,
@@ -13993,6 +14008,13 @@
           "enumerant" : "BitInstructions",
           "value" : 6025,
           "extensions" : [ "SPV_KHR_bit_instructions" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GroupNonUniformRotateKHR",
+          "value" : 6026,
+          "capabilities" : [ "GroupNonUniform" ],
+          "extensions" : [ "SPV_KHR_subgroup_rotate" ],
           "version" : "None"
         },
         {

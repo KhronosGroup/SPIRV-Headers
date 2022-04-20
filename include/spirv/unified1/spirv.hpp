@@ -1079,6 +1079,7 @@ enum Capability {
     CapabilityDotProduct = 6019,
     CapabilityDotProductKHR = 6019,
     CapabilityBitInstructions = 6025,
+    CapabilityGroupNonUniformRotateKHR = 6026,
     CapabilityAtomicFloat32AddEXT = 6033,
     CapabilityAtomicFloat64AddEXT = 6034,
     CapabilityLongConstantCompositeINTEL = 6089,
@@ -1542,6 +1543,7 @@ enum Op {
     OpSubgroupAllKHR = 4428,
     OpSubgroupAnyKHR = 4429,
     OpSubgroupAllEqualKHR = 4430,
+    OpGroupNonUniformRotateKHR = 4431,
     OpSubgroupReadInvocationKHR = 4432,
     OpTraceRayKHR = 4445,
     OpExecuteCallableKHR = 4446,
@@ -2220,6 +2222,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
+    case OpGroupNonUniformRotateKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupReadInvocationKHR: *hasResult = true; *hasResultType = true; break;
     case OpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
     case OpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;

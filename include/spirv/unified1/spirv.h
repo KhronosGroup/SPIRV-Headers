@@ -1083,6 +1083,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityDotProduct = 6019,
     SpvCapabilityDotProductKHR = 6019,
     SpvCapabilityBitInstructions = 6025,
+    SpvCapabilityGroupNonUniformRotateKHR = 6026,
     SpvCapabilityAtomicFloat32AddEXT = 6033,
     SpvCapabilityAtomicFloat64AddEXT = 6034,
     SpvCapabilityLongConstantCompositeINTEL = 6089,
@@ -1546,6 +1547,7 @@ typedef enum SpvOp_ {
     SpvOpSubgroupAllKHR = 4428,
     SpvOpSubgroupAnyKHR = 4429,
     SpvOpSubgroupAllEqualKHR = 4430,
+    SpvOpGroupNonUniformRotateKHR = 4431,
     SpvOpSubgroupReadInvocationKHR = 4432,
     SpvOpTraceRayKHR = 4445,
     SpvOpExecuteCallableKHR = 4446,
@@ -2224,6 +2226,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupNonUniformRotateKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupReadInvocationKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;
