@@ -4195,9 +4195,6 @@
         { "kind" : "IdRef", "name" : "'Delta'" },
         { "kind" : "IdRef", "name" : "'ClusterSize'", "quantifier" : "?" }
       ],
-      "extensions" : [
-        "SPV_KHR_subgroup_rotate"
-      ],
       "capabilities" : [ "GroupNonUniformRotateKHR" ],
       "version" : "None"
     },
