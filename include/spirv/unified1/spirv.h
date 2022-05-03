@@ -681,6 +681,7 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInSMCountNV = 5375,
     SpvBuiltInWarpIDNV = 5376,
     SpvBuiltInSMIDNV = 5377,
+    SpvBuiltInCullMaskKHR = 6021,
     SpvBuiltInMax = 0x7fffffff,
 } SpvBuiltIn;
 
@@ -1082,6 +1083,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityDotProductInput4x8BitPackedKHR = 6018,
     SpvCapabilityDotProduct = 6019,
     SpvCapabilityDotProductKHR = 6019,
+    SpvCapabilityRayCullMaskKHR = 6020,
     SpvCapabilityBitInstructions = 6025,
     SpvCapabilityGroupNonUniformRotateKHR = 6026,
     SpvCapabilityAtomicFloat32AddEXT = 6033,

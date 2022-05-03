@@ -12616,6 +12616,13 @@
           "capabilities" : [ "ShaderSMBuiltinsNV" ],
           "extensions" : [ "SPV_NV_shader_sm_builtins" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "CullMaskKHR",
+          "value"  : 6021,
+          "capabilities" : [ "RayCullMaskKHR" ],
+          "extensions" : [ "SPV_KHR_ray_cull_mask" ],
+          "version" : "None"
         }
       ]
     },
@@ -14003,6 +14010,12 @@
           "value" : 6019,
           "extensions" : [ "SPV_KHR_integer_dot_product" ],
           "version" : "1.6"
+        },
+        {
+          "enumerant" : "RayCullMaskKHR",
+          "value" : 6020,
+          "extensions" : [ "SPV_KHR_ray_cull_mask" ],
+          "version" : "None"
         },
         {
           "enumerant" : "BitInstructions",
