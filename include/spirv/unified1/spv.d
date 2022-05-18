@@ -158,6 +158,7 @@ enum ExecutionMode : uint
     SignedZeroInfNanPreserve = 4461,
     RoundingModeRTE = 4462,
     RoundingModeRTZ = 4463,
+    EarlyAndLateFragmentTestsAMD = 5017,
     StencilRefReplacingEXT = 5027,
     StencilRefUnchangedFrontAMD = 5079,
     StencilRefGreaterFrontAMD = 5080,
