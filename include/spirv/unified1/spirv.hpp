@@ -742,7 +742,7 @@ enum LoopControlMask {
     LoopControlMaxInterleavingINTELMask = 0x00200000,
     LoopControlSpeculatedIterationsINTELMask = 0x00400000,
     LoopControlNoFusionINTELMask = 0x00800000,
-    LoopControlMax = 0x7fffffff,
+    LoopControlMaskMax = 0x7fffffff,
 };
 
 enum FunctionControlShift {
