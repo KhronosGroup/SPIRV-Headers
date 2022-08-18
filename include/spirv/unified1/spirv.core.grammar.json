@@ -129,6 +129,10 @@
       "heading" : "Non-Uniform Instructions"
     },
     {
+      "tag"     : "Invocation-Repack",
+      "heading" : "Invocation Repack Instructions"
+    },
+    {
       "tag"     : "Reserved",
       "heading" : "Reserved Instructions"
     }
@@ -4214,7 +4218,7 @@
     },
     {
       "opname" : "OpTraceRayKHR",
-      "class"  : "Reserved",
+      "class"  : "Invocation-Repack",
       "opcode" : 4445,
       "operands" : [
 
@@ -4236,7 +4240,7 @@
     },
     {
       "opname" : "OpExecuteCallableKHR",
-      "class"  : "Reserved",
+      "class"  : "Invocation-Repack",
       "opcode" : 4446,
       "operands" : [
 
@@ -4812,7 +4816,7 @@
     },
     {
       "opname" : "OpReportIntersectionKHR",
-      "class"  : "Reserved",
+      "class"  : "Invocation-Repack",
       "opcode" : 5334,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -4887,7 +4891,7 @@
     },
     {
       "opname" : "OpTraceRayMotionNV",
-      "class"  : "Reserved",
+      "class"  : "Invocation-Repack",
       "opcode" : 5339,
       "operands" : [
 
