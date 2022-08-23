@@ -1058,6 +1058,7 @@ enum Capability {
     CapabilityFragmentShaderPixelInterlockEXT = 5378,
     CapabilityDemoteToHelperInvocation = 5379,
     CapabilityDemoteToHelperInvocationEXT = 5379,
+    CapabilityRayTracingOpacityMicromapEXT = 5381,
     CapabilityBindlessTextureNV = 5390,
     CapabilitySubgroupShuffleINTEL = 5568,
     CapabilitySubgroupBufferBlockIOINTEL = 5569,
@@ -1131,6 +1132,7 @@ enum RayFlagsShift {
     RayFlagsCullNoOpaqueKHRShift = 7,
     RayFlagsSkipTrianglesKHRShift = 8,
     RayFlagsSkipAABBsKHRShift = 9,
+    RayFlagsForceOpacityMicromap2StateEXTShift = 10,
     RayFlagsMax = 0x7fffffff,
 };
 
@@ -1146,6 +1148,7 @@ enum RayFlagsMask {
     RayFlagsCullNoOpaqueKHRMask = 0x00000080,
     RayFlagsSkipTrianglesKHRMask = 0x00000100,
     RayFlagsSkipAABBsKHRMask = 0x00000200,
+    RayFlagsForceOpacityMicromap2StateEXTMask = 0x00000400,
 };
 
 enum RayQueryIntersection {

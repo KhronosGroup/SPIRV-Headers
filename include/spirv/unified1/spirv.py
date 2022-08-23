@@ -1020,6 +1020,7 @@ spv = {
         'FragmentShaderPixelInterlockEXT' : 5378,
         'DemoteToHelperInvocation' : 5379,
         'DemoteToHelperInvocationEXT' : 5379,
+        'RayTracingOpacityMicromapEXT' : 5381,
         'BindlessTextureNV' : 5390,
         'SubgroupShuffleINTEL' : 5568,
         'SubgroupBufferBlockIOINTEL' : 5569,
@@ -1092,6 +1093,7 @@ spv = {
         'CullNoOpaqueKHR' : 7,
         'SkipTrianglesKHR' : 8,
         'SkipAABBsKHR' : 9,
+        'ForceOpacityMicromap2StateEXT' : 10,
     },
 
     'RayFlagsMask' : {
@@ -1106,6 +1108,7 @@ spv = {
         'CullNoOpaqueKHR' : 0x00000080,
         'SkipTrianglesKHR' : 0x00000100,
         'SkipAABBsKHR' : 0x00000200,
+        'ForceOpacityMicromap2StateEXT' : 0x00000400,
     },
 
     'RayQueryIntersection' : {
