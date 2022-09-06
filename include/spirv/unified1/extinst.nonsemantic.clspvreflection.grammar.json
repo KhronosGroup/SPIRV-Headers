@@ -1,5 +1,5 @@
 {
-  "revision" : 3,
+  "revision" : 4,
   "instructions" : [
     {
       "opname" : "Kernel",
@@ -324,6 +324,24 @@
         { "kind" : "IdRef", "name" : "Binding" },
         { "kind" : "IdRef", "name" : "Offset" },
         { "kind" : "IdRef", "name" : "Size" }
+      ]
+    },
+    {
+      "opname" : "PrintfInfo",
+      "opcode" : 34,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "PrintfID" },
+        { "kind" : "IdRef", "name" : "FormatString" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "ArgumentSizes"}
+      ]
+    },
+    {
+      "opname" : "PrintfBufferInfo",
+      "opcode" : 35,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "DescriptorSet" },
+        { "kind" : "IdRef", "name" : "Binding" },
+        { "kind" : "IdRef", "name" : "Size"}
       ]
     }
   ]
