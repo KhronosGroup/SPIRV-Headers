@@ -12193,6 +12193,31 @@
           "capabilities" : [ "Shader" ]
         },
         {
+          "enumerant" : "CoreIDARM",
+          "value" : 4160,
+          "capabilities" : [ "CoreBuiltinsARM" ]
+        },
+        {
+          "enumerant" : "CoreCountARM",
+          "value" : 4161,
+          "capabilities" : [ "CoreBuiltinsARM" ]
+        },
+        {
+          "enumerant" : "CoreMaxIDARM",
+          "value" : 4162,
+          "capabilities" : [ "CoreBuiltinsARM" ]
+        },
+        {
+          "enumerant" : "WarpIDARM",
+          "value" : 4163,
+          "capabilities" : [ "CoreBuiltinsARM" ]
+        },
+        {
+          "enumerant" : "WarpMaxIDARM",
+          "value" : 4164,
+          "capabilities" : [ "CoreBuiltinsARM" ]
+        },
+        {
           "enumerant" : "SubgroupEqMask",
           "value" : 4416,
           "capabilities" : [ "SubgroupBallotKHR", "GroupNonUniformBallot" ],
@@ -13242,6 +13267,11 @@
           "enumerant" : "UniformDecoration",
           "value" : 71,
           "version" : "1.6"
+        },
+        {
+          "enumerant" : "CoreBuiltinsARM",
+          "value" : 4165,
+          "extensions" : [ "SPV_ARM_core_builtins" ]
         },
         {
           "enumerant" : "FragmentShadingRateKHR",
