@@ -227,6 +227,7 @@ enum StorageClass {
     StorageClassShaderRecordBufferNV = 5343,
     StorageClassPhysicalStorageBuffer = 5349,
     StorageClassPhysicalStorageBufferEXT = 5349,
+    StorageClassHitObjectAttributeNV = 5385,
     StorageClassTaskPayloadWorkgroupEXT = 5402,
     StorageClassCodeSectionINTEL = 5605,
     StorageClassDeviceOnlyINTEL = 5936,
@@ -522,6 +523,7 @@ enum Decoration {
     DecorationRestrictPointerEXT = 5355,
     DecorationAliasedPointer = 5356,
     DecorationAliasedPointerEXT = 5356,
+    DecorationHitObjectShaderRecordBufferNV = 5386,
     DecorationBindlessSamplerNV = 5398,
     DecorationBindlessImageNV = 5399,
     DecorationBoundSamplerNV = 5400,
@@ -1059,6 +1061,7 @@ enum Capability {
     CapabilityDemoteToHelperInvocation = 5379,
     CapabilityDemoteToHelperInvocationEXT = 5379,
     CapabilityRayTracingOpacityMicromapEXT = 5381,
+    CapabilityShaderInvocationReorderNV = 5383,
     CapabilityBindlessTextureNV = 5390,
     CapabilitySubgroupShuffleINTEL = 5568,
     CapabilitySubgroupBufferBlockIOINTEL = 5569,
@@ -1612,6 +1615,39 @@ enum Op {
     OpFragmentMaskFetchAMD = 5011,
     OpFragmentFetchAMD = 5012,
     OpReadClockKHR = 5056,
+    OpHitObjectRecordHitMotionNV = 5249,
+    OpHitObjectRecordHitWithIndexMotionNV = 5250,
+    OpHitObjectRecordMissMotionNV = 5251,
+    OpHitObjectGetWorldToObjectNV = 5252,
+    OpHitObjectGetObjectToWorldNV = 5253,
+    OpHitObjectGetObjectRayDirectionNV = 5254,
+    OpHitObjectGetObjectRayOriginNV = 5255,
+    OpHitObjectTraceRayMotionNV = 5256,
+    OpHitObjectGetShaderRecordBufferHandleNV = 5257,
+    OpHitObjectGetShaderBindingTableRecordIndexNV = 5258,
+    OpHitObjectRecordEmptyNV = 5259,
+    OpHitObjectTraceRayNV = 5260,
+    OpHitObjectRecordHitNV = 5261,
+    OpHitObjectRecordHitWithIndexNV = 5262,
+    OpHitObjectRecordMissNV = 5263,
+    OpHitObjectExecuteShaderNV = 5264,
+    OpHitObjectGetCurrentTimeNV = 5265,
+    OpHitObjectGetAttributesNV = 5266,
+    OpHitObjectGetHitKindNV = 5267,
+    OpHitObjectGetPrimitiveIndexNV = 5268,
+    OpHitObjectGetGeometryIndexNV = 5269,
+    OpHitObjectGetInstanceIdNV = 5270,
+    OpHitObjectGetInstanceCustomIndexNV = 5271,
+    OpHitObjectGetWorldRayDirectionNV = 5272,
+    OpHitObjectGetWorldRayOriginNV = 5273,
+    OpHitObjectGetRayTMaxNV = 5274,
+    OpHitObjectGetRayTMinNV = 5275,
+    OpHitObjectIsEmptyNV = 5276,
+    OpHitObjectIsHitNV = 5277,
+    OpHitObjectIsMissNV = 5278,
+    OpReorderThreadWithHitObjectNV = 5279,
+    OpReorderThreadWithHintNV = 5280,
+    OpTypeHitObjectNV = 5281,
     OpImageSampleFootprintNV = 5283,
     OpEmitMeshTasksEXT = 5294,
     OpSetMeshOutputsEXT = 5295,
@@ -2287,6 +2323,39 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFragmentMaskFetchAMD: *hasResult = true; *hasResultType = true; break;
     case OpFragmentFetchAMD: *hasResult = true; *hasResultType = true; break;
     case OpReadClockKHR: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectGetWorldToObjectNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetObjectToWorldNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetObjectRayDirectionNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetObjectRayOriginNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectTraceRayMotionNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectGetShaderRecordBufferHandleNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetShaderBindingTableRecordIndexNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectRecordEmptyNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectTraceRayNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectRecordHitNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectRecordHitWithIndexNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectRecordMissNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectExecuteShaderNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectGetCurrentTimeNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetAttributesNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectGetHitKindNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetPrimitiveIndexNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetGeometryIndexNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetInstanceIdNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetInstanceCustomIndexNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetWorldRayDirectionNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetWorldRayOriginNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetRayTMaxNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetRayTMinNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectIsEmptyNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectIsHitNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectIsMissNV: *hasResult = true; *hasResultType = true; break;
+    case OpReorderThreadWithHitObjectNV: *hasResult = false; *hasResultType = false; break;
+    case OpReorderThreadWithHintNV: *hasResult = false; *hasResultType = false; break;
+    case OpTypeHitObjectNV: *hasResult = true; *hasResultType = false; break;
     case OpImageSampleFootprintNV: *hasResult = true; *hasResultType = true; break;
     case OpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case OpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;

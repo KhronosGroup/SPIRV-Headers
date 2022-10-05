@@ -4755,6 +4755,494 @@
       "version" : "None"
     },
     {
+      "opname" : "OpHitObjectRecordHitMotionNV",
+      "class"  : "Reserved",
+      "opcode" : 5249,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "name" : "'Acceleration Structure'" },
+        { "kind" : "IdRef", "name" : "'InstanceId'" },
+        { "kind" : "IdRef", "name" : "'PrimitiveId'" },
+        { "kind" : "IdRef", "name" : "'GeometryIndex'" },
+        { "kind" : "IdRef", "name" : "'Hit Kind'" },
+        { "kind" : "IdRef", "name" : "'SBT Record Offset'" },
+        { "kind" : "IdRef", "name" : "'SBT Record Stride'" },
+        { "kind" : "IdRef", "name" : "'Origin'" },
+        { "kind" : "IdRef", "name" : "'TMin'" },
+        { "kind" : "IdRef", "name" : "'Direction'" },
+        { "kind" : "IdRef", "name" : "'TMax'" },
+        { "kind" : "IdRef", "name" : "'Current Time'" },
+        { "kind" : "IdRef", "name" : "'HitObject Attributes'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectRecordHitWithIndexMotionNV",
+      "class"  : "Reserved",
+      "opcode" : 5250,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "name" : "'Acceleration Structure'" },
+        { "kind" : "IdRef", "name" : "'InstanceId'" },
+        { "kind" : "IdRef", "name" : "'PrimitiveId'" },
+        { "kind" : "IdRef", "name" : "'GeometryIndex'" },
+        { "kind" : "IdRef", "name" : "'Hit Kind'" },
+        { "kind" : "IdRef", "name" : "'SBT Record Index'" },
+        { "kind" : "IdRef", "name" : "'Origin'" },
+        { "kind" : "IdRef", "name" : "'TMin'" },
+        { "kind" : "IdRef", "name" : "'Direction'" },
+        { "kind" : "IdRef", "name" : "'TMax'" },
+        { "kind" : "IdRef", "name" : "'Current Time'" },
+        { "kind" : "IdRef", "name" : "'HitObject Attributes'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectRecordMissMotionNV",
+      "class"  : "Reserved",
+      "opcode" : 5251,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "name" : "'SBT Index'" },
+        { "kind" : "IdRef", "name" : "'Origin'" },
+        { "kind" : "IdRef", "name" : "'TMin'" },
+        { "kind" : "IdRef", "name" : "'Direction'" },
+        { "kind" : "IdRef", "name" : "'TMax'" },
+        { "kind" : "IdRef", "name" : "'Current Time'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetWorldToObjectNV",
+      "class"  : "Reserved",
+      "opcode" : 5252,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetObjectToWorldNV",
+      "class"  : "Reserved",
+      "opcode" : 5253,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetObjectRayDirectionNV",
+      "class"  : "Reserved",
+      "opcode" : 5254,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetObjectRayOriginNV",
+      "class"  : "Reserved",
+      "opcode" : 5255,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectTraceRayMotionNV",
+      "class"  : "Reserved",
+      "opcode" : 5256,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "name" : "'Acceleration Structure'"},
+        { "kind" : "IdRef", "name" : "'RayFlags'"},
+        { "kind" : "IdRef", "name" : "'Cullmask'"},
+        { "kind" : "IdRef", "name" : "'SBT Record Offset'"},
+        { "kind" : "IdRef", "name" : "'SBT Record Stride'"},
+        { "kind" : "IdRef", "name" : "'Miss Index'"},
+        { "kind" : "IdRef", "name" : "'Origin'"},
+        { "kind" : "IdRef", "name" : "'TMin'"},
+        { "kind" : "IdRef", "name" : "'Direction'"},
+        { "kind" : "IdRef", "name" : "'TMax'"},
+        { "kind" : "IdRef", "name" : "'Time'"},
+        { "kind" : "IdRef", "name" : "'Payload'"}
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetShaderRecordBufferHandleNV",
+      "class"  : "Reserved",
+      "opcode" : 5257,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetShaderBindingTableRecordIndexNV",
+      "class"  : "Reserved",
+      "opcode" : 5258,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectRecordEmptyNV",
+      "class"  : "Reserved",
+      "opcode" : 5259,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectTraceRayNV",
+      "class"  : "Reserved",
+      "opcode" : 5260,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "name" : "'Acceleration Structure'"},
+        { "kind" : "IdRef", "name" : "'RayFlags'"},
+        { "kind" : "IdRef", "name" : "'Cullmask'"},
+        { "kind" : "IdRef", "name" : "'SBT Record Offset'"},
+        { "kind" : "IdRef", "name" : "'SBT Record Stride'"},
+        { "kind" : "IdRef", "name" : "'Miss Index'"},
+        { "kind" : "IdRef", "name" : "'Origin'"},
+        { "kind" : "IdRef", "name" : "'TMin'"},
+        { "kind" : "IdRef", "name" : "'Direction'"},
+        { "kind" : "IdRef", "name" : "'TMax'"},
+        { "kind" : "IdRef", "name" : "'Payload'"}
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectRecordHitNV",
+      "class"  : "Reserved",
+      "opcode" : 5261,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "name" : "'Acceleration Structure'" },
+        { "kind" : "IdRef", "name" : "'InstanceId'" },
+        { "kind" : "IdRef", "name" : "'PrimitiveId'" },
+        { "kind" : "IdRef", "name" : "'GeometryIndex'" },
+        { "kind" : "IdRef", "name" : "'Hit Kind'" },
+        { "kind" : "IdRef", "name" : "'SBT Record Offset'" },
+        { "kind" : "IdRef", "name" : "'SBT Record Stride'" },
+        { "kind" : "IdRef", "name" : "'Origin'" },
+        { "kind" : "IdRef", "name" : "'TMin'" },
+        { "kind" : "IdRef", "name" : "'Direction'" },
+        { "kind" : "IdRef", "name" : "'TMax'" },
+        { "kind" : "IdRef", "name" : "'HitObject Attributes'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectRecordHitWithIndexNV",
+      "class"  : "Reserved",
+      "opcode" : 5262,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "name" : "'Acceleration Structure'" },
+        { "kind" : "IdRef", "name" : "'InstanceId'" },
+        { "kind" : "IdRef", "name" : "'PrimitiveId'" },
+        { "kind" : "IdRef", "name" : "'GeometryIndex'" },
+        { "kind" : "IdRef", "name" : "'Hit Kind'" },
+        { "kind" : "IdRef", "name" : "'SBT Record Index'" },
+        { "kind" : "IdRef", "name" : "'Origin'" },
+        { "kind" : "IdRef", "name" : "'TMin'" },
+        { "kind" : "IdRef", "name" : "'Direction'" },
+        { "kind" : "IdRef", "name" : "'TMax'" },
+        { "kind" : "IdRef", "name" : "'HitObject Attributes'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectRecordMissNV",
+      "class"  : "Reserved",
+      "opcode" : 5263,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "name" : "'SBT Index'" },
+        { "kind" : "IdRef", "name" : "'Origin'" },
+        { "kind" : "IdRef", "name" : "'TMin'" },
+        { "kind" : "IdRef", "name" : "'Direction'" },
+        { "kind" : "IdRef", "name" : "'TMax'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectExecuteShaderNV",
+      "class"  : "Reserved",
+      "opcode" : 5264,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "name" : "'Payload'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetCurrentTimeNV",
+      "class"  : "Reserved",
+      "opcode" : 5265,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetAttributesNV",
+      "class"  : "Reserved",
+      "opcode" : 5266,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "name" : "'Hit Object Attribute'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetHitKindNV",
+      "class"  : "Reserved",
+      "opcode" : 5267,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetPrimitiveIndexNV",
+      "class"  : "Reserved",
+      "opcode" : 5268,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetGeometryIndexNV",
+      "class"  : "Reserved",
+      "opcode" : 5269,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetInstanceIdNV",
+      "class"  : "Reserved",
+      "opcode" : 5270,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetInstanceCustomIndexNV",
+      "class"  : "Reserved",
+      "opcode" : 5271,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetWorldRayDirectionNV",
+      "class"  : "Reserved",
+      "opcode" : 5272,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetWorldRayOriginNV",
+      "class"  : "Reserved",
+      "opcode" : 5273,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetRayTMaxNV",
+      "class"  : "Reserved",
+      "opcode" : 5274,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetRayTMinNV",
+      "class"  : "Reserved",
+      "opcode" : 5275,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectIsEmptyNV",
+      "class"  : "Reserved",
+      "opcode" : 5276,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectIsHitNV",
+      "class"  : "Reserved",
+      "opcode" : 5277,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectIsMissNV",
+      "class"  : "Reserved",
+      "opcode" : 5278,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpReorderThreadWithHitObjectNV",
+      "class"  : "Reserved",
+      "opcode" : 5279,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hit Object'" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "'Hint'" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "'Bits'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpReorderThreadWithHintNV",
+      "class"  : "Reserved",
+      "opcode" : 5280,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Hint'" },
+        { "kind" : "IdRef", "name" : "'Bits'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTypeHitObjectNV",
+      "class"  : "Reserved",
+      "opcode" : 5281,
+      "operands" : [
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
+      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpImageSampleFootprintNV",
       "class"  : "Image",
       "opcode" : 5283,
@@ -10423,6 +10911,13 @@
           "version" : "1.5"
         },
         {
+          "enumerant" : "HitObjectAttributeNV",
+          "value" : 5385,
+          "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+          "capabilities" : [ "ShaderInvocationReorderNV" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "TaskPayloadWorkgroupEXT",
           "value" : 5402,
           "extensions" : [ "SPV_EXT_mesh_shader" ],
@@ -11623,6 +12118,12 @@
           "capabilities" : [ "PhysicalStorageBufferAddresses" ],
           "extensions" : [ "SPV_EXT_physical_storage_buffer" ],
           "version" : "1.5"
+        },
+        {
+          "enumerant" : "HitObjectShaderRecordBufferNV",
+          "value" : 5386,
+          "capabilities" : [ "ShaderInvocationReorderNV" ],
+          "version" : "None"
         },
         {
           "enumerant" : "BindlessSamplerNV",
@@ -13921,6 +14422,12 @@
           "value" : 5381,
           "capabilities" : [ "RayQueryKHR","RayTracingKHR" ],
           "extensions" : [ "SPV_EXT_opacity_micromap" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ShaderInvocationReorderNV",
+          "value" : 5383,
+          "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
           "version" : "None"
         },
         {
