@@ -13920,7 +13920,7 @@
           "enumerant" : "RayTracingOpacityMicromapEXT",
           "value" : 5381,
           "capabilities" : [ "RayQueryKHR","RayTracingKHR" ],
-          "extensions" : [ "SPV_KHR_ray_query","SPV_KHR_ray_tracing" ],
+          "extensions" : [ "SPV_EXT_opacity_micromap" ],
           "version" : "None"
         },
         {
