@@ -11965,6 +11965,33 @@
           "version" : "None"
         },
         {
+          "enumerant" : "InitiationIntervalINTEL",
+          "value" : 5917,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Cycles'" }
+          ],
+          "capabilities" : [ "FPGAInvocationPipeliningAttributesINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxConcurrencyINTEL",
+          "value" : 5918,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Invocations'" }
+          ],
+          "capabilities" : [ "FPGAInvocationPipeliningAttributesINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PipelineEnableINTEL",
+          "value" : 5919,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Enable'" }
+          ],
+          "capabilities" : [ "FPGAInvocationPipeliningAttributesINTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "BufferLocationINTEL",
           "value" : 5921,
           "parameters" : [
@@ -14145,6 +14172,12 @@
           "enumerant" : "MemoryAccessAliasingINTEL",
           "value" : 5910,
           "extensions" : [ "SPV_INTEL_memory_access_aliasing" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGAInvocationPipeliningAttributesINTEL",
+          "value" : 5916,
+          "extensions" : [ "SPV_INTEL_fpga_invocation_pipelining_attributes" ],
           "version" : "None"
         },
         {
