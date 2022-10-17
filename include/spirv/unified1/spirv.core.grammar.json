@@ -11947,6 +11947,16 @@
           "version" : "None"
         },
         {
+          "enumerant" : "MathOpDSPModeINTEL",
+          "value" : 5909,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Mode'" },
+            { "kind" : "LiteralInteger", "name" : "'Propagate'" }
+          ],
+          "capabilities" : [ "FPGADSPControlINTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "AliasScopeINTEL",
           "value" : 5914,
           "parameters" : [
@@ -14166,6 +14176,12 @@
           "enumerant" : "LoopFuseINTEL",
           "value" : 5906,
           "extensions" : [ "SPV_INTEL_loop_fuse" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGADSPControlINTEL",
+          "value" : 5908,
+          "extensions" : [ "SPV_INTEL_fpga_dsp_control" ],
           "version" : "None"
         },
         {
