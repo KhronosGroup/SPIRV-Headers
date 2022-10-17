@@ -11201,6 +11201,11 @@
           "enumerant" : "NoReadWrite",
           "value" : 7,
           "capabilities" : [ "Kernel" ]
+        },
+        {
+          "enumerant" : "RuntimeAlignedINTEL",
+          "value" : 5940,
+          "capabilities" : [ "RuntimeAlignedAttributeINTEL" ]
         }
       ]
     },
@@ -14212,6 +14217,12 @@
           "enumerant" : "USMStorageClassesINTEL",
           "value" : 5935,
           "extensions" : [ "SPV_INTEL_usm_storage_classes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RuntimeAlignedAttributeINTEL",
+          "value" : 5939,
+          "extensions" : [ "SPV_INTEL_runtime_aligned" ],
           "version" : "None"
         },
         {

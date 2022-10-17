@@ -451,6 +451,7 @@ namespace Spv
             NoCapture = 5,
             NoWrite = 6,
             NoReadWrite = 7,
+            RuntimeAlignedINTEL = 5940,
         }
 
         [AllowDuplicates, CRepr] public enum Decoration
@@ -1111,6 +1112,7 @@ namespace Spv
             FPGABufferLocationINTEL = 5920,
             ArbitraryPrecisionFixedPointINTEL = 5922,
             USMStorageClassesINTEL = 5935,
+            RuntimeAlignedAttributeINTEL = 5939,
             IOPipesINTEL = 5943,
             BlockingPipesINTEL = 5945,
             FPGARegINTEL = 5948,

@@ -452,6 +452,7 @@ enum FunctionParameterAttribute {
     FunctionParameterAttributeNoCapture = 5,
     FunctionParameterAttributeNoWrite = 6,
     FunctionParameterAttributeNoReadWrite = 7,
+    FunctionParameterAttributeRuntimeAlignedINTEL = 5940,
     FunctionParameterAttributeMax = 0x7fffffff,
 };
 
@@ -1106,6 +1107,7 @@ enum Capability {
     CapabilityFPGABufferLocationINTEL = 5920,
     CapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     CapabilityUSMStorageClassesINTEL = 5935,
+    CapabilityRuntimeAlignedAttributeINTEL = 5939,
     CapabilityIOPipesINTEL = 5943,
     CapabilityBlockingPipesINTEL = 5945,
     CapabilityFPGARegINTEL = 5948,

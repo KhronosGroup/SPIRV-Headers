@@ -456,6 +456,7 @@ typedef enum SpvFunctionParameterAttribute_ {
     SpvFunctionParameterAttributeNoCapture = 5,
     SpvFunctionParameterAttributeNoWrite = 6,
     SpvFunctionParameterAttributeNoReadWrite = 7,
+    SpvFunctionParameterAttributeRuntimeAlignedINTEL = 5940,
     SpvFunctionParameterAttributeMax = 0x7fffffff,
 } SpvFunctionParameterAttribute;
 
@@ -1110,6 +1111,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGABufferLocationINTEL = 5920,
     SpvCapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     SpvCapabilityUSMStorageClassesINTEL = 5935,
+    SpvCapabilityRuntimeAlignedAttributeINTEL = 5939,
     SpvCapabilityIOPipesINTEL = 5943,
     SpvCapabilityBlockingPipesINTEL = 5945,
     SpvCapabilityFPGARegINTEL = 5948,
