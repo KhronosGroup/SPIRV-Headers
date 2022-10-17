@@ -735,6 +735,8 @@ namespace Spv
             MaxInterleavingINTEL = 21,
             SpeculatedIterationsINTEL = 22,
             NoFusionINTEL = 23,
+            LoopCountINTEL = 24,
+            MaxReinvocationDelayINTEL = 25,
         }
 
         public enum LoopControlMask
@@ -757,6 +759,8 @@ namespace Spv
             MaxInterleavingINTEL = 0x00200000,
             SpeculatedIterationsINTEL = 0x00400000,
             NoFusionINTEL = 0x00800000,
+            LoopCountINTEL = 0x01000000,
+            MaxReinvocationDelayINTEL = 0x02000000,
         }
 
         public enum FunctionControlShift

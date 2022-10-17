@@ -740,6 +740,8 @@ typedef enum SpvLoopControlShift_ {
     SpvLoopControlMaxInterleavingINTELShift = 21,
     SpvLoopControlSpeculatedIterationsINTELShift = 22,
     SpvLoopControlNoFusionINTELShift = 23,
+    SpvLoopControlLoopCountINTELShift = 24,
+    SpvLoopControlMaxReinvocationDelayINTELShift = 25,
     SpvLoopControlMax = 0x7fffffff,
 } SpvLoopControlShift;
 
@@ -762,6 +764,8 @@ typedef enum SpvLoopControlMask_ {
     SpvLoopControlMaxInterleavingINTELMask = 0x00200000,
     SpvLoopControlSpeculatedIterationsINTELMask = 0x00400000,
     SpvLoopControlNoFusionINTELMask = 0x00800000,
+    SpvLoopControlLoopCountINTELMask = 0x01000000,
+    SpvLoopControlMaxReinvocationDelayINTELMask = 0x02000000,
 } SpvLoopControlMask;
 
 typedef enum SpvFunctionControlShift_ {
