@@ -32,12 +32,14 @@ source_set("spv_headers") {
     "include/spirv/1.2/OpenCL.std.h",
     "include/spirv/1.2/spirv.h",
     "include/spirv/1.2/spirv.hpp",
+    "include/spirv/1.2/spirv.hpp11",
     "include/spirv/unified1/GLSL.std.450.h",
     "include/spirv/unified1/NonSemanticClspvReflection.h",
     "include/spirv/unified1/NonSemanticDebugPrintf.h",
     "include/spirv/unified1/OpenCL.std.h",
     "include/spirv/unified1/spirv.h",
     "include/spirv/unified1/spirv.hpp",
+    "include/spirv/unified1/spirv.hpp11",
   ]
 
   public_configs = [ ":spv_headers_public_config" ]
