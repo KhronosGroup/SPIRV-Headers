@@ -14394,7 +14394,7 @@
         {
           "enumerant" : "ShaderInvocationReorderNV",
           "value" : 5383,
-          "capabilties" : [ "RayTracingKHR" ],
+          "capabilities" : [ "RayTracingKHR" ],
           "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
           "version" : "None"
         },
