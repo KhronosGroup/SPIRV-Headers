@@ -4774,8 +4774,7 @@
         { "kind" : "IdRef", "name" : "'Current Time'" },
         { "kind" : "IdRef", "name" : "'HitObject Attributes'" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "capabilities" : [ "ShaderInvocationReorderNV", "RayTracingMotionBlurNV" ],
       "version" : "None"
     },
     {
@@ -4797,8 +4796,7 @@
         { "kind" : "IdRef", "name" : "'Current Time'" },
         { "kind" : "IdRef", "name" : "'HitObject Attributes'" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "capabilities" : [ "ShaderInvocationReorderNV", "RayTracingMotionBlurNV" ],
       "version" : "None"
     },
     {
@@ -4814,8 +4812,7 @@
         { "kind" : "IdRef", "name" : "'TMax'" },
         { "kind" : "IdRef", "name" : "'Current Time'" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "capabilities" : [ "ShaderInvocationReorderNV", "RayTracingMotionBlurNV" ],
       "version" : "None"
     },
     {
@@ -4828,7 +4825,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -4841,7 +4837,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -4854,7 +4849,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -4867,7 +4861,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -4889,8 +4882,7 @@
         { "kind" : "IdRef", "name" : "'Time'"},
         { "kind" : "IdRef", "name" : "'Payload'"}
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+      "capabilities" : [ "ShaderInvocationReorderNV", "RayTracingMotionBlurNV" ],
       "version" : "None"
     },
     {
@@ -4903,7 +4895,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -4916,7 +4907,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -4927,7 +4917,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -4949,7 +4938,6 @@
         { "kind" : "IdRef", "name" : "'Payload'"}
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -4972,7 +4960,6 @@
         { "kind" : "IdRef", "name" : "'HitObject Attributes'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -4994,7 +4981,6 @@
         { "kind" : "IdRef", "name" : "'HitObject Attributes'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5010,7 +4996,6 @@
         { "kind" : "IdRef", "name" : "'TMax'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5022,7 +5007,6 @@
         { "kind" : "IdRef", "name" : "'Payload'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5035,7 +5019,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5047,7 +5030,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object Attribute'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5060,7 +5042,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5073,7 +5054,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5086,7 +5066,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5099,7 +5078,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5112,7 +5090,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5125,7 +5102,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5138,7 +5114,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5151,7 +5126,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5164,7 +5138,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5177,7 +5150,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5190,7 +5162,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5203,7 +5174,6 @@
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5216,7 +5186,6 @@
         { "kind" : "IdRef", "quantifier" : "?", "name" : "'Bits'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5228,7 +5197,6 @@
         { "kind" : "IdRef", "name" : "'Bits'" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -5239,7 +5207,6 @@
         { "kind" : "IdResult" }
       ],
       "capabilities" : [ "ShaderInvocationReorderNV" ],
-      "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
       "version" : "None"
     },
     {
@@ -14427,6 +14394,7 @@
         {
           "enumerant" : "ShaderInvocationReorderNV",
           "value" : 5383,
+          "capabilties" : [ "RayTracingKHR" ],
           "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
           "version" : "None"
         },
