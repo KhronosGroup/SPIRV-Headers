@@ -10880,7 +10880,6 @@
         {
           "enumerant" : "HitObjectAttributeNV",
           "value" : 5385,
-          "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
           "capabilities" : [ "ShaderInvocationReorderNV" ],
           "version" : "None"
         },
