@@ -426,6 +426,7 @@ spv = {
         NoCapture = 5,
         NoWrite = 6,
         NoReadWrite = 7,
+        RuntimeAlignedINTEL = 5940,
     },
 
     Decoration = {
@@ -533,8 +534,12 @@ spv = {
         PrefetchINTEL = 5902,
         StallEnableINTEL = 5905,
         FuseLoopsInFunctionINTEL = 5907,
+        MathOpDSPModeINTEL = 5909,
         AliasScopeINTEL = 5914,
         NoAliasINTEL = 5915,
+        InitiationIntervalINTEL = 5917,
+        MaxConcurrencyINTEL = 5918,
+        PipelineEnableINTEL = 5919,
         BufferLocationINTEL = 5921,
         IOPipeStorageINTEL = 5944,
         FunctionFloatingPointModeINTEL = 6080,
@@ -706,6 +711,8 @@ spv = {
         MaxInterleavingINTEL = 21,
         SpeculatedIterationsINTEL = 22,
         NoFusionINTEL = 23,
+        LoopCountINTEL = 24,
+        MaxReinvocationDelayINTEL = 25,
     },
 
     LoopControlMask = {
@@ -727,6 +734,8 @@ spv = {
         MaxInterleavingINTEL = 0x00200000,
         SpeculatedIterationsINTEL = 0x00400000,
         NoFusionINTEL = 0x00800000,
+        LoopCountINTEL = 0x01000000,
+        MaxReinvocationDelayINTEL = 0x02000000,
     },
 
     FunctionControlShift = {
@@ -1054,10 +1063,13 @@ spv = {
         FPGAMemoryAccessesINTEL = 5898,
         FPGAClusterAttributesINTEL = 5904,
         LoopFuseINTEL = 5906,
+        FPGADSPControlINTEL = 5908,
         MemoryAccessAliasingINTEL = 5910,
+        FPGAInvocationPipeliningAttributesINTEL = 5916,
         FPGABufferLocationINTEL = 5920,
         ArbitraryPrecisionFixedPointINTEL = 5922,
         USMStorageClassesINTEL = 5935,
+        RuntimeAlignedAttributeINTEL = 5939,
         IOPipesINTEL = 5943,
         BlockingPipesINTEL = 5945,
         FPGARegINTEL = 5948,

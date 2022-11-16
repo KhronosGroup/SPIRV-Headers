@@ -452,6 +452,7 @@ enum FunctionParameterAttribute {
     FunctionParameterAttributeNoCapture = 5,
     FunctionParameterAttributeNoWrite = 6,
     FunctionParameterAttributeNoReadWrite = 7,
+    FunctionParameterAttributeRuntimeAlignedINTEL = 5940,
     FunctionParameterAttributeMax = 0x7fffffff,
 };
 
@@ -560,8 +561,12 @@ enum Decoration {
     DecorationPrefetchINTEL = 5902,
     DecorationStallEnableINTEL = 5905,
     DecorationFuseLoopsInFunctionINTEL = 5907,
+    DecorationMathOpDSPModeINTEL = 5909,
     DecorationAliasScopeINTEL = 5914,
     DecorationNoAliasINTEL = 5915,
+    DecorationInitiationIntervalINTEL = 5917,
+    DecorationMaxConcurrencyINTEL = 5918,
+    DecorationPipelineEnableINTEL = 5919,
     DecorationBufferLocationINTEL = 5921,
     DecorationIOPipeStorageINTEL = 5944,
     DecorationFunctionFloatingPointModeINTEL = 6080,
@@ -736,6 +741,8 @@ enum LoopControlShift {
     LoopControlMaxInterleavingINTELShift = 21,
     LoopControlSpeculatedIterationsINTELShift = 22,
     LoopControlNoFusionINTELShift = 23,
+    LoopControlLoopCountINTELShift = 24,
+    LoopControlMaxReinvocationDelayINTELShift = 25,
     LoopControlMax = 0x7fffffff,
 };
 
@@ -758,6 +765,8 @@ enum LoopControlMask {
     LoopControlMaxInterleavingINTELMask = 0x00200000,
     LoopControlSpeculatedIterationsINTELMask = 0x00400000,
     LoopControlNoFusionINTELMask = 0x00800000,
+    LoopControlLoopCountINTELMask = 0x01000000,
+    LoopControlMaxReinvocationDelayINTELMask = 0x02000000,
 };
 
 enum FunctionControlShift {
@@ -1092,10 +1101,13 @@ enum Capability {
     CapabilityFPGAMemoryAccessesINTEL = 5898,
     CapabilityFPGAClusterAttributesINTEL = 5904,
     CapabilityLoopFuseINTEL = 5906,
+    CapabilityFPGADSPControlINTEL = 5908,
     CapabilityMemoryAccessAliasingINTEL = 5910,
+    CapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
     CapabilityFPGABufferLocationINTEL = 5920,
     CapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     CapabilityUSMStorageClassesINTEL = 5935,
+    CapabilityRuntimeAlignedAttributeINTEL = 5939,
     CapabilityIOPipesINTEL = 5943,
     CapabilityBlockingPipesINTEL = 5945,
     CapabilityFPGARegINTEL = 5948,

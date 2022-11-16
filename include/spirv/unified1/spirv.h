@@ -456,6 +456,7 @@ typedef enum SpvFunctionParameterAttribute_ {
     SpvFunctionParameterAttributeNoCapture = 5,
     SpvFunctionParameterAttributeNoWrite = 6,
     SpvFunctionParameterAttributeNoReadWrite = 7,
+    SpvFunctionParameterAttributeRuntimeAlignedINTEL = 5940,
     SpvFunctionParameterAttributeMax = 0x7fffffff,
 } SpvFunctionParameterAttribute;
 
@@ -564,8 +565,12 @@ typedef enum SpvDecoration_ {
     SpvDecorationPrefetchINTEL = 5902,
     SpvDecorationStallEnableINTEL = 5905,
     SpvDecorationFuseLoopsInFunctionINTEL = 5907,
+    SpvDecorationMathOpDSPModeINTEL = 5909,
     SpvDecorationAliasScopeINTEL = 5914,
     SpvDecorationNoAliasINTEL = 5915,
+    SpvDecorationInitiationIntervalINTEL = 5917,
+    SpvDecorationMaxConcurrencyINTEL = 5918,
+    SpvDecorationPipelineEnableINTEL = 5919,
     SpvDecorationBufferLocationINTEL = 5921,
     SpvDecorationIOPipeStorageINTEL = 5944,
     SpvDecorationFunctionFloatingPointModeINTEL = 6080,
@@ -740,6 +745,8 @@ typedef enum SpvLoopControlShift_ {
     SpvLoopControlMaxInterleavingINTELShift = 21,
     SpvLoopControlSpeculatedIterationsINTELShift = 22,
     SpvLoopControlNoFusionINTELShift = 23,
+    SpvLoopControlLoopCountINTELShift = 24,
+    SpvLoopControlMaxReinvocationDelayINTELShift = 25,
     SpvLoopControlMax = 0x7fffffff,
 } SpvLoopControlShift;
 
@@ -762,6 +769,8 @@ typedef enum SpvLoopControlMask_ {
     SpvLoopControlMaxInterleavingINTELMask = 0x00200000,
     SpvLoopControlSpeculatedIterationsINTELMask = 0x00400000,
     SpvLoopControlNoFusionINTELMask = 0x00800000,
+    SpvLoopControlLoopCountINTELMask = 0x01000000,
+    SpvLoopControlMaxReinvocationDelayINTELMask = 0x02000000,
 } SpvLoopControlMask;
 
 typedef enum SpvFunctionControlShift_ {
@@ -1096,10 +1105,13 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGAMemoryAccessesINTEL = 5898,
     SpvCapabilityFPGAClusterAttributesINTEL = 5904,
     SpvCapabilityLoopFuseINTEL = 5906,
+    SpvCapabilityFPGADSPControlINTEL = 5908,
     SpvCapabilityMemoryAccessAliasingINTEL = 5910,
+    SpvCapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
     SpvCapabilityFPGABufferLocationINTEL = 5920,
     SpvCapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     SpvCapabilityUSMStorageClassesINTEL = 5935,
+    SpvCapabilityRuntimeAlignedAttributeINTEL = 5939,
     SpvCapabilityIOPipesINTEL = 5943,
     SpvCapabilityBlockingPipesINTEL = 5945,
     SpvCapabilityFPGARegINTEL = 5948,

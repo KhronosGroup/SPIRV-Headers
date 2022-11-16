@@ -9020,7 +9020,6 @@
             { "kind" : "LiteralInteger" }
           ],
           "capabilities" : [ "FPGALoopControlsINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
           "version" : "None"
         },
         {
@@ -9030,7 +9029,6 @@
             { "kind" : "LiteralInteger" }
           ],
           "capabilities" : [ "FPGALoopControlsINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
           "version" : "None"
         },
         {
@@ -9040,7 +9038,6 @@
             { "kind" : "LiteralInteger" }
           ],
           "capabilities" : [ "FPGALoopControlsINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
           "version" : "None"
         },
         {
@@ -9050,7 +9047,6 @@
             { "kind" : "LiteralInteger" }
           ],
           "capabilities" : [ "FPGALoopControlsINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
           "version" : "None"
         },
         {
@@ -9060,7 +9056,6 @@
             { "kind" : "LiteralInteger" }
           ],
           "capabilities" : [ "FPGALoopControlsINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
           "version" : "None"
         },
         {
@@ -9070,7 +9065,6 @@
             { "kind" : "LiteralInteger" }
           ],
           "capabilities" : [ "FPGALoopControlsINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
           "version" : "None"
         },
         {
@@ -9080,17 +9074,30 @@
             { "kind" : "LiteralInteger" }
           ],
           "capabilities" : [ "FPGALoopControlsINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
           "version" : "None"
         },
         {
           "enumerant" : "NoFusionINTEL",
           "value" : "0x800000",
+          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "LoopCountINTEL",
+          "value" : "0x1000000",
           "parameters" : [
             { "kind" : "LiteralInteger" }
           ],
           "capabilities" : [ "FPGALoopControlsINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxReinvocationDelayINTEL",
+          "value" : "0x2000000",
+          "parameters" : [
+            { "kind" : "LiteralInteger" }
+          ],
+          "capabilities" : [ "FPGALoopControlsINTEL" ],
           "version" : "None"
         }
       ]
@@ -11184,6 +11191,11 @@
           "enumerant" : "NoReadWrite",
           "value" : 7,
           "capabilities" : [ "Kernel" ]
+        },
+        {
+          "enumerant" : "RuntimeAlignedINTEL",
+          "value" : 5940,
+          "capabilities" : [ "RuntimeAlignedAttributeINTEL" ]
         }
       ]
     },
@@ -11930,6 +11942,16 @@
           "version" : "None"
         },
         {
+          "enumerant" : "MathOpDSPModeINTEL",
+          "value" : 5909,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Mode'" },
+            { "kind" : "LiteralInteger", "name" : "'Propagate'" }
+          ],
+          "capabilities" : [ "FPGADSPControlINTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "AliasScopeINTEL",
           "value" : 5914,
           "parameters" : [
@@ -11945,6 +11967,33 @@
             { "kind" : "IdRef", "name" : "'Aliasing Scopes List'" }
           ],
           "capabilities" : [ "MemoryAccessAliasingINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "InitiationIntervalINTEL",
+          "value" : 5917,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Cycles'" }
+          ],
+          "capabilities" : [ "FPGAInvocationPipeliningAttributesINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxConcurrencyINTEL",
+          "value" : 5918,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Invocations'" }
+          ],
+          "capabilities" : [ "FPGAInvocationPipeliningAttributesINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PipelineEnableINTEL",
+          "value" : 5919,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Enable'" }
+          ],
+          "capabilities" : [ "FPGAInvocationPipeliningAttributesINTEL" ],
           "version" : "None"
         },
         {
@@ -14125,9 +14174,21 @@
           "version" : "None"
         },
         {
+          "enumerant" : "FPGADSPControlINTEL",
+          "value" : 5908,
+          "extensions" : [ "SPV_INTEL_fpga_dsp_control" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "MemoryAccessAliasingINTEL",
           "value" : 5910,
           "extensions" : [ "SPV_INTEL_memory_access_aliasing" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGAInvocationPipeliningAttributesINTEL",
+          "value" : 5916,
+          "extensions" : [ "SPV_INTEL_fpga_invocation_pipelining_attributes" ],
           "version" : "None"
         },
         {
@@ -14146,6 +14207,12 @@
           "enumerant" : "USMStorageClassesINTEL",
           "value" : 5935,
           "extensions" : [ "SPV_INTEL_usm_storage_classes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RuntimeAlignedAttributeINTEL",
+          "value" : 5939,
+          "extensions" : [ "SPV_INTEL_runtime_aligned" ],
           "version" : "None"
         },
         {
