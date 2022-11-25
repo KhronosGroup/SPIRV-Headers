@@ -62,7 +62,7 @@
         <id value="9"   vendor="Qualcomm"   comment="Contact weifengz@qti.qualcomm.com"/>
         <id value="10"  vendor="AMD"        comment="Contact Daniel Rakos, daniel.rakos@amd.com"/>
         <id value="11"  vendor="Intel"      comment="Contact Alexey, alexey.bader@intel.com"/>
-        <id value="12"  vendor="Imagination" comment="Contact James Jones"/>
+        <id value="12"  vendor="Imagination" comment="Contact Stephen Clarke, stephen.clarke@imgtec.com"/>
         <id value="13"  vendor="Google" tool="Shaderc over Glslang" comment="Contact David Neto, dneto@google.com"/>
         <id value="14"  vendor="Google" tool="spiregg" comment="Contact Lei Zhang, antiagainst@google.com"/>
         <id value="15"  vendor="Google" tool="rspirv" comment="Contact Lei Zhang, antiagainst@gmail.com"/>
