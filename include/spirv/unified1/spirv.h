@@ -572,6 +572,16 @@ typedef enum SpvDecoration_ {
     SpvDecorationSingleElementVectorINTEL = 6085,
     SpvDecorationVectorComputeCallableFunctionINTEL = 6087,
     SpvDecorationMediaBlockIOINTEL = 6140,
+    SpvDecorationConduitKernelArgumentINTEL = 6175,
+    SpvDecorationRegisterMapKernelArgumentINTEL = 6176,
+    SpvDecorationMMHostInterfaceAddressWidthINTEL = 6177,
+    SpvDecorationMMHostInterfaceDataWidthINTEL = 6178,
+    SpvDecorationMMHostInterfaceLatencyINTEL = 6179,
+    SpvDecorationMMHostInterfaceReadWriteModeINTEL = 6180,
+    SpvDecorationMMHostInterfaceMaxBurstINTEL = 6181,
+    SpvDecorationMMHostInterfaceAlignmentINTEL = 6182,
+    SpvDecorationMMHostInterfaceWaitRequestINTEL = 6183,
+    SpvDecorationStableKernelArgumentINTEL = 6184,
     SpvDecorationMax = 0x7fffffff,
 } SpvDecoration;
 
@@ -1120,6 +1130,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityAtomicFloat16AddEXT = 6095,
     SpvCapabilityDebugInfoModuleINTEL = 6114,
     SpvCapabilitySplitBarrierINTEL = 6141,
+    SpvCapabilityFPGAArgumentInterfacesINTEL = 6174,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
