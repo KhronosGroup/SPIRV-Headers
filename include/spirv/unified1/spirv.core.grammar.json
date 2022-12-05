@@ -10711,7 +10711,7 @@
           "enumerant" : "StreamingInterfaceINTEL",
           "value" : 6154,
           "parameters" : [
-            { "kind" : "LiteralInteger", "name" : "'streaming_interface'" }
+            { "kind" : "LiteralInteger", "name" : "'StallFreeReturn'" }
           ],
           "capabilities" : [ "FPGAKernelAttributesINTEL" ],
           "version" : "None"
