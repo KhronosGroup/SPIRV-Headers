@@ -14323,6 +14323,7 @@
         {
           "enumerant" : "FPGAArgumentInterfacesINTEL",
           "value" : 6174,
+          "extensions" : [ "SPV_INTEL_fpga_argument_interfaces" ],
           "version" : "None"
         },
         {
