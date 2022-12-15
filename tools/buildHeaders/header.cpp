@@ -598,6 +598,9 @@ namespace {
                     // Overload operator&
                     out << "inline " << typeName << " operator&(" << typeName << " a, " << typeName << " b) { return " <<
                         typeName << "(unsigned(a) & unsigned(b)); }\n";
+                    // Overload operator^
+                    out << "inline " << typeName << " operator^(" << typeName << " a, " << typeName << " b) { return " <<
+                        typeName << "(unsigned(a) ^ unsigned(b)); }\n";
                     // Overload operator~
                     out << "inline " << typeName << " operator~(" << typeName << " a) { return " <<
                         typeName << "(~unsigned(a)); }\n";
