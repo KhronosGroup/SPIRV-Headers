@@ -7,9 +7,9 @@
       "operands" : [
         { "kind" : "IdRef", "name" : "Kernel" },
         { "kind" : "IdRef", "name" : "Name" },
-        { "kind" : "IdRef", "name" : "NumArguments"},
-        { "kind" : "IdRef", "name" : "Flags" },
-        { "kind" : "IdRef", "name" : "Attributes" }
+        { "kind" : "IdRef", "name" : "NumArguments", "quantifier" : "?" },
+        { "kind" : "IdRef", "name" : "Flags", "quantifier" : "?"  },
+        { "kind" : "IdRef", "name" : "Attributes", "quantifier" : "?"  }
       ]
     },
     {
