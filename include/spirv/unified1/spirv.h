@@ -579,9 +579,8 @@ typedef enum SpvDecoration_ {
     SpvDecorationMMHostInterfaceLatencyINTEL = 6179,
     SpvDecorationMMHostInterfaceReadWriteModeINTEL = 6180,
     SpvDecorationMMHostInterfaceMaxBurstINTEL = 6181,
-    SpvDecorationMMHostInterfaceAlignmentINTEL = 6182,
-    SpvDecorationMMHostInterfaceWaitRequestINTEL = 6183,
-    SpvDecorationStableKernelArgumentINTEL = 6184,
+    SpvDecorationMMHostInterfaceWaitRequestINTEL = 6182,
+    SpvDecorationStableKernelArgumentINTEL = 6183,
     SpvDecorationMax = 0x7fffffff,
 } SpvDecoration;
 

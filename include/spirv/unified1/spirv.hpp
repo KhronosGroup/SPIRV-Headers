@@ -575,9 +575,8 @@ enum Decoration {
     DecorationMMHostInterfaceLatencyINTEL = 6179,
     DecorationMMHostInterfaceReadWriteModeINTEL = 6180,
     DecorationMMHostInterfaceMaxBurstINTEL = 6181,
-    DecorationMMHostInterfaceAlignmentINTEL = 6182,
-    DecorationMMHostInterfaceWaitRequestINTEL = 6183,
-    DecorationStableKernelArgumentINTEL = 6184,
+    DecorationMMHostInterfaceWaitRequestINTEL = 6182,
+    DecorationStableKernelArgumentINTEL = 6183,
     DecorationMax = 0x7fffffff,
 };
 

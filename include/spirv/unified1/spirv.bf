@@ -574,9 +574,8 @@ namespace Spv
             MMHostInterfaceLatencyINTEL = 6179,
             MMHostInterfaceReadWriteModeINTEL = 6180,
             MMHostInterfaceMaxBurstINTEL = 6181,
-            MMHostInterfaceAlignmentINTEL = 6182,
-            MMHostInterfaceWaitRequestINTEL = 6183,
-            StableKernelArgumentINTEL = 6184,
+            MMHostInterfaceWaitRequestINTEL = 6182,
+            StableKernelArgumentINTEL = 6183,
         }
 
         [AllowDuplicates, CRepr] public enum BuiltIn
