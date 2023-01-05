@@ -194,6 +194,7 @@ enum ExecutionMode : uint
     NoGlobalOffsetINTEL = 5895,
     NumSIMDWorkitemsINTEL = 5896,
     SchedulerTargetFmaxMhzINTEL = 5903,
+    StreamingInterfaceINTEL = 6154,
     NamedBarrierCountINTEL = 6417,
 }
 
@@ -226,6 +227,7 @@ enum StorageClass : uint
     ShaderRecordBufferNV = 5343,
     PhysicalStorageBuffer = 5349,
     PhysicalStorageBufferEXT = 5349,
+    HitObjectAttributeNV = 5385,
     TaskPayloadWorkgroupEXT = 5402,
     CodeSectionINTEL = 5605,
     DeviceOnlyINTEL = 5936,
@@ -453,6 +455,7 @@ enum FunctionParameterAttribute : uint
     NoCapture = 5,
     NoWrite = 6,
     NoReadWrite = 7,
+    RuntimeAlignedINTEL = 5940,
 }
 
 enum Decoration : uint
@@ -523,6 +526,7 @@ enum Decoration : uint
     RestrictPointerEXT = 5355,
     AliasedPointer = 5356,
     AliasedPointerEXT = 5356,
+    HitObjectShaderRecordBufferNV = 5386,
     BindlessSamplerNV = 5398,
     BindlessImageNV = 5399,
     BoundSamplerNV = 5400,
@@ -561,8 +565,12 @@ enum Decoration : uint
     PrefetchINTEL = 5902,
     StallEnableINTEL = 5905,
     FuseLoopsInFunctionINTEL = 5907,
+    MathOpDSPModeINTEL = 5909,
     AliasScopeINTEL = 5914,
     NoAliasINTEL = 5915,
+    InitiationIntervalINTEL = 5917,
+    MaxConcurrencyINTEL = 5918,
+    PipelineEnableINTEL = 5919,
     BufferLocationINTEL = 5921,
     IOPipeStorageINTEL = 5944,
     FunctionFloatingPointModeINTEL = 6080,
@@ -747,6 +755,8 @@ enum LoopControlShift : uint
     MaxInterleavingINTEL = 21,
     SpeculatedIterationsINTEL = 22,
     NoFusionINTEL = 23,
+    LoopCountINTEL = 24,
+    MaxReinvocationDelayINTEL = 25,
 }
 
 enum LoopControlMask : uint
@@ -769,6 +779,8 @@ enum LoopControlMask : uint
     MaxInterleavingINTEL = 0x00200000,
     SpeculatedIterationsINTEL = 0x00400000,
     NoFusionINTEL = 0x00800000,
+    LoopCountINTEL = 0x01000000,
+    MaxReinvocationDelayINTEL = 0x02000000,
 }
 
 enum FunctionControlShift : uint
@@ -1074,6 +1086,8 @@ enum Capability : uint
     FragmentShaderPixelInterlockEXT = 5378,
     DemoteToHelperInvocation = 5379,
     DemoteToHelperInvocationEXT = 5379,
+    RayTracingOpacityMicromapEXT = 5381,
+    ShaderInvocationReorderNV = 5383,
     BindlessTextureNV = 5390,
     SubgroupShuffleINTEL = 5568,
     SubgroupBufferBlockIOINTEL = 5569,
@@ -1107,10 +1121,13 @@ enum Capability : uint
     FPGAMemoryAccessesINTEL = 5898,
     FPGAClusterAttributesINTEL = 5904,
     LoopFuseINTEL = 5906,
+    FPGADSPControlINTEL = 5908,
     MemoryAccessAliasingINTEL = 5910,
+    FPGAInvocationPipeliningAttributesINTEL = 5916,
     FPGABufferLocationINTEL = 5920,
     ArbitraryPrecisionFixedPointINTEL = 5922,
     USMStorageClassesINTEL = 5935,
+    RuntimeAlignedAttributeINTEL = 5939,
     IOPipesINTEL = 5943,
     BlockingPipesINTEL = 5945,
     FPGARegINTEL = 5948,
@@ -1148,6 +1165,7 @@ enum RayFlagsShift : uint
     CullNoOpaqueKHR = 7,
     SkipTrianglesKHR = 8,
     SkipAABBsKHR = 9,
+    ForceOpacityMicromap2StateEXT = 10,
 }
 
 enum RayFlagsMask : uint
@@ -1163,6 +1181,7 @@ enum RayFlagsMask : uint
     CullNoOpaqueKHR = 0x00000080,
     SkipTrianglesKHR = 0x00000100,
     SkipAABBsKHR = 0x00000200,
+    ForceOpacityMicromap2StateEXT = 0x00000400,
 }
 
 enum RayQueryIntersection : uint
@@ -1628,6 +1647,39 @@ enum Op : uint
     OpFragmentMaskFetchAMD = 5011,
     OpFragmentFetchAMD = 5012,
     OpReadClockKHR = 5056,
+    OpHitObjectRecordHitMotionNV = 5249,
+    OpHitObjectRecordHitWithIndexMotionNV = 5250,
+    OpHitObjectRecordMissMotionNV = 5251,
+    OpHitObjectGetWorldToObjectNV = 5252,
+    OpHitObjectGetObjectToWorldNV = 5253,
+    OpHitObjectGetObjectRayDirectionNV = 5254,
+    OpHitObjectGetObjectRayOriginNV = 5255,
+    OpHitObjectTraceRayMotionNV = 5256,
+    OpHitObjectGetShaderRecordBufferHandleNV = 5257,
+    OpHitObjectGetShaderBindingTableRecordIndexNV = 5258,
+    OpHitObjectRecordEmptyNV = 5259,
+    OpHitObjectTraceRayNV = 5260,
+    OpHitObjectRecordHitNV = 5261,
+    OpHitObjectRecordHitWithIndexNV = 5262,
+    OpHitObjectRecordMissNV = 5263,
+    OpHitObjectExecuteShaderNV = 5264,
+    OpHitObjectGetCurrentTimeNV = 5265,
+    OpHitObjectGetAttributesNV = 5266,
+    OpHitObjectGetHitKindNV = 5267,
+    OpHitObjectGetPrimitiveIndexNV = 5268,
+    OpHitObjectGetGeometryIndexNV = 5269,
+    OpHitObjectGetInstanceIdNV = 5270,
+    OpHitObjectGetInstanceCustomIndexNV = 5271,
+    OpHitObjectGetWorldRayDirectionNV = 5272,
+    OpHitObjectGetWorldRayOriginNV = 5273,
+    OpHitObjectGetRayTMaxNV = 5274,
+    OpHitObjectGetRayTMinNV = 5275,
+    OpHitObjectIsEmptyNV = 5276,
+    OpHitObjectIsHitNV = 5277,
+    OpHitObjectIsMissNV = 5278,
+    OpReorderThreadWithHitObjectNV = 5279,
+    OpReorderThreadWithHintNV = 5280,
+    OpTypeHitObjectNV = 5281,
     OpImageSampleFootprintNV = 5283,
     OpEmitMeshTasksEXT = 5294,
     OpSetMeshOutputsEXT = 5295,
