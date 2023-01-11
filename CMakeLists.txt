@@ -1,4 +1,4 @@
-# Copyright (c) 2015-2016 The Khronos Group Inc.
+# Copyright (c) 2015-2023 The Khronos Group Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and/or associated documentation files (the
@@ -28,8 +28,40 @@
 # The SPIR-V headers from the SPIR-V Registry
 # https://www.khronos.org/registry/spir-v/
 #
-cmake_minimum_required(VERSION 3.0)
-project(SPIRV-Headers VERSION 1.5.5)
+cmake_minimum_required(VERSION 3.10.2)
+
+function(spirv_get_grammer_version)
+    set(spirv_core_grammer_json "${CMAKE_CURRENT_SOURCE_DIR}/include/spirv/unified1/spirv.core.grammar.json")
+    if (NOT EXISTS ${spirv_core_grammer_json})
+        message(FATAL_ERROR "Couldn't find spirv.core.grammar.json!")
+    endif()
+
+    file(READ ${spirv_core_grammer_json} ver)
+
+    if (ver MATCHES "[ ]+\"major_version\"[ ]+:[ ]+([0-9]+),")
+        set(MAJOR_VERSION "${CMAKE_MATCH_1}")
+    else()
+        message(FATAL_ERROR "Couldn't get major version")
+    endif()
+
+    if (ver MATCHES "[ ]+\"minor_version\"[ ]+:[ ]+([0-9]+),")
+        set(MINOR_VERSION "${CMAKE_MATCH_1}")
+    else()
+        message(FATAL_ERROR "Couldn't get minor version")
+    endif()
+
+    if (ver MATCHES "[ ]+\"revision\"[ ]+:[ ]+([0-9]+),")
+        set(PATCH_VERSION "${CMAKE_MATCH_1}")
+    else()
+        message(FATAL_ERROR "Couldn't get minor version")
+    endif()
+
+    set(SPIRV_GRAMMER_VERSION "${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION}" PARENT_SCOPE)
+endfunction()
+spirv_get_grammer_version()
+
+project(SPIRV-Headers VERSION ${SPIRV_GRAMMER_VERSION})
+message(STATUS "${PROJECT_NAME} = ${PROJECT_VERSION}")
 
 # There are two ways to use this project.
 #
