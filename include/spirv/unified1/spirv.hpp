@@ -576,6 +576,15 @@ enum Decoration {
     DecorationSingleElementVectorINTEL = 6085,
     DecorationVectorComputeCallableFunctionINTEL = 6087,
     DecorationMediaBlockIOINTEL = 6140,
+    DecorationConduitKernelArgumentINTEL = 6175,
+    DecorationRegisterMapKernelArgumentINTEL = 6176,
+    DecorationMMHostInterfaceAddressWidthINTEL = 6177,
+    DecorationMMHostInterfaceDataWidthINTEL = 6178,
+    DecorationMMHostInterfaceLatencyINTEL = 6179,
+    DecorationMMHostInterfaceReadWriteModeINTEL = 6180,
+    DecorationMMHostInterfaceMaxBurstINTEL = 6181,
+    DecorationMMHostInterfaceWaitRequestINTEL = 6182,
+    DecorationStableKernelArgumentINTEL = 6183,
     DecorationMax = 0x7fffffff,
 };
 
@@ -1133,6 +1142,7 @@ enum Capability {
     CapabilityAtomicFloat16AddEXT = 6095,
     CapabilityDebugInfoModuleINTEL = 6114,
     CapabilitySplitBarrierINTEL = 6141,
+    CapabilityFPGAArgumentInterfacesINTEL = 6174,
     CapabilityGroupUniformArithmeticKHR = 6400,
     CapabilityMax = 0x7fffffff,
 };
