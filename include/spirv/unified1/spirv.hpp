@@ -196,6 +196,7 @@ enum ExecutionMode {
     ExecutionModeNumSIMDWorkitemsINTEL = 5896,
     ExecutionModeSchedulerTargetFmaxMhzINTEL = 5903,
     ExecutionModeStreamingInterfaceINTEL = 6154,
+    ExecutionModeRegisterMapInterfaceINTEL = 6160,
     ExecutionModeNamedBarrierCountINTEL = 6417,
     ExecutionModeMax = 0x7fffffff,
 };

@@ -200,6 +200,7 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeNumSIMDWorkitemsINTEL = 5896,
     SpvExecutionModeSchedulerTargetFmaxMhzINTEL = 5903,
     SpvExecutionModeStreamingInterfaceINTEL = 6154,
+    SpvExecutionModeRegisterMapInterfaceINTEL = 6160,
     SpvExecutionModeNamedBarrierCountINTEL = 6417,
     SpvExecutionModeMax = 0x7fffffff,
 } SpvExecutionMode;

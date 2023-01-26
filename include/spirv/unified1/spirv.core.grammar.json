@@ -10716,6 +10716,15 @@
           "version" : "None"
         },
         {
+          "enumerant" : "RegisterMapInterfaceINTEL",
+          "value" : 6160,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'AcceptDownstreamStall'" }
+          ],
+          "capabilities" : [ "FPGAKernelAttributesv2INTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "NamedBarrierCountINTEL",
           "value" : 6417,
           "parameters" : [
@@ -14705,6 +14714,12 @@
         {
           "enumerant" : "FPGAKernelAttributesINTEL",
           "value" : 5897,
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGAKernelAttributesv2INTEL",
+          "value" : 6161,
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
           "version" : "None"
         },
