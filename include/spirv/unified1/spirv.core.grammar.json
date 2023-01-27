@@ -14720,6 +14720,7 @@
         {
           "enumerant" : "FPGAKernelAttributesv2INTEL",
           "value" : 6161,
+          "capabilities" : [ "FPGAKernelAttributesINTEL" ],
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
           "version" : "None"
         },
