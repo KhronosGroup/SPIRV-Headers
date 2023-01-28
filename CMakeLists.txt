@@ -1,4 +1,4 @@
-# Copyright (c) 2015-2016 The Khronos Group Inc.
+# Copyright (c) 2015-2023 The Khronos Group Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and/or associated documentation files (the
@@ -28,7 +28,7 @@
 # The SPIR-V headers from the SPIR-V Registry
 # https://www.khronos.org/registry/spir-v/
 #
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.14)
 project(SPIRV-Headers VERSION 1.5.5)
 
 # There are two ways to use this project.
@@ -74,7 +74,6 @@ target_include_directories(${PROJECT_NAME} INTERFACE
 )
 
 # Installation
-
 if (SPIRV_HEADERS_ENABLE_INSTALL)
     message(STATUS "Installing SPIRV-Header")
 
@@ -89,13 +88,10 @@ if (SPIRV_HEADERS_ENABLE_INSTALL)
 
     include(CMakePackageConfigHelpers)
 
-    if (NOT CMAKE_VERSION VERSION_LESS 3.14)
-        set(arch_independent_str ARCH_INDEPENDENT)
-    endif()
     write_basic_package_version_file(
         "${version_config}"
         COMPATIBILITY SameMajorVersion
-        ${arch_independent_str}
+        ARCH_INDEPENDENT
     )
 
     configure_package_config_file(
