@@ -577,6 +577,7 @@ enum Decoration : uint
     SingleElementVectorINTEL = 6085,
     VectorComputeCallableFunctionINTEL = 6087,
     MediaBlockIOINTEL = 6140,
+    FPMaxErrorINTEL = 6170,
     ConduitKernelArgumentINTEL = 6175,
     RegisterMapKernelArgumentINTEL = 6176,
     MMHostInterfaceAddressWidthINTEL = 6177,
@@ -1149,6 +1150,7 @@ enum Capability : uint
     AtomicFloat16AddEXT = 6095,
     DebugInfoModuleINTEL = 6114,
     SplitBarrierINTEL = 6141,
+    FPMaxErrorDecorationINTEL = 6169,
     FPGAArgumentInterfacesINTEL = 6174,
     GroupUniformArithmeticKHR = 6400,
 }

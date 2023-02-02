@@ -12518,6 +12518,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "FPMaxErrorINTEL",
+          "value" : 6170,
+          "capabilities" : [ "FPMaxErrorDecorationINTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "ConduitKernelArgumentINTEL",
           "value" : 6175,
           "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
@@ -14891,6 +14897,12 @@
           "enumerant" : "SplitBarrierINTEL",
           "value" : 6141,
           "extensions" : [ "SPV_INTEL_split_barrier" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPMaxErrorDecorationINTEL",
+          "value" : 6169,
+          "extensions" : [ "SPV_INTEL_fp_max_error" ],
           "version" : "None"
         },
         {
