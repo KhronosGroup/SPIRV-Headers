@@ -1112,6 +1112,7 @@ enum Capability {
     CapabilityFPGALoopControlsINTEL = 5888,
     CapabilityKernelAttributesINTEL = 5892,
     CapabilityFPGAKernelAttributesINTEL = 5897,
+    CapabilityFPGAKernelAttributesv2INTEL = 6161,
     CapabilityFPGAMemoryAccessesINTEL = 5898,
     CapabilityFPGAClusterAttributesINTEL = 5904,
     CapabilityLoopFuseINTEL = 5906,

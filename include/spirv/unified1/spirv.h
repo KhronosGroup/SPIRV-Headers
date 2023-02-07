@@ -1116,6 +1116,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGALoopControlsINTEL = 5888,
     SpvCapabilityKernelAttributesINTEL = 5892,
     SpvCapabilityFPGAKernelAttributesINTEL = 5897,
+    SpvCapabilityFPGAKernelAttributesv2INTEL = 6161,
     SpvCapabilityFPGAMemoryAccessesINTEL = 5898,
     SpvCapabilityFPGAClusterAttributesINTEL = 5904,
     SpvCapabilityLoopFuseINTEL = 5906,
