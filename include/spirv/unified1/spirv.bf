@@ -194,6 +194,7 @@ namespace Spv
             SchedulerTargetFmaxMhzINTEL = 5903,
             StreamingInterfaceINTEL = 6154,
             RegisterMapInterfaceINTEL = 6160,
+            FPGAKernelAttributesv2INTEL = 6161,
             NamedBarrierCountINTEL = 6417,
         }
 
@@ -1117,7 +1118,6 @@ namespace Spv
             FPGALoopControlsINTEL = 5888,
             KernelAttributesINTEL = 5892,
             FPGAKernelAttributesINTEL = 5897,
-            FPGAKernelAttributesv2INTEL = 6161,
             FPGAMemoryAccessesINTEL = 5898,
             FPGAClusterAttributesINTEL = 5904,
             LoopFuseINTEL = 5906,
