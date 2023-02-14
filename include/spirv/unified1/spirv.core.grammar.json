@@ -4603,7 +4603,6 @@
         { "kind" : "IdRef", "name" : "'Coordinates'" },
         { "kind" : "IdRef", "name" : "'Weights'" }
       ],
-      "capabilities" : [ "TextureSampleWeightedQCOM" ],
       "extensions" : [ "SPV_QCOM_image_processing" ],
       "version" : "None"
     },
@@ -4618,7 +4617,6 @@
         { "kind" : "IdRef", "name" : "'Coordinates'" },
         { "kind" : "IdRef", "name" : "'Box Size'" }
       ],
-      "capabilities" : [ "TextureBoxFilterQCOM" ],
       "extensions" : [ "SPV_QCOM_image_processing" ],
       "version" : "None"
     },
@@ -4635,7 +4633,6 @@
         { "kind" : "IdRef", "name" : "'Reference Coordinates'" },
         { "kind" : "IdRef", "name" : "'Block Size'" }
       ],
-      "capabilities" : [ "TextureBlockMatchQCOM" ],
       "extensions" : [ "SPV_QCOM_image_processing" ],
       "version" : "None"
     },
