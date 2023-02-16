@@ -6252,6 +6252,24 @@
       "version" : "None"
     },
     {
+      "opname" : "OpRawAccessChainNV",
+      "class"  : "Memory",
+      "opcode" : 5398,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",          "name" : "'Base'" },
+        { "kind" : "IdRef",          "name" : "'Byte stride'" },
+        { "kind" : "IdRef",          "name" : "'Element index'" },
+        { "kind" : "IdRef",          "name" : "'Byte offset'" },
+        { "kind" : "RawAccessChainOperands", "quantifier" : "?" }
+      ],
+      "capabilities" : [
+        "RawAccessChainsNV"
+      ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpSubgroupShuffleINTEL",
       "class"  : "Group",
       "opcode" : 5571,
@@ -10663,6 +10681,28 @@
           "enumerant" : "Horizontal4Pixels",
           "value" : "0x0008",
           "capabilities" : [ "FragmentShadingRateKHR" ],
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "BitEnum",
+      "kind" : "RawAccessChainOperands",
+      "enumerants" : [
+        {
+          "enumerant" : "None",
+          "value" : "0x0000"
+        },
+        {
+          "enumerant" : "RobustnessPerComponentNV",
+          "value" : "0x0001",
+          "capabilities" : [ "RawAccessChainsNV" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RobustnessPerElementNV",
+          "value" : "0x0002",
+          "capabilities" : [ "RawAccessChainsNV" ],
           "version" : "None"
         }
       ]
@@ -16081,6 +16121,12 @@
           "value" : 5409,
           "capabilities" : [ "RayTracingKHR" ],
           "extensions" : [ "SPV_NV_displacement_micromap" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RawAccessChainsNV",
+          "value" : 5414,
+          "extensions" : [ "SPV_NV_raw_access_chains" ],
           "version" : "None"
         },
         {

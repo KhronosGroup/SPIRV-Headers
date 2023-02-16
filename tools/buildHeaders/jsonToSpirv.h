@@ -104,6 +104,7 @@ enum OperandClass {
     OperandLoadCacheControl,
     OperandStoreCacheControl,
     OperandNamedMaximumNumberOfRegisters,
+    OperandRawAccessChainOperands,
 
     OperandOpcode,
 

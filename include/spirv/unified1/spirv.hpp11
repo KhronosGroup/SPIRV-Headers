@@ -1155,6 +1155,7 @@ enum class Capability : unsigned {
     RayQueryPositionFetchKHR = 5391,
     AtomicFloat16VectorNV = 5404,
     RayTracingDisplacementMicromapNV = 5409,
+    RawAccessChainsNV = 5414,
     SubgroupShuffleINTEL = 5568,
     SubgroupBufferBlockIOINTEL = 5569,
     SubgroupImageBlockIOINTEL = 5570,
@@ -1400,6 +1401,18 @@ enum class StoreCacheControl : unsigned {
 enum class NamedMaximumNumberOfRegisters : unsigned {
     AutoINTEL = 0,
     Max = 0x7fffffff,
+};
+
+enum class RawAccessChainOperandsShift : unsigned {
+    RobustnessPerComponentNV = 0,
+    RobustnessPerElementNV = 1,
+    Max = 0x7fffffff,
+};
+
+enum class RawAccessChainOperandsMask : unsigned {
+    MaskNone = 0,
+    RobustnessPerComponentNV = 0x00000001,
+    RobustnessPerElementNV = 0x00000002,
 };
 
 enum class Op : unsigned {
@@ -1879,6 +1892,7 @@ enum class Op : unsigned {
     OpConvertUToSampledImageNV = 5395,
     OpConvertSampledImageToUNV = 5396,
     OpSamplerImageAddressingModeNV = 5397,
+    OpRawAccessChainNV = 5398,
     OpSubgroupShuffleINTEL = 5571,
     OpSubgroupShuffleDownINTEL = 5572,
     OpSubgroupShuffleUpINTEL = 5573,
@@ -2613,6 +2627,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpConvertUToSampledImageNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpConvertSampledImageToUNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpSamplerImageAddressingModeNV: *hasResult = false; *hasResultType = false; break;
+    case Op::OpRawAccessChainNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupShuffleINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupShuffleDownINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupShuffleUpINTEL: *hasResult = true; *hasResultType = true; break;
@@ -2917,6 +2932,10 @@ constexpr CooperativeMatrixOperandsMask operator|(CooperativeMatrixOperandsMask 
 constexpr CooperativeMatrixOperandsMask operator&(CooperativeMatrixOperandsMask a, CooperativeMatrixOperandsMask b) { return CooperativeMatrixOperandsMask(unsigned(a) & unsigned(b)); }
 constexpr CooperativeMatrixOperandsMask operator^(CooperativeMatrixOperandsMask a, CooperativeMatrixOperandsMask b) { return CooperativeMatrixOperandsMask(unsigned(a) ^ unsigned(b)); }
 constexpr CooperativeMatrixOperandsMask operator~(CooperativeMatrixOperandsMask a) { return CooperativeMatrixOperandsMask(~unsigned(a)); }
+constexpr RawAccessChainOperandsMask operator|(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) | unsigned(b)); }
+constexpr RawAccessChainOperandsMask operator&(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) & unsigned(b)); }
+constexpr RawAccessChainOperandsMask operator^(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) ^ unsigned(b)); }
+constexpr RawAccessChainOperandsMask operator~(RawAccessChainOperandsMask a) { return RawAccessChainOperandsMask(~unsigned(a)); }
 
 }  // end namespace spv
 
