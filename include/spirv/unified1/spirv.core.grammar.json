@@ -10725,13 +10725,6 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGAKernelAttributesv2INTEL",
-          "value" : 6161,
-          "capabilities" : [ "FPGAKernelAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
-          "version" : "None"
-        },
-        {
           "enumerant" : "NamedBarrierCountINTEL",
           "value" : 6417,
           "parameters" : [
@@ -14907,6 +14900,13 @@
           "enumerant" : "SplitBarrierINTEL",
           "value" : 6141,
           "extensions" : [ "SPV_INTEL_split_barrier" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGAKernelAttributesv2INTEL",
+          "value" : 6161,
+          "capabilities" : [ "FPGAKernelAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
           "version" : "None"
         },
         {

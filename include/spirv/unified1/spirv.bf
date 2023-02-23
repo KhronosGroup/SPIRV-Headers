@@ -194,7 +194,6 @@ namespace Spv
             SchedulerTargetFmaxMhzINTEL = 5903,
             StreamingInterfaceINTEL = 6154,
             RegisterMapInterfaceINTEL = 6160,
-            FPGAKernelAttributesv2INTEL = 6161,
             NamedBarrierCountINTEL = 6417,
         }
 
@@ -1149,6 +1148,7 @@ namespace Spv
             AtomicFloat16AddEXT = 6095,
             DebugInfoModuleINTEL = 6114,
             SplitBarrierINTEL = 6141,
+            FPGAKernelAttributesv2INTEL = 6161,
             FPGAArgumentInterfacesINTEL = 6174,
             GroupUniformArithmeticKHR = 6400,
         }
