@@ -10719,7 +10719,7 @@
           "enumerant" : "RegisterMapInterfaceINTEL",
           "value" : 6160,
           "parameters" : [
-            { "kind" : "LiteralInteger", "name" : "'AcceptDownstreamStall'" }
+            { "kind" : "LiteralInteger", "name" : "'WaitForDoneWrite'" }
           ],
           "capabilities" : [ "FPGAKernelAttributesv2INTEL" ],
           "version" : "None"
