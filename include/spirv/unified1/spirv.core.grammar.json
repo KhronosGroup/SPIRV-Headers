@@ -12518,6 +12518,20 @@
           "version" : "None"
         },
         {
+          "enumerant" : "LatencyControlLabelINTEL",
+          "value" : 6172,
+          "capabilities" : [ "FPGALatencyControlINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_latency_control" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "LatencyControlConstraintINTEL",
+          "value" : 6173,
+          "capabilities" : [ "FPGALatencyControlINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_latency_control" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "ConduitKernelArgumentINTEL",
           "value" : 6175,
           "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
@@ -14891,6 +14905,12 @@
           "enumerant" : "SplitBarrierINTEL",
           "value" : 6141,
           "extensions" : [ "SPV_INTEL_split_barrier" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGALatencyControlINTEL",
+          "value" : 6171,
+          "extensions" : [ "SPV_INTEL_fpga_latency_control" ],
           "version" : "None"
         },
         {

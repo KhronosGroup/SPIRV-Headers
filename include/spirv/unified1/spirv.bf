@@ -575,6 +575,8 @@ namespace Spv
             SingleElementVectorINTEL = 6085,
             VectorComputeCallableFunctionINTEL = 6087,
             MediaBlockIOINTEL = 6140,
+            LatencyControlLabelINTEL = 6172,
+            LatencyControlConstraintINTEL = 6173,
             ConduitKernelArgumentINTEL = 6175,
             RegisterMapKernelArgumentINTEL = 6176,
             MMHostInterfaceAddressWidthINTEL = 6177,
@@ -1147,6 +1149,7 @@ namespace Spv
             AtomicFloat16AddEXT = 6095,
             DebugInfoModuleINTEL = 6114,
             SplitBarrierINTEL = 6141,
+            FPGALatencyControlINTEL = 6171,
             FPGAArgumentInterfacesINTEL = 6174,
             GroupUniformArithmeticKHR = 6400,
         }
