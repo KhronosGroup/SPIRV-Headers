@@ -12520,12 +12520,20 @@
         {
           "enumerant" : "LatencyControlLabelINTEL",
           "value" : 6172,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Latency Label'" }
+          ],
           "capabilities" : [ "FPGALatencyControlINTEL" ],
           "version" : "None"
         },
         {
           "enumerant" : "LatencyControlConstraintINTEL",
           "value" : 6173,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Relative To'" },
+            { "kind" : "LiteralInteger", "name" : "'Control Type'" },
+            { "kind" : "LiteralInteger", "name" : "'Relative Cycle'" }
+          ],
           "capabilities" : [ "FPGALatencyControlINTEL" ],
           "version" : "None"
         },
