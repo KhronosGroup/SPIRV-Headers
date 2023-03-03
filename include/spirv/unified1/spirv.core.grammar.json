@@ -12521,14 +12521,12 @@
           "enumerant" : "LatencyControlLabelINTEL",
           "value" : 6172,
           "capabilities" : [ "FPGALatencyControlINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_latency_control" ],
           "version" : "None"
         },
         {
           "enumerant" : "LatencyControlConstraintINTEL",
           "value" : 6173,
           "capabilities" : [ "FPGALatencyControlINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_latency_control" ],
           "version" : "None"
         },
         {
