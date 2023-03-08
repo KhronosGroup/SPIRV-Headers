@@ -196,6 +196,7 @@ enum ExecutionMode {
     ExecutionModeNumSIMDWorkitemsINTEL = 5896,
     ExecutionModeSchedulerTargetFmaxMhzINTEL = 5903,
     ExecutionModeStreamingInterfaceINTEL = 6154,
+    ExecutionModeRegisterMapInterfaceINTEL = 6160,
     ExecutionModeNamedBarrierCountINTEL = 6417,
     ExecutionModeMax = 0x7fffffff,
 };
@@ -508,6 +509,8 @@ enum Decoration {
     DecorationMaxByteOffsetId = 47,
     DecorationNoSignedWrap = 4469,
     DecorationNoUnsignedWrap = 4470,
+    DecorationWeightTextureQCOM = 4487,
+    DecorationBlockMatchTextureQCOM = 4488,
     DecorationExplicitInterpAMD = 4999,
     DecorationOverrideCoverageNV = 5248,
     DecorationPassthroughNV = 5250,
@@ -577,6 +580,8 @@ enum Decoration {
     DecorationVectorComputeCallableFunctionINTEL = 6087,
     DecorationMediaBlockIOINTEL = 6140,
     DecorationFPMaxErrorINTEL = 6170,
+    DecorationLatencyControlLabelINTEL = 6172,
+    DecorationLatencyControlConstraintINTEL = 6173,
     DecorationConduitKernelArgumentINTEL = 6175,
     DecorationRegisterMapKernelArgumentINTEL = 6176,
     DecorationMMHostInterfaceAddressWidthINTEL = 6177,
@@ -1015,6 +1020,9 @@ enum Capability {
     CapabilityRayQueryKHR = 4472,
     CapabilityRayTraversalPrimitiveCullingKHR = 4478,
     CapabilityRayTracingKHR = 4479,
+    CapabilityTextureSampleWeightedQCOM = 4484,
+    CapabilityTextureBoxFilterQCOM = 4485,
+    CapabilityTextureBlockMatchQCOM = 4486,
     CapabilityFloat16ImageAMD = 5008,
     CapabilityImageGatherBiasLodAMD = 5009,
     CapabilityFragmentMaskAMD = 5010,
@@ -1142,8 +1150,11 @@ enum Capability {
     CapabilityOptNoneINTEL = 6094,
     CapabilityAtomicFloat16AddEXT = 6095,
     CapabilityDebugInfoModuleINTEL = 6114,
+    CapabilityBFloat16ConversionINTEL = 6115,
     CapabilitySplitBarrierINTEL = 6141,
+    CapabilityFPGAKernelAttributesv2INTEL = 6161,
     CapabilityFPMaxErrorDecorationINTEL = 6169,
+    CapabilityFPGALatencyControlINTEL = 6171,
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
     CapabilityGroupUniformArithmeticKHR = 6400,
     CapabilityMax = 0x7fffffff,
@@ -1629,6 +1640,10 @@ enum Op {
     OpRayQueryConfirmIntersectionKHR = 4476,
     OpRayQueryProceedKHR = 4477,
     OpRayQueryGetIntersectionTypeKHR = 4479,
+    OpImageSampleWeightedQCOM = 4480,
+    OpImageBoxFilterQCOM = 4481,
+    OpImageBlockMatchSSDQCOM = 4482,
+    OpImageBlockMatchSADQCOM = 4483,
     OpGroupIAddNonUniformAMD = 5000,
     OpGroupFAddNonUniformAMD = 5001,
     OpGroupFMinNonUniformAMD = 5002,
@@ -1946,6 +1961,8 @@ enum Op {
     OpTypeStructContinuedINTEL = 6090,
     OpConstantCompositeContinuedINTEL = 6091,
     OpSpecConstantCompositeContinuedINTEL = 6092,
+    OpConvertFToBF16INTEL = 6116,
+    OpConvertBF16ToFINTEL = 6117,
     OpControlBarrierArriveINTEL = 6142,
     OpControlBarrierWaitINTEL = 6143,
     OpGroupIMulKHR = 6401,
@@ -2337,6 +2354,10 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpRayQueryConfirmIntersectionKHR: *hasResult = false; *hasResultType = false; break;
     case OpRayQueryProceedKHR: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetIntersectionTypeKHR: *hasResult = true; *hasResultType = true; break;
+    case OpImageSampleWeightedQCOM: *hasResult = true; *hasResultType = true; break;
+    case OpImageBoxFilterQCOM: *hasResult = true; *hasResultType = true; break;
+    case OpImageBlockMatchSSDQCOM: *hasResult = true; *hasResultType = true; break;
+    case OpImageBlockMatchSADQCOM: *hasResult = true; *hasResultType = true; break;
     case OpGroupIAddNonUniformAMD: *hasResult = true; *hasResultType = true; break;
     case OpGroupFAddNonUniformAMD: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMinNonUniformAMD: *hasResult = true; *hasResultType = true; break;
@@ -2649,6 +2670,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpTypeStructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case OpConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSpecConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpConvertFToBF16INTEL: *hasResult = true; *hasResultType = true; break;
+    case OpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
     case OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
     case OpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
     case OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
