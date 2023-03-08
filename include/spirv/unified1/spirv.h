@@ -200,6 +200,7 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeNumSIMDWorkitemsINTEL = 5896,
     SpvExecutionModeSchedulerTargetFmaxMhzINTEL = 5903,
     SpvExecutionModeStreamingInterfaceINTEL = 6154,
+    SpvExecutionModeRegisterMapInterfaceINTEL = 6160,
     SpvExecutionModeNamedBarrierCountINTEL = 6417,
     SpvExecutionModeMax = 0x7fffffff,
 } SpvExecutionMode;
@@ -1148,6 +1149,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityAtomicFloat16AddEXT = 6095,
     SpvCapabilityDebugInfoModuleINTEL = 6114,
     SpvCapabilitySplitBarrierINTEL = 6141,
+    SpvCapabilityFPGAKernelAttributesv2INTEL = 6161,
     SpvCapabilityFPGALatencyControlINTEL = 6171,
     SpvCapabilityFPGAArgumentInterfacesINTEL = 6174,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,

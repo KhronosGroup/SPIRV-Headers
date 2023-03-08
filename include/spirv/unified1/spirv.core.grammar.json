@@ -10716,6 +10716,15 @@
           "version" : "None"
         },
         {
+          "enumerant" : "RegisterMapInterfaceINTEL",
+          "value" : 6160,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'WaitForDoneWrite'" }
+          ],
+          "capabilities" : [ "FPGAKernelAttributesv2INTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "NamedBarrierCountINTEL",
           "value" : 6417,
           "parameters" : [
@@ -14914,9 +14923,17 @@
           "version" : "None"
         },
         {
+          "enumerant" : "FPGAKernelAttributesv2INTEL",
+          "value" : 6161,
+          "capabilities" : [ "FPGAKernelAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "FPGALatencyControlINTEL",
           "value" : 6171,
           "extensions" : [ "SPV_INTEL_fpga_latency_control" ],
+          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
           "version" : "None"
         },
         {

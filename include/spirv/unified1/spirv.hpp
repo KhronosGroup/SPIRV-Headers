@@ -196,6 +196,7 @@ enum ExecutionMode {
     ExecutionModeNumSIMDWorkitemsINTEL = 5896,
     ExecutionModeSchedulerTargetFmaxMhzINTEL = 5903,
     ExecutionModeStreamingInterfaceINTEL = 6154,
+    ExecutionModeRegisterMapInterfaceINTEL = 6160,
     ExecutionModeNamedBarrierCountINTEL = 6417,
     ExecutionModeMax = 0x7fffffff,
 };
@@ -1144,6 +1145,7 @@ enum Capability {
     CapabilityAtomicFloat16AddEXT = 6095,
     CapabilityDebugInfoModuleINTEL = 6114,
     CapabilitySplitBarrierINTEL = 6141,
+    CapabilityFPGAKernelAttributesv2INTEL = 6161,
     CapabilityFPGALatencyControlINTEL = 6171,
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
     CapabilityGroupUniformArithmeticKHR = 6400,
