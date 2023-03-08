@@ -12551,6 +12551,26 @@
           "version" : "None"
         },
         {
+          "enumerant" : "LatencyControlLabelINTEL",
+          "value" : 6172,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Latency Label'" }
+          ],
+          "capabilities" : [ "FPGALatencyControlINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "LatencyControlConstraintINTEL",
+          "value" : 6173,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Relative To'" },
+            { "kind" : "LiteralInteger", "name" : "'Control Type'" },
+            { "kind" : "LiteralInteger", "name" : "'Relative Cycle'" }
+          ],
+          "capabilities" : [ "FPGALatencyControlINTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "ConduitKernelArgumentINTEL",
           "value" : 6175,
           "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
@@ -14937,6 +14957,12 @@
           "value" : 6161,
           "capabilities" : [ "FPGAKernelAttributesINTEL" ],
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGALatencyControlINTEL",
+          "value" : 6171,
+          "extensions" : [ "SPV_INTEL_fpga_latency_control" ],
           "version" : "None"
         },
         {

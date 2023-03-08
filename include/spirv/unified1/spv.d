@@ -578,6 +578,8 @@ enum Decoration : uint
     SingleElementVectorINTEL = 6085,
     VectorComputeCallableFunctionINTEL = 6087,
     MediaBlockIOINTEL = 6140,
+    LatencyControlLabelINTEL = 6172,
+    LatencyControlConstraintINTEL = 6173,
     ConduitKernelArgumentINTEL = 6175,
     RegisterMapKernelArgumentINTEL = 6176,
     MMHostInterfaceAddressWidthINTEL = 6177,
@@ -1152,6 +1154,7 @@ enum Capability : uint
     BFloat16ConversionINTEL = 6115,
     SplitBarrierINTEL = 6141,
     FPGAKernelAttributesv2INTEL = 6161,
+    FPGALatencyControlINTEL = 6171,
     FPGAArgumentInterfacesINTEL = 6174,
     GroupUniformArithmeticKHR = 6400,
 }
