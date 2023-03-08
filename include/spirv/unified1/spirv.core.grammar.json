@@ -14933,7 +14933,6 @@
           "enumerant" : "FPGALatencyControlINTEL",
           "value" : 6171,
           "extensions" : [ "SPV_INTEL_fpga_latency_control" ],
-          "extensions" : [ "SPV_INTEL_kernel_attributes" ],
           "version" : "None"
         },
         {
