@@ -9152,6 +9152,56 @@
       "version" : "None"
     },
     {
+      "opname" : "OpTaskSequenceCreateINTEL",
+      "class"  : "Reserved",
+      "opcode" : 6163,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Pointer'" },
+        { "kind" : "IdRef", "name" : "'Function Pointer'" },
+        { "kind" : "LiteralInteger", "name" : "'Pipelined'" },
+        { "kind" : "LiteralInteger", "name" : "'UseStallEnableClusters'" }
+      ],
+      "capabilities" : [ "TaskSequenceINTEL" ],
+      "extensions" : [ "SPV_INTEL_task_sequence" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTaskSequenceAsyncINTEL",
+      "class"  : "Reserved",
+      "opcode" : 6164,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Pointer'" },
+        { "kind" : "LiteralInteger", "name" : "'AsyncCapacity'" },
+        { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "'Async Function Parameters'" }
+      ],
+      "capabilities" : [ "TaskSequenceINTEL" ],
+      "extensions" : [ "SPV_INTEL_task_sequence" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTaskSequenceGetINTEL",
+      "class"  : "Reserved",
+      "opcode" : 6165,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Pointer'" },
+        { "kind" : "LiteralInteger", "name" : "'GetCapacity'" }
+      ],
+      "capabilities" : [ "TaskSequenceINTEL" ],
+      "extensions" : [ "SPV_INTEL_task_sequence" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTaskSequenceReleaseINTEL",
+      "class"  : "Reserved",
+      "opcode" : 6166,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Pointer'" }
+      ],
+      "capabilities" : [ "TaskSequenceINTEL" ],
+      "extensions" : [ "SPV_INTEL_task_sequence" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpGroupIMulKHR",
       "class"  : "Group",
       "opcode" : 6401,
@@ -15047,6 +15097,13 @@
           "value" : 6161,
           "capabilities" : [ "FPGAKernelAttributesINTEL" ],
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TaskSequenceINTEL",
+          "value" : 6162,
+          "capabilities" : [ "FunctionPointersINTEL" ],
+          "extensions" : [ "SPV_INTEL_task_sequence" ],
           "version" : "None"
         },
         {
