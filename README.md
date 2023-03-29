@@ -50,38 +50,31 @@ This includes:
 - when there are aliases, listing the preferred spelling first
 - adding the statement `"version" : "None"`
 
-## How to install the headers
-
-```
-mkdir build
-cd build
-cmake ..
-cmake --build . --target install
-```
-
-Then, for example, you will have `/usr/local/include/spirv/unified1/spirv.h`
-
-If you want to install them somewhere else, then use
-`-DCMAKE_INSTALL_PREFIX=/other/path` on the first `cmake` command.
-
-## Using the headers without installing
-
 ### Using CMake
-A CMake-based project can use the headers without installing, as follows:
 
-1. Add an `add_subdirectory` directive to include this source tree.
-2. Use `${SPIRV-Headers_SOURCE_DIR}/include}` in a `target_include_directories`
-   directive.
-3. In your C or C++ source code use `#include` directives that explicitly mention
-   the `spirv` path component.
-```
-#include "spirv/unified1/GLSL.std.450.h"
-#include "spirv/unified1/OpenCL.std.h"
-#include "spirv/unified1/spirv.hpp"
+Regardless of whether you consume SPIRV-Headers via `find_package` or `add_subdirectory` after those calls succeed then you will `link` against the header only library.
+`Linking` against a header only library is just a nice way to add the include directory without having to know the project structure, which can be subject to change.
+
+```cmake
+# Example usage of add_subdirectory
+add_executable(foobar)
+add_subdirectory(SPIRV-Headers)
+
+target_link_libraries(foobar PRIVATE SPIRV-Headers::SPIRV-Headers)
 ```
 
-See also the [example](example/) subdirectory.  But since that example is
-*inside* this repostory, it doesn't use and `add_subdirectory` directive.
+```cmake
+# Example usage of find_package
+add_executable(foobar)
+find_package(SPIRV-Headers REQUIRED CONFIG)
+
+target_link_libraries(foobar PRIVATE SPIRV-Headers::SPIRV-Headers)
+```
+
+NOTE: `find_package` works best in tandem with [system package managers](https://en.wikipedia.org/wiki/Package_manager) or language package managers like [conan](https://conan.io/) & [vcpkg](https://learn.microsoft.com/en-us/vcpkg/).
+
+If you are looking to install the project manually please refer to the official documentation:
+https://cmake.org/cmake/help/latest/#guides
 
 ### Using Bazel
 A Bazel-based project can use the headers without installing, as follows:
