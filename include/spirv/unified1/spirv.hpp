@@ -156,6 +156,9 @@ enum ExecutionMode {
     ExecutionModeSubgroupsPerWorkgroupId = 37,
     ExecutionModeLocalSizeId = 38,
     ExecutionModeLocalSizeHintId = 39,
+    ExecutionModeNonCoherentColorAttachmentReadEXT = 4169,
+    ExecutionModeNonCoherentDepthAttachmentReadEXT = 4170,
+    ExecutionModeNonCoherentStencilAttachmentReadEXT = 4171,
     ExecutionModeSubgroupUniformControlFlowKHR = 4421,
     ExecutionModePostDepthCoverage = 4446,
     ExecutionModeDenormPreserve = 4459,
@@ -215,6 +218,7 @@ enum StorageClass {
     StorageClassAtomicCounter = 10,
     StorageClassImage = 11,
     StorageClassStorageBuffer = 12,
+    StorageClassTileImageEXT = 4172,
     StorageClassCallableDataKHR = 5328,
     StorageClassCallableDataNV = 5328,
     StorageClassIncomingCallableDataKHR = 5329,
@@ -245,6 +249,7 @@ enum Dim {
     DimRect = 4,
     DimBuffer = 5,
     DimSubpassData = 6,
+    DimTileImageDataEXT = 4173,
     DimMax = 0x7fffffff,
 };
 
@@ -988,6 +993,9 @@ enum Capability {
     CapabilityShaderViewportIndex = 70,
     CapabilityUniformDecoration = 71,
     CapabilityCoreBuiltinsARM = 4165,
+    CapabilityTileImageColorReadAccessEXT = 4166,
+    CapabilityTileImageDepthReadAccessEXT = 4167,
+    CapabilityTileImageStencilReadAccessEXT = 4168,
     CapabilityFragmentShadingRateKHR = 4422,
     CapabilitySubgroupBallotKHR = 4423,
     CapabilityDrawParameters = 4427,
@@ -1606,6 +1614,9 @@ enum Op {
     OpPtrEqual = 401,
     OpPtrNotEqual = 402,
     OpPtrDiff = 403,
+    OpColorAttachmentReadEXT = 4160,
+    OpDepthAttachmentReadEXT = 4161,
+    OpStencilAttachmentReadEXT = 4162,
     OpTerminateInvocation = 4416,
     OpSubgroupBallotKHR = 4421,
     OpSubgroupFirstInvocationKHR = 4422,
@@ -2326,6 +2337,9 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpPtrEqual: *hasResult = true; *hasResultType = true; break;
     case OpPtrNotEqual: *hasResult = true; *hasResultType = true; break;
     case OpPtrDiff: *hasResult = true; *hasResultType = true; break;
+    case OpColorAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
+    case OpDepthAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
+    case OpStencilAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
     case OpTerminateInvocation: *hasResult = false; *hasResultType = false; break;
     case OpSubgroupBallotKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupFirstInvocationKHR: *hasResult = true; *hasResultType = true; break;

@@ -4103,6 +4103,46 @@
       "version" : "1.4"
     },
     {
+      "opname" : "OpColorAttachmentReadEXT",
+      "class"  : "Image",
+      "opcode" : 4160,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Attachment'" },
+        { "kind" : "IdRef", "name" : "'Sample'", "quantifier" : "?" }
+      ],
+      "extensions" : [ "SPV_EXT_shader_tile_image" ],
+      "capabilities" : [ "TileImageColorReadAccessEXT" ],
+      "version" : "1.5"
+    },
+    {
+      "opname" : "OpDepthAttachmentReadEXT",
+      "class"  : "Image",
+      "opcode" : 4161,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Sample'", "quantifier" : "?" }
+      ],
+      "extensions" : [ "SPV_EXT_shader_tile_image" ],
+      "capabilities" : [ "TileImageDepthReadAccessEXT" ],
+      "version" : "1.5"
+    },
+    {
+      "opname" : "OpStencilAttachmentReadEXT",
+      "class"  : "Image",
+      "opcode" : 4162,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Sample'", "quantifier" : "?" }
+      ],
+      "extensions" : [ "SPV_EXT_shader_tile_image" ],
+      "capabilities" : [ "TileImageStencilReadAccessEXT" ],
+      "version" : "1.5"
+    },
+    {
       "opname" : "OpTerminateInvocation",
       "class"  : "Control-Flow",
       "opcode" : 4416,
@@ -10474,6 +10514,27 @@
           "version" : "1.2"
         },
         {
+          "enumerant" : "NonCoherentColorAttachmentReadEXT",
+          "value" : 4169,
+          "capabilities" : [ "TileImageColorReadAccessEXT" ],
+          "extensions" : [ "SPV_EXT_shader_tile_image" ],
+          "version" : "1.5"
+        },
+        {
+          "enumerant" : "NonCoherentDepthAttachmentReadEXT",
+          "value" : 4170,
+          "capabilities" : [ "TileImageDepthReadAccessEXT" ],
+          "extensions" : [ "SPV_EXT_shader_tile_image" ],
+          "version" : "1.5"
+        },
+        {
+          "enumerant" : "NonCoherentStencilAttachmentReadEXT",
+          "value" : 4171,
+          "capabilities" : [ "TileImageStencilReadAccessEXT" ],
+          "extensions" : [ "SPV_EXT_shader_tile_image" ],
+          "version" : "1.5"
+        },
+        {
           "enumerant" : "SubgroupUniformControlFlowKHR",
           "value" : 4421,
           "capabilities" : [ "Shader" ],
@@ -10888,6 +10949,13 @@
           "version" : "1.3"
         },
         {
+          "enumerant" : "TileImageEXT",
+          "value" : 4172,
+          "extensions" : [ "SPV_EXT_shader_tile_image" ],
+          "capabilities" : [ "TileImageColorReadAccessEXT" ],
+          "version" : "1.5"
+        },
+        {
           "enumerant" : "CallableDataNV",
           "value" : 5328,
           "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing" ],
@@ -11061,6 +11129,11 @@
           "enumerant" : "SubpassData",
           "value" : 6,
           "capabilities" : [ "InputAttachment" ]
+        },
+        {
+          "enumerant" : "TileImageDataEXT",
+          "value" : 4173,
+          "capabilities" : [ "TileImageColorReadAccessEXT" ]
         }
       ]
     },
@@ -14146,6 +14219,27 @@
           "enumerant" : "StoragePushConstant8",
           "value" : 4450,
           "extensions" : [ "SPV_KHR_8bit_storage" ],
+          "version" : "1.5"
+        },
+        {
+          "enumerant" : "TileImageColorReadAccessEXT",
+          "value" : 4166,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_EXT_shader_tile_image" ],
+          "version" : "1.5"
+        },
+        {
+          "enumerant" : "TileImageDepthReadAccessEXT",
+          "value" : 4167,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_EXT_shader_tile_image" ],
+          "version" : "1.5"
+        },
+        {
+          "enumerant" : "TileImageStencilReadAccessEXT",
+          "value" : 4168,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_EXT_shader_tile_image" ],
           "version" : "1.5"
         },
         {
