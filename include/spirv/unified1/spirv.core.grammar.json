@@ -4112,9 +4112,7 @@
         { "kind" : "IdRef", "name" : "'Attachment'" },
         { "kind" : "IdRef", "name" : "'Sample'", "quantifier" : "?" }
       ],
-      "extensions" : [ "SPV_EXT_shader_tile_image" ],
-      "capabilities" : [ "TileImageColorReadAccessEXT" ],
-      "version" : "1.5"
+      "capabilities" : [ "TileImageColorReadAccessEXT" ]
     },
     {
       "opname" : "OpDepthAttachmentReadEXT",
@@ -4125,9 +4123,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "'Sample'", "quantifier" : "?" }
       ],
-      "extensions" : [ "SPV_EXT_shader_tile_image" ],
-      "capabilities" : [ "TileImageDepthReadAccessEXT" ],
-      "version" : "1.5"
+      "capabilities" : [ "TileImageDepthReadAccessEXT" ]
     },
     {
       "opname" : "OpStencilAttachmentReadEXT",
@@ -4138,9 +4134,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "'Sample'", "quantifier" : "?" }
       ],
-      "extensions" : [ "SPV_EXT_shader_tile_image" ],
-      "capabilities" : [ "TileImageStencilReadAccessEXT" ],
-      "version" : "1.5"
+      "capabilities" : [ "TileImageStencilReadAccessEXT" ]
     },
     {
       "opname" : "OpTerminateInvocation",
@@ -10516,23 +10510,17 @@
         {
           "enumerant" : "NonCoherentColorAttachmentReadEXT",
           "value" : 4169,
-          "capabilities" : [ "TileImageColorReadAccessEXT" ],
-          "extensions" : [ "SPV_EXT_shader_tile_image" ],
-          "version" : "1.5"
+          "capabilities" : [ "TileImageColorReadAccessEXT" ]
         },
         {
           "enumerant" : "NonCoherentDepthAttachmentReadEXT",
           "value" : 4170,
-          "capabilities" : [ "TileImageDepthReadAccessEXT" ],
-          "extensions" : [ "SPV_EXT_shader_tile_image" ],
-          "version" : "1.5"
+          "capabilities" : [ "TileImageDepthReadAccessEXT" ]
         },
         {
           "enumerant" : "NonCoherentStencilAttachmentReadEXT",
           "value" : 4171,
-          "capabilities" : [ "TileImageStencilReadAccessEXT" ],
-          "extensions" : [ "SPV_EXT_shader_tile_image" ],
-          "version" : "1.5"
+          "capabilities" : [ "TileImageStencilReadAccessEXT" ]
         },
         {
           "enumerant" : "SubgroupUniformControlFlowKHR",
@@ -10951,9 +10939,7 @@
         {
           "enumerant" : "TileImageEXT",
           "value" : 4172,
-          "extensions" : [ "SPV_EXT_shader_tile_image" ],
-          "capabilities" : [ "TileImageColorReadAccessEXT" ],
-          "version" : "1.5"
+          "capabilities" : [ "TileImageColorReadAccessEXT" ]
         },
         {
           "enumerant" : "CallableDataNV",
@@ -14224,23 +14210,17 @@
         {
           "enumerant" : "TileImageColorReadAccessEXT",
           "value" : 4166,
-          "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_EXT_shader_tile_image" ],
-          "version" : "1.5"
+          "extensions" : [ "SPV_EXT_shader_tile_image" ]
         },
         {
           "enumerant" : "TileImageDepthReadAccessEXT",
           "value" : 4167,
-          "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_EXT_shader_tile_image" ],
-          "version" : "1.5"
+          "extensions" : [ "SPV_EXT_shader_tile_image" ]
         },
         {
           "enumerant" : "TileImageStencilReadAccessEXT",
           "value" : 4168,
-          "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_EXT_shader_tile_image" ],
-          "version" : "1.5"
+          "extensions" : [ "SPV_EXT_shader_tile_image" ]
         },
         {
           "enumerant" : "DenormPreserve",
