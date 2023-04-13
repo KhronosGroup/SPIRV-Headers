@@ -10065,6 +10065,10 @@
         {
           "enumerant" : "SYCL",
           "value" : 7
+        },
+        {
+          "enumerant" : "C",
+          "value" : 8
         }
       ]
     },

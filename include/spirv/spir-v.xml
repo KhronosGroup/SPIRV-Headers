@@ -87,7 +87,8 @@
         <id value="34"  vendor="Rayan Hatout" tool="SPIRVSmith" comment="Contact Rayan Hatout rayan.hatout@gmail.com, Repo https://github.com/rayanht/SPIRVSmith"/>
         <id value="35"  vendor="Saarland University" tool="Shady" comment="Contact Hugo Devillers devillers@uni-saarland.de, Repo https://github.com/Hugobros3/shady"/>
         <id value="36"  vendor="Taichi Graphics" tool="Taichi" comment="Contact Rendong Liang rendongliang@taichi.graphics, Repo https://github.com/taichi-dev/taichi"/>
-        <unused start="37" end="0xFFFF" comment="Tool ID range reservable for future use by vendors"/>
+        <id value="37"  vendor="heroseh" tool="Hero C Compiler" comment="https://github.com/heroseh/hcc"/>
+        <unused start="38" end="0xFFFF" comment="Tool ID range reservable for future use by vendors"/>
     </ids>
 
     <!-- SECTION: SPIR-V Opcodes and Enumerants -->
