@@ -16,8 +16,3 @@ target_link_libraries(find_package_example PRIVATE
     SPIRV-Headers::SPIRV-Headers
 )
 
-if (NOT DEFINED SPIRV-Headers_VERSION)
-    message(FATAL_ERROR "SPIRV-Headers_VERSION not provided!")
-endif()
-
-message(STATUS "SPIRV-Headers_VERSION = ${SPIRV-Headers_VERSION}")

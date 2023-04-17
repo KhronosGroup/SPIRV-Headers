@@ -16,8 +16,3 @@ target_link_libraries(pkgconfig_example PRIVATE
     PkgConfig::SPIRV_HEADERS
 )
 
-if (NOT DEFINED SPIRV_HEADERS_VERSION)
-    message(FATAL_ERROR "SPIRV_HEADERS_VERSION not defined!")
-endif()
-
-message(STATUS "PkgConfig::SPIRV_HEADERS version = ${SPIRV_HEADERS_VERSION}")
