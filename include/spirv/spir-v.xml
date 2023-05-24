@@ -82,7 +82,7 @@
         <id value="29"  vendor="Mikkosoft Productions" tool="MSP Shader Compiler" comment="Contact Mikko Rasa, tdb@tdb.fi"/>
         <id value="30"  vendor="SpvGenTwo community" tool="SpvGenTwo SPIR-V IR Tools" comment="https://github.com/rAzoR8/SpvGenTwo"/>
         <id value="31"  vendor="Google" tool="Skia SkSL" comment="Contact Ethan Nicholas, ethannicholas@google.com"/>
-        <id value="32"  vendor="TornadoVM" tool="SPIRV Beehive Toolkit" comment="https://github.com/beehive-lab/spirv-beehive-toolkit"/>
+        <id value="32"  vendor="TornadoVM" tool="Beehive SPIRV Toolkit" comment="https://github.com/beehive-lab/beehive-spirv-toolkit"/>
         <id value="33"  vendor="DragonJoker" tool="ShaderWriter" comment="Contact Sylvain Doremus, https://github.com/DragonJoker/ShaderWriter"/>
         <id value="34"  vendor="Rayan Hatout" tool="SPIRVSmith" comment="Contact Rayan Hatout rayan.hatout@gmail.com, Repo https://github.com/rayanht/SPIRVSmith"/>
         <id value="35"  vendor="Saarland University" tool="Shady" comment="Contact Hugo Devillers devillers@uni-saarland.de, Repo https://github.com/Hugobros3/shady"/>
