@@ -69,6 +69,7 @@ enum SourceLanguage {
     SourceLanguageHLSL = 5,
     SourceLanguageCPP_for_OpenCL = 6,
     SourceLanguageSYCL = 7,
+    SourceLanguageHERO_C = 8,
     SourceLanguageMax = 0x7fffffff,
 };
 

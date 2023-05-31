@@ -66,6 +66,7 @@ namespace Spv
             HLSL = 5,
             CPP_for_OpenCL = 6,
             SYCL = 7,
+            HERO_C = 8,
         }
 
         [AllowDuplicates, CRepr] public enum ExecutionModel
@@ -153,6 +154,9 @@ namespace Spv
             SubgroupsPerWorkgroupId = 37,
             LocalSizeId = 38,
             LocalSizeHintId = 39,
+            NonCoherentColorAttachmentReadEXT = 4169,
+            NonCoherentDepthAttachmentReadEXT = 4170,
+            NonCoherentStencilAttachmentReadEXT = 4171,
             SubgroupUniformControlFlowKHR = 4421,
             PostDepthCoverage = 4446,
             DenormPreserve = 4459,
@@ -212,6 +216,7 @@ namespace Spv
             AtomicCounter = 10,
             Image = 11,
             StorageBuffer = 12,
+            TileImageEXT = 4172,
             CallableDataKHR = 5328,
             CallableDataNV = 5328,
             IncomingCallableDataKHR = 5329,
@@ -242,6 +247,7 @@ namespace Spv
             Rect = 4,
             Buffer = 5,
             SubpassData = 6,
+            TileImageDataEXT = 4173,
         }
 
         [AllowDuplicates, CRepr] public enum SamplerAddressingMode
@@ -993,6 +999,9 @@ namespace Spv
             ShaderViewportIndex = 70,
             UniformDecoration = 71,
             CoreBuiltinsARM = 4165,
+            TileImageColorReadAccessEXT = 4166,
+            TileImageDepthReadAccessEXT = 4167,
+            TileImageStencilReadAccessEXT = 4168,
             FragmentShadingRateKHR = 4422,
             SubgroupBallotKHR = 4423,
             DrawParameters = 4427,
@@ -1613,6 +1622,9 @@ namespace Spv
             OpPtrEqual = 401,
             OpPtrNotEqual = 402,
             OpPtrDiff = 403,
+            OpColorAttachmentReadEXT = 4160,
+            OpDepthAttachmentReadEXT = 4161,
+            OpStencilAttachmentReadEXT = 4162,
             OpTerminateInvocation = 4416,
             OpSubgroupBallotKHR = 4421,
             OpSubgroupFirstInvocationKHR = 4422,
