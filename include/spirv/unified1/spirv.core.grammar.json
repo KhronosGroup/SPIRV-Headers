@@ -10084,6 +10084,10 @@
         {
           "enumerant" : "SYCL",
           "value" : 7
+        },
+        {
+          "enumerant" : "HERO_C",
+          "value" : 8
         }
       ]
     },
