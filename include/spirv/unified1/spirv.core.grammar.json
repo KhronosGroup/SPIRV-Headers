@@ -799,7 +799,8 @@
       "opcode" : 73,
       "operands" : [
         { "kind" : "IdResult" }
-      ]
+      ],
+      "deprecatedVersion": "1.3"
     },
     {
       "opname" : "OpGroupDecorate",
@@ -808,7 +809,8 @@
       "operands" : [
         { "kind" : "IdRef",                     "name" : "'Decoration Group'" },
         { "kind" : "IdRef", "quantifier" : "*", "name" : "'Targets'" }
-      ]
+      ],
+      "deprecatedVersion": "1.3"
     },
     {
       "opname" : "OpGroupMemberDecorate",
@@ -817,7 +819,8 @@
       "operands" : [
         { "kind" : "IdRef",                                       "name" : "'Decoration Group'" },
         { "kind" : "PairIdRefLiteralInteger", "quantifier" : "*", "name" : "'Targets'" }
-      ]
+      ],
+      "deprecatedVersion": "1.3"
     },
     {
       "opname" : "OpVectorExtractDynamic",
@@ -2421,7 +2424,8 @@
         { "kind" : "IdRef",             "name" : "'Comparator'" }
       ],
       "capabilities" : [ "Kernel" ],
-      "lastVersion" : "1.3"
+      "lastVersion" : "1.3",
+      "deprecatedVersion": "1.2"
     },
     {
       "opname" : "OpAtomicIIncrement",
@@ -11876,7 +11880,8 @@
           "enumerant" : "BufferBlock",
           "value" : 3,
           "capabilities" : [ "Shader" ],
-          "lastVersion" : "1.3"
+          "lastVersion" : "1.3",
+          "deprecatedVersion": "1.3"
         },
         {
           "enumerant" : "RowMajor",
