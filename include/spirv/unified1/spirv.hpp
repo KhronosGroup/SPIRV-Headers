@@ -69,6 +69,7 @@ enum SourceLanguage {
     SourceLanguageHLSL = 5,
     SourceLanguageCPP_for_OpenCL = 6,
     SourceLanguageSYCL = 7,
+    SourceLanguageHERO_C = 8,
     SourceLanguageMax = 0x7fffffff,
 };
 
@@ -156,6 +157,9 @@ enum ExecutionMode {
     ExecutionModeSubgroupsPerWorkgroupId = 37,
     ExecutionModeLocalSizeId = 38,
     ExecutionModeLocalSizeHintId = 39,
+    ExecutionModeNonCoherentColorAttachmentReadEXT = 4169,
+    ExecutionModeNonCoherentDepthAttachmentReadEXT = 4170,
+    ExecutionModeNonCoherentStencilAttachmentReadEXT = 4171,
     ExecutionModeSubgroupUniformControlFlowKHR = 4421,
     ExecutionModePostDepthCoverage = 4446,
     ExecutionModeDenormPreserve = 4459,
@@ -215,6 +219,7 @@ enum StorageClass {
     StorageClassAtomicCounter = 10,
     StorageClassImage = 11,
     StorageClassStorageBuffer = 12,
+    StorageClassTileImageEXT = 4172,
     StorageClassCallableDataKHR = 5328,
     StorageClassCallableDataNV = 5328,
     StorageClassIncomingCallableDataKHR = 5329,
@@ -245,6 +250,7 @@ enum Dim {
     DimRect = 4,
     DimBuffer = 5,
     DimSubpassData = 6,
+    DimTileImageDataEXT = 4173,
     DimMax = 0x7fffffff,
 };
 
@@ -718,6 +724,7 @@ enum BuiltIn {
     BuiltInHitKindKHR = 5333,
     BuiltInHitKindNV = 5333,
     BuiltInCurrentRayTimeNV = 5334,
+    BuiltInHitTriangleVertexPositionsKHR = 5335,
     BuiltInIncomingRayFlagsKHR = 5351,
     BuiltInIncomingRayFlagsNV = 5351,
     BuiltInRayGeometryIndexKHR = 5352,
@@ -989,6 +996,9 @@ enum Capability {
     CapabilityShaderViewportIndex = 70,
     CapabilityUniformDecoration = 71,
     CapabilityCoreBuiltinsARM = 4165,
+    CapabilityTileImageColorReadAccessEXT = 4166,
+    CapabilityTileImageDepthReadAccessEXT = 4167,
+    CapabilityTileImageStencilReadAccessEXT = 4168,
     CapabilityFragmentShadingRateKHR = 4422,
     CapabilitySubgroupBallotKHR = 4423,
     CapabilityDrawParameters = 4427,
@@ -1071,6 +1081,7 @@ enum Capability {
     CapabilityUniformTexelBufferArrayNonUniformIndexingEXT = 5311,
     CapabilityStorageTexelBufferArrayNonUniformIndexing = 5312,
     CapabilityStorageTexelBufferArrayNonUniformIndexingEXT = 5312,
+    CapabilityRayTracingPositionFetchKHR = 5336,
     CapabilityRayTracingNV = 5340,
     CapabilityRayTracingMotionBlurNV = 5341,
     CapabilityVulkanMemoryModel = 5345,
@@ -1091,6 +1102,7 @@ enum Capability {
     CapabilityRayTracingOpacityMicromapEXT = 5381,
     CapabilityShaderInvocationReorderNV = 5383,
     CapabilityBindlessTextureNV = 5390,
+    CapabilityRayQueryPositionFetchKHR = 5391,
     CapabilitySubgroupShuffleINTEL = 5568,
     CapabilitySubgroupBufferBlockIOINTEL = 5569,
     CapabilitySubgroupImageBlockIOINTEL = 5570,
@@ -1608,6 +1620,9 @@ enum Op {
     OpPtrEqual = 401,
     OpPtrNotEqual = 402,
     OpPtrDiff = 403,
+    OpColorAttachmentReadEXT = 4160,
+    OpDepthAttachmentReadEXT = 4161,
+    OpStencilAttachmentReadEXT = 4162,
     OpTerminateInvocation = 4416,
     OpSubgroupBallotKHR = 4421,
     OpSubgroupFirstInvocationKHR = 4422,
@@ -1700,6 +1715,7 @@ enum Op {
     OpTraceNV = 5337,
     OpTraceMotionNV = 5338,
     OpTraceRayMotionNV = 5339,
+    OpRayQueryGetIntersectionTriangleVertexPositionsKHR = 5340,
     OpTypeAccelerationStructureKHR = 5341,
     OpTypeAccelerationStructureNV = 5341,
     OpExecuteCallableNV = 5344,
@@ -2328,6 +2344,9 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpPtrEqual: *hasResult = true; *hasResultType = true; break;
     case OpPtrNotEqual: *hasResult = true; *hasResultType = true; break;
     case OpPtrDiff: *hasResult = true; *hasResultType = true; break;
+    case OpColorAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
+    case OpDepthAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
+    case OpStencilAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
     case OpTerminateInvocation: *hasResult = false; *hasResultType = false; break;
     case OpSubgroupBallotKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupFirstInvocationKHR: *hasResult = true; *hasResultType = true; break;
@@ -2413,6 +2432,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpTraceNV: *hasResult = false; *hasResultType = false; break;
     case OpTraceMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpTraceRayMotionNV: *hasResult = false; *hasResultType = false; break;
+    case OpRayQueryGetIntersectionTriangleVertexPositionsKHR: *hasResult = true; *hasResultType = true; break;
     case OpTypeAccelerationStructureNV: *hasResult = true; *hasResultType = false; break;
     case OpExecuteCallableNV: *hasResult = false; *hasResultType = false; break;
     case OpTypeCooperativeMatrixNV: *hasResult = true; *hasResultType = false; break;
