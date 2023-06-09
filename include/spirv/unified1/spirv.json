@@ -228,6 +228,7 @@
                     "NumSIMDWorkitemsINTEL": 5896,
                     "SchedulerTargetFmaxMhzINTEL": 5903,
                     "MaximallyReconvergesKHR": 6023,
+                    "FPFastMathDefault": 6028,
                     "StreamingInterfaceINTEL": 6154,
                     "RegisterMapInterfaceINTEL": 6160,
                     "NamedBarrierCountINTEL": 6417
@@ -450,8 +451,11 @@
                     "NSZ": 2,
                     "AllowRecip": 3,
                     "Fast": 4,
+                    "AllowContract": 16,
                     "AllowContractFastINTEL": 16,
-                    "AllowReassocINTEL": 17
+                    "AllowReassoc": 17,
+                    "AllowReassocINTEL": 17,
+                    "AllowTransform": 18
                 }
             },
             {
@@ -1173,6 +1177,7 @@
                     "CooperativeMatrixKHR": 6022,
                     "BitInstructions": 6025,
                     "GroupNonUniformRotateKHR": 6026,
+                    "FloatControls2": 6029,
                     "AtomicFloat32AddEXT": 6033,
                     "AtomicFloat64AddEXT": 6034,
                     "LongCompositesINTEL": 6089,
