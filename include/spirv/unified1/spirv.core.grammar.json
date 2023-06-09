@@ -12712,12 +12712,12 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPMaxErrorINTEL",
+          "enumerant" : "FPMaxErrorDecorationINTEL",
           "value" : 6170,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "'Max Error'" }
           ],
-          "capabilities" : [ "FPMaxErrorDecorationINTEL" ],
+          "capabilities" : [ "FPMaxErrorINTEL" ],
           "version" : "None"
         },
         {
@@ -15186,7 +15186,7 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPMaxErrorDecorationINTEL",
+          "enumerant" : "FPMaxErrorINTEL",
           "value" : 6169,
           "extensions" : [ "SPV_INTEL_fp_max_error" ],
           "version" : "None"
