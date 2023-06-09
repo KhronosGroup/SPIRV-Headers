@@ -212,6 +212,7 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeNoGlobalOffsetINTEL = 5895,
     SpvExecutionModeNumSIMDWorkitemsINTEL = 5896,
     SpvExecutionModeSchedulerTargetFmaxMhzINTEL = 5903,
+    SpvExecutionModeFPFastMathDefault = 6028,
     SpvExecutionModeStreamingInterfaceINTEL = 6154,
     SpvExecutionModeRegisterMapInterfaceINTEL = 6160,
     SpvExecutionModeNamedBarrierCountINTEL = 6417,
@@ -431,8 +432,11 @@ typedef enum SpvFPFastMathModeShift_ {
     SpvFPFastMathModeNSZShift = 2,
     SpvFPFastMathModeAllowRecipShift = 3,
     SpvFPFastMathModeFastShift = 4,
+    SpvFPFastMathModeAllowContractShift = 16,
     SpvFPFastMathModeAllowContractFastINTELShift = 16,
+    SpvFPFastMathModeAllowReassocShift = 17,
     SpvFPFastMathModeAllowReassocINTELShift = 17,
+    SpvFPFastMathModeAllowTransformShift = 18,
     SpvFPFastMathModeMax = 0x7fffffff,
 } SpvFPFastMathModeShift;
 
@@ -443,8 +447,11 @@ typedef enum SpvFPFastMathModeMask_ {
     SpvFPFastMathModeNSZMask = 0x00000004,
     SpvFPFastMathModeAllowRecipMask = 0x00000008,
     SpvFPFastMathModeFastMask = 0x00000010,
+    SpvFPFastMathModeAllowContractMask = 0x00010000,
     SpvFPFastMathModeAllowContractFastINTELMask = 0x00010000,
+    SpvFPFastMathModeAllowReassocMask = 0x00020000,
     SpvFPFastMathModeAllowReassocINTELMask = 0x00020000,
+    SpvFPFastMathModeAllowTransformMask = 0x00040000,
 } SpvFPFastMathModeMask;
 
 typedef enum SpvFPRoundingMode_ {
@@ -1196,6 +1203,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityCooperativeMatrixKHR = 6022,
     SpvCapabilityBitInstructions = 6025,
     SpvCapabilityGroupNonUniformRotateKHR = 6026,
+    SpvCapabilityFloatControls2 = 6029,
     SpvCapabilityAtomicFloat32AddEXT = 6033,
     SpvCapabilityAtomicFloat64AddEXT = 6034,
     SpvCapabilityLongCompositesINTEL = 6089,

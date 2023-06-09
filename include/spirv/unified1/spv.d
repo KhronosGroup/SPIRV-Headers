@@ -207,6 +207,7 @@ enum ExecutionMode : uint
     NoGlobalOffsetINTEL = 5895,
     NumSIMDWorkitemsINTEL = 5896,
     SchedulerTargetFmaxMhzINTEL = 5903,
+    FPFastMathDefault = 6028,
     StreamingInterfaceINTEL = 6154,
     RegisterMapInterfaceINTEL = 6160,
     NamedBarrierCountINTEL = 6417,
@@ -427,8 +428,11 @@ enum FPFastMathModeShift : uint
     NSZ = 2,
     AllowRecip = 3,
     Fast = 4,
+    AllowContract = 16,
     AllowContractFastINTEL = 16,
+    AllowReassoc = 17,
     AllowReassocINTEL = 17,
+    AllowTransform = 18,
 }
 
 enum FPFastMathModeMask : uint
@@ -439,8 +443,11 @@ enum FPFastMathModeMask : uint
     NSZ = 0x00000004,
     AllowRecip = 0x00000008,
     Fast = 0x00000010,
+    AllowContract = 0x00010000,
     AllowContractFastINTEL = 0x00010000,
+    AllowReassoc = 0x00020000,
     AllowReassocINTEL = 0x00020000,
+    AllowTransform = 0x00040000,
 }
 
 enum FPRoundingMode : uint
@@ -1199,6 +1206,7 @@ enum Capability : uint
     CooperativeMatrixKHR = 6022,
     BitInstructions = 6025,
     GroupNonUniformRotateKHR = 6026,
+    FloatControls2 = 6029,
     AtomicFloat32AddEXT = 6033,
     AtomicFloat64AddEXT = 6034,
     LongCompositesINTEL = 6089,

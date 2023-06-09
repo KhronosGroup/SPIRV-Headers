@@ -9990,15 +9990,33 @@
           "version" : "1.0"
         },
         {
+          "enumerant" : "AllowContract",
+          "value" : "0x10000",
+          "capabilities" : [ "FloatControls2", "FPFastMathModeINTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "AllowContractFastINTEL",
           "value" : "0x10000",
-          "capabilities" : [ "FPFastMathModeINTEL" ],
+          "capabilities" : [ "FloatControls2", "FPFastMathModeINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AllowReassoc",
+          "value" : "0x20000",
+          "capabilities" : [ "FloatControls2", "FPFastMathModeINTEL" ],
           "version" : "None"
         },
         {
           "enumerant" : "AllowReassocINTEL",
           "value" : "0x20000",
-          "capabilities" : [ "FPFastMathModeINTEL" ],
+          "capabilities" : [ "FloatControls2", "FPFastMathModeINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AllowTransform",
+          "value" : "0x40000",
+          "capabilities" : [ "FloatControls2" ],
           "version" : "None"
         }
       ]
@@ -11500,6 +11518,16 @@
           "version" : "None"
         },
         {
+          "enumerant" : "FPFastMathDefault",
+          "value" : 6028,
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'Target Type'" },
+            { "kind" : "IdRef", "name" : "'Fast-Math Mode'" }
+	        ],
+          "capabilities" : [ "FloatControls2" ],
+          "version" : "None"
+	      },
+	      {
           "enumerant" : "StreamingInterfaceINTEL",
           "value" : 6154,
           "parameters" : [
@@ -12933,7 +12961,7 @@
         {
           "enumerant" : "FPFastMathMode",
           "value" : 40,
-          "capabilities" : [ "Kernel" ],
+          "capabilities" : [ "Kernel", "FloatControls2" ],
           "parameters" : [
             { "kind" : "FPFastMathMode", "name" : "'Fast-Math Mode'" }
           ],
@@ -16260,6 +16288,12 @@
           "value" : 6026,
           "capabilities" : [ "GroupNonUniform" ],
           "extensions" : [ "SPV_KHR_subgroup_rotate" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FloatControls2",
+          "value" : 6029,
+          "extensions" : [ "SPV_KHR_float_controls2" ],
           "version" : "None"
         },
         {
