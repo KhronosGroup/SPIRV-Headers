@@ -1,6 +1,6 @@
 {
   "copyright" : [
-    "Copyright (c) 2014-2020 The Khronos Group Inc.",
+    "Copyright (c) 2014-2023 The Khronos Group Inc.",
     "",
     "Permission is hereby granted, free of charge, to any person obtaining a copy",
     "of this software and/or associated documentation files (the \"Materials\"),",
@@ -10668,10 +10668,17 @@
           "version": "None"
         },
         {
-          "enumerant" : "OutputLinesNV",
-          "value" : 5269,
-          "capabilities" : [ "MeshShadingNV", "MeshShadingEXT" ],
-          "extensions" : [ "SPV_NV_mesh_shader", "SPV_EXT_mesh_shader" ],
+          "enumerant": "QuadDerivatives",
+          "value": 5088,
+          "capabilities": [ "QuadScope" ],
+          "extensions": [ "SPV_KHR_shader_quad_scope" ],
+          "version": "None"
+        },
+        {
+          "enumerant" : "HelperGroupParticipation",
+          "value" : 5089,
+          "capabilities" : [ "QuadScope" ],
+          "extensions" : [ "SPV_KHR_shader_quad_scope" ],
           "version" : "None"
         },
         {
@@ -13661,7 +13668,11 @@
           "value" : 6,
           "capabilities" : [ "RayTracingKHR" ],
           "version" : "None"
-        }
+        },
+        {
+          "enumerant" : "Quad",
+          "value" : 7
+        }      
       ]
     },
     {
@@ -14382,6 +14393,12 @@
           "extensions" : [ "SPV_KHR_shader_clock" ],
           "version" : "None"
         },
+         {
+          "enumerant" : "QuadScope",
+          "value" : 5087,
+          "extensions" : [ "SPV_KHR_shader_quad_scope" ],
+          "version" : "None"
+        },       
         {
           "enumerant" : "SampleMaskOverrideCoverageNV",
           "value" : 5249,

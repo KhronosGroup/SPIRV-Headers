@@ -1,5 +1,5 @@
 /*
-** Copyright (c) 2014-2020 The Khronos Group Inc.
+** Copyright (c) 2014-2023 The Khronos Group Inc.
 ** 
 ** Permission is hereby granted, free of charge, to any person obtaining a copy
 ** of this software and/or associated documentation files (the "Materials"),
@@ -178,6 +178,8 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeStencilRefUnchangedBackAMD = 5082,
     SpvExecutionModeStencilRefGreaterBackAMD = 5083,
     SpvExecutionModeStencilRefLessBackAMD = 5084,
+    SpvExecutionModeQuadDerivatives = 5088,
+    SpvExecutionModeHelperGroupParticipation = 5089,
     SpvExecutionModeOutputLinesEXT = 5269,
     SpvExecutionModeOutputLinesNV = 5269,
     SpvExecutionModeOutputPrimitivesEXT = 5270,
@@ -895,6 +897,7 @@ typedef enum SpvScope_ {
     SpvScopeQueueFamily = 5,
     SpvScopeQueueFamilyKHR = 5,
     SpvScopeShaderCallKHR = 6,
+    SpvScopeQuad = 7,
     SpvScopeMax = 0x7fffffff,
 } SpvScope;
 
@@ -1042,6 +1045,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityImageReadWriteLodAMD = 5015,
     SpvCapabilityInt64ImageEXT = 5016,
     SpvCapabilityShaderClockKHR = 5055,
+    SpvCapabilityQuadScope = 5087,
     SpvCapabilitySampleMaskOverrideCoverageNV = 5249,
     SpvCapabilityGeometryShaderPassthroughNV = 5251,
     SpvCapabilityShaderViewportIndexLayerEXT = 5254,

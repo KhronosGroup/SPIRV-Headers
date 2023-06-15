@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2020 The Khronos Group Inc.
+// Copyright (c) 2014-2023 The Khronos Group Inc.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and/or associated documentation files (the "Materials"),
@@ -170,6 +170,8 @@ namespace Spv
             StencilRefUnchangedBackAMD = 5082,
             StencilRefGreaterBackAMD = 5083,
             StencilRefLessBackAMD = 5084,
+            QuadDerivatives = 5088,
+            HelperGroupParticipation = 5089,
             OutputLinesEXT = 5269,
             OutputLinesNV = 5269,
             OutputPrimitivesEXT = 5270,
@@ -894,6 +896,7 @@ namespace Spv
             QueueFamily = 5,
             QueueFamilyKHR = 5,
             ShaderCallKHR = 6,
+            Quad = 7,
         }
 
         public enum GroupOperation
@@ -1042,6 +1045,7 @@ namespace Spv
             ImageReadWriteLodAMD = 5015,
             Int64ImageEXT = 5016,
             ShaderClockKHR = 5055,
+            QuadScope = 5087,
             SampleMaskOverrideCoverageNV = 5249,
             GeometryShaderPassthroughNV = 5251,
             ShaderViewportIndexLayerEXT = 5254,
