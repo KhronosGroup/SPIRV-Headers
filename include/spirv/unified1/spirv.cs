@@ -1159,6 +1159,7 @@ namespace Spv
             DotProduct = 6019,
             DotProductKHR = 6019,
             RayCullMaskKHR = 6020,
+            CooperativeMatrixKHR = 6022,
             BitInstructions = 6025,
             GroupNonUniformRotateKHR = 6026,
             AtomicFloat32AddEXT = 6033,
@@ -1278,6 +1279,38 @@ namespace Spv
         {
             PackedVectorFormat4x8Bit = 0,
             PackedVectorFormat4x8BitKHR = 0,
+        }
+
+        public enum CooperativeMatrixOperandsShift
+        {
+            MatrixASignedComponents = 0,
+            MatrixBSignedComponents = 1,
+            MatrixCSignedComponents = 2,
+            MatrixResultSignedComponents = 3,
+            SaturatingAccumulation = 4,
+        }
+
+        public enum CooperativeMatrixOperandsMask
+        {
+            MaskNone = 0,
+            MatrixASignedComponents = 0x00000001,
+            MatrixBSignedComponents = 0x00000002,
+            MatrixCSignedComponents = 0x00000004,
+            MatrixResultSignedComponents = 0x00000008,
+            SaturatingAccumulation = 0x00000010,
+        }
+
+        public enum CooperativeMatrixLayout
+        {
+            RowMajorKHR = 0,
+            ColumnMajorKHR = 1,
+        }
+
+        public enum CooperativeMatrixUse
+        {
+            MatrixAKHR = 0,
+            MatrixBKHR = 1,
+            MatrixAccumulatorKHR = 2,
         }
 
         public enum Op
@@ -1654,6 +1687,11 @@ namespace Spv
             OpUDotAccSatKHR = 4454,
             OpSUDotAccSat = 4455,
             OpSUDotAccSatKHR = 4455,
+            OpTypeCooperativeMatrixKHR = 4456,
+            OpCooperativeMatrixLoadKHR = 4457,
+            OpCooperativeMatrixStoreKHR = 4458,
+            OpCooperativeMatrixMulAddKHR = 4459,
+            OpCooperativeMatrixLengthKHR = 4460,
             OpTypeRayQueryKHR = 4472,
             OpRayQueryInitializeKHR = 4473,
             OpRayQueryTerminateKHR = 4474,
