@@ -11610,6 +11610,16 @@
           "enumerant" : "UnormInt101010_2",
           "value" : 16,
           "capabilities" : [ "Kernel" ]
+        },
+        {
+          "enumerant" : "UnsignedIntRaw10EXT",
+          "value" : 19,
+          "capabilities" : [ "Kernel" ]
+        },
+        {
+          "enumerant" : "UnsignedIntRaw12EXT",
+          "value" : 20,
+          "capabilities" : [ "Kernel" ]
         }
       ]
     },

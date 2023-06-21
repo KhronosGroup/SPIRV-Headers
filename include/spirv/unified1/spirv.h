@@ -361,6 +361,8 @@ typedef enum SpvImageChannelDataType_ {
     SpvImageChannelDataTypeFloat = 14,
     SpvImageChannelDataTypeUnormInt24 = 15,
     SpvImageChannelDataTypeUnormInt101010_2 = 16,
+    SpvImageChannelDataTypeUnsignedIntRaw10EXT = 19,
+    SpvImageChannelDataTypeUnsignedIntRaw12EXT = 20,
     SpvImageChannelDataTypeMax = 0x7fffffff,
 } SpvImageChannelDataType;
 

@@ -357,6 +357,8 @@ enum ImageChannelDataType {
     ImageChannelDataTypeFloat = 14,
     ImageChannelDataTypeUnormInt24 = 15,
     ImageChannelDataTypeUnormInt101010_2 = 16,
+    ImageChannelDataTypeUnsignedIntRaw10EXT = 19,
+    ImageChannelDataTypeUnsignedIntRaw12EXT = 20,
     ImageChannelDataTypeMax = 0x7fffffff,
 };
 
