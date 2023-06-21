@@ -12715,7 +12715,7 @@
           "enumerant" : "FPMaxErrorDecorationINTEL",
           "value" : 6170,
           "parameters" : [
-            { "kind" : "LiteralInteger", "name" : "'Max Error'" }
+            { "kind" : "LiteralFloat", "name" : "'Max Error'" }
           ],
           "capabilities" : [ "FPMaxErrorINTEL" ],
           "version" : "None"
