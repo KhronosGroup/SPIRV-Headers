@@ -4500,7 +4500,7 @@
       "operands" : [
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "'Component Type'" },
-        { "kind" : "IdScope",      "name" : "'Execution'" },
+        { "kind" : "IdScope",      "name" : "'Scope'" },
         { "kind" : "IdRef",        "name" : "'Rows'" },
         { "kind" : "IdRef",        "name" : "'Columns'" },
         { "kind" : "IdRef",        "name" : "'Use'" }
@@ -4518,7 +4518,7 @@
         { "kind" : "IdRef",             "name" : "'Pointer'" },
         { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
         { "kind" : "IdRef",             "name" : "'Stride'", "quantifier": "?" },
-        { "kind" : "MemoryAccess",      "quantifier" : "?" }
+        { "kind" : "MemoryAccess",      "name" : "'Memory Operand'", "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeMatrixKHR" ],
       "version" : "None"
@@ -4532,7 +4532,7 @@
         { "kind" : "IdRef",             "name" : "'Object'" },
         { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
         { "kind" : "IdRef",             "name" : "'Stride'", "quantifier": "?" },
-        { "kind" : "MemoryAccess",      "quantifier" : "?" }
+        { "kind" : "MemoryAccess",      "name" : "'Memory Operand'", "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeMatrixKHR" ],
       "version" : "None"
@@ -4547,7 +4547,7 @@
         { "kind" : "IdRef",             "name" : "'A'" },
         { "kind" : "IdRef",             "name" : "'B'" },
         { "kind" : "IdRef",             "name" : "'C'" },
-        { "kind" : "CooperativeMatrixOperands",             "quantifier" : "?" }
+        { "kind" : "CooperativeMatrixOperands", "name" : "'Cooperative Matrix Operands'", "quantifier" : "?" }
       ],
       "capabilities" : [ "CooperativeMatrixKHR" ],
       "version" : "None"
