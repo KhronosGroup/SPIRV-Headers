@@ -11882,6 +11882,32 @@
     },
     {
       "category" : "ValueEnum",
+      "kind" : "HostAccessQualifier",
+      "enumerants" : [
+        {
+          "enumerant" : "NoneINTEL",
+          "value" : 0,
+          "capabilities" : [ "GlobalVariableHostAccessINTEL" ]
+        },
+        {
+          "enumerant" : "ReadINTEL",
+          "value" : 1,
+          "capabilities" : [ "GlobalVariableHostAccessINTEL" ]
+        },
+        {
+          "enumerant" : "WriteINTEL",
+          "value" : 2,
+          "capabilities" : [ "GlobalVariableHostAccessINTEL" ]
+        },
+        {
+          "enumerant" : "ReadWriteINTEL",
+          "value" : 3,
+          "capabilities" : [ "GlobalVariableHostAccessINTEL" ]
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
       "kind" : "FunctionParameterAttribute",
       "enumerants" : [
         {
@@ -12808,6 +12834,16 @@
             { "kind" : "LiteralInteger", "name" : "Value" }
           ],
           "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HostAccessINTEL",
+          "value" : 6168,
+          "parameters": [
+            { "kind" : "HostAccessQualifier", "name" : "'Access'" },
+            { "kind" : "LiteralString", "name" : "'Name'" }
+          ],
+          "capabilities" : [ "GlobalVariableHostAccessINTEL" ],
           "version" : "None"
         },
         {
@@ -15278,6 +15314,12 @@
           "enumerant" : "GlobalVariableFPGADecorationsINTEL",
           "value" : 6146,
           "extensions": [ "SPV_INTEL_global_variable_fpga_decorations" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GlobalVariableHostAccessINTEL",
+          "value" : 6167,
+          "extensions": [ "SPV_INTEL_global_variable_host_access" ],
           "version" : "None"
         },
         {
