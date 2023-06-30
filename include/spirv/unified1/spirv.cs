@@ -66,6 +66,7 @@ namespace Spv
             CPP_for_OpenCL = 6,
             SYCL = 7,
             HERO_C = 8,
+            NZSL = 9,
         }
 
         public enum ExecutionModel
