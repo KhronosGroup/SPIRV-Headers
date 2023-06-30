@@ -12793,6 +12793,24 @@
           "version" : "None"
         },
         {
+          "enumerant" : "InitModeINTEL",
+          "value" : 6147,
+          "parameters": [
+            { "kind" : "InitializationModeQualifier", "name" : "'Trigger'" }
+          ],
+          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ImplementInRegisterMapINTEL",
+          "value" : 6148,
+          "parameters": [
+            { "kind" : "LiteralInteger", "name" : "Value" }
+          ],
+          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "LatencyControlLabelINTEL",
           "value" : 6172,
           "parameters" : [
@@ -15257,6 +15275,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "GlobalVariableFPGADecorationsINTEL",
+          "value" : 6146,
+          "extensions": [ "SPV_INTEL_global_variable_fpga_decorations" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "FPGAKernelAttributesv2INTEL",
           "value" : 6161,
           "capabilities" : [ "FPGAKernelAttributesINTEL" ],
@@ -15440,6 +15464,24 @@
           "enumerant" : "MatrixAccumulatorKHR",
           "value" : 2,
           "capabilities" : [ "CooperativeMatrixKHR" ],
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "InitializationModeQualifier",
+      "enumerants" : [
+        {
+          "enumerant" : "InitOnDeviceReprogramINTEL",
+          "value" : 0,
+          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "InitOnDeviceResetINTEL",
+          "value" : 1,
+          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
           "version" : "None"
         }
       ]
