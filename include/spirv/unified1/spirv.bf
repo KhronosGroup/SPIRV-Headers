@@ -68,6 +68,7 @@ namespace Spv
             SYCL = 7,
             HERO_C = 8,
             NZSL = 9,
+            WGSL = 10,
         }
 
         [AllowDuplicates, CRepr] public enum ExecutionModel

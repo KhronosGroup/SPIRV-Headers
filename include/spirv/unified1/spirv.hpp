@@ -71,6 +71,7 @@ enum SourceLanguage {
     SourceLanguageSYCL = 7,
     SourceLanguageHERO_C = 8,
     SourceLanguageNZSL = 9,
+    SourceLanguageWGSL = 10,
     SourceLanguageMax = 0x7fffffff,
 };
 
