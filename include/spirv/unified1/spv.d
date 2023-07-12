@@ -70,6 +70,7 @@ enum SourceLanguage : uint
     SYCL = 7,
     HERO_C = 8,
     NZSL = 9,
+    WGSL = 10,
 }
 
 enum ExecutionModel : uint
