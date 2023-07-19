@@ -12801,6 +12801,15 @@
           "version" : "None"
         },
         {
+          "enumerant" : "FPMaxErrorDecorationINTEL",
+          "value" : 6170,
+          "parameters" : [
+            { "kind" : "LiteralFloat", "name" : "'Max Error'" }
+          ],
+          "capabilities" : [ "FPMaxErrorINTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "LatencyControlLabelINTEL",
           "value" : 6172,
           "parameters" : [
@@ -15269,6 +15278,12 @@
           "value" : 6161,
           "capabilities" : [ "FPGAKernelAttributesINTEL" ],
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPMaxErrorINTEL",
+          "value" : 6169,
+          "extensions" : [ "SPV_INTEL_fp_max_error" ],
           "version" : "None"
         },
         {
