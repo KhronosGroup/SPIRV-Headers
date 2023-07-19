@@ -61,6 +61,8 @@ spv = {
         CPP_for_OpenCL = 6,
         SYCL = 7,
         HERO_C = 8,
+        NZSL = 9,
+        WGSL = 10,
     },
 
     ExecutionModel = {
@@ -563,6 +565,7 @@ spv = {
         InitModeINTEL = 6147,
         ImplementInRegisterMapINTEL = 6148,
         HostAccessINTEL = 6168,
+        FPMaxErrorDecorationINTEL = 6170,
         LatencyControlLabelINTEL = 6172,
         LatencyControlConstraintINTEL = 6173,
         ConduitKernelArgumentINTEL = 6175,
@@ -1134,6 +1137,7 @@ spv = {
         GlobalVariableFPGADecorationsINTEL = 6146,
         FPGAKernelAttributesv2INTEL = 6161,
         GlobalVariableHostAccessINTEL = 6167,
+        FPMaxErrorINTEL = 6169,
         FPGALatencyControlINTEL = 6171,
         FPGAArgumentInterfacesINTEL = 6174,
         GroupUniformArithmeticKHR = 6400,

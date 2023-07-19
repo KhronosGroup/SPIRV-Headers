@@ -10159,6 +10159,14 @@
         {
           "enumerant" : "HERO_C",
           "value" : 8
+        },
+        {
+          "enumerant" : "NZSL",
+          "value" : 9
+        },
+        {
+          "enumerant" : "WGSL",
+          "value" : 10
         }
       ]
     },
@@ -12847,6 +12855,15 @@
           "version" : "None"
         },
         {
+          "enumerant" : "FPMaxErrorDecorationINTEL",
+          "value" : 6170,
+          "parameters" : [
+            { "kind" : "LiteralFloat", "name" : "'Max Error'" }
+          ],
+          "capabilities" : [ "FPMaxErrorINTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "LatencyControlLabelINTEL",
           "value" : 6172,
           "parameters" : [
@@ -15327,6 +15344,12 @@
           "enumerant" : "GlobalVariableHostAccessINTEL",
           "value" : 6167,
           "extensions": [ "SPV_INTEL_global_variable_host_access" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPMaxErrorINTEL",
+          "value" : 6169,
+          "extensions" : [ "SPV_INTEL_fp_max_error" ],
           "version" : "None"
         },
         {

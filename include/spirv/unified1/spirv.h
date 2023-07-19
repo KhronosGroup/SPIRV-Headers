@@ -74,6 +74,8 @@ typedef enum SpvSourceLanguage_ {
     SpvSourceLanguageCPP_for_OpenCL = 6,
     SpvSourceLanguageSYCL = 7,
     SpvSourceLanguageHERO_C = 8,
+    SpvSourceLanguageNZSL = 9,
+    SpvSourceLanguageWGSL = 10,
     SpvSourceLanguageMax = 0x7fffffff,
 } SpvSourceLanguage;
 
@@ -594,6 +596,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationInitModeINTEL = 6147,
     SpvDecorationImplementInRegisterMapINTEL = 6148,
     SpvDecorationHostAccessINTEL = 6168,
+    SpvDecorationFPMaxErrorDecorationINTEL = 6170,
     SpvDecorationLatencyControlLabelINTEL = 6172,
     SpvDecorationLatencyControlConstraintINTEL = 6173,
     SpvDecorationConduitKernelArgumentINTEL = 6175,
@@ -1176,6 +1179,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6146,
     SpvCapabilityFPGAKernelAttributesv2INTEL = 6161,
     SpvCapabilityGlobalVariableHostAccessINTEL = 6167,
+    SpvCapabilityFPMaxErrorINTEL = 6169,
     SpvCapabilityFPGALatencyControlINTEL = 6171,
     SpvCapabilityFPGAArgumentInterfacesINTEL = 6174,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,

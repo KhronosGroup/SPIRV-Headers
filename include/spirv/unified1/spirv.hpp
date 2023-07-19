@@ -70,6 +70,8 @@ enum SourceLanguage {
     SourceLanguageCPP_for_OpenCL = 6,
     SourceLanguageSYCL = 7,
     SourceLanguageHERO_C = 8,
+    SourceLanguageNZSL = 9,
+    SourceLanguageWGSL = 10,
     SourceLanguageMax = 0x7fffffff,
 };
 
@@ -590,6 +592,7 @@ enum Decoration {
     DecorationInitModeINTEL = 6147,
     DecorationImplementInRegisterMapINTEL = 6148,
     DecorationHostAccessINTEL = 6168,
+    DecorationFPMaxErrorDecorationINTEL = 6170,
     DecorationLatencyControlLabelINTEL = 6172,
     DecorationLatencyControlConstraintINTEL = 6173,
     DecorationConduitKernelArgumentINTEL = 6175,
@@ -1172,6 +1175,7 @@ enum Capability {
     CapabilityGlobalVariableFPGADecorationsINTEL = 6146,
     CapabilityFPGAKernelAttributesv2INTEL = 6161,
     CapabilityGlobalVariableHostAccessINTEL = 6167,
+    CapabilityFPMaxErrorINTEL = 6169,
     CapabilityFPGALatencyControlINTEL = 6171,
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
     CapabilityGroupUniformArithmeticKHR = 6400,
