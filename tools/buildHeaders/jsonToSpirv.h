@@ -99,6 +99,8 @@ enum OperandClass {
     OperandCooperativeMatrixOperands,
     OperandCooperativeMatrixLayout,
     OperandCooperativeMatrixUse,
+    OperandInitializationModeQualifier,
+    OperandHostAccessQualifier,
 
     OperandOpcode,
 
