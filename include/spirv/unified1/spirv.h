@@ -1173,7 +1173,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityDebugInfoModuleINTEL = 6114,
     SpvCapabilityBFloat16ConversionINTEL = 6115,
     SpvCapabilitySplitBarrierINTEL = 6141,
-    SpvCababilityGlobalVariableFPGADecorationsINTEL = 6146,
+    SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6146,
     SpvCapabilityFPGAKernelAttributesv2INTEL = 6161,
     SpvCapabilityGlobalVariableHostAccessINTEL = 6167,
     SpvCapabilityFPGALatencyControlINTEL = 6171,
@@ -1315,6 +1315,20 @@ typedef enum SpvCooperativeMatrixUse_ {
     SpvCooperativeMatrixUseMatrixAccumulatorKHR = 2,
     SpvCooperativeMatrixUseMax = 0x7fffffff,
 } SpvCooperativeMatrixUse;
+
+typedef enum SpvInitializationModeQualifier_ {
+    SpvInitializationModeQualifierInitOnDeviceReprogramINTEL = 0,
+    SpvInitializationModeQualifierInitOnDeviceResetINTEL = 1,
+    SpvInitializationModeQualifierMax = 0x7fffffff,
+} SpvInitializationModeQualifier;
+
+typedef enum SpvHostAccessQualifier_ {
+    SpvHostAccessQualifierNoneINTEL = 0,
+    SpvHostAccessQualifierReadINTEL = 1,
+    SpvHostAccessQualifierWriteINTEL = 2,
+    SpvHostAccessQualifierReadWriteINTEL = 3,
+    SpvHostAccessQualifierMax = 0x7fffffff,
+} SpvHostAccessQualifier;
 
 typedef enum SpvOp_ {
     SpvOpNop = 0,

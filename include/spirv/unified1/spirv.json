@@ -1299,6 +1299,26 @@
                 }
             },
             {
+                "Name": "InitializationModeQualifier",
+                "Type": "Value",
+                "Values":
+                {
+                    "InitOnDeviceReprogramINTEL": 0,
+                    "InitOnDeviceResetINTEL": 1
+                }
+            },
+            {
+                "Name": "HostAccessQualifier",
+                "Type": "Value",
+                "Values":
+                {
+                    "NoneINTEL": 0,
+                    "ReadINTEL": 1,
+                    "WriteINTEL": 2,
+                    "ReadWriteINTEL": 3
+                }
+            },
+            {
                 "Name": "Op",
                 "Type": "Value",
                 "Values":

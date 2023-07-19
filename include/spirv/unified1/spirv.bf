@@ -1319,6 +1319,20 @@ namespace Spv
             MatrixAccumulatorKHR = 2,
         }
 
+        [AllowDuplicates, CRepr] public enum InitializationModeQualifier
+        {
+            InitOnDeviceReprogramINTEL = 0,
+            InitOnDeviceResetINTEL = 1,
+        }
+
+        [AllowDuplicates, CRepr] public enum HostAccessQualifier
+        {
+            NoneINTEL = 0,
+            ReadINTEL = 1,
+            WriteINTEL = 2,
+            ReadWriteINTEL = 3,
+        }
+
         [AllowDuplicates, CRepr] public enum Op
         {
             OpNop = 0,

@@ -1321,6 +1321,20 @@ enum CooperativeMatrixUse : uint
     MatrixAccumulatorKHR = 2,
 }
 
+enum InitializationModeQualifier : uint
+{
+    InitOnDeviceReprogramINTEL = 0,
+    InitOnDeviceResetINTEL = 1,
+}
+
+enum HostAccessQualifier : uint
+{
+    NoneINTEL = 0,
+    ReadINTEL = 1,
+    WriteINTEL = 2,
+    ReadWriteINTEL = 3,
+}
+
 enum Op : uint
 {
     OpNop = 0,

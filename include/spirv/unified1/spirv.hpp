@@ -1312,6 +1312,20 @@ enum CooperativeMatrixUse {
     CooperativeMatrixUseMax = 0x7fffffff,
 };
 
+enum InitializationModeQualifier {
+    InitializationModeQualifierInitOnDeviceReprogramINTEL = 0,
+    InitializationModeQualifierInitOnDeviceResetINTEL = 1,
+    InitializationModeQualifierMax = 0x7fffffff,
+};
+
+enum HostAccessQualifier {
+    HostAccessQualifierNoneINTEL = 0,
+    HostAccessQualifierReadINTEL = 1,
+    HostAccessQualifierWriteINTEL = 2,
+    HostAccessQualifierReadWriteINTEL = 3,
+    HostAccessQualifierMax = 0x7fffffff,
+};
+
 enum Op {
     OpNop = 0,
     OpUndef = 1,

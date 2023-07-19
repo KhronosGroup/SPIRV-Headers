@@ -15317,16 +15317,16 @@
           "version" : "None"
         },
         {
-          "enumerant" : "GlobalVariableHostAccessINTEL",
-          "value" : 6167,
-          "extensions": [ "SPV_INTEL_global_variable_host_access" ],
-          "version" : "None"
-        },
-        {
           "enumerant" : "FPGAKernelAttributesv2INTEL",
           "value" : 6161,
           "capabilities" : [ "FPGAKernelAttributesINTEL" ],
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GlobalVariableHostAccessINTEL",
+          "value" : 6167,
+          "extensions": [ "SPV_INTEL_global_variable_host_access" ],
           "version" : "None"
         },
         {

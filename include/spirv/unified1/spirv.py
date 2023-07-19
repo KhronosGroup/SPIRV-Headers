@@ -1260,6 +1260,18 @@ spv = {
         'MatrixAccumulatorKHR' : 2,
     },
 
+    'InitializationModeQualifier' : {
+        'InitOnDeviceReprogramINTEL' : 0,
+        'InitOnDeviceResetINTEL' : 1,
+    },
+
+    'HostAccessQualifier' : {
+        'NoneINTEL' : 0,
+        'ReadINTEL' : 1,
+        'WriteINTEL' : 2,
+        'ReadWriteINTEL' : 3,
+    },
+
     'Op' : {
         'OpNop' : 0,
         'OpUndef' : 1,

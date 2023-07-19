@@ -1312,6 +1312,20 @@ enum class CooperativeMatrixUse : unsigned {
     Max = 0x7fffffff,
 };
 
+enum class InitializationModeQualifier : unsigned {
+    InitOnDeviceReprogramINTEL = 0,
+    InitOnDeviceResetINTEL = 1,
+    Max = 0x7fffffff,
+};
+
+enum class HostAccessQualifier : unsigned {
+    NoneINTEL = 0,
+    ReadINTEL = 1,
+    WriteINTEL = 2,
+    ReadWriteINTEL = 3,
+    Max = 0x7fffffff,
+};
+
 enum class Op : unsigned {
     OpNop = 0,
     OpUndef = 1,
