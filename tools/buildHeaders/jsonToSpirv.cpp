@@ -161,6 +161,8 @@ ClassOptionality ToOperandClassAndOptionality(const std::string& operandKind, co
             type = OperandLiteralNumber;
         } else if (operandKind == "LiteralContextDependentNumber") {
             type = OperandAnySizeLiteralNumber;
+        } else if (operandKind == "LiteralFloat") {
+            type = OperandLiteralNumber;
         } else if (operandKind == "SourceLanguage") {
             type = OperandSource;
         } else if (operandKind == "ExecutionModel") {
