@@ -1271,11 +1271,11 @@
                 "Type": "Bit",
                 "Values":
                 {
-                    "MatrixASignedComponents": 0,
-                    "MatrixBSignedComponents": 1,
-                    "MatrixCSignedComponents": 2,
-                    "MatrixResultSignedComponents": 3,
-                    "SaturatingAccumulation": 4
+                    "MatrixASignedComponentsKHR": 0,
+                    "MatrixBSignedComponentsKHR": 1,
+                    "MatrixCSignedComponentsKHR": 2,
+                    "MatrixResultSignedComponentsKHR": 3,
+                    "SaturatingAccumulationKHR": 4
                 }
             },
             {

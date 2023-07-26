@@ -1288,21 +1288,21 @@ namespace Spv
 
         [AllowDuplicates, CRepr] public enum CooperativeMatrixOperandsShift
         {
-            MatrixASignedComponents = 0,
-            MatrixBSignedComponents = 1,
-            MatrixCSignedComponents = 2,
-            MatrixResultSignedComponents = 3,
-            SaturatingAccumulation = 4,
+            MatrixASignedComponentsKHR = 0,
+            MatrixBSignedComponentsKHR = 1,
+            MatrixCSignedComponentsKHR = 2,
+            MatrixResultSignedComponentsKHR = 3,
+            SaturatingAccumulationKHR = 4,
         }
 
         [AllowDuplicates, CRepr] public enum CooperativeMatrixOperandsMask
         {
             MaskNone = 0,
-            MatrixASignedComponents = 0x00000001,
-            MatrixBSignedComponents = 0x00000002,
-            MatrixCSignedComponents = 0x00000004,
-            MatrixResultSignedComponents = 0x00000008,
-            SaturatingAccumulation = 0x00000010,
+            MatrixASignedComponentsKHR = 0x00000001,
+            MatrixBSignedComponentsKHR = 0x00000002,
+            MatrixCSignedComponentsKHR = 0x00000004,
+            MatrixResultSignedComponentsKHR = 0x00000008,
+            SaturatingAccumulationKHR = 0x00000010,
         }
 
         [AllowDuplicates, CRepr] public enum CooperativeMatrixLayout

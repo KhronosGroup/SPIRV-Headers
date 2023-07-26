@@ -15388,37 +15388,37 @@
       "kind" : "CooperativeMatrixOperands",
       "enumerants" : [
         {
-          "enumerant" : "None",
+          "enumerant" : "NoneKHR",
           "value" : "0x0000",
           "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MatrixASignedComponents",
+          "enumerant" : "MatrixASignedComponentsKHR",
           "value" : "0x0001",
           "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MatrixBSignedComponents",
+          "enumerant" : "MatrixBSignedComponentsKHR",
           "value" : "0x0002",
           "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MatrixCSignedComponents",
+          "enumerant" : "MatrixCSignedComponentsKHR",
           "value" : "0x0004",
           "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MatrixResultSignedComponents",
+          "enumerant" : "MatrixResultSignedComponentsKHR",
           "value" : "0x0008",
           "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
-          "enumerant" : "SaturatingAccumulation",
+          "enumerant" : "SaturatingAccumulationKHR",
           "value" : "0x0010",
           "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
