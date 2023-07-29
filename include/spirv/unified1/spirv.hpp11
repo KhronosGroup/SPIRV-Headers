@@ -171,6 +171,11 @@ enum class ExecutionMode : unsigned {
     RoundingModeRTZ = 4463,
     EarlyAndLateFragmentTestsAMD = 5017,
     StencilRefReplacingEXT = 5027,
+    CoalescingAMDX = 5069,
+    MaxNodeRecursionAMDX = 5071,
+    StaticNumWorkgroupsAMDX = 5072,
+    ShaderIndexAMDX = 5073,
+    MaxNumWorkgroupsAMDX = 5077,
     StencilRefUnchangedFrontAMD = 5079,
     StencilRefGreaterFrontAMD = 5080,
     StencilRefLessFrontAMD = 5081,
@@ -222,6 +227,8 @@ enum class StorageClass : unsigned {
     Image = 11,
     StorageBuffer = 12,
     TileImageEXT = 4172,
+    NodePayloadAMDX = 5068,
+    NodeOutputPayloadAMDX = 5076,
     CallableDataKHR = 5328,
     CallableDataNV = 5328,
     IncomingCallableDataKHR = 5329,
@@ -522,6 +529,10 @@ enum class Decoration : unsigned {
     WeightTextureQCOM = 4487,
     BlockMatchTextureQCOM = 4488,
     ExplicitInterpAMD = 4999,
+    NodeSharesPayloadLimitsWithAMDX = 5019,
+    NodeMaxPayloadsAMDX = 5020,
+    TrackFinishWritingAMDX = 5078,
+    PayloadNodeNameAMDX = 5091,
     OverrideCoverageNV = 5248,
     PassthroughNV = 5250,
     ViewportRelativeNV = 5252,
@@ -676,6 +687,8 @@ enum class BuiltIn : unsigned {
     BaryCoordSmoothSampleAMD = 4997,
     BaryCoordPullModelAMD = 4998,
     FragStencilRefEXT = 5014,
+    CoalescedInputCountAMDX = 5021,
+    ShaderIndexAMDX = 5073,
     ViewportMaskNV = 5253,
     SecondaryPositionNV = 5257,
     SecondaryViewportMaskNV = 5258,
@@ -1044,6 +1057,7 @@ enum class Capability : unsigned {
     ImageReadWriteLodAMD = 5015,
     Int64ImageEXT = 5016,
     ShaderClockKHR = 5055,
+    ShaderEnqueueAMDX = 5067,
     SampleMaskOverrideCoverageNV = 5249,
     GeometryShaderPassthroughNV = 5251,
     ShaderViewportIndexLayerEXT = 5254,
@@ -1711,6 +1725,9 @@ enum class Op : unsigned {
     OpFragmentMaskFetchAMD = 5011,
     OpFragmentFetchAMD = 5012,
     OpReadClockKHR = 5056,
+    OpFinalizeNodePayloadsAMDX = 5075,
+    OpFinishWritingNodePayloadAMDX = 5078,
+    OpInitializeNodePayloadsAMDX = 5090,
     OpHitObjectRecordHitMotionNV = 5249,
     OpHitObjectRecordHitWithIndexMotionNV = 5250,
     OpHitObjectRecordMissMotionNV = 5251,
@@ -2434,6 +2451,9 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpFragmentMaskFetchAMD: *hasResult = true; *hasResultType = true; break;
     case Op::OpFragmentFetchAMD: *hasResult = true; *hasResultType = true; break;
     case Op::OpReadClockKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpFinalizeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case Op::OpFinishWritingNodePayloadAMDX: *hasResult = true; *hasResultType = true; break;
+    case Op::OpInitializeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
     case Op::OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
