@@ -15390,37 +15390,31 @@
         {
           "enumerant" : "NoneKHR",
           "value" : "0x0000",
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixASignedComponentsKHR",
           "value" : "0x0001",
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixBSignedComponentsKHR",
           "value" : "0x0002",
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixCSignedComponentsKHR",
           "value" : "0x0004",
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixResultSignedComponentsKHR",
           "value" : "0x0008",
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
           "enumerant" : "SaturatingAccumulationKHR",
           "value" : "0x0010",
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         }
       ]
@@ -15432,13 +15426,11 @@
         {
           "enumerant" : "RowMajorKHR",
           "value" : 0,
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
           "enumerant" : "ColumnMajorKHR",
           "value" : 1,
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         }
       ]
@@ -15450,19 +15442,16 @@
         {
           "enumerant" : "MatrixAKHR",
           "value" : 0,
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixBKHR",
           "value" : 1,
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixAccumulatorKHR",
           "value" : 2,
-          "capabilities" : [ "CooperativeMatrixKHR" ],
           "version" : "None"
         }
       ]
