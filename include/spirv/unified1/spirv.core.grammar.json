@@ -15390,31 +15390,37 @@
         {
           "enumerant" : "NoneKHR",
           "value" : "0x0000",
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixASignedComponentsKHR",
           "value" : "0x0001",
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixBSignedComponentsKHR",
           "value" : "0x0002",
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixCSignedComponentsKHR",
           "value" : "0x0004",
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixResultSignedComponentsKHR",
           "value" : "0x0008",
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         },
         {
           "enumerant" : "SaturatingAccumulationKHR",
           "value" : "0x0010",
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         }
       ]
@@ -15426,11 +15432,13 @@
         {
           "enumerant" : "RowMajorKHR",
           "value" : 0,
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         },
         {
           "enumerant" : "ColumnMajorKHR",
           "value" : 1,
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         }
       ]
@@ -15442,16 +15450,19 @@
         {
           "enumerant" : "MatrixAKHR",
           "value" : 0,
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixBKHR",
           "value" : 1,
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         },
         {
           "enumerant" : "MatrixAccumulatorKHR",
           "value" : 2,
+          "extensions" : [ "SPV_KHR_cooperative_matrix" ],
           "version" : "None"
         }
       ]
