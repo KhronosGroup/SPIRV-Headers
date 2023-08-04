@@ -36,7 +36,49 @@
 
 #include "jsonToSpirv.h"
 
+namespace {
+// Returns true if the given string is a valid SPIR-V version.
+bool validSpirvVersionString(const std::string s) {
+  return
+  s == "1.0" ||
+  s == "1.1" ||
+  s == "1.2" ||
+  s == "1.3" ||
+  s == "1.4" ||
+  s == "1.5" ||
+  s == "1.6";
+}
+
+// Returns true if the given string is a valid version
+// specifier in the grammar file.
+bool validSpirvVersionStringSpecifier(const std::string s) {
+  return s.empty() || s == "None" || validSpirvVersionString(s);
+}
+}  // anonymous namespace
+
 namespace spv {
+
+bool EnumValue::IsValid(const std::string& context) const
+{
+  bool result = true;
+  if (!validSpirvVersionStringSpecifier(firstVersion)) {
+    std::cerr << "Error: " << context << " " << name << " \"version\" is invalid: " << firstVersion << std::endl;
+    result = false;
+  }
+  if (!validSpirvVersionStringSpecifier(lastVersion)) {
+    std::cerr << "Error: " << context << " " << name << " \"lastVersion\" is invalid: " << lastVersion << std::endl;
+    result = false;
+  }
+
+  // It must be visible.
+  const bool visible = (firstVersion != "None") || !extensions.empty() || !capabilities.empty();
+  if (!visible) {
+    std::cerr << "Error: " << context << " " << name << " is not visible: "
+              << "its version is set to \"None\", and it is not enabled by a capability or extension" << std::endl;
+    result = false;
+  }
+  return result;
+}
 
 // The set of objects that hold all the instruction/operand
 // parameterization information.
@@ -284,6 +326,8 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         return;
     initialized = true;
 
+    size_t errorCount = 0;
+
     // Read the JSON grammar file.
     bool fileReadOk = false;
     std::string content;
@@ -398,12 +442,15 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
                                 std::move(caps), std::move(version), std::move(lastVersion), std::move(exts),
                                 std::move(operands))),
              printingClass, defTypeId, defResultId);
+        if (!InstructionDesc.back().IsValid("instruction")) {
+          errorCount++;
+        }
     }
 
     // Specific additional context-dependent operands
 
     // Populate dest with EnumValue objects constructed from source.
-    const auto populateEnumValues = [&getCaps,&getExts](EnumValues* dest, const Json::Value& source, bool bitEnum) {
+    const auto populateEnumValues = [&getCaps,&getExts,&errorCount](EnumValues* dest, const Json::Value& source, bool bitEnum) {
         // A lambda for determining the numeric value to be used for a given
         // enumerant in JSON form, and whether that value is a 0 in a bitfield.
         auto getValue = [&bitEnum](const Json::Value& enumerant) {
@@ -462,12 +509,18 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         }
     };
 
-    const auto establishOperandClass = [&populateEnumValues](
+    const auto establishOperandClass = [&populateEnumValues,&errorCount](
             const std::string& enumName, spv::OperandClass operandClass,
             spv::EnumValues* enumValues, const Json::Value& operandEnum, const std::string& category) {
         assert(category == "BitEnum" || category == "ValueEnum");
         bool bitEnum = (category == "BitEnum");
         populateEnumValues(enumValues, operandEnum, bitEnum);
+        const std::string errContext = "Enum " + enumName;
+        for (const auto& e: *enumValues) {
+          if (!e.IsValid(errContext)) {
+            errorCount++;
+          }
+        }
         OperandClassParams[operandClass].set(enumName, enumValues, bitEnum);
     };
 
@@ -562,6 +615,10 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         } else if (enumName == "CooperativeMatrixUse") {
             establishOperandClass(enumName, OperandCooperativeMatrixUse, &CooperativeMatrixUseParams, operandEnum, category);
         }
+    }
+
+    if (errorCount > 0) {
+      std::exit(1);
     }
 }
 
