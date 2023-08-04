@@ -36,7 +36,69 @@
 
 #include "jsonToSpirv.h"
 
+namespace {
+// Returns true if the given string is a valid SPIR-V version.
+bool validSpirvVersionString(const std::string s) {
+  return
+  s == "1.0" ||
+  s == "1.1" ||
+  s == "1.2" ||
+  s == "1.3" ||
+  s == "1.4" ||
+  s == "1.5" ||
+  s == "1.6";
+}
+
+// Returns true if the given string is a valid version
+// specifier in the grammar file.
+bool validSpirvVersionStringSpecifier(const std::string s) {
+  return s == "None" || validSpirvVersionString(s);
+}
+}  // anonymous namespace
+
 namespace spv {
+
+bool EnumValue::IsValid(OperandClass oc, const std::string& context) const
+{
+  bool result = true;
+  if (firstVersion.empty()) {
+    std::cerr << "Error: " << context << " " << name << " \"version\" must be set, probably to \"None\"" << std::endl;
+    result = false;
+  } else if (!validSpirvVersionStringSpecifier(firstVersion)) {
+    std::cerr << "Error: " << context << " " << name << " \"version\" is invalid: " << firstVersion << std::endl;
+    result = false;
+  }
+  if (!lastVersion.empty() && !validSpirvVersionString(lastVersion)) {
+    std::cerr << "Error: " << context << " " << name << " \"lastVersion\" is invalid: " << lastVersion << std::endl;
+    result = false;
+  }
+
+  // When a feature is introduced by an extension, the firstVersion is set to "None".
+  // There are three cases:
+  // -  A new capability should be guarded/enabled by the extension
+  // -  A new instruction should be guarded/enabled by a new capability
+  // -  Other enums fall into two cases:
+  //    1. The enum is part of a new operand kind introduced by the extension.
+  //       In this case we rely on transitivity: The use of the operand occurs
+  //       in a new instruction that itself is guarded; or as the operand of
+  //       another operand that itself is (recursively) guarded.
+  //    2. The enum is a new case in an existing operand kind.  This case
+  //       should be guarded by a capability.  However, we do not check this
+  //       here.  Checking it requires more context than we have here.
+  if (oc == OperandCapability || oc == OperandOpcode) {
+    const bool unusable =
+        (firstVersion == "None") && extensions.empty() && capabilities.empty();
+    if (unusable) {
+      std::cerr << "Error: " << context << " " << name << " is not usable: "
+                << "its version is set to \"None\", and it is not enabled by a capability or extension. "
+                << "Guard it with " << (oc == OperandCapability ? "an extension." : "a capability.")
+                << std::endl;
+      result = false;
+    }
+  }
+
+  return result;
+}
 
 // The set of objects that hold all the instruction/operand
 // parameterization information.
@@ -290,6 +352,8 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         return;
     initialized = true;
 
+    size_t errorCount = 0;
+
     // Read the JSON grammar file.
     bool fileReadOk = false;
     std::string content;
@@ -404,12 +468,15 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
                                 std::move(caps), std::move(version), std::move(lastVersion), std::move(exts),
                                 std::move(operands))),
              printingClass, defTypeId, defResultId);
+        if (!InstructionDesc.back().IsValid(OperandOpcode, "instruction")) {
+          errorCount++;
+        }
     }
 
     // Specific additional context-dependent operands
 
     // Populate dest with EnumValue objects constructed from source.
-    const auto populateEnumValues = [&getCaps,&getExts](EnumValues* dest, const Json::Value& source, bool bitEnum) {
+    const auto populateEnumValues = [&getCaps,&getExts,&errorCount](EnumValues* dest, const Json::Value& source, bool bitEnum) {
         // A lambda for determining the numeric value to be used for a given
         // enumerant in JSON form, and whether that value is a 0 in a bitfield.
         auto getValue = [&bitEnum](const Json::Value& enumerant) {
@@ -468,12 +535,22 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         }
     };
 
-    const auto establishOperandClass = [&populateEnumValues](
+    const auto establishOperandClass = [&populateEnumValues,&errorCount](
             const std::string& enumName, spv::OperandClass operandClass,
             spv::EnumValues* enumValues, const Json::Value& operandEnum, const std::string& category) {
         assert(category == "BitEnum" || category == "ValueEnum");
         bool bitEnum = (category == "BitEnum");
+        if (!operandEnum["version"].empty()) {
+          std::cerr << "Error: container for " << enumName << " operand_kind must not have a version field" << std::endl;
+          errorCount++;
+        }
         populateEnumValues(enumValues, operandEnum, bitEnum);
+        const std::string errContext = "enum " + enumName;
+        for (const auto& e: *enumValues) {
+          if (!e.IsValid(operandClass, errContext)) {
+            errorCount++;
+          }
+        }
         OperandClassParams[operandClass].set(enumName, enumValues, bitEnum);
     };
 
@@ -572,6 +649,10 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         } else if (enumName == "HostAccessQualifier") {
             establishOperandClass(enumName, OperandHostAccessQualifier, &HostAccessQualifierParams, operandEnum, category);
         }
+    }
+
+    if (errorCount > 0) {
+      std::exit(1);
     }
 }
 
