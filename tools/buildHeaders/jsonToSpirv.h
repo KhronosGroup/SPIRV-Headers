@@ -224,7 +224,7 @@ public:
 
     // Returns true if this enum is valid, in isolation.
     // Otherwise emits a diagnostic to std::cerr and returns false.
-    bool IsValid(const std::string& context) const;
+    bool IsValid(OperandClass oc, const std::string& context) const;
 };
 
 using EnumValues = EnumValuesContainer<EnumValue>;

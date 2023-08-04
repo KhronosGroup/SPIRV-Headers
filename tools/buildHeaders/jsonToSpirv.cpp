@@ -54,11 +54,47 @@ bool validSpirvVersionString(const std::string s) {
 bool validSpirvVersionStringSpecifier(const std::string s) {
   return s.empty() || s == "None" || validSpirvVersionString(s);
 }
+
+bool inSomeSpirvVersionCore(const std::string s) {
+  return s.empty() || validSpirvVersionString(s);
+}
 }  // anonymous namespace
 
 namespace spv {
 
-bool EnumValue::IsValid(const std::string& context) const
+const std::unordered_set<std::string>& PoorlyGuardedEnums() {
+  // Please avoid expanding this list.
+  // Non-capability enums in an extension should be guarded by a capability.
+  // The capability itself should be the only thing enabled by the extension.
+  static std::unordered_set<std::string> table = {
+    "enum Decoration WeightTextureQCOM",
+    "enum Decoration BlockMatchTextureQCOM",
+    "enum Decoration ExplicitInterpAMD",
+    "enum Decoration HlslCounterBufferGOOGLE",
+    "enum Decoration HlslSemanticGOOGLE",
+    "enum Decoration UserTypeGOOGLE",
+    "enum BuiltIn BaryCoordNoPerspAMD",
+    "enum BuiltIn BaryCoordNoPerspCentroidAMD",
+    "enum BuiltIn BaryCoordNoPerspSampleAMD",
+    "enum BuiltIn BaryCoordSmoothAMD",
+    "enum BuiltIn BaryCoordSmoothCentroidAMD",
+    "enum BuiltIn BaryCoordSmoothSampleAMD",
+    "enum BuiltIn BaryCoordPullModelAMD",
+    "enum CooperativeMatrixOperands MatrixASignedComponentsKHR",
+    "enum CooperativeMatrixOperands MatrixBSignedComponentsKHR",
+    "enum CooperativeMatrixOperands MatrixCSignedComponentsKHR",
+    "enum CooperativeMatrixOperands MatrixResultSignedComponentsKHR",
+    "enum CooperativeMatrixOperands SaturatingAccumulationKHR",
+    "enum CooperativeMatrixLayout RowMajorKHR",
+    "enum CooperativeMatrixLayout ColumnMajorKHR",
+    "enum CooperativeMatrixUse MatrixAKHR",
+    "enum CooperativeMatrixUse MatrixBKHR",
+    "enum CooperativeMatrixUse MatrixAccumulatorKHR",
+  };
+  return table;
+}
+
+bool EnumValue::IsValid(OperandClass oc, const std::string& context) const
 {
   bool result = true;
   if (!validSpirvVersionStringSpecifier(firstVersion)) {
@@ -77,6 +113,18 @@ bool EnumValue::IsValid(const std::string& context) const
               << "its version is set to \"None\", and it is not enabled by a capability or extension" << std::endl;
     result = false;
   }
+
+  if (result) {
+    if (oc != OperandCapability && !inSomeSpirvVersionCore(firstVersion) && capabilities.empty()) {
+      // The visibility check required extensions to be non-empty.
+      assert(!extensions.empty());
+      if (PoorlyGuardedEnums().count(context + " " + name) == 0) {
+        std::cerr << "Error: Non-capability " << context << " " << name << " should be guarded by a capability instead of an extension." << std::endl;
+        result = false;
+      }
+    }
+  }
+
   return result;
 }
 
@@ -442,7 +490,7 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
                                 std::move(caps), std::move(version), std::move(lastVersion), std::move(exts),
                                 std::move(operands))),
              printingClass, defTypeId, defResultId);
-        if (!InstructionDesc.back().IsValid("instruction")) {
+        if (!InstructionDesc.back().IsValid(OperandOpcode, "instruction")) {
           errorCount++;
         }
     }
@@ -515,9 +563,9 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         assert(category == "BitEnum" || category == "ValueEnum");
         bool bitEnum = (category == "BitEnum");
         populateEnumValues(enumValues, operandEnum, bitEnum);
-        const std::string errContext = "Enum " + enumName;
+        const std::string errContext = "enum " + enumName;
         for (const auto& e: *enumValues) {
-          if (!e.IsValid(errContext)) {
+          if (!e.IsValid(operandClass, errContext)) {
             errorCount++;
           }
         }
