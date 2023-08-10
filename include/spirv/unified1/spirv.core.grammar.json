@@ -4922,6 +4922,41 @@
       "version" : "None"
     },
     {
+      "opname" : "OpFinalizeNodePayloadsAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5075,
+      "operands" : [
+        { "kind" : "IdRef", "name": "'Payload Array'" }
+      ],
+      "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpFinishWritingNodePayloadAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5078,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name": "'Payload'" }
+      ],
+      "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpInitializeNodePayloadsAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5090,
+      "operands" : [
+        { "kind" : "IdRef", "name": "'Payload Array'" },
+        { "kind" : "IdScope", "name": "'Visibility'" },
+        { "kind" : "IdRef", "name": "'Payload Count'" },
+        { "kind" : "IdRef", "name": "'Node Index'" }
+      ],
+      "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpHitObjectRecordHitMotionNV",
       "class"  : "Reserved",
       "opcode" : 5249,
@@ -10709,6 +10744,52 @@
           "version" : "None"
         },
         {
+          "enumerant" : "CoalescingAMDX",
+          "value" : 5069,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxNodeRecursionAMDX",
+          "value" : 5071,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'Number of recursions'" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "StaticNumWorkgroupsAMDX",
+          "value" : 5072,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'x size'" },
+            { "kind" : "IdRef", "name" : "'y size'" },
+            { "kind" : "IdRef", "name" : "'z size'" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ShaderIndexAMDX",
+          "value" : 5073,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'Shader Index'" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaxNumWorkgroupsAMDX",
+          "value" : 5077,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'x size'" },
+            { "kind" : "IdRef", "name" : "'y size'" },
+            { "kind" : "IdRef", "name" : "'z size'" }
+          ],
+          "version" : "None"
+        },
+        {
           "enumerant": "StencilRefUnchangedFrontAMD",
           "value": 5079,
           "capabilities": [ "StencilExportEXT" ],
@@ -11048,6 +11129,18 @@
           "enumerant" : "TileImageEXT",
           "value" : 4172,
           "capabilities" : [ "TileImageColorReadAccessEXT" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "NodePayloadAMDX",
+          "value" : 5068,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "NodeOutputPayloadAMDX",
+          "value" : 5076,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
           "version" : "None"
         },
         {
@@ -12276,6 +12369,39 @@
           "version" : "None"
         },
         {
+          "enumerant" : "NodeSharesPayloadLimitsWithAMDX",
+          "value" : 5019,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'Payload Array'" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "NodeMaxPayloadsAMDX",
+          "value" : 5020,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'Max number of payloads'" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TrackFinishWritingAMDX",
+          "value" : 5078,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PayloadNodeNameAMDX",
+          "value" : 5091,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "LiteralString", "name" : "'Node Name'" }
+          ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "OverrideCoverageNV",
           "value" : 5248,
           "capabilities" : [ "SampleMaskOverrideCoverageNV" ],
@@ -13292,6 +13418,18 @@
           "value" : 5014,
           "capabilities" : [ "StencilExportEXT" ],
           "extensions" : [ "SPV_EXT_shader_stencil_export" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CoalescedInputCountAMDX",
+          "value" : 5021,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ShaderIndexAMDX",
+          "value" : 5073,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
           "version" : "None"
         },
         {
@@ -14482,6 +14620,13 @@
           "enumerant" : "ShaderClockKHR",
           "value" : 5055,
           "extensions" : [ "SPV_KHR_shader_clock" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ShaderEnqueueAMDX",
+          "value" : 5067,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_AMDX_shader_enqueue" ],
           "version" : "None"
         },
         {
