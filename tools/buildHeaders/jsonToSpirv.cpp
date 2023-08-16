@@ -58,6 +58,90 @@ bool validSpirvVersionStringSpecifier(const std::string s) {
 
 namespace spv {
 
+bool IsLegacyDoublyEnabledInstruction(const std::string& instruction) {
+  static std::unordered_set<std::string> allowed = {
+      "OpSubgroupBallotKHR",
+      "OpSubgroupFirstInvocationKHR",
+      "OpSubgroupAllKHR",
+      "OpSubgroupAnyKHR",
+      "OpSubgroupAllEqualKHR",
+      "OpSubgroupReadInvocationKHR",
+      "OpTraceRayKHR",
+      "OpExecuteCallableKHR",
+      "OpConvertUToAccelerationStructureKHR",
+      "OpIgnoreIntersectionKHR",
+      "OpTerminateRayKHR",
+      "OpTypeRayQueryKHR",
+      "OpRayQueryInitializeKHR",
+      "OpRayQueryTerminateKHR",
+      "OpRayQueryGenerateIntersectionKHR",
+      "OpRayQueryConfirmIntersectionKHR",
+      "OpRayQueryProceedKHR",
+      "OpRayQueryGetIntersectionTypeKHR",
+      "OpGroupIAddNonUniformAMD",
+      "OpGroupFAddNonUniformAMD",
+      "OpGroupFMinNonUniformAMD",
+      "OpGroupUMinNonUniformAMD",
+      "OpGroupSMinNonUniformAMD",
+      "OpGroupFMaxNonUniformAMD",
+      "OpGroupUMaxNonUniformAMD",
+      "OpGroupSMaxNonUniformAMD",
+      "OpFragmentMaskFetchAMD",
+      "OpFragmentFetchAMD",
+      "OpImageSampleFootprintNV",
+      "OpGroupNonUniformPartitionNV",
+      "OpWritePackedPrimitiveIndices4x8NV",
+      "OpReportIntersectionNV",
+      "OpReportIntersectionKHR",
+      "OpIgnoreIntersectionNV",
+      "OpTerminateRayNV",
+      "OpTraceNV",
+      "OpTraceMotionNV",
+      "OpTraceRayMotionNV",
+      "OpTypeAccelerationStructureNV",
+      "OpTypeAccelerationStructureKHR",
+      "OpExecuteCallableNV",
+      "OpTypeCooperativeMatrixNV",
+      "OpCooperativeMatrixLoadNV",
+      "OpCooperativeMatrixStoreNV",
+      "OpCooperativeMatrixMulAddNV",
+      "OpCooperativeMatrixLengthNV",
+      "OpBeginInvocationInterlockEXT",
+      "OpEndInvocationInterlockEXT",
+      "OpIsHelperInvocationEXT",
+      "OpConstantFunctionPointerINTEL",
+      "OpFunctionPointerCallINTEL",
+      "OpAssumeTrueKHR",
+      "OpExpectKHR",
+      "OpLoopControlINTEL",
+      "OpAliasDomainDeclINTEL",
+      "OpAliasScopeDeclINTEL",
+      "OpAliasScopeListDeclINTEL",
+      "OpReadPipeBlockingINTEL",
+      "OpWritePipeBlockingINTEL",
+      "OpFPGARegINTEL",
+      "OpRayQueryGetRayTMinKHR",
+      "OpRayQueryGetRayFlagsKHR",
+      "OpRayQueryGetIntersectionTKHR",
+      "OpRayQueryGetIntersectionInstanceCustomIndexKHR",
+      "OpRayQueryGetIntersectionInstanceIdKHR",
+      "OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR",
+      "OpRayQueryGetIntersectionGeometryIndexKHR",
+      "OpRayQueryGetIntersectionPrimitiveIndexKHR",
+      "OpRayQueryGetIntersectionBarycentricsKHR",
+      "OpRayQueryGetIntersectionFrontFaceKHR",
+      "OpRayQueryGetIntersectionCandidateAABBOpaqueKHR",
+      "OpRayQueryGetIntersectionObjectRayDirectionKHR",
+      "OpRayQueryGetIntersectionObjectRayOriginKHR",
+      "OpRayQueryGetWorldRayDirectionKHR",
+      "OpRayQueryGetWorldRayOriginKHR",
+      "OpRayQueryGetIntersectionObjectToWorldKHR",
+      "OpRayQueryGetIntersectionWorldToObjectKHR",
+      "OpAtomicFAddEXT",
+  };
+  return allowed.count(instruction) != 0;
+}
+
 bool EnumValue::IsValid(OperandClass oc, const std::string& context) const
 {
   bool result = true;
@@ -73,10 +157,14 @@ bool EnumValue::IsValid(OperandClass oc, const std::string& context) const
     result = false;
   }
 
-  // When a feature is introduced by an extension, the firstVersion is set to "None".
-  // There are three cases:
+  // When a feature is introduced by an extension, the firstVersion is set to
+  // "None". There are three cases:
   // -  A new capability should be guarded/enabled by the extension
-  // -  A new instruction should be guarded/enabled by a new capability
+  // -  A new instruction should be:
+  //      - Guarded/enabled by a new capability.
+  //      - Not enabled by *both* a capability and an extension.
+  //        There are many existing instructions that are already like this,
+  //        and we grandparent them as allowed.
   // -  Other enums fall into two cases:
   //    1. The enum is part of a new operand kind introduced by the extension.
   //       In this case we rely on transitivity: The use of the operand occurs
@@ -85,14 +173,41 @@ bool EnumValue::IsValid(OperandClass oc, const std::string& context) const
   //    2. The enum is a new case in an existing operand kind.  This case
   //       should be guarded by a capability.  However, we do not check this
   //       here.  Checking it requires more context than we have here.
-  if (oc == OperandCapability || oc == OperandOpcode) {
-    const bool unusable =
+  if (oc == OperandOpcode) {
+    const bool instruction_unusable =
         (firstVersion == "None") && extensions.empty() && capabilities.empty();
-    if (unusable) {
+    if (instruction_unusable) {
       std::cerr << "Error: " << context << " " << name << " is not usable: "
-                << "its version is set to \"None\", and it is not enabled by a capability or extension. "
-                << "Guard it with " << (oc == OperandCapability ? "an extension." : "a capability.")
+                << "its version is set to \"None\", and it is not enabled by a "
+                << "capability or extension. Guard it with a capability."
                 << std::endl;
+      result = false;
+    }
+    // Complain if an instruction is not in any core version and also enabled by
+    // both an extension and a capability.
+    // It's important to check the "not in any core version" case, because,
+    // for example, OpTerminateInvocation is in SPIR-V 1.6 *and* enabled by an
+    // extension, and guarded by the Shader capability.
+    const bool instruction_doubly_enabled = (firstVersion == "None") &&
+                                            !extensions.empty() &&
+                                            !capabilities.empty();
+    if (instruction_doubly_enabled && !IsLegacyDoublyEnabledInstruction(name)) {
+      std::cerr << "Error: " << context << " " << name << " is doubly-enabled: "
+                << "it is enabled by both a capability and an extension. "
+                << "Guard it with a capability only." << std::endl;
+      result = false;
+    }
+  }
+  if (oc == OperandCapability) {
+    // If capability X lists capabilities Y and Z, then Y and Z are *enabled*
+    // when X is enabled. They are not *guards* on X's use.
+    // Only versions and extensions can guard a capability.
+    const bool capability_unusable =
+        (firstVersion == "None") && extensions.empty();
+    if (capability_unusable) {
+      std::cerr << "Error: " << context << " " << name << " is not usable: "
+                << "its version is set to \"None\", and it is not enabled by "
+                << "an extension. Guard it with an extension." << std::endl;
       result = false;
     }
   }
