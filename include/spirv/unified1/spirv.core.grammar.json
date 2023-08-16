@@ -1547,7 +1547,10 @@
         { "kind" : "IdRef",        "name" : "'Matrix'" },
         { "kind" : "IdRef",        "name" : "'Scalar'" }
       ],
-      "capabilities" : [ "Matrix" ]
+      "capabilities": [
+        "Matrix",
+        "CooperativeMatrixKHR"
+      ]
     },
     {
       "opname" : "OpVectorTimesMatrix",
