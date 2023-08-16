@@ -601,6 +601,9 @@ enum Decoration : uint
     SingleElementVectorINTEL = 6085,
     VectorComputeCallableFunctionINTEL = 6087,
     MediaBlockIOINTEL = 6140,
+    InitModeINTEL = 6147,
+    ImplementInRegisterMapINTEL = 6148,
+    HostAccessINTEL = 6168,
     FPMaxErrorDecorationINTEL = 6170,
     LatencyControlLabelINTEL = 6172,
     LatencyControlConstraintINTEL = 6173,
@@ -1190,7 +1193,9 @@ enum Capability : uint
     DebugInfoModuleINTEL = 6114,
     BFloat16ConversionINTEL = 6115,
     SplitBarrierINTEL = 6141,
+    GlobalVariableFPGADecorationsINTEL = 6146,
     FPGAKernelAttributesv2INTEL = 6161,
+    GlobalVariableHostAccessINTEL = 6167,
     FPMaxErrorINTEL = 6169,
     FPGALatencyControlINTEL = 6171,
     FPGAArgumentInterfacesINTEL = 6174,
@@ -1332,6 +1337,20 @@ enum CooperativeMatrixUse : uint
     MatrixAKHR = 0,
     MatrixBKHR = 1,
     MatrixAccumulatorKHR = 2,
+}
+
+enum InitializationModeQualifier : uint
+{
+    InitOnDeviceReprogramINTEL = 0,
+    InitOnDeviceResetINTEL = 1,
+}
+
+enum HostAccessQualifier : uint
+{
+    NoneINTEL = 0,
+    ReadINTEL = 1,
+    WriteINTEL = 2,
+    ReadWriteINTEL = 3,
 }
 
 enum Op : uint

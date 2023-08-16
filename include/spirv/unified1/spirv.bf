@@ -599,6 +599,9 @@ namespace Spv
             SingleElementVectorINTEL = 6085,
             VectorComputeCallableFunctionINTEL = 6087,
             MediaBlockIOINTEL = 6140,
+            InitModeINTEL = 6147,
+            ImplementInRegisterMapINTEL = 6148,
+            HostAccessINTEL = 6168,
             FPMaxErrorDecorationINTEL = 6170,
             LatencyControlLabelINTEL = 6172,
             LatencyControlConstraintINTEL = 6173,
@@ -1188,7 +1191,9 @@ namespace Spv
             DebugInfoModuleINTEL = 6114,
             BFloat16ConversionINTEL = 6115,
             SplitBarrierINTEL = 6141,
+            GlobalVariableFPGADecorationsINTEL = 6146,
             FPGAKernelAttributesv2INTEL = 6161,
+            GlobalVariableHostAccessINTEL = 6167,
             FPMaxErrorINTEL = 6169,
             FPGALatencyControlINTEL = 6171,
             FPGAArgumentInterfacesINTEL = 6174,
@@ -1330,6 +1335,20 @@ namespace Spv
             MatrixAKHR = 0,
             MatrixBKHR = 1,
             MatrixAccumulatorKHR = 2,
+        }
+
+        [AllowDuplicates, CRepr] public enum InitializationModeQualifier
+        {
+            InitOnDeviceReprogramINTEL = 0,
+            InitOnDeviceResetINTEL = 1,
+        }
+
+        [AllowDuplicates, CRepr] public enum HostAccessQualifier
+        {
+            NoneINTEL = 0,
+            ReadINTEL = 1,
+            WriteINTEL = 2,
+            ReadWriteINTEL = 3,
         }
 
         [AllowDuplicates, CRepr] public enum Op

@@ -91,6 +91,8 @@ EnumValues PackedVectorFormatParams;
 EnumValues CooperativeMatrixOperandsParams;
 EnumValues CooperativeMatrixLayoutParams;
 EnumValues CooperativeMatrixUseParams;
+EnumValues InitializationModeQualifierParams;
+EnumValues HostAccessQualifierParams;
 
 std::pair<bool, std::string> ReadFile(const std::string& path)
 {
@@ -245,6 +247,10 @@ ClassOptionality ToOperandClassAndOptionality(const std::string& operandKind, co
             type = OperandCooperativeMatrixLayout;
         } else if (operandKind == "CooperativeMatrixUse") {
             type = OperandCooperativeMatrixUse;
+        } else if (operandKind == "InitializationModeQualifier") {
+            type = OperandInitializationModeQualifier;
+        } else if (operandKind == "HostAccessQualifier") {
+            type = OperandHostAccessQualifier;
         }
 
         if (type == OperandNone) {
@@ -561,6 +567,10 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             establishOperandClass(enumName, OperandCooperativeMatrixLayout, &CooperativeMatrixLayoutParams, operandEnum, category);
         } else if (enumName == "CooperativeMatrixUse") {
             establishOperandClass(enumName, OperandCooperativeMatrixUse, &CooperativeMatrixUseParams, operandEnum, category);
+        } else if (enumName == "InitializationModeQualifier") {
+            establishOperandClass(enumName, OperandInitializationModeQualifier, &InitializationModeQualifierParams, operandEnum, category);
+        } else if (enumName == "HostAccessQualifier") {
+            establishOperandClass(enumName, OperandHostAccessQualifier, &HostAccessQualifierParams, operandEnum, category);
         }
     }
 }

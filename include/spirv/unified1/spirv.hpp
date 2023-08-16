@@ -600,6 +600,9 @@ enum Decoration {
     DecorationSingleElementVectorINTEL = 6085,
     DecorationVectorComputeCallableFunctionINTEL = 6087,
     DecorationMediaBlockIOINTEL = 6140,
+    DecorationInitModeINTEL = 6147,
+    DecorationImplementInRegisterMapINTEL = 6148,
+    DecorationHostAccessINTEL = 6168,
     DecorationFPMaxErrorDecorationINTEL = 6170,
     DecorationLatencyControlLabelINTEL = 6172,
     DecorationLatencyControlConstraintINTEL = 6173,
@@ -1183,7 +1186,9 @@ enum Capability {
     CapabilityDebugInfoModuleINTEL = 6114,
     CapabilityBFloat16ConversionINTEL = 6115,
     CapabilitySplitBarrierINTEL = 6141,
+    CapabilityGlobalVariableFPGADecorationsINTEL = 6146,
     CapabilityFPGAKernelAttributesv2INTEL = 6161,
+    CapabilityGlobalVariableHostAccessINTEL = 6167,
     CapabilityFPMaxErrorINTEL = 6169,
     CapabilityFPGALatencyControlINTEL = 6171,
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
@@ -1323,6 +1328,20 @@ enum CooperativeMatrixUse {
     CooperativeMatrixUseMatrixBKHR = 1,
     CooperativeMatrixUseMatrixAccumulatorKHR = 2,
     CooperativeMatrixUseMax = 0x7fffffff,
+};
+
+enum InitializationModeQualifier {
+    InitializationModeQualifierInitOnDeviceReprogramINTEL = 0,
+    InitializationModeQualifierInitOnDeviceResetINTEL = 1,
+    InitializationModeQualifierMax = 0x7fffffff,
+};
+
+enum HostAccessQualifier {
+    HostAccessQualifierNoneINTEL = 0,
+    HostAccessQualifierReadINTEL = 1,
+    HostAccessQualifierWriteINTEL = 2,
+    HostAccessQualifierReadWriteINTEL = 3,
+    HostAccessQualifierMax = 0x7fffffff,
 };
 
 enum Op {
