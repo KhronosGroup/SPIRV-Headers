@@ -12493,22 +12493,26 @@
         {
           "enumerant" : "NoneINTEL",
           "value" : 0,
-          "capabilities" : [ "GlobalVariableHostAccessINTEL" ]
+          "capabilities" : [ "GlobalVariableHostAccessINTEL" ],
+          "version" : "None"
         },
         {
           "enumerant" : "ReadINTEL",
           "value" : 1,
-          "capabilities" : [ "GlobalVariableHostAccessINTEL" ]
+          "capabilities" : [ "GlobalVariableHostAccessINTEL" ],
+          "version" : "None"
         },
         {
           "enumerant" : "WriteINTEL",
           "value" : 2,
-          "capabilities" : [ "GlobalVariableHostAccessINTEL" ]
+          "capabilities" : [ "GlobalVariableHostAccessINTEL" ],
+          "version" : "None"
         },
         {
           "enumerant" : "ReadWriteINTEL",
           "value" : 3,
-          "capabilities" : [ "GlobalVariableHostAccessINTEL" ]
+          "capabilities" : [ "GlobalVariableHostAccessINTEL" ],
+          "version" : "None"
         }
       ]
     },
