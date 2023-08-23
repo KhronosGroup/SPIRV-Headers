@@ -36,7 +36,184 @@
 
 #include "jsonToSpirv.h"
 
+namespace {
+// Returns true if the given string is a valid SPIR-V version.
+bool validSpirvVersionString(const std::string s) {
+  return
+  s == "1.0" ||
+  s == "1.1" ||
+  s == "1.2" ||
+  s == "1.3" ||
+  s == "1.4" ||
+  s == "1.5" ||
+  s == "1.6";
+}
+
+// Returns true if the given string is a valid version
+// specifier in the grammar file.
+bool validSpirvVersionStringSpecifier(const std::string s) {
+  return s == "None" || validSpirvVersionString(s);
+}
+}  // anonymous namespace
+
 namespace spv {
+
+bool IsLegacyDoublyEnabledInstruction(const std::string& instruction) {
+  static std::unordered_set<std::string> allowed = {
+      "OpSubgroupBallotKHR",
+      "OpSubgroupFirstInvocationKHR",
+      "OpSubgroupAllKHR",
+      "OpSubgroupAnyKHR",
+      "OpSubgroupAllEqualKHR",
+      "OpSubgroupReadInvocationKHR",
+      "OpTraceRayKHR",
+      "OpExecuteCallableKHR",
+      "OpConvertUToAccelerationStructureKHR",
+      "OpIgnoreIntersectionKHR",
+      "OpTerminateRayKHR",
+      "OpTypeRayQueryKHR",
+      "OpRayQueryInitializeKHR",
+      "OpRayQueryTerminateKHR",
+      "OpRayQueryGenerateIntersectionKHR",
+      "OpRayQueryConfirmIntersectionKHR",
+      "OpRayQueryProceedKHR",
+      "OpRayQueryGetIntersectionTypeKHR",
+      "OpGroupIAddNonUniformAMD",
+      "OpGroupFAddNonUniformAMD",
+      "OpGroupFMinNonUniformAMD",
+      "OpGroupUMinNonUniformAMD",
+      "OpGroupSMinNonUniformAMD",
+      "OpGroupFMaxNonUniformAMD",
+      "OpGroupUMaxNonUniformAMD",
+      "OpGroupSMaxNonUniformAMD",
+      "OpFragmentMaskFetchAMD",
+      "OpFragmentFetchAMD",
+      "OpImageSampleFootprintNV",
+      "OpGroupNonUniformPartitionNV",
+      "OpWritePackedPrimitiveIndices4x8NV",
+      "OpReportIntersectionNV",
+      "OpReportIntersectionKHR",
+      "OpIgnoreIntersectionNV",
+      "OpTerminateRayNV",
+      "OpTraceNV",
+      "OpTraceMotionNV",
+      "OpTraceRayMotionNV",
+      "OpTypeAccelerationStructureNV",
+      "OpTypeAccelerationStructureKHR",
+      "OpExecuteCallableNV",
+      "OpTypeCooperativeMatrixNV",
+      "OpCooperativeMatrixLoadNV",
+      "OpCooperativeMatrixStoreNV",
+      "OpCooperativeMatrixMulAddNV",
+      "OpCooperativeMatrixLengthNV",
+      "OpBeginInvocationInterlockEXT",
+      "OpEndInvocationInterlockEXT",
+      "OpIsHelperInvocationEXT",
+      "OpConstantFunctionPointerINTEL",
+      "OpFunctionPointerCallINTEL",
+      "OpAssumeTrueKHR",
+      "OpExpectKHR",
+      "OpLoopControlINTEL",
+      "OpAliasDomainDeclINTEL",
+      "OpAliasScopeDeclINTEL",
+      "OpAliasScopeListDeclINTEL",
+      "OpReadPipeBlockingINTEL",
+      "OpWritePipeBlockingINTEL",
+      "OpFPGARegINTEL",
+      "OpRayQueryGetRayTMinKHR",
+      "OpRayQueryGetRayFlagsKHR",
+      "OpRayQueryGetIntersectionTKHR",
+      "OpRayQueryGetIntersectionInstanceCustomIndexKHR",
+      "OpRayQueryGetIntersectionInstanceIdKHR",
+      "OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR",
+      "OpRayQueryGetIntersectionGeometryIndexKHR",
+      "OpRayQueryGetIntersectionPrimitiveIndexKHR",
+      "OpRayQueryGetIntersectionBarycentricsKHR",
+      "OpRayQueryGetIntersectionFrontFaceKHR",
+      "OpRayQueryGetIntersectionCandidateAABBOpaqueKHR",
+      "OpRayQueryGetIntersectionObjectRayDirectionKHR",
+      "OpRayQueryGetIntersectionObjectRayOriginKHR",
+      "OpRayQueryGetWorldRayDirectionKHR",
+      "OpRayQueryGetWorldRayOriginKHR",
+      "OpRayQueryGetIntersectionObjectToWorldKHR",
+      "OpRayQueryGetIntersectionWorldToObjectKHR",
+      "OpAtomicFAddEXT",
+  };
+  return allowed.count(instruction) != 0;
+}
+
+bool EnumValue::IsValid(OperandClass oc, const std::string& context) const
+{
+  bool result = true;
+  if (firstVersion.empty()) {
+    std::cerr << "Error: " << context << " " << name << " \"version\" must be set, probably to \"None\"" << std::endl;
+    result = false;
+  } else if (!validSpirvVersionStringSpecifier(firstVersion)) {
+    std::cerr << "Error: " << context << " " << name << " \"version\" is invalid: " << firstVersion << std::endl;
+    result = false;
+  }
+  if (!lastVersion.empty() && !validSpirvVersionString(lastVersion)) {
+    std::cerr << "Error: " << context << " " << name << " \"lastVersion\" is invalid: " << lastVersion << std::endl;
+    result = false;
+  }
+
+  // When a feature is introduced by an extension, the firstVersion is set to
+  // "None". There are three cases:
+  // -  A new capability should be guarded/enabled by the extension
+  // -  A new instruction should be:
+  //      - Guarded/enabled by a new capability.
+  //      - Not enabled by *both* a capability and an extension.
+  //        There are many existing instructions that are already like this,
+  //        and we grandparent them as allowed.
+  // -  Other enums fall into two cases:
+  //    1. The enum is part of a new operand kind introduced by the extension.
+  //       In this case we rely on transitivity: The use of the operand occurs
+  //       in a new instruction that itself is guarded; or as the operand of
+  //       another operand that itself is (recursively) guarded.
+  //    2. The enum is a new case in an existing operand kind.  This case
+  //       should be guarded by a capability.  However, we do not check this
+  //       here.  Checking it requires more context than we have here.
+  if (oc == OperandOpcode) {
+    const bool instruction_unusable =
+        (firstVersion == "None") && extensions.empty() && capabilities.empty();
+    if (instruction_unusable) {
+      std::cerr << "Error: " << context << " " << name << " is not usable: "
+                << "its version is set to \"None\", and it is not enabled by a "
+                << "capability or extension. Guard it with a capability."
+                << std::endl;
+      result = false;
+    }
+    // Complain if an instruction is not in any core version and also enabled by
+    // both an extension and a capability.
+    // It's important to check the "not in any core version" case, because,
+    // for example, OpTerminateInvocation is in SPIR-V 1.6 *and* enabled by an
+    // extension, and guarded by the Shader capability.
+    const bool instruction_doubly_enabled = (firstVersion == "None") &&
+                                            !extensions.empty() &&
+                                            !capabilities.empty();
+    if (instruction_doubly_enabled && !IsLegacyDoublyEnabledInstruction(name)) {
+      std::cerr << "Error: " << context << " " << name << " is doubly-enabled: "
+                << "it is enabled by both a capability and an extension. "
+                << "Guard it with a capability only." << std::endl;
+      result = false;
+    }
+  }
+  if (oc == OperandCapability) {
+    // If capability X lists capabilities Y and Z, then Y and Z are *enabled*
+    // when X is enabled. They are not *guards* on X's use.
+    // Only versions and extensions can guard a capability.
+    const bool capability_unusable =
+        (firstVersion == "None") && extensions.empty();
+    if (capability_unusable) {
+      std::cerr << "Error: " << context << " " << name << " is not usable: "
+                << "its version is set to \"None\", and it is not enabled by "
+                << "an extension. Guard it with an extension." << std::endl;
+      result = false;
+    }
+  }
+
+  return result;
+}
 
 // The set of objects that hold all the instruction/operand
 // parameterization information.
@@ -290,6 +467,8 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         return;
     initialized = true;
 
+    size_t errorCount = 0;
+
     // Read the JSON grammar file.
     bool fileReadOk = false;
     std::string content;
@@ -404,12 +583,15 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
                                 std::move(caps), std::move(version), std::move(lastVersion), std::move(exts),
                                 std::move(operands))),
              printingClass, defTypeId, defResultId);
+        if (!InstructionDesc.back().IsValid(OperandOpcode, "instruction")) {
+          errorCount++;
+        }
     }
 
     // Specific additional context-dependent operands
 
     // Populate dest with EnumValue objects constructed from source.
-    const auto populateEnumValues = [&getCaps,&getExts](EnumValues* dest, const Json::Value& source, bool bitEnum) {
+    const auto populateEnumValues = [&getCaps,&getExts,&errorCount](EnumValues* dest, const Json::Value& source, bool bitEnum) {
         // A lambda for determining the numeric value to be used for a given
         // enumerant in JSON form, and whether that value is a 0 in a bitfield.
         auto getValue = [&bitEnum](const Json::Value& enumerant) {
@@ -468,12 +650,22 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         }
     };
 
-    const auto establishOperandClass = [&populateEnumValues](
+    const auto establishOperandClass = [&populateEnumValues,&errorCount](
             const std::string& enumName, spv::OperandClass operandClass,
             spv::EnumValues* enumValues, const Json::Value& operandEnum, const std::string& category) {
         assert(category == "BitEnum" || category == "ValueEnum");
         bool bitEnum = (category == "BitEnum");
+        if (!operandEnum["version"].empty()) {
+          std::cerr << "Error: container for " << enumName << " operand_kind must not have a version field" << std::endl;
+          errorCount++;
+        }
         populateEnumValues(enumValues, operandEnum, bitEnum);
+        const std::string errContext = "enum " + enumName;
+        for (const auto& e: *enumValues) {
+          if (!e.IsValid(operandClass, errContext)) {
+            errorCount++;
+          }
+        }
         OperandClassParams[operandClass].set(enumName, enumValues, bitEnum);
     };
 
@@ -572,6 +764,10 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         } else if (enumName == "HostAccessQualifier") {
             establishOperandClass(enumName, OperandHostAccessQualifier, &HostAccessQualifierParams, operandEnum, category);
         }
+    }
+
+    if (errorCount > 0) {
+      std::exit(1);
     }
 }
 
