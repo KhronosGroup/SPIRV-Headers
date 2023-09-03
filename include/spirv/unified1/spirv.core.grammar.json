@@ -9532,7 +9532,7 @@
       "operands" : [
         { "kind" : "IdRef",    "quantifier" : "*", "name" : "'Member 0 type', +\n'member 1 type', +\n..." }
       ],
-      "capabilities" : [ "LongConstantCompositeINTEL" ],
+      "capabilities" : [ "LongCompositesINTEL" ],
       "version" : "None"
     },
     {
@@ -9542,7 +9542,7 @@
       "operands" : [
         { "kind" : "IdRef",        "quantifier" : "*", "name" : "'Constituents'" }
       ],
-      "capabilities" : [ "LongConstantCompositeINTEL" ],
+      "capabilities" : [ "LongCompositesINTEL" ],
       "version" : "None"
     },
     {
@@ -9552,8 +9552,20 @@
       "operands" : [
         { "kind" : "IdRef",        "quantifier" : "*", "name" : "'Constituents'" }
       ],
-      "capabilities" : [ "LongConstantCompositeINTEL" ],
+      "capabilities" : [ "LongCompositesINTEL" ],
       "version" : "None"
+    },
+    {
+      "opname" : "OpCompositeConstructContinuedINTEL",
+      "class"  : "Composite",
+      "opcode" : 6096,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "quantifier" : "*", "name" : "'Constituents'" }
+      ],
+      "capabilities" : [ "LongCompositesINTEL" ],
+      "version": "None"
     },
     {
       "opname" : "OpConvertFToBF16INTEL",
@@ -16113,9 +16125,9 @@
           "version" : "None"
         },
         {
-          "enumerant" : "LongConstantCompositeINTEL",
+          "enumerant" : "LongCompositesINTEL",
           "value" : 6089,
-          "extensions" : [ "SPV_INTEL_long_constant_composite" ],
+          "extensions" : [ "SPV_INTEL_long_composites" ],
           "version" : "None"
         },
         {
