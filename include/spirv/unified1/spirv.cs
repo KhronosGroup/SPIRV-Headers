@@ -613,6 +613,8 @@ namespace Spv
             MMHostInterfaceMaxBurstINTEL = 6181,
             MMHostInterfaceWaitRequestINTEL = 6182,
             StableKernelArgumentINTEL = 6183,
+            CacheControlLoadINTEL = 6442,
+            CacheControlStoreINTEL = 6443,
         }
 
         public enum BuiltIn
@@ -1197,6 +1199,7 @@ namespace Spv
             FPGALatencyControlINTEL = 6171,
             FPGAArgumentInterfacesINTEL = 6174,
             GroupUniformArithmeticKHR = 6400,
+            CacheControlsINTEL = 6441,
         }
 
         public enum RayFlagsShift
@@ -1348,6 +1351,23 @@ namespace Spv
             ReadINTEL = 1,
             WriteINTEL = 2,
             ReadWriteINTEL = 3,
+        }
+
+        public enum LoadCacheControl
+        {
+            UncachedINTEL = 0,
+            CachedINTEL = 1,
+            StreamingINTEL = 2,
+            InvalidateAfterReadINTEL = 3,
+            ConstCachedINTEL = 4,
+        }
+
+        public enum StoreCacheControl
+        {
+            UncachedINTEL = 0,
+            WriteThroughINTEL = 1,
+            WriteBackINTEL = 2,
+            StreamingINTEL = 3,
         }
 
         public enum Op

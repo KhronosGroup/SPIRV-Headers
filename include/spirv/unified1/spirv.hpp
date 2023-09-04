@@ -615,6 +615,8 @@ enum Decoration {
     DecorationMMHostInterfaceMaxBurstINTEL = 6181,
     DecorationMMHostInterfaceWaitRequestINTEL = 6182,
     DecorationStableKernelArgumentINTEL = 6183,
+    DecorationCacheControlLoadINTEL = 6442,
+    DecorationCacheControlStoreINTEL = 6443,
     DecorationMax = 0x7fffffff,
 };
 
@@ -1193,6 +1195,7 @@ enum Capability {
     CapabilityFPGALatencyControlINTEL = 6171,
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
     CapabilityGroupUniformArithmeticKHR = 6400,
+    CapabilityCacheControlsINTEL = 6441,
     CapabilityMax = 0x7fffffff,
 };
 
@@ -1342,6 +1345,23 @@ enum HostAccessQualifier {
     HostAccessQualifierWriteINTEL = 2,
     HostAccessQualifierReadWriteINTEL = 3,
     HostAccessQualifierMax = 0x7fffffff,
+};
+
+enum LoadCacheControl {
+    LoadCacheControlUncachedINTEL = 0,
+    LoadCacheControlCachedINTEL = 1,
+    LoadCacheControlStreamingINTEL = 2,
+    LoadCacheControlInvalidateAfterReadINTEL = 3,
+    LoadCacheControlConstCachedINTEL = 4,
+    LoadCacheControlMax = 0x7fffffff,
+};
+
+enum StoreCacheControl {
+    StoreCacheControlUncachedINTEL = 0,
+    StoreCacheControlWriteThroughINTEL = 1,
+    StoreCacheControlWriteBackINTEL = 2,
+    StoreCacheControlStreamingINTEL = 3,
+    StoreCacheControlMax = 0x7fffffff,
 };
 
 enum Op {

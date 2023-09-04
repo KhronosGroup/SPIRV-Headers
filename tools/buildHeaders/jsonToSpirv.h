@@ -101,6 +101,8 @@ enum OperandClass {
     OperandCooperativeMatrixUse,
     OperandInitializationModeQualifier,
     OperandHostAccessQualifier,
+    OperandLoadCacheControl,
+    OperandStoreCacheControl,
 
     OperandOpcode,
 

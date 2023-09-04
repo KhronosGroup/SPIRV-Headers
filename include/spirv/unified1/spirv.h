@@ -619,6 +619,8 @@ typedef enum SpvDecoration_ {
     SpvDecorationMMHostInterfaceMaxBurstINTEL = 6181,
     SpvDecorationMMHostInterfaceWaitRequestINTEL = 6182,
     SpvDecorationStableKernelArgumentINTEL = 6183,
+    SpvDecorationCacheControlLoadINTEL = 6442,
+    SpvDecorationCacheControlStoreINTEL = 6443,
     SpvDecorationMax = 0x7fffffff,
 } SpvDecoration;
 
@@ -1197,6 +1199,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGALatencyControlINTEL = 6171,
     SpvCapabilityFPGAArgumentInterfacesINTEL = 6174,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,
+    SpvCapabilityCacheControlsINTEL = 6441,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
 
@@ -1347,6 +1350,23 @@ typedef enum SpvHostAccessQualifier_ {
     SpvHostAccessQualifierReadWriteINTEL = 3,
     SpvHostAccessQualifierMax = 0x7fffffff,
 } SpvHostAccessQualifier;
+
+typedef enum SpvLoadCacheControl_ {
+    SpvLoadCacheControlUncachedINTEL = 0,
+    SpvLoadCacheControlCachedINTEL = 1,
+    SpvLoadCacheControlStreamingINTEL = 2,
+    SpvLoadCacheControlInvalidateAfterReadINTEL = 3,
+    SpvLoadCacheControlConstCachedINTEL = 4,
+    SpvLoadCacheControlMax = 0x7fffffff,
+} SpvLoadCacheControl;
+
+typedef enum SpvStoreCacheControl_ {
+    SpvStoreCacheControlUncachedINTEL = 0,
+    SpvStoreCacheControlWriteThroughINTEL = 1,
+    SpvStoreCacheControlWriteBackINTEL = 2,
+    SpvStoreCacheControlStreamingINTEL = 3,
+    SpvStoreCacheControlMax = 0x7fffffff,
+} SpvStoreCacheControl;
 
 typedef enum SpvOp_ {
     SpvOpNop = 0,

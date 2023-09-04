@@ -588,6 +588,8 @@ spv = {
         MMHostInterfaceMaxBurstINTEL = 6181,
         MMHostInterfaceWaitRequestINTEL = 6182,
         StableKernelArgumentINTEL = 6183,
+        CacheControlLoadINTEL = 6442,
+        CacheControlStoreINTEL = 6443,
     },
 
     BuiltIn = {
@@ -1155,6 +1157,7 @@ spv = {
         FPGALatencyControlINTEL = 6171,
         FPGAArgumentInterfacesINTEL = 6174,
         GroupUniformArithmeticKHR = 6400,
+        CacheControlsINTEL = 6441,
     },
 
     RayFlagsShift = {
@@ -1288,6 +1291,21 @@ spv = {
         ReadINTEL = 1,
         WriteINTEL = 2,
         ReadWriteINTEL = 3,
+    },
+
+    LoadCacheControl = {
+        UncachedINTEL = 0,
+        CachedINTEL = 1,
+        StreamingINTEL = 2,
+        InvalidateAfterReadINTEL = 3,
+        ConstCachedINTEL = 4,
+    },
+
+    StoreCacheControl = {
+        UncachedINTEL = 0,
+        WriteThroughINTEL = 1,
+        WriteBackINTEL = 2,
+        StreamingINTEL = 3,
     },
 
     Op = {

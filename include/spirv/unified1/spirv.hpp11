@@ -615,6 +615,8 @@ enum class Decoration : unsigned {
     MMHostInterfaceMaxBurstINTEL = 6181,
     MMHostInterfaceWaitRequestINTEL = 6182,
     StableKernelArgumentINTEL = 6183,
+    CacheControlLoadINTEL = 6442,
+    CacheControlStoreINTEL = 6443,
     Max = 0x7fffffff,
 };
 
@@ -1193,6 +1195,7 @@ enum class Capability : unsigned {
     FPGALatencyControlINTEL = 6171,
     FPGAArgumentInterfacesINTEL = 6174,
     GroupUniformArithmeticKHR = 6400,
+    CacheControlsINTEL = 6441,
     Max = 0x7fffffff,
 };
 
@@ -1341,6 +1344,23 @@ enum class HostAccessQualifier : unsigned {
     ReadINTEL = 1,
     WriteINTEL = 2,
     ReadWriteINTEL = 3,
+    Max = 0x7fffffff,
+};
+
+enum class LoadCacheControl : unsigned {
+    UncachedINTEL = 0,
+    CachedINTEL = 1,
+    StreamingINTEL = 2,
+    InvalidateAfterReadINTEL = 3,
+    ConstCachedINTEL = 4,
+    Max = 0x7fffffff,
+};
+
+enum class StoreCacheControl : unsigned {
+    UncachedINTEL = 0,
+    WriteThroughINTEL = 1,
+    WriteBackINTEL = 2,
+    StreamingINTEL = 3,
     Max = 0x7fffffff,
 };
 

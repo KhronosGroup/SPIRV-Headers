@@ -13642,6 +13642,26 @@
           "value" : 6183,
           "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "CacheControlLoadINTEL",
+          "value" : 6442,
+          "capabilities" : [ "CacheControlsINTEL" ],
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Cache Level'" },
+            { "kind" : "LoadCacheControl", "name" : "'Cache Control'" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CacheControlStoreINTEL",
+          "value" : 6443,
+          "capabilities" : [ "CacheControlsINTEL" ],
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Cache Level'" },
+            { "kind" : "StoreCacheControl", "name" : "'Cache Control'" }
+          ],
+          "version" : "None"
         }
       ]
     },
@@ -16190,6 +16210,12 @@
           "value" : 6400,
           "extensions" : [ "SPV_KHR_uniform_group_instructions"],
           "version" : "None"
+        },
+        {
+          "enumerant" : "CacheControlsINTEL",
+          "value" : 6441,
+          "extensions" : [ "SPV_INTEL_cache_controls" ],
+          "version" : "None"
         }
       ]
     },
@@ -16357,6 +16383,72 @@
           "enumerant" : "InitOnDeviceResetINTEL",
           "value" : 1,
           "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "LoadCacheControl",
+      "enumerants" : [
+        {
+          "enumerant" : "UncachedINTEL",
+          "value" : 0,
+          "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CachedINTEL",
+          "value" : 1,
+          "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "StreamingINTEL",
+          "value" : 2,
+          "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "InvalidateAfterReadINTEL",
+          "value" : 3,
+          "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ConstCachedINTEL",
+          "value" : 4,
+          "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "StoreCacheControl",
+      "enumerants" : [
+        {
+          "enumerant" : "UncachedINTEL",
+          "value" : 0,
+          "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "WriteThroughINTEL",
+          "value" : 1,
+          "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "WriteBackINTEL",
+          "value" : 2,
+          "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "StreamingINTEL",
+          "value" : 3,
+          "capabilities" : [ "CacheControlsINTEL" ],
           "version" : "None"
         }
       ]
