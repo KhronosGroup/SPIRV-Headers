@@ -270,6 +270,8 @@ EnumValues CooperativeMatrixLayoutParams;
 EnumValues CooperativeMatrixUseParams;
 EnumValues InitializationModeQualifierParams;
 EnumValues HostAccessQualifierParams;
+EnumValues LoadCacheControlParams;
+EnumValues StoreCacheControlParams;
 
 std::pair<bool, std::string> ReadFile(const std::string& path)
 {
@@ -428,6 +430,10 @@ ClassOptionality ToOperandClassAndOptionality(const std::string& operandKind, co
             type = OperandInitializationModeQualifier;
         } else if (operandKind == "HostAccessQualifier") {
             type = OperandHostAccessQualifier;
+        } else if (operandKind == "LoadCacheControl") {
+            type = OperandLoadCacheControl;
+        } else if (operandKind == "StoreCacheControl") {
+            type = OperandStoreCacheControl;
         }
 
         if (type == OperandNone) {
@@ -763,6 +769,10 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             establishOperandClass(enumName, OperandInitializationModeQualifier, &InitializationModeQualifierParams, operandEnum, category);
         } else if (enumName == "HostAccessQualifier") {
             establishOperandClass(enumName, OperandHostAccessQualifier, &HostAccessQualifierParams, operandEnum, category);
+        } else if (enumName == "LoadCacheControl") {
+            establishOperandClass(enumName, OperandLoadCacheControl, &LoadCacheControlParams, operandEnum, category);
+        } else if (enumName == "StoreCacheControl") {
+            establishOperandClass(enumName, OperandStoreCacheControl, &StoreCacheControlParams, operandEnum, category);
         }
     }
 

@@ -616,6 +616,8 @@ enum Decoration : uint
     MMHostInterfaceMaxBurstINTEL = 6181,
     MMHostInterfaceWaitRequestINTEL = 6182,
     StableKernelArgumentINTEL = 6183,
+    CacheControlLoadINTEL = 6442,
+    CacheControlStoreINTEL = 6443,
 }
 
 enum BuiltIn : uint
@@ -1200,6 +1202,7 @@ enum Capability : uint
     FPGALatencyControlINTEL = 6171,
     FPGAArgumentInterfacesINTEL = 6174,
     GroupUniformArithmeticKHR = 6400,
+    CacheControlsINTEL = 6441,
 }
 
 enum RayFlagsShift : uint
@@ -1351,6 +1354,23 @@ enum HostAccessQualifier : uint
     ReadINTEL = 1,
     WriteINTEL = 2,
     ReadWriteINTEL = 3,
+}
+
+enum LoadCacheControl : uint
+{
+    UncachedINTEL = 0,
+    CachedINTEL = 1,
+    StreamingINTEL = 2,
+    InvalidateAfterReadINTEL = 3,
+    ConstCachedINTEL = 4,
+}
+
+enum StoreCacheControl : uint
+{
+    UncachedINTEL = 0,
+    WriteThroughINTEL = 1,
+    WriteBackINTEL = 2,
+    StreamingINTEL = 3,
 }
 
 enum Op : uint

@@ -640,7 +640,9 @@
                     "MMHostInterfaceReadWriteModeINTEL": 6180,
                     "MMHostInterfaceMaxBurstINTEL": 6181,
                     "MMHostInterfaceWaitRequestINTEL": 6182,
-                    "StableKernelArgumentINTEL": 6183
+                    "StableKernelArgumentINTEL": 6183,
+                    "CacheControlLoadINTEL": 6442,
+                    "CacheControlStoreINTEL": 6443
                 }
             },
             {
@@ -1172,7 +1174,8 @@
                     "FPMaxErrorINTEL": 6169,
                     "FPGALatencyControlINTEL": 6171,
                     "FPGAArgumentInterfacesINTEL": 6174,
-                    "GroupUniformArithmeticKHR": 6400
+                    "GroupUniformArithmeticKHR": 6400,
+                    "CacheControlsINTEL": 6441
                 }
             },
             {
@@ -1334,6 +1337,29 @@
                     "ReadINTEL": 1,
                     "WriteINTEL": 2,
                     "ReadWriteINTEL": 3
+                }
+            },
+            {
+                "Name": "LoadCacheControl",
+                "Type": "Value",
+                "Values":
+                {
+                    "UncachedINTEL": 0,
+                    "CachedINTEL": 1,
+                    "StreamingINTEL": 2,
+                    "InvalidateAfterReadINTEL": 3,
+                    "ConstCachedINTEL": 4
+                }
+            },
+            {
+                "Name": "StoreCacheControl",
+                "Type": "Value",
+                "Values":
+                {
+                    "UncachedINTEL": 0,
+                    "WriteThroughINTEL": 1,
+                    "WriteBackINTEL": 2,
+                    "StreamingINTEL": 3
                 }
             },
             {
