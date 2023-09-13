@@ -11741,31 +11741,26 @@
         {
           "enumerant" : "None",
           "value" : 0,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "ClampToEdge",
           "value" : 1,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "Clamp",
           "value" : 2,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "Repeat",
           "value" : 3,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "RepeatMirrored",
           "value" : 4,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         }
       ]
@@ -11777,13 +11772,11 @@
         {
           "enumerant" : "Nearest",
           "value" : 0,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "Linear",
           "value" : 1,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         }
       ]
