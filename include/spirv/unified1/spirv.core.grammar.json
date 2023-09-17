@@ -16483,6 +16483,11 @@
     },
     {
       "category" : "Literal",
+      "kind" : "LiteralFloat",
+      "doc" : "A float consuming one word"
+    },
+    {
+      "category" : "Literal",
       "kind" : "LiteralContextDependentNumber",
       "doc" : "A literal number whose size and format are determined by a previous operand in the enclosing instruction"
     },
