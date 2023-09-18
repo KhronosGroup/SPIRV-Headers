@@ -5776,8 +5776,8 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "'Accel'" },
         { "kind" : "IdRef", "name" : "'Instance Id'" },
-        { "kind" : "IdRef", "name" : "'Geometry Id'" },
-        { "kind" : "IdRef", "name" : "'Primitive Id'" },
+        { "kind" : "IdRef", "name" : "'Geometry Index'" },
+        { "kind" : "IdRef", "name" : "'Primitive Index'" },
         { "kind" : "IdRef", "name" : "'Barycentric'" }
       ],
       "capabilities" : [ "DisplacementMicromapNV" ],
@@ -5792,8 +5792,8 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "'Accel'" },
         { "kind" : "IdRef", "name" : "'Instance Id'" },
-        { "kind" : "IdRef", "name" : "'Geometry Id'" },
-        { "kind" : "IdRef", "name" : "'Primitive Id'" },
+        { "kind" : "IdRef", "name" : "'Geometry Index'" },
+        { "kind" : "IdRef", "name" : "'Primitive Index'" },
         { "kind" : "IdRef", "name" : "'Barycentric'" }
       ],
       "capabilities" : [ "DisplacementMicromapNV" ],
