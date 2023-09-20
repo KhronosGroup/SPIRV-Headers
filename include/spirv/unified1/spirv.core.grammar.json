@@ -13009,8 +13009,7 @@
           "version" : "None",
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "'Offset'" }
-          ],
-          "version": "1.0"
+          ]
         },
         {
           "enumerant" : "PerPrimitiveNV",
