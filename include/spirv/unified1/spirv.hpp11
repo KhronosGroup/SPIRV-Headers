@@ -747,6 +747,8 @@ enum class BuiltIn : unsigned {
     HitKindNV = 5333,
     CurrentRayTimeNV = 5334,
     HitTriangleVertexPositionsKHR = 5335,
+    HitMicroTriangleVertexPositionsNV = 5337,
+    HitMicroTriangleVertexBarycentricsNV = 5344,
     IncomingRayFlagsKHR = 5351,
     IncomingRayFlagsNV = 5351,
     RayGeometryIndexKHR = 5352,
@@ -754,6 +756,8 @@ enum class BuiltIn : unsigned {
     SMCountNV = 5375,
     WarpIDNV = 5376,
     SMIDNV = 5377,
+    HitKindFrontFacingMicroTriangleNV = 5405,
+    HitKindBackFacingMicroTriangleNV = 5406,
     CullMaskKHR = 6021,
     Max = 0x7fffffff,
 };
@@ -1122,10 +1126,12 @@ enum class Capability : unsigned {
     FragmentShaderPixelInterlockEXT = 5378,
     DemoteToHelperInvocation = 5379,
     DemoteToHelperInvocationEXT = 5379,
+    DisplacementMicromapNV = 5380,
     RayTracingOpacityMicromapEXT = 5381,
     ShaderInvocationReorderNV = 5383,
     BindlessTextureNV = 5390,
     RayQueryPositionFetchKHR = 5391,
+    RayTracingDisplacementMicromapNV = 5409,
     SubgroupShuffleINTEL = 5568,
     SubgroupBufferBlockIOINTEL = 5569,
     SubgroupImageBlockIOINTEL = 5570,
@@ -1805,6 +1811,8 @@ enum class Op : unsigned {
     OpSetMeshOutputsEXT = 5295,
     OpGroupNonUniformPartitionNV = 5296,
     OpWritePackedPrimitiveIndices4x8NV = 5299,
+    OpFetchMicroTriangleVertexPositionNV = 5300,
+    OpFetchMicroTriangleVertexBarycentricNV = 5301,
     OpReportIntersectionKHR = 5334,
     OpReportIntersectionNV = 5334,
     OpIgnoreIntersectionNV = 5335,
@@ -2531,6 +2539,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpGroupNonUniformPartitionNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpWritePackedPrimitiveIndices4x8NV: *hasResult = false; *hasResultType = false; break;
+    case Op::OpFetchMicroTriangleVertexPositionNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpReportIntersectionNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpIgnoreIntersectionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpTerminateRayNV: *hasResult = false; *hasResultType = false; break;

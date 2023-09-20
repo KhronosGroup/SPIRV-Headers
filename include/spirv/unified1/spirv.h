@@ -751,6 +751,8 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInHitKindNV = 5333,
     SpvBuiltInCurrentRayTimeNV = 5334,
     SpvBuiltInHitTriangleVertexPositionsKHR = 5335,
+    SpvBuiltInHitMicroTriangleVertexPositionsNV = 5337,
+    SpvBuiltInHitMicroTriangleVertexBarycentricsNV = 5344,
     SpvBuiltInIncomingRayFlagsKHR = 5351,
     SpvBuiltInIncomingRayFlagsNV = 5351,
     SpvBuiltInRayGeometryIndexKHR = 5352,
@@ -758,6 +760,8 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInSMCountNV = 5375,
     SpvBuiltInWarpIDNV = 5376,
     SpvBuiltInSMIDNV = 5377,
+    SpvBuiltInHitKindFrontFacingMicroTriangleNV = 5405,
+    SpvBuiltInHitKindBackFacingMicroTriangleNV = 5406,
     SpvBuiltInCullMaskKHR = 6021,
     SpvBuiltInMax = 0x7fffffff,
 } SpvBuiltIn;
@@ -1126,10 +1130,12 @@ typedef enum SpvCapability_ {
     SpvCapabilityFragmentShaderPixelInterlockEXT = 5378,
     SpvCapabilityDemoteToHelperInvocation = 5379,
     SpvCapabilityDemoteToHelperInvocationEXT = 5379,
+    SpvCapabilityDisplacementMicromapNV = 5380,
     SpvCapabilityRayTracingOpacityMicromapEXT = 5381,
     SpvCapabilityShaderInvocationReorderNV = 5383,
     SpvCapabilityBindlessTextureNV = 5390,
     SpvCapabilityRayQueryPositionFetchKHR = 5391,
+    SpvCapabilityRayTracingDisplacementMicromapNV = 5409,
     SpvCapabilitySubgroupShuffleINTEL = 5568,
     SpvCapabilitySubgroupBufferBlockIOINTEL = 5569,
     SpvCapabilitySubgroupImageBlockIOINTEL = 5570,
@@ -1809,6 +1815,8 @@ typedef enum SpvOp_ {
     SpvOpSetMeshOutputsEXT = 5295,
     SpvOpGroupNonUniformPartitionNV = 5296,
     SpvOpWritePackedPrimitiveIndices4x8NV = 5299,
+    SpvOpFetchMicroTriangleVertexPositionNV = 5300,
+    SpvOpFetchMicroTriangleVertexBarycentricNV = 5301,
     SpvOpReportIntersectionKHR = 5334,
     SpvOpReportIntersectionNV = 5334,
     SpvOpIgnoreIntersectionNV = 5335,
@@ -2535,6 +2543,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpGroupNonUniformPartitionNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpWritePackedPrimitiveIndices4x8NV: *hasResult = false; *hasResultType = false; break;
+    case SpvOpFetchMicroTriangleVertexPositionNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpReportIntersectionNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpIgnoreIntersectionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpTerminateRayNV: *hasResult = false; *hasResultType = false; break;

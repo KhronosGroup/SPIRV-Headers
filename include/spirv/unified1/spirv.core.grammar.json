@@ -5768,6 +5768,38 @@
       "version" : "None"
     },
     {
+      "opname" : "OpFetchMicroTriangleVertexPositionNV",
+      "class"  : "Reserved",
+      "opcode" : 5300,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Accel'" },
+        { "kind" : "IdRef", "name" : "'Instance Id'" },
+        { "kind" : "IdRef", "name" : "'Geometry Index'" },
+        { "kind" : "IdRef", "name" : "'Primitive Index'" },
+        { "kind" : "IdRef", "name" : "'Barycentric'" }
+      ],
+      "capabilities" : [ "DisplacementMicromapNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpFetchMicroTriangleVertexBarycentricNV",
+      "class"  : "Reserved",
+      "opcode" : 5301,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Accel'" },
+        { "kind" : "IdRef", "name" : "'Instance Id'" },
+        { "kind" : "IdRef", "name" : "'Geometry Index'" },
+        { "kind" : "IdRef", "name" : "'Primitive Index'" },
+        { "kind" : "IdRef", "name" : "'Barycentric'" }
+      ],
+      "capabilities" : [ "DisplacementMicromapNV" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpReportIntersectionNV",
       "class"  : "Reserved",
       "opcode" : 5334,
@@ -14477,6 +14509,18 @@
           "version" : "None"
         },
         {
+          "enumerant" : "HitMicroTriangleVertexPositionsNV",
+          "value" : 5337,
+          "capabilities" : [ "RayTracingDisplacementMicromapNV" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HitMicroTriangleVertexBarycentricsNV",
+          "value" : 5344,
+          "capabilities" : [ "RayTracingDisplacementMicromapNV" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "IncomingRayFlagsNV",
           "value" : 5351,
           "capabilities" : [ "RayTracingNV" , "RayTracingKHR" ],
@@ -14523,6 +14567,18 @@
           "value" : 5377,
           "capabilities" : [ "ShaderSMBuiltinsNV" ],
           "extensions" : [ "SPV_NV_shader_sm_builtins" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HitKindFrontFacingMicroTriangleNV",
+          "value" : 5405,
+          "capabilities" : [ "RayTracingDisplacementMicromapNV" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HitKindBackFacingMicroTriangleNV",
+          "value" : 5406,
+          "capabilities" : [ "RayTracingDisplacementMicromapNV" ],
           "version" : "None"
         },
         {
@@ -15760,6 +15816,13 @@
           "version" : "1.6"
         },
         {
+          "enumerant" : "DisplacementMicromapNV",
+          "value" : 5380,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_NV_displacement_micromap" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "RayTracingOpacityMicromapEXT",
           "value" : 5381,
           "capabilities" : [ "RayQueryKHR","RayTracingKHR" ],
@@ -15784,6 +15847,13 @@
           "value" : 5391,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_KHR_ray_tracing_position_fetch" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RayTracingDisplacementMicromapNV",
+          "value" : 5409,
+          "capabilities" : [ "RayTracingKHR" ],
+          "extensions" : [ "SPV_NV_displacement_micromap" ],
           "version" : "None"
         },
         {
