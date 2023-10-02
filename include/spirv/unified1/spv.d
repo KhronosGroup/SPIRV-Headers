@@ -71,6 +71,7 @@ enum SourceLanguage : uint
     HERO_C = 8,
     NZSL = 9,
     WGSL = 10,
+    SLANG = 11,
 }
 
 enum ExecutionModel : uint
