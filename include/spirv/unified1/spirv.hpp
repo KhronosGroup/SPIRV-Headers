@@ -72,7 +72,7 @@ enum SourceLanguage {
     SourceLanguageHERO_C = 8,
     SourceLanguageNZSL = 9,
     SourceLanguageWGSL = 10,
-    SourceLanguageSLANG = 11,
+    SourceLanguageSlang = 11,
     SourceLanguageMax = 0x7fffffff,
 };
 
