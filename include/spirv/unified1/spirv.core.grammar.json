@@ -10579,6 +10579,11 @@
           "enumerant" : "WGSL",
           "value" : 10,
 	  "version" : "1.0"
+        },
+        {
+          "enumerant" : "Slang",
+          "value" : 11,
+	  "version" : "1.0"
         }
       ]
     },

@@ -63,6 +63,7 @@ spv = {
         'HERO_C' : 8,
         'NZSL' : 9,
         'WGSL' : 10,
+        'Slang' : 11,
     },
 
     'ExecutionModel' : {
