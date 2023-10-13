@@ -13407,7 +13407,6 @@
             { "kind" : "LiteralInteger", "name" : "'Stride Size'" }
           ],
           "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
           "version" : "None"
         },
         {
@@ -13417,14 +13416,12 @@
             { "kind" : "LiteralInteger", "name" : "'Word Size'" }
           ],
           "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
           "version" : "None"
         },
         {
           "enumerant" : "TrueDualPortINTEL",
           "value" : 5885,
           "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
           "version" : "None"
         },
         {
