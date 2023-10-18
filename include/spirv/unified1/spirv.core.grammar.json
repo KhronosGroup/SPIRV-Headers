@@ -13401,6 +13401,30 @@
           "version" : "None"
         },
         {
+          "enumerant" : "StridesizeINTEL",
+          "value" : 5883,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Stride Size'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "WordsizeINTEL",
+          "value" : 5884,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Word Size'" }
+          ],
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TrueDualPortINTEL",
+          "value" : 5885,
+          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "BurstCoalesceINTEL",
           "value" : 5899,
           "capabilities" : [ "FPGAMemoryAccessesINTEL" ],
