@@ -2825,6 +2825,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
 }
 #endif /* SPV_ENABLE_UTILITY_CODE */
 
+#ifndef __HLSL_VERSION
 // Overload bitwise operators for mask bit combining
 
 inline ImageOperandsMask operator|(ImageOperandsMask a, ImageOperandsMask b) { return ImageOperandsMask(unsigned(a) | unsigned(b)); }
@@ -2871,6 +2872,7 @@ inline CooperativeMatrixOperandsMask operator|(CooperativeMatrixOperandsMask a, 
 inline CooperativeMatrixOperandsMask operator&(CooperativeMatrixOperandsMask a, CooperativeMatrixOperandsMask b) { return CooperativeMatrixOperandsMask(unsigned(a) & unsigned(b)); }
 inline CooperativeMatrixOperandsMask operator^(CooperativeMatrixOperandsMask a, CooperativeMatrixOperandsMask b) { return CooperativeMatrixOperandsMask(unsigned(a) ^ unsigned(b)); }
 inline CooperativeMatrixOperandsMask operator~(CooperativeMatrixOperandsMask a) { return CooperativeMatrixOperandsMask(~unsigned(a)); }
+#endif
 
 }  // end namespace spv
 
