@@ -15213,7 +15213,7 @@
         {
           "enumerant" : "WorkgroupMemoryExplicitLayout16BitAccessKHR",
           "value" : 4430,
-          "capabilities" : [ "Shader" ],
+          "capabilities" : [ "WorkgroupMemoryExplicitLayoutKHR" ],
           "extensions" : [ "SPV_KHR_workgroup_memory_explicit_layout" ],
           "version" : "None"
         },
