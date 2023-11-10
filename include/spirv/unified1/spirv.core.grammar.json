@@ -13568,34 +13568,6 @@
           "version" : "None"
         },
         {
-          "enumerant" : "InitModeINTEL",
-          "value" : 6147,
-          "parameters": [
-            { "kind" : "InitializationModeQualifier", "name" : "'Trigger'" }
-          ],
-          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
-          "version" : "None"
-        },
-        {
-          "enumerant" : "ImplementInRegisterMapINTEL",
-          "value" : 6148,
-          "parameters": [
-            { "kind" : "LiteralInteger", "name" : "Value" }
-          ],
-          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
-          "version" : "None"
-        },
-        {
-          "enumerant" : "HostAccessINTEL",
-          "value" : 6168,
-          "parameters": [
-            { "kind" : "HostAccessQualifier", "name" : "'Access'" },
-            { "kind" : "LiteralString", "name" : "'Name'" }
-          ],
-          "capabilities" : [ "GlobalVariableHostAccessINTEL" ],
-          "version" : "None"
-        },
-        {
           "enumerant" : "FPMaxErrorDecorationINTEL",
           "value" : 6170,
           "parameters" : [
@@ -13694,6 +13666,34 @@
           "enumerant" : "StableKernelArgumentINTEL",
           "value" : 6183,
           "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HostAccessINTEL",
+          "value" : 6188,
+          "parameters": [
+            { "kind" : "HostAccessQualifier", "name" : "'Access'" },
+            { "kind" : "LiteralString", "name" : "'Name'" }
+          ],
+          "capabilities" : [ "GlobalVariableHostAccessINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "InitModeINTEL",
+          "value" : 6190,
+          "parameters": [
+            { "kind" : "InitializationModeQualifier", "name" : "'Trigger'" }
+          ],
+          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ImplementInRegisterMapINTEL",
+          "value" : 6191,
+          "parameters": [
+            { "kind" : "LiteralInteger", "name" : "Value" }
+          ],
+          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
           "version" : "None"
         },
         {
@@ -16260,22 +16260,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "GlobalVariableFPGADecorationsINTEL",
-          "value" : 6146,
-          "extensions": [ "SPV_INTEL_global_variable_fpga_decorations" ],
-          "version" : "None"
-        },
-        {
           "enumerant" : "FPGAKernelAttributesv2INTEL",
           "value" : 6161,
           "capabilities" : [ "FPGAKernelAttributesINTEL" ],
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
-          "version" : "None"
-        },
-        {
-          "enumerant" : "GlobalVariableHostAccessINTEL",
-          "value" : 6167,
-          "extensions": [ "SPV_INTEL_global_variable_host_access" ],
           "version" : "None"
         },
         {
@@ -16294,6 +16282,18 @@
           "enumerant" : "FPGAArgumentInterfacesINTEL",
           "value" : 6174,
           "extensions" : [ "SPV_INTEL_fpga_argument_interfaces" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GlobalVariableHostAccessINTEL",
+          "value" : 6187,
+          "extensions": [ "SPV_INTEL_global_variable_host_access" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GlobalVariableFPGADecorationsINTEL",
+          "value" : 6189,
+          "extensions": [ "SPV_INTEL_global_variable_fpga_decorations" ],
           "version" : "None"
         },
         {
