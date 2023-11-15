@@ -1205,6 +1205,7 @@ enum Capability {
     CapabilityFPGALatencyControlINTEL = 6171,
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
     CapabilityGroupUniformArithmeticKHR = 6400,
+    CapabilityMaskedGatherScatterINTEL = 6427,
     CapabilityCacheControlsINTEL = 6441,
     CapabilityMax = 0x7fffffff,
 };
@@ -2098,6 +2099,8 @@ enum Op {
     OpGroupLogicalAndKHR = 6406,
     OpGroupLogicalOrKHR = 6407,
     OpGroupLogicalXorKHR = 6408,
+    OpMaskedGatherINTEL = 6428,
+    OpMaskedScatterINTEL = 6429,
     OpMax = 0x7fffffff,
 };
 
@@ -2821,6 +2824,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpGroupLogicalAndKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupLogicalOrKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
+    case OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
     }
 }
 #endif /* SPV_ENABLE_UTILITY_CODE */

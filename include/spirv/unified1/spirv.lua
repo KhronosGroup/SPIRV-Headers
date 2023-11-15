@@ -1167,6 +1167,7 @@ spv = {
         FPGALatencyControlINTEL = 6171,
         FPGAArgumentInterfacesINTEL = 6174,
         GroupUniformArithmeticKHR = 6400,
+        MaskedGatherScatterINTEL = 6427,
         CacheControlsINTEL = 6441,
     },
 
@@ -2042,6 +2043,8 @@ spv = {
         OpGroupLogicalAndKHR = 6406,
         OpGroupLogicalOrKHR = 6407,
         OpGroupLogicalXorKHR = 6408,
+        OpMaskedGatherINTEL = 6428,
+        OpMaskedScatterINTEL = 6429,
     },
 
 }
