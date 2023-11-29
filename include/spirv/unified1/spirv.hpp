@@ -1071,6 +1071,9 @@ enum Capability {
     CapabilityInt64ImageEXT = 5016,
     CapabilityShaderClockKHR = 5055,
     CapabilityShaderEnqueueAMDX = 5067,
+    CapabilityBrainFloat16KHR = 5115,
+    CapabilityBrainFloat16DotProductKHR = 5116,
+    CapabilityBrainFloat16CooperativeMatrixKHR = 5117,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
     CapabilityGeometryShaderPassthroughNV = 5251,
     CapabilityShaderViewportIndexLayerEXT = 5254,
@@ -1372,6 +1375,12 @@ enum StoreCacheControl {
     StoreCacheControlWriteBackINTEL = 2,
     StoreCacheControlStreamingINTEL = 3,
     StoreCacheControlMax = 0x7fffffff,
+};
+
+enum FloatingPointEncoding {
+    FloatingPointEncodingIeee754Binary = 0,
+    FloatingPointEncodingBrainFloatKHR = 1,
+    FloatingPointEncodingMax = 0x7fffffff,
 };
 
 enum Op {

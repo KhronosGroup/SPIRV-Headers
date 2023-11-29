@@ -1078,6 +1078,9 @@ enum Capability : uint
     Int64ImageEXT = 5016,
     ShaderClockKHR = 5055,
     ShaderEnqueueAMDX = 5067,
+    BrainFloat16KHR = 5115,
+    BrainFloat16DotProductKHR = 5116,
+    BrainFloat16CooperativeMatrixKHR = 5117,
     SampleMaskOverrideCoverageNV = 5249,
     GeometryShaderPassthroughNV = 5251,
     ShaderViewportIndexLayerEXT = 5254,
@@ -1381,6 +1384,12 @@ enum StoreCacheControl : uint
     WriteThroughINTEL = 1,
     WriteBackINTEL = 2,
     StreamingINTEL = 3,
+}
+
+enum FloatingPointEncoding : uint
+{
+    Ieee754Binary = 0,
+    BrainFloatKHR = 1,
 }
 
 enum Op : uint

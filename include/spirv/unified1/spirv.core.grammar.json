@@ -330,7 +330,8 @@
       "opcode" : 22,
       "operands" : [
         { "kind" : "IdResult" },
-        { "kind" : "LiteralInteger", "name" : "'Width'" }
+        { "kind" : "LiteralInteger", "name" : "'Width'" },
+        { "kind" : "FloatingPointEncoding", "quantifier" : "?" }
       ],
       "version": "1.0"
     },
@@ -15457,6 +15458,26 @@
           "version" : "None"
         },
         {
+          "enumerant" : "BrainFloat16KHR",
+          "value" : 5115,
+          "extensions" : [ "SPV_KHR_brain_float16" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BrainFloat16DotProductKHR",
+          "value" : 5116,
+          "capabilities" : [ "BrainFloat16KHR" ],
+          "extensions" : [ "SPV_KHR_brain_float16" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BrainFloat16CooperativeMatrixKHR",
+          "value" : 5117,
+          "capabilities" : [ "BrainFloat16KHR", "CooperativeMatrixKHR" ],
+          "extensions" : [ "SPV_KHR_brain_float16", "SPV_KHR_cooperative_matrix" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "SampleMaskOverrideCoverageNV",
           "value" : 5249,
           "capabilities" : [ "SampleRateShading" ],
@@ -16540,6 +16561,23 @@
           "enumerant" : "StreamingINTEL",
           "value" : 3,
           "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "FloatingPointEncoding",
+      "enumerants" : [
+        {
+          "enumerant" : "Ieee754Binary",
+          "value" : 0,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BrainFloatKHR",
+          "value" : 1,
+          "capabilities" : [ "BrainFloat16KHR" ],
           "version" : "None"
         }
       ]
