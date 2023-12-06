@@ -528,8 +528,10 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
     for (const auto& printingClass : printingClasses) {
         if (printingClass["tag"].asString().size() > 0)
             tags.insert(printingClass["tag"].asString()); // just for error checking
-        else
+        else {
             std::cerr << "Error: each instruction_printing_class requires a non-empty \"tag\"" << std::endl;
+            std::exit(1);
+        }
         if (buildingHeaders || printingClass["tag"].asString() != "@exclude") {
             InstructionPrintingClasses.push_back({printingClass["tag"].asString(),
                                                   printingClass["heading"].asString()});
@@ -545,6 +547,7 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         if (printingClass.size() == 0) {
             std::cerr << "Error: " << inst["opname"].asString()
                       << " requires a non-empty printing \"class\" tag" << std::endl;
+            std::exit(1);
         }
         if (!buildingHeaders && printingClass == "@exclude")
             continue;
@@ -552,6 +555,7 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             std::cerr << "Error: " << inst["opname"].asString()
                       << " requires a \"class\" declared as a \"tag\" in \"instruction printing_class\""
                       << std::endl;
+            std::exit(1);
         }
         const auto opcode = inst["opcode"].asUInt();
         const std::string name = inst["opname"].asString();
