@@ -13580,6 +13580,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "StallFreeINTEL",
+          "value" : 6151,
+          "capabilities" : [ "FPGAClusterAttributesV2INTEL" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "FPMaxErrorDecorationINTEL",
           "value" : 6170,
           "parameters" : [
@@ -16269,6 +16275,13 @@
           "enumerant" : "SplitBarrierINTEL",
           "value" : 6141,
           "extensions" : [ "SPV_INTEL_split_barrier" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FPGAClusterAttributesV2INTEL",
+          "value" : 6150,
+          "capabilities" : [ "FPGAClusterAttributesINTEL" ],
+          "extensions" : [ "SPV_INTEL_fpga_cluster_attributes" ],
           "version" : "None"
         },
         {
