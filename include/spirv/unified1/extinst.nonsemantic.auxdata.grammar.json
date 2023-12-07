@@ -1,0 +1,21 @@
+{
+  "revision" : 1,
+  "instructions" : [
+      {
+	  "opname" : "FunctionMetadata",
+	  "opcode" : 0,
+	  "operands" : [
+	      { "kind" : "IdRef", "name" : "Function" },
+              { "kind" : "IdRef", "quantifier" : "*", "name" : "'Operand 1', +\n'Operand 2', +\n..." }
+	  ]
+      },
+      {
+	  "opname" : "FunctionAttribute",
+	  "opcode" : 1,
+	  "operands" : [
+	      { "kind" : "IdRef", "name" : "Function" },
+              { "kind" : "IdRef", "quantifier" : "*", "name" : "'Operand 1', +\n'Operand 2', +\n..." }
+	  ]
+      }
+  ]
+}
