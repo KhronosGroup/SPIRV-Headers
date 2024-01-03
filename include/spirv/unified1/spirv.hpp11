@@ -604,9 +604,7 @@ enum class Decoration : unsigned {
     SingleElementVectorINTEL = 6085,
     VectorComputeCallableFunctionINTEL = 6087,
     MediaBlockIOINTEL = 6140,
-    InitModeINTEL = 6147,
-    ImplementInRegisterMapINTEL = 6148,
-    HostAccessINTEL = 6168,
+    StallFreeINTEL = 6151,
     FPMaxErrorDecorationINTEL = 6170,
     LatencyControlLabelINTEL = 6172,
     LatencyControlConstraintINTEL = 6173,
@@ -619,6 +617,9 @@ enum class Decoration : unsigned {
     MMHostInterfaceMaxBurstINTEL = 6181,
     MMHostInterfaceWaitRequestINTEL = 6182,
     StableKernelArgumentINTEL = 6183,
+    HostAccessINTEL = 6188,
+    InitModeINTEL = 6190,
+    ImplementInRegisterMapINTEL = 6191,
     CacheControlLoadINTEL = 6442,
     CacheControlStoreINTEL = 6443,
     Max = 0x7fffffff,
@@ -1192,19 +1193,21 @@ enum class Capability : unsigned {
     GroupNonUniformRotateKHR = 6026,
     AtomicFloat32AddEXT = 6033,
     AtomicFloat64AddEXT = 6034,
-    LongConstantCompositeINTEL = 6089,
+    LongCompositesINTEL = 6089,
     OptNoneINTEL = 6094,
     AtomicFloat16AddEXT = 6095,
     DebugInfoModuleINTEL = 6114,
     BFloat16ConversionINTEL = 6115,
     SplitBarrierINTEL = 6141,
-    GlobalVariableFPGADecorationsINTEL = 6146,
+    FPGAClusterAttributesV2INTEL = 6150,
     FPGAKernelAttributesv2INTEL = 6161,
-    GlobalVariableHostAccessINTEL = 6167,
     FPMaxErrorINTEL = 6169,
     FPGALatencyControlINTEL = 6171,
     FPGAArgumentInterfacesINTEL = 6174,
+    GlobalVariableHostAccessINTEL = 6187,
+    GlobalVariableFPGADecorationsINTEL = 6189,
     GroupUniformArithmeticKHR = 6400,
+    MaskedGatherScatterINTEL = 6427,
     CacheControlsINTEL = 6441,
     Max = 0x7fffffff,
 };
@@ -2086,6 +2089,7 @@ enum class Op : unsigned {
     OpTypeStructContinuedINTEL = 6090,
     OpConstantCompositeContinuedINTEL = 6091,
     OpSpecConstantCompositeContinuedINTEL = 6092,
+    OpCompositeConstructContinuedINTEL = 6096,
     OpConvertFToBF16INTEL = 6116,
     OpConvertBF16ToFINTEL = 6117,
     OpControlBarrierArriveINTEL = 6142,
@@ -2098,6 +2102,8 @@ enum class Op : unsigned {
     OpGroupLogicalAndKHR = 6406,
     OpGroupLogicalOrKHR = 6407,
     OpGroupLogicalXorKHR = 6408,
+    OpMaskedGatherINTEL = 6428,
+    OpMaskedScatterINTEL = 6429,
     Max = 0x7fffffff,
 };
 
@@ -2809,6 +2815,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpTypeStructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpSpecConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCompositeConstructContinuedINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpConvertFToBF16INTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
@@ -2821,6 +2828,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpGroupLogicalAndKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupLogicalOrKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
     }
 }
 #endif /* SPV_ENABLE_UTILITY_CODE */

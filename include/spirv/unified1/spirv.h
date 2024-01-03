@@ -608,9 +608,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationSingleElementVectorINTEL = 6085,
     SpvDecorationVectorComputeCallableFunctionINTEL = 6087,
     SpvDecorationMediaBlockIOINTEL = 6140,
-    SpvDecorationInitModeINTEL = 6147,
-    SpvDecorationImplementInRegisterMapINTEL = 6148,
-    SpvDecorationHostAccessINTEL = 6168,
+    SpvDecorationStallFreeINTEL = 6151,
     SpvDecorationFPMaxErrorDecorationINTEL = 6170,
     SpvDecorationLatencyControlLabelINTEL = 6172,
     SpvDecorationLatencyControlConstraintINTEL = 6173,
@@ -623,6 +621,9 @@ typedef enum SpvDecoration_ {
     SpvDecorationMMHostInterfaceMaxBurstINTEL = 6181,
     SpvDecorationMMHostInterfaceWaitRequestINTEL = 6182,
     SpvDecorationStableKernelArgumentINTEL = 6183,
+    SpvDecorationHostAccessINTEL = 6188,
+    SpvDecorationInitModeINTEL = 6190,
+    SpvDecorationImplementInRegisterMapINTEL = 6191,
     SpvDecorationCacheControlLoadINTEL = 6442,
     SpvDecorationCacheControlStoreINTEL = 6443,
     SpvDecorationMax = 0x7fffffff,
@@ -1196,19 +1197,21 @@ typedef enum SpvCapability_ {
     SpvCapabilityGroupNonUniformRotateKHR = 6026,
     SpvCapabilityAtomicFloat32AddEXT = 6033,
     SpvCapabilityAtomicFloat64AddEXT = 6034,
-    SpvCapabilityLongConstantCompositeINTEL = 6089,
+    SpvCapabilityLongCompositesINTEL = 6089,
     SpvCapabilityOptNoneINTEL = 6094,
     SpvCapabilityAtomicFloat16AddEXT = 6095,
     SpvCapabilityDebugInfoModuleINTEL = 6114,
     SpvCapabilityBFloat16ConversionINTEL = 6115,
     SpvCapabilitySplitBarrierINTEL = 6141,
-    SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6146,
+    SpvCapabilityFPGAClusterAttributesV2INTEL = 6150,
     SpvCapabilityFPGAKernelAttributesv2INTEL = 6161,
-    SpvCapabilityGlobalVariableHostAccessINTEL = 6167,
     SpvCapabilityFPMaxErrorINTEL = 6169,
     SpvCapabilityFPGALatencyControlINTEL = 6171,
     SpvCapabilityFPGAArgumentInterfacesINTEL = 6174,
+    SpvCapabilityGlobalVariableHostAccessINTEL = 6187,
+    SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6189,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,
+    SpvCapabilityMaskedGatherScatterINTEL = 6427,
     SpvCapabilityCacheControlsINTEL = 6441,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
@@ -2090,6 +2093,7 @@ typedef enum SpvOp_ {
     SpvOpTypeStructContinuedINTEL = 6090,
     SpvOpConstantCompositeContinuedINTEL = 6091,
     SpvOpSpecConstantCompositeContinuedINTEL = 6092,
+    SpvOpCompositeConstructContinuedINTEL = 6096,
     SpvOpConvertFToBF16INTEL = 6116,
     SpvOpConvertBF16ToFINTEL = 6117,
     SpvOpControlBarrierArriveINTEL = 6142,
@@ -2102,6 +2106,8 @@ typedef enum SpvOp_ {
     SpvOpGroupLogicalAndKHR = 6406,
     SpvOpGroupLogicalOrKHR = 6407,
     SpvOpGroupLogicalXorKHR = 6408,
+    SpvOpMaskedGatherINTEL = 6428,
+    SpvOpMaskedScatterINTEL = 6429,
     SpvOpMax = 0x7fffffff,
 } SpvOp;
 
@@ -2813,6 +2819,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpTypeStructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpSpecConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpCompositeConstructContinuedINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpConvertFToBF16INTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
@@ -2825,6 +2832,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpGroupLogicalAndKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupLogicalOrKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
     }
 }
 #endif /* SPV_ENABLE_UTILITY_CODE */
