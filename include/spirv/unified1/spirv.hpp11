@@ -1207,6 +1207,7 @@ enum class Capability : unsigned {
     GlobalVariableHostAccessINTEL = 6187,
     GlobalVariableFPGADecorationsINTEL = 6189,
     GroupUniformArithmeticKHR = 6400,
+    MaskedGatherScatterINTEL = 6427,
     CacheControlsINTEL = 6441,
     Max = 0x7fffffff,
 };
@@ -2101,6 +2102,8 @@ enum class Op : unsigned {
     OpGroupLogicalAndKHR = 6406,
     OpGroupLogicalOrKHR = 6407,
     OpGroupLogicalXorKHR = 6408,
+    OpMaskedGatherINTEL = 6428,
+    OpMaskedScatterINTEL = 6429,
     Max = 0x7fffffff,
 };
 
@@ -2825,6 +2828,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpGroupLogicalAndKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupLogicalOrKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
     }
 }
 #endif /* SPV_ENABLE_UTILITY_CODE */

@@ -1211,6 +1211,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityGlobalVariableHostAccessINTEL = 6187,
     SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6189,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,
+    SpvCapabilityMaskedGatherScatterINTEL = 6427,
     SpvCapabilityCacheControlsINTEL = 6441,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
@@ -2105,6 +2106,8 @@ typedef enum SpvOp_ {
     SpvOpGroupLogicalAndKHR = 6406,
     SpvOpGroupLogicalOrKHR = 6407,
     SpvOpGroupLogicalXorKHR = 6408,
+    SpvOpMaskedGatherINTEL = 6428,
+    SpvOpMaskedScatterINTEL = 6429,
     SpvOpMax = 0x7fffffff,
 } SpvOp;
 
@@ -2829,6 +2832,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpGroupLogicalAndKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupLogicalOrKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
     }
 }
 #endif /* SPV_ENABLE_UTILITY_CODE */

@@ -9758,6 +9758,34 @@
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
       "version" : "None"
+    },
+    {
+      "opname" : "OpMaskedGatherINTEL",
+      "class"  : "Memory",
+      "opcode" : 6428,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",           "name" : "'PtrVector'" },
+        { "kind" : "LiteralInteger",  "name" : "'Alignment'" },
+        { "kind" : "IdRef",           "name" : "'Mask'" },
+        { "kind" : "IdRef",           "name" : "'FillEmpty'" }
+      ],
+      "capabilities" : [ "MaskedGatherScatterINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpMaskedScatterINTEL",
+      "class"  : "Memory",
+      "opcode" : 6429,
+      "operands" : [
+        { "kind" : "IdRef",           "name" : "'InputVector'" },
+        { "kind" : "IdRef",           "name" : "'PtrVector'" },
+        { "kind" : "LiteralInteger",  "name" : "'Alignment'" },
+        { "kind" : "IdRef",           "name" : "'Mask'" }
+      ],
+      "capabilities" : [ "MaskedGatherScatterINTEL" ],
+      "version" : "None"
     }
   ],
   "operand_kinds" : [
@@ -16326,6 +16354,12 @@
           "value" : 6400,
           "extensions" : [ "SPV_KHR_uniform_group_instructions"],
           "version" : "None"
+        },
+        {
+          "enumerant" : "MaskedGatherScatterINTEL",
+	  "value" : 6427,
+	  "extensions" : [ "SPV_INTEL_masked_gather_scatter"],
+	  "version" : "None"
         },
         {
           "enumerant" : "CacheControlsINTEL",

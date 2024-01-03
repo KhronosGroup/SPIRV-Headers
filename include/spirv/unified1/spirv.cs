@@ -1211,6 +1211,7 @@ namespace Spv
             GlobalVariableHostAccessINTEL = 6187,
             GlobalVariableFPGADecorationsINTEL = 6189,
             GroupUniformArithmeticKHR = 6400,
+            MaskedGatherScatterINTEL = 6427,
             CacheControlsINTEL = 6441,
         }
 
@@ -2108,6 +2109,8 @@ namespace Spv
             OpGroupLogicalAndKHR = 6406,
             OpGroupLogicalOrKHR = 6407,
             OpGroupLogicalXorKHR = 6408,
+            OpMaskedGatherINTEL = 6428,
+            OpMaskedScatterINTEL = 6429,
         }
     }
 }
