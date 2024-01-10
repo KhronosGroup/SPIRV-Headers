@@ -35,6 +35,7 @@ source_set("spv_headers") {
     "include/spirv/unified1/GLSL.std.450.h",
     "include/spirv/unified1/NonSemanticClspvReflection.h",
     "include/spirv/unified1/NonSemanticDebugPrintf.h",
+    "include/spirv/unified1/NonSemanticVkspReflection.h",
     "include/spirv/unified1/OpenCL.std.h",
     "include/spirv/unified1/spirv.h",
     "include/spirv/unified1/spirv.hpp",
