@@ -10624,6 +10624,11 @@
           "enumerant" : "Slang",
           "value" : 11,
           "version" : "1.0"
+        },
+        {
+          "enumerant" : "Zig",
+          "value" : 12,
+          "version" : "1.0"
         }
       ]
     },

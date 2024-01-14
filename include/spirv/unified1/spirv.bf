@@ -70,6 +70,7 @@ namespace Spv
             NZSL = 9,
             WGSL = 10,
             Slang = 11,
+            Zig = 12,
         }
 
         [AllowDuplicates, CRepr] public enum ExecutionModel
