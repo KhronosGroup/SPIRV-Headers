@@ -73,6 +73,7 @@ enum SourceLanguage {
     SourceLanguageNZSL = 9,
     SourceLanguageWGSL = 10,
     SourceLanguageSlang = 11,
+    SourceLanguageZig = 12,
     SourceLanguageMax = 0x7fffffff,
 };
 

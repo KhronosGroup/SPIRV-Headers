@@ -73,6 +73,7 @@ enum class SourceLanguage : unsigned {
     NZSL = 9,
     WGSL = 10,
     Slang = 11,
+    Zig = 12,
     Max = 0x7fffffff,
 };
 

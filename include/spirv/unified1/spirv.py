@@ -64,6 +64,7 @@ spv = {
         'NZSL' : 9,
         'WGSL' : 10,
         'Slang' : 11,
+        'Zig' : 12,
     },
 
     'ExecutionModel' : {
