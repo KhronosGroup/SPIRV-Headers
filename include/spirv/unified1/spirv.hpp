@@ -1771,6 +1771,7 @@ enum Op {
     OpSubgroupAllEqualKHR = 4430,
     OpGroupNonUniformRotateKHR = 4431,
     OpSubgroupReadInvocationKHR = 4432,
+    OpExtInstWithForwardRefs = 4433,
     OpTraceRayKHR = 4445,
     OpExecuteCallableKHR = 4446,
     OpConvertUToAccelerationStructureKHR = 4447,
@@ -2172,6 +2173,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpExtension: *hasResult = false; *hasResultType = false; break;
     case OpExtInstImport: *hasResult = true; *hasResultType = false; break;
     case OpExtInst: *hasResult = true; *hasResultType = true; break;
+    case OpExtInstWithForwardRefs: *hasResult = true; *hasResultType = true; break;
     case OpMemoryModel: *hasResult = false; *hasResultType = false; break;
     case OpEntryPoint: *hasResult = false; *hasResultType = false; break;
     case OpExecutionMode: *hasResult = false; *hasResultType = false; break;

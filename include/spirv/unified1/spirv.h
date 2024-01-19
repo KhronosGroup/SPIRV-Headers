@@ -1775,6 +1775,7 @@ typedef enum SpvOp_ {
     SpvOpSubgroupAllEqualKHR = 4430,
     SpvOpGroupNonUniformRotateKHR = 4431,
     SpvOpSubgroupReadInvocationKHR = 4432,
+    SpvOpExtInstWithForwardRefs = 4433,
     SpvOpTraceRayKHR = 4445,
     SpvOpExecuteCallableKHR = 4446,
     SpvOpConvertUToAccelerationStructureKHR = 4447,
@@ -2176,6 +2177,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpExtension: *hasResult = false; *hasResultType = false; break;
     case SpvOpExtInstImport: *hasResult = true; *hasResultType = false; break;
     case SpvOpExtInst: *hasResult = true; *hasResultType = true; break;
+    case SpvOpExtInstWithForwardRefs: *hasResult = true; *hasResultType = true; break;
     case SpvOpMemoryModel: *hasResult = false; *hasResultType = false; break;
     case SpvOpEntryPoint: *hasResult = false; *hasResultType = false; break;
     case SpvOpExecutionMode: *hasResult = false; *hasResultType = false; break;
