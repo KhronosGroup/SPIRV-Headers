@@ -11500,6 +11500,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "MaximallyReconvergesKHR",
+          "value" : 6023,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_KHR_maximal_reconvergence" ],
+          "version" : "None"
+	},
+	{
           "enumerant" : "StreamingInterfaceINTEL",
           "value" : 6154,
           "parameters" : [
