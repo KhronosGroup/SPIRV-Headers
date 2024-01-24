@@ -209,6 +209,7 @@ enum ExecutionMode {
     ExecutionModeNumSIMDWorkitemsINTEL = 5896,
     ExecutionModeSchedulerTargetFmaxMhzINTEL = 5903,
     ExecutionModeMaximallyReconvergesKHR = 6023,
+    ExecutionModeFPFastMathDefault = 6028,
     ExecutionModeStreamingInterfaceINTEL = 6154,
     ExecutionModeRegisterMapInterfaceINTEL = 6160,
     ExecutionModeNamedBarrierCountINTEL = 6417,
@@ -428,8 +429,11 @@ enum FPFastMathModeShift {
     FPFastMathModeNSZShift = 2,
     FPFastMathModeAllowRecipShift = 3,
     FPFastMathModeFastShift = 4,
+    FPFastMathModeAllowContractShift = 16,
     FPFastMathModeAllowContractFastINTELShift = 16,
+    FPFastMathModeAllowReassocShift = 17,
     FPFastMathModeAllowReassocINTELShift = 17,
+    FPFastMathModeAllowTransformShift = 18,
     FPFastMathModeMax = 0x7fffffff,
 };
 
@@ -440,8 +444,11 @@ enum FPFastMathModeMask {
     FPFastMathModeNSZMask = 0x00000004,
     FPFastMathModeAllowRecipMask = 0x00000008,
     FPFastMathModeFastMask = 0x00000010,
+    FPFastMathModeAllowContractMask = 0x00010000,
     FPFastMathModeAllowContractFastINTELMask = 0x00010000,
+    FPFastMathModeAllowReassocMask = 0x00020000,
     FPFastMathModeAllowReassocINTELMask = 0x00020000,
+    FPFastMathModeAllowTransformMask = 0x00040000,
 };
 
 enum FPRoundingMode {
@@ -1193,6 +1200,7 @@ enum Capability {
     CapabilityCooperativeMatrixKHR = 6022,
     CapabilityBitInstructions = 6025,
     CapabilityGroupNonUniformRotateKHR = 6026,
+    CapabilityFloatControls2 = 6029,
     CapabilityAtomicFloat32AddEXT = 6033,
     CapabilityAtomicFloat64AddEXT = 6034,
     CapabilityLongCompositesINTEL = 6089,
