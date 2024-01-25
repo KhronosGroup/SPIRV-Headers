@@ -1130,6 +1130,7 @@ spv = {
         'ShaderInvocationReorderNV' : 5383,
         'BindlessTextureNV' : 5390,
         'RayQueryPositionFetchKHR' : 5391,
+        'CooperativeVectorNV' : 5394,
         'AtomicFloat16VectorNV' : 5404,
         'RayTracingDisplacementMicromapNV' : 5409,
         'RawAccessChainsNV' : 5414,
@@ -1138,6 +1139,7 @@ spv = {
         'CooperativeMatrixPerElementOperationsNV' : 5432,
         'CooperativeMatrixTensorAddressingNV' : 5433,
         'CooperativeMatrixBlockLoadsNV' : 5434,
+        'CooperativeVectorTrainingNV' : 5435,
         'TensorAddressingNV' : 5439,
         'SubgroupShuffleINTEL' : 5568,
         'SubgroupBufferBlockIOINTEL' : 5569,
@@ -1456,6 +1458,31 @@ spv = {
     },
 
     'FPEncoding' : {
+    },
+
+    'CooperativeVectorMatrixLayout' : {
+        'RowMajorNV' : 0,
+        'ColumnMajorNV' : 1,
+        'InferencingOptimalNV' : 2,
+        'TrainingOptimalNV' : 3,
+    },
+
+    'ComponentType' : {
+        'Float16NV' : 0,
+        'Float32NV' : 1,
+        'Float64NV' : 2,
+        'SignedInt8NV' : 3,
+        'SignedInt16NV' : 4,
+        'SignedInt32NV' : 5,
+        'SignedInt64NV' : 6,
+        'UnsignedInt8NV' : 7,
+        'UnsignedInt16NV' : 8,
+        'UnsignedInt32NV' : 9,
+        'UnsignedInt64NV' : 10,
+        'SignedInt8PackedNV' : 1000491000,
+        'UnsignedInt8PackedNV' : 1000491001,
+        'FloatE4M3NV' : 1000491002,
+        'FloatE5M2NV' : 1000491003,
     },
 
     'Op' : {
@@ -1918,6 +1945,11 @@ spv = {
         'OpReorderThreadWithHintNV' : 5280,
         'OpTypeHitObjectNV' : 5281,
         'OpImageSampleFootprintNV' : 5283,
+        'OpTypeCooperativeVectorNV' : 5288,
+        'OpCooperativeVectorMatrixMulNV' : 5289,
+        'OpCooperativeVectorOuterProductAccumulateNV' : 5290,
+        'OpCooperativeVectorReduceSumAccumulateNV' : 5291,
+        'OpCooperativeVectorMatrixMulAddNV' : 5292,
         'OpCooperativeMatrixConvertNV' : 5293,
         'OpEmitMeshTasksEXT' : 5294,
         'OpSetMeshOutputsEXT' : 5295,
@@ -1925,6 +1957,8 @@ spv = {
         'OpWritePackedPrimitiveIndices4x8NV' : 5299,
         'OpFetchMicroTriangleVertexPositionNV' : 5300,
         'OpFetchMicroTriangleVertexBarycentricNV' : 5301,
+        'OpCooperativeVectorLoadNV' : 5302,
+        'OpCooperativeVectorStoreNV' : 5303,
         'OpReportIntersectionKHR' : 5334,
         'OpReportIntersectionNV' : 5334,
         'OpIgnoreIntersectionNV' : 5335,
