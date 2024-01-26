@@ -1798,7 +1798,7 @@ typedef enum SpvOp_ {
     SpvOpFinishWritingNodePayloadAMDX = 5078,
     SpvOpInitializeNodePayloadsAMDX = 5090,
     SpvOpGroupNonUniformQuadAllKHR = 5110,
-    SpvOpGroupNonUniformQuadAnyKHR = 5111,	
+    SpvOpGroupNonUniformQuadAnyKHR = 5111,
     SpvOpHitObjectRecordHitMotionNV = 5249,
     SpvOpHitObjectRecordHitWithIndexMotionNV = 5250,
     SpvOpHitObjectRecordMissMotionNV = 5251,

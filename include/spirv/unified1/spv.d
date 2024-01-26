@@ -1804,7 +1804,7 @@ enum Op : uint
     OpFinishWritingNodePayloadAMDX = 5078,
     OpInitializeNodePayloadsAMDX = 5090,
     OpGroupNonUniformQuadAllKHR = 5110,
-    OpGroupNonUniformQuadAnyKHR = 5111,	
+    OpGroupNonUniformQuadAnyKHR = 5111,
     OpHitObjectRecordHitMotionNV = 5249,
     OpHitObjectRecordHitWithIndexMotionNV = 5250,
     OpHitObjectRecordMissMotionNV = 5251,

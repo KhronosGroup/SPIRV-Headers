@@ -1794,7 +1794,7 @@ enum Op {
     OpFinishWritingNodePayloadAMDX = 5078,
     OpInitializeNodePayloadsAMDX = 5090,
     OpGroupNonUniformQuadAllKHR = 5110,
-    OpGroupNonUniformQuadAnyKHR = 5111,	
+    OpGroupNonUniformQuadAnyKHR = 5111,
     OpHitObjectRecordHitMotionNV = 5249,
     OpHitObjectRecordHitWithIndexMotionNV = 5250,
     OpHitObjectRecordMissMotionNV = 5251,
@@ -2527,7 +2527,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFinishWritingNodePayloadAMDX: *hasResult = true; *hasResultType = true; break;
     case OpInitializeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
     case OpGroupNonUniformQuadAllKHR: *hasResult = true; *hasResultType = true; break;
-    case OpGroupNonUniformQuadAnyKHR: *hasResult = true; *hasResultType = true; break;	
+    case OpGroupNonUniformQuadAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;

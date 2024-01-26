@@ -1060,7 +1060,7 @@
                     "Int64ImageEXT": 5016,
                     "ShaderClockKHR": 5055,
                     "ShaderEnqueueAMDX": 5067,
-					"QuadControlKHR": 5087,
+                    "QuadControlKHR": 5087,
                     "SampleMaskOverrideCoverageNV": 5249,
                     "GeometryShaderPassthroughNV": 5251,
                     "ShaderViewportIndexLayerEXT": 5254,
