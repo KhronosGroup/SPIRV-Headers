@@ -188,6 +188,8 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeStencilRefUnchangedBackAMD = 5082,
     SpvExecutionModeStencilRefGreaterBackAMD = 5083,
     SpvExecutionModeStencilRefLessBackAMD = 5084,
+    SpvExecutionModeQuadDerivativesKHR = 5088,
+    SpvExecutionModeRequireFullQuadsKHR = 5089,
     SpvExecutionModeOutputLinesEXT = 5269,
     SpvExecutionModeOutputLinesNV = 5269,
     SpvExecutionModeOutputPrimitivesEXT = 5270,
@@ -1085,6 +1087,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityInt64ImageEXT = 5016,
     SpvCapabilityShaderClockKHR = 5055,
     SpvCapabilityShaderEnqueueAMDX = 5067,
+    SpvCapabilityQuadControlKHR = 5087,
     SpvCapabilitySampleMaskOverrideCoverageNV = 5249,
     SpvCapabilityGeometryShaderPassthroughNV = 5251,
     SpvCapabilityShaderViewportIndexLayerEXT = 5254,
@@ -1794,6 +1797,8 @@ typedef enum SpvOp_ {
     SpvOpFinalizeNodePayloadsAMDX = 5075,
     SpvOpFinishWritingNodePayloadAMDX = 5078,
     SpvOpInitializeNodePayloadsAMDX = 5090,
+    SpvOpGroupNonUniformQuadAllKHR = 5110,
+    SpvOpGroupNonUniformQuadAnyKHR = 5111,
     SpvOpHitObjectRecordHitMotionNV = 5249,
     SpvOpHitObjectRecordHitWithIndexMotionNV = 5250,
     SpvOpHitObjectRecordMissMotionNV = 5251,
@@ -2525,6 +2530,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpFinalizeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
     case SpvOpFinishWritingNodePayloadAMDX: *hasResult = true; *hasResultType = true; break;
     case SpvOpInitializeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case SpvOpGroupNonUniformQuadAllKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupNonUniformQuadAnyKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;

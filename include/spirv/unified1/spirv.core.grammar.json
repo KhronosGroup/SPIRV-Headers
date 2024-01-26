@@ -5247,6 +5247,30 @@
       "version" : "None"
     },
     {
+      "opname" : "OpGroupNonUniformQuadAllKHR",
+      "class"  : "Non-Uniform",
+      "opcode" : 5110,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Predicate'" }
+      ],
+      "capabilities" : [ "QuadControlKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGroupNonUniformQuadAnyKHR",
+      "class"  : "Non-Uniform",
+      "opcode" : 5111,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Predicate'" }
+      ],
+      "capabilities" : [ "QuadControlKHR" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpHitObjectRecordHitMotionNV",
       "class"  : "Reserved",
       "opcode" : 5249,
@@ -11321,6 +11345,18 @@
           "version": "None"
         },
         {
+          "enumerant": "QuadDerivativesKHR",
+          "value": 5088,
+          "capabilities": [ "QuadControlKHR" ],
+          "version": "None"
+        },
+        {
+          "enumerant" : "RequireFullQuadsKHR",
+          "value" : 5089,
+          "capabilities" : [ "QuadControlKHR" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "OutputLinesNV",
           "value" : 5269,
           "capabilities" : [ "MeshShadingNV", "MeshShadingEXT" ],
@@ -15542,6 +15578,12 @@
           "extensions" : [ "SPV_AMDX_shader_enqueue" ],
           "version" : "None"
         },
+        {
+          "enumerant" : "QuadControlKHR",
+          "value" : 5087,
+          "extensions" : [ "SPV_KHR_quad_control" ],
+          "version" : "None"
+        },		
         {
           "enumerant" : "SampleMaskOverrideCoverageNV",
           "value" : 5249,
