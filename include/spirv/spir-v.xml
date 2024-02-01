@@ -249,7 +249,7 @@
     <!-- Reserved FP fast math mode bits -->
     <ids type="FPFastMathMode" start="0" end="15" vendor="Khronos" comment="Reserved FPFastMathMode bits, not available to vendors - see the SPIR-V Specification"/>
     <ids type="FPFastMathMode" start="16" end="17" vendor="Intel" comment="Contact michael.kinsner@intel.com"/>
-    <ids type="FPFastMathMode" start="18" end="18" comment="Reserved FPFastMathMode bit, not available to vendors"/>
+    <ids type="FPFastMathMode" start="18" end="18" vendor="khronos" comment="Reserved FPFastMathMode bit, not available to vendors - see SPV_KHR_float_controls2"/>
     <ids type="FPFastMathMode" start="19" end="31" comment="Unreserved bits reservable for use by vendors"/>
 
 
