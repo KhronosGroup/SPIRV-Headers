@@ -1208,6 +1208,7 @@ enum Capability {
     CapabilityDotProductKHR = 6019,
     CapabilityRayCullMaskKHR = 6020,
     CapabilityCooperativeMatrixKHR = 6022,
+    CapabilityReplicatedCompositesEXT = 6024,
     CapabilityBitInstructions = 6025,
     CapabilityGroupNonUniformRotateKHR = 6026,
     CapabilityFloatControls2 = 6029,
@@ -1793,6 +1794,9 @@ enum Op {
     OpCooperativeMatrixStoreKHR = 4458,
     OpCooperativeMatrixMulAddKHR = 4459,
     OpCooperativeMatrixLengthKHR = 4460,
+    OpConstantCompositeReplicateEXT = 4461,
+    OpSpecConstantCompositeReplicateEXT = 4462,
+    OpCompositeConstructReplicateEXT = 4463,
     OpTypeRayQueryKHR = 4472,
     OpRayQueryInitializeKHR = 4473,
     OpRayQueryTerminateKHR = 4474,
@@ -2531,6 +2535,9 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpCooperativeMatrixStoreKHR: *hasResult = false; *hasResultType = false; break;
     case OpCooperativeMatrixMulAddKHR: *hasResult = true; *hasResultType = true; break;
     case OpCooperativeMatrixLengthKHR: *hasResult = true; *hasResultType = true; break;
+    case OpConstantCompositeReplicateEXT: *hasResult = true; *hasResultType = true; break;
+    case OpSpecConstantCompositeReplicateEXT: *hasResult = true; *hasResultType = true; break;
+    case OpCompositeConstructReplicateEXT: *hasResult = true; *hasResultType = true; break;
     case OpTypeRayQueryKHR: *hasResult = true; *hasResultType = false; break;
     case OpRayQueryInitializeKHR: *hasResult = false; *hasResultType = false; break;
     case OpRayQueryTerminateKHR: *hasResult = false; *hasResultType = false; break;
@@ -3768,6 +3775,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityDotProduct: return "DotProduct";
     case CapabilityRayCullMaskKHR: return "RayCullMaskKHR";
     case CapabilityCooperativeMatrixKHR: return "CooperativeMatrixKHR";
+    case CapabilityReplicatedCompositesEXT: return "ReplicatedCompositesEXT";
     case CapabilityBitInstructions: return "BitInstructions";
     case CapabilityGroupNonUniformRotateKHR: return "GroupNonUniformRotateKHR";
     case CapabilityFloatControls2: return "FloatControls2";
@@ -4302,6 +4310,9 @@ inline const char* OpToString(Op value) {
     case OpCooperativeMatrixStoreKHR: return "OpCooperativeMatrixStoreKHR";
     case OpCooperativeMatrixMulAddKHR: return "OpCooperativeMatrixMulAddKHR";
     case OpCooperativeMatrixLengthKHR: return "OpCooperativeMatrixLengthKHR";
+    case OpConstantCompositeReplicateEXT: return "OpConstantCompositeReplicateEXT";
+    case OpSpecConstantCompositeReplicateEXT: return "OpSpecConstantCompositeReplicateEXT";
+    case OpCompositeConstructReplicateEXT: return "OpCompositeConstructReplicateEXT";
     case OpTypeRayQueryKHR: return "OpTypeRayQueryKHR";
     case OpRayQueryInitializeKHR: return "OpRayQueryInitializeKHR";
     case OpRayQueryTerminateKHR: return "OpRayQueryTerminateKHR";
