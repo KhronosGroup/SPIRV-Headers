@@ -202,6 +202,9 @@ spv = {
         StreamingInterfaceINTEL = 6154,
         RegisterMapInterfaceINTEL = 6160,
         NamedBarrierCountINTEL = 6417,
+        MaximumRegistersINTEL = 6461,
+        MaximumRegistersIdINTEL = 6462,
+        NamedMaximumRegistersINTEL = 6463,
     },
 
     StorageClass = {
@@ -1184,6 +1187,7 @@ spv = {
         GroupUniformArithmeticKHR = 6400,
         MaskedGatherScatterINTEL = 6427,
         CacheControlsINTEL = 6441,
+        RegisterLimitsINTEL = 6460,
     },
 
     RayFlagsShift = {

@@ -219,6 +219,9 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeStreamingInterfaceINTEL = 6154,
     SpvExecutionModeRegisterMapInterfaceINTEL = 6160,
     SpvExecutionModeNamedBarrierCountINTEL = 6417,
+    SpvExecutionModeMaximumRegistersINTEL = 6461,
+    SpvExecutionModeMaximumRegistersIdINTEL = 6462,
+    SpvExecutionModeNamedMaximumRegistersINTEL = 6463,
     SpvExecutionModeMax = 0x7fffffff,
 } SpvExecutionMode;
 
@@ -1226,6 +1229,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityGroupUniformArithmeticKHR = 6400,
     SpvCapabilityMaskedGatherScatterINTEL = 6427,
     SpvCapabilityCacheControlsINTEL = 6441,
+    SpvCapabilityRegisterLimitsINTEL = 6460,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
 

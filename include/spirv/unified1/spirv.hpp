@@ -215,6 +215,9 @@ enum ExecutionMode {
     ExecutionModeStreamingInterfaceINTEL = 6154,
     ExecutionModeRegisterMapInterfaceINTEL = 6160,
     ExecutionModeNamedBarrierCountINTEL = 6417,
+    ExecutionModeMaximumRegistersINTEL = 6461,
+    ExecutionModeMaximumRegistersIdINTEL = 6462,
+    ExecutionModeNamedMaximumRegistersINTEL = 6463,
     ExecutionModeMax = 0x7fffffff,
 };
 
@@ -1222,6 +1225,7 @@ enum Capability {
     CapabilityGroupUniformArithmeticKHR = 6400,
     CapabilityMaskedGatherScatterINTEL = 6427,
     CapabilityCacheControlsINTEL = 6441,
+    CapabilityRegisterLimitsINTEL = 6460,
     CapabilityMax = 0x7fffffff,
 };
 
