@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2020 The Khronos Group Inc.
+// Copyright (c) 2014-2024 The Khronos Group Inc.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and/or associated documentation files (the "Materials"),
@@ -70,6 +70,7 @@ namespace Spv
             NZSL = 9,
             WGSL = 10,
             Slang = 11,
+            Zig = 12,
         }
 
         [AllowDuplicates, CRepr] public enum ExecutionModel
@@ -180,6 +181,8 @@ namespace Spv
             StencilRefUnchangedBackAMD = 5082,
             StencilRefGreaterBackAMD = 5083,
             StencilRefLessBackAMD = 5084,
+            QuadDerivativesKHR = 5088,
+            RequireFullQuadsKHR = 5089,
             OutputLinesEXT = 5269,
             OutputLinesNV = 5269,
             OutputPrimitivesEXT = 5270,
@@ -204,6 +207,8 @@ namespace Spv
             NoGlobalOffsetINTEL = 5895,
             NumSIMDWorkitemsINTEL = 5896,
             SchedulerTargetFmaxMhzINTEL = 5903,
+            MaximallyReconvergesKHR = 6023,
+            FPFastMathDefault = 6028,
             StreamingInterfaceINTEL = 6154,
             RegisterMapInterfaceINTEL = 6160,
             NamedBarrierCountINTEL = 6417,
@@ -424,8 +429,11 @@ namespace Spv
             NSZ = 2,
             AllowRecip = 3,
             Fast = 4,
+            AllowContract = 16,
             AllowContractFastINTEL = 16,
+            AllowReassoc = 17,
             AllowReassocINTEL = 17,
+            AllowTransform = 18,
         }
 
         [AllowDuplicates, CRepr] public enum FPFastMathModeMask
@@ -436,8 +444,11 @@ namespace Spv
             NSZ = 0x00000004,
             AllowRecip = 0x00000008,
             Fast = 0x00000010,
+            AllowContract = 0x00010000,
             AllowContractFastINTEL = 0x00010000,
+            AllowReassoc = 0x00020000,
             AllowReassocINTEL = 0x00020000,
+            AllowTransform = 0x00040000,
         }
 
         [AllowDuplicates, CRepr] public enum FPRoundingMode
@@ -1077,6 +1088,7 @@ namespace Spv
             Int64ImageEXT = 5016,
             ShaderClockKHR = 5055,
             ShaderEnqueueAMDX = 5067,
+            QuadControlKHR = 5087,
             SampleMaskOverrideCoverageNV = 5249,
             GeometryShaderPassthroughNV = 5251,
             ShaderViewportIndexLayerEXT = 5254,
@@ -1196,6 +1208,7 @@ namespace Spv
             CooperativeMatrixKHR = 6022,
             BitInstructions = 6025,
             GroupNonUniformRotateKHR = 6026,
+            FloatControls2 = 6029,
             AtomicFloat32AddEXT = 6033,
             AtomicFloat64AddEXT = 6034,
             LongCompositesINTEL = 6089,
@@ -1212,6 +1225,7 @@ namespace Spv
             GlobalVariableHostAccessINTEL = 6187,
             GlobalVariableFPGADecorationsINTEL = 6189,
             GroupUniformArithmeticKHR = 6400,
+            MaskedGatherScatterINTEL = 6427,
             CacheControlsINTEL = 6441,
         }
 
@@ -1787,6 +1801,8 @@ namespace Spv
             OpFinalizeNodePayloadsAMDX = 5075,
             OpFinishWritingNodePayloadAMDX = 5078,
             OpInitializeNodePayloadsAMDX = 5090,
+            OpGroupNonUniformQuadAllKHR = 5110,
+            OpGroupNonUniformQuadAnyKHR = 5111,
             OpHitObjectRecordHitMotionNV = 5249,
             OpHitObjectRecordHitWithIndexMotionNV = 5250,
             OpHitObjectRecordMissMotionNV = 5251,
@@ -2109,6 +2125,8 @@ namespace Spv
             OpGroupLogicalAndKHR = 6406,
             OpGroupLogicalOrKHR = 6407,
             OpGroupLogicalXorKHR = 6408,
+            OpMaskedGatherINTEL = 6428,
+            OpMaskedScatterINTEL = 6429,
         }
     }
 }
