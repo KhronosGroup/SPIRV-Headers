@@ -12198,121 +12198,101 @@
         {
           "enumerant" : "R",
           "value" : 0,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "A",
           "value" : 1,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "RG",
           "value" : 2,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "RA",
           "value" : 3,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "RGB",
           "value" : 4,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "RGBA",
           "value" : 5,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "BGRA",
           "value" : 6,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "ARGB",
           "value" : 7,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "Intensity",
           "value" : 8,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "Luminance",
           "value" : 9,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "Rx",
           "value" : 10,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "RGx",
           "value" : 11,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "RGBx",
           "value" : 12,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "Depth",
           "value" : 13,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "DepthStencil",
           "value" : 14,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "sRGB",
           "value" : 15,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "sRGBx",
           "value" : 16,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "sRGBA",
           "value" : 17,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "sBGRA",
           "value" : 18,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "ABGR",
           "value" : 19,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         }
       ]
@@ -12324,115 +12304,96 @@
         {
           "enumerant" : "SnormInt8",
           "value" : 0,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "SnormInt16",
           "value" : 1,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnormInt8",
           "value" : 2,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnormInt16",
           "value" : 3,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnormShort565",
           "value" : 4,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnormShort555",
           "value" : 5,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnormInt101010",
           "value" : 6,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "SignedInt8",
           "value" : 7,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "SignedInt16",
           "value" : 8,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "SignedInt32",
           "value" : 9,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnsignedInt8",
           "value" : 10,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnsignedInt16",
           "value" : 11,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnsignedInt32",
           "value" : 12,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "HalfFloat",
           "value" : 13,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "Float",
           "value" : 14,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnormInt24",
           "value" : 15,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnormInt101010_2",
           "value" : 16,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnsignedIntRaw10EXT",
           "value" : 19,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         },
         {
           "enumerant" : "UnsignedIntRaw12EXT",
           "value" : 20,
-          "capabilities" : [ "Kernel" ],
           "version": "1.0"
         }
       ]
