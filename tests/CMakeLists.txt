@@ -24,13 +24,13 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
 
-add_library(simple_test STATIC)
+add_library(spirv_headers_simple_test STATIC)
 
-target_sources(simple_test PRIVATE
+target_sources(spirv_headers_simple_test PRIVATE
     example.cpp
 )
 
-target_link_libraries(simple_test PRIVATE
+target_link_libraries(spirv_headers_simple_test PRIVATE
     SPIRV-Headers::SPIRV-Headers
 )
 
