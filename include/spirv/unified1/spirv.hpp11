@@ -1396,6 +1396,7 @@ enum class StoreCacheControl : unsigned {
 
 enum class NamedMaximumNumberOfRegisters : unsigned {
     AutoINTEL = 0,
+    Max = 0x7fffffff,
 };
 
 enum class Op : unsigned {
