@@ -1401,6 +1401,11 @@ namespace Spv
             StreamingINTEL = 3,
         }
 
+        [AllowDuplicates, CRepr] public enum NamedMaximumNumberOfRegisters
+        {
+            AutoINTEL = 0,
+        }
+
         [AllowDuplicates, CRepr] public enum Op
         {
             OpNop = 0,

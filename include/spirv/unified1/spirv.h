@@ -1398,6 +1398,10 @@ typedef enum SpvStoreCacheControl_ {
     SpvStoreCacheControlMax = 0x7fffffff,
 } SpvStoreCacheControl;
 
+typedef enum SpvNamedMaximumNumberOfRegisters_ {
+    SpvAutoINTEL = 0,
+} SpvNamedMaximumNumberOfRegisters;
+
 typedef enum SpvOp_ {
     SpvOpNop = 0,
     SpvOpUndef = 1,

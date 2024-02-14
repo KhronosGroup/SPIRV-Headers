@@ -103,6 +103,7 @@ enum OperandClass {
     OperandHostAccessQualifier,
     OperandLoadCacheControl,
     OperandStoreCacheControl,
+    OperandNamedMaximumNumberOfRegisters,
 
     OperandOpcode,
 

@@ -11619,7 +11619,7 @@
           "enumerant" : "NamedMaximumRegistersINTEL",
           "value" : 6463,
           "parameters" : [
-            { "kind" : "LiteralInteger", "name" : "'Named Maximum Number of Registers'" }
+            { "kind" : "NamedMaximumNumberOfRegisters", "name" : "'Named Maximum Number of Registers'" }
           ],
           "capabilities" : [ "RegisterLimitsINTEL" ],
           "version" : "None"
@@ -16720,6 +16720,18 @@
           "enumerant" : "StreamingINTEL",
           "value" : 3,
           "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "NamedMaximumNumberOfRegisters",
+      "enumerants" : [
+        {
+          "enumerant" : "AutoINTEL",
+          "value" : 0,
+          "capabilities" : [ "RegisterLimitsINTEL" ],
           "version" : "None"
         }
       ]

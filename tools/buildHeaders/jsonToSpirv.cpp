@@ -272,6 +272,7 @@ EnumValues InitializationModeQualifierParams;
 EnumValues HostAccessQualifierParams;
 EnumValues LoadCacheControlParams;
 EnumValues StoreCacheControlParams;
+EnumValues NamedMaximumNumberOfRegistersParams;
 
 std::pair<bool, std::string> ReadFile(const std::string& path)
 {
@@ -434,6 +435,8 @@ ClassOptionality ToOperandClassAndOptionality(const std::string& operandKind, co
             type = OperandLoadCacheControl;
         } else if (operandKind == "StoreCacheControl") {
             type = OperandStoreCacheControl;
+        } else if (operandKind == "NamedMaximumNumberOfRegisters") {
+            type = OperandNamedMaximumNumberOfRegisters;
         }
 
         if (type == OperandNone) {
@@ -777,6 +780,8 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             establishOperandClass(enumName, OperandLoadCacheControl, &LoadCacheControlParams, operandEnum, category);
         } else if (enumName == "StoreCacheControl") {
             establishOperandClass(enumName, OperandStoreCacheControl, &StoreCacheControlParams, operandEnum, category);
+        } else if (enumName == "NamedMaximumNumberOfRegisters") {
+            establishOperandClass(enumName, OperandNamedMaximumNumberOfRegisters, &NamedMaximumNumberOfRegistersParams, operandEnum, category);
         }
     }
 

@@ -1394,6 +1394,10 @@ enum StoreCacheControl {
     StoreCacheControlMax = 0x7fffffff,
 };
 
+enum NamedMaximumNumberOfRegisters {
+    AutoINTEL = 0,
+};
+
 enum Op {
     OpNop = 0,
     OpUndef = 1,

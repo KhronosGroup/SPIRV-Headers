@@ -1400,6 +1400,11 @@ namespace Spv
             StreamingINTEL = 3,
         }
 
+        public enum NamedMaximumNumberOfRegisters
+        {
+            AutoINTEL = 0,
+        }
+
         public enum Op
         {
             OpNop = 0,

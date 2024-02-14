@@ -1390,6 +1390,14 @@
                 }
             },
             {
+                "Name": "NamedMaximumNumberOfRegisters",
+                "Type": "Value",
+                "Values":
+                {
+                    "AutoINTEL": 0
+                }
+            },
+            {
                 "Name": "Op",
                 "Type": "Value",
                 "Values":

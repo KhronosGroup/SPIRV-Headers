@@ -1338,6 +1338,10 @@ spv = {
         'StreamingINTEL' : 3,
     },
 
+    'NamedMaximumNumberOfRegisters' : {
+        'AutoINTEL' : 0,
+    },
+
     'Op' : {
         'OpNop' : 0,
         'OpUndef' : 1,

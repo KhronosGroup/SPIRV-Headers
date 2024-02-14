@@ -1403,6 +1403,11 @@ enum StoreCacheControl : uint
     StreamingINTEL = 3,
 }
 
+enum NamedMaximumNumberOfRegisters : uint
+{
+    AutoINTEL = 0,
+}
+
 enum Op : uint
 {
     OpNop = 0,
