@@ -1112,6 +1112,7 @@ spv = {
         'ShaderInvocationReorderNV' : 5383,
         'BindlessTextureNV' : 5390,
         'RayQueryPositionFetchKHR' : 5391,
+        'AtomicFloat16VectorNV' : 5404,
         'RayTracingDisplacementMicromapNV' : 5409,
         'SubgroupShuffleINTEL' : 5568,
         'SubgroupBufferBlockIOINTEL' : 5569,

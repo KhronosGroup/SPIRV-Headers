@@ -6640,7 +6640,7 @@
         { "kind" : "IdMemorySemantics", "name" : "'Semantics'" },
         { "kind" : "IdRef",             "name" : "'Value'" }
       ],
-      "capabilities" : [ "AtomicFloat16MinMaxEXT", "AtomicFloat32MinMaxEXT", "AtomicFloat64MinMaxEXT" ],
+      "capabilities" : [ "AtomicFloat16MinMaxEXT", "AtomicFloat32MinMaxEXT", "AtomicFloat64MinMaxEXT", "AtomicFloat16VectorNV" ],
       "version" : "None"
     },
     {
@@ -6655,7 +6655,7 @@
         { "kind" : "IdMemorySemantics", "name" : "'Semantics'" },
         { "kind" : "IdRef",             "name" : "'Value'" }
       ],
-      "capabilities" : [ "AtomicFloat16MinMaxEXT", "AtomicFloat32MinMaxEXT", "AtomicFloat64MinMaxEXT" ],
+      "capabilities" : [ "AtomicFloat16MinMaxEXT", "AtomicFloat32MinMaxEXT", "AtomicFloat64MinMaxEXT", "AtomicFloat16VectorNV" ],
       "version" : "None"
     },
     {
@@ -9627,7 +9627,7 @@
         { "kind" : "IdMemorySemantics", "name" : "'Semantics'" },
         { "kind" : "IdRef",             "name" : "'Value'" }
       ],
-      "capabilities" : [ "AtomicFloat16AddEXT", "AtomicFloat32AddEXT", "AtomicFloat64AddEXT" ],
+      "capabilities" : [ "AtomicFloat16AddEXT", "AtomicFloat32AddEXT", "AtomicFloat64AddEXT", "AtomicFloat16VectorNV" ],
       "extensions" : [ "SPV_EXT_shader_atomic_float_add" ],
       "version" : "None"
     },
@@ -16041,6 +16041,12 @@
           "value" : 5391,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_KHR_ray_tracing_position_fetch" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AtomicFloat16VectorNV",
+          "value" : 5404,
+          "extensions" : [ "SPV_NV_shader_atomic_fp16_vector" ],
           "version" : "None"
         },
         {

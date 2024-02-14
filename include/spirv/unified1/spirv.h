@@ -1154,6 +1154,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityShaderInvocationReorderNV = 5383,
     SpvCapabilityBindlessTextureNV = 5390,
     SpvCapabilityRayQueryPositionFetchKHR = 5391,
+    SpvCapabilityAtomicFloat16VectorNV = 5404,
     SpvCapabilityRayTracingDisplacementMicromapNV = 5409,
     SpvCapabilitySubgroupShuffleINTEL = 5568,
     SpvCapabilitySubgroupBufferBlockIOINTEL = 5569,
