@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2020 The Khronos Group Inc.
+// Copyright (c) 2014-2024 The Khronos Group Inc.
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and/or associated documentation files (the "Materials"),
@@ -73,6 +73,7 @@ enum SourceLanguage {
     SourceLanguageNZSL = 9,
     SourceLanguageWGSL = 10,
     SourceLanguageSlang = 11,
+    SourceLanguageZig = 12,
     SourceLanguageMax = 0x7fffffff,
 };
 
@@ -183,6 +184,8 @@ enum ExecutionMode {
     ExecutionModeStencilRefUnchangedBackAMD = 5082,
     ExecutionModeStencilRefGreaterBackAMD = 5083,
     ExecutionModeStencilRefLessBackAMD = 5084,
+    ExecutionModeQuadDerivativesKHR = 5088,
+    ExecutionModeRequireFullQuadsKHR = 5089,
     ExecutionModeOutputLinesEXT = 5269,
     ExecutionModeOutputLinesNV = 5269,
     ExecutionModeOutputPrimitivesEXT = 5270,
@@ -207,6 +210,8 @@ enum ExecutionMode {
     ExecutionModeNoGlobalOffsetINTEL = 5895,
     ExecutionModeNumSIMDWorkitemsINTEL = 5896,
     ExecutionModeSchedulerTargetFmaxMhzINTEL = 5903,
+    ExecutionModeMaximallyReconvergesKHR = 6023,
+    ExecutionModeFPFastMathDefault = 6028,
     ExecutionModeStreamingInterfaceINTEL = 6154,
     ExecutionModeRegisterMapInterfaceINTEL = 6160,
     ExecutionModeNamedBarrierCountINTEL = 6417,
@@ -426,8 +431,11 @@ enum FPFastMathModeShift {
     FPFastMathModeNSZShift = 2,
     FPFastMathModeAllowRecipShift = 3,
     FPFastMathModeFastShift = 4,
+    FPFastMathModeAllowContractShift = 16,
     FPFastMathModeAllowContractFastINTELShift = 16,
+    FPFastMathModeAllowReassocShift = 17,
     FPFastMathModeAllowReassocINTELShift = 17,
+    FPFastMathModeAllowTransformShift = 18,
     FPFastMathModeMax = 0x7fffffff,
 };
 
@@ -438,8 +446,11 @@ enum FPFastMathModeMask {
     FPFastMathModeNSZMask = 0x00000004,
     FPFastMathModeAllowRecipMask = 0x00000008,
     FPFastMathModeFastMask = 0x00000010,
+    FPFastMathModeAllowContractMask = 0x00010000,
     FPFastMathModeAllowContractFastINTELMask = 0x00010000,
+    FPFastMathModeAllowReassocMask = 0x00020000,
     FPFastMathModeAllowReassocINTELMask = 0x00020000,
+    FPFastMathModeAllowTransformMask = 0x00040000,
 };
 
 enum FPRoundingMode {
@@ -529,6 +540,7 @@ enum Decoration {
     DecorationNoUnsignedWrap = 4470,
     DecorationWeightTextureQCOM = 4487,
     DecorationBlockMatchTextureQCOM = 4488,
+    DecorationBlockMatchSamplerQCOM = 4499,
     DecorationExplicitInterpAMD = 4999,
     DecorationNodeSharesPayloadLimitsWithAMDX = 5019,
     DecorationNodeMaxPayloadsAMDX = 5020,
@@ -1064,6 +1076,7 @@ enum Capability {
     CapabilityTextureSampleWeightedQCOM = 4484,
     CapabilityTextureBoxFilterQCOM = 4485,
     CapabilityTextureBlockMatchQCOM = 4486,
+    CapabilityTextureBlockMatch2QCOM = 4498,
     CapabilityFloat16ImageAMD = 5008,
     CapabilityImageGatherBiasLodAMD = 5009,
     CapabilityFragmentMaskAMD = 5010,
@@ -1072,6 +1085,7 @@ enum Capability {
     CapabilityInt64ImageEXT = 5016,
     CapabilityShaderClockKHR = 5055,
     CapabilityShaderEnqueueAMDX = 5067,
+    CapabilityQuadControlKHR = 5087,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
     CapabilityGeometryShaderPassthroughNV = 5251,
     CapabilityShaderViewportIndexLayerEXT = 5254,
@@ -1136,6 +1150,7 @@ enum Capability {
     CapabilityShaderInvocationReorderNV = 5383,
     CapabilityBindlessTextureNV = 5390,
     CapabilityRayQueryPositionFetchKHR = 5391,
+    CapabilityAtomicFloat16VectorNV = 5404,
     CapabilityRayTracingDisplacementMicromapNV = 5409,
     CapabilitySubgroupShuffleINTEL = 5568,
     CapabilitySubgroupBufferBlockIOINTEL = 5569,
@@ -1191,6 +1206,7 @@ enum Capability {
     CapabilityCooperativeMatrixKHR = 6022,
     CapabilityBitInstructions = 6025,
     CapabilityGroupNonUniformRotateKHR = 6026,
+    CapabilityFloatControls2 = 6029,
     CapabilityAtomicFloat32AddEXT = 6033,
     CapabilityAtomicFloat64AddEXT = 6034,
     CapabilityLongCompositesINTEL = 6089,
@@ -1766,6 +1782,10 @@ enum Op {
     OpImageBoxFilterQCOM = 4481,
     OpImageBlockMatchSSDQCOM = 4482,
     OpImageBlockMatchSADQCOM = 4483,
+    OpImageBlockMatchWindowSSDQCOM = 4500,
+    OpImageBlockMatchWindowSADQCOM = 4501,
+    OpImageBlockMatchGatherSSDQCOM = 4502,
+    OpImageBlockMatchGatherSADQCOM = 4503,
     OpGroupIAddNonUniformAMD = 5000,
     OpGroupFAddNonUniformAMD = 5001,
     OpGroupFMinNonUniformAMD = 5002,
@@ -1780,6 +1800,8 @@ enum Op {
     OpFinalizeNodePayloadsAMDX = 5075,
     OpFinishWritingNodePayloadAMDX = 5078,
     OpInitializeNodePayloadsAMDX = 5090,
+    OpGroupNonUniformQuadAllKHR = 5110,
+    OpGroupNonUniformQuadAnyKHR = 5111,
     OpHitObjectRecordHitMotionNV = 5249,
     OpHitObjectRecordHitWithIndexMotionNV = 5250,
     OpHitObjectRecordMissMotionNV = 5251,
@@ -2497,6 +2519,10 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpImageBoxFilterQCOM: *hasResult = true; *hasResultType = true; break;
     case OpImageBlockMatchSSDQCOM: *hasResult = true; *hasResultType = true; break;
     case OpImageBlockMatchSADQCOM: *hasResult = true; *hasResultType = true; break;
+    case OpImageBlockMatchWindowSSDQCOM: *hasResult = true; *hasResultType = true; break;
+    case OpImageBlockMatchWindowSADQCOM: *hasResult = true; *hasResultType = true; break;
+    case OpImageBlockMatchGatherSSDQCOM: *hasResult = true; *hasResultType = true; break;
+    case OpImageBlockMatchGatherSADQCOM: *hasResult = true; *hasResultType = true; break;
     case OpGroupIAddNonUniformAMD: *hasResult = true; *hasResultType = true; break;
     case OpGroupFAddNonUniformAMD: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMinNonUniformAMD: *hasResult = true; *hasResultType = true; break;
@@ -2511,6 +2537,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFinalizeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
     case OpFinishWritingNodePayloadAMDX: *hasResult = true; *hasResultType = true; break;
     case OpInitializeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case OpGroupNonUniformQuadAllKHR: *hasResult = true; *hasResultType = true; break;
+    case OpGroupNonUniformQuadAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
