@@ -138,6 +138,11 @@ filegroup(
     srcs = ["include/spirv/unified1/extinst.arm.motion-engine.100.grammar.json"],
 )
 
+filegroup(
+    name = "spirv_ext_inst_non_semantic_graph_debuginfo_grammar_unified1",
+    srcs = ["include/spirv/unified1/extinst.nonsemantic.graph.debuginfo.grammar.json"],
+)
+
 cc_library(
     name = "spirv_common_headers",
     hdrs = [
@@ -152,6 +157,7 @@ cc_library(
         "include/spirv/unified1/NonSemanticClspvReflection.h",
         "include/spirv/unified1/NonSemanticDebugBreak.h",
         "include/spirv/unified1/NonSemanticDebugPrintf.h",
+        "include/spirv/unified1/NonSemanticGraphDebugInfo.h",
         "include/spirv/unified1/NonSemanticShaderDebugInfo.h",
         "include/spirv/unified1/NonSemanticShaderDebugInfo100.h",
         "include/spirv/unified1/NonSemanticVkspReflection.h",
