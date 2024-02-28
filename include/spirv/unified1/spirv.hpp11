@@ -215,6 +215,9 @@ enum class ExecutionMode : unsigned {
     StreamingInterfaceINTEL = 6154,
     RegisterMapInterfaceINTEL = 6160,
     NamedBarrierCountINTEL = 6417,
+    MaximumRegistersINTEL = 6461,
+    MaximumRegistersIdINTEL = 6462,
+    NamedMaximumRegistersINTEL = 6463,
     Max = 0x7fffffff,
 };
 
@@ -1225,6 +1228,7 @@ enum class Capability : unsigned {
     GroupUniformArithmeticKHR = 6400,
     MaskedGatherScatterINTEL = 6427,
     CacheControlsINTEL = 6441,
+    RegisterLimitsINTEL = 6460,
     Max = 0x7fffffff,
 };
 
@@ -1390,6 +1394,11 @@ enum class StoreCacheControl : unsigned {
     WriteThroughINTEL = 1,
     WriteBackINTEL = 2,
     StreamingINTEL = 3,
+    Max = 0x7fffffff,
+};
+
+enum class NamedMaximumNumberOfRegisters : unsigned {
+    AutoINTEL = 0,
     Max = 0x7fffffff,
 };
 

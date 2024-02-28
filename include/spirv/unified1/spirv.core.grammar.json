@@ -11660,6 +11660,33 @@
           ],
           "capabilities" : [ "VectorComputeINTEL" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "MaximumRegistersINTEL",
+          "value" : 6461,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'Number of Registers'" }
+          ],
+          "capabilities" : [ "RegisterLimitsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MaximumRegistersIdINTEL",
+          "value" : 6462,
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'Number of Registers'" }
+          ],
+          "capabilities" : [ "RegisterLimitsINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "NamedMaximumRegistersINTEL",
+          "value" : 6463,
+          "parameters" : [
+            { "kind" : "NamedMaximumNumberOfRegisters", "name" : "'Named Maximum Number of Registers'" }
+          ],
+          "capabilities" : [ "RegisterLimitsINTEL" ],
+          "version" : "None"
         }
       ]
     },
@@ -16497,6 +16524,12 @@
           "value" : 6441,
           "extensions" : [ "SPV_INTEL_cache_controls" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "RegisterLimitsINTEL",
+          "value" : 6460,
+          "extensions" : [ "SPV_INTEL_maximum_registers" ],
+          "version" : "None"
         }
       ]
     },
@@ -16730,6 +16763,18 @@
           "enumerant" : "StreamingINTEL",
           "value" : 3,
           "capabilities" : [ "CacheControlsINTEL" ],
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "NamedMaximumNumberOfRegisters",
+      "enumerants" : [
+        {
+          "enumerant" : "AutoINTEL",
+          "value" : 0,
+          "capabilities" : [ "RegisterLimitsINTEL" ],
           "version" : "None"
         }
       ]

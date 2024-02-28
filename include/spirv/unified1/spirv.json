@@ -233,7 +233,10 @@
                     "FPFastMathDefault": 6028,
                     "StreamingInterfaceINTEL": 6154,
                     "RegisterMapInterfaceINTEL": 6160,
-                    "NamedBarrierCountINTEL": 6417
+                    "NamedBarrierCountINTEL": 6417,
+                    "MaximumRegistersINTEL": 6461,
+                    "MaximumRegistersIdINTEL": 6462,
+                    "NamedMaximumRegistersINTEL": 6463
                 }
             },
             {
@@ -1201,7 +1204,8 @@
                     "GlobalVariableFPGADecorationsINTEL": 6189,
                     "GroupUniformArithmeticKHR": 6400,
                     "MaskedGatherScatterINTEL": 6427,
-                    "CacheControlsINTEL": 6441
+                    "CacheControlsINTEL": 6441,
+                    "RegisterLimitsINTEL": 6460
                 }
             },
             {
@@ -1386,6 +1390,14 @@
                     "WriteThroughINTEL": 1,
                     "WriteBackINTEL": 2,
                     "StreamingINTEL": 3
+                }
+            },
+            {
+                "Name": "NamedMaximumNumberOfRegisters",
+                "Type": "Value",
+                "Values":
+                {
+                    "AutoINTEL": 0
                 }
             },
             {
