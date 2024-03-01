@@ -1160,6 +1160,7 @@ namespace Spv
             RayQueryPositionFetchKHR = 5391,
             AtomicFloat16VectorNV = 5404,
             RayTracingDisplacementMicromapNV = 5409,
+            RawAccessChainsNV = 5414,
             SubgroupShuffleINTEL = 5568,
             SubgroupBufferBlockIOINTEL = 5569,
             SubgroupImageBlockIOINTEL = 5570,
@@ -1407,6 +1408,19 @@ namespace Spv
         [AllowDuplicates, CRepr] public enum NamedMaximumNumberOfRegisters
         {
             AutoINTEL = 0,
+        }
+
+        [AllowDuplicates, CRepr] public enum RawAccessChainOperandsShift
+        {
+            RobustnessPerComponentNV = 0,
+            RobustnessPerElementNV = 1,
+        }
+
+        [AllowDuplicates, CRepr] public enum RawAccessChainOperandsMask
+        {
+            MaskNone = 0,
+            RobustnessPerComponentNV = 0x00000001,
+            RobustnessPerElementNV = 0x00000002,
         }
 
         [AllowDuplicates, CRepr] public enum Op
@@ -1887,6 +1901,7 @@ namespace Spv
             OpConvertUToSampledImageNV = 5395,
             OpConvertSampledImageToUNV = 5396,
             OpSamplerImageAddressingModeNV = 5397,
+            OpRawAccessChainNV = 5398,
             OpSubgroupShuffleINTEL = 5571,
             OpSubgroupShuffleDownINTEL = 5572,
             OpSubgroupShuffleUpINTEL = 5573,
