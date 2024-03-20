@@ -92,7 +92,8 @@
         <id value="39"  vendor="SirLynix" tool="Nazara ShaderLang Compiler" comment="Contact Jérôme Leclercq, https://github.com/NazaraEngine/ShaderLang"/>
         <id value="40"  vendor="NVIDIA" tool="Slang Compiler" comment="Contact Theresa Foley, tfoley@nvidia.com, https://github.com/shader-slang/slang/"/>
         <id value="41"  vendor="Zig Software Foundation" tool="Zig Compiler" comment="Contact Robin Voetter, https://github.com/Snektron"/>
-        <unused start="42" end="0xFFFF" comment="Tool ID range reservable for future use by vendors"/>
+        <id value="42"  vendor="Rendong Liang" tool="spq" comment="Contact Rendong Liang, admin@penguinliong.moe, https://github.com/PENGUINLIONG/spq-rs"/>
+        <unused start="43" end="0xFFFF" comment="Tool ID range reservable for future use by vendors"/>
     </ids>
 
     <!-- SECTION: SPIR-V Opcodes and Enumerants -->
