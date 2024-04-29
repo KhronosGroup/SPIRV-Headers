@@ -211,6 +211,9 @@ namespace Spv
             StreamingInterfaceINTEL = 6154,
             RegisterMapInterfaceINTEL = 6160,
             NamedBarrierCountINTEL = 6417,
+            MaximumRegistersINTEL = 6461,
+            MaximumRegistersIdINTEL = 6462,
+            NamedMaximumRegistersINTEL = 6463,
         }
 
         public enum StorageClass
@@ -1156,6 +1159,7 @@ namespace Spv
             RayQueryPositionFetchKHR = 5391,
             AtomicFloat16VectorNV = 5404,
             RayTracingDisplacementMicromapNV = 5409,
+            RawAccessChainsNV = 5414,
             SubgroupShuffleINTEL = 5568,
             SubgroupBufferBlockIOINTEL = 5569,
             SubgroupImageBlockIOINTEL = 5570,
@@ -1229,6 +1233,7 @@ namespace Spv
             GroupUniformArithmeticKHR = 6400,
             MaskedGatherScatterINTEL = 6427,
             CacheControlsINTEL = 6441,
+            RegisterLimitsINTEL = 6460,
         }
 
         public enum RayFlagsShift
@@ -1397,6 +1402,24 @@ namespace Spv
             WriteThroughINTEL = 1,
             WriteBackINTEL = 2,
             StreamingINTEL = 3,
+        }
+
+        public enum NamedMaximumNumberOfRegisters
+        {
+            AutoINTEL = 0,
+        }
+
+        public enum RawAccessChainOperandsShift
+        {
+            RobustnessPerComponentNV = 0,
+            RobustnessPerElementNV = 1,
+        }
+
+        public enum RawAccessChainOperandsMask
+        {
+            MaskNone = 0,
+            RobustnessPerComponentNV = 0x00000001,
+            RobustnessPerElementNV = 0x00000002,
         }
 
         public enum Op
@@ -1877,6 +1900,7 @@ namespace Spv
             OpConvertUToSampledImageNV = 5395,
             OpConvertSampledImageToUNV = 5396,
             OpSamplerImageAddressingModeNV = 5397,
+            OpRawAccessChainNV = 5398,
             OpSubgroupShuffleINTEL = 5571,
             OpSubgroupShuffleDownINTEL = 5572,
             OpSubgroupShuffleUpINTEL = 5573,

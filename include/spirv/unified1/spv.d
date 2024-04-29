@@ -214,6 +214,9 @@ enum ExecutionMode : uint
     StreamingInterfaceINTEL = 6154,
     RegisterMapInterfaceINTEL = 6160,
     NamedBarrierCountINTEL = 6417,
+    MaximumRegistersINTEL = 6461,
+    MaximumRegistersIdINTEL = 6462,
+    NamedMaximumRegistersINTEL = 6463,
 }
 
 enum StorageClass : uint
@@ -1159,6 +1162,7 @@ enum Capability : uint
     RayQueryPositionFetchKHR = 5391,
     AtomicFloat16VectorNV = 5404,
     RayTracingDisplacementMicromapNV = 5409,
+    RawAccessChainsNV = 5414,
     SubgroupShuffleINTEL = 5568,
     SubgroupBufferBlockIOINTEL = 5569,
     SubgroupImageBlockIOINTEL = 5570,
@@ -1232,6 +1236,7 @@ enum Capability : uint
     GroupUniformArithmeticKHR = 6400,
     MaskedGatherScatterINTEL = 6427,
     CacheControlsINTEL = 6441,
+    RegisterLimitsINTEL = 6460,
 }
 
 enum RayFlagsShift : uint
@@ -1400,6 +1405,24 @@ enum StoreCacheControl : uint
     WriteThroughINTEL = 1,
     WriteBackINTEL = 2,
     StreamingINTEL = 3,
+}
+
+enum NamedMaximumNumberOfRegisters : uint
+{
+    AutoINTEL = 0,
+}
+
+enum RawAccessChainOperandsShift : uint
+{
+    RobustnessPerComponentNV = 0,
+    RobustnessPerElementNV = 1,
+}
+
+enum RawAccessChainOperandsMask : uint
+{
+    MaskNone = 0,
+    RobustnessPerComponentNV = 0x00000001,
+    RobustnessPerElementNV = 0x00000002,
 }
 
 enum Op : uint
@@ -1880,6 +1903,7 @@ enum Op : uint
     OpConvertUToSampledImageNV = 5395,
     OpConvertSampledImageToUNV = 5396,
     OpSamplerImageAddressingModeNV = 5397,
+    OpRawAccessChainNV = 5398,
     OpSubgroupShuffleINTEL = 5571,
     OpSubgroupShuffleDownINTEL = 5572,
     OpSubgroupShuffleUpINTEL = 5573,

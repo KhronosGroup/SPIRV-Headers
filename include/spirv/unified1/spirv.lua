@@ -202,6 +202,9 @@ spv = {
         StreamingInterfaceINTEL = 6154,
         RegisterMapInterfaceINTEL = 6160,
         NamedBarrierCountINTEL = 6417,
+        MaximumRegistersINTEL = 6461,
+        MaximumRegistersIdINTEL = 6462,
+        NamedMaximumRegistersINTEL = 6463,
     },
 
     StorageClass = {
@@ -1114,6 +1117,7 @@ spv = {
         RayQueryPositionFetchKHR = 5391,
         AtomicFloat16VectorNV = 5404,
         RayTracingDisplacementMicromapNV = 5409,
+        RawAccessChainsNV = 5414,
         SubgroupShuffleINTEL = 5568,
         SubgroupBufferBlockIOINTEL = 5569,
         SubgroupImageBlockIOINTEL = 5570,
@@ -1187,6 +1191,7 @@ spv = {
         GroupUniformArithmeticKHR = 6400,
         MaskedGatherScatterINTEL = 6427,
         CacheControlsINTEL = 6441,
+        RegisterLimitsINTEL = 6460,
     },
 
     RayFlagsShift = {
@@ -1335,6 +1340,21 @@ spv = {
         WriteThroughINTEL = 1,
         WriteBackINTEL = 2,
         StreamingINTEL = 3,
+    },
+
+    NamedMaximumNumberOfRegisters = {
+        AutoINTEL = 0,
+    },
+
+    RawAccessChainOperandsShift = {
+        RobustnessPerComponentNV = 0,
+        RobustnessPerElementNV = 1,
+    },
+
+    RawAccessChainOperandsMask = {
+        MaskNone = 0,
+        RobustnessPerComponentNV = 0x00000001,
+        RobustnessPerElementNV = 0x00000002,
     },
 
     Op = {
@@ -1814,6 +1834,7 @@ spv = {
         OpConvertUToSampledImageNV = 5395,
         OpConvertSampledImageToUNV = 5396,
         OpSamplerImageAddressingModeNV = 5397,
+        OpRawAccessChainNV = 5398,
         OpSubgroupShuffleINTEL = 5571,
         OpSubgroupShuffleDownINTEL = 5572,
         OpSubgroupShuffleUpINTEL = 5573,
