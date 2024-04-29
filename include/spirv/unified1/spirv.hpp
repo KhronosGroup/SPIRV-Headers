@@ -2938,6 +2938,7 @@ inline RawAccessChainOperandsMask operator&(RawAccessChainOperandsMask a, RawAcc
 inline RawAccessChainOperandsMask operator^(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) ^ unsigned(b)); }
 inline RawAccessChainOperandsMask operator~(RawAccessChainOperandsMask a) { return RawAccessChainOperandsMask(~unsigned(a)); }
 #endif
+
 }  // end namespace spv
 
 #endif  // #ifndef spirv_HPP
