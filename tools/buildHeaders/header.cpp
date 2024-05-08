@@ -98,7 +98,7 @@ namespace {
         virtual void printEpilogue(std::ostream&) const { }
         virtual void printMeta(std::ostream&)     const;
         virtual void printTypes(std::ostream&)    const { }
-        virtual void printHasResultType(std::ostream&)     const { };
+        virtual void printUtility(std::ostream&)     const { };
 
         virtual std::string escapeComment(const std::string& s) const;
 
@@ -369,7 +369,7 @@ IN THE MATERIALS.
         printTypes(out);
         printMeta(out);
         printDefs(out);
-        printHasResultType(out);
+        printUtility(out);
         printEpilogue(out);
     }
 
@@ -503,8 +503,20 @@ IN THE MATERIALS.
 
         virtual std::string fmtEnumUse(const std::string& opPrefix, const std::string& name) const { return pre() + name; }
 
-        virtual void printHasResultType(std::ostream& out) const override
+        virtual void printUtility(std::ostream& out) const override
         {
+            out << "#ifdef SPV_ENABLE_UTILITY_CODE" << std::endl;
+            out << "#ifndef __cplusplus" << std::endl;
+            out << "#include <stdbool.h>" << std::endl;
+            out << "#endif" << std::endl;
+
+            printHasResultType(out);
+            printStringFunctions(out);
+
+            out << "#endif /* SPV_ENABLE_UTILITY_CODE */" << std::endl << std::endl;
+        }
+
+        void printHasResultType(std::ostream& out) const {
             const Json::Value& enums = spvRoot["spv"]["enum"];
 
             std::set<unsigned> seenValues;
@@ -515,10 +527,7 @@ IN THE MATERIALS.
                     continue;
                 }
 
-                out << "#ifdef SPV_ENABLE_UTILITY_CODE" << std::endl;
-                out << "#ifndef __cplusplus" << std::endl;
-                out << "#include <stdbool.h>" << std::endl;
-                out << "#endif" << std::endl;
+
                 out << "inline void " << pre() << "HasResultAndType(" << pre() << opName << " opcode, bool *hasResult, bool *hasResultType) {" << std::endl;
                 out << "    *hasResult = *hasResultType = false;" << std::endl;
                 out << "    switch (opcode) {" << std::endl;
@@ -539,7 +548,43 @@ IN THE MATERIALS.
 
                 out << "    }" << std::endl;
                 out << "}" << std::endl;
-                out << "#endif /* SPV_ENABLE_UTILITY_CODE */" << std::endl << std::endl;
+            }
+        }
+
+        void printStringFunctions(std::ostream& out) const {
+            const Json::Value& enums = spvRoot["spv"]["enum"];
+
+            for (auto it = enums.begin(); it != enums.end(); ++it) {
+                const auto type   = (*it)["Type"].asString();
+                // Skip bitmasks
+                if (type == "Bit") {
+                    continue;
+                }
+                const auto name   = (*it)["Name"].asString();
+                const auto sorted = getSortedVals((*it)["Values"]);
+
+                std::set<unsigned> seenValues;
+                std::string fullName = pre() + name;
+
+                out << "inline const char* " << fullName << "ToString(" << fullName << " value) {" << std::endl;
+                out << "    switch (value) {" << std::endl;
+                for (const auto& v : sorted) {
+                    // Filter out duplicate enum values, which would break the switch statement.
+                    // These are probably just extension enums promoted to core.
+                    if (seenValues.count(v.first)) {
+                        continue;
+                    }
+                    seenValues.insert(v.first);
+
+                    std::string label{name + v.second};
+                    if (name == "Op") {
+                        label = v.second;
+                    }
+                    out << "    " << "case " << pre() << label << ": return " << "\"" << v.second << "\";" << std::endl;
+                }
+                out << "    default: return \"Unknown\";" << std::endl;
+                out << "    }" << std::endl;
+                out << "}" << std::endl << std::endl;
             }
         }
     };
