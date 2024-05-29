@@ -3207,6 +3207,7 @@ inline const char* SpvImageChannelOrderToString(SpvImageChannelOrder value) {
     CASE(sBGRA)
     CASE(ABGR)
     default: return "Unknown";
+#undef CASE
     }
 }
 
@@ -3263,9 +3264,9 @@ inline const char* SpvLinkageTypeToString(SpvLinkageType value) {
 inline const char* SpvAccessQualifierToString(SpvAccessQualifier value) {
     switch (value) {
 #define CASE(X) case SpvAccessQualifier##X: return #X;
-    case SpvAccessQualifierReadOnly: return "ReadOnly";
-    case SpvAccessQualifierWriteOnly: return "WriteOnly";
-    case SpvAccessQualifierReadWrite: return "ReadWrite";
+    CASE(ReadOnly)
+    CASE(WriteOnly)
+    CASE(ReadWrite)
     default: return "Unknown";
 #undef CASE
     }
