@@ -4855,6 +4855,42 @@
       "version" : "None"
     },
     {
+      "opname" : "OpConstantCompositeReplicateEXT",
+      "class"  : "Constant-Creation",
+      "opcode" : 4461,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "'Value'" }
+      ],
+      "capabilities" : [ "ReplicatedCompositesEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSpecConstantCompositeReplicateEXT",
+      "class"  : "Constant-Creation",
+      "opcode" : 4462,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "'Value'" }
+      ],
+      "capabilities" : [ "ReplicatedCompositesEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCompositeConstructReplicateEXT",
+      "class"  : "Composite",
+      "opcode" : 4463,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "'Value'" }
+      ],
+      "capabilities" : [ "ReplicatedCompositesEXT" ],
+      "version" : "None"
+    },
+    {
         "opname" : "OpTypeRayQueryKHR",
         "class" : "Type-Declaration",
         "opcode" : 4472,
@@ -16440,6 +16476,12 @@
           "enumerant" : "CooperativeMatrixKHR",
           "value" : 6022,
           "extensions" : [ "SPV_KHR_cooperative_matrix" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ReplicatedCompositesEXT",
+          "value" : 6024,
+          "extensions" : [ "SPV_EXT_replicated_composites" ],
           "version" : "None"
         },
         {

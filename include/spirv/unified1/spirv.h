@@ -1212,6 +1212,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityDotProductKHR = 6019,
     SpvCapabilityRayCullMaskKHR = 6020,
     SpvCapabilityCooperativeMatrixKHR = 6022,
+    SpvCapabilityReplicatedCompositesEXT = 6024,
     SpvCapabilityBitInstructions = 6025,
     SpvCapabilityGroupNonUniformRotateKHR = 6026,
     SpvCapabilityFloatControls2 = 6029,
@@ -1797,6 +1798,9 @@ typedef enum SpvOp_ {
     SpvOpCooperativeMatrixStoreKHR = 4458,
     SpvOpCooperativeMatrixMulAddKHR = 4459,
     SpvOpCooperativeMatrixLengthKHR = 4460,
+    SpvOpConstantCompositeReplicateEXT = 4461,
+    SpvOpSpecConstantCompositeReplicateEXT = 4462,
+    SpvOpCompositeConstructReplicateEXT = 4463,
     SpvOpTypeRayQueryKHR = 4472,
     SpvOpRayQueryInitializeKHR = 4473,
     SpvOpRayQueryTerminateKHR = 4474,
@@ -2535,6 +2539,9 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpCooperativeMatrixStoreKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeMatrixMulAddKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixLengthKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpConstantCompositeReplicateEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpSpecConstantCompositeReplicateEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCompositeConstructReplicateEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpTypeRayQueryKHR: *hasResult = true; *hasResultType = false; break;
     case SpvOpRayQueryInitializeKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpRayQueryTerminateKHR: *hasResult = false; *hasResultType = false; break;
@@ -3772,6 +3779,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityDotProduct: return "DotProduct";
     case SpvCapabilityRayCullMaskKHR: return "RayCullMaskKHR";
     case SpvCapabilityCooperativeMatrixKHR: return "CooperativeMatrixKHR";
+    case SpvCapabilityReplicatedCompositesEXT: return "ReplicatedCompositesEXT";
     case SpvCapabilityBitInstructions: return "BitInstructions";
     case SpvCapabilityGroupNonUniformRotateKHR: return "GroupNonUniformRotateKHR";
     case SpvCapabilityFloatControls2: return "FloatControls2";
@@ -4306,6 +4314,9 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpCooperativeMatrixStoreKHR: return "OpCooperativeMatrixStoreKHR";
     case SpvOpCooperativeMatrixMulAddKHR: return "OpCooperativeMatrixMulAddKHR";
     case SpvOpCooperativeMatrixLengthKHR: return "OpCooperativeMatrixLengthKHR";
+    case SpvOpConstantCompositeReplicateEXT: return "OpConstantCompositeReplicateEXT";
+    case SpvOpSpecConstantCompositeReplicateEXT: return "OpSpecConstantCompositeReplicateEXT";
+    case SpvOpCompositeConstructReplicateEXT: return "OpCompositeConstructReplicateEXT";
     case SpvOpTypeRayQueryKHR: return "OpTypeRayQueryKHR";
     case SpvOpRayQueryInitializeKHR: return "OpRayQueryInitializeKHR";
     case SpvOpRayQueryTerminateKHR: return "OpRayQueryTerminateKHR";
