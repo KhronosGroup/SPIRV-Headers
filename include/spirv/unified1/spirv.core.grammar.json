@@ -4856,7 +4856,7 @@
     },
     {
       "opname" : "OpConstantCompositeReplicateEXT",
-      "class"  : "Composite",
+      "class"  : "Constant-Creation",
       "opcode" : 4461,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -4868,7 +4868,7 @@
     },
     {
       "opname" : "OpSpecConstantCompositeReplicateEXT",
-      "class"  : "Composite",
+      "class"  : "Constant-Creation",
       "opcode" : 4462,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -4880,7 +4880,7 @@
     },
     {
       "opname" : "OpCompositeConstructReplicateEXT",
-      "class"  : "Constant-Creation",
+      "class"  : "Composite",
       "opcode" : 4463,
       "operands" : [
         { "kind" : "IdResultType" },
