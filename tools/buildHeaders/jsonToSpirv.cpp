@@ -482,7 +482,8 @@ unsigned int NumberStringToBit(const std::string& str)
 bool SuffixComparison(const std::string& prev, bool prevCore,
                       const std::string& cur, bool curCore)
 {
-  if (prev == cur) return true;
+  // Duplicate entry
+  if (prev == cur) return false;
 
   if (prevCore) return true;
   if (curCore) return false;
