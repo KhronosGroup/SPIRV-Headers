@@ -15433,6 +15433,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "CooperativeMatrixLayoutsARM",
+          "value" : 4201,
+          "extensions" : [ "SPV_ARM_cooperative_matrix_layouts" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "FragmentShadingRateKHR",
           "value" : 4422,
           "capabilities" : [ "Shader" ],
@@ -16746,6 +16752,16 @@
         {
           "enumerant" : "ColumnMajorKHR",
           "value" : 1,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RowBlockedInterleavedARM",
+          "value" : 4202,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ColumnBlockedInterleavedARM",
+          "value" : 4203,
           "version" : "None"
         }
       ]
