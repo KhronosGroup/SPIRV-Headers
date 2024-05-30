@@ -266,7 +266,7 @@
         { "kind" : "IdRef",                 "quantifier" : "*", "name" : "'Operand 1', +\n'Operand 2', +\n..." }
       ],
       "extensions" : [ "SPV_KHR_relaxed_extended_instruction" ],
-      "version": "1.0"
+      "version": "None"
     },
     {
       "opname" : "OpMemoryModel",
