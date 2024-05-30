@@ -1776,6 +1776,7 @@ typedef enum SpvOp_ {
     SpvOpSubgroupAllEqualKHR = 4430,
     SpvOpGroupNonUniformRotateKHR = 4431,
     SpvOpSubgroupReadInvocationKHR = 4432,
+    SpvOpExtInstWithForwardRefs = 4433,
     SpvOpTraceRayKHR = 4445,
     SpvOpExecuteCallableKHR = 4446,
     SpvOpConvertUToAccelerationStructureKHR = 4447,
@@ -2523,6 +2524,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupNonUniformRotateKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupReadInvocationKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpExtInstWithForwardRefs: *hasResult = true; *hasResultType = true; break;
     case SpvOpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
@@ -4298,6 +4300,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpSubgroupAllEqualKHR: return "OpSubgroupAllEqualKHR";
     case SpvOpGroupNonUniformRotateKHR: return "OpGroupNonUniformRotateKHR";
     case SpvOpSubgroupReadInvocationKHR: return "OpSubgroupReadInvocationKHR";
+    case SpvOpExtInstWithForwardRefs: return "OpExtInstWithForwardRefs";
     case SpvOpTraceRayKHR: return "OpTraceRayKHR";
     case SpvOpExecuteCallableKHR: return "OpExecuteCallableKHR";
     case SpvOpConvertUToAccelerationStructureKHR: return "OpConvertUToAccelerationStructureKHR";

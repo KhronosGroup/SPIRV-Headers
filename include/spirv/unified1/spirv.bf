@@ -1781,6 +1781,7 @@ namespace Spv
             OpSubgroupAllEqualKHR = 4430,
             OpGroupNonUniformRotateKHR = 4431,
             OpSubgroupReadInvocationKHR = 4432,
+            OpExtInstWithForwardRefs = 4433,
             OpTraceRayKHR = 4445,
             OpExecuteCallableKHR = 4446,
             OpConvertUToAccelerationStructureKHR = 4447,

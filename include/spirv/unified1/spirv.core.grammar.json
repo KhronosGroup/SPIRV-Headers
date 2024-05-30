@@ -4540,6 +4540,20 @@
       "version" : "None"
     },
     {
+      "opname" : "OpExtInstWithForwardRefs",
+      "class"  : "Extension",
+      "opcode" : 4433,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                                     "name" : "'Set'" },
+        { "kind" : "LiteralExtInstInteger",                     "name" : "'Instruction'" },
+        { "kind" : "IdRef",                 "quantifier" : "*", "name" : "'Operand 1', +\n'Operand 2', +\n..." }
+      ],
+      "extensions" : [ "SPV_KHR_relaxed_extended_instruction" ],
+      "version": "None"
+    },
+    {
       "opname" : "OpTraceRayKHR",
       "class"  : "Reserved",
       "opcode" : 4445,

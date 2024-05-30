@@ -1772,6 +1772,7 @@ enum Op {
     OpSubgroupAllEqualKHR = 4430,
     OpGroupNonUniformRotateKHR = 4431,
     OpSubgroupReadInvocationKHR = 4432,
+    OpExtInstWithForwardRefs = 4433,
     OpTraceRayKHR = 4445,
     OpExecuteCallableKHR = 4446,
     OpConvertUToAccelerationStructureKHR = 4447,
@@ -2519,6 +2520,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupNonUniformRotateKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupReadInvocationKHR: *hasResult = true; *hasResultType = true; break;
+    case OpExtInstWithForwardRefs: *hasResult = true; *hasResultType = true; break;
     case OpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
     case OpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;
     case OpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
@@ -4294,6 +4296,7 @@ inline const char* OpToString(Op value) {
     case OpSubgroupAllEqualKHR: return "OpSubgroupAllEqualKHR";
     case OpGroupNonUniformRotateKHR: return "OpGroupNonUniformRotateKHR";
     case OpSubgroupReadInvocationKHR: return "OpSubgroupReadInvocationKHR";
+    case OpExtInstWithForwardRefs: return "OpExtInstWithForwardRefs";
     case OpTraceRayKHR: return "OpTraceRayKHR";
     case OpExecuteCallableKHR: return "OpExecuteCallableKHR";
     case OpConvertUToAccelerationStructureKHR: return "OpConvertUToAccelerationStructureKHR";
