@@ -2177,7 +2177,6 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpExtension: *hasResult = false; *hasResultType = false; break;
     case SpvOpExtInstImport: *hasResult = true; *hasResultType = false; break;
     case SpvOpExtInst: *hasResult = true; *hasResultType = true; break;
-    case SpvOpExtInstWithForwardRefs: *hasResult = true; *hasResultType = true; break;
     case SpvOpMemoryModel: *hasResult = false; *hasResultType = false; break;
     case SpvOpEntryPoint: *hasResult = false; *hasResultType = false; break;
     case SpvOpExecutionMode: *hasResult = false; *hasResultType = false; break;
@@ -2521,6 +2520,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupNonUniformRotateKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupReadInvocationKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpExtInstWithForwardRefs: *hasResult = true; *hasResultType = true; break;
     case SpvOpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
@@ -4292,6 +4292,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpSubgroupAllEqualKHR: return "OpSubgroupAllEqualKHR";
     case SpvOpGroupNonUniformRotateKHR: return "OpGroupNonUniformRotateKHR";
     case SpvOpSubgroupReadInvocationKHR: return "OpSubgroupReadInvocationKHR";
+    case SpvOpExtInstWithForwardRefs: return "OpExtInstWithForwardRefs";
     case SpvOpTraceRayKHR: return "OpTraceRayKHR";
     case SpvOpExecuteCallableKHR: return "OpExecuteCallableKHR";
     case SpvOpConvertUToAccelerationStructureKHR: return "OpConvertUToAccelerationStructureKHR";

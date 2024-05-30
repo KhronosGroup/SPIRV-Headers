@@ -2173,7 +2173,6 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpExtension: *hasResult = false; *hasResultType = false; break;
     case Op::OpExtInstImport: *hasResult = true; *hasResultType = false; break;
     case Op::OpExtInst: *hasResult = true; *hasResultType = true; break;
-    case Op::OpExtInstWithForwardRefs: *hasResult = true; *hasResultType = true; break;
     case Op::OpMemoryModel: *hasResult = false; *hasResultType = false; break;
     case Op::OpEntryPoint: *hasResult = false; *hasResultType = false; break;
     case Op::OpExecutionMode: *hasResult = false; *hasResultType = false; break;
@@ -2517,6 +2516,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupNonUniformRotateKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupReadInvocationKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpExtInstWithForwardRefs: *hasResult = true; *hasResultType = true; break;
     case Op::OpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
     case Op::OpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;
     case Op::OpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
@@ -4288,6 +4288,7 @@ inline const char* OpToString(Op value) {
     case OpSubgroupAllEqualKHR: return "OpSubgroupAllEqualKHR";
     case OpGroupNonUniformRotateKHR: return "OpGroupNonUniformRotateKHR";
     case OpSubgroupReadInvocationKHR: return "OpSubgroupReadInvocationKHR";
+    case OpExtInstWithForwardRefs: return "OpExtInstWithForwardRefs";
     case OpTraceRayKHR: return "OpTraceRayKHR";
     case OpExecuteCallableKHR: return "OpExecuteCallableKHR";
     case OpConvertUToAccelerationStructureKHR: return "OpConvertUToAccelerationStructureKHR";
