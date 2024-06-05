@@ -471,6 +471,37 @@ unsigned int NumberStringToBit(const std::string& str)
     return bit;
 }
 
+// Given two pairs (name and in core) compares if the order is correct for naming
+// conventions. The conventions are:
+// * Core
+// * KHR
+// * EXT
+// * Vendor (no preference between vendors)
+//
+// Returns true if the order is valid.
+bool SuffixComparison(const std::string& prev, bool prevCore,
+                      const std::string& cur, bool curCore)
+{
+  // Duplicate entry
+  if (prev == cur) return false;
+
+  if (prevCore) return true;
+  if (curCore) return false;
+
+  // Both are suffixed names.
+  const bool prevKHR = prev.substr(prev.size() - 3) == "KHR";
+  const bool prevEXT = prev.substr(prev.size() - 3) == "EXT";
+  const bool curKHR = cur.substr(cur.size() - 3) == "KHR";
+  const bool curEXT = cur.substr(cur.size() - 3) == "EXT";
+
+  if (prevKHR) return true;
+  if (curKHR) return false;
+  if (prevEXT) return true;
+  if (curEXT) return false;
+
+  return true;
+}
+
 void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
 {
     // only do this once.
@@ -547,6 +578,8 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
     // process the instructions
     const Json::Value insts = root["instructions"];
     unsigned maxOpcode = 0;
+    std::string maxName = "";
+    bool maxCore = false;
     bool firstOpcode = true;
     for (const auto& inst : insts) {
         const auto printingClass = inst["class"].asString();
@@ -565,8 +598,11 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         }
         const auto opcode = inst["opcode"].asUInt();
         const std::string name = inst["opname"].asString();
+        std::string version = inst["version"].asString();
         if (firstOpcode) {
           maxOpcode = opcode;
+          maxName = name;
+          maxCore = version != "None";
           firstOpcode = false;
         } else {
           if (maxOpcode > opcode) {
@@ -574,12 +610,20 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
                       << " is out of order. It follows the instruction with opcode " << maxOpcode
                       << std::endl;
             std::exit(1);
+          } else if (maxOpcode == opcode &&
+                     !SuffixComparison(maxName, maxCore, name,
+                                       version != "None")) {
+            std::cerr << "Error: " << name
+                      << " is out of order. It follows alias " << maxName
+                      << std::endl;
+            std::exit(1);
           } else {
             maxOpcode = opcode;
+            maxName = name;
+            maxCore = version != "None";
           }
         }
         EnumCaps caps = getCaps(inst);
-        std::string version = inst["version"].asString();
         std::string lastVersion = inst["lastVersion"].asString();
         Extensions exts = getExts(inst);
         OperandParameters operands;
@@ -625,28 +669,41 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         };
 
         unsigned maxValue = 0;
+        std::string maxName = "";
+        bool maxCore = false;
         bool firstValue = true;
         for (const auto& enumerant : source["enumerants"]) {
             unsigned value;
             bool skip_zero_in_bitfield;
             std::tie(value, skip_zero_in_bitfield) = getValue(enumerant);
+            std::string name = enumerant["enumerant"].asString();
+            std::string version = enumerant["version"].asString();
             if (skip_zero_in_bitfield)
                 continue;
             if (firstValue) {
               maxValue = value;
+              maxName = name;
+              maxCore = version != "None";
               firstValue = false;
             } else {
               if (maxValue > value) {
-                std::cerr << "Error: " << source["kind"] << " enumerant " << enumerant["enumerant"]
+                std::cerr << "Error: " << source["kind"] << " enumerant " << name
                           << " is out of order. It has value " <<  value
                           << " but follows the enumerant with value " << maxValue << std::endl;
                 std::exit(1);
+              } else if (maxValue == value &&
+                         !SuffixComparison(maxName, maxCore, name,
+                                           version != "None")) {
+                std::cerr << "Error: " << source["kind"] << " enumerant " << name
+                          << " is out of order. It follows alias " << maxName << std::endl;
+                std::exit(1);
               } else {
                 maxValue = value;
+                maxName = name;
+                maxCore = version != "None";
               }
             }
             EnumCaps caps(getCaps(enumerant));
-            std::string version = enumerant["version"].asString();
             std::string lastVersion = enumerant["lastVersion"].asString();
             Extensions exts(getExts(enumerant));
             OperandParameters params;

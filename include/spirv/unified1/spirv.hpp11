@@ -2611,14 +2611,14 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpWritePackedPrimitiveIndices4x8NV: *hasResult = false; *hasResultType = false; break;
     case Op::OpFetchMicroTriangleVertexPositionNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
-    case Op::OpReportIntersectionNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpReportIntersectionKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpIgnoreIntersectionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpTerminateRayNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpTraceNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpTraceMotionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpTraceRayMotionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpRayQueryGetIntersectionTriangleVertexPositionsKHR: *hasResult = true; *hasResultType = true; break;
-    case Op::OpTypeAccelerationStructureNV: *hasResult = true; *hasResultType = false; break;
+    case Op::OpTypeAccelerationStructureKHR: *hasResult = true; *hasResultType = false; break;
     case Op::OpExecuteCallableNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpTypeCooperativeMatrixNV: *hasResult = true; *hasResultType = false; break;
     case Op::OpCooperativeMatrixLoadNV: *hasResult = true; *hasResultType = true; break;
