@@ -4540,7 +4540,7 @@
       "version" : "None"
     },
     {
-      "opname" : "OpExtInstWithForwardRefs",
+      "opname" : "OpExtInstWithForwardRefsKHR",
       "class"  : "Extension",
       "opcode" : 4433,
       "operands" : [
