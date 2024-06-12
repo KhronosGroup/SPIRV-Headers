@@ -1045,6 +1045,7 @@ enum Capability {
     CapabilityTileImageColorReadAccessEXT = 4166,
     CapabilityTileImageDepthReadAccessEXT = 4167,
     CapabilityTileImageStencilReadAccessEXT = 4168,
+    CapabilityCooperativeMatrixLayoutsARM = 4201,
     CapabilityFragmentShadingRateKHR = 4422,
     CapabilitySubgroupBallotKHR = 4423,
     CapabilityDrawParameters = 4427,
@@ -1358,6 +1359,8 @@ enum CooperativeMatrixOperandsMask {
 enum CooperativeMatrixLayout {
     CooperativeMatrixLayoutRowMajorKHR = 0,
     CooperativeMatrixLayoutColumnMajorKHR = 1,
+    CooperativeMatrixLayoutRowBlockedInterleavedARM = 4202,
+    CooperativeMatrixLayoutColumnBlockedInterleavedARM = 4203,
     CooperativeMatrixLayoutMax = 0x7fffffff,
 };
 
@@ -3639,6 +3642,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityTileImageColorReadAccessEXT: return "TileImageColorReadAccessEXT";
     case CapabilityTileImageDepthReadAccessEXT: return "TileImageDepthReadAccessEXT";
     case CapabilityTileImageStencilReadAccessEXT: return "TileImageStencilReadAccessEXT";
+    case CapabilityCooperativeMatrixLayoutsARM: return "CooperativeMatrixLayoutsARM";
     case CapabilityFragmentShadingRateKHR: return "FragmentShadingRateKHR";
     case CapabilitySubgroupBallotKHR: return "SubgroupBallotKHR";
     case CapabilityDrawParameters: return "DrawParameters";
@@ -3880,6 +3884,8 @@ inline const char* CooperativeMatrixLayoutToString(CooperativeMatrixLayout value
     switch (value) {
     case CooperativeMatrixLayoutRowMajorKHR: return "RowMajorKHR";
     case CooperativeMatrixLayoutColumnMajorKHR: return "ColumnMajorKHR";
+    case CooperativeMatrixLayoutRowBlockedInterleavedARM: return "RowBlockedInterleavedARM";
+    case CooperativeMatrixLayoutColumnBlockedInterleavedARM: return "ColumnBlockedInterleavedARM";
     default: return "Unknown";
     }
 }

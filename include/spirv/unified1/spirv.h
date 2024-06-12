@@ -1049,6 +1049,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityTileImageColorReadAccessEXT = 4166,
     SpvCapabilityTileImageDepthReadAccessEXT = 4167,
     SpvCapabilityTileImageStencilReadAccessEXT = 4168,
+    SpvCapabilityCooperativeMatrixLayoutsARM = 4201,
     SpvCapabilityFragmentShadingRateKHR = 4422,
     SpvCapabilitySubgroupBallotKHR = 4423,
     SpvCapabilityDrawParameters = 4427,
@@ -1362,6 +1363,8 @@ typedef enum SpvCooperativeMatrixOperandsMask_ {
 typedef enum SpvCooperativeMatrixLayout_ {
     SpvCooperativeMatrixLayoutRowMajorKHR = 0,
     SpvCooperativeMatrixLayoutColumnMajorKHR = 1,
+    SpvCooperativeMatrixLayoutRowBlockedInterleavedARM = 4202,
+    SpvCooperativeMatrixLayoutColumnBlockedInterleavedARM = 4203,
     SpvCooperativeMatrixLayoutMax = 0x7fffffff,
 } SpvCooperativeMatrixLayout;
 
@@ -3643,6 +3646,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityTileImageColorReadAccessEXT: return "TileImageColorReadAccessEXT";
     case SpvCapabilityTileImageDepthReadAccessEXT: return "TileImageDepthReadAccessEXT";
     case SpvCapabilityTileImageStencilReadAccessEXT: return "TileImageStencilReadAccessEXT";
+    case SpvCapabilityCooperativeMatrixLayoutsARM: return "CooperativeMatrixLayoutsARM";
     case SpvCapabilityFragmentShadingRateKHR: return "FragmentShadingRateKHR";
     case SpvCapabilitySubgroupBallotKHR: return "SubgroupBallotKHR";
     case SpvCapabilityDrawParameters: return "DrawParameters";
@@ -3884,6 +3888,8 @@ inline const char* SpvCooperativeMatrixLayoutToString(SpvCooperativeMatrixLayout
     switch (value) {
     case SpvCooperativeMatrixLayoutRowMajorKHR: return "RowMajorKHR";
     case SpvCooperativeMatrixLayoutColumnMajorKHR: return "ColumnMajorKHR";
+    case SpvCooperativeMatrixLayoutRowBlockedInterleavedARM: return "RowBlockedInterleavedARM";
+    case SpvCooperativeMatrixLayoutColumnBlockedInterleavedARM: return "ColumnBlockedInterleavedARM";
     default: return "Unknown";
     }
 }
