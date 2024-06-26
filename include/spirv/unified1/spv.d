@@ -1052,6 +1052,7 @@ enum Capability : uint
     TileImageColorReadAccessEXT = 4166,
     TileImageDepthReadAccessEXT = 4167,
     TileImageStencilReadAccessEXT = 4168,
+    CooperativeMatrixLayoutsARM = 4201,
     FragmentShadingRateKHR = 4422,
     SubgroupBallotKHR = 4423,
     DrawParameters = 4427,
@@ -1215,6 +1216,7 @@ enum Capability : uint
     DotProductKHR = 6019,
     RayCullMaskKHR = 6020,
     CooperativeMatrixKHR = 6022,
+    ReplicatedCompositesEXT = 6024,
     BitInstructions = 6025,
     GroupNonUniformRotateKHR = 6026,
     FloatControls2 = 6029,
@@ -1367,6 +1369,8 @@ enum CooperativeMatrixLayout : uint
 {
     RowMajorKHR = 0,
     ColumnMajorKHR = 1,
+    RowBlockedInterleavedARM = 4202,
+    ColumnBlockedInterleavedARM = 4203,
 }
 
 enum CooperativeMatrixUse : uint
@@ -1782,6 +1786,7 @@ enum Op : uint
     OpSubgroupAllEqualKHR = 4430,
     OpGroupNonUniformRotateKHR = 4431,
     OpSubgroupReadInvocationKHR = 4432,
+    OpExtInstWithForwardRefsKHR = 4433,
     OpTraceRayKHR = 4445,
     OpExecuteCallableKHR = 4446,
     OpConvertUToAccelerationStructureKHR = 4447,
@@ -1804,6 +1809,9 @@ enum Op : uint
     OpCooperativeMatrixStoreKHR = 4458,
     OpCooperativeMatrixMulAddKHR = 4459,
     OpCooperativeMatrixLengthKHR = 4460,
+    OpConstantCompositeReplicateEXT = 4461,
+    OpSpecConstantCompositeReplicateEXT = 4462,
+    OpCompositeConstructReplicateEXT = 4463,
     OpTypeRayQueryKHR = 4472,
     OpRayQueryInitializeKHR = 4473,
     OpRayQueryTerminateKHR = 4474,
