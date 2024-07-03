@@ -27,7 +27,7 @@
   "magic_number" : "0x07230203",
   "major_version" : 1,
   "minor_version" : 6,
-  "revision" : 1,
+  "revision" : 4,
   "instruction_printing_class" : [
     {
       "tag"     : "@exclude"
@@ -330,7 +330,8 @@
       "opcode" : 22,
       "operands" : [
         { "kind" : "IdResult" },
-        { "kind" : "LiteralInteger", "name" : "'Width'" }
+        { "kind" : "LiteralInteger", "name" : "'Width'" },
+        { "kind" : "FPEncoding", "quantifier" : "?", "name" : "'Floating Point Encoding'" }
       ],
       "version": "1.0"
     },
@@ -16895,6 +16896,12 @@
           "capabilities" : [ "RegisterLimitsINTEL" ],
           "version" : "None"
         }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "FPEncoding",
+      "enumerants" : [
       ]
     },
     {

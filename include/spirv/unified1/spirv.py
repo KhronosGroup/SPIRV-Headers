@@ -1361,6 +1361,9 @@ spv = {
         'RobustnessPerElementNV' : 0x00000002,
     },
 
+    'FPEncoding' : {
+    },
+
     'Op' : {
         'OpNop' : 0,
         'OpUndef' : 1,

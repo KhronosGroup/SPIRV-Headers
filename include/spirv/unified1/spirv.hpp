@@ -1419,6 +1419,10 @@ enum RawAccessChainOperandsMask {
     RawAccessChainOperandsRobustnessPerElementNVMask = 0x00000002,
 };
 
+enum FPEncoding {
+    FPEncodingMax = 0x7fffffff,
+};
+
 enum Op {
     OpNop = 0,
     OpUndef = 1,
@@ -3941,6 +3945,12 @@ inline const char* StoreCacheControlToString(StoreCacheControl value) {
 inline const char* NamedMaximumNumberOfRegistersToString(NamedMaximumNumberOfRegisters value) {
     switch (value) {
     case NamedMaximumNumberOfRegistersAutoINTEL: return "AutoINTEL";
+    default: return "Unknown";
+    }
+}
+
+inline const char* FPEncodingToString(FPEncoding value) {
+    switch (value) {
     default: return "Unknown";
     }
 }

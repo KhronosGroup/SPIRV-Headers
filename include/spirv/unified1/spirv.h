@@ -1423,6 +1423,10 @@ typedef enum SpvRawAccessChainOperandsMask_ {
     SpvRawAccessChainOperandsRobustnessPerElementNVMask = 0x00000002,
 } SpvRawAccessChainOperandsMask;
 
+typedef enum SpvFPEncoding_ {
+    SpvFPEncodingMax = 0x7fffffff,
+} SpvFPEncoding;
+
 typedef enum SpvOp_ {
     SpvOpNop = 0,
     SpvOpUndef = 1,
@@ -3945,6 +3949,12 @@ inline const char* SpvStoreCacheControlToString(SpvStoreCacheControl value) {
 inline const char* SpvNamedMaximumNumberOfRegistersToString(SpvNamedMaximumNumberOfRegisters value) {
     switch (value) {
     case SpvNamedMaximumNumberOfRegistersAutoINTEL: return "AutoINTEL";
+    default: return "Unknown";
+    }
+}
+
+inline const char* SpvFPEncodingToString(SpvFPEncoding value) {
+    switch (value) {
     default: return "Unknown";
     }
 }
