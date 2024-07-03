@@ -274,6 +274,7 @@ EnumValues LoadCacheControlParams;
 EnumValues StoreCacheControlParams;
 EnumValues NamedMaximumNumberOfRegistersParams;
 EnumValues RawAccessChainOperandsParams;
+EnumValues FPEncodingParams;
 
 std::pair<bool, std::string> ReadFile(const std::string& path)
 {
@@ -440,6 +441,8 @@ ClassOptionality ToOperandClassAndOptionality(const std::string& operandKind, co
             type = OperandNamedMaximumNumberOfRegisters;
         } else if (operandKind == "RawAccessChainOperands") {
             type = OperandRawAccessChainOperands;
+        } else if (operandKind == "FPEncoding") {
+            type = OperandFPEncoding;
         }
 
         if (type == OperandNone) {
@@ -844,6 +847,8 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             establishOperandClass(enumName, OperandNamedMaximumNumberOfRegisters, &NamedMaximumNumberOfRegistersParams, operandEnum, category);
         } else if (enumName == "RawAccessChainOperands") {
             establishOperandClass(enumName, OperandRawAccessChainOperands, &RawAccessChainOperandsParams, operandEnum, category);
+        } else if (enumName == "FPEncoding") {
+            establishOperandClass(enumName, OperandFPEncoding, &FPEncodingParams, operandEnum, category);
         }
     }
 
