@@ -272,7 +272,8 @@
     <!-- Reserved memory operand bits -->
     <ids type="MemoryOperand" start="0" end="15" vendor="Khronos" comment="Reserved MemoryOperand bits, not available to vendors - see the SPIR-V Specification"/>
     <ids type="MemoryOperand" start="16" end="18" vendor="Intel" comment="Contact michael.kinsner@intel.com"/>
-    <ids type="MemoryOperand" start="19" end="30" comment="Unreserved bits reservable for use by vendors"/>
+    <ids type="MemoryOperand" start="19" end="22" vendor="Arm" comment="Contact kevin.petit@arm.com"/>
+    <ids type="MemoryOperand" start="23" end="30" comment="Unreserved bits reservable for use by vendors"/>
     <ids type="MemoryOperand" start="31" end="31" vendor="Khronos" comment="Reserved MemoryOperand bit, not available to vendors"/>
 
     <!-- SECTION: SPIR-V Image Operand Bit Reservations -->
