@@ -1079,6 +1079,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityRoundingModeRTZ = 4468,
     SpvCapabilityRayQueryProvisionalKHR = 4471,
     SpvCapabilityRayQueryKHR = 4472,
+    SpvCapabilityUntypedPointersKHR = 4473,
     SpvCapabilityRayTraversalPrimitiveCullingKHR = 4478,
     SpvCapabilityRayTracingKHR = 4479,
     SpvCapabilityTextureSampleWeightedQCOM = 4484,
@@ -1776,8 +1777,15 @@ typedef enum SpvOp_ {
     SpvOpDepthAttachmentReadEXT = 4161,
     SpvOpStencilAttachmentReadEXT = 4162,
     SpvOpTerminateInvocation = 4416,
+    SpvOpTypeUntypedPointerKHR = 4417,
+    SpvOpUntypedVariableKHR = 4418,
+    SpvOpUntypedAccessChainKHR = 4419,
+    SpvOpUntypedInBoundsAccessChainKHR = 4420,
     SpvOpSubgroupBallotKHR = 4421,
     SpvOpSubgroupFirstInvocationKHR = 4422,
+    SpvOpUntypedPtrAccessChainKHR = 4423,
+    SpvOpUntypedInBoundsPtrAccessChainKHR = 4424,
+    SpvOpUntypedArrayLengthKHR = 4425,
     SpvOpSubgroupAllKHR = 4428,
     SpvOpSubgroupAnyKHR = 4429,
     SpvOpSubgroupAllEqualKHR = 4430,
@@ -2524,8 +2532,15 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpDepthAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpStencilAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpTerminateInvocation: *hasResult = false; *hasResultType = false; break;
+    case SpvOpTypeUntypedPointerKHR: *hasResult = true; *hasResultType = false; break;
+    case SpvOpUntypedVariableKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpUntypedAccessChainKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpUntypedInBoundsAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupBallotKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupFirstInvocationKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpUntypedPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpUntypedInBoundsPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpUntypedArrayLengthKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
@@ -3678,6 +3693,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityRoundingModeRTZ: return "RoundingModeRTZ";
     case SpvCapabilityRayQueryProvisionalKHR: return "RayQueryProvisionalKHR";
     case SpvCapabilityRayQueryKHR: return "RayQueryKHR";
+    case SpvCapabilityUntypedPointersKHR: return "UntypedPointersKHR";
     case SpvCapabilityRayTraversalPrimitiveCullingKHR: return "RayTraversalPrimitiveCullingKHR";
     case SpvCapabilityRayTracingKHR: return "RayTracingKHR";
     case SpvCapabilityTextureSampleWeightedQCOM: return "TextureSampleWeightedQCOM";
@@ -4309,8 +4325,15 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpDepthAttachmentReadEXT: return "OpDepthAttachmentReadEXT";
     case SpvOpStencilAttachmentReadEXT: return "OpStencilAttachmentReadEXT";
     case SpvOpTerminateInvocation: return "OpTerminateInvocation";
+    case SpvOpTypeUntypedPointerKHR: return "OpTypeUntypedPointerKHR";
+    case SpvOpUntypedVariableKHR: return "OpUntypedVariableKHR";
+    case SpvOpUntypedAccessChainKHR: return "OpUntypedAccessChainKHR";
+    case SpvOpUntypedInBoundsAccessChainKHR: return "OpUntypedInBoundsAccessChainKHR";
     case SpvOpSubgroupBallotKHR: return "OpSubgroupBallotKHR";
     case SpvOpSubgroupFirstInvocationKHR: return "OpSubgroupFirstInvocationKHR";
+    case SpvOpUntypedPtrAccessChainKHR: return "OpUntypedPtrAccessChainKHR";
+    case SpvOpUntypedInBoundsPtrAccessChainKHR: return "OpUntypedInBoundsPtrAccessChainKHR";
+    case SpvOpUntypedArrayLengthKHR: return "OpUntypedArrayLengthKHR";
     case SpvOpSubgroupAllKHR: return "OpSubgroupAllKHR";
     case SpvOpSubgroupAnyKHR: return "OpSubgroupAnyKHR";
     case SpvOpSubgroupAllEqualKHR: return "OpSubgroupAllEqualKHR";

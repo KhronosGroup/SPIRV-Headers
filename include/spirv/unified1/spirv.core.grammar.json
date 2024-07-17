@@ -754,7 +754,10 @@
         { "kind" : "MemoryAccess", "quantifier" : "?" },
         { "kind" : "MemoryAccess", "quantifier" : "?" }
       ],
-      "capabilities" : [ "Addresses" ],
+      "capabilities" : [
+        "Addresses",
+        "UntypedPointersKHR"
+      ],
       "version": "1.0"
     },
     {
@@ -4441,6 +4444,61 @@
       "version" : "1.6"
     },
     {
+      "opname" : "OpTypeUntypedPointerKHR",
+      "class" : "Type-Declaration",
+      "opcode" : 4417,
+      "capabilities" : [
+        "UntypedPointersKHR"
+      ],
+      "version" : "None",
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "StorageClass" }
+      ]
+    },
+    {
+      "opname" : "OpUntypedVariableKHR",
+      "class" : "Memory",
+      "opcode" : 4418,
+      "capabilities" : [ "UntypedPointersKHR" ],
+      "version" : "None",
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "StorageClass" },
+        { "kind" : "IdRef", "quantifier" : "?",  "name" : "'Data Type'" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "'Initializer'" }
+      ]
+    },
+    {
+      "opname" : "OpUntypedAccessChainKHR",
+      "class" : "Memory",
+      "opcode" : 4419,
+      "capabilities" : [ "UntypedPointersKHR" ],
+      "version" : "None",
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                            "name" : "'Base Type'" },
+        { "kind" : "IdRef",                            "name" : "'Base'" },
+        { "kind" : "IdRef",        "quantifier" : "*", "name" : "'Indexes'" }
+      ]
+    },
+    {
+      "opname" : "OpUntypedInBoundsAccessChainKHR",
+      "class" : "Memory",
+      "opcode" : 4420,
+      "capabilities" : [ "UntypedPointersKHR" ],
+      "version" : "None",
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                            "name" : "'Base Type'" },
+        { "kind" : "IdRef",                            "name" : "'Base'" },
+        { "kind" : "IdRef",        "quantifier" : "*", "name" : "'Indexes'" }
+      ]
+    },
+    {
       "opname" : "OpSubgroupBallotKHR",
       "class"  : "Group",
       "opcode" : 4421,
@@ -4465,6 +4523,50 @@
       "capabilities" : [ "SubgroupBallotKHR" ],
       "extensions" : [ "SPV_KHR_shader_ballot" ],
       "version" : "None"
+    },
+    {
+      "opname" : "OpUntypedPtrAccessChainKHR",
+      "class"  : "Memory",
+      "opcode" : 4423,
+      "capabilities" : [ "UntypedPointersKHR" ],
+      "version" : "None",
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                            "name" : "'Base Type'" },
+        { "kind" : "IdRef",                            "name" : "'Base'" },
+        { "kind" : "IdRef",                            "name" : "'Element'" },
+        { "kind" : "IdRef",        "quantifier" : "*", "name" : "'Indexes'" }
+      ]
+    },
+    {
+      "opname" : "OpUntypedInBoundsPtrAccessChainKHR",
+      "class"  : "Memory",
+      "opcode" : 4424,
+      "capabilities" : [ "UntypedPointersKHR" ],
+      "version" : "None",
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                            "name" : "'Base Type'" },
+        { "kind" : "IdRef",                            "name" : "'Base'" },
+        { "kind" : "IdRef",                            "name" : "'Element'" },
+        { "kind" : "IdRef",        "quantifier" : "*", "name" : "'Indexes'" }
+      ]
+    },
+    {
+      "opname" : "OpUntypedArrayLengthKHR",
+      "class"  : "Memory",
+      "opcode" : 4425,
+      "capabilities" : [ "UntypedPointersKHR" ],
+      "version" : "None",
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                            "name" : "'Structure'" },
+        { "kind" : "IdRef",                            "name" : "'Pointer'" },
+        { "kind" : "LiteralInteger",                   "name" : "'Array member'" }
+      ]
     },
     {
       "opname" : "OpSubgroupAllKHR",
@@ -15644,6 +15746,12 @@
           "value" : 4472,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_KHR_ray_query" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "UntypedPointersKHR",
+          "value" : 4473,
+          "extensions" : [ "SPV_KHR_untyped_pointers" ],
           "version" : "None"
         },
         {

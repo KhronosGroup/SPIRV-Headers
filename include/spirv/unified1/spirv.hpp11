@@ -1075,6 +1075,7 @@ enum class Capability : unsigned {
     RoundingModeRTZ = 4468,
     RayQueryProvisionalKHR = 4471,
     RayQueryKHR = 4472,
+    UntypedPointersKHR = 4473,
     RayTraversalPrimitiveCullingKHR = 4478,
     RayTracingKHR = 4479,
     TextureSampleWeightedQCOM = 4484,
@@ -1772,8 +1773,15 @@ enum class Op : unsigned {
     OpDepthAttachmentReadEXT = 4161,
     OpStencilAttachmentReadEXT = 4162,
     OpTerminateInvocation = 4416,
+    OpTypeUntypedPointerKHR = 4417,
+    OpUntypedVariableKHR = 4418,
+    OpUntypedAccessChainKHR = 4419,
+    OpUntypedInBoundsAccessChainKHR = 4420,
     OpSubgroupBallotKHR = 4421,
     OpSubgroupFirstInvocationKHR = 4422,
+    OpUntypedPtrAccessChainKHR = 4423,
+    OpUntypedInBoundsPtrAccessChainKHR = 4424,
+    OpUntypedArrayLengthKHR = 4425,
     OpSubgroupAllKHR = 4428,
     OpSubgroupAnyKHR = 4429,
     OpSubgroupAllEqualKHR = 4430,
@@ -2520,8 +2528,15 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpDepthAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
     case Op::OpStencilAttachmentReadEXT: *hasResult = true; *hasResultType = true; break;
     case Op::OpTerminateInvocation: *hasResult = false; *hasResultType = false; break;
+    case Op::OpTypeUntypedPointerKHR: *hasResult = true; *hasResultType = false; break;
+    case Op::OpUntypedVariableKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpUntypedAccessChainKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpUntypedInBoundsAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupBallotKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupFirstInvocationKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpUntypedPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpUntypedInBoundsPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpUntypedArrayLengthKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
@@ -3674,6 +3689,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityRoundingModeRTZ: return "RoundingModeRTZ";
     case CapabilityRayQueryProvisionalKHR: return "RayQueryProvisionalKHR";
     case CapabilityRayQueryKHR: return "RayQueryKHR";
+    case CapabilityUntypedPointersKHR: return "UntypedPointersKHR";
     case CapabilityRayTraversalPrimitiveCullingKHR: return "RayTraversalPrimitiveCullingKHR";
     case CapabilityRayTracingKHR: return "RayTracingKHR";
     case CapabilityTextureSampleWeightedQCOM: return "TextureSampleWeightedQCOM";
@@ -4305,8 +4321,15 @@ inline const char* OpToString(Op value) {
     case OpDepthAttachmentReadEXT: return "OpDepthAttachmentReadEXT";
     case OpStencilAttachmentReadEXT: return "OpStencilAttachmentReadEXT";
     case OpTerminateInvocation: return "OpTerminateInvocation";
+    case OpTypeUntypedPointerKHR: return "OpTypeUntypedPointerKHR";
+    case OpUntypedVariableKHR: return "OpUntypedVariableKHR";
+    case OpUntypedAccessChainKHR: return "OpUntypedAccessChainKHR";
+    case OpUntypedInBoundsAccessChainKHR: return "OpUntypedInBoundsAccessChainKHR";
     case OpSubgroupBallotKHR: return "OpSubgroupBallotKHR";
     case OpSubgroupFirstInvocationKHR: return "OpSubgroupFirstInvocationKHR";
+    case OpUntypedPtrAccessChainKHR: return "OpUntypedPtrAccessChainKHR";
+    case OpUntypedInBoundsPtrAccessChainKHR: return "OpUntypedInBoundsPtrAccessChainKHR";
+    case OpUntypedArrayLengthKHR: return "OpUntypedArrayLengthKHR";
     case OpSubgroupAllKHR: return "OpSubgroupAllKHR";
     case OpSubgroupAnyKHR: return "OpSubgroupAnyKHR";
     case OpSubgroupAllEqualKHR: return "OpSubgroupAllEqualKHR";
