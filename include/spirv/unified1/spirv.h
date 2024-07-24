@@ -178,6 +178,7 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeEarlyAndLateFragmentTestsAMD = 5017,
     SpvExecutionModeStencilRefReplacingEXT = 5027,
     SpvExecutionModeCoalescingAMDX = 5069,
+    SpvExecutionModeIsApiEntryAMDX = 5070,
     SpvExecutionModeMaxNodeRecursionAMDX = 5071,
     SpvExecutionModeStaticNumWorkgroupsAMDX = 5072,
     SpvExecutionModeShaderIndexAMDX = 5073,
@@ -190,6 +191,7 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeStencilRefLessBackAMD = 5084,
     SpvExecutionModeQuadDerivativesKHR = 5088,
     SpvExecutionModeRequireFullQuadsKHR = 5089,
+    SpvExecutionModeSharesInputWithAMDX = 5102,
     SpvExecutionModeOutputLinesEXT = 5269,
     SpvExecutionModeOutputLinesNV = 5269,
     SpvExecutionModeOutputPrimitivesEXT = 5270,
@@ -243,7 +245,6 @@ typedef enum SpvStorageClass_ {
     SpvStorageClassStorageBuffer = 12,
     SpvStorageClassTileImageEXT = 4172,
     SpvStorageClassNodePayloadAMDX = 5068,
-    SpvStorageClassNodeOutputPayloadAMDX = 5076,
     SpvStorageClassCallableDataKHR = 5328,
     SpvStorageClassCallableDataNV = 5328,
     SpvStorageClassIncomingCallableDataKHR = 5329,
@@ -556,6 +557,10 @@ typedef enum SpvDecoration_ {
     SpvDecorationNodeMaxPayloadsAMDX = 5020,
     SpvDecorationTrackFinishWritingAMDX = 5078,
     SpvDecorationPayloadNodeNameAMDX = 5091,
+    SpvDecorationPayloadNodeBaseIndexAMDX = 5098,
+    SpvDecorationPayloadNodeSparseArrayAMDX = 5099,
+    SpvDecorationPayloadNodeArraySizeAMDX = 5100,
+    SpvDecorationPayloadDispatchIndirectAMDX = 5105,
     SpvDecorationOverrideCoverageNV = 5248,
     SpvDecorationPassthroughNV = 5250,
     SpvDecorationViewportRelativeNV = 5252,
@@ -719,7 +724,7 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInBaryCoordSmoothSampleAMD = 4997,
     SpvBuiltInBaryCoordPullModelAMD = 4998,
     SpvBuiltInFragStencilRefEXT = 5014,
-    SpvBuiltInCoalescedInputCountAMDX = 5021,
+    SpvBuiltInRemainingRecursionLevelsAMDX = 5021,
     SpvBuiltInShaderIndexAMDX = 5073,
     SpvBuiltInViewportMaskNV = 5253,
     SpvBuiltInSecondaryPositionNV = 5257,
@@ -1854,9 +1859,14 @@ typedef enum SpvOp_ {
     SpvOpFragmentMaskFetchAMD = 5011,
     SpvOpFragmentFetchAMD = 5012,
     SpvOpReadClockKHR = 5056,
-    SpvOpFinalizeNodePayloadsAMDX = 5075,
+    SpvOpAllocateNodePayloadsAMDX = 5074,
+    SpvOpEnqueueNodePayloadsAMDX = 5075,
+    SpvOpTypeNodePayloadArrayAMDX = 5076,
     SpvOpFinishWritingNodePayloadAMDX = 5078,
-    SpvOpInitializeNodePayloadsAMDX = 5090,
+    SpvOpNodePayloadArrayLengthAMDX = 5090,
+    SpvOpIsNodePayloadValidAMDX = 5101,
+    SpvOpConstantStringAMDX = 5103,
+    SpvOpSpecConstantStringAMDX = 5104,
     SpvOpGroupNonUniformQuadAllKHR = 5110,
     SpvOpGroupNonUniformQuadAnyKHR = 5111,
     SpvOpHitObjectRecordHitMotionNV = 5249,
@@ -2606,9 +2616,14 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpFragmentMaskFetchAMD: *hasResult = true; *hasResultType = true; break;
     case SpvOpFragmentFetchAMD: *hasResult = true; *hasResultType = true; break;
     case SpvOpReadClockKHR: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFinalizeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case SpvOpAllocateNodePayloadsAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpEnqueueNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case SpvOpTypeNodePayloadArrayAMDX: *hasResult = true; *hasResultType = false; break;
     case SpvOpFinishWritingNodePayloadAMDX: *hasResult = true; *hasResultType = true; break;
-    case SpvOpInitializeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case SpvOpNodePayloadArrayLengthAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpIsNodePayloadValidAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpConstantStringAMDX: *hasResult = true; *hasResultType = false; break;
+    case SpvOpSpecConstantStringAMDX: *hasResult = true; *hasResultType = false; break;
     case SpvOpGroupNonUniformQuadAllKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupNonUniformQuadAnyKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -3050,6 +3065,7 @@ inline const char* SpvExecutionModeToString(SpvExecutionMode value) {
     case SpvExecutionModeEarlyAndLateFragmentTestsAMD: return "EarlyAndLateFragmentTestsAMD";
     case SpvExecutionModeStencilRefReplacingEXT: return "StencilRefReplacingEXT";
     case SpvExecutionModeCoalescingAMDX: return "CoalescingAMDX";
+    case SpvExecutionModeIsApiEntryAMDX: return "IsApiEntryAMDX";
     case SpvExecutionModeMaxNodeRecursionAMDX: return "MaxNodeRecursionAMDX";
     case SpvExecutionModeStaticNumWorkgroupsAMDX: return "StaticNumWorkgroupsAMDX";
     case SpvExecutionModeShaderIndexAMDX: return "ShaderIndexAMDX";
@@ -3062,6 +3078,7 @@ inline const char* SpvExecutionModeToString(SpvExecutionMode value) {
     case SpvExecutionModeStencilRefLessBackAMD: return "StencilRefLessBackAMD";
     case SpvExecutionModeQuadDerivativesKHR: return "QuadDerivativesKHR";
     case SpvExecutionModeRequireFullQuadsKHR: return "RequireFullQuadsKHR";
+    case SpvExecutionModeSharesInputWithAMDX: return "SharesInputWithAMDX";
     case SpvExecutionModeOutputLinesEXT: return "OutputLinesEXT";
     case SpvExecutionModeOutputPrimitivesEXT: return "OutputPrimitivesEXT";
     case SpvExecutionModeDerivativeGroupQuadsKHR: return "DerivativeGroupQuadsKHR";
@@ -3112,7 +3129,6 @@ inline const char* SpvStorageClassToString(SpvStorageClass value) {
     case SpvStorageClassStorageBuffer: return "StorageBuffer";
     case SpvStorageClassTileImageEXT: return "TileImageEXT";
     case SpvStorageClassNodePayloadAMDX: return "NodePayloadAMDX";
-    case SpvStorageClassNodeOutputPayloadAMDX: return "NodeOutputPayloadAMDX";
     case SpvStorageClassCallableDataKHR: return "CallableDataKHR";
     case SpvStorageClassIncomingCallableDataKHR: return "IncomingCallableDataKHR";
     case SpvStorageClassRayPayloadKHR: return "RayPayloadKHR";
@@ -3364,6 +3380,10 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationNodeMaxPayloadsAMDX: return "NodeMaxPayloadsAMDX";
     case SpvDecorationTrackFinishWritingAMDX: return "TrackFinishWritingAMDX";
     case SpvDecorationPayloadNodeNameAMDX: return "PayloadNodeNameAMDX";
+    case SpvDecorationPayloadNodeBaseIndexAMDX: return "PayloadNodeBaseIndexAMDX";
+    case SpvDecorationPayloadNodeSparseArrayAMDX: return "PayloadNodeSparseArrayAMDX";
+    case SpvDecorationPayloadNodeArraySizeAMDX: return "PayloadNodeArraySizeAMDX";
+    case SpvDecorationPayloadDispatchIndirectAMDX: return "PayloadDispatchIndirectAMDX";
     case SpvDecorationOverrideCoverageNV: return "OverrideCoverageNV";
     case SpvDecorationPassthroughNV: return "PassthroughNV";
     case SpvDecorationViewportRelativeNV: return "ViewportRelativeNV";
@@ -3517,7 +3537,7 @@ inline const char* SpvBuiltInToString(SpvBuiltIn value) {
     case SpvBuiltInBaryCoordSmoothSampleAMD: return "BaryCoordSmoothSampleAMD";
     case SpvBuiltInBaryCoordPullModelAMD: return "BaryCoordPullModelAMD";
     case SpvBuiltInFragStencilRefEXT: return "FragStencilRefEXT";
-    case SpvBuiltInCoalescedInputCountAMDX: return "CoalescedInputCountAMDX";
+    case SpvBuiltInRemainingRecursionLevelsAMDX: return "RemainingRecursionLevelsAMDX";
     case SpvBuiltInShaderIndexAMDX: return "ShaderIndexAMDX";
     case SpvBuiltInViewportMaskNV: return "ViewportMaskNV";
     case SpvBuiltInSecondaryPositionNV: return "SecondaryPositionNV";
@@ -4405,9 +4425,14 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpFragmentMaskFetchAMD: return "OpFragmentMaskFetchAMD";
     case SpvOpFragmentFetchAMD: return "OpFragmentFetchAMD";
     case SpvOpReadClockKHR: return "OpReadClockKHR";
-    case SpvOpFinalizeNodePayloadsAMDX: return "OpFinalizeNodePayloadsAMDX";
+    case SpvOpAllocateNodePayloadsAMDX: return "OpAllocateNodePayloadsAMDX";
+    case SpvOpEnqueueNodePayloadsAMDX: return "OpEnqueueNodePayloadsAMDX";
+    case SpvOpTypeNodePayloadArrayAMDX: return "OpTypeNodePayloadArrayAMDX";
     case SpvOpFinishWritingNodePayloadAMDX: return "OpFinishWritingNodePayloadAMDX";
-    case SpvOpInitializeNodePayloadsAMDX: return "OpInitializeNodePayloadsAMDX";
+    case SpvOpNodePayloadArrayLengthAMDX: return "OpNodePayloadArrayLengthAMDX";
+    case SpvOpIsNodePayloadValidAMDX: return "OpIsNodePayloadValidAMDX";
+    case SpvOpConstantStringAMDX: return "OpConstantStringAMDX";
+    case SpvOpSpecConstantStringAMDX: return "OpSpecConstantStringAMDX";
     case SpvOpGroupNonUniformQuadAllKHR: return "OpGroupNonUniformQuadAllKHR";
     case SpvOpGroupNonUniformQuadAnyKHR: return "OpGroupNonUniformQuadAnyKHR";
     case SpvOpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";

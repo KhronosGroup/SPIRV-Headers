@@ -5443,11 +5443,36 @@
       "version" : "None"
     },
     {
-      "opname" : "OpFinalizeNodePayloadsAMDX",
+      "opname" : "OpAllocateNodePayloadsAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5074,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdScope", "name" : "'Visibility'" },
+        { "kind" : "IdRef", "name": "'Payload Count'" },
+        { "kind" : "IdRef", "name": "'Node Index'" }
+      ],
+      "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpEnqueueNodePayloadsAMDX",
       "class"  : "Reserved",
       "opcode" : 5075,
       "operands" : [
         { "kind" : "IdRef", "name": "'Payload Array'" }
+      ],
+      "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTypeNodePayloadArrayAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5076,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name": "'Payload Type'" }
       ],
       "capabilities" : [ "ShaderEnqueueAMDX" ],
       "version" : "None"
@@ -5465,17 +5490,51 @@
       "version" : "None"
     },
     {
-      "opname" : "OpInitializeNodePayloadsAMDX",
+      "opname" : "OpNodePayloadArrayLengthAMDX",
       "class"  : "Reserved",
       "opcode" : 5090,
       "operands" : [
-        { "kind" : "IdRef", "name": "'Payload Array'" },
-        { "kind" : "IdScope", "name": "'Visibility'" },
-        { "kind" : "IdRef", "name": "'Payload Count'" },
-        { "kind" : "IdRef", "name": "'Node Index'" }
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name": "'Payload Array'" }
       ],
       "capabilities" : [ "ShaderEnqueueAMDX" ],
       "version" : "None"
+    },
+    {
+      "opname" : "OpIsNodePayloadValidAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5101,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name": "'Payload Type'" },
+        { "kind" : "IdRef", "name": "'Node Index'" }
+      ],
+      "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "version": "None"
+    },
+    {
+      "opname" : "OpConstantStringAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5103,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralString", "name": "'Literal String'" }
+      ],
+      "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "version": "None"
+    },
+    {
+      "opname" : "OpSpecConstantStringAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5104,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralString", "name": "'Literal String'" }
+      ],
+      "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "version": "None"
     },
     {
       "opname" : "OpGroupNonUniformQuadAllKHR",
@@ -11564,6 +11623,15 @@
           "version" : "None"
         },
         {
+          "enumerant" : "IsApiEntryAMDX",
+          "value" : 5070,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'Is Entry'" }
+          ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "MaxNodeRecursionAMDX",
           "value" : 5071,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
@@ -11655,6 +11723,16 @@
           "enumerant" : "RequireFullQuadsKHR",
           "value" : 5089,
           "capabilities" : [ "QuadControlKHR" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SharesInputWithAMDX",
+          "value" : 5102,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'Node Name'" },
+            { "kind" : "IdRef", "name" : "'Shader Index'" }
+          ],
           "version" : "None"
         },
         {
@@ -12030,12 +12108,6 @@
         {
           "enumerant" : "NodePayloadAMDX",
           "value" : 5068,
-          "capabilities" : [ "ShaderEnqueueAMDX" ],
-          "version" : "None"
-        },
-        {
-          "enumerant" : "NodeOutputPayloadAMDX",
-          "value" : 5076,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
           "version" : "None"
         },
@@ -13420,7 +13492,7 @@
           "value" : 5019,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
           "parameters" : [
-            { "kind" : "IdRef", "name" : "'Payload Array'" }
+            { "kind" : "IdRef", "name" : "'Payload Type'" }
           ],
           "version" : "None"
         },
@@ -13444,8 +13516,38 @@
           "value" : 5091,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
           "parameters" : [
-            { "kind" : "LiteralString", "name" : "'Node Name'" }
+            { "kind" : "IdRef", "name" : "'Node Name'" }
           ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PayloadNodeBaseIndexAMDX",
+          "value" : 5098,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'Base Index'" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PayloadNodeSparseArrayAMDX",
+          "value" : 5099,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PayloadNodeArraySizeAMDX",
+          "value" : 5100,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "'Array Size'" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PayloadDispatchIndirectAMDX",
+          "value" : 5105,
+          "capabilities" : [ "ShaderEnqueueAMDX" ],
           "version" : "None"
         },
         {
@@ -14592,7 +14694,7 @@
           "version" : "None"
         },
         {
-          "enumerant" : "CoalescedInputCountAMDX",
+          "enumerant" : "RemainingRecursionLevelsAMDX",
           "value" : 5021,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
           "version" : "None"
@@ -15915,7 +16017,7 @@
           "value" : 5087,
           "extensions" : [ "SPV_KHR_quad_control" ],
           "version" : "None"
-        },		
+        },
         {
           "enumerant" : "SampleMaskOverrideCoverageNV",
           "value" : 5249,
