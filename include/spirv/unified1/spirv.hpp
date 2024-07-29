@@ -1782,6 +1782,7 @@ enum Op {
     OpUntypedPtrAccessChainKHR = 4423,
     OpUntypedInBoundsPtrAccessChainKHR = 4424,
     OpUntypedArrayLengthKHR = 4425,
+    OpUntypedPrefetchKHR = 4426,
     OpSubgroupAllKHR = 4428,
     OpSubgroupAnyKHR = 4429,
     OpSubgroupAllEqualKHR = 4430,
@@ -2537,6 +2538,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpUntypedPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case OpUntypedInBoundsPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case OpUntypedArrayLengthKHR: *hasResult = true; *hasResultType = true; break;
+    case OpUntypedPrefetchKHR: *hasResult = false; *hasResultType = false; break;
     case OpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
@@ -4330,6 +4332,7 @@ inline const char* OpToString(Op value) {
     case OpUntypedPtrAccessChainKHR: return "OpUntypedPtrAccessChainKHR";
     case OpUntypedInBoundsPtrAccessChainKHR: return "OpUntypedInBoundsPtrAccessChainKHR";
     case OpUntypedArrayLengthKHR: return "OpUntypedArrayLengthKHR";
+    case OpUntypedPrefetchKHR: return "OpUntypedPrefetchKHR";
     case OpSubgroupAllKHR: return "OpSubgroupAllKHR";
     case OpSubgroupAnyKHR: return "OpSubgroupAnyKHR";
     case OpSubgroupAllEqualKHR: return "OpSubgroupAllEqualKHR";
