@@ -4569,6 +4569,20 @@
       ]
     },
     {
+      "opname" : "OpUntypedPrefetchKHR",
+      "class"  : "Memory",
+      "opcode" : 4426,
+      "capabilities" : [ "UntypedPointersKHR" ],
+      "version" : "None",
+      "operands" : [
+        { "kind" : "IdRef",                            "name" : "'Pointer Type'" },
+        { "kind" : "IdRef",                            "name" : "'Num Bytes'" },
+        { "kind" : "IdRef",        "quantifier" : "?", "name" : "'RW'" },
+        { "kind" : "IdRef",        "quantifier" : "?", "name" : "'Locality'" },
+        { "kind" : "IdRef",        "quantifier" : "?", "name" : "'Cache Type'" }
+      ]
+    },
+    {
       "opname" : "OpSubgroupAllKHR",
       "class"  : "Group",
       "opcode" : 4428,

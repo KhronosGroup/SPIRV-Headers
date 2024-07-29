@@ -1773,6 +1773,7 @@ spv = {
         OpUntypedPtrAccessChainKHR = 4423,
         OpUntypedInBoundsPtrAccessChainKHR = 4424,
         OpUntypedArrayLengthKHR = 4425,
+        OpUntypedPrefetchKHR = 4426,
         OpSubgroupAllKHR = 4428,
         OpSubgroupAnyKHR = 4429,
         OpSubgroupAllEqualKHR = 4430,

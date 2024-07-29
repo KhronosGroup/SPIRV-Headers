@@ -1786,6 +1786,7 @@ typedef enum SpvOp_ {
     SpvOpUntypedPtrAccessChainKHR = 4423,
     SpvOpUntypedInBoundsPtrAccessChainKHR = 4424,
     SpvOpUntypedArrayLengthKHR = 4425,
+    SpvOpUntypedPrefetchKHR = 4426,
     SpvOpSubgroupAllKHR = 4428,
     SpvOpSubgroupAnyKHR = 4429,
     SpvOpSubgroupAllEqualKHR = 4430,
@@ -2541,6 +2542,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpUntypedPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpUntypedInBoundsPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpUntypedArrayLengthKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpUntypedPrefetchKHR: *hasResult = false; *hasResultType = false; break;
     case SpvOpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
@@ -4334,6 +4336,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpUntypedPtrAccessChainKHR: return "OpUntypedPtrAccessChainKHR";
     case SpvOpUntypedInBoundsPtrAccessChainKHR: return "OpUntypedInBoundsPtrAccessChainKHR";
     case SpvOpUntypedArrayLengthKHR: return "OpUntypedArrayLengthKHR";
+    case SpvOpUntypedPrefetchKHR: return "OpUntypedPrefetchKHR";
     case SpvOpSubgroupAllKHR: return "OpSubgroupAllKHR";
     case SpvOpSubgroupAnyKHR: return "OpSubgroupAnyKHR";
     case SpvOpSubgroupAllEqualKHR: return "OpSubgroupAllEqualKHR";
