@@ -1037,6 +1037,7 @@ spv = {
         'RoundingModeRTZ' : 4468,
         'RayQueryProvisionalKHR' : 4471,
         'RayQueryKHR' : 4472,
+        'UntypedPointersKHR' : 4473,
         'RayTraversalPrimitiveCullingKHR' : 4478,
         'RayTracingKHR' : 4479,
         'TextureSampleWeightedQCOM' : 4484,
@@ -1359,6 +1360,9 @@ spv = {
         'MaskNone' : 0,
         'RobustnessPerComponentNV' : 0x00000001,
         'RobustnessPerElementNV' : 0x00000002,
+    },
+
+    'FPEncoding' : {
     },
 
     'Op' : {
@@ -1710,8 +1714,16 @@ spv = {
         'OpDepthAttachmentReadEXT' : 4161,
         'OpStencilAttachmentReadEXT' : 4162,
         'OpTerminateInvocation' : 4416,
+        'OpTypeUntypedPointerKHR' : 4417,
+        'OpUntypedVariableKHR' : 4418,
+        'OpUntypedAccessChainKHR' : 4419,
+        'OpUntypedInBoundsAccessChainKHR' : 4420,
         'OpSubgroupBallotKHR' : 4421,
         'OpSubgroupFirstInvocationKHR' : 4422,
+        'OpUntypedPtrAccessChainKHR' : 4423,
+        'OpUntypedInBoundsPtrAccessChainKHR' : 4424,
+        'OpUntypedArrayLengthKHR' : 4425,
+        'OpUntypedPrefetchKHR' : 4426,
         'OpSubgroupAllKHR' : 4428,
         'OpSubgroupAnyKHR' : 4429,
         'OpSubgroupAllEqualKHR' : 4430,

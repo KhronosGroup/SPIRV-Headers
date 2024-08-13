@@ -105,6 +105,7 @@ enum OperandClass {
     OperandStoreCacheControl,
     OperandNamedMaximumNumberOfRegisters,
     OperandRawAccessChainOperands,
+    OperandFPEncoding,
 
     OperandOpcode,
 
@@ -275,7 +276,7 @@ public:
     InstructionValue(EnumValue&& e, const std::string& printClass, bool has_type, bool has_result)
      : EnumValue(std::move(e)),
        printingClass(printClass),
-       opDesc("TBD"),
+       opDesc("TBD."),
        typePresent(has_type),
        resultPresent(has_result),
        alias(this) { }
