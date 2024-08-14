@@ -377,6 +377,7 @@ enum class ImageChannelDataType : unsigned {
     UnormInt101010_2 = 16,
     UnsignedIntRaw10EXT = 19,
     UnsignedIntRaw12EXT = 20,
+    UnormInt2_101010EXT = 21,
     Max = 0x7fffffff,
 };
 
@@ -3239,6 +3240,7 @@ inline const char* ImageChannelDataTypeToString(ImageChannelDataType value) {
     case ImageChannelDataTypeUnormInt101010_2: return "UnormInt101010_2";
     case ImageChannelDataTypeUnsignedIntRaw10EXT: return "UnsignedIntRaw10EXT";
     case ImageChannelDataTypeUnsignedIntRaw12EXT: return "UnsignedIntRaw12EXT";
+    case ImageChannelDataTypeUnormInt2_101010EXT: return "UnormInt2_101010EXT";
     default: return "Unknown";
     }
 }
