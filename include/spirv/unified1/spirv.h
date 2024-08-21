@@ -381,6 +381,7 @@ typedef enum SpvImageChannelDataType_ {
     SpvImageChannelDataTypeUnormInt101010_2 = 16,
     SpvImageChannelDataTypeUnsignedIntRaw10EXT = 19,
     SpvImageChannelDataTypeUnsignedIntRaw12EXT = 20,
+    SpvImageChannelDataTypeUnormInt2_101010EXT = 21,
     SpvImageChannelDataTypeMax = 0x7fffffff,
 } SpvImageChannelDataType;
 
@@ -3243,6 +3244,7 @@ inline const char* SpvImageChannelDataTypeToString(SpvImageChannelDataType value
     case SpvImageChannelDataTypeUnormInt101010_2: return "UnormInt101010_2";
     case SpvImageChannelDataTypeUnsignedIntRaw10EXT: return "UnsignedIntRaw10EXT";
     case SpvImageChannelDataTypeUnsignedIntRaw12EXT: return "UnsignedIntRaw12EXT";
+    case SpvImageChannelDataTypeUnormInt2_101010EXT: return "UnormInt2_101010EXT";
     default: return "Unknown";
     }
 }

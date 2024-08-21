@@ -357,6 +357,7 @@ spv = {
         'UnormInt101010_2' : 16,
         'UnsignedIntRaw10EXT' : 19,
         'UnsignedIntRaw12EXT' : 20,
+        'UnormInt2_101010EXT' : 21,
     },
 
     'ImageOperandsShift' : {
