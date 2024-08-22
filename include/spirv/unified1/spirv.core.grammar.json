@@ -9926,7 +9926,8 @@
       "opcode" : 6221,
       "operands" : [
         { "kind" : "IdRef", "name" : "'Ptr'" },
-        { "kind" : "IdRef", "name" : "'NumBytes'" }
+        { "kind" : "IdRef", "name" : "'NumBytes'" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
       ],
       "capabilities" : [ "SubgroupBufferPrefetchINTEL" ],
       "version" : "None"
