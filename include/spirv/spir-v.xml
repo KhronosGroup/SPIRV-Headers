@@ -64,7 +64,7 @@
         <id value="11"  vendor="Intel"      comment="Contact Alexey, alexey.bader@intel.com"/>
         <id value="12"  vendor="Imagination" comment="Contact Stephen Clarke, stephen.clarke@imgtec.com"/>
         <id value="13"  vendor="Google" tool="Shaderc over Glslang" comment="Contact David Neto, dneto@google.com"/>
-        <id value="14"  vendor="Google" tool="spiregg" comment="Contact Lei Zhang, antiagainst@gmail.com"/>
+        <id value="14"  vendor="Google" tool="spiregg" comment="Contact Steven Perron, stevenperron@google.com"/>
         <id value="15"  vendor="Google" tool="rspirv" comment="Contact Lei Zhang, antiagainst@gmail.com"/>
         <id value="16"  vendor="X-LEGEND"   tool="Mesa-IR/SPIR-V Translator" comment="Contact Metora Wang, github:metora/MesaGLSLCompiler"/>
         <id value="17"  vendor="Khronos" tool="SPIR-V Tools Linker" comment="Contact David Neto, dneto@google.com"/>
