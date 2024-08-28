@@ -1234,6 +1234,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGAArgumentInterfacesINTEL = 6174,
     SpvCapabilityGlobalVariableHostAccessINTEL = 6187,
     SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6189,
+    SpvCapabilitySubgroupBufferPrefetchINTEL = 6220,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,
     SpvCapabilityMaskedGatherScatterINTEL = 6427,
     SpvCapabilityCacheControlsINTEL = 6441,
@@ -2165,6 +2166,7 @@ typedef enum SpvOp_ {
     SpvOpConvertBF16ToFINTEL = 6117,
     SpvOpControlBarrierArriveINTEL = 6142,
     SpvOpControlBarrierWaitINTEL = 6143,
+    SpvOpSubgroupBlockPrefetchINTEL = 6221,
     SpvOpGroupIMulKHR = 6401,
     SpvOpGroupFMulKHR = 6402,
     SpvOpGroupBitwiseAndKHR = 6403,
@@ -2910,6 +2912,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -3828,6 +3831,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPGAArgumentInterfacesINTEL: return "FPGAArgumentInterfacesINTEL";
     case SpvCapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case SpvCapabilityGlobalVariableFPGADecorationsINTEL: return "GlobalVariableFPGADecorationsINTEL";
+    case SpvCapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
     case SpvCapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case SpvCapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case SpvCapabilityCacheControlsINTEL: return "CacheControlsINTEL";
@@ -4705,6 +4709,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpConvertBF16ToFINTEL: return "OpConvertBF16ToFINTEL";
     case SpvOpControlBarrierArriveINTEL: return "OpControlBarrierArriveINTEL";
     case SpvOpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
+    case SpvOpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case SpvOpGroupIMulKHR: return "OpGroupIMulKHR";
     case SpvOpGroupFMulKHR: return "OpGroupFMulKHR";
     case SpvOpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";

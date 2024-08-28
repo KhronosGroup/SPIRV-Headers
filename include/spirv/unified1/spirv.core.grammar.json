@@ -9921,6 +9921,18 @@
       "version" : "None"
     },
     {
+      "opname" : "OpSubgroupBlockPrefetchINTEL",
+      "class"  : "Group",
+      "opcode" : 6221,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Ptr'" },
+        { "kind" : "IdRef", "name" : "'NumBytes'" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "SubgroupBufferPrefetchINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpGroupIMulKHR",
       "class"  : "Group",
       "opcode" : 6401,
@@ -16741,6 +16753,12 @@
           "enumerant" : "GlobalVariableFPGADecorationsINTEL",
           "value" : 6189,
           "extensions": [ "SPV_INTEL_global_variable_fpga_decorations" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SubgroupBufferPrefetchINTEL",
+          "value" : 6220,
+          "extensions": [ "SPV_INTEL_subgroup_buffer_prefetch" ],
           "version" : "None"
         },
         {

@@ -1230,6 +1230,7 @@ enum Capability {
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
     CapabilityGlobalVariableHostAccessINTEL = 6187,
     CapabilityGlobalVariableFPGADecorationsINTEL = 6189,
+    CapabilitySubgroupBufferPrefetchINTEL = 6220,
     CapabilityGroupUniformArithmeticKHR = 6400,
     CapabilityMaskedGatherScatterINTEL = 6427,
     CapabilityCacheControlsINTEL = 6441,
@@ -2161,6 +2162,7 @@ enum Op {
     OpConvertBF16ToFINTEL = 6117,
     OpControlBarrierArriveINTEL = 6142,
     OpControlBarrierWaitINTEL = 6143,
+    OpSubgroupBlockPrefetchINTEL = 6221,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -2906,6 +2908,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
     case OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
     case OpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -3824,6 +3827,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFPGAArgumentInterfacesINTEL: return "FPGAArgumentInterfacesINTEL";
     case CapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case CapabilityGlobalVariableFPGADecorationsINTEL: return "GlobalVariableFPGADecorationsINTEL";
+    case CapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
     case CapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case CapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case CapabilityCacheControlsINTEL: return "CacheControlsINTEL";
@@ -4701,6 +4705,7 @@ inline const char* OpToString(Op value) {
     case OpConvertBF16ToFINTEL: return "OpConvertBF16ToFINTEL";
     case OpControlBarrierArriveINTEL: return "OpControlBarrierArriveINTEL";
     case OpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
+    case OpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case OpGroupIMulKHR: return "OpGroupIMulKHR";
     case OpGroupFMulKHR: return "OpGroupFMulKHR";
     case OpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";
