@@ -190,7 +190,9 @@ enum ExecutionMode {
     ExecutionModeOutputLinesNV = 5269,
     ExecutionModeOutputPrimitivesEXT = 5270,
     ExecutionModeOutputPrimitivesNV = 5270,
+    ExecutionModeDerivativeGroupQuadsKHR = 5289,
     ExecutionModeDerivativeGroupQuadsNV = 5289,
+    ExecutionModeDerivativeGroupLinearKHR = 5290,
     ExecutionModeDerivativeGroupLinearNV = 5290,
     ExecutionModeOutputTrianglesEXT = 5298,
     ExecutionModeOutputTrianglesNV = 5298,
@@ -1105,6 +1107,7 @@ enum Capability {
     CapabilityMeshShadingEXT = 5283,
     CapabilityFragmentBarycentricKHR = 5284,
     CapabilityFragmentBarycentricNV = 5284,
+    CapabilityComputeDerivativeGroupQuadsKHR = 5288,
     CapabilityComputeDerivativeGroupQuadsNV = 5288,
     CapabilityFragmentDensityEXT = 5291,
     CapabilityShadingRateNV = 5291,
@@ -1142,6 +1145,7 @@ enum Capability {
     CapabilityVulkanMemoryModelDeviceScopeKHR = 5346,
     CapabilityPhysicalStorageBufferAddresses = 5347,
     CapabilityPhysicalStorageBufferAddressesEXT = 5347,
+    CapabilityComputeDerivativeGroupLinearKHR = 5350,
     CapabilityComputeDerivativeGroupLinearNV = 5350,
     CapabilityRayTracingProvisionalKHR = 5353,
     CapabilityCooperativeMatrixNV = 5357,
@@ -3050,8 +3054,8 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeRequireFullQuadsKHR: return "RequireFullQuadsKHR";
     case ExecutionModeOutputLinesEXT: return "OutputLinesEXT";
     case ExecutionModeOutputPrimitivesEXT: return "OutputPrimitivesEXT";
-    case ExecutionModeDerivativeGroupQuadsNV: return "DerivativeGroupQuadsNV";
-    case ExecutionModeDerivativeGroupLinearNV: return "DerivativeGroupLinearNV";
+    case ExecutionModeDerivativeGroupQuadsKHR: return "DerivativeGroupQuadsKHR";
+    case ExecutionModeDerivativeGroupLinearKHR: return "DerivativeGroupLinearKHR";
     case ExecutionModeOutputTrianglesEXT: return "OutputTrianglesEXT";
     case ExecutionModePixelInterlockOrderedEXT: return "PixelInterlockOrderedEXT";
     case ExecutionModePixelInterlockUnorderedEXT: return "PixelInterlockUnorderedEXT";
@@ -3723,7 +3727,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityImageFootprintNV: return "ImageFootprintNV";
     case CapabilityMeshShadingEXT: return "MeshShadingEXT";
     case CapabilityFragmentBarycentricKHR: return "FragmentBarycentricKHR";
-    case CapabilityComputeDerivativeGroupQuadsNV: return "ComputeDerivativeGroupQuadsNV";
+    case CapabilityComputeDerivativeGroupQuadsKHR: return "ComputeDerivativeGroupQuadsKHR";
     case CapabilityFragmentDensityEXT: return "FragmentDensityEXT";
     case CapabilityGroupNonUniformPartitionedNV: return "GroupNonUniformPartitionedNV";
     case CapabilityShaderNonUniform: return "ShaderNonUniform";
@@ -3744,7 +3748,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityVulkanMemoryModel: return "VulkanMemoryModel";
     case CapabilityVulkanMemoryModelDeviceScope: return "VulkanMemoryModelDeviceScope";
     case CapabilityPhysicalStorageBufferAddresses: return "PhysicalStorageBufferAddresses";
-    case CapabilityComputeDerivativeGroupLinearNV: return "ComputeDerivativeGroupLinearNV";
+    case CapabilityComputeDerivativeGroupLinearKHR: return "ComputeDerivativeGroupLinearKHR";
     case CapabilityRayTracingProvisionalKHR: return "RayTracingProvisionalKHR";
     case CapabilityCooperativeMatrixNV: return "CooperativeMatrixNV";
     case CapabilityFragmentShaderSampleInterlockEXT: return "FragmentShaderSampleInterlockEXT";

@@ -11674,17 +11674,31 @@
           "version" : "None"
         },
         {
+          "enumerant" : "DerivativeGroupQuadsKHR",
+          "value" : 5289,
+          "capabilities" : [ "ComputeDerivativeGroupQuadsNV", "ComputeDerivativeGroupQuadsKHR" ],
+          "extensions" : [ "SPV_NV_compute_shader_derivatives", "SPV_KHR_compute_shader_derivatives" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "DerivativeGroupQuadsNV",
           "value" : 5289,
-          "capabilities" : [ "ComputeDerivativeGroupQuadsNV" ],
-          "extensions" : [ "SPV_NV_compute_shader_derivatives" ],
+          "capabilities" : [ "ComputeDerivativeGroupQuadsNV", "ComputeDerivativeGroupQuadsKHR" ],
+          "extensions" : [ "SPV_NV_compute_shader_derivatives", "SPV_KHR_compute_shader_derivatives" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DerivativeGroupLinearKHR",
+          "value" : 5290,
+          "capabilities" : [ "ComputeDerivativeGroupLinearNV", "ComputeDerivativeGroupLinearKHR" ],
+          "extensions" : [ "SPV_NV_compute_shader_derivatives", "SPV_KHR_compute_shader_derivatives" ],
           "version" : "None"
         },
         {
           "enumerant" : "DerivativeGroupLinearNV",
           "value" : 5290,
-          "capabilities" : [ "ComputeDerivativeGroupLinearNV" ],
-          "extensions" : [ "SPV_NV_compute_shader_derivatives" ],
+          "capabilities" : [ "ComputeDerivativeGroupLinearNV", "ComputeDerivativeGroupLinearKHR" ],
+          "extensions" : [ "SPV_NV_compute_shader_derivatives", "SPV_KHR_compute_shader_derivatives" ],
           "version" : "None"
         },
         {
@@ -15973,9 +15987,17 @@
           "version" : "None"
         },
         {
+          "enumerant" : "ComputeDerivativeGroupQuadsKHR",
+          "value" : 5288,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_NV_compute_shader_derivatives", "SPV_KHR_compute_shader_derivatives" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "ComputeDerivativeGroupQuadsNV",
           "value" : 5288,
-          "extensions" : [ "SPV_NV_compute_shader_derivatives" ],
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_NV_compute_shader_derivatives", "SPV_KHR_compute_shader_derivatives" ],
           "version" : "None"
         },
         {
@@ -16212,9 +16234,17 @@
           "version" : "1.5"
         },
         {
+          "enumerant" : "ComputeDerivativeGroupLinearKHR",
+          "value" : 5350,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_NV_compute_shader_derivatives", "SPV_KHR_compute_shader_derivatives" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "ComputeDerivativeGroupLinearNV",
           "value" : 5350,
-          "extensions" : [ "SPV_NV_compute_shader_derivatives" ],
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_NV_compute_shader_derivatives", "SPV_KHR_compute_shader_derivatives" ],
           "version" : "None"
         },
         {

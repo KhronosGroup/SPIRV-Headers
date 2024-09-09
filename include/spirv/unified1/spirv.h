@@ -194,7 +194,9 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeOutputLinesNV = 5269,
     SpvExecutionModeOutputPrimitivesEXT = 5270,
     SpvExecutionModeOutputPrimitivesNV = 5270,
+    SpvExecutionModeDerivativeGroupQuadsKHR = 5289,
     SpvExecutionModeDerivativeGroupQuadsNV = 5289,
+    SpvExecutionModeDerivativeGroupLinearKHR = 5290,
     SpvExecutionModeDerivativeGroupLinearNV = 5290,
     SpvExecutionModeOutputTrianglesEXT = 5298,
     SpvExecutionModeOutputTrianglesNV = 5298,
@@ -1109,6 +1111,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityMeshShadingEXT = 5283,
     SpvCapabilityFragmentBarycentricKHR = 5284,
     SpvCapabilityFragmentBarycentricNV = 5284,
+    SpvCapabilityComputeDerivativeGroupQuadsKHR = 5288,
     SpvCapabilityComputeDerivativeGroupQuadsNV = 5288,
     SpvCapabilityFragmentDensityEXT = 5291,
     SpvCapabilityShadingRateNV = 5291,
@@ -1146,6 +1149,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityVulkanMemoryModelDeviceScopeKHR = 5346,
     SpvCapabilityPhysicalStorageBufferAddresses = 5347,
     SpvCapabilityPhysicalStorageBufferAddressesEXT = 5347,
+    SpvCapabilityComputeDerivativeGroupLinearKHR = 5350,
     SpvCapabilityComputeDerivativeGroupLinearNV = 5350,
     SpvCapabilityRayTracingProvisionalKHR = 5353,
     SpvCapabilityCooperativeMatrixNV = 5357,
@@ -3054,8 +3058,8 @@ inline const char* SpvExecutionModeToString(SpvExecutionMode value) {
     case SpvExecutionModeRequireFullQuadsKHR: return "RequireFullQuadsKHR";
     case SpvExecutionModeOutputLinesEXT: return "OutputLinesEXT";
     case SpvExecutionModeOutputPrimitivesEXT: return "OutputPrimitivesEXT";
-    case SpvExecutionModeDerivativeGroupQuadsNV: return "DerivativeGroupQuadsNV";
-    case SpvExecutionModeDerivativeGroupLinearNV: return "DerivativeGroupLinearNV";
+    case SpvExecutionModeDerivativeGroupQuadsKHR: return "DerivativeGroupQuadsKHR";
+    case SpvExecutionModeDerivativeGroupLinearKHR: return "DerivativeGroupLinearKHR";
     case SpvExecutionModeOutputTrianglesEXT: return "OutputTrianglesEXT";
     case SpvExecutionModePixelInterlockOrderedEXT: return "PixelInterlockOrderedEXT";
     case SpvExecutionModePixelInterlockUnorderedEXT: return "PixelInterlockUnorderedEXT";
@@ -3727,7 +3731,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityImageFootprintNV: return "ImageFootprintNV";
     case SpvCapabilityMeshShadingEXT: return "MeshShadingEXT";
     case SpvCapabilityFragmentBarycentricKHR: return "FragmentBarycentricKHR";
-    case SpvCapabilityComputeDerivativeGroupQuadsNV: return "ComputeDerivativeGroupQuadsNV";
+    case SpvCapabilityComputeDerivativeGroupQuadsKHR: return "ComputeDerivativeGroupQuadsKHR";
     case SpvCapabilityFragmentDensityEXT: return "FragmentDensityEXT";
     case SpvCapabilityGroupNonUniformPartitionedNV: return "GroupNonUniformPartitionedNV";
     case SpvCapabilityShaderNonUniform: return "ShaderNonUniform";
@@ -3748,7 +3752,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityVulkanMemoryModel: return "VulkanMemoryModel";
     case SpvCapabilityVulkanMemoryModelDeviceScope: return "VulkanMemoryModelDeviceScope";
     case SpvCapabilityPhysicalStorageBufferAddresses: return "PhysicalStorageBufferAddresses";
-    case SpvCapabilityComputeDerivativeGroupLinearNV: return "ComputeDerivativeGroupLinearNV";
+    case SpvCapabilityComputeDerivativeGroupLinearKHR: return "ComputeDerivativeGroupLinearKHR";
     case SpvCapabilityRayTracingProvisionalKHR: return "RayTracingProvisionalKHR";
     case SpvCapabilityCooperativeMatrixNV: return "CooperativeMatrixNV";
     case SpvCapabilityFragmentShaderSampleInterlockEXT: return "FragmentShaderSampleInterlockEXT";
