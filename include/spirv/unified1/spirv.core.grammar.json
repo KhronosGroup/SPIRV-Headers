@@ -10518,9 +10518,9 @@
           "version" : "1.0"
         },
         {
-          "enumerant" : "OptNoneINTEL",
+          "enumerant" : "OptNoneEXT",
           "value" : "0x10000",
-          "capabilities" : [  "OptNoneINTEL" ],
+          "capabilities" : [  "OptNoneEXT" ],
           "version" : "None"
         }
       ]
@@ -16712,9 +16712,9 @@
           "version" : "None"
         },
         {
-          "enumerant" : "OptNoneINTEL",
+          "enumerant" : "OptNoneEXT",
           "value" : 6094,
-          "extensions" : [ "SPV_INTEL_optnone" ],
+          "extensions" : [ "SPV_EXT_optnone" ],
           "version" : "None"
         },
         {

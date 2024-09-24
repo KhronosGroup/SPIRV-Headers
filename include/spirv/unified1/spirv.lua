@@ -839,7 +839,7 @@ spv = {
         DontInline = 1,
         Pure = 2,
         Const = 3,
-        OptNoneINTEL = 16,
+        OptNoneEXT = 16,
         Max = 0x7fffffff,
     },
 
@@ -849,7 +849,7 @@ spv = {
         DontInline = 0x00000002,
         Pure = 0x00000004,
         Const = 0x00000008,
-        OptNoneINTEL = 0x00010000,
+        OptNoneEXT = 0x00010000,
     },
 
     MemorySemanticsShift = {
@@ -1213,7 +1213,7 @@ spv = {
         AtomicFloat32AddEXT = 6033,
         AtomicFloat64AddEXT = 6034,
         LongCompositesINTEL = 6089,
-        OptNoneINTEL = 6094,
+        OptNoneEXT = 6094,
         AtomicFloat16AddEXT = 6095,
         DebugInfoModuleINTEL = 6114,
         BFloat16ConversionINTEL = 6115,
