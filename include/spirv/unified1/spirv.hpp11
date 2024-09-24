@@ -1170,6 +1170,12 @@ enum class Capability : unsigned {
     AtomicFloat16VectorNV = 5404,
     RayTracingDisplacementMicromapNV = 5409,
     RawAccessChainsNV = 5414,
+    CooperativeMatrixReductionsNV = 5430,
+    CooperativeMatrixConversionsNV = 5431,
+    CooperativeMatrixPerElementOperationsNV = 5432,
+    CooperativeMatrixTensorAddressingNV = 5433,
+    CooperativeMatrixBlockLoadsNV = 5434,
+    TensorAddressingNV = 5439,
     SubgroupShuffleINTEL = 5568,
     SubgroupBufferBlockIOINTEL = 5569,
     SubgroupImageBlockIOINTEL = 5570,
@@ -1385,6 +1391,41 @@ enum class CooperativeMatrixUse : unsigned {
     MatrixBKHR = 1,
     MatrixAccumulatorKHR = 2,
     Max = 0x7fffffff,
+};
+
+enum class CooperativeMatrixReduceShift : unsigned {
+    Row = 0,
+    Column = 1,
+    CooperativeMatrixReduce2x2 = 2,
+    Max = 0x7fffffff,
+};
+
+enum class CooperativeMatrixReduceMask : unsigned {
+    MaskNone = 0,
+    Row = 0x00000001,
+    Column = 0x00000002,
+    CooperativeMatrixReduce2x2 = 0x00000004,
+};
+
+enum class TensorClampMode : unsigned {
+    Undefined = 0,
+    Constant = 1,
+    ClampToEdge = 2,
+    Repeat = 3,
+    RepeatMirrored = 4,
+    Max = 0x7fffffff,
+};
+
+enum class TensorAddressingOperandsShift : unsigned {
+    TensorView = 0,
+    DecodeFunc = 1,
+    Max = 0x7fffffff,
+};
+
+enum class TensorAddressingOperandsMask : unsigned {
+    MaskNone = 0,
+    TensorView = 0x00000001,
+    DecodeFunc = 0x00000002,
 };
 
 enum class InitializationModeQualifier : unsigned {
@@ -1899,6 +1940,7 @@ enum class Op : unsigned {
     OpReorderThreadWithHintNV = 5280,
     OpTypeHitObjectNV = 5281,
     OpImageSampleFootprintNV = 5283,
+    OpCooperativeMatrixConvertNV = 5293,
     OpEmitMeshTasksEXT = 5294,
     OpSetMeshOutputsEXT = 5295,
     OpGroupNonUniformPartitionNV = 5296,
@@ -1923,9 +1965,26 @@ enum class Op : unsigned {
     OpCooperativeMatrixLengthNV = 5362,
     OpBeginInvocationInterlockEXT = 5364,
     OpEndInvocationInterlockEXT = 5365,
+    OpCooperativeMatrixReduceNV = 5366,
+    OpCooperativeMatrixLoadTensorNV = 5367,
+    OpCooperativeMatrixStoreTensorNV = 5368,
+    OpCooperativeMatrixPerElementOpNV = 5369,
+    OpTypeTensorLayoutNV = 5370,
+    OpTypeTensorViewNV = 5371,
+    OpCreateTensorLayoutNV = 5372,
+    OpTensorLayoutSetDimensionNV = 5373,
+    OpTensorLayoutSetStrideNV = 5374,
+    OpTensorLayoutSliceNV = 5375,
+    OpTensorLayoutSetClampValueNV = 5376,
+    OpCreateTensorViewNV = 5377,
+    OpTensorViewSetDimensionNV = 5378,
+    OpTensorViewSetStrideNV = 5379,
     OpDemoteToHelperInvocation = 5380,
     OpDemoteToHelperInvocationEXT = 5380,
     OpIsHelperInvocationEXT = 5381,
+    OpTensorViewSetClipNV = 5382,
+    OpTensorLayoutSetBlockSizeNV = 5384,
+    OpCooperativeMatrixTransposeNV = 5390,
     OpConvertUToImageNV = 5391,
     OpConvertUToSamplerNV = 5392,
     OpConvertImageToUNV = 5393,
@@ -2656,6 +2715,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpReorderThreadWithHintNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpTypeHitObjectNV: *hasResult = true; *hasResultType = false; break;
     case Op::OpImageSampleFootprintNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpGroupNonUniformPartitionNV: *hasResult = true; *hasResultType = true; break;
@@ -2678,8 +2738,25 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpBeginInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpEndInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCooperativeMatrixReduceNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixLoadTensorNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixStoreTensorNV: *hasResult = false; *hasResultType = false; break;
+    case Op::OpCooperativeMatrixPerElementOpNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTypeTensorLayoutNV: *hasResult = true; *hasResultType = false; break;
+    case Op::OpTypeTensorViewNV: *hasResult = true; *hasResultType = false; break;
+    case Op::OpCreateTensorLayoutNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTensorLayoutSetDimensionNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTensorLayoutSetStrideNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTensorLayoutSliceNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTensorLayoutSetClampValueNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCreateTensorViewNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTensorViewSetDimensionNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTensorViewSetStrideNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpDemoteToHelperInvocation: *hasResult = false; *hasResultType = false; break;
     case Op::OpIsHelperInvocationEXT: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTensorViewSetClipNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTensorLayoutSetBlockSizeNV: *hasResult = true; *hasResultType = true; break;
+    case Op::OpCooperativeMatrixTransposeNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpConvertUToImageNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpConvertUToSamplerNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpConvertImageToUNV: *hasResult = true; *hasResultType = true; break;
@@ -3790,6 +3867,12 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityAtomicFloat16VectorNV: return "AtomicFloat16VectorNV";
     case CapabilityRayTracingDisplacementMicromapNV: return "RayTracingDisplacementMicromapNV";
     case CapabilityRawAccessChainsNV: return "RawAccessChainsNV";
+    case CapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
+    case CapabilityCooperativeMatrixConversionsNV: return "CooperativeMatrixConversionsNV";
+    case CapabilityCooperativeMatrixPerElementOperationsNV: return "CooperativeMatrixPerElementOperationsNV";
+    case CapabilityCooperativeMatrixTensorAddressingNV: return "CooperativeMatrixTensorAddressingNV";
+    case CapabilityCooperativeMatrixBlockLoadsNV: return "CooperativeMatrixBlockLoadsNV";
+    case CapabilityTensorAddressingNV: return "TensorAddressingNV";
     case CapabilitySubgroupShuffleINTEL: return "SubgroupShuffleINTEL";
     case CapabilitySubgroupBufferBlockIOINTEL: return "SubgroupBufferBlockIOINTEL";
     case CapabilitySubgroupImageBlockIOINTEL: return "SubgroupImageBlockIOINTEL";
@@ -3954,6 +4037,17 @@ inline const char* CooperativeMatrixUseToString(CooperativeMatrixUse value) {
     case CooperativeMatrixUseMatrixAKHR: return "MatrixAKHR";
     case CooperativeMatrixUseMatrixBKHR: return "MatrixBKHR";
     case CooperativeMatrixUseMatrixAccumulatorKHR: return "MatrixAccumulatorKHR";
+    default: return "Unknown";
+    }
+}
+
+inline const char* TensorClampModeToString(TensorClampMode value) {
+    switch (value) {
+    case TensorClampModeUndefined: return "Undefined";
+    case TensorClampModeConstant: return "Constant";
+    case TensorClampModeClampToEdge: return "ClampToEdge";
+    case TensorClampModeRepeat: return "Repeat";
+    case TensorClampModeRepeatMirrored: return "RepeatMirrored";
     default: return "Unknown";
     }
 }
@@ -4465,6 +4559,7 @@ inline const char* OpToString(Op value) {
     case OpReorderThreadWithHintNV: return "OpReorderThreadWithHintNV";
     case OpTypeHitObjectNV: return "OpTypeHitObjectNV";
     case OpImageSampleFootprintNV: return "OpImageSampleFootprintNV";
+    case OpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
     case OpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case OpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
     case OpGroupNonUniformPartitionNV: return "OpGroupNonUniformPartitionNV";
@@ -4487,8 +4582,25 @@ inline const char* OpToString(Op value) {
     case OpCooperativeMatrixLengthNV: return "OpCooperativeMatrixLengthNV";
     case OpBeginInvocationInterlockEXT: return "OpBeginInvocationInterlockEXT";
     case OpEndInvocationInterlockEXT: return "OpEndInvocationInterlockEXT";
+    case OpCooperativeMatrixReduceNV: return "OpCooperativeMatrixReduceNV";
+    case OpCooperativeMatrixLoadTensorNV: return "OpCooperativeMatrixLoadTensorNV";
+    case OpCooperativeMatrixStoreTensorNV: return "OpCooperativeMatrixStoreTensorNV";
+    case OpCooperativeMatrixPerElementOpNV: return "OpCooperativeMatrixPerElementOpNV";
+    case OpTypeTensorLayoutNV: return "OpTypeTensorLayoutNV";
+    case OpTypeTensorViewNV: return "OpTypeTensorViewNV";
+    case OpCreateTensorLayoutNV: return "OpCreateTensorLayoutNV";
+    case OpTensorLayoutSetDimensionNV: return "OpTensorLayoutSetDimensionNV";
+    case OpTensorLayoutSetStrideNV: return "OpTensorLayoutSetStrideNV";
+    case OpTensorLayoutSliceNV: return "OpTensorLayoutSliceNV";
+    case OpTensorLayoutSetClampValueNV: return "OpTensorLayoutSetClampValueNV";
+    case OpCreateTensorViewNV: return "OpCreateTensorViewNV";
+    case OpTensorViewSetDimensionNV: return "OpTensorViewSetDimensionNV";
+    case OpTensorViewSetStrideNV: return "OpTensorViewSetStrideNV";
     case OpDemoteToHelperInvocation: return "OpDemoteToHelperInvocation";
     case OpIsHelperInvocationEXT: return "OpIsHelperInvocationEXT";
+    case OpTensorViewSetClipNV: return "OpTensorViewSetClipNV";
+    case OpTensorLayoutSetBlockSizeNV: return "OpTensorLayoutSetBlockSizeNV";
+    case OpCooperativeMatrixTransposeNV: return "OpCooperativeMatrixTransposeNV";
     case OpConvertUToImageNV: return "OpConvertUToImageNV";
     case OpConvertUToSamplerNV: return "OpConvertUToSamplerNV";
     case OpConvertImageToUNV: return "OpConvertImageToUNV";
@@ -4805,6 +4917,14 @@ constexpr CooperativeMatrixOperandsMask operator|(CooperativeMatrixOperandsMask 
 constexpr CooperativeMatrixOperandsMask operator&(CooperativeMatrixOperandsMask a, CooperativeMatrixOperandsMask b) { return CooperativeMatrixOperandsMask(unsigned(a) & unsigned(b)); }
 constexpr CooperativeMatrixOperandsMask operator^(CooperativeMatrixOperandsMask a, CooperativeMatrixOperandsMask b) { return CooperativeMatrixOperandsMask(unsigned(a) ^ unsigned(b)); }
 constexpr CooperativeMatrixOperandsMask operator~(CooperativeMatrixOperandsMask a) { return CooperativeMatrixOperandsMask(~unsigned(a)); }
+constexpr CooperativeMatrixReduceMask operator|(CooperativeMatrixReduceMask a, CooperativeMatrixReduceMask b) { return CooperativeMatrixReduceMask(unsigned(a) | unsigned(b)); }
+constexpr CooperativeMatrixReduceMask operator&(CooperativeMatrixReduceMask a, CooperativeMatrixReduceMask b) { return CooperativeMatrixReduceMask(unsigned(a) & unsigned(b)); }
+constexpr CooperativeMatrixReduceMask operator^(CooperativeMatrixReduceMask a, CooperativeMatrixReduceMask b) { return CooperativeMatrixReduceMask(unsigned(a) ^ unsigned(b)); }
+constexpr CooperativeMatrixReduceMask operator~(CooperativeMatrixReduceMask a) { return CooperativeMatrixReduceMask(~unsigned(a)); }
+constexpr TensorAddressingOperandsMask operator|(TensorAddressingOperandsMask a, TensorAddressingOperandsMask b) { return TensorAddressingOperandsMask(unsigned(a) | unsigned(b)); }
+constexpr TensorAddressingOperandsMask operator&(TensorAddressingOperandsMask a, TensorAddressingOperandsMask b) { return TensorAddressingOperandsMask(unsigned(a) & unsigned(b)); }
+constexpr TensorAddressingOperandsMask operator^(TensorAddressingOperandsMask a, TensorAddressingOperandsMask b) { return TensorAddressingOperandsMask(unsigned(a) ^ unsigned(b)); }
+constexpr TensorAddressingOperandsMask operator~(TensorAddressingOperandsMask a) { return TensorAddressingOperandsMask(~unsigned(a)); }
 constexpr RawAccessChainOperandsMask operator|(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) | unsigned(b)); }
 constexpr RawAccessChainOperandsMask operator&(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) & unsigned(b)); }
 constexpr RawAccessChainOperandsMask operator^(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) ^ unsigned(b)); }

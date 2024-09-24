@@ -268,6 +268,9 @@ EnumValues PackedVectorFormatParams;
 EnumValues CooperativeMatrixOperandsParams;
 EnumValues CooperativeMatrixLayoutParams;
 EnumValues CooperativeMatrixUseParams;
+EnumValues CooperativeMatrixReduceParams;
+EnumValues TensorClampModeParams;
+EnumValues TensorAddressingOperandsParams;
 EnumValues InitializationModeQualifierParams;
 EnumValues HostAccessQualifierParams;
 EnumValues LoadCacheControlParams;
@@ -425,10 +428,16 @@ ClassOptionality ToOperandClassAndOptionality(const std::string& operandKind, co
             type = OperandPackedVectorFormat;
         } else if (operandKind == "CooperativeMatrixOperands") {
             type = OperandCooperativeMatrixOperands;
+        } else if (operandKind == "TensorAddressingOperands") {
+            type = OperandTensorAddressingOperands;
         } else if (operandKind == "CooperativeMatrixLayout") {
             type = OperandCooperativeMatrixLayout;
         } else if (operandKind == "CooperativeMatrixUse") {
             type = OperandCooperativeMatrixUse;
+        } else if (operandKind == "CooperativeMatrixReduce") {
+            type = OperandCooperativeMatrixReduce;
+        } else if (operandKind == "TensorClampMode") {
+            type = OperandTensorClampMode;
         } else if (operandKind == "InitializationModeQualifier") {
             type = OperandInitializationModeQualifier;
         } else if (operandKind == "HostAccessQualifier") {
@@ -809,10 +818,16 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             establishOperandClass(enumName, OperandPackedVectorFormat, &PackedVectorFormatParams, operandEnum, category);
         } else if (enumName == "CooperativeMatrixOperands") {
             establishOperandClass(enumName, OperandCooperativeMatrixOperands, &CooperativeMatrixOperandsParams, operandEnum, category);
+        } else if (enumName == "TensorAddressingOperands") {
+            establishOperandClass(enumName, OperandTensorAddressingOperands, &TensorAddressingOperandsParams, operandEnum, category);
         } else if (enumName == "CooperativeMatrixLayout") {
             establishOperandClass(enumName, OperandCooperativeMatrixLayout, &CooperativeMatrixLayoutParams, operandEnum, category);
         } else if (enumName == "CooperativeMatrixUse") {
             establishOperandClass(enumName, OperandCooperativeMatrixUse, &CooperativeMatrixUseParams, operandEnum, category);
+        } else if (enumName == "CooperativeMatrixReduce") {
+            establishOperandClass(enumName, OperandCooperativeMatrixReduce, &CooperativeMatrixReduceParams, operandEnum, category);
+        } else if (enumName == "TensorClampMode") {
+            establishOperandClass(enumName, OperandTensorClampMode, &TensorClampModeParams, operandEnum, category);
         } else if (enumName == "InitializationModeQualifier") {
             establishOperandClass(enumName, OperandInitializationModeQualifier, &InitializationModeQualifierParams, operandEnum, category);
         } else if (enumName == "HostAccessQualifier") {
