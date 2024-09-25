@@ -840,6 +840,7 @@ spv = {
         Pure = 2,
         Const = 3,
         OptNoneEXT = 16,
+        OptNoneINTEL = 16,
         Max = 0x7fffffff,
     },
 
@@ -850,6 +851,7 @@ spv = {
         Pure = 0x00000004,
         Const = 0x00000008,
         OptNoneEXT = 0x00010000,
+        OptNoneINTEL = 0x00010000,
     },
 
     MemorySemanticsShift = {
@@ -1214,6 +1216,7 @@ spv = {
         AtomicFloat64AddEXT = 6034,
         LongCompositesINTEL = 6089,
         OptNoneEXT = 6094,
+        OptNoneINTEL = 6094,
         AtomicFloat16AddEXT = 6095,
         DebugInfoModuleINTEL = 6114,
         BFloat16ConversionINTEL = 6115,

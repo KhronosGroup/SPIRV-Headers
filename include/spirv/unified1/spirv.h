@@ -853,6 +853,7 @@ typedef enum SpvFunctionControlShift_ {
     SpvFunctionControlPureShift = 2,
     SpvFunctionControlConstShift = 3,
     SpvFunctionControlOptNoneEXTShift = 16,
+    SpvFunctionControlOptNoneINTELShift = 16,
     SpvFunctionControlMax = 0x7fffffff,
 } SpvFunctionControlShift;
 
@@ -863,6 +864,7 @@ typedef enum SpvFunctionControlMask_ {
     SpvFunctionControlPureMask = 0x00000004,
     SpvFunctionControlConstMask = 0x00000008,
     SpvFunctionControlOptNoneEXTMask = 0x00010000,
+    SpvFunctionControlOptNoneINTELMask = 0x00010000,
 } SpvFunctionControlMask;
 
 typedef enum SpvMemorySemanticsShift_ {
@@ -1227,6 +1229,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityAtomicFloat64AddEXT = 6034,
     SpvCapabilityLongCompositesINTEL = 6089,
     SpvCapabilityOptNoneEXT = 6094,
+    SpvCapabilityOptNoneINTEL = 6094,
     SpvCapabilityAtomicFloat16AddEXT = 6095,
     SpvCapabilityDebugInfoModuleINTEL = 6114,
     SpvCapabilityBFloat16ConversionINTEL = 6115,

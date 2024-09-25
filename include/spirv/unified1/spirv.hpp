@@ -849,6 +849,7 @@ enum FunctionControlShift {
     FunctionControlPureShift = 2,
     FunctionControlConstShift = 3,
     FunctionControlOptNoneEXTShift = 16,
+    FunctionControlOptNoneINTELShift = 16,
     FunctionControlMax = 0x7fffffff,
 };
 
@@ -859,6 +860,7 @@ enum FunctionControlMask {
     FunctionControlPureMask = 0x00000004,
     FunctionControlConstMask = 0x00000008,
     FunctionControlOptNoneEXTMask = 0x00010000,
+    FunctionControlOptNoneINTELMask = 0x00010000,
 };
 
 enum MemorySemanticsShift {
@@ -1223,6 +1225,7 @@ enum Capability {
     CapabilityAtomicFloat64AddEXT = 6034,
     CapabilityLongCompositesINTEL = 6089,
     CapabilityOptNoneEXT = 6094,
+    CapabilityOptNoneINTEL = 6094,
     CapabilityAtomicFloat16AddEXT = 6095,
     CapabilityDebugInfoModuleINTEL = 6114,
     CapabilityBFloat16ConversionINTEL = 6115,
