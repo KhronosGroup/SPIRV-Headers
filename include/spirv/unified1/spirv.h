@@ -852,6 +852,7 @@ typedef enum SpvFunctionControlShift_ {
     SpvFunctionControlDontInlineShift = 1,
     SpvFunctionControlPureShift = 2,
     SpvFunctionControlConstShift = 3,
+    SpvFunctionControlOptNoneEXTShift = 16,
     SpvFunctionControlOptNoneINTELShift = 16,
     SpvFunctionControlMax = 0x7fffffff,
 } SpvFunctionControlShift;
@@ -862,6 +863,7 @@ typedef enum SpvFunctionControlMask_ {
     SpvFunctionControlDontInlineMask = 0x00000002,
     SpvFunctionControlPureMask = 0x00000004,
     SpvFunctionControlConstMask = 0x00000008,
+    SpvFunctionControlOptNoneEXTMask = 0x00010000,
     SpvFunctionControlOptNoneINTELMask = 0x00010000,
 } SpvFunctionControlMask;
 
@@ -1226,6 +1228,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityAtomicFloat32AddEXT = 6033,
     SpvCapabilityAtomicFloat64AddEXT = 6034,
     SpvCapabilityLongCompositesINTEL = 6089,
+    SpvCapabilityOptNoneEXT = 6094,
     SpvCapabilityOptNoneINTEL = 6094,
     SpvCapabilityAtomicFloat16AddEXT = 6095,
     SpvCapabilityDebugInfoModuleINTEL = 6114,
@@ -3823,7 +3826,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityAtomicFloat32AddEXT: return "AtomicFloat32AddEXT";
     case SpvCapabilityAtomicFloat64AddEXT: return "AtomicFloat64AddEXT";
     case SpvCapabilityLongCompositesINTEL: return "LongCompositesINTEL";
-    case SpvCapabilityOptNoneINTEL: return "OptNoneINTEL";
+    case SpvCapabilityOptNoneEXT: return "OptNoneEXT";
     case SpvCapabilityAtomicFloat16AddEXT: return "AtomicFloat16AddEXT";
     case SpvCapabilityDebugInfoModuleINTEL: return "DebugInfoModuleINTEL";
     case SpvCapabilityBFloat16ConversionINTEL: return "BFloat16ConversionINTEL";

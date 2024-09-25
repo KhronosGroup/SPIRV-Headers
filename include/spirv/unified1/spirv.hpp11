@@ -848,6 +848,7 @@ enum class FunctionControlShift : unsigned {
     DontInline = 1,
     Pure = 2,
     Const = 3,
+    OptNoneEXT = 16,
     OptNoneINTEL = 16,
     Max = 0x7fffffff,
 };
@@ -858,6 +859,7 @@ enum class FunctionControlMask : unsigned {
     DontInline = 0x00000002,
     Pure = 0x00000004,
     Const = 0x00000008,
+    OptNoneEXT = 0x00010000,
     OptNoneINTEL = 0x00010000,
 };
 
@@ -1222,6 +1224,7 @@ enum class Capability : unsigned {
     AtomicFloat32AddEXT = 6033,
     AtomicFloat64AddEXT = 6034,
     LongCompositesINTEL = 6089,
+    OptNoneEXT = 6094,
     OptNoneINTEL = 6094,
     AtomicFloat16AddEXT = 6095,
     DebugInfoModuleINTEL = 6114,
@@ -3819,7 +3822,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityAtomicFloat32AddEXT: return "AtomicFloat32AddEXT";
     case CapabilityAtomicFloat64AddEXT: return "AtomicFloat64AddEXT";
     case CapabilityLongCompositesINTEL: return "LongCompositesINTEL";
-    case CapabilityOptNoneINTEL: return "OptNoneINTEL";
+    case CapabilityOptNoneEXT: return "OptNoneEXT";
     case CapabilityAtomicFloat16AddEXT: return "AtomicFloat16AddEXT";
     case CapabilityDebugInfoModuleINTEL: return "DebugInfoModuleINTEL";
     case CapabilityBFloat16ConversionINTEL: return "BFloat16ConversionINTEL";

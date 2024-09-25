@@ -10518,6 +10518,12 @@
           "version" : "1.0"
         },
         {
+          "enumerant" : "OptNoneEXT",
+          "value" : "0x10000",
+          "capabilities" : [  "OptNoneEXT" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "OptNoneINTEL",
           "value" : "0x10000",
           "capabilities" : [  "OptNoneINTEL" ],
@@ -16709,6 +16715,12 @@
           "enumerant" : "LongCompositesINTEL",
           "value" : 6089,
           "extensions" : [ "SPV_INTEL_long_composites" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "OptNoneEXT",
+          "value" : 6094,
+          "extensions" : [ "SPV_EXT_optnone" ],
           "version" : "None"
         },
         {

@@ -854,6 +854,7 @@
                     "DontInline": 1,
                     "Pure": 2,
                     "Const": 3,
+                    "OptNoneEXT": 16,
                     "OptNoneINTEL": 16
                 }
             },
@@ -1199,6 +1200,7 @@
                     "AtomicFloat32AddEXT": 6033,
                     "AtomicFloat64AddEXT": 6034,
                     "LongCompositesINTEL": 6089,
+                    "OptNoneEXT": 6094,
                     "OptNoneINTEL": 6094,
                     "AtomicFloat16AddEXT": 6095,
                     "DebugInfoModuleINTEL": 6114,
