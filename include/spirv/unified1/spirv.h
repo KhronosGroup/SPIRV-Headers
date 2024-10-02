@@ -1234,6 +1234,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityDebugInfoModuleINTEL = 6114,
     SpvCapabilityBFloat16ConversionINTEL = 6115,
     SpvCapabilitySplitBarrierINTEL = 6141,
+    SpvCapabilityArithmeticFenceEXT = 6144,
     SpvCapabilityFPGAClusterAttributesV2INTEL = 6150,
     SpvCapabilityFPGAKernelAttributesv2INTEL = 6161,
     SpvCapabilityFPMaxErrorINTEL = 6169,
@@ -2173,6 +2174,7 @@ typedef enum SpvOp_ {
     SpvOpConvertBF16ToFINTEL = 6117,
     SpvOpControlBarrierArriveINTEL = 6142,
     SpvOpControlBarrierWaitINTEL = 6143,
+    SpvOpArithmeticFenceEXT = 6145,
     SpvOpSubgroupBlockPrefetchINTEL = 6221,
     SpvOpGroupIMulKHR = 6401,
     SpvOpGroupFMulKHR = 6402,
@@ -2919,6 +2921,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpArithmeticFenceEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
@@ -3831,6 +3834,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityDebugInfoModuleINTEL: return "DebugInfoModuleINTEL";
     case SpvCapabilityBFloat16ConversionINTEL: return "BFloat16ConversionINTEL";
     case SpvCapabilitySplitBarrierINTEL: return "SplitBarrierINTEL";
+    case SpvCapabilityArithmeticFenceEXT: return "ArithmeticFenceEXT";
     case SpvCapabilityFPGAClusterAttributesV2INTEL: return "FPGAClusterAttributesV2INTEL";
     case SpvCapabilityFPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
     case SpvCapabilityFPMaxErrorINTEL: return "FPMaxErrorINTEL";
@@ -4716,6 +4720,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpConvertBF16ToFINTEL: return "OpConvertBF16ToFINTEL";
     case SpvOpControlBarrierArriveINTEL: return "OpControlBarrierArriveINTEL";
     case SpvOpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
+    case SpvOpArithmeticFenceEXT: return "OpArithmeticFenceEXT";
     case SpvOpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case SpvOpGroupIMulKHR: return "OpGroupIMulKHR";
     case SpvOpGroupFMulKHR: return "OpGroupFMulKHR";
