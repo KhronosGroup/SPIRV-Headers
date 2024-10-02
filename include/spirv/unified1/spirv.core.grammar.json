@@ -9933,18 +9933,6 @@
       "version" : "None"
     },
     {
-      "opname" : "OpArithmeticFenceINTEL",
-      "class"  : "Miscellaneous",
-      "opcode" : 6145,
-      "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
-        { "kind" : "IdRef",          "name" : "'Target '" }
-      ],
-      "capabilities" : [ "ArithmeticFenceINTEL" ],
-      "version" : "None"
-    },
-    {
       "opname" : "OpSubgroupBlockPrefetchINTEL",
       "class"  : "Group",
       "opcode" : 6221,
@@ -16769,12 +16757,6 @@
           "enumerant" : "ArithmeticFenceEXT",
           "value" : 6144,
           "extensions" : [ "SPV_EXT_arithmetic_fence" ],
-          "version" : "None"
-        },
-        {
-          "enumerant" : "ArithmeticFenceINTEL",
-          "value" : 6144,
-          "extensions" : [ "SPV_INTEL_arithmetic_fence" ],
           "version" : "None"
         },
         {
