@@ -474,37 +474,6 @@ unsigned int NumberStringToBit(const std::string& str)
     return bit;
 }
 
-// Given two pairs (name and in core) compares if the order is correct for naming
-// conventions. The conventions are:
-// * Core
-// * KHR
-// * EXT
-// * Vendor (no preference between vendors)
-//
-// Returns true if the order is valid.
-bool SuffixComparison(const std::string& prev, bool prevCore,
-                      const std::string& cur, bool curCore)
-{
-  // Duplicate entry
-  if (prev == cur) return false;
-
-  if (prevCore) return true;
-  if (curCore) return false;
-
-  // Both are suffixed names.
-  const bool prevKHR = prev.substr(prev.size() - 3) == "KHR";
-  const bool prevEXT = prev.substr(prev.size() - 3) == "EXT";
-  const bool curKHR = cur.substr(cur.size() - 3) == "KHR";
-  const bool curEXT = cur.substr(cur.size() - 3) == "EXT";
-
-  if (prevKHR) return true;
-  if (curKHR) return false;
-  if (prevEXT) return true;
-  if (curEXT) return false;
-
-  return true;
-}
-
 void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
 {
     // only do this once.
@@ -562,6 +531,18 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
         return result;
     };
 
+    const auto getAliases = [](const Json::Value& object) {
+        Aliases result;
+        const auto& aliases = object["aliases"];
+        if (!aliases.empty()) {
+            assert(aliases.isArray());
+            for (const auto& alias : aliases) {
+                result.emplace_back(alias.asString());
+            }
+        }
+        return result;
+    };
+
     // set up the printing classes
     std::unordered_set<std::string> tags;  // short-lived local for error checking below
     const Json::Value printingClasses = root["instruction_printing_class"];
@@ -613,12 +594,9 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
                       << " is out of order. It follows the instruction with opcode " << maxOpcode
                       << std::endl;
             std::exit(1);
-          } else if (maxOpcode == opcode &&
-                     !SuffixComparison(maxName, maxCore, name,
-                                       version != "None")) {
-            std::cerr << "Error: " << name
-                      << " is out of order. It follows alias " << maxName
-                      << std::endl;
+          } else if (maxOpcode == opcode) {
+            std::cerr << "Error: " << name << " is an alias of " << maxName
+            << ". Use \"aliases\" instead." << std::endl;
             std::exit(1);
           } else {
             maxOpcode = opcode;
@@ -626,6 +604,7 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             maxCore = version != "None";
           }
         }
+        Aliases aliases = getAliases(inst);
         EnumCaps caps = getCaps(inst);
         std::string lastVersion = inst["lastVersion"].asString();
         Extensions exts = getExts(inst);
@@ -642,7 +621,7 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             }
         }
         InstructionDesc.emplace_back(
-            std::move(EnumValue(opcode, name,
+            std::move(EnumValue(opcode, name, std::move(aliases),
                                 std::move(caps), std::move(version), std::move(lastVersion), std::move(exts),
                                 std::move(operands))),
              printingClass, defTypeId, defResultId);
@@ -654,7 +633,7 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
     // Specific additional context-dependent operands
 
     // Populate dest with EnumValue objects constructed from source.
-    const auto populateEnumValues = [&getCaps,&getExts,&errorCount](EnumValues* dest, const Json::Value& source, bool bitEnum) {
+    const auto populateEnumValues = [&getCaps,&getAliases,&getExts,&errorCount](EnumValues* dest, const Json::Value& source, bool bitEnum) {
         // A lambda for determining the numeric value to be used for a given
         // enumerant in JSON form, and whether that value is a 0 in a bitfield.
         auto getValue = [&bitEnum](const Json::Value& enumerant) {
@@ -694,11 +673,9 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
                           << " is out of order. It has value " <<  value
                           << " but follows the enumerant with value " << maxValue << std::endl;
                 std::exit(1);
-              } else if (maxValue == value &&
-                         !SuffixComparison(maxName, maxCore, name,
-                                           version != "None")) {
+              } else if (maxValue == value ) {
                 std::cerr << "Error: " << source["kind"] << " enumerant " << name
-                          << " is out of order. It follows alias " << maxName << std::endl;
+                          << " is an alias of " << maxName << ". Use \"aliases\" instead." << std::endl;
                 std::exit(1);
               } else {
                 maxValue = value;
@@ -706,6 +683,7 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
                 maxCore = version != "None";
               }
             }
+            Aliases aliases = getAliases(enumerant);
             EnumCaps caps(getCaps(enumerant));
             std::string lastVersion = enumerant["lastVersion"].asString();
             Extensions exts(getExts(enumerant));
@@ -721,7 +699,7 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
                 }
             }
             dest->emplace_back(
-                value, enumerant["enumerant"].asString(),
+                value, enumerant["enumerant"].asString(), std::move(aliases),
                 std::move(caps), std::move(version), std::move(lastVersion), std::move(exts), std::move(params));
         }
     };

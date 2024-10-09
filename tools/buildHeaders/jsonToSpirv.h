@@ -125,6 +125,9 @@ typedef std::vector<std::string> EnumCaps;
 // A set of extensions.
 typedef std::vector<std::string> Extensions;
 
+// A set of aliases.
+typedef std::vector<std::string> Aliases;
+
 // Parameterize a set of operands with their OperandClass(es) and descriptions.
 class OperandParameters {
 public:
@@ -205,18 +208,21 @@ private:
 class EnumValue {
 public:
     EnumValue() : value(0), desc(nullptr) {}
-    EnumValue(unsigned int the_value, const std::string& the_name, EnumCaps&& the_caps,
+    EnumValue(unsigned int the_value, const std::string& the_name, Aliases&& the_aliases, EnumCaps&& the_caps,
         const std::string& the_firstVersion, const std::string& the_lastVersion,
         Extensions&& the_extensions, OperandParameters&& the_operands) :
-      value(the_value), name(the_name), capabilities(std::move(the_caps)),
+      value(the_value), name(the_name), aliases(std::move(the_aliases)), capabilities(std::move(the_caps)),
       firstVersion(std::move(the_firstVersion)), lastVersion(std::move(the_lastVersion)),
       extensions(std::move(the_extensions)), operands(std::move(the_operands)), desc(nullptr) { }
+
+    bool hasAliases() const { return !aliases.empty(); }
 
     // For ValueEnum, the value from the JSON file.
     // For BitEnum, the index of the bit position represented by this mask.
     // (That is, what you shift 1 by to get the mask.)
     unsigned value;
     std::string name;
+    Aliases aliases;
     EnumCaps capabilities;
     std::string firstVersion;
     std::string lastVersion;
@@ -278,19 +284,14 @@ public:
        printingClass(printClass),
        opDesc("TBD."),
        typePresent(has_type),
-       resultPresent(has_result),
-       alias(this) { }
+       resultPresent(has_result) { }
     InstructionValue(const InstructionValue& v)
     {
         *this = v;
-        alias = this;
     }
 
     bool hasResult() const { return resultPresent != 0; }
     bool hasType()   const { return typePresent != 0; }
-    void setAlias(const InstructionValue& a) { alias = &a; }
-    const InstructionValue& getAlias() const { return *alias; }
-    bool isAlias() const { return alias != this; }
 
     std::string printingClass;
     const char* opDesc;
@@ -298,7 +299,6 @@ public:
 protected:
     int typePresent   : 1;
     int resultPresent : 1;
-    const InstructionValue* alias;    // correct only after discovering the aliases; otherwise points to this
 };
 
 using InstructionValues = EnumValuesContainer<InstructionValue>;

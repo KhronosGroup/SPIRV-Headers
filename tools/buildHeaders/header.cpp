@@ -243,6 +243,10 @@ IN THE MATERIALS.
             for (auto& enumRow : enumSet) {
                 std::string name = enumRow.name;
                 enums[e - spv::OperandSource]["Values"][name] = enumRow.value;
+                // Add aliases
+                for (auto& alias : enumRow.aliases) {
+                    enums[e - spv::OperandSource]["Values"][alias] = enumRow.value;
+                }
             }
 
             enums[e - spv::OperandSource]["Type"] = mask ? "Bit" : "Value";
@@ -255,6 +259,10 @@ IN THE MATERIALS.
             for (auto& enumRow : spv::InstructionDesc) {
                 std::string name = enumRow.name;
                 entry["Values"][name] = enumRow.value;
+                // Add aliases
+                for (auto& alias : enumRow.aliases) {
+                    entry["Values"][alias] = enumRow.value;
+                }
             }
             entry["Type"] = "Value";
             entry["Name"] = "Op";
