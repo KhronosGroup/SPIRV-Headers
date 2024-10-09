@@ -174,6 +174,7 @@ enum ExecutionMode {
     ExecutionModeEarlyAndLateFragmentTestsAMD = 5017,
     ExecutionModeStencilRefReplacingEXT = 5027,
     ExecutionModeCoalescingAMDX = 5069,
+    ExecutionModeIsApiEntryAMDX = 5070,
     ExecutionModeMaxNodeRecursionAMDX = 5071,
     ExecutionModeStaticNumWorkgroupsAMDX = 5072,
     ExecutionModeShaderIndexAMDX = 5073,
@@ -186,6 +187,7 @@ enum ExecutionMode {
     ExecutionModeStencilRefLessBackAMD = 5084,
     ExecutionModeQuadDerivativesKHR = 5088,
     ExecutionModeRequireFullQuadsKHR = 5089,
+    ExecutionModeSharesInputWithAMDX = 5102,
     ExecutionModeOutputLinesEXT = 5269,
     ExecutionModeOutputLinesNV = 5269,
     ExecutionModeOutputPrimitivesEXT = 5270,
@@ -239,7 +241,6 @@ enum StorageClass {
     StorageClassStorageBuffer = 12,
     StorageClassTileImageEXT = 4172,
     StorageClassNodePayloadAMDX = 5068,
-    StorageClassNodeOutputPayloadAMDX = 5076,
     StorageClassCallableDataKHR = 5328,
     StorageClassCallableDataNV = 5328,
     StorageClassIncomingCallableDataKHR = 5329,
@@ -552,6 +553,10 @@ enum Decoration {
     DecorationNodeMaxPayloadsAMDX = 5020,
     DecorationTrackFinishWritingAMDX = 5078,
     DecorationPayloadNodeNameAMDX = 5091,
+    DecorationPayloadNodeBaseIndexAMDX = 5098,
+    DecorationPayloadNodeSparseArrayAMDX = 5099,
+    DecorationPayloadNodeArraySizeAMDX = 5100,
+    DecorationPayloadDispatchIndirectAMDX = 5105,
     DecorationOverrideCoverageNV = 5248,
     DecorationPassthroughNV = 5250,
     DecorationViewportRelativeNV = 5252,
@@ -715,7 +720,7 @@ enum BuiltIn {
     BuiltInBaryCoordSmoothSampleAMD = 4997,
     BuiltInBaryCoordPullModelAMD = 4998,
     BuiltInFragStencilRefEXT = 5014,
-    BuiltInCoalescedInputCountAMDX = 5021,
+    BuiltInRemainingRecursionLevelsAMDX = 5021,
     BuiltInShaderIndexAMDX = 5073,
     BuiltInViewportMaskNV = 5253,
     BuiltInSecondaryPositionNV = 5257,
@@ -1850,9 +1855,14 @@ enum Op {
     OpFragmentMaskFetchAMD = 5011,
     OpFragmentFetchAMD = 5012,
     OpReadClockKHR = 5056,
-    OpFinalizeNodePayloadsAMDX = 5075,
+    OpAllocateNodePayloadsAMDX = 5074,
+    OpEnqueueNodePayloadsAMDX = 5075,
+    OpTypeNodePayloadArrayAMDX = 5076,
     OpFinishWritingNodePayloadAMDX = 5078,
-    OpInitializeNodePayloadsAMDX = 5090,
+    OpNodePayloadArrayLengthAMDX = 5090,
+    OpIsNodePayloadValidAMDX = 5101,
+    OpConstantStringAMDX = 5103,
+    OpSpecConstantStringAMDX = 5104,
     OpGroupNonUniformQuadAllKHR = 5110,
     OpGroupNonUniformQuadAnyKHR = 5111,
     OpHitObjectRecordHitMotionNV = 5249,
@@ -2602,9 +2612,14 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFragmentMaskFetchAMD: *hasResult = true; *hasResultType = true; break;
     case OpFragmentFetchAMD: *hasResult = true; *hasResultType = true; break;
     case OpReadClockKHR: *hasResult = true; *hasResultType = true; break;
-    case OpFinalizeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case OpAllocateNodePayloadsAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpEnqueueNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case OpTypeNodePayloadArrayAMDX: *hasResult = true; *hasResultType = false; break;
     case OpFinishWritingNodePayloadAMDX: *hasResult = true; *hasResultType = true; break;
-    case OpInitializeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case OpNodePayloadArrayLengthAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpIsNodePayloadValidAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpConstantStringAMDX: *hasResult = true; *hasResultType = false; break;
+    case OpSpecConstantStringAMDX: *hasResult = true; *hasResultType = false; break;
     case OpGroupNonUniformQuadAllKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupNonUniformQuadAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -3046,6 +3061,7 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeEarlyAndLateFragmentTestsAMD: return "EarlyAndLateFragmentTestsAMD";
     case ExecutionModeStencilRefReplacingEXT: return "StencilRefReplacingEXT";
     case ExecutionModeCoalescingAMDX: return "CoalescingAMDX";
+    case ExecutionModeIsApiEntryAMDX: return "IsApiEntryAMDX";
     case ExecutionModeMaxNodeRecursionAMDX: return "MaxNodeRecursionAMDX";
     case ExecutionModeStaticNumWorkgroupsAMDX: return "StaticNumWorkgroupsAMDX";
     case ExecutionModeShaderIndexAMDX: return "ShaderIndexAMDX";
@@ -3058,6 +3074,7 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeStencilRefLessBackAMD: return "StencilRefLessBackAMD";
     case ExecutionModeQuadDerivativesKHR: return "QuadDerivativesKHR";
     case ExecutionModeRequireFullQuadsKHR: return "RequireFullQuadsKHR";
+    case ExecutionModeSharesInputWithAMDX: return "SharesInputWithAMDX";
     case ExecutionModeOutputLinesEXT: return "OutputLinesEXT";
     case ExecutionModeOutputPrimitivesEXT: return "OutputPrimitivesEXT";
     case ExecutionModeDerivativeGroupQuadsKHR: return "DerivativeGroupQuadsKHR";
@@ -3108,7 +3125,6 @@ inline const char* StorageClassToString(StorageClass value) {
     case StorageClassStorageBuffer: return "StorageBuffer";
     case StorageClassTileImageEXT: return "TileImageEXT";
     case StorageClassNodePayloadAMDX: return "NodePayloadAMDX";
-    case StorageClassNodeOutputPayloadAMDX: return "NodeOutputPayloadAMDX";
     case StorageClassCallableDataKHR: return "CallableDataKHR";
     case StorageClassIncomingCallableDataKHR: return "IncomingCallableDataKHR";
     case StorageClassRayPayloadKHR: return "RayPayloadKHR";
@@ -3360,6 +3376,10 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationNodeMaxPayloadsAMDX: return "NodeMaxPayloadsAMDX";
     case DecorationTrackFinishWritingAMDX: return "TrackFinishWritingAMDX";
     case DecorationPayloadNodeNameAMDX: return "PayloadNodeNameAMDX";
+    case DecorationPayloadNodeBaseIndexAMDX: return "PayloadNodeBaseIndexAMDX";
+    case DecorationPayloadNodeSparseArrayAMDX: return "PayloadNodeSparseArrayAMDX";
+    case DecorationPayloadNodeArraySizeAMDX: return "PayloadNodeArraySizeAMDX";
+    case DecorationPayloadDispatchIndirectAMDX: return "PayloadDispatchIndirectAMDX";
     case DecorationOverrideCoverageNV: return "OverrideCoverageNV";
     case DecorationPassthroughNV: return "PassthroughNV";
     case DecorationViewportRelativeNV: return "ViewportRelativeNV";
@@ -3513,7 +3533,7 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltInBaryCoordSmoothSampleAMD: return "BaryCoordSmoothSampleAMD";
     case BuiltInBaryCoordPullModelAMD: return "BaryCoordPullModelAMD";
     case BuiltInFragStencilRefEXT: return "FragStencilRefEXT";
-    case BuiltInCoalescedInputCountAMDX: return "CoalescedInputCountAMDX";
+    case BuiltInRemainingRecursionLevelsAMDX: return "RemainingRecursionLevelsAMDX";
     case BuiltInShaderIndexAMDX: return "ShaderIndexAMDX";
     case BuiltInViewportMaskNV: return "ViewportMaskNV";
     case BuiltInSecondaryPositionNV: return "SecondaryPositionNV";
@@ -4401,9 +4421,14 @@ inline const char* OpToString(Op value) {
     case OpFragmentMaskFetchAMD: return "OpFragmentMaskFetchAMD";
     case OpFragmentFetchAMD: return "OpFragmentFetchAMD";
     case OpReadClockKHR: return "OpReadClockKHR";
-    case OpFinalizeNodePayloadsAMDX: return "OpFinalizeNodePayloadsAMDX";
+    case OpAllocateNodePayloadsAMDX: return "OpAllocateNodePayloadsAMDX";
+    case OpEnqueueNodePayloadsAMDX: return "OpEnqueueNodePayloadsAMDX";
+    case OpTypeNodePayloadArrayAMDX: return "OpTypeNodePayloadArrayAMDX";
     case OpFinishWritingNodePayloadAMDX: return "OpFinishWritingNodePayloadAMDX";
-    case OpInitializeNodePayloadsAMDX: return "OpInitializeNodePayloadsAMDX";
+    case OpNodePayloadArrayLengthAMDX: return "OpNodePayloadArrayLengthAMDX";
+    case OpIsNodePayloadValidAMDX: return "OpIsNodePayloadValidAMDX";
+    case OpConstantStringAMDX: return "OpConstantStringAMDX";
+    case OpSpecConstantStringAMDX: return "OpSpecConstantStringAMDX";
     case OpGroupNonUniformQuadAllKHR: return "OpGroupNonUniformQuadAllKHR";
     case OpGroupNonUniformQuadAnyKHR: return "OpGroupNonUniformQuadAnyKHR";
     case OpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";
