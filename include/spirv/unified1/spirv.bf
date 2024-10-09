@@ -871,6 +871,7 @@ namespace Spv
             DontInline = 1,
             Pure = 2,
             Const = 3,
+            OptNoneEXT = 16,
             OptNoneINTEL = 16,
             Max = 0x7fffffff,
         }
@@ -882,6 +883,7 @@ namespace Spv
             DontInline = 0x00000002,
             Pure = 0x00000004,
             Const = 0x00000008,
+            OptNoneEXT = 0x00010000,
             OptNoneINTEL = 0x00010000,
         }
 
@@ -1256,11 +1258,13 @@ namespace Spv
             AtomicFloat32AddEXT = 6033,
             AtomicFloat64AddEXT = 6034,
             LongCompositesINTEL = 6089,
+            OptNoneEXT = 6094,
             OptNoneINTEL = 6094,
             AtomicFloat16AddEXT = 6095,
             DebugInfoModuleINTEL = 6114,
             BFloat16ConversionINTEL = 6115,
             SplitBarrierINTEL = 6141,
+            ArithmeticFenceEXT = 6144,
             FPGAClusterAttributesV2INTEL = 6150,
             FPGAKernelAttributesv2INTEL = 6161,
             FPMaxErrorINTEL = 6169,
@@ -2225,6 +2229,7 @@ namespace Spv
             OpConvertBF16ToFINTEL = 6117,
             OpControlBarrierArriveINTEL = 6142,
             OpControlBarrierWaitINTEL = 6143,
+            OpArithmeticFenceEXT = 6145,
             OpSubgroupBlockPrefetchINTEL = 6221,
             OpGroupIMulKHR = 6401,
             OpGroupFMulKHR = 6402,

@@ -9790,6 +9790,18 @@
       "version" : "None"
     },
     {
+      "opname" : "OpArithmeticFenceEXT",
+      "class"  : "Miscellaneous",
+      "opcode" : 6145,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",          "name" : "'Target '" }
+      ],
+      "capabilities" : [ "ArithmeticFenceEXT" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpSubgroupBlockPrefetchINTEL",
       "class"  : "Group",
       "opcode" : 6221,
@@ -10349,6 +10361,12 @@
           "enumerant" : "Const",
           "value" : "0x0008",
           "version" : "1.0"
+        },
+        {
+          "enumerant" : "OptNoneEXT",
+          "value" : "0x10000",
+          "capabilities" : [  "OptNoneEXT" ],
+          "version" : "None"
         },
         {
           "enumerant" : "OptNoneINTEL",
@@ -16072,6 +16090,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "OptNoneEXT",
+          "value" : 6094,
+          "extensions" : [ "SPV_EXT_optnone" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "OptNoneINTEL",
           "value" : 6094,
           "extensions" : [ "SPV_INTEL_optnone" ],
@@ -16099,6 +16123,12 @@
           "enumerant" : "SplitBarrierINTEL",
           "value" : 6141,
           "extensions" : [ "SPV_INTEL_split_barrier" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ArithmeticFenceEXT",
+          "value" : 6144,
+          "extensions" : [ "SPV_EXT_arithmetic_fence" ],
           "version" : "None"
         },
         {
