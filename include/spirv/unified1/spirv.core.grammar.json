@@ -3863,7 +3863,6 @@
         { "kind" : "IdRef", "name" : "'Target'" },
         { "kind" : "Decoration" }
       ],
-      "extensions" : [ "SPV_GOOGLE_hlsl_functionality1" ],
       "version" : "1.2"
     },
     {
