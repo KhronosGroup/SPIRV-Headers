@@ -592,7 +592,7 @@ IN THE MATERIALS.
                     if (name == "Op") {
                         label = v.second;
                     }
-                    out << "    " << "case " << pre() << label << ": return " << "\"" << v.second << "\";" << std::endl;
+                    out << "    " << "case " << pre() << "::" << label << ": return " << "\"" << v.second << "\";" << std::endl;
                 }
                 out << "    default: return \"Unknown\";" << std::endl;
                 out << "    }" << std::endl;
