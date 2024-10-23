@@ -1203,6 +1203,12 @@ namespace Spv
             AtomicFloat16VectorNV = 5404,
             RayTracingDisplacementMicromapNV = 5409,
             RawAccessChainsNV = 5414,
+            CooperativeMatrixReductionsNV = 5430,
+            CooperativeMatrixConversionsNV = 5431,
+            CooperativeMatrixPerElementOperationsNV = 5432,
+            CooperativeMatrixTensorAddressingNV = 5433,
+            CooperativeMatrixBlockLoadsNV = 5434,
+            TensorAddressingNV = 5439,
             SubgroupShuffleINTEL = 5568,
             SubgroupBufferBlockIOINTEL = 5569,
             SubgroupImageBlockIOINTEL = 5570,
@@ -1434,6 +1440,46 @@ namespace Spv
             MatrixBKHR = 1,
             MatrixAccumulatorKHR = 2,
             Max = 0x7fffffff,
+        }
+
+        public enum CooperativeMatrixReduceShift
+        {
+            Row = 0,
+            Column = 1,
+            CooperativeMatrixReduce2x2 = 2,
+            Max = 0x7fffffff,
+        }
+
+        public enum CooperativeMatrixReduceMask
+        {
+            MaskNone = 0,
+            Row = 0x00000001,
+            Column = 0x00000002,
+            CooperativeMatrixReduce2x2 = 0x00000004,
+        }
+
+        public enum TensorClampMode
+        {
+            Undefined = 0,
+            Constant = 1,
+            ClampToEdge = 2,
+            Repeat = 3,
+            RepeatMirrored = 4,
+            Max = 0x7fffffff,
+        }
+
+        public enum TensorAddressingOperandsShift
+        {
+            TensorView = 0,
+            DecodeFunc = 1,
+            Max = 0x7fffffff,
+        }
+
+        public enum TensorAddressingOperandsMask
+        {
+            MaskNone = 0,
+            TensorView = 0x00000001,
+            DecodeFunc = 0x00000002,
         }
 
         public enum InitializationModeQualifier
@@ -1957,6 +2003,7 @@ namespace Spv
             OpReorderThreadWithHintNV = 5280,
             OpTypeHitObjectNV = 5281,
             OpImageSampleFootprintNV = 5283,
+            OpCooperativeMatrixConvertNV = 5293,
             OpEmitMeshTasksEXT = 5294,
             OpSetMeshOutputsEXT = 5295,
             OpGroupNonUniformPartitionNV = 5296,
@@ -1981,9 +2028,26 @@ namespace Spv
             OpCooperativeMatrixLengthNV = 5362,
             OpBeginInvocationInterlockEXT = 5364,
             OpEndInvocationInterlockEXT = 5365,
+            OpCooperativeMatrixReduceNV = 5366,
+            OpCooperativeMatrixLoadTensorNV = 5367,
+            OpCooperativeMatrixStoreTensorNV = 5368,
+            OpCooperativeMatrixPerElementOpNV = 5369,
+            OpTypeTensorLayoutNV = 5370,
+            OpTypeTensorViewNV = 5371,
+            OpCreateTensorLayoutNV = 5372,
+            OpTensorLayoutSetDimensionNV = 5373,
+            OpTensorLayoutSetStrideNV = 5374,
+            OpTensorLayoutSliceNV = 5375,
+            OpTensorLayoutSetClampValueNV = 5376,
+            OpCreateTensorViewNV = 5377,
+            OpTensorViewSetDimensionNV = 5378,
+            OpTensorViewSetStrideNV = 5379,
             OpDemoteToHelperInvocation = 5380,
             OpDemoteToHelperInvocationEXT = 5380,
             OpIsHelperInvocationEXT = 5381,
+            OpTensorViewSetClipNV = 5382,
+            OpTensorLayoutSetBlockSizeNV = 5384,
+            OpCooperativeMatrixTransposeNV = 5390,
             OpConvertUToImageNV = 5391,
             OpConvertUToSamplerNV = 5392,
             OpConvertImageToUNV = 5393,

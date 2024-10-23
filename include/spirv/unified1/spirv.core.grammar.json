@@ -5952,6 +5952,18 @@
       "version" : "None"
     },
     {
+      "opname" : "OpCooperativeMatrixConvertNV",
+      "class"  : "Conversion",
+      "opcode" : 5293,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Matrix'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixConversionsNV" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpEmitMeshTasksEXT",
       "class"  : "Reserved",
       "opcode" : 5294,
@@ -6266,6 +6278,195 @@
       "version" : "None"
     },
     {
+      "opname" : "OpCooperativeMatrixReduceNV",
+      "class"  : "Arithmetic",
+      "opcode" : 5366,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Matrix'" },
+        { "kind" : "CooperativeMatrixReduce",      "name" : "'Reduce'" },
+        { "kind" : "IdRef", "name" : "'CombineFunc'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixReductionsNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeMatrixLoadTensorNV",
+      "class"  : "Memory",
+      "opcode" : 5367,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Object'" },
+        { "kind" : "IdRef",             "name" : "'TensorLayout'" },
+        { "kind" : "MemoryAccess",      "name" : "'Memory Operand'"},
+        { "kind" : "TensorAddressingOperands", "name" : "'Tensor Addressing Operands'"}
+      ],
+      "capabilities" : [ "CooperativeMatrixTensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeMatrixStoreTensorNV",
+      "class"  : "Memory",
+      "opcode" : 5368,
+      "operands" : [
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Object'" },
+        { "kind" : "IdRef",             "name" : "'TensorLayout'" },
+        { "kind" : "MemoryAccess",      "name" : "'Memory Operand'"},
+        { "kind" : "TensorAddressingOperands", "name" : "'Tensor Addressing Operands'"}
+      ],
+      "capabilities" : [ "CooperativeMatrixTensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeMatrixPerElementOpNV",
+      "class"  : "Function",
+      "opcode" : 5369,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Matrix'" },
+        { "kind" : "IdRef", "name" : "'Func'" },
+        { "kind" : "IdRef",        "quantifier" : "*", "name" : "'Operands'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixPerElementOperationsNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTypeTensorLayoutNV",
+      "class"  : "Type-Declaration",
+      "opcode" : 5370,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Dim'" },
+        { "kind" : "IdRef",             "name" : "'ClampMode'" }
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTypeTensorViewNV",
+      "class"  : "Type-Declaration",
+      "opcode" : 5371,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Dim'" },
+        { "kind" : "IdRef",             "name" : "'HasDimensions'" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "'p'" }
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCreateTensorLayoutNV",
+      "class"  : "Reserved",
+      "opcode" : 5372,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorLayoutSetDimensionNV",
+      "class"  : "Reserved",
+      "opcode" : 5373,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "'TensorLayout'" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "'Dim'" }
+
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorLayoutSetStrideNV",
+      "class"  : "Reserved",
+      "opcode" : 5374,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "'TensorLayout'" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "'Stride'" }
+
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorLayoutSliceNV",
+      "class"  : "Reserved",
+      "opcode" : 5375,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "'TensorLayout'" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "'Operands'" }
+
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorLayoutSetClampValueNV",
+      "class"  : "Reserved",
+      "opcode" : 5376,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "'TensorLayout'" },
+        { "kind" : "IdRef",                     "name" : "'Value'" }
+
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCreateTensorViewNV",
+      "class"  : "Reserved",
+      "opcode" : 5377,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorViewSetDimensionNV",
+      "class"  : "Reserved",
+      "opcode" : 5378,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "'TensorView'" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "'Dim'" }
+
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorViewSetStrideNV",
+      "class"  : "Reserved",
+      "opcode" : 5379,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "'TensorView'" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "'Stride'" }
+
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpDemoteToHelperInvocation",
       "class"  : "Control-Flow",
       "aliases" : ["OpDemoteToHelperInvocationEXT"],
@@ -6283,6 +6484,48 @@
       ],
       "capabilities" : [ "DemoteToHelperInvocation" ],
       "extensions" : [ "SPV_EXT_demote_to_helper_invocation" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorViewSetClipNV",
+      "class"  : "Reserved",
+      "opcode" : 5382,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "'TensorView'" },
+        { "kind" : "IdRef",                     "name" : "'ClipRowOffset'" },
+        { "kind" : "IdRef",                     "name" : "'ClipRowSpan'" },
+        { "kind" : "IdRef",                     "name" : "'ClipColOffset'" },
+        { "kind" : "IdRef",                     "name" : "'ClipColSpan'" }
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTensorLayoutSetBlockSizeNV",
+      "class"  : "Reserved",
+      "opcode" : 5384,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "'TensorLayout'" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "'BlockSize'" }
+
+      ],
+      "capabilities" : [ "TensorAddressingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeMatrixTransposeNV",
+      "class"  : "Conversion",
+      "opcode" : 5390,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Matrix'" }
+      ],
+      "capabilities" : [ "CooperativeMatrixConversionsNV" ],
       "version" : "None"
     },
     {
@@ -15848,6 +16091,42 @@
           "version" : "None"
         },
         {
+          "enumerant" : "CooperativeMatrixReductionsNV",
+          "value" : 5430,
+          "extensions" : [ "SPV_NV_cooperative_matrix2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CooperativeMatrixConversionsNV",
+          "value" : 5431,
+          "extensions" : [ "SPV_NV_cooperative_matrix2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CooperativeMatrixPerElementOperationsNV",
+          "value" : 5432,
+          "extensions" : [ "SPV_NV_cooperative_matrix2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CooperativeMatrixTensorAddressingNV",
+          "value" : 5433,
+          "extensions" : [ "SPV_NV_cooperative_matrix2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CooperativeMatrixBlockLoadsNV",
+          "value" : 5434,
+          "extensions" : [ "SPV_NV_cooperative_matrix2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TensorAddressingNV",
+          "value" : 5439,
+          "extensions" : [ "SPV_NV_tensor_addressing" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "SubgroupShuffleINTEL",
           "value" : 5568,
           "extensions" : [ "SPV_INTEL_subgroups" ],
@@ -16451,6 +16730,87 @@
         {
           "enumerant" : "MatrixAccumulatorKHR",
           "value" : 2,
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "BitEnum",
+      "kind" : "CooperativeMatrixReduce",
+      "enumerants" : [
+        {
+          "enumerant" : "Row",
+          "value" : "0x0001",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Column",
+          "value" : "0x0002",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "2x2",
+          "value" : "0x0004",
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "TensorClampMode",
+      "enumerants" : [
+        {
+          "enumerant" : "Undefined",
+          "value" : 0,
+          "version": "None"
+        },
+        {
+          "enumerant" : "Constant",
+          "value" : 1,
+          "version": "None"
+        },
+        {
+          "enumerant" : "ClampToEdge",
+          "value" : 2,
+          "version": "None"
+        },
+        {
+          "enumerant" : "Repeat",
+          "value" : 3,
+          "version": "None"
+        },
+        {
+          "enumerant" : "RepeatMirrored",
+          "value" : 4,
+          "version": "None"
+        }
+      ]
+    },
+    {
+      "category" : "BitEnum",
+      "kind" : "TensorAddressingOperands",
+      "enumerants" : [
+        {
+          "enumerant" : "None",
+          "value" : "0x0000",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TensorView",
+          "value" : "0x0001",
+          "parameters" : [
+            { "kind" : "IdRef" }
+          ],
+          "capabilities" : [ "CooperativeMatrixTensorAddressingNV" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DecodeFunc",
+          "value" : "0x0002",
+          "parameters" : [
+            { "kind" : "IdRef" }
+          ],
+          "capabilities" : [ "CooperativeMatrixBlockLoadsNV" ],
           "version" : "None"
         }
       ]
