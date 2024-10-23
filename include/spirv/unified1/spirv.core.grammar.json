@@ -5958,7 +5958,7 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdRef",             "name" : "'Value'" }
+        { "kind" : "IdRef",             "name" : "'Matrix'" }
       ],
       "capabilities" : [ "CooperativeMatrixConversionsNV" ],
       "version" : "None"
@@ -6279,7 +6279,7 @@
     },
     {
       "opname" : "OpCooperativeMatrixReduceNV",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5366,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -6323,7 +6323,7 @@
     },
     {
       "opname" : "OpCooperativeMatrixPerElementOpNV",
-      "class"  : "Reserved",
+      "class"  : "Function",
       "opcode" : 5369,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -6337,7 +6337,7 @@
     },
     {
       "opname" : "OpTypeTensorLayoutNV",
-      "class"  : "Reserved",
+      "class"  : "Type-Declaration",
       "opcode" : 5370,
       "operands" : [
         { "kind" : "IdResult" },
@@ -6349,7 +6349,7 @@
     },
     {
       "opname" : "OpTypeTensorViewNV",
-      "class"  : "Reserved",
+      "class"  : "Type-Declaration",
       "opcode" : 5371,
       "operands" : [
         { "kind" : "IdResult" },
@@ -6518,7 +6518,7 @@
     },
     {
       "opname" : "OpCooperativeMatrixTransposeNV",
-      "class"  : "Reserved",
+      "class"  : "Conversion",
       "opcode" : 5390,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -16093,42 +16093,36 @@
         {
           "enumerant" : "CooperativeMatrixReductionsNV",
           "value" : 5430,
-          "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_NV_cooperative_matrix2" ],
           "version" : "None"
         },
         {
           "enumerant" : "CooperativeMatrixConversionsNV",
           "value" : 5431,
-          "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_NV_cooperative_matrix2" ],
           "version" : "None"
         },
         {
           "enumerant" : "CooperativeMatrixPerElementOperationsNV",
           "value" : 5432,
-          "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_NV_cooperative_matrix2" ],
           "version" : "None"
         },
         {
           "enumerant" : "CooperativeMatrixTensorAddressingNV",
           "value" : 5433,
-          "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_NV_cooperative_matrix2" ],
           "version" : "None"
         },
         {
           "enumerant" : "CooperativeMatrixBlockLoadsNV",
           "value" : 5434,
-          "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_NV_cooperative_matrix2" ],
           "version" : "None"
         },
         {
           "enumerant" : "TensorAddressingNV",
           "value" : 5439,
-          "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_NV_tensor_addressing" ],
           "version" : "None"
         },
