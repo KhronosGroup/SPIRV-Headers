@@ -39,6 +39,17 @@ jobs:
       - name: Check generated headers
         run: git diff --exit-code
 
+  build_with_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          cmake -DCMAKE_INSTALL_PREFIX=install -DSPIRV_HEADERS_ENABLE_TESTS ..
+          cmake --build . --target install
+
   test_cmake_min_required:
     runs-on: ubuntu-latest
     steps:
