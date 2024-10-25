@@ -30,7 +30,7 @@ target_link_libraries(spirv_headers_simple_test PRIVATE SPIRV-Headers::SPIRV-Hea
 add_test(NAME spirv_headers_simple_test COMMAND spirv_headers_simple_test)
 
 add_executable(spirv_headers_simple_test_cpp11 example11.cpp)
-#target_compile_definitions(spirv_headers_simple_test_cpp11 PRIVATE SPV_ENABLE_UTILITY_CODE)
+target_compile_definitions(spirv_headers_simple_test_cpp11 PRIVATE SPV_ENABLE_UTILITY_CODE)
 target_link_libraries(spirv_headers_simple_test_cpp11 PRIVATE SPIRV-Headers::SPIRV-Headers)
 set_target_properties(spirv_headers_simple_test_cpp11 PROPERTIES CXX_STANDARD 11)
 add_test(NAME spirv_headers_simple_test_cpp11 COMMAND spirv_headers_simple_test_cpp11)
