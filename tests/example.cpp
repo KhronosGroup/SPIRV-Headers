@@ -35,3 +35,7 @@ const OpenCLLIB::Entrypoints kNative_cos = OpenCLLIB::Native_cos;
 const spv::Op kNop = spv::OpNop;
 
 }  // anonymous namespace
+
+int main() {
+  return 0;
+}

@@ -28,6 +28,10 @@
 #include <spirv/unified1/OpenCL.std.h>
 #include <spirv/unified1/spirv.h>
 
-const GLSLstd450 kSin = GLSLstd450Sin;
-const OpenCLstd_Entrypoints kNative_cos = OpenCLstd_Native_cos;
+const enum GLSLstd450 kSin = GLSLstd450Sin;
+const enum OpenCLstd_Entrypoints kNative_cos = OpenCLstd_Native_cos;
 const SpvOp kNop = SpvOpNop;
+
+int main() {
+  return 0;
+}
