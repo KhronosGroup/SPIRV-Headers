@@ -47,7 +47,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake -DCMAKE_INSTALL_PREFIX=install -DSPIRV_HEADERS_ENABLE_TESTS ..
+          cmake -DCMAKE_INSTALL_PREFIX=install -DSPIRV_HEADERS_ENABLE_TESTS=ON ..
           cmake --build . --target install
 
   test_cmake_min_required:
