@@ -25,14 +25,21 @@
 # MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
 
 add_library(spirv_headers_simple_test STATIC)
+target_sources(spirv_headers_simple_test PRIVATE example.cpp)
+target_compile_definitions(spirv_headers_simple_test PRIVATE SPV_ENABLE_UTILITY_CODE)
+target_link_libraries(spirv_headers_simple_test PRIVATE SPIRV-Headers::SPIRV-Headers)
 
-target_sources(spirv_headers_simple_test PRIVATE
-    example.cpp
-)
+add_library(spirv_headers_simple_test_cpp11 STATIC)
+target_sources(spirv_headers_simple_test_cpp11 PRIVATE example11.cpp)
+#target_compile_definitions(spirv_headers_simple_test_cpp11 PRIVATE SPV_ENABLE_UTILITY_CODE)
+target_link_libraries(spirv_headers_simple_test_cpp11 PRIVATE SPIRV-Headers::SPIRV-Headers)
+set_target_properties(spirv_headers_simple_test_cpp11 PROPERTIES CXX_STANDARD 11)
 
-target_link_libraries(spirv_headers_simple_test PRIVATE
-    SPIRV-Headers::SPIRV-Headers
-)
+add_library(spirv_headers_simple_test_c STATIC)
+target_sources(spirv_headers_simple_test_c PRIVATE example.c)
+target_compile_definitions(spirv_headers_simple_test_c PRIVATE SPV_ENABLE_UTILITY_CODE)
+target_link_libraries(spirv_headers_simple_test_c PRIVATE SPIRV-Headers::SPIRV-Headers)
+set_target_properties(spirv_headers_simple_test_c PROPERTIES C_STANDARD 99 LINKER_LANGUAGE CXX)
 
 if (NOT TARGET SPIRV-Headers)
     message(FATAL_ERROR "SPIRV-Headers target not defined!")
