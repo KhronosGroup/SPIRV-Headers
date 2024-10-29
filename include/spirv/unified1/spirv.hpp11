@@ -3220,9 +3220,9 @@ inline const char* StorageClassToString(StorageClass value) {
 
 inline const char* DimToString(Dim value) {
     switch (value) {
-    case Dim::1D: return "1D";
-    case Dim::2D: return "2D";
-    case Dim::3D: return "3D";
+    case Dim::Dim1D: return "1D";
+    case Dim::Dim2D: return "2D";
+    case Dim::Dim3D: return "3D";
     case Dim::Cube: return "Cube";
     case Dim::Rect: return "Rect";
     case Dim::Buffer: return "Buffer";

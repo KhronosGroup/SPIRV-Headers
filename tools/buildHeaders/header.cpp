@@ -513,7 +513,7 @@ IN THE MATERIALS.
         virtual std::string pre() const { return ""; } // C name prefix
         virtual std::string headerGuardSuffix() const = 0;
 
-        virtual std::string fmtEnumUse(const std::string& opPrefix, const std::string& opEnum, const std::string& name) const { return pre() + opPrefix + name; }
+        virtual std::string fmtEnumUse(const std::string &opPrefix, const std::string &opEnum, const std::string &name) const { return pre() + opPrefix + name; }
 
         void printUtility(std::ostream& out) const override
         {
@@ -710,7 +710,7 @@ IN THE MATERIALS.
         }
 
         // Add type prefix for scoped enum
-        std::string fmtEnumUse(const std::string& opPrefix, const std::string& opEnum, const std::string& name) const override { return opEnum + "::" + name; }
+        std::string fmtEnumUse(const std::string& opPrefix, const std::string& opEnum, const std::string& name) const override { return opEnum + "::" + prependIfDigit(opEnum, name); }
 
         std::string headerGuardSuffix() const override { return "HPP"; }
     };
