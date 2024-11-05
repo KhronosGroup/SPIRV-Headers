@@ -174,6 +174,7 @@ enum ExecutionMode {
     ExecutionModeEarlyAndLateFragmentTestsAMD = 5017,
     ExecutionModeStencilRefReplacingEXT = 5027,
     ExecutionModeCoalescingAMDX = 5069,
+    ExecutionModeIsApiEntryAMDX = 5070,
     ExecutionModeMaxNodeRecursionAMDX = 5071,
     ExecutionModeStaticNumWorkgroupsAMDX = 5072,
     ExecutionModeShaderIndexAMDX = 5073,
@@ -186,11 +187,14 @@ enum ExecutionMode {
     ExecutionModeStencilRefLessBackAMD = 5084,
     ExecutionModeQuadDerivativesKHR = 5088,
     ExecutionModeRequireFullQuadsKHR = 5089,
+    ExecutionModeSharesInputWithAMDX = 5102,
     ExecutionModeOutputLinesEXT = 5269,
     ExecutionModeOutputLinesNV = 5269,
     ExecutionModeOutputPrimitivesEXT = 5270,
     ExecutionModeOutputPrimitivesNV = 5270,
+    ExecutionModeDerivativeGroupQuadsKHR = 5289,
     ExecutionModeDerivativeGroupQuadsNV = 5289,
+    ExecutionModeDerivativeGroupLinearKHR = 5290,
     ExecutionModeDerivativeGroupLinearNV = 5290,
     ExecutionModeOutputTrianglesEXT = 5298,
     ExecutionModeOutputTrianglesNV = 5298,
@@ -237,7 +241,6 @@ enum StorageClass {
     StorageClassStorageBuffer = 12,
     StorageClassTileImageEXT = 4172,
     StorageClassNodePayloadAMDX = 5068,
-    StorageClassNodeOutputPayloadAMDX = 5076,
     StorageClassCallableDataKHR = 5328,
     StorageClassCallableDataNV = 5328,
     StorageClassIncomingCallableDataKHR = 5329,
@@ -377,6 +380,7 @@ enum ImageChannelDataType {
     ImageChannelDataTypeUnormInt101010_2 = 16,
     ImageChannelDataTypeUnsignedIntRaw10EXT = 19,
     ImageChannelDataTypeUnsignedIntRaw12EXT = 20,
+    ImageChannelDataTypeUnormInt2_101010EXT = 21,
     ImageChannelDataTypeMax = 0x7fffffff,
 };
 
@@ -549,6 +553,10 @@ enum Decoration {
     DecorationNodeMaxPayloadsAMDX = 5020,
     DecorationTrackFinishWritingAMDX = 5078,
     DecorationPayloadNodeNameAMDX = 5091,
+    DecorationPayloadNodeBaseIndexAMDX = 5098,
+    DecorationPayloadNodeSparseArrayAMDX = 5099,
+    DecorationPayloadNodeArraySizeAMDX = 5100,
+    DecorationPayloadDispatchIndirectAMDX = 5105,
     DecorationOverrideCoverageNV = 5248,
     DecorationPassthroughNV = 5250,
     DecorationViewportRelativeNV = 5252,
@@ -712,7 +720,7 @@ enum BuiltIn {
     BuiltInBaryCoordSmoothSampleAMD = 4997,
     BuiltInBaryCoordPullModelAMD = 4998,
     BuiltInFragStencilRefEXT = 5014,
-    BuiltInCoalescedInputCountAMDX = 5021,
+    BuiltInRemainingRecursionLevelsAMDX = 5021,
     BuiltInShaderIndexAMDX = 5073,
     BuiltInViewportMaskNV = 5253,
     BuiltInSecondaryPositionNV = 5257,
@@ -845,6 +853,7 @@ enum FunctionControlShift {
     FunctionControlDontInlineShift = 1,
     FunctionControlPureShift = 2,
     FunctionControlConstShift = 3,
+    FunctionControlOptNoneEXTShift = 16,
     FunctionControlOptNoneINTELShift = 16,
     FunctionControlMax = 0x7fffffff,
 };
@@ -855,6 +864,7 @@ enum FunctionControlMask {
     FunctionControlDontInlineMask = 0x00000002,
     FunctionControlPureMask = 0x00000004,
     FunctionControlConstMask = 0x00000008,
+    FunctionControlOptNoneEXTMask = 0x00010000,
     FunctionControlOptNoneINTELMask = 0x00010000,
 };
 
@@ -1104,6 +1114,7 @@ enum Capability {
     CapabilityMeshShadingEXT = 5283,
     CapabilityFragmentBarycentricKHR = 5284,
     CapabilityFragmentBarycentricNV = 5284,
+    CapabilityComputeDerivativeGroupQuadsKHR = 5288,
     CapabilityComputeDerivativeGroupQuadsNV = 5288,
     CapabilityFragmentDensityEXT = 5291,
     CapabilityShadingRateNV = 5291,
@@ -1141,6 +1152,7 @@ enum Capability {
     CapabilityVulkanMemoryModelDeviceScopeKHR = 5346,
     CapabilityPhysicalStorageBufferAddresses = 5347,
     CapabilityPhysicalStorageBufferAddressesEXT = 5347,
+    CapabilityComputeDerivativeGroupLinearKHR = 5350,
     CapabilityComputeDerivativeGroupLinearNV = 5350,
     CapabilityRayTracingProvisionalKHR = 5353,
     CapabilityCooperativeMatrixNV = 5357,
@@ -1158,6 +1170,12 @@ enum Capability {
     CapabilityAtomicFloat16VectorNV = 5404,
     CapabilityRayTracingDisplacementMicromapNV = 5409,
     CapabilityRawAccessChainsNV = 5414,
+    CapabilityCooperativeMatrixReductionsNV = 5430,
+    CapabilityCooperativeMatrixConversionsNV = 5431,
+    CapabilityCooperativeMatrixPerElementOperationsNV = 5432,
+    CapabilityCooperativeMatrixTensorAddressingNV = 5433,
+    CapabilityCooperativeMatrixBlockLoadsNV = 5434,
+    CapabilityTensorAddressingNV = 5439,
     CapabilitySubgroupShuffleINTEL = 5568,
     CapabilitySubgroupBufferBlockIOINTEL = 5569,
     CapabilitySubgroupImageBlockIOINTEL = 5570,
@@ -1217,11 +1235,13 @@ enum Capability {
     CapabilityAtomicFloat32AddEXT = 6033,
     CapabilityAtomicFloat64AddEXT = 6034,
     CapabilityLongCompositesINTEL = 6089,
+    CapabilityOptNoneEXT = 6094,
     CapabilityOptNoneINTEL = 6094,
     CapabilityAtomicFloat16AddEXT = 6095,
     CapabilityDebugInfoModuleINTEL = 6114,
     CapabilityBFloat16ConversionINTEL = 6115,
     CapabilitySplitBarrierINTEL = 6141,
+    CapabilityArithmeticFenceEXT = 6144,
     CapabilityFPGAClusterAttributesV2INTEL = 6150,
     CapabilityFPGAKernelAttributesv2INTEL = 6161,
     CapabilityFPMaxErrorINTEL = 6169,
@@ -1229,6 +1249,7 @@ enum Capability {
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
     CapabilityGlobalVariableHostAccessINTEL = 6187,
     CapabilityGlobalVariableFPGADecorationsINTEL = 6189,
+    CapabilitySubgroupBufferPrefetchINTEL = 6220,
     CapabilityGroupUniformArithmeticKHR = 6400,
     CapabilityMaskedGatherScatterINTEL = 6427,
     CapabilityCacheControlsINTEL = 6441,
@@ -1370,6 +1391,41 @@ enum CooperativeMatrixUse {
     CooperativeMatrixUseMatrixBKHR = 1,
     CooperativeMatrixUseMatrixAccumulatorKHR = 2,
     CooperativeMatrixUseMax = 0x7fffffff,
+};
+
+enum CooperativeMatrixReduceShift {
+    CooperativeMatrixReduceRowShift = 0,
+    CooperativeMatrixReduceColumnShift = 1,
+    CooperativeMatrixReduce2x2Shift = 2,
+    CooperativeMatrixReduceMax = 0x7fffffff,
+};
+
+enum CooperativeMatrixReduceMask {
+    CooperativeMatrixReduceMaskNone = 0,
+    CooperativeMatrixReduceRowMask = 0x00000001,
+    CooperativeMatrixReduceColumnMask = 0x00000002,
+    CooperativeMatrixReduce2x2Mask = 0x00000004,
+};
+
+enum TensorClampMode {
+    TensorClampModeUndefined = 0,
+    TensorClampModeConstant = 1,
+    TensorClampModeClampToEdge = 2,
+    TensorClampModeRepeat = 3,
+    TensorClampModeRepeatMirrored = 4,
+    TensorClampModeMax = 0x7fffffff,
+};
+
+enum TensorAddressingOperandsShift {
+    TensorAddressingOperandsTensorViewShift = 0,
+    TensorAddressingOperandsDecodeFuncShift = 1,
+    TensorAddressingOperandsMax = 0x7fffffff,
+};
+
+enum TensorAddressingOperandsMask {
+    TensorAddressingOperandsMaskNone = 0,
+    TensorAddressingOperandsTensorViewMask = 0x00000001,
+    TensorAddressingOperandsDecodeFuncMask = 0x00000002,
 };
 
 enum InitializationModeQualifier {
@@ -1840,9 +1896,14 @@ enum Op {
     OpFragmentMaskFetchAMD = 5011,
     OpFragmentFetchAMD = 5012,
     OpReadClockKHR = 5056,
-    OpFinalizeNodePayloadsAMDX = 5075,
+    OpAllocateNodePayloadsAMDX = 5074,
+    OpEnqueueNodePayloadsAMDX = 5075,
+    OpTypeNodePayloadArrayAMDX = 5076,
     OpFinishWritingNodePayloadAMDX = 5078,
-    OpInitializeNodePayloadsAMDX = 5090,
+    OpNodePayloadArrayLengthAMDX = 5090,
+    OpIsNodePayloadValidAMDX = 5101,
+    OpConstantStringAMDX = 5103,
+    OpSpecConstantStringAMDX = 5104,
     OpGroupNonUniformQuadAllKHR = 5110,
     OpGroupNonUniformQuadAnyKHR = 5111,
     OpHitObjectRecordHitMotionNV = 5249,
@@ -1879,6 +1940,7 @@ enum Op {
     OpReorderThreadWithHintNV = 5280,
     OpTypeHitObjectNV = 5281,
     OpImageSampleFootprintNV = 5283,
+    OpCooperativeMatrixConvertNV = 5293,
     OpEmitMeshTasksEXT = 5294,
     OpSetMeshOutputsEXT = 5295,
     OpGroupNonUniformPartitionNV = 5296,
@@ -1903,9 +1965,26 @@ enum Op {
     OpCooperativeMatrixLengthNV = 5362,
     OpBeginInvocationInterlockEXT = 5364,
     OpEndInvocationInterlockEXT = 5365,
+    OpCooperativeMatrixReduceNV = 5366,
+    OpCooperativeMatrixLoadTensorNV = 5367,
+    OpCooperativeMatrixStoreTensorNV = 5368,
+    OpCooperativeMatrixPerElementOpNV = 5369,
+    OpTypeTensorLayoutNV = 5370,
+    OpTypeTensorViewNV = 5371,
+    OpCreateTensorLayoutNV = 5372,
+    OpTensorLayoutSetDimensionNV = 5373,
+    OpTensorLayoutSetStrideNV = 5374,
+    OpTensorLayoutSliceNV = 5375,
+    OpTensorLayoutSetClampValueNV = 5376,
+    OpCreateTensorViewNV = 5377,
+    OpTensorViewSetDimensionNV = 5378,
+    OpTensorViewSetStrideNV = 5379,
     OpDemoteToHelperInvocation = 5380,
     OpDemoteToHelperInvocationEXT = 5380,
     OpIsHelperInvocationEXT = 5381,
+    OpTensorViewSetClipNV = 5382,
+    OpTensorLayoutSetBlockSizeNV = 5384,
+    OpCooperativeMatrixTransposeNV = 5390,
     OpConvertUToImageNV = 5391,
     OpConvertUToSamplerNV = 5392,
     OpConvertImageToUNV = 5393,
@@ -2160,6 +2239,8 @@ enum Op {
     OpConvertBF16ToFINTEL = 6117,
     OpControlBarrierArriveINTEL = 6142,
     OpControlBarrierWaitINTEL = 6143,
+    OpArithmeticFenceEXT = 6145,
+    OpSubgroupBlockPrefetchINTEL = 6221,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -2590,9 +2671,14 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFragmentMaskFetchAMD: *hasResult = true; *hasResultType = true; break;
     case OpFragmentFetchAMD: *hasResult = true; *hasResultType = true; break;
     case OpReadClockKHR: *hasResult = true; *hasResultType = true; break;
-    case OpFinalizeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case OpAllocateNodePayloadsAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpEnqueueNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case OpTypeNodePayloadArrayAMDX: *hasResult = true; *hasResultType = false; break;
     case OpFinishWritingNodePayloadAMDX: *hasResult = true; *hasResultType = true; break;
-    case OpInitializeNodePayloadsAMDX: *hasResult = false; *hasResultType = false; break;
+    case OpNodePayloadArrayLengthAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpIsNodePayloadValidAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpConstantStringAMDX: *hasResult = true; *hasResultType = false; break;
+    case OpSpecConstantStringAMDX: *hasResult = true; *hasResultType = false; break;
     case OpGroupNonUniformQuadAllKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupNonUniformQuadAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -2629,6 +2715,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpReorderThreadWithHintNV: *hasResult = false; *hasResultType = false; break;
     case OpTypeHitObjectNV: *hasResult = true; *hasResultType = false; break;
     case OpImageSampleFootprintNV: *hasResult = true; *hasResultType = true; break;
+    case OpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
     case OpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case OpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
     case OpGroupNonUniformPartitionNV: *hasResult = true; *hasResultType = true; break;
@@ -2651,8 +2738,25 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
     case OpBeginInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case OpEndInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
+    case OpCooperativeMatrixReduceNV: *hasResult = true; *hasResultType = true; break;
+    case OpCooperativeMatrixLoadTensorNV: *hasResult = true; *hasResultType = true; break;
+    case OpCooperativeMatrixStoreTensorNV: *hasResult = false; *hasResultType = false; break;
+    case OpCooperativeMatrixPerElementOpNV: *hasResult = true; *hasResultType = true; break;
+    case OpTypeTensorLayoutNV: *hasResult = true; *hasResultType = false; break;
+    case OpTypeTensorViewNV: *hasResult = true; *hasResultType = false; break;
+    case OpCreateTensorLayoutNV: *hasResult = true; *hasResultType = true; break;
+    case OpTensorLayoutSetDimensionNV: *hasResult = true; *hasResultType = true; break;
+    case OpTensorLayoutSetStrideNV: *hasResult = true; *hasResultType = true; break;
+    case OpTensorLayoutSliceNV: *hasResult = true; *hasResultType = true; break;
+    case OpTensorLayoutSetClampValueNV: *hasResult = true; *hasResultType = true; break;
+    case OpCreateTensorViewNV: *hasResult = true; *hasResultType = true; break;
+    case OpTensorViewSetDimensionNV: *hasResult = true; *hasResultType = true; break;
+    case OpTensorViewSetStrideNV: *hasResult = true; *hasResultType = true; break;
     case OpDemoteToHelperInvocation: *hasResult = false; *hasResultType = false; break;
     case OpIsHelperInvocationEXT: *hasResult = true; *hasResultType = true; break;
+    case OpTensorViewSetClipNV: *hasResult = true; *hasResultType = true; break;
+    case OpTensorLayoutSetBlockSizeNV: *hasResult = true; *hasResultType = true; break;
+    case OpCooperativeMatrixTransposeNV: *hasResult = true; *hasResultType = true; break;
     case OpConvertUToImageNV: *hasResult = true; *hasResultType = true; break;
     case OpConvertUToSamplerNV: *hasResult = true; *hasResultType = true; break;
     case OpConvertImageToUNV: *hasResult = true; *hasResultType = true; break;
@@ -2905,6 +3009,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
     case OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
     case OpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpArithmeticFenceEXT: *hasResult = true; *hasResultType = true; break;
+    case OpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -3032,6 +3138,7 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeEarlyAndLateFragmentTestsAMD: return "EarlyAndLateFragmentTestsAMD";
     case ExecutionModeStencilRefReplacingEXT: return "StencilRefReplacingEXT";
     case ExecutionModeCoalescingAMDX: return "CoalescingAMDX";
+    case ExecutionModeIsApiEntryAMDX: return "IsApiEntryAMDX";
     case ExecutionModeMaxNodeRecursionAMDX: return "MaxNodeRecursionAMDX";
     case ExecutionModeStaticNumWorkgroupsAMDX: return "StaticNumWorkgroupsAMDX";
     case ExecutionModeShaderIndexAMDX: return "ShaderIndexAMDX";
@@ -3044,10 +3151,11 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeStencilRefLessBackAMD: return "StencilRefLessBackAMD";
     case ExecutionModeQuadDerivativesKHR: return "QuadDerivativesKHR";
     case ExecutionModeRequireFullQuadsKHR: return "RequireFullQuadsKHR";
+    case ExecutionModeSharesInputWithAMDX: return "SharesInputWithAMDX";
     case ExecutionModeOutputLinesEXT: return "OutputLinesEXT";
     case ExecutionModeOutputPrimitivesEXT: return "OutputPrimitivesEXT";
-    case ExecutionModeDerivativeGroupQuadsNV: return "DerivativeGroupQuadsNV";
-    case ExecutionModeDerivativeGroupLinearNV: return "DerivativeGroupLinearNV";
+    case ExecutionModeDerivativeGroupQuadsKHR: return "DerivativeGroupQuadsKHR";
+    case ExecutionModeDerivativeGroupLinearKHR: return "DerivativeGroupLinearKHR";
     case ExecutionModeOutputTrianglesEXT: return "OutputTrianglesEXT";
     case ExecutionModePixelInterlockOrderedEXT: return "PixelInterlockOrderedEXT";
     case ExecutionModePixelInterlockUnorderedEXT: return "PixelInterlockUnorderedEXT";
@@ -3094,7 +3202,6 @@ inline const char* StorageClassToString(StorageClass value) {
     case StorageClassStorageBuffer: return "StorageBuffer";
     case StorageClassTileImageEXT: return "TileImageEXT";
     case StorageClassNodePayloadAMDX: return "NodePayloadAMDX";
-    case StorageClassNodeOutputPayloadAMDX: return "NodeOutputPayloadAMDX";
     case StorageClassCallableDataKHR: return "CallableDataKHR";
     case StorageClassIncomingCallableDataKHR: return "IncomingCallableDataKHR";
     case StorageClassRayPayloadKHR: return "RayPayloadKHR";
@@ -3239,6 +3346,7 @@ inline const char* ImageChannelDataTypeToString(ImageChannelDataType value) {
     case ImageChannelDataTypeUnormInt101010_2: return "UnormInt101010_2";
     case ImageChannelDataTypeUnsignedIntRaw10EXT: return "UnsignedIntRaw10EXT";
     case ImageChannelDataTypeUnsignedIntRaw12EXT: return "UnsignedIntRaw12EXT";
+    case ImageChannelDataTypeUnormInt2_101010EXT: return "UnormInt2_101010EXT";
     default: return "Unknown";
     }
 }
@@ -3345,6 +3453,10 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationNodeMaxPayloadsAMDX: return "NodeMaxPayloadsAMDX";
     case DecorationTrackFinishWritingAMDX: return "TrackFinishWritingAMDX";
     case DecorationPayloadNodeNameAMDX: return "PayloadNodeNameAMDX";
+    case DecorationPayloadNodeBaseIndexAMDX: return "PayloadNodeBaseIndexAMDX";
+    case DecorationPayloadNodeSparseArrayAMDX: return "PayloadNodeSparseArrayAMDX";
+    case DecorationPayloadNodeArraySizeAMDX: return "PayloadNodeArraySizeAMDX";
+    case DecorationPayloadDispatchIndirectAMDX: return "PayloadDispatchIndirectAMDX";
     case DecorationOverrideCoverageNV: return "OverrideCoverageNV";
     case DecorationPassthroughNV: return "PassthroughNV";
     case DecorationViewportRelativeNV: return "ViewportRelativeNV";
@@ -3498,7 +3610,7 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltInBaryCoordSmoothSampleAMD: return "BaryCoordSmoothSampleAMD";
     case BuiltInBaryCoordPullModelAMD: return "BaryCoordPullModelAMD";
     case BuiltInFragStencilRefEXT: return "FragStencilRefEXT";
-    case BuiltInCoalescedInputCountAMDX: return "CoalescedInputCountAMDX";
+    case BuiltInRemainingRecursionLevelsAMDX: return "RemainingRecursionLevelsAMDX";
     case BuiltInShaderIndexAMDX: return "ShaderIndexAMDX";
     case BuiltInViewportMaskNV: return "ViewportMaskNV";
     case BuiltInSecondaryPositionNV: return "SecondaryPositionNV";
@@ -3718,7 +3830,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityImageFootprintNV: return "ImageFootprintNV";
     case CapabilityMeshShadingEXT: return "MeshShadingEXT";
     case CapabilityFragmentBarycentricKHR: return "FragmentBarycentricKHR";
-    case CapabilityComputeDerivativeGroupQuadsNV: return "ComputeDerivativeGroupQuadsNV";
+    case CapabilityComputeDerivativeGroupQuadsKHR: return "ComputeDerivativeGroupQuadsKHR";
     case CapabilityFragmentDensityEXT: return "FragmentDensityEXT";
     case CapabilityGroupNonUniformPartitionedNV: return "GroupNonUniformPartitionedNV";
     case CapabilityShaderNonUniform: return "ShaderNonUniform";
@@ -3739,7 +3851,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityVulkanMemoryModel: return "VulkanMemoryModel";
     case CapabilityVulkanMemoryModelDeviceScope: return "VulkanMemoryModelDeviceScope";
     case CapabilityPhysicalStorageBufferAddresses: return "PhysicalStorageBufferAddresses";
-    case CapabilityComputeDerivativeGroupLinearNV: return "ComputeDerivativeGroupLinearNV";
+    case CapabilityComputeDerivativeGroupLinearKHR: return "ComputeDerivativeGroupLinearKHR";
     case CapabilityRayTracingProvisionalKHR: return "RayTracingProvisionalKHR";
     case CapabilityCooperativeMatrixNV: return "CooperativeMatrixNV";
     case CapabilityFragmentShaderSampleInterlockEXT: return "FragmentShaderSampleInterlockEXT";
@@ -3755,6 +3867,12 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityAtomicFloat16VectorNV: return "AtomicFloat16VectorNV";
     case CapabilityRayTracingDisplacementMicromapNV: return "RayTracingDisplacementMicromapNV";
     case CapabilityRawAccessChainsNV: return "RawAccessChainsNV";
+    case CapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
+    case CapabilityCooperativeMatrixConversionsNV: return "CooperativeMatrixConversionsNV";
+    case CapabilityCooperativeMatrixPerElementOperationsNV: return "CooperativeMatrixPerElementOperationsNV";
+    case CapabilityCooperativeMatrixTensorAddressingNV: return "CooperativeMatrixTensorAddressingNV";
+    case CapabilityCooperativeMatrixBlockLoadsNV: return "CooperativeMatrixBlockLoadsNV";
+    case CapabilityTensorAddressingNV: return "TensorAddressingNV";
     case CapabilitySubgroupShuffleINTEL: return "SubgroupShuffleINTEL";
     case CapabilitySubgroupBufferBlockIOINTEL: return "SubgroupBufferBlockIOINTEL";
     case CapabilitySubgroupImageBlockIOINTEL: return "SubgroupImageBlockIOINTEL";
@@ -3810,11 +3928,12 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityAtomicFloat32AddEXT: return "AtomicFloat32AddEXT";
     case CapabilityAtomicFloat64AddEXT: return "AtomicFloat64AddEXT";
     case CapabilityLongCompositesINTEL: return "LongCompositesINTEL";
-    case CapabilityOptNoneINTEL: return "OptNoneINTEL";
+    case CapabilityOptNoneEXT: return "OptNoneEXT";
     case CapabilityAtomicFloat16AddEXT: return "AtomicFloat16AddEXT";
     case CapabilityDebugInfoModuleINTEL: return "DebugInfoModuleINTEL";
     case CapabilityBFloat16ConversionINTEL: return "BFloat16ConversionINTEL";
     case CapabilitySplitBarrierINTEL: return "SplitBarrierINTEL";
+    case CapabilityArithmeticFenceEXT: return "ArithmeticFenceEXT";
     case CapabilityFPGAClusterAttributesV2INTEL: return "FPGAClusterAttributesV2INTEL";
     case CapabilityFPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
     case CapabilityFPMaxErrorINTEL: return "FPMaxErrorINTEL";
@@ -3822,6 +3941,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFPGAArgumentInterfacesINTEL: return "FPGAArgumentInterfacesINTEL";
     case CapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case CapabilityGlobalVariableFPGADecorationsINTEL: return "GlobalVariableFPGADecorationsINTEL";
+    case CapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
     case CapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case CapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case CapabilityCacheControlsINTEL: return "CacheControlsINTEL";
@@ -3917,6 +4037,17 @@ inline const char* CooperativeMatrixUseToString(CooperativeMatrixUse value) {
     case CooperativeMatrixUseMatrixAKHR: return "MatrixAKHR";
     case CooperativeMatrixUseMatrixBKHR: return "MatrixBKHR";
     case CooperativeMatrixUseMatrixAccumulatorKHR: return "MatrixAccumulatorKHR";
+    default: return "Unknown";
+    }
+}
+
+inline const char* TensorClampModeToString(TensorClampMode value) {
+    switch (value) {
+    case TensorClampModeUndefined: return "Undefined";
+    case TensorClampModeConstant: return "Constant";
+    case TensorClampModeClampToEdge: return "ClampToEdge";
+    case TensorClampModeRepeat: return "Repeat";
+    case TensorClampModeRepeatMirrored: return "RepeatMirrored";
     default: return "Unknown";
     }
 }
@@ -4384,9 +4515,14 @@ inline const char* OpToString(Op value) {
     case OpFragmentMaskFetchAMD: return "OpFragmentMaskFetchAMD";
     case OpFragmentFetchAMD: return "OpFragmentFetchAMD";
     case OpReadClockKHR: return "OpReadClockKHR";
-    case OpFinalizeNodePayloadsAMDX: return "OpFinalizeNodePayloadsAMDX";
+    case OpAllocateNodePayloadsAMDX: return "OpAllocateNodePayloadsAMDX";
+    case OpEnqueueNodePayloadsAMDX: return "OpEnqueueNodePayloadsAMDX";
+    case OpTypeNodePayloadArrayAMDX: return "OpTypeNodePayloadArrayAMDX";
     case OpFinishWritingNodePayloadAMDX: return "OpFinishWritingNodePayloadAMDX";
-    case OpInitializeNodePayloadsAMDX: return "OpInitializeNodePayloadsAMDX";
+    case OpNodePayloadArrayLengthAMDX: return "OpNodePayloadArrayLengthAMDX";
+    case OpIsNodePayloadValidAMDX: return "OpIsNodePayloadValidAMDX";
+    case OpConstantStringAMDX: return "OpConstantStringAMDX";
+    case OpSpecConstantStringAMDX: return "OpSpecConstantStringAMDX";
     case OpGroupNonUniformQuadAllKHR: return "OpGroupNonUniformQuadAllKHR";
     case OpGroupNonUniformQuadAnyKHR: return "OpGroupNonUniformQuadAnyKHR";
     case OpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";
@@ -4423,6 +4559,7 @@ inline const char* OpToString(Op value) {
     case OpReorderThreadWithHintNV: return "OpReorderThreadWithHintNV";
     case OpTypeHitObjectNV: return "OpTypeHitObjectNV";
     case OpImageSampleFootprintNV: return "OpImageSampleFootprintNV";
+    case OpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
     case OpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case OpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
     case OpGroupNonUniformPartitionNV: return "OpGroupNonUniformPartitionNV";
@@ -4445,8 +4582,25 @@ inline const char* OpToString(Op value) {
     case OpCooperativeMatrixLengthNV: return "OpCooperativeMatrixLengthNV";
     case OpBeginInvocationInterlockEXT: return "OpBeginInvocationInterlockEXT";
     case OpEndInvocationInterlockEXT: return "OpEndInvocationInterlockEXT";
+    case OpCooperativeMatrixReduceNV: return "OpCooperativeMatrixReduceNV";
+    case OpCooperativeMatrixLoadTensorNV: return "OpCooperativeMatrixLoadTensorNV";
+    case OpCooperativeMatrixStoreTensorNV: return "OpCooperativeMatrixStoreTensorNV";
+    case OpCooperativeMatrixPerElementOpNV: return "OpCooperativeMatrixPerElementOpNV";
+    case OpTypeTensorLayoutNV: return "OpTypeTensorLayoutNV";
+    case OpTypeTensorViewNV: return "OpTypeTensorViewNV";
+    case OpCreateTensorLayoutNV: return "OpCreateTensorLayoutNV";
+    case OpTensorLayoutSetDimensionNV: return "OpTensorLayoutSetDimensionNV";
+    case OpTensorLayoutSetStrideNV: return "OpTensorLayoutSetStrideNV";
+    case OpTensorLayoutSliceNV: return "OpTensorLayoutSliceNV";
+    case OpTensorLayoutSetClampValueNV: return "OpTensorLayoutSetClampValueNV";
+    case OpCreateTensorViewNV: return "OpCreateTensorViewNV";
+    case OpTensorViewSetDimensionNV: return "OpTensorViewSetDimensionNV";
+    case OpTensorViewSetStrideNV: return "OpTensorViewSetStrideNV";
     case OpDemoteToHelperInvocation: return "OpDemoteToHelperInvocation";
     case OpIsHelperInvocationEXT: return "OpIsHelperInvocationEXT";
+    case OpTensorViewSetClipNV: return "OpTensorViewSetClipNV";
+    case OpTensorLayoutSetBlockSizeNV: return "OpTensorLayoutSetBlockSizeNV";
+    case OpCooperativeMatrixTransposeNV: return "OpCooperativeMatrixTransposeNV";
     case OpConvertUToImageNV: return "OpConvertUToImageNV";
     case OpConvertUToSamplerNV: return "OpConvertUToSamplerNV";
     case OpConvertImageToUNV: return "OpConvertImageToUNV";
@@ -4699,6 +4853,8 @@ inline const char* OpToString(Op value) {
     case OpConvertBF16ToFINTEL: return "OpConvertBF16ToFINTEL";
     case OpControlBarrierArriveINTEL: return "OpControlBarrierArriveINTEL";
     case OpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
+    case OpArithmeticFenceEXT: return "OpArithmeticFenceEXT";
+    case OpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case OpGroupIMulKHR: return "OpGroupIMulKHR";
     case OpGroupFMulKHR: return "OpGroupFMulKHR";
     case OpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";
@@ -4762,6 +4918,14 @@ inline CooperativeMatrixOperandsMask operator|(CooperativeMatrixOperandsMask a, 
 inline CooperativeMatrixOperandsMask operator&(CooperativeMatrixOperandsMask a, CooperativeMatrixOperandsMask b) { return CooperativeMatrixOperandsMask(unsigned(a) & unsigned(b)); }
 inline CooperativeMatrixOperandsMask operator^(CooperativeMatrixOperandsMask a, CooperativeMatrixOperandsMask b) { return CooperativeMatrixOperandsMask(unsigned(a) ^ unsigned(b)); }
 inline CooperativeMatrixOperandsMask operator~(CooperativeMatrixOperandsMask a) { return CooperativeMatrixOperandsMask(~unsigned(a)); }
+inline CooperativeMatrixReduceMask operator|(CooperativeMatrixReduceMask a, CooperativeMatrixReduceMask b) { return CooperativeMatrixReduceMask(unsigned(a) | unsigned(b)); }
+inline CooperativeMatrixReduceMask operator&(CooperativeMatrixReduceMask a, CooperativeMatrixReduceMask b) { return CooperativeMatrixReduceMask(unsigned(a) & unsigned(b)); }
+inline CooperativeMatrixReduceMask operator^(CooperativeMatrixReduceMask a, CooperativeMatrixReduceMask b) { return CooperativeMatrixReduceMask(unsigned(a) ^ unsigned(b)); }
+inline CooperativeMatrixReduceMask operator~(CooperativeMatrixReduceMask a) { return CooperativeMatrixReduceMask(~unsigned(a)); }
+inline TensorAddressingOperandsMask operator|(TensorAddressingOperandsMask a, TensorAddressingOperandsMask b) { return TensorAddressingOperandsMask(unsigned(a) | unsigned(b)); }
+inline TensorAddressingOperandsMask operator&(TensorAddressingOperandsMask a, TensorAddressingOperandsMask b) { return TensorAddressingOperandsMask(unsigned(a) & unsigned(b)); }
+inline TensorAddressingOperandsMask operator^(TensorAddressingOperandsMask a, TensorAddressingOperandsMask b) { return TensorAddressingOperandsMask(unsigned(a) ^ unsigned(b)); }
+inline TensorAddressingOperandsMask operator~(TensorAddressingOperandsMask a) { return TensorAddressingOperandsMask(~unsigned(a)); }
 inline RawAccessChainOperandsMask operator|(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) | unsigned(b)); }
 inline RawAccessChainOperandsMask operator&(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) & unsigned(b)); }
 inline RawAccessChainOperandsMask operator^(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) ^ unsigned(b)); }
