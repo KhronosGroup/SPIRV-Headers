@@ -513,9 +513,9 @@ IN THE MATERIALS.
         virtual std::string pre() const { return ""; } // C name prefix
         virtual std::string headerGuardSuffix() const = 0;
 
-        virtual std::string fmtEnumUse(const std::string& opPrefix, const std::string& name) const { return pre() + name; }
+        virtual std::string fmtEnumUse(const std::string &opPrefix, const std::string &opEnum, const std::string &name) const { return pre() + opPrefix + name; }
 
-        virtual void printUtility(std::ostream& out) const override
+        void printUtility(std::ostream& out) const override
         {
             out << "#ifdef SPV_ENABLE_UTILITY_CODE" << std::endl;
             out << "#ifndef __cplusplus" << std::endl;
@@ -555,7 +555,7 @@ IN THE MATERIALS.
                     seenValues.insert(inst.value);
 
                     std::string name = inst.name;
-                    out << "    case " << fmtEnumUse("Op", name) << ": *hasResult = " << (inst.hasResult() ? "true" : "false") << "; *hasResultType = " << (inst.hasType() ? "true" : "false") << "; break;" << std::endl;
+                    out << "    case " << fmtEnumUse("", "Op", name) << ": *hasResult = " << (inst.hasResult() ? "true" : "false") << "; *hasResultType = " << (inst.hasType() ? "true" : "false") << "; break;" << std::endl;
                 }
 
                 out << "    }" << std::endl;
@@ -588,11 +588,13 @@ IN THE MATERIALS.
                     }
                     seenValues.insert(v.first);
 
-                    std::string label{name + v.second};
+                    out << "    " << "case ";
                     if (name == "Op") {
-                        label = v.second;
+                        out << fmtEnumUse("", name, v.second);
                     }
-                    out << "    " << "case " << pre() << label << ": return " << "\"" << v.second << "\";" << std::endl;
+                    else
+                        out << fmtEnumUse(name, name, v.second);
+                    out << ": return " << "\"" << v.second << "\";" << std::endl;
                 }
                 out << "    default: return \"Unknown\";" << std::endl;
                 out << "    }" << std::endl;
@@ -708,7 +710,7 @@ IN THE MATERIALS.
         }
 
         // Add type prefix for scoped enum
-        virtual std::string fmtEnumUse(const std::string& opPrefix, const std::string& name) const override { return opPrefix + "::" + name; }
+        std::string fmtEnumUse(const std::string& opPrefix, const std::string& opEnum, const std::string& name) const override { return opEnum + "::" + prependIfDigit(opEnum, name); }
 
         std::string headerGuardSuffix() const override { return "HPP"; }
     };
