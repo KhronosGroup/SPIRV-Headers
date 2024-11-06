@@ -24,15 +24,22 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
 
-add_library(spirv_headers_simple_test STATIC)
+add_executable(spirv_headers_simple_test example.cpp)
+target_compile_definitions(spirv_headers_simple_test PRIVATE SPV_ENABLE_UTILITY_CODE)
+target_link_libraries(spirv_headers_simple_test PRIVATE SPIRV-Headers::SPIRV-Headers)
+add_test(NAME spirv_headers_simple_test COMMAND spirv_headers_simple_test)
 
-target_sources(spirv_headers_simple_test PRIVATE
-    example.cpp
-)
+add_executable(spirv_headers_simple_test_cpp11 example11.cpp)
+target_compile_definitions(spirv_headers_simple_test_cpp11 PRIVATE SPV_ENABLE_UTILITY_CODE)
+target_link_libraries(spirv_headers_simple_test_cpp11 PRIVATE SPIRV-Headers::SPIRV-Headers)
+set_target_properties(spirv_headers_simple_test_cpp11 PROPERTIES CXX_STANDARD 11)
+add_test(NAME spirv_headers_simple_test_cpp11 COMMAND spirv_headers_simple_test_cpp11)
 
-target_link_libraries(spirv_headers_simple_test PRIVATE
-    SPIRV-Headers::SPIRV-Headers
-)
+add_executable(spirv_headers_simple_test_c example.c)
+target_compile_definitions(spirv_headers_simple_test_c PRIVATE SPV_ENABLE_UTILITY_CODE)
+target_link_libraries(spirv_headers_simple_test_c PRIVATE SPIRV-Headers::SPIRV-Headers)
+set_target_properties(spirv_headers_simple_test_c PROPERTIES C_STANDARD 99 LINKER_LANGUAGE C)
+add_test(NAME spirv_headers_simple_test_c COMMAND spirv_headers_simple_test_c)
 
 if (NOT TARGET SPIRV-Headers)
     message(FATAL_ERROR "SPIRV-Headers target not defined!")

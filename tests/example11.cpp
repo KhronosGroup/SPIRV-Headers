@@ -26,13 +26,13 @@
 
 #include <spirv/unified1/GLSL.std.450.h>
 #include <spirv/unified1/OpenCL.std.h>
-#include <spirv/unified1/spirv.hpp>
+#include <spirv/unified1/spirv.hpp11>
 
 namespace {
 
 const GLSLstd450 kSin = GLSLstd450Sin;
 const OpenCLLIB::Entrypoints kNative_cos = OpenCLLIB::Native_cos;
-const spv::Op kNop = spv::OpNop;
+const spv::Op kNop = spv::Op::OpNop;
 
 }  // anonymous namespace
 
