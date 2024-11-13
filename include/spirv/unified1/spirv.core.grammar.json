@@ -5373,6 +5373,7 @@
         { "kind" : "IdRef", "name": "'Node Index'" }
       ],
       "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "provisional" : true,
       "version" : "None"
     },
     {
@@ -5383,6 +5384,7 @@
         { "kind" : "IdRef", "name": "'Payload Array'" }
       ],
       "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "provisional" : true,
       "version" : "None"
     },
     {
@@ -5394,6 +5396,7 @@
         { "kind" : "IdRef", "name": "'Payload Type'" }
       ],
       "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "provisional" : true,
       "version" : "None"
     },
     {
@@ -5406,6 +5409,7 @@
         { "kind" : "IdRef", "name": "'Payload'" }
       ],
       "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "provisional" : true,
       "version" : "None"
     },
     {
@@ -5418,6 +5422,7 @@
         { "kind" : "IdRef", "name": "'Payload Array'" }
       ],
       "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "provisional" : true,
       "version" : "None"
     },
     {
@@ -5431,6 +5436,7 @@
         { "kind" : "IdRef", "name": "'Node Index'" }
       ],
       "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "provisional" : true,
       "version": "None"
     },
     {
@@ -5442,6 +5448,7 @@
         { "kind" : "LiteralString", "name": "'Literal String'" }
       ],
       "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "provisional" : true,
       "version": "None"
     },
     {
@@ -5453,6 +5460,7 @@
         { "kind" : "LiteralString", "name": "'Literal String'" }
       ],
       "capabilities" : [ "ShaderEnqueueAMDX" ],
+      "provisional" : true,
       "version": "None"
     },
     {
@@ -11610,6 +11618,7 @@
           "enumerant" : "CoalescingAMDX",
           "value" : 5069,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -11619,6 +11628,7 @@
           "parameters" : [
             { "kind" : "IdRef", "name" : "'Is Entry'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -11628,6 +11638,7 @@
           "parameters" : [
             { "kind" : "IdRef", "name" : "'Number of recursions'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -11639,6 +11650,7 @@
             { "kind" : "IdRef", "name" : "'y size'" },
             { "kind" : "IdRef", "name" : "'z size'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -11648,6 +11660,7 @@
           "parameters" : [
             { "kind" : "IdRef", "name" : "'Shader Index'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -11659,6 +11672,7 @@
             { "kind" : "IdRef", "name" : "'y size'" },
             { "kind" : "IdRef", "name" : "'z size'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -11723,6 +11737,7 @@
             { "kind" : "IdRef", "name" : "'Node Name'" },
             { "kind" : "IdRef", "name" : "'Shader Index'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -12066,6 +12081,7 @@
           "enumerant" : "NodePayloadAMDX",
           "value" : 5068,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -13409,6 +13425,7 @@
           "parameters" : [
             { "kind" : "IdRef", "name" : "'Payload Type'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -13418,12 +13435,14 @@
           "parameters" : [
             { "kind" : "IdRef", "name" : "'Max number of payloads'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
           "enumerant" : "TrackFinishWritingAMDX",
           "value" : 5078,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -13433,6 +13452,7 @@
           "parameters" : [
             { "kind" : "IdRef", "name" : "'Node Name'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -13442,12 +13462,14 @@
           "parameters" : [
             { "kind" : "IdRef", "name" : "'Base Index'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
           "enumerant" : "PayloadNodeSparseArrayAMDX",
           "value" : 5099,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -13457,12 +13479,14 @@
           "parameters" : [
             { "kind" : "IdRef", "name" : "'Array Size'" }
           ],
+          "provisional" : true,
           "version" : "None"
         },
         {
           "enumerant" : "PayloadDispatchIndirectAMDX",
           "value" : 5105,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -14544,12 +14568,14 @@
           "enumerant" : "RemainingRecursionLevelsAMDX",
           "value" : 5021,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
           "enumerant" : "ShaderIndexAMDX",
           "value" : 5073,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -15733,6 +15759,7 @@
           "value" : 5067,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_AMDX_shader_enqueue" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
