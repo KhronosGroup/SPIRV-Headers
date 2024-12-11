@@ -1250,6 +1250,9 @@ enum class Capability : unsigned {
     GlobalVariableHostAccessINTEL = 6187,
     GlobalVariableFPGADecorationsINTEL = 6189,
     SubgroupBufferPrefetchINTEL = 6220,
+    Subgroup2DBlockIOINTEL = 6228,
+    Subgroup2DBlockTransformINTEL = 6229,
+    Subgroup2DBlockTransposeINTEL = 6230,
     GroupUniformArithmeticKHR = 6400,
     MaskedGatherScatterINTEL = 6427,
     CacheControlsINTEL = 6441,
@@ -2241,6 +2244,11 @@ enum class Op : unsigned {
     OpControlBarrierWaitINTEL = 6143,
     OpArithmeticFenceEXT = 6145,
     OpSubgroupBlockPrefetchINTEL = 6221,
+    OpSubgroup2DBlockLoadINTEL = 6231,
+    OpSubgroup2DBlockLoadTransformINTEL = 6232,
+    OpSubgroup2DBlockLoadTransposeINTEL = 6233,
+    OpSubgroup2DBlockPrefetchINTEL = 6234,
+    OpSubgroup2DBlockStoreINTEL = 6235,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -3011,6 +3019,11 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpArithmeticFenceEXT: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpSubgroup2DBlockLoadINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpSubgroup2DBlockLoadTransformINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpSubgroup2DBlockLoadTransposeINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpSubgroup2DBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpSubgroup2DBlockStoreINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -3942,6 +3955,9 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::GlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case Capability::GlobalVariableFPGADecorationsINTEL: return "GlobalVariableFPGADecorationsINTEL";
     case Capability::SubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
+    case Capability::Subgroup2DBlockIOINTEL: return "Subgroup2DBlockIOINTEL";
+    case Capability::Subgroup2DBlockTransformINTEL: return "Subgroup2DBlockTransformINTEL";
+    case Capability::Subgroup2DBlockTransposeINTEL: return "Subgroup2DBlockTransposeINTEL";
     case Capability::GroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case Capability::MaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case Capability::CacheControlsINTEL: return "CacheControlsINTEL";
@@ -4855,6 +4871,11 @@ inline const char* OpToString(Op value) {
     case Op::OpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
     case Op::OpArithmeticFenceEXT: return "OpArithmeticFenceEXT";
     case Op::OpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
+    case Op::OpSubgroup2DBlockLoadINTEL: return "OpSubgroup2DBlockLoadINTEL";
+    case Op::OpSubgroup2DBlockLoadTransformINTEL: return "OpSubgroup2DBlockLoadTransformINTEL";
+    case Op::OpSubgroup2DBlockLoadTransposeINTEL: return "OpSubgroup2DBlockLoadTransposeINTEL";
+    case Op::OpSubgroup2DBlockPrefetchINTEL: return "OpSubgroup2DBlockPrefetchINTEL";
+    case Op::OpSubgroup2DBlockStoreINTEL: return "OpSubgroup2DBlockStoreINTEL";
     case Op::OpGroupIMulKHR: return "OpGroupIMulKHR";
     case Op::OpGroupFMulKHR: return "OpGroupFMulKHR";
     case Op::OpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";

@@ -10132,6 +10132,100 @@
       "version" : "None"
     },
     {
+      "opname" : "OpSubgroup2DBlockLoadINTEL",
+      "class"  : "Group",
+      "opcode" : 6231,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Element Size'" },
+        { "kind" : "IdRef", "name" : "'Block Width'" },
+        { "kind" : "IdRef", "name" : "'Block Height'" },
+        { "kind" : "IdRef", "name" : "'Block Count'" },
+        { "kind" : "IdRef", "name" : "'Src Base Pointer'" },
+        { "kind" : "IdRef", "name" : "'Memory Width'" },
+        { "kind" : "IdRef", "name" : "'Memory Height'" },
+        { "kind" : "IdRef", "name" : "'Memory Pitch'" },
+        { "kind" : "IdRef", "name" : "'Coordinate'" },
+        { "kind" : "IdRef", "name" : "'Dst Pointer'" }
+      ],
+      "capabilities" : [ "Subgroup2DBlockIOINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSubgroup2DBlockLoadTransformINTEL",
+      "class"  : "Group",
+      "opcode" : 6232,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Element Size'" },
+        { "kind" : "IdRef", "name" : "'Block Width'" },
+        { "kind" : "IdRef", "name" : "'Block Height'" },
+        { "kind" : "IdRef", "name" : "'Block Count'" },
+        { "kind" : "IdRef", "name" : "'Src Base Pointer'" },
+        { "kind" : "IdRef", "name" : "'Memory Width'" },
+        { "kind" : "IdRef", "name" : "'Memory Height'" },
+        { "kind" : "IdRef", "name" : "'Memory Pitch'" },
+        { "kind" : "IdRef", "name" : "'Coordinate'" },
+        { "kind" : "IdRef", "name" : "'Dst Pointer'" }
+      ],
+      "capabilities" : [ "Subgroup2DBlockTransformINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSubgroup2DBlockLoadTransposeINTEL",
+      "class"  : "Group",
+      "opcode" : 6233,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Element Size'" },
+        { "kind" : "IdRef", "name" : "'Block Width'" },
+        { "kind" : "IdRef", "name" : "'Block Height'" },
+        { "kind" : "IdRef", "name" : "'Block Count'" },
+        { "kind" : "IdRef", "name" : "'Src Base Pointer'" },
+        { "kind" : "IdRef", "name" : "'Memory Width'" },
+        { "kind" : "IdRef", "name" : "'Memory Height'" },
+        { "kind" : "IdRef", "name" : "'Memory Pitch'" },
+        { "kind" : "IdRef", "name" : "'Coordinate'" },
+        { "kind" : "IdRef", "name" : "'Dst Pointer'" }
+      ],
+      "capabilities" : [ "Subgroup2DBlockTransposeINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSubgroup2DBlockPrefetchINTEL",
+      "class"  : "Group",
+      "opcode" : 6234,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Element Size'" },
+        { "kind" : "IdRef", "name" : "'Block Width'" },
+        { "kind" : "IdRef", "name" : "'Block Height'" },
+        { "kind" : "IdRef", "name" : "'Block Count'" },
+        { "kind" : "IdRef", "name" : "'Src Base Pointer'" },
+        { "kind" : "IdRef", "name" : "'Memory Width'" },
+        { "kind" : "IdRef", "name" : "'Memory Height'" },
+        { "kind" : "IdRef", "name" : "'Memory Pitch'" },
+        { "kind" : "IdRef", "name" : "'Coordinate'" }
+      ],
+      "capabilities" : [ "Subgroup2DBlockIOINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSubgroup2DBlockStoreINTEL",
+      "class"  : "Group",
+      "opcode" : 6235,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Element Size'" },
+        { "kind" : "IdRef", "name" : "'Block Width'" },
+        { "kind" : "IdRef", "name" : "'Block Height'" },
+        { "kind" : "IdRef", "name" : "'Block Count'" },
+        { "kind" : "IdRef", "name" : "'Src Pointer'" },
+        { "kind" : "IdRef", "name" : "'Dst Base Pointer'" },
+        { "kind" : "IdRef", "name" : "'Memory Width'" },
+        { "kind" : "IdRef", "name" : "'Memory Height'" },
+        { "kind" : "IdRef", "name" : "'Memory Pitch'" },
+        { "kind" : "IdRef", "name" : "'Coordinate'" }
+      ],
+      "capabilities" : [ "Subgroup2DBlockIOINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpGroupIMulKHR",
       "class"  : "Group",
       "opcode" : 6401,
@@ -16589,6 +16683,26 @@
           "version" : "None"
         },
         {
+          "enumerant" : "Subgroup2DBlockIOINTEL",
+          "value" : 6228,
+          "extensions": [ "SPV_INTEL_2d_block_io" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Subgroup2DBlockTransformINTEL",
+          "value" : 6229,
+          "capabilities" : [ "Subgroup2DBlockIOINTEL" ],
+          "extensions": [ "SPV_INTEL_2d_block_io" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Subgroup2DBlockTransposeINTEL",
+          "value" : 6230,
+          "capabilities" : [ "Subgroup2DBlockIOINTEL" ],
+          "extensions": [ "SPV_INTEL_2d_block_io" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "GroupUniformArithmeticKHR",
           "value" : 6400,
           "extensions" : [ "SPV_KHR_uniform_group_instructions"],
@@ -16596,9 +16710,9 @@
         },
         {
           "enumerant" : "MaskedGatherScatterINTEL",
-	  "value" : 6427,
-	  "extensions" : [ "SPV_INTEL_masked_gather_scatter"],
-	  "version" : "None"
+          "value" : 6427,
+          "extensions" : [ "SPV_INTEL_masked_gather_scatter"],
+          "version" : "None"
         },
         {
           "enumerant" : "CacheControlsINTEL",
