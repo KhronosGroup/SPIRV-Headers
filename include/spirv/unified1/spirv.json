@@ -1226,6 +1226,7 @@
                     "GlobalVariableHostAccessINTEL": 6187,
                     "GlobalVariableFPGADecorationsINTEL": 6189,
                     "SubgroupBufferPrefetchINTEL": 6220,
+                    "SubgroupMatrixMultiplyAccumulateINTEL": 6236,
                     "GroupUniformArithmeticKHR": 6400,
                     "MaskedGatherScatterINTEL": 6427,
                     "CacheControlsINTEL": 6441,
@@ -1455,6 +1456,27 @@
                 "Values":
                 {
                     "AutoINTEL": 0
+                }
+            },
+            {
+                "Name": "MatrixMultiplyAccumulateOperands",
+                "Type": "Bit",
+                "Values":
+                {
+                    "MatrixASignedComponentsINTEL": 0,
+                    "MatrixBSignedComponentsINTEL": 1,
+                    "MatrixCBFloat16INTEL": 2,
+                    "MatrixResultBFloat16INTEL": 3,
+                    "MatrixAPackedInt8INTEL": 4,
+                    "MatrixBPackedInt8INTEL": 5,
+                    "MatrixAPackedInt4INTEL": 6,
+                    "MatrixBPackedInt4INTEL": 7,
+                    "MatrixATF32INTEL": 8,
+                    "MatrixBTF32INTEL": 9,
+                    "MatrixAPackedFloat16INTEL": 10,
+                    "MatrixBPackedFloat16INTEL": 11,
+                    "MatrixAPackedBFloat16INTEL": 12,
+                    "MatrixBPackedBFloat16INTEL": 13
                 }
             },
             {
@@ -2238,6 +2260,7 @@
                     "OpControlBarrierWaitINTEL": 6143,
                     "OpArithmeticFenceEXT": 6145,
                     "OpSubgroupBlockPrefetchINTEL": 6221,
+                    "OpSubgroupMatrixMultiplyAccumulateINTEL": 6237,
                     "OpGroupIMulKHR": 6401,
                     "OpGroupFMulKHR": 6402,
                     "OpGroupBitwiseAndKHR": 6403,
