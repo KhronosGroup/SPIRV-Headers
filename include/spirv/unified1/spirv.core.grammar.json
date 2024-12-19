@@ -6986,7 +6986,6 @@
       "class"  : "@exclude",
       "opcode" : 5609,
       "operands" : [
-        { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "LiteralString", "name" : "'Asm target'" }
       ],
