@@ -2795,7 +2795,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpUMul32x16INTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpConstantFunctionPointerINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpFunctionPointerCallINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpAsmTargetINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpAsmTargetINTEL: *hasResult = true; *hasResultType = false; break;
     case SpvOpAsmINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpAsmCallINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpAtomicFMinEXT: *hasResult = true; *hasResultType = true; break;
