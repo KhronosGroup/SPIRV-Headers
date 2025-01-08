@@ -2791,7 +2791,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpUMul32x16INTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpConstantFunctionPointerINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpFunctionPointerCallINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpAsmTargetINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpAsmTargetINTEL: *hasResult = true; *hasResultType = false; break;
     case Op::OpAsmINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpAsmCallINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpAtomicFMinEXT: *hasResult = true; *hasResultType = true; break;
