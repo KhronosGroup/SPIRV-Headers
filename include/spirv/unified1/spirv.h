@@ -13,7 +13,7 @@
 ** 
 ** MODIFICATIONS TO THIS FILE MAY MEAN IT NO LONGER ACCURATELY REFLECTS KHRONOS
 ** STANDARDS. THE UNMODIFIED, NORMATIVE VERSIONS OF KHRONOS SPECIFICATIONS AND
-** HEADER INFORMATION ARE LOCATED AT https://www.khronos.org/registry/ 
+** HEADER INFORMATION ARE LOCATED AT https://www.khronos.org/registry/
 ** 
 ** THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
 ** OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -2795,7 +2795,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpUMul32x16INTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpConstantFunctionPointerINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpFunctionPointerCallINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpAsmTargetINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpAsmTargetINTEL: *hasResult = true; *hasResultType = false; break;
     case SpvOpAsmINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpAsmCallINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpAtomicFMinEXT: *hasResult = true; *hasResultType = true; break;

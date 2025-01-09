@@ -12,7 +12,7 @@
 // 
 // MODIFICATIONS TO THIS FILE MAY MEAN IT NO LONGER ACCURATELY REFLECTS KHRONOS
 // STANDARDS. THE UNMODIFIED, NORMATIVE VERSIONS OF KHRONOS SPECIFICATIONS AND
-// HEADER INFORMATION ARE LOCATED AT https://www.khronos.org/registry/ 
+// HEADER INFORMATION ARE LOCATED AT https://www.khronos.org/registry/
 // 
 // THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
 // OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -2791,7 +2791,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpUMul32x16INTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpConstantFunctionPointerINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpFunctionPointerCallINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpAsmTargetINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpAsmTargetINTEL: *hasResult = true; *hasResultType = false; break;
     case Op::OpAsmINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpAsmCallINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpAtomicFMinEXT: *hasResult = true; *hasResultType = true; break;
