@@ -65,6 +65,7 @@ spv = {
         WGSL = 10,
         Slang = 11,
         Zig = 12,
+        Rust = 13,
         Max = 0x7fffffff,
     },
 

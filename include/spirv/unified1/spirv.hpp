@@ -74,6 +74,7 @@ enum SourceLanguage {
     SourceLanguageWGSL = 10,
     SourceLanguageSlang = 11,
     SourceLanguageZig = 12,
+    SourceLanguageRust = 13,
     SourceLanguageMax = 0x7fffffff,
 };
 
@@ -3038,6 +3039,7 @@ inline const char* SourceLanguageToString(SourceLanguage value) {
     case SourceLanguageWGSL: return "WGSL";
     case SourceLanguageSlang: return "Slang";
     case SourceLanguageZig: return "Zig";
+    case SourceLanguageRust: return "Rust";
     default: return "Unknown";
     }
 }
