@@ -80,7 +80,8 @@
                     "NZSL": 9,
                     "WGSL": 10,
                     "Slang": 11,
-                    "Zig": 12
+                    "Zig": 12,
+                    "Rust": 13
                 }
             },
             {
@@ -1226,6 +1227,9 @@
                     "GlobalVariableHostAccessINTEL": 6187,
                     "GlobalVariableFPGADecorationsINTEL": 6189,
                     "SubgroupBufferPrefetchINTEL": 6220,
+                    "Subgroup2DBlockIOINTEL": 6228,
+                    "Subgroup2DBlockTransformINTEL": 6229,
+                    "Subgroup2DBlockTransposeINTEL": 6230,
                     "SubgroupMatrixMultiplyAccumulateINTEL": 6236,
                     "GroupUniformArithmeticKHR": 6400,
                     "MaskedGatherScatterINTEL": 6427,
@@ -2260,6 +2264,11 @@
                     "OpControlBarrierWaitINTEL": 6143,
                     "OpArithmeticFenceEXT": 6145,
                     "OpSubgroupBlockPrefetchINTEL": 6221,
+                    "OpSubgroup2DBlockLoadINTEL": 6231,
+                    "OpSubgroup2DBlockLoadTransformINTEL": 6232,
+                    "OpSubgroup2DBlockLoadTransposeINTEL": 6233,
+                    "OpSubgroup2DBlockPrefetchINTEL": 6234,
+                    "OpSubgroup2DBlockStoreINTEL": 6235,
                     "OpSubgroupMatrixMultiplyAccumulateINTEL": 6237,
                     "OpGroupIMulKHR": 6401,
                     "OpGroupFMulKHR": 6402,
