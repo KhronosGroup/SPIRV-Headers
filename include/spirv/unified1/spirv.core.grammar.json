@@ -11171,6 +11171,11 @@
           "enumerant" : "Zig",
           "value" : 12,
           "version" : "1.0"
+        },
+        {
+          "enumerant" : "Rust",
+          "value" : 13,
+          "version" : "1.0"
         }
       ]
     },
