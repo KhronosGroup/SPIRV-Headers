@@ -10225,6 +10225,22 @@
       "version" : "None"
     },
     {
+      "opname" : "OpSubgroupMatrixMultiplyAccumulateINTEL",
+      "class"  : "Group",
+      "opcode" : 6237,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'K Dim'" },
+        { "kind" : "IdRef", "name" : "'Matrix A'" },
+        { "kind" : "IdRef", "name" : "'Matrix B'" },
+        { "kind" : "IdRef", "name" : "'Matrix C'" },
+        { "kind" : "MatrixMultiplyAccumulateOperands", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "SubgroupMatrixMultiplyAccumulateINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpGroupIMulKHR",
       "class"  : "Group",
       "opcode" : 6401,
@@ -16707,6 +16723,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "SubgroupMatrixMultiplyAccumulateINTEL",
+          "value" : 6236,
+          "extensions": [ "SPV_INTEL_subgroup_matrix_multiply_accumulate" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "GroupUniformArithmeticKHR",
           "value" : 6400,
           "extensions" : [ "SPV_KHR_uniform_group_instructions"],
@@ -17061,6 +17083,87 @@
           "enumerant" : "AutoINTEL",
           "value" : 0,
           "capabilities" : [ "RegisterLimitsINTEL" ],
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "BitEnum",
+      "kind" : "MatrixMultiplyAccumulateOperands",
+      "enumerants" : [
+        {
+          "enumerant" : "None",
+          "value" : "0x0",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixASignedComponentsINTEL",
+          "value" : "0x1",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBSignedComponentsINTEL",
+          "value" : "0x2",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixCBFloat16INTEL",
+          "value" : "0x4",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixResultBFloat16INTEL",
+          "value" : "0x8",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAPackedInt8INTEL",
+          "value" : "0x10",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBPackedInt8INTEL",
+          "value" : "0x20",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAPackedInt4INTEL",
+          "value" : "0x40",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBPackedInt4INTEL",
+          "value" : "0x80",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixATF32INTEL",
+          "value" : "0x100",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBTF32INTEL",
+          "value" : "0x200",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAPackedFloat16INTEL",
+          "value" : "0x400",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBPackedFloat16INTEL",
+          "value" : "0x800",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAPackedBFloat16INTEL",
+          "value" : "0x1000",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBPackedBFloat16INTEL",
+          "value" : "0x2000",
           "version" : "None"
         }
       ]

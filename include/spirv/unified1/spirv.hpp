@@ -1254,6 +1254,7 @@ enum Capability {
     CapabilitySubgroup2DBlockIOINTEL = 6228,
     CapabilitySubgroup2DBlockTransformINTEL = 6229,
     CapabilitySubgroup2DBlockTransposeINTEL = 6230,
+    CapabilitySubgroupMatrixMultiplyAccumulateINTEL = 6236,
     CapabilityGroupUniformArithmeticKHR = 6400,
     CapabilityMaskedGatherScatterINTEL = 6427,
     CapabilityCacheControlsINTEL = 6441,
@@ -1466,6 +1467,42 @@ enum StoreCacheControl {
 enum NamedMaximumNumberOfRegisters {
     NamedMaximumNumberOfRegistersAutoINTEL = 0,
     NamedMaximumNumberOfRegistersMax = 0x7fffffff,
+};
+
+enum MatrixMultiplyAccumulateOperandsShift {
+    MatrixMultiplyAccumulateOperandsMatrixASignedComponentsINTELShift = 0,
+    MatrixMultiplyAccumulateOperandsMatrixBSignedComponentsINTELShift = 1,
+    MatrixMultiplyAccumulateOperandsMatrixCBFloat16INTELShift = 2,
+    MatrixMultiplyAccumulateOperandsMatrixResultBFloat16INTELShift = 3,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedInt8INTELShift = 4,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedInt8INTELShift = 5,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedInt4INTELShift = 6,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedInt4INTELShift = 7,
+    MatrixMultiplyAccumulateOperandsMatrixATF32INTELShift = 8,
+    MatrixMultiplyAccumulateOperandsMatrixBTF32INTELShift = 9,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedFloat16INTELShift = 10,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedFloat16INTELShift = 11,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedBFloat16INTELShift = 12,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedBFloat16INTELShift = 13,
+    MatrixMultiplyAccumulateOperandsMax = 0x7fffffff,
+};
+
+enum MatrixMultiplyAccumulateOperandsMask {
+    MatrixMultiplyAccumulateOperandsMaskNone = 0,
+    MatrixMultiplyAccumulateOperandsMatrixASignedComponentsINTELMask = 0x00000001,
+    MatrixMultiplyAccumulateOperandsMatrixBSignedComponentsINTELMask = 0x00000002,
+    MatrixMultiplyAccumulateOperandsMatrixCBFloat16INTELMask = 0x00000004,
+    MatrixMultiplyAccumulateOperandsMatrixResultBFloat16INTELMask = 0x00000008,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedInt8INTELMask = 0x00000010,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedInt8INTELMask = 0x00000020,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedInt4INTELMask = 0x00000040,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedInt4INTELMask = 0x00000080,
+    MatrixMultiplyAccumulateOperandsMatrixATF32INTELMask = 0x00000100,
+    MatrixMultiplyAccumulateOperandsMatrixBTF32INTELMask = 0x00000200,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedFloat16INTELMask = 0x00000400,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedFloat16INTELMask = 0x00000800,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedBFloat16INTELMask = 0x00001000,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedBFloat16INTELMask = 0x00002000,
 };
 
 enum RawAccessChainOperandsShift {
@@ -2250,6 +2287,7 @@ enum Op {
     OpSubgroup2DBlockLoadTransposeINTEL = 6233,
     OpSubgroup2DBlockPrefetchINTEL = 6234,
     OpSubgroup2DBlockStoreINTEL = 6235,
+    OpSubgroupMatrixMultiplyAccumulateINTEL = 6237,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -3025,6 +3063,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpSubgroup2DBlockLoadTransposeINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockStoreINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpSubgroupMatrixMultiplyAccumulateINTEL: *hasResult = true; *hasResultType = true; break;
     case OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -3960,6 +3999,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilitySubgroup2DBlockIOINTEL: return "Subgroup2DBlockIOINTEL";
     case CapabilitySubgroup2DBlockTransformINTEL: return "Subgroup2DBlockTransformINTEL";
     case CapabilitySubgroup2DBlockTransposeINTEL: return "Subgroup2DBlockTransposeINTEL";
+    case CapabilitySubgroupMatrixMultiplyAccumulateINTEL: return "SubgroupMatrixMultiplyAccumulateINTEL";
     case CapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case CapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case CapabilityCacheControlsINTEL: return "CacheControlsINTEL";
@@ -4878,6 +4918,7 @@ inline const char* OpToString(Op value) {
     case OpSubgroup2DBlockLoadTransposeINTEL: return "OpSubgroup2DBlockLoadTransposeINTEL";
     case OpSubgroup2DBlockPrefetchINTEL: return "OpSubgroup2DBlockPrefetchINTEL";
     case OpSubgroup2DBlockStoreINTEL: return "OpSubgroup2DBlockStoreINTEL";
+    case OpSubgroupMatrixMultiplyAccumulateINTEL: return "OpSubgroupMatrixMultiplyAccumulateINTEL";
     case OpGroupIMulKHR: return "OpGroupIMulKHR";
     case OpGroupFMulKHR: return "OpGroupFMulKHR";
     case OpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";
@@ -4948,6 +4989,10 @@ inline TensorAddressingOperandsMask operator|(TensorAddressingOperandsMask a, Te
 inline TensorAddressingOperandsMask operator&(TensorAddressingOperandsMask a, TensorAddressingOperandsMask b) { return TensorAddressingOperandsMask(unsigned(a) & unsigned(b)); }
 inline TensorAddressingOperandsMask operator^(TensorAddressingOperandsMask a, TensorAddressingOperandsMask b) { return TensorAddressingOperandsMask(unsigned(a) ^ unsigned(b)); }
 inline TensorAddressingOperandsMask operator~(TensorAddressingOperandsMask a) { return TensorAddressingOperandsMask(~unsigned(a)); }
+inline MatrixMultiplyAccumulateOperandsMask operator|(MatrixMultiplyAccumulateOperandsMask a, MatrixMultiplyAccumulateOperandsMask b) { return MatrixMultiplyAccumulateOperandsMask(unsigned(a) | unsigned(b)); }
+inline MatrixMultiplyAccumulateOperandsMask operator&(MatrixMultiplyAccumulateOperandsMask a, MatrixMultiplyAccumulateOperandsMask b) { return MatrixMultiplyAccumulateOperandsMask(unsigned(a) & unsigned(b)); }
+inline MatrixMultiplyAccumulateOperandsMask operator^(MatrixMultiplyAccumulateOperandsMask a, MatrixMultiplyAccumulateOperandsMask b) { return MatrixMultiplyAccumulateOperandsMask(unsigned(a) ^ unsigned(b)); }
+inline MatrixMultiplyAccumulateOperandsMask operator~(MatrixMultiplyAccumulateOperandsMask a) { return MatrixMultiplyAccumulateOperandsMask(~unsigned(a)); }
 inline RawAccessChainOperandsMask operator|(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) | unsigned(b)); }
 inline RawAccessChainOperandsMask operator&(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) & unsigned(b)); }
 inline RawAccessChainOperandsMask operator^(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) ^ unsigned(b)); }
