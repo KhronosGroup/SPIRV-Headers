@@ -155,7 +155,7 @@
       "class"  : "Debug",
       "opcode" : 2,
       "operands" : [
-        { "kind" : "LiteralString", "name" : "_Continued Source_" }
+        { "kind" : "LiteralString", "name" : "'Continued Source'" }
       ],
       "version": "1.0"
     },
