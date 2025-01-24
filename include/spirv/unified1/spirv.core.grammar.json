@@ -15712,6 +15712,7 @@
         {
           "enumerant" : "AtomicStorageOps",
           "value" : 4445,
+          "capabilities" : [ "AtomicStorage" ],
           "extensions" : [ "SPV_KHR_shader_atomic_counter_ops" ],
           "version" : "None"
         },
