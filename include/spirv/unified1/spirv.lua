@@ -778,6 +778,7 @@ spv = {
         SMIDNV = 5377,
         HitKindFrontFacingMicroTriangleNV = 5405,
         HitKindBackFacingMicroTriangleNV = 5406,
+        ClusterIDNV = 5436,
         CullMaskKHR = 6021,
         Max = 0x7fffffff,
     },
@@ -1169,6 +1170,7 @@ spv = {
         CooperativeMatrixTensorAddressingNV = 5433,
         CooperativeMatrixBlockLoadsNV = 5434,
         CooperativeVectorTrainingNV = 5435,
+        RayTracingClusterAccelerationStructureNV = 5437,
         TensorAddressingNV = 5439,
         SubgroupShuffleINTEL = 5568,
         SubgroupBufferBlockIOINTEL = 5569,
@@ -1511,33 +1513,6 @@ spv = {
     },
 
     FPEncoding = {
-        Max = 0x7fffffff,
-    },
-
-    CooperativeVectorMatrixLayout = {
-        RowMajorNV = 0,
-        ColumnMajorNV = 1,
-        InferencingOptimalNV = 2,
-        TrainingOptimalNV = 3,
-        Max = 0x7fffffff,
-    },
-
-    ComponentType = {
-        Float16NV = 0,
-        Float32NV = 1,
-        Float64NV = 2,
-        SignedInt8NV = 3,
-        SignedInt16NV = 4,
-        SignedInt32NV = 5,
-        SignedInt64NV = 6,
-        UnsignedInt8NV = 7,
-        UnsignedInt16NV = 8,
-        UnsignedInt32NV = 9,
-        UnsignedInt64NV = 10,
-        SignedInt8PackedNV = 1000491000,
-        UnsignedInt8PackedNV = 1000491001,
-        FloatE4M3NV = 1000491002,
-        FloatE5M2NV = 1000491003,
         Max = 0x7fffffff,
     },
 
@@ -2026,6 +2001,8 @@ spv = {
         OpTypeAccelerationStructureKHR = 5341,
         OpTypeAccelerationStructureNV = 5341,
         OpExecuteCallableNV = 5344,
+        OpRayQueryGetClusterIdNV = 5345,
+        OpHitObjectGetClusterIdNV = 5346,
         OpTypeCooperativeMatrixNV = 5358,
         OpCooperativeMatrixLoadNV = 5359,
         OpCooperativeMatrixStoreNV = 5360,

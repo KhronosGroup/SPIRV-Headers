@@ -6318,6 +6318,37 @@
       "version" : "None"
     },
     {
+      "opname" : "OpRayQueryGetClusterIdNV",
+      "class" : "Reserved",
+      "opcode" : 5345,
+      "operands" : [
+          { "kind" : "IdResultType" },
+          { "kind" : "IdResult" },
+          {
+              "kind" : "IdRef",
+              "name" : "'RayQuery'"
+          },
+          {
+              "kind" : "IdRef",
+              "name" : "'Intersection'"
+          }
+      ],
+      "capabilities" : [ "RayQueryKHR", "RayTracingClusterAccelerationStructureNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetClusterIdNV",
+      "class" : "Reserved",
+      "opcode" : 5346,
+      "operands" : [
+          { "kind" : "IdResultType" },
+          { "kind" : "IdResult" },
+          { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderNV" , "RayTracingClusterAccelerationStructureNV" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpTypeCooperativeMatrixNV",
       "class"  : "Type-Declaration",
       "opcode" : 5358,
@@ -15156,6 +15187,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "ClusterIDNV",
+          "value" : 5436,
+          "capabilities" : [ "RayTracingClusterAccelerationStructureNV" ],
+          "extensions" : [ "SPV_NV_cluster_acceleration_structure" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "CullMaskKHR",
           "value"  : 6021,
           "capabilities" : [ "RayCullMaskKHR" ],
@@ -16394,6 +16432,12 @@
           "enumerant" : "CooperativeVectorTrainingNV",
           "value" : 5435,
           "extensions" : [ "SPV_NV_cooperative_vector" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RayTracingClusterAccelerationStructureNV",
+          "value" : 5437,
+          "extensions" : [ "SPV_NV_cluster_acceleration_structure" ],
           "version" : "None"
         },
         {
