@@ -5969,12 +5969,12 @@
     },
     {
       "opname" : "OpTypeCooperativeVectorNV",
-      "class"  : "Reserved",
+      "class"  : "Type-Declaration",
       "opcode" : 5288,
       "operands" : [
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "'Component Type'" },
-        { "kind" : "IdRef",        "name" : "'Components'" }
+        { "kind" : "IdRef",        "name" : "'Component Count'" }
       ],
       "capabilities" : [ "CooperativeVectorNV" ],
       "version" : "None"
@@ -5991,7 +5991,7 @@
         { "kind" : "IdRef",             "name" : "'Matrix'" },
         { "kind" : "IdRef",             "name" : "'MatrixOffset'" },
         { "kind" : "IdRef",             "name" : "'MatrixInterpretation'" },
-        { "kind" : "IdRef",             "name" : "'N'" },
+        { "kind" : "IdRef",             "name" : "'M'" },
         { "kind" : "IdRef",             "name" : "'K'" },
         { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
         { "kind" : "IdRef",             "name" : "'Transpose'" },
@@ -6044,7 +6044,7 @@
         { "kind" : "IdRef",             "name" : "'Bias'" },
         { "kind" : "IdRef",             "name" : "'BiasOffset'" },
         { "kind" : "IdRef",             "name" : "'BiasInterpretation'" },
-        { "kind" : "IdRef",             "name" : "'N'" },
+        { "kind" : "IdRef",             "name" : "'M'" },
         { "kind" : "IdRef",             "name" : "'K'" },
         { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
         { "kind" : "IdRef",             "name" : "'Transpose'" },
@@ -6149,7 +6149,7 @@
     },
     {
       "opname" : "OpCooperativeVectorLoadNV",
-      "class"  : "Reserved",
+      "class"  : "Memory",
       "opcode" : 5302,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -6163,7 +6163,7 @@
     },
     {
       "opname" : "OpCooperativeVectorStoreNV",
-      "class"  : "Reserved",
+      "class"  : "Memory",
       "opcode" : 5303,
       "operands" : [
         { "kind" : "IdRef",             "name" : "'Pointer'" },
