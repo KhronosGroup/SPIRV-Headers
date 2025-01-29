@@ -813,6 +813,7 @@
                     "SMIDNV": 5377,
                     "HitKindFrontFacingMicroTriangleNV": 5405,
                     "HitKindBackFacingMicroTriangleNV": 5406,
+                    "ClusterIDNV": 5436,
                     "CullMaskKHR": 6021
                 }
             },
@@ -1154,6 +1155,7 @@
                     "CooperativeMatrixTensorAddressingNV": 5433,
                     "CooperativeMatrixBlockLoadsNV": 5434,
                     "CooperativeVectorTrainingNV": 5435,
+                    "RayTracingClusterAccelerationStructureNV": 5437,
                     "TensorAddressingNV": 5439,
                     "SubgroupShuffleINTEL": 5568,
                     "SubgroupBufferBlockIOINTEL": 5569,
@@ -2023,6 +2025,8 @@
                     "OpTypeAccelerationStructureKHR": 5341,
                     "OpTypeAccelerationStructureNV": 5341,
                     "OpExecuteCallableNV": 5344,
+                    "OpRayQueryGetClusterIdNV": 5345,
+                    "OpHitObjectGetClusterIdNV": 5346,
                     "OpTypeCooperativeMatrixNV": 5358,
                     "OpCooperativeMatrixLoadNV": 5359,
                     "OpCooperativeMatrixStoreNV": 5360,
