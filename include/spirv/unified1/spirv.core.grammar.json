@@ -5968,6 +5968,93 @@
       "version" : "None"
     },
     {
+      "opname" : "OpTypeCooperativeVectorNV",
+      "class"  : "Type-Declaration",
+      "opcode" : 5288,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "'Component Type'" },
+        { "kind" : "IdRef",        "name" : "'Component Count'" }
+      ],
+      "capabilities" : [ "CooperativeVectorNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeVectorMatrixMulNV",
+      "class"  : "Reserved",
+      "opcode" : 5289,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Input'" },
+        { "kind" : "IdRef",             "name" : "'InputInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'Matrix'" },
+        { "kind" : "IdRef",             "name" : "'MatrixOffset'" },
+        { "kind" : "IdRef",             "name" : "'MatrixInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'M'" },
+        { "kind" : "IdRef",             "name" : "'K'" },
+        { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
+        { "kind" : "IdRef",             "name" : "'Transpose'" },
+        { "kind" : "IdRef",             "name" : "'MatrixStride'", "quantifier": "?" },
+        { "kind" : "CooperativeMatrixOperands",             "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeVectorNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeVectorOuterProductAccumulateNV",
+      "class"  : "Reserved",
+      "opcode" : 5290,
+      "operands" : [
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
+        { "kind" : "IdRef",             "name" : "'A'" },
+        { "kind" : "IdRef",             "name" : "'B'" },
+        { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
+        { "kind" : "IdRef",             "name" : "'MatrixInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'MatrixStride'", "quantifier": "?" }
+      ],
+      "capabilities" : [ "CooperativeVectorTrainingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeVectorReduceSumAccumulateNV",
+      "class"  : "Reserved",
+      "opcode" : 5291,
+      "operands" : [
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
+        { "kind" : "IdRef",             "name" : "'V'" }
+      ],
+      "capabilities" : [ "CooperativeVectorTrainingNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeVectorMatrixMulAddNV",
+      "class"  : "Reserved",
+      "opcode" : 5292,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Input'" },
+        { "kind" : "IdRef",             "name" : "'InputInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'Matrix'" },
+        { "kind" : "IdRef",             "name" : "'MatrixOffset'" },
+        { "kind" : "IdRef",             "name" : "'MatrixInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'Bias'" },
+        { "kind" : "IdRef",             "name" : "'BiasOffset'" },
+        { "kind" : "IdRef",             "name" : "'BiasInterpretation'" },
+        { "kind" : "IdRef",             "name" : "'M'" },
+        { "kind" : "IdRef",             "name" : "'K'" },
+        { "kind" : "IdRef",             "name" : "'MemoryLayout'" },
+        { "kind" : "IdRef",             "name" : "'Transpose'" },
+        { "kind" : "IdRef",             "name" : "'MatrixStride'", "quantifier": "?" },
+        { "kind" : "CooperativeMatrixOperands",             "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeVectorNV" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpCooperativeMatrixConvertNV",
       "class"  : "Conversion",
       "opcode" : 5293,
@@ -6058,6 +6145,33 @@
         { "kind" : "IdRef", "name" : "'Barycentric'" }
       ],
       "capabilities" : [ "DisplacementMicromapNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeVectorLoadNV",
+      "class"  : "Memory",
+      "opcode" : 5302,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
+        { "kind" : "MemoryAccess",      "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeVectorNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCooperativeVectorStoreNV",
+      "class"  : "Memory",
+      "opcode" : 5303,
+      "operands" : [
+        { "kind" : "IdRef",             "name" : "'Pointer'" },
+        { "kind" : "IdRef",             "name" : "'Offset'" },
+        { "kind" : "IdRef",             "name" : "'Object'" },
+        { "kind" : "MemoryAccess",      "quantifier" : "?" }
+      ],
+      "capabilities" : [ "CooperativeVectorNV" ],
       "version" : "None"
     },
     {
@@ -16222,6 +16336,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "CooperativeVectorNV",
+          "value" : 5394,
+          "extensions" : [ "SPV_NV_cooperative_vector" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "AtomicFloat16VectorNV",
           "value" : 5404,
           "extensions" : [ "SPV_NV_shader_atomic_fp16_vector" ],
@@ -16268,6 +16388,12 @@
           "enumerant" : "CooperativeMatrixBlockLoadsNV",
           "value" : 5434,
           "extensions" : [ "SPV_NV_cooperative_matrix2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CooperativeVectorTrainingNV",
+          "value" : 5435,
+          "extensions" : [ "SPV_NV_cooperative_vector" ],
           "version" : "None"
         },
         {
@@ -17172,6 +17298,113 @@
       "category" : "ValueEnum",
       "kind" : "FPEncoding",
       "enumerants" : [
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "CooperativeVectorMatrixLayout",
+      "enumerants" : [
+        {
+          "enumerant" : "RowMajorNV",
+          "value" : 0,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ColumnMajorNV",
+          "value" : 1,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "InferencingOptimalNV",
+          "value" : 2,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TrainingOptimalNV",
+          "value" : 3,
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "ComponentType",
+      "enumerants" : [
+        {
+          "enumerant" : "Float16NV",
+          "value" : 0,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float32NV",
+          "value" : 1,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float64NV",
+          "value" : 2,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SignedInt8NV",
+          "value" : 3,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SignedInt16NV",
+          "value" : 4,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SignedInt32NV",
+          "value" : 5,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SignedInt64NV",
+          "value" : 6,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "UnsignedInt8NV",
+          "value" : 7,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "UnsignedInt16NV",
+          "value" : 8,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "UnsignedInt32NV",
+          "value" : 9,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "UnsignedInt64NV",
+          "value" : 10,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SignedInt8PackedNV",
+          "value" : 1000491000,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "UnsignedInt8PackedNV",
+          "value" : 1000491001,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FloatE4M3NV",
+          "value" : 1000491002,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FloatE5M2NV",
+          "value" : 1000491003,
+          "version" : "None"
+        }
       ]
     },
     {

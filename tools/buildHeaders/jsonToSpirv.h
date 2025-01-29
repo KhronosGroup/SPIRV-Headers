@@ -110,6 +110,8 @@ enum OperandClass {
     OperandMatrixMultiplyAccumulateOperands,
     OperandRawAccessChainOperands,
     OperandFPEncoding,
+    OperandCooperativeVectorMatrixLayout,
+    OperandComponentType,
 
     OperandOpcode,
 
