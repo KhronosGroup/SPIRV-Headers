@@ -781,12 +781,18 @@ enum BuiltIn {
     BuiltInIncomingRayFlagsKHR = 5351,
     BuiltInIncomingRayFlagsNV = 5351,
     BuiltInRayGeometryIndexKHR = 5352,
+    BuiltInHitIsSphereNV = 5359,
+    BuiltInHitIsLSSNV = 5360,
+    BuiltInHitSpherePositionNV = 5361,
     BuiltInWarpsPerSMNV = 5374,
     BuiltInSMCountNV = 5375,
     BuiltInWarpIDNV = 5376,
     BuiltInSMIDNV = 5377,
+    BuiltInHitLSSPositionsNV = 5396,
     BuiltInHitKindFrontFacingMicroTriangleNV = 5405,
     BuiltInHitKindBackFacingMicroTriangleNV = 5406,
+    BuiltInHitSphereRadiusNV = 5420,
+    BuiltInHitLSSRadiiNV = 5421,
     BuiltInClusterIDNV = 5436,
     BuiltInCullMaskKHR = 6021,
     BuiltInMax = 0x7fffffff,
@@ -1173,6 +1179,8 @@ enum Capability {
     CapabilityAtomicFloat16VectorNV = 5404,
     CapabilityRayTracingDisplacementMicromapNV = 5409,
     CapabilityRawAccessChainsNV = 5414,
+    CapabilityRayTracingSpheresGeometryNV = 5418,
+    CapabilityRayTracingLinearSweptSpheresGeometryNV = 5419,
     CapabilityCooperativeMatrixReductionsNV = 5430,
     CapabilityCooperativeMatrixConversionsNV = 5431,
     CapabilityCooperativeMatrixPerElementOperationsNV = 5432,
@@ -1275,6 +1283,7 @@ enum RayFlagsShift {
     RayFlagsCullFrontFacingTrianglesKHRShift = 5,
     RayFlagsCullOpaqueKHRShift = 6,
     RayFlagsCullNoOpaqueKHRShift = 7,
+    RayFlagsSkipBuiltinPrimitivesNVShift = 8,
     RayFlagsSkipTrianglesKHRShift = 8,
     RayFlagsSkipAABBsKHRShift = 9,
     RayFlagsForceOpacityMicromap2StateEXTShift = 10,
@@ -1291,6 +1300,7 @@ enum RayFlagsMask {
     RayFlagsCullFrontFacingTrianglesKHRMask = 0x00000020,
     RayFlagsCullOpaqueKHRMask = 0x00000040,
     RayFlagsCullNoOpaqueKHRMask = 0x00000080,
+    RayFlagsSkipBuiltinPrimitivesNVMask = 0x00000100,
     RayFlagsSkipTrianglesKHRMask = 0x00000100,
     RayFlagsSkipAABBsKHRMask = 0x00000200,
     RayFlagsForceOpacityMicromap2StateEXTMask = 0x00000400,
@@ -2074,6 +2084,19 @@ enum Op {
     OpConvertSampledImageToUNV = 5396,
     OpSamplerImageAddressingModeNV = 5397,
     OpRawAccessChainNV = 5398,
+    OpRayQueryGetIntersectionSpherePositionNV = 5427,
+    OpRayQueryGetIntersectionSphereRadiusNV = 5428,
+    OpRayQueryGetIntersectionLSSPositionsNV = 5429,
+    OpRayQueryGetIntersectionLSSRadiiNV = 5430,
+    OpRayQueryGetIntersectionLSSHitValueNV = 5431,
+    OpHitObjectGetSpherePositionNV = 5432,
+    OpHitObjectGetSphereRadiusNV = 5433,
+    OpHitObjectGetLSSPositionsNV = 5434,
+    OpHitObjectGetLSSRadiiNV = 5435,
+    OpHitObjectIsSphereHitNV = 5436,
+    OpHitObjectIsLSSHitNV = 5437,
+    OpRayQueryIsSphereHitNV = 5438,
+    OpRayQueryIsLSSHitNV = 5439,
     OpSubgroupShuffleINTEL = 5571,
     OpSubgroupShuffleDownINTEL = 5572,
     OpSubgroupShuffleUpINTEL = 5573,
@@ -2861,6 +2884,19 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpConvertSampledImageToUNV: *hasResult = true; *hasResultType = true; break;
     case OpSamplerImageAddressingModeNV: *hasResult = false; *hasResultType = false; break;
     case OpRawAccessChainNV: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryGetIntersectionSpherePositionNV: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryGetIntersectionSphereRadiusNV: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryGetIntersectionLSSPositionsNV: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryGetIntersectionLSSRadiiNV: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryGetIntersectionLSSHitValueNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetSpherePositionNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetSphereRadiusNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetLSSPositionsNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetLSSRadiiNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectIsSphereHitNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectIsLSSHitNV: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryIsSphereHitNV: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryIsLSSHitNV: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupShuffleINTEL: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupShuffleDownINTEL: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupShuffleUpINTEL: *hasResult = true; *hasResultType = true; break;
@@ -3756,12 +3792,18 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltInHitMicroTriangleVertexBarycentricsNV: return "HitMicroTriangleVertexBarycentricsNV";
     case BuiltInIncomingRayFlagsKHR: return "IncomingRayFlagsKHR";
     case BuiltInRayGeometryIndexKHR: return "RayGeometryIndexKHR";
+    case BuiltInHitIsSphereNV: return "HitIsSphereNV";
+    case BuiltInHitIsLSSNV: return "HitIsLSSNV";
+    case BuiltInHitSpherePositionNV: return "HitSpherePositionNV";
     case BuiltInWarpsPerSMNV: return "WarpsPerSMNV";
     case BuiltInSMCountNV: return "SMCountNV";
     case BuiltInWarpIDNV: return "WarpIDNV";
     case BuiltInSMIDNV: return "SMIDNV";
+    case BuiltInHitLSSPositionsNV: return "HitLSSPositionsNV";
     case BuiltInHitKindFrontFacingMicroTriangleNV: return "HitKindFrontFacingMicroTriangleNV";
     case BuiltInHitKindBackFacingMicroTriangleNV: return "HitKindBackFacingMicroTriangleNV";
+    case BuiltInHitSphereRadiusNV: return "HitSphereRadiusNV";
+    case BuiltInHitLSSRadiiNV: return "HitLSSRadiiNV";
     case BuiltInClusterIDNV: return "ClusterIDNV";
     case BuiltInCullMaskKHR: return "CullMaskKHR";
     default: return "Unknown";
@@ -3972,6 +4014,8 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityAtomicFloat16VectorNV: return "AtomicFloat16VectorNV";
     case CapabilityRayTracingDisplacementMicromapNV: return "RayTracingDisplacementMicromapNV";
     case CapabilityRawAccessChainsNV: return "RawAccessChainsNV";
+    case CapabilityRayTracingSpheresGeometryNV: return "RayTracingSpheresGeometryNV";
+    case CapabilityRayTracingLinearSweptSpheresGeometryNV: return "RayTracingLinearSweptSpheresGeometryNV";
     case CapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
     case CapabilityCooperativeMatrixConversionsNV: return "CooperativeMatrixConversionsNV";
     case CapabilityCooperativeMatrixPerElementOperationsNV: return "CooperativeMatrixPerElementOperationsNV";
@@ -4760,6 +4804,19 @@ inline const char* OpToString(Op value) {
     case OpConvertSampledImageToUNV: return "OpConvertSampledImageToUNV";
     case OpSamplerImageAddressingModeNV: return "OpSamplerImageAddressingModeNV";
     case OpRawAccessChainNV: return "OpRawAccessChainNV";
+    case OpRayQueryGetIntersectionSpherePositionNV: return "OpRayQueryGetIntersectionSpherePositionNV";
+    case OpRayQueryGetIntersectionSphereRadiusNV: return "OpRayQueryGetIntersectionSphereRadiusNV";
+    case OpRayQueryGetIntersectionLSSPositionsNV: return "OpRayQueryGetIntersectionLSSPositionsNV";
+    case OpRayQueryGetIntersectionLSSRadiiNV: return "OpRayQueryGetIntersectionLSSRadiiNV";
+    case OpRayQueryGetIntersectionLSSHitValueNV: return "OpRayQueryGetIntersectionLSSHitValueNV";
+    case OpHitObjectGetSpherePositionNV: return "OpHitObjectGetSpherePositionNV";
+    case OpHitObjectGetSphereRadiusNV: return "OpHitObjectGetSphereRadiusNV";
+    case OpHitObjectGetLSSPositionsNV: return "OpHitObjectGetLSSPositionsNV";
+    case OpHitObjectGetLSSRadiiNV: return "OpHitObjectGetLSSRadiiNV";
+    case OpHitObjectIsSphereHitNV: return "OpHitObjectIsSphereHitNV";
+    case OpHitObjectIsLSSHitNV: return "OpHitObjectIsLSSHitNV";
+    case OpRayQueryIsSphereHitNV: return "OpRayQueryIsSphereHitNV";
+    case OpRayQueryIsLSSHitNV: return "OpRayQueryIsLSSHitNV";
     case OpSubgroupShuffleINTEL: return "OpSubgroupShuffleINTEL";
     case OpSubgroupShuffleDownINTEL: return "OpSubgroupShuffleDownINTEL";
     case OpSubgroupShuffleUpINTEL: return "OpSubgroupShuffleUpINTEL";

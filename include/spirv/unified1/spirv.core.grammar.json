@@ -6790,6 +6790,211 @@
       "version" : "None"
     },
     {
+        "opname" : "OpRayQueryGetIntersectionSpherePositionNV",
+        "class" : "Reserved",
+        "opcode" : 5427,
+        "operands" : [
+            { "kind" : "IdResultType" },
+            { "kind" : "IdResult" },
+            {
+                "kind" : "IdRef",
+                "name" : "'RayQuery'"
+            },
+            {
+                "kind" : "IdRef",
+                "name" : "'Intersection'"
+            }
+        ],
+        "capabilities" : [ "RayTracingSpheresGeometryNV" ],
+        "version" : "None"
+    },
+    {
+        "opname" : "OpRayQueryGetIntersectionSphereRadiusNV",
+        "class" : "Reserved",
+        "opcode" : 5428,
+        "operands" : [
+            { "kind" : "IdResultType" },
+            { "kind" : "IdResult" },
+            {
+                "kind" : "IdRef",
+                "name" : "'RayQuery'"
+            },
+            {
+                "kind" : "IdRef",
+                "name" : "'Intersection'"
+            }
+        ],
+        "capabilities" : [ "RayTracingSpheresGeometryNV" ],
+        "version" : "None"
+    },
+    {
+        "opname" : "OpRayQueryGetIntersectionLSSPositionsNV",
+        "class" : "Reserved",
+        "opcode" : 5429,
+        "operands" : [
+            { "kind" : "IdResultType" },
+            { "kind" : "IdResult" },
+            {
+                "kind" : "IdRef",
+                "name" : "'RayQuery'"
+            },
+            {
+                "kind" : "IdRef",
+                "name" : "'Intersection'"
+            }
+        ],
+        "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
+        "version" : "None"
+    },
+    {
+        "opname" : "OpRayQueryGetIntersectionLSSRadiiNV",
+        "class" : "Reserved",
+        "opcode" : 5430,
+        "operands" : [
+            { "kind" : "IdResultType" },
+            { "kind" : "IdResult" },
+            {
+                "kind" : "IdRef",
+                "name" : "'RayQuery'"
+            },
+            {
+                "kind" : "IdRef",
+                "name" : "'Intersection'"
+            }
+        ],
+        "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV"],
+        "version" : "None"
+    },
+    {
+        "opname" : "OpRayQueryGetIntersectionLSSHitValueNV",
+        "class" : "Reserved",
+        "opcode" : 5431,
+        "operands" : [
+            { "kind" : "IdResultType" },
+            { "kind" : "IdResult" },
+            {
+                "kind" : "IdRef",
+                "name" : "'RayQuery'"
+            },
+            {
+                "kind" : "IdRef",
+                "name" : "'Intersection'"
+            }
+        ],
+        "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
+        "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetSpherePositionNV",
+      "class"  : "Reserved",
+      "opcode" : 5432,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "RayTracingSpheresGeometryNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetSphereRadiusNV",
+      "class"  : "Reserved",
+      "opcode" : 5433,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "RayTracingSpheresGeometryNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetLSSPositionsNV",
+      "class"  : "Reserved",
+      "opcode" : 5434,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetLSSRadiiNV",
+      "class"  : "Reserved",
+      "opcode" : 5435,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectIsSphereHitNV",
+      "class"  : "Reserved",
+      "opcode" : 5436,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "RayTracingSpheresGeometryNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectIsLSSHitNV",
+      "class"  : "Reserved",
+      "opcode" : 5437,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "'Hit Object'" }
+      ],
+      "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
+      "version" : "None"
+    },
+    {
+        "opname" : "OpRayQueryIsSphereHitNV",
+        "class" : "Reserved",
+        "opcode" : 5438,
+        "operands" : [
+            { "kind" : "IdResultType" },
+            { "kind" : "IdResult" },
+            {
+                "kind" : "IdRef",
+                "name" : "'RayQuery'"
+            },
+            {
+                "kind" : "IdRef",
+                "name" : "'Intersection'"
+            }
+        ],
+        "capabilities" : [ "RayTracingSpheresGeometryNV" ],
+        "version" : "None"
+    },
+    {
+        "opname" : "OpRayQueryIsLSSHitNV",
+        "class" : "Reserved",
+        "opcode" : 5439,
+        "operands" : [
+            { "kind" : "IdResultType" },
+            { "kind" : "IdResult" },
+            {
+                "kind" : "IdRef",
+                "name" : "'RayQuery'"
+            },
+            {
+                "kind" : "IdRef",
+                "name" : "'Intersection'"
+            }
+        ],
+        "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
+        "version" : "None"
+    },
+    {
       "opname" : "OpSubgroupShuffleINTEL",
       "class"  : "Group",
       "opcode" : 5571,
@@ -11194,6 +11399,7 @@
         },
         {
           "enumerant" : "SkipTrianglesKHR",
+          "aliases" : ["SkipBuiltinPrimitivesNV"],
           "value" : "0x0100",
           "capabilities" : [ "RayTraversalPrimitiveCullingKHR" ],
           "version" : "None"
@@ -15147,6 +15353,27 @@
           "version" : "None"
         },
         {
+          "enumerant" : "HitIsSphereNV",
+          "value" : 5359,
+          "capabilities" : [ "RayTracingSpheresGeometryNV" ],
+          "extensions" : [ "SPV_NV_linear_swept_spheres" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HitIsLSSNV",
+          "value" : 5360,
+          "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
+          "extensions" : [ "SPV_NV_linear_swept_spheres" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HitSpherePositionNV",
+          "value" : 5361,
+          "capabilities" : [ "RayTracingSpheresGeometryNV" ],
+          "extensions" : [ "SPV_NV_linear_swept_spheres" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "WarpsPerSMNV",
           "value" : 5374,
           "capabilities" : [ "ShaderSMBuiltinsNV" ],
@@ -15175,6 +15402,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "HitLSSPositionsNV",
+          "value" : 5396,
+          "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
+          "extensions" : [ "SPV_NV_linear_swept_spheres" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "HitKindFrontFacingMicroTriangleNV",
           "value" : 5405,
           "capabilities" : [ "RayTracingDisplacementMicromapNV" ],
@@ -15184,6 +15418,20 @@
           "enumerant" : "HitKindBackFacingMicroTriangleNV",
           "value" : 5406,
           "capabilities" : [ "RayTracingDisplacementMicromapNV" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HitSphereRadiusNV",
+          "value" : 5420,
+          "capabilities" : [ "RayTracingSpheresGeometryNV" ],
+          "extensions" : [ "SPV_NV_linear_swept_spheres" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HitLSSRadiiNV",
+          "value" : 5421,
+          "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
+          "extensions" : [ "SPV_NV_linear_swept_spheres" ],
           "version" : "None"
         },
         {
@@ -16396,6 +16644,18 @@
           "enumerant" : "RawAccessChainsNV",
           "value" : 5414,
           "extensions" : [ "SPV_NV_raw_access_chains" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RayTracingSpheresGeometryNV",
+          "value" : 5418,
+          "extensions" : [ "SPV_NV_linear_swept_spheres" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RayTracingLinearSweptSpheresGeometryNV",
+          "value" : 5419,
+          "extensions" : [ "SPV_NV_linear_swept_spheres" ],
           "version" : "None"
         },
         {

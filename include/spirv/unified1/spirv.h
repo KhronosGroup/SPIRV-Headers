@@ -785,12 +785,18 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInIncomingRayFlagsKHR = 5351,
     SpvBuiltInIncomingRayFlagsNV = 5351,
     SpvBuiltInRayGeometryIndexKHR = 5352,
+    SpvBuiltInHitIsSphereNV = 5359,
+    SpvBuiltInHitIsLSSNV = 5360,
+    SpvBuiltInHitSpherePositionNV = 5361,
     SpvBuiltInWarpsPerSMNV = 5374,
     SpvBuiltInSMCountNV = 5375,
     SpvBuiltInWarpIDNV = 5376,
     SpvBuiltInSMIDNV = 5377,
+    SpvBuiltInHitLSSPositionsNV = 5396,
     SpvBuiltInHitKindFrontFacingMicroTriangleNV = 5405,
     SpvBuiltInHitKindBackFacingMicroTriangleNV = 5406,
+    SpvBuiltInHitSphereRadiusNV = 5420,
+    SpvBuiltInHitLSSRadiiNV = 5421,
     SpvBuiltInClusterIDNV = 5436,
     SpvBuiltInCullMaskKHR = 6021,
     SpvBuiltInMax = 0x7fffffff,
@@ -1177,6 +1183,8 @@ typedef enum SpvCapability_ {
     SpvCapabilityAtomicFloat16VectorNV = 5404,
     SpvCapabilityRayTracingDisplacementMicromapNV = 5409,
     SpvCapabilityRawAccessChainsNV = 5414,
+    SpvCapabilityRayTracingSpheresGeometryNV = 5418,
+    SpvCapabilityRayTracingLinearSweptSpheresGeometryNV = 5419,
     SpvCapabilityCooperativeMatrixReductionsNV = 5430,
     SpvCapabilityCooperativeMatrixConversionsNV = 5431,
     SpvCapabilityCooperativeMatrixPerElementOperationsNV = 5432,
@@ -1279,6 +1287,7 @@ typedef enum SpvRayFlagsShift_ {
     SpvRayFlagsCullFrontFacingTrianglesKHRShift = 5,
     SpvRayFlagsCullOpaqueKHRShift = 6,
     SpvRayFlagsCullNoOpaqueKHRShift = 7,
+    SpvRayFlagsSkipBuiltinPrimitivesNVShift = 8,
     SpvRayFlagsSkipTrianglesKHRShift = 8,
     SpvRayFlagsSkipAABBsKHRShift = 9,
     SpvRayFlagsForceOpacityMicromap2StateEXTShift = 10,
@@ -1295,6 +1304,7 @@ typedef enum SpvRayFlagsMask_ {
     SpvRayFlagsCullFrontFacingTrianglesKHRMask = 0x00000020,
     SpvRayFlagsCullOpaqueKHRMask = 0x00000040,
     SpvRayFlagsCullNoOpaqueKHRMask = 0x00000080,
+    SpvRayFlagsSkipBuiltinPrimitivesNVMask = 0x00000100,
     SpvRayFlagsSkipTrianglesKHRMask = 0x00000100,
     SpvRayFlagsSkipAABBsKHRMask = 0x00000200,
     SpvRayFlagsForceOpacityMicromap2StateEXTMask = 0x00000400,
@@ -2078,6 +2088,19 @@ typedef enum SpvOp_ {
     SpvOpConvertSampledImageToUNV = 5396,
     SpvOpSamplerImageAddressingModeNV = 5397,
     SpvOpRawAccessChainNV = 5398,
+    SpvOpRayQueryGetIntersectionSpherePositionNV = 5427,
+    SpvOpRayQueryGetIntersectionSphereRadiusNV = 5428,
+    SpvOpRayQueryGetIntersectionLSSPositionsNV = 5429,
+    SpvOpRayQueryGetIntersectionLSSRadiiNV = 5430,
+    SpvOpRayQueryGetIntersectionLSSHitValueNV = 5431,
+    SpvOpHitObjectGetSpherePositionNV = 5432,
+    SpvOpHitObjectGetSphereRadiusNV = 5433,
+    SpvOpHitObjectGetLSSPositionsNV = 5434,
+    SpvOpHitObjectGetLSSRadiiNV = 5435,
+    SpvOpHitObjectIsSphereHitNV = 5436,
+    SpvOpHitObjectIsLSSHitNV = 5437,
+    SpvOpRayQueryIsSphereHitNV = 5438,
+    SpvOpRayQueryIsLSSHitNV = 5439,
     SpvOpSubgroupShuffleINTEL = 5571,
     SpvOpSubgroupShuffleDownINTEL = 5572,
     SpvOpSubgroupShuffleUpINTEL = 5573,
@@ -2865,6 +2888,19 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpConvertSampledImageToUNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpSamplerImageAddressingModeNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpRawAccessChainNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionSpherePositionNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionSphereRadiusNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionLSSPositionsNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionLSSRadiiNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionLSSHitValueNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetSpherePositionNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetSphereRadiusNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetLSSPositionsNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetLSSRadiiNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectIsSphereHitNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectIsLSSHitNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryIsSphereHitNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryIsLSSHitNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupShuffleINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupShuffleDownINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupShuffleUpINTEL: *hasResult = true; *hasResultType = true; break;
@@ -3760,12 +3796,18 @@ inline const char* SpvBuiltInToString(SpvBuiltIn value) {
     case SpvBuiltInHitMicroTriangleVertexBarycentricsNV: return "HitMicroTriangleVertexBarycentricsNV";
     case SpvBuiltInIncomingRayFlagsKHR: return "IncomingRayFlagsKHR";
     case SpvBuiltInRayGeometryIndexKHR: return "RayGeometryIndexKHR";
+    case SpvBuiltInHitIsSphereNV: return "HitIsSphereNV";
+    case SpvBuiltInHitIsLSSNV: return "HitIsLSSNV";
+    case SpvBuiltInHitSpherePositionNV: return "HitSpherePositionNV";
     case SpvBuiltInWarpsPerSMNV: return "WarpsPerSMNV";
     case SpvBuiltInSMCountNV: return "SMCountNV";
     case SpvBuiltInWarpIDNV: return "WarpIDNV";
     case SpvBuiltInSMIDNV: return "SMIDNV";
+    case SpvBuiltInHitLSSPositionsNV: return "HitLSSPositionsNV";
     case SpvBuiltInHitKindFrontFacingMicroTriangleNV: return "HitKindFrontFacingMicroTriangleNV";
     case SpvBuiltInHitKindBackFacingMicroTriangleNV: return "HitKindBackFacingMicroTriangleNV";
+    case SpvBuiltInHitSphereRadiusNV: return "HitSphereRadiusNV";
+    case SpvBuiltInHitLSSRadiiNV: return "HitLSSRadiiNV";
     case SpvBuiltInClusterIDNV: return "ClusterIDNV";
     case SpvBuiltInCullMaskKHR: return "CullMaskKHR";
     default: return "Unknown";
@@ -3976,6 +4018,8 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityAtomicFloat16VectorNV: return "AtomicFloat16VectorNV";
     case SpvCapabilityRayTracingDisplacementMicromapNV: return "RayTracingDisplacementMicromapNV";
     case SpvCapabilityRawAccessChainsNV: return "RawAccessChainsNV";
+    case SpvCapabilityRayTracingSpheresGeometryNV: return "RayTracingSpheresGeometryNV";
+    case SpvCapabilityRayTracingLinearSweptSpheresGeometryNV: return "RayTracingLinearSweptSpheresGeometryNV";
     case SpvCapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
     case SpvCapabilityCooperativeMatrixConversionsNV: return "CooperativeMatrixConversionsNV";
     case SpvCapabilityCooperativeMatrixPerElementOperationsNV: return "CooperativeMatrixPerElementOperationsNV";
@@ -4764,6 +4808,19 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpConvertSampledImageToUNV: return "OpConvertSampledImageToUNV";
     case SpvOpSamplerImageAddressingModeNV: return "OpSamplerImageAddressingModeNV";
     case SpvOpRawAccessChainNV: return "OpRawAccessChainNV";
+    case SpvOpRayQueryGetIntersectionSpherePositionNV: return "OpRayQueryGetIntersectionSpherePositionNV";
+    case SpvOpRayQueryGetIntersectionSphereRadiusNV: return "OpRayQueryGetIntersectionSphereRadiusNV";
+    case SpvOpRayQueryGetIntersectionLSSPositionsNV: return "OpRayQueryGetIntersectionLSSPositionsNV";
+    case SpvOpRayQueryGetIntersectionLSSRadiiNV: return "OpRayQueryGetIntersectionLSSRadiiNV";
+    case SpvOpRayQueryGetIntersectionLSSHitValueNV: return "OpRayQueryGetIntersectionLSSHitValueNV";
+    case SpvOpHitObjectGetSpherePositionNV: return "OpHitObjectGetSpherePositionNV";
+    case SpvOpHitObjectGetSphereRadiusNV: return "OpHitObjectGetSphereRadiusNV";
+    case SpvOpHitObjectGetLSSPositionsNV: return "OpHitObjectGetLSSPositionsNV";
+    case SpvOpHitObjectGetLSSRadiiNV: return "OpHitObjectGetLSSRadiiNV";
+    case SpvOpHitObjectIsSphereHitNV: return "OpHitObjectIsSphereHitNV";
+    case SpvOpHitObjectIsLSSHitNV: return "OpHitObjectIsLSSHitNV";
+    case SpvOpRayQueryIsSphereHitNV: return "OpRayQueryIsSphereHitNV";
+    case SpvOpRayQueryIsLSSHitNV: return "OpRayQueryIsLSSHitNV";
     case SpvOpSubgroupShuffleINTEL: return "OpSubgroupShuffleINTEL";
     case SpvOpSubgroupShuffleDownINTEL: return "OpSubgroupShuffleDownINTEL";
     case SpvOpSubgroupShuffleUpINTEL: return "OpSubgroupShuffleUpINTEL";
