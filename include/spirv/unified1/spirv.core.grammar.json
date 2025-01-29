@@ -16441,7 +16441,6 @@
         {
           "enumerant" : "IntegerFunctions2INTEL",
           "value" : 5584,
-          "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_INTEL_shader_integer_functions2" ],
           "version" : "None"
         },
