@@ -1525,6 +1525,33 @@ enum FPEncoding {
     FPEncodingMax = 0x7fffffff,
 };
 
+enum CooperativeVectorMatrixLayout {
+    CooperativeVectorMatrixLayoutRowMajorNV = 0,
+    CooperativeVectorMatrixLayoutColumnMajorNV = 1,
+    CooperativeVectorMatrixLayoutInferencingOptimalNV = 2,
+    CooperativeVectorMatrixLayoutTrainingOptimalNV = 3,
+    CooperativeVectorMatrixLayoutMax = 0x7fffffff,
+};
+
+enum ComponentType {
+    ComponentTypeFloat16NV = 0,
+    ComponentTypeFloat32NV = 1,
+    ComponentTypeFloat64NV = 2,
+    ComponentTypeSignedInt8NV = 3,
+    ComponentTypeSignedInt16NV = 4,
+    ComponentTypeSignedInt32NV = 5,
+    ComponentTypeSignedInt64NV = 6,
+    ComponentTypeUnsignedInt8NV = 7,
+    ComponentTypeUnsignedInt16NV = 8,
+    ComponentTypeUnsignedInt32NV = 9,
+    ComponentTypeUnsignedInt64NV = 10,
+    ComponentTypeSignedInt8PackedNV = 1000491000,
+    ComponentTypeUnsignedInt8PackedNV = 1000491001,
+    ComponentTypeFloatE4M3NV = 1000491002,
+    ComponentTypeFloatE5M2NV = 1000491003,
+    ComponentTypeMax = 0x7fffffff,
+};
+
 enum Op {
     OpNop = 0,
     OpUndef = 1,
@@ -4184,6 +4211,37 @@ inline const char* NamedMaximumNumberOfRegistersToString(NamedMaximumNumberOfReg
 
 inline const char* FPEncodingToString(FPEncoding value) {
     switch (value) {
+    default: return "Unknown";
+    }
+}
+
+inline const char* CooperativeVectorMatrixLayoutToString(CooperativeVectorMatrixLayout value) {
+    switch (value) {
+    case CooperativeVectorMatrixLayoutRowMajorNV: return "RowMajorNV";
+    case CooperativeVectorMatrixLayoutColumnMajorNV: return "ColumnMajorNV";
+    case CooperativeVectorMatrixLayoutInferencingOptimalNV: return "InferencingOptimalNV";
+    case CooperativeVectorMatrixLayoutTrainingOptimalNV: return "TrainingOptimalNV";
+    default: return "Unknown";
+    }
+}
+
+inline const char* ComponentTypeToString(ComponentType value) {
+    switch (value) {
+    case ComponentTypeFloat16NV: return "Float16NV";
+    case ComponentTypeFloat32NV: return "Float32NV";
+    case ComponentTypeFloat64NV: return "Float64NV";
+    case ComponentTypeSignedInt8NV: return "SignedInt8NV";
+    case ComponentTypeSignedInt16NV: return "SignedInt16NV";
+    case ComponentTypeSignedInt32NV: return "SignedInt32NV";
+    case ComponentTypeSignedInt64NV: return "SignedInt64NV";
+    case ComponentTypeUnsignedInt8NV: return "UnsignedInt8NV";
+    case ComponentTypeUnsignedInt16NV: return "UnsignedInt16NV";
+    case ComponentTypeUnsignedInt32NV: return "UnsignedInt32NV";
+    case ComponentTypeUnsignedInt64NV: return "UnsignedInt64NV";
+    case ComponentTypeSignedInt8PackedNV: return "SignedInt8PackedNV";
+    case ComponentTypeUnsignedInt8PackedNV: return "UnsignedInt8PackedNV";
+    case ComponentTypeFloatE4M3NV: return "FloatE4M3NV";
+    case ComponentTypeFloatE5M2NV: return "FloatE5M2NV";
     default: return "Unknown";
     }
 }

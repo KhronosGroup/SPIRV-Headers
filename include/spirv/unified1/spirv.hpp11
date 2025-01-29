@@ -1525,6 +1525,33 @@ enum class FPEncoding : unsigned {
     Max = 0x7fffffff,
 };
 
+enum class CooperativeVectorMatrixLayout : unsigned {
+    RowMajorNV = 0,
+    ColumnMajorNV = 1,
+    InferencingOptimalNV = 2,
+    TrainingOptimalNV = 3,
+    Max = 0x7fffffff,
+};
+
+enum class ComponentType : unsigned {
+    Float16NV = 0,
+    Float32NV = 1,
+    Float64NV = 2,
+    SignedInt8NV = 3,
+    SignedInt16NV = 4,
+    SignedInt32NV = 5,
+    SignedInt64NV = 6,
+    UnsignedInt8NV = 7,
+    UnsignedInt16NV = 8,
+    UnsignedInt32NV = 9,
+    UnsignedInt64NV = 10,
+    SignedInt8PackedNV = 1000491000,
+    UnsignedInt8PackedNV = 1000491001,
+    FloatE4M3NV = 1000491002,
+    FloatE5M2NV = 1000491003,
+    Max = 0x7fffffff,
+};
+
 enum class Op : unsigned {
     OpNop = 0,
     OpUndef = 1,
@@ -4184,6 +4211,37 @@ inline const char* NamedMaximumNumberOfRegistersToString(NamedMaximumNumberOfReg
 
 inline const char* FPEncodingToString(FPEncoding value) {
     switch (value) {
+    default: return "Unknown";
+    }
+}
+
+inline const char* CooperativeVectorMatrixLayoutToString(CooperativeVectorMatrixLayout value) {
+    switch (value) {
+    case CooperativeVectorMatrixLayout::RowMajorNV: return "RowMajorNV";
+    case CooperativeVectorMatrixLayout::ColumnMajorNV: return "ColumnMajorNV";
+    case CooperativeVectorMatrixLayout::InferencingOptimalNV: return "InferencingOptimalNV";
+    case CooperativeVectorMatrixLayout::TrainingOptimalNV: return "TrainingOptimalNV";
+    default: return "Unknown";
+    }
+}
+
+inline const char* ComponentTypeToString(ComponentType value) {
+    switch (value) {
+    case ComponentType::Float16NV: return "Float16NV";
+    case ComponentType::Float32NV: return "Float32NV";
+    case ComponentType::Float64NV: return "Float64NV";
+    case ComponentType::SignedInt8NV: return "SignedInt8NV";
+    case ComponentType::SignedInt16NV: return "SignedInt16NV";
+    case ComponentType::SignedInt32NV: return "SignedInt32NV";
+    case ComponentType::SignedInt64NV: return "SignedInt64NV";
+    case ComponentType::UnsignedInt8NV: return "UnsignedInt8NV";
+    case ComponentType::UnsignedInt16NV: return "UnsignedInt16NV";
+    case ComponentType::UnsignedInt32NV: return "UnsignedInt32NV";
+    case ComponentType::UnsignedInt64NV: return "UnsignedInt64NV";
+    case ComponentType::SignedInt8PackedNV: return "SignedInt8PackedNV";
+    case ComponentType::UnsignedInt8PackedNV: return "UnsignedInt8PackedNV";
+    case ComponentType::FloatE4M3NV: return "FloatE4M3NV";
+    case ComponentType::FloatE5M2NV: return "FloatE5M2NV";
     default: return "Unknown";
     }
 }

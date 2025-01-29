@@ -1529,6 +1529,33 @@ typedef enum SpvFPEncoding_ {
     SpvFPEncodingMax = 0x7fffffff,
 } SpvFPEncoding;
 
+typedef enum SpvCooperativeVectorMatrixLayout_ {
+    SpvCooperativeVectorMatrixLayoutRowMajorNV = 0,
+    SpvCooperativeVectorMatrixLayoutColumnMajorNV = 1,
+    SpvCooperativeVectorMatrixLayoutInferencingOptimalNV = 2,
+    SpvCooperativeVectorMatrixLayoutTrainingOptimalNV = 3,
+    SpvCooperativeVectorMatrixLayoutMax = 0x7fffffff,
+} SpvCooperativeVectorMatrixLayout;
+
+typedef enum SpvComponentType_ {
+    SpvComponentTypeFloat16NV = 0,
+    SpvComponentTypeFloat32NV = 1,
+    SpvComponentTypeFloat64NV = 2,
+    SpvComponentTypeSignedInt8NV = 3,
+    SpvComponentTypeSignedInt16NV = 4,
+    SpvComponentTypeSignedInt32NV = 5,
+    SpvComponentTypeSignedInt64NV = 6,
+    SpvComponentTypeUnsignedInt8NV = 7,
+    SpvComponentTypeUnsignedInt16NV = 8,
+    SpvComponentTypeUnsignedInt32NV = 9,
+    SpvComponentTypeUnsignedInt64NV = 10,
+    SpvComponentTypeSignedInt8PackedNV = 1000491000,
+    SpvComponentTypeUnsignedInt8PackedNV = 1000491001,
+    SpvComponentTypeFloatE4M3NV = 1000491002,
+    SpvComponentTypeFloatE5M2NV = 1000491003,
+    SpvComponentTypeMax = 0x7fffffff,
+} SpvComponentType;
+
 typedef enum SpvOp_ {
     SpvOpNop = 0,
     SpvOpUndef = 1,
@@ -4188,6 +4215,37 @@ inline const char* SpvNamedMaximumNumberOfRegistersToString(SpvNamedMaximumNumbe
 
 inline const char* SpvFPEncodingToString(SpvFPEncoding value) {
     switch (value) {
+    default: return "Unknown";
+    }
+}
+
+inline const char* SpvCooperativeVectorMatrixLayoutToString(SpvCooperativeVectorMatrixLayout value) {
+    switch (value) {
+    case SpvCooperativeVectorMatrixLayoutRowMajorNV: return "RowMajorNV";
+    case SpvCooperativeVectorMatrixLayoutColumnMajorNV: return "ColumnMajorNV";
+    case SpvCooperativeVectorMatrixLayoutInferencingOptimalNV: return "InferencingOptimalNV";
+    case SpvCooperativeVectorMatrixLayoutTrainingOptimalNV: return "TrainingOptimalNV";
+    default: return "Unknown";
+    }
+}
+
+inline const char* SpvComponentTypeToString(SpvComponentType value) {
+    switch (value) {
+    case SpvComponentTypeFloat16NV: return "Float16NV";
+    case SpvComponentTypeFloat32NV: return "Float32NV";
+    case SpvComponentTypeFloat64NV: return "Float64NV";
+    case SpvComponentTypeSignedInt8NV: return "SignedInt8NV";
+    case SpvComponentTypeSignedInt16NV: return "SignedInt16NV";
+    case SpvComponentTypeSignedInt32NV: return "SignedInt32NV";
+    case SpvComponentTypeSignedInt64NV: return "SignedInt64NV";
+    case SpvComponentTypeUnsignedInt8NV: return "UnsignedInt8NV";
+    case SpvComponentTypeUnsignedInt16NV: return "UnsignedInt16NV";
+    case SpvComponentTypeUnsignedInt32NV: return "UnsignedInt32NV";
+    case SpvComponentTypeUnsignedInt64NV: return "UnsignedInt64NV";
+    case SpvComponentTypeSignedInt8PackedNV: return "SignedInt8PackedNV";
+    case SpvComponentTypeUnsignedInt8PackedNV: return "UnsignedInt8PackedNV";
+    case SpvComponentTypeFloatE4M3NV: return "FloatE4M3NV";
+    case SpvComponentTypeFloatE5M2NV: return "FloatE5M2NV";
     default: return "Unknown";
     }
 }

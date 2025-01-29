@@ -1462,6 +1462,31 @@ spv = {
     'FPEncoding' : {
     },
 
+    'CooperativeVectorMatrixLayout' : {
+        'RowMajorNV' : 0,
+        'ColumnMajorNV' : 1,
+        'InferencingOptimalNV' : 2,
+        'TrainingOptimalNV' : 3,
+    },
+
+    'ComponentType' : {
+        'Float16NV' : 0,
+        'Float32NV' : 1,
+        'Float64NV' : 2,
+        'SignedInt8NV' : 3,
+        'SignedInt16NV' : 4,
+        'SignedInt32NV' : 5,
+        'SignedInt64NV' : 6,
+        'UnsignedInt8NV' : 7,
+        'UnsignedInt16NV' : 8,
+        'UnsignedInt32NV' : 9,
+        'UnsignedInt64NV' : 10,
+        'SignedInt8PackedNV' : 1000491000,
+        'UnsignedInt8PackedNV' : 1000491001,
+        'FloatE4M3NV' : 1000491002,
+        'FloatE5M2NV' : 1000491003,
+    },
+
     'Op' : {
         'OpNop' : 0,
         'OpUndef' : 1,
