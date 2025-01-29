@@ -6333,7 +6333,7 @@
               "name" : "'Intersection'"
           }
       ],
-      "capabilities" : [ "RayQueryKHR", "RayTracingClusterAccelerationStructureNV" ],
+      "capabilities" : [ "RayTracingClusterAccelerationStructureNV" ],
       "version" : "None"
     },
     {
@@ -6345,7 +6345,7 @@
           { "kind" : "IdResult" },
           { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" , "RayTracingClusterAccelerationStructureNV" ],
+      "capabilities" : [ "RayTracingClusterAccelerationStructureNV" ],
       "version" : "None"
     },
     {
@@ -16437,6 +16437,7 @@
         {
           "enumerant" : "RayTracingClusterAccelerationStructureNV",
           "value" : 5437,
+          "capabilities" : [ "RayTracingKHR" ],
           "extensions" : [ "SPV_NV_cluster_acceleration_structure" ],
           "version" : "None"
         },
