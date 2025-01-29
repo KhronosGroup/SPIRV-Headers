@@ -1262,6 +1262,7 @@
                     "CullFrontFacingTrianglesKHR": 5,
                     "CullOpaqueKHR": 6,
                     "CullNoOpaqueKHR": 7,
+                    "SkipBuiltinPrimitivesNV": 8,
                     "SkipTrianglesKHR": 8,
                     "SkipAABBsKHR": 9,
                     "ForceOpacityMicromap2StateEXT": 10

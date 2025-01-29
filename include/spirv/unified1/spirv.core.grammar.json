@@ -6805,7 +6805,7 @@
                 "name" : "'Intersection'"
             }
         ],
-        "capabilities" : [ "RayQueryKHR" , "RayTracingSpheresGeometryNV" ],
+        "capabilities" : [ "RayTracingSpheresGeometryNV" ],
         "version" : "None"
     },
     {
@@ -6824,7 +6824,7 @@
                 "name" : "'Intersection'"
             }
         ],
-        "capabilities" : [ "RayQueryKHR" , "RayTracingSpheresGeometryNV" ],
+        "capabilities" : [ "RayTracingSpheresGeometryNV" ],
         "version" : "None"
     },
     {
@@ -6843,7 +6843,7 @@
                 "name" : "'Intersection'"
             }
         ],
-        "capabilities" : [ "RayQueryKHR" , "RayTracingLinearSweptSpheresGeometryNV" ],
+        "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
         "version" : "None"
     },
     {
@@ -6862,7 +6862,7 @@
                 "name" : "'Intersection'"
             }
         ],
-        "capabilities" : [ "RayQueryKHR" , "RayTracingLinearSweptSpheresGeometryNV"],
+        "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV"],
         "version" : "None"
     },
     {
@@ -6881,7 +6881,7 @@
                 "name" : "'Intersection'"
             }
         ],
-        "capabilities" : [ "RayQueryKHR" , "RayTracingLinearSweptSpheresGeometryNV" ],
+        "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
         "version" : "None"
     },
     {
@@ -6893,7 +6893,7 @@
         { "kind" : "IdResult"},
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" , "RayTracingSpheresGeometryNV" ],
+      "capabilities" : [ "RayTracingSpheresGeometryNV" ],
       "version" : "None"
     },
     {
@@ -6905,7 +6905,7 @@
         { "kind" : "IdResult"},
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" , "RayTracingSpheresGeometryNV" ],
+      "capabilities" : [ "RayTracingSpheresGeometryNV" ],
       "version" : "None"
     },
     {
@@ -6917,7 +6917,7 @@
         { "kind" : "IdResult"},
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" , "RayTracingLinearSweptSpheresGeometryNV" ],
+      "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
       "version" : "None"
     },
     {
@@ -6929,7 +6929,7 @@
         { "kind" : "IdResult"},
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" , "RayTracingLinearSweptSpheresGeometryNV" ],
+      "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
       "version" : "None"
     },
     {
@@ -6941,7 +6941,7 @@
         { "kind" : "IdResult"},
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" , "RayTracingSpheresGeometryNV" ],
+      "capabilities" : [ "RayTracingSpheresGeometryNV" ],
       "version" : "None"
     },
     {
@@ -6953,7 +6953,7 @@
         { "kind" : "IdResult"},
         { "kind" : "IdRef", "name" : "'Hit Object'" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV" , "RayTracingLinearSweptSpheresGeometryNV" ],
+      "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
       "version" : "None"
     },
     {
@@ -6972,7 +6972,7 @@
                 "name" : "'Intersection'"
             }
         ],
-        "capabilities" : [ "RayQueryKHR" , "RayTracingSpheresGeometryNV" ],
+        "capabilities" : [ "RayTracingSpheresGeometryNV" ],
         "version" : "None"
     },
     {
@@ -6991,7 +6991,7 @@
                 "name" : "'Intersection'"
             }
         ],
-        "capabilities" : [ "RayQueryKHR" , "RayTracingLinearSweptSpheresGeometryNV" ],
+        "capabilities" : [ "RayTracingLinearSweptSpheresGeometryNV" ],
         "version" : "None"
     },
     {
@@ -11399,6 +11399,7 @@
         },
         {
           "enumerant" : "SkipTrianglesKHR",
+          "aliases" : ["SkipBuiltinPrimitivesNV"],
           "value" : "0x0100",
           "capabilities" : [ "RayTraversalPrimitiveCullingKHR" ],
           "version" : "None"
