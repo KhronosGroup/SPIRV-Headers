@@ -274,8 +274,11 @@ EnumValues HostAccessQualifierParams;
 EnumValues LoadCacheControlParams;
 EnumValues StoreCacheControlParams;
 EnumValues NamedMaximumNumberOfRegistersParams;
+EnumValues MatrixMultiplyAccumulateOperandsParams;
 EnumValues RawAccessChainOperandsParams;
 EnumValues FPEncodingParams;
+EnumValues CooperativeVectorMatrixLayoutParams;
+EnumValues ComponentTypeParams;
 
 std::pair<bool, std::string> ReadFile(const std::string& path)
 {
@@ -446,10 +449,16 @@ ClassOptionality ToOperandClassAndOptionality(const std::string& operandKind, co
             type = OperandStoreCacheControl;
         } else if (operandKind == "NamedMaximumNumberOfRegisters") {
             type = OperandNamedMaximumNumberOfRegisters;
+        } else if (operandKind == "MatrixMultiplyAccumulateOperands") {
+            type = OperandMatrixMultiplyAccumulateOperands;
         } else if (operandKind == "RawAccessChainOperands") {
             type = OperandRawAccessChainOperands;
         } else if (operandKind == "FPEncoding") {
             type = OperandFPEncoding;
+        } else if (operandKind == "CooperativeVectorMatrixLayout") {
+            type = OperandCooperativeVectorMatrixLayout;
+        } else if (operandKind == "ComponentType") {
+            type = OperandComponentType;
         }
 
         if (type == OperandNone) {
@@ -836,10 +845,16 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             establishOperandClass(enumName, OperandStoreCacheControl, &StoreCacheControlParams, operandEnum, category);
         } else if (enumName == "NamedMaximumNumberOfRegisters") {
             establishOperandClass(enumName, OperandNamedMaximumNumberOfRegisters, &NamedMaximumNumberOfRegistersParams, operandEnum, category);
+        } else if (enumName == "MatrixMultiplyAccumulateOperands") {
+            establishOperandClass(enumName, OperandMatrixMultiplyAccumulateOperands, &MatrixMultiplyAccumulateOperandsParams, operandEnum, category);
         } else if (enumName == "RawAccessChainOperands") {
             establishOperandClass(enumName, OperandRawAccessChainOperands, &RawAccessChainOperandsParams, operandEnum, category);
         } else if (enumName == "FPEncoding") {
             establishOperandClass(enumName, OperandFPEncoding, &FPEncodingParams, operandEnum, category);
+        } else if (enumName == "CooperativeVectorMatrixLayout") {
+            establishOperandClass(enumName, OperandCooperativeVectorMatrixLayout, &CooperativeVectorMatrixLayoutParams, operandEnum, category);
+        } else if (enumName == "ComponentType") {
+            establishOperandClass(enumName, OperandComponentType, &ComponentTypeParams, operandEnum, category);
         }
     }
 

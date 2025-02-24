@@ -107,8 +107,11 @@ enum OperandClass {
     OperandLoadCacheControl,
     OperandStoreCacheControl,
     OperandNamedMaximumNumberOfRegisters,
+    OperandMatrixMultiplyAccumulateOperands,
     OperandRawAccessChainOperands,
     OperandFPEncoding,
+    OperandCooperativeVectorMatrixLayout,
+    OperandComponentType,
 
     OperandOpcode,
 
