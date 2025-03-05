@@ -2259,12 +2259,10 @@ typedef enum SpvOp_ {
     SpvOpVariableLengthArrayINTEL = 5818,
     SpvOpSaveMemoryINTEL = 5819,
     SpvOpRestoreMemoryINTEL = 5820,
-    SpvOpArbitraryFloatConvertFromSIntINTEL = 5838,
-    SpvOpArbitraryFloatConvertToSIntINTEL = 5839,
     SpvOpArbitraryFloatSinCosPiINTEL = 5840,
-    SpvOpArbitraryFloatConvertINTEL = 5841,
-    SpvOpArbitraryFloatConvertFromUIntINTEL = 5842,
-    SpvOpArbitraryFloatConvertToUIntINTEL = 5843,
+    SpvOpArbitraryFloatCastINTEL = 5841,
+    SpvOpArbitraryFloatCastFromIntINTEL = 5842,
+    SpvOpArbitraryFloatCastToIntINTEL = 5843,
     SpvOpArbitraryFloatAddINTEL = 5846,
     SpvOpArbitraryFloatSubINTEL = 5847,
     SpvOpArbitraryFloatMulINTEL = 5848,
@@ -3059,12 +3057,10 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpVariableLengthArrayINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSaveMemoryINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpRestoreMemoryINTEL: *hasResult = false; *hasResultType = false; break;
-    case SpvOpArbitraryFloatConvertFromSIntINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatConvertToSIntINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpArbitraryFloatSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatConvertINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatConvertFromUIntINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatConvertToUIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCastINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCastFromIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCastToIntINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpArbitraryFloatAddINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpArbitraryFloatSubINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpArbitraryFloatMulINTEL: *hasResult = true; *hasResultType = true; break;
@@ -4981,12 +4977,10 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpVariableLengthArrayINTEL: return "OpVariableLengthArrayINTEL";
     case SpvOpSaveMemoryINTEL: return "OpSaveMemoryINTEL";
     case SpvOpRestoreMemoryINTEL: return "OpRestoreMemoryINTEL";
-    case SpvOpArbitraryFloatConvertFromSIntINTEL: return "OpArbitraryFloatConvertFromSIntINTEL";
-    case SpvOpArbitraryFloatConvertToSIntINTEL: return "OpArbitraryFloatConvertToSIntINTEL";
     case SpvOpArbitraryFloatSinCosPiINTEL: return "OpArbitraryFloatSinCosPiINTEL";
-    case SpvOpArbitraryFloatConvertINTEL: return "OpArbitraryFloatConvertINTEL";
-    case SpvOpArbitraryFloatConvertFromUIntINTEL: return "OpArbitraryFloatConvertFromUIntINTEL";
-    case SpvOpArbitraryFloatConvertToUIntINTEL: return "OpArbitraryFloatConvertToUIntINTEL";
+    case SpvOpArbitraryFloatCastINTEL: return "OpArbitraryFloatCastINTEL";
+    case SpvOpArbitraryFloatCastFromIntINTEL: return "OpArbitraryFloatCastFromIntINTEL";
+    case SpvOpArbitraryFloatCastToIntINTEL: return "OpArbitraryFloatCastToIntINTEL";
     case SpvOpArbitraryFloatAddINTEL: return "OpArbitraryFloatAddINTEL";
     case SpvOpArbitraryFloatSubINTEL: return "OpArbitraryFloatSubINTEL";
     case SpvOpArbitraryFloatMulINTEL: return "OpArbitraryFloatMulINTEL";
