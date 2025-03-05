@@ -2255,10 +2255,12 @@ enum Op {
     OpVariableLengthArrayINTEL = 5818,
     OpSaveMemoryINTEL = 5819,
     OpRestoreMemoryINTEL = 5820,
+    OpArbitraryFloatConvertFromSIntINTEL = 5838,
+    OpArbitraryFloatConvertToSIntINTEL = 5839,
     OpArbitraryFloatSinCosPiINTEL = 5840,
-    OpArbitraryFloatCastINTEL = 5841,
-    OpArbitraryFloatCastFromIntINTEL = 5842,
-    OpArbitraryFloatCastToIntINTEL = 5843,
+    OpArbitraryFloatConvertINTEL = 5841,
+    OpArbitraryFloatConvertFromUIntINTEL = 5842,
+    OpArbitraryFloatConvertToUIntINTEL = 5843,
     OpArbitraryFloatAddINTEL = 5846,
     OpArbitraryFloatSubINTEL = 5847,
     OpArbitraryFloatMulINTEL = 5848,
@@ -3053,10 +3055,12 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpVariableLengthArrayINTEL: *hasResult = true; *hasResultType = true; break;
     case OpSaveMemoryINTEL: *hasResult = true; *hasResultType = true; break;
     case OpRestoreMemoryINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpArbitraryFloatConvertFromSIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatConvertToSIntINTEL: *hasResult = true; *hasResultType = true; break;
     case OpArbitraryFloatSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpArbitraryFloatCastINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpArbitraryFloatCastFromIntINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpArbitraryFloatCastToIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatConvertINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatConvertFromUIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpArbitraryFloatConvertToUIntINTEL: *hasResult = true; *hasResultType = true; break;
     case OpArbitraryFloatAddINTEL: *hasResult = true; *hasResultType = true; break;
     case OpArbitraryFloatSubINTEL: *hasResult = true; *hasResultType = true; break;
     case OpArbitraryFloatMulINTEL: *hasResult = true; *hasResultType = true; break;
@@ -4973,10 +4977,12 @@ inline const char* OpToString(Op value) {
     case OpVariableLengthArrayINTEL: return "OpVariableLengthArrayINTEL";
     case OpSaveMemoryINTEL: return "OpSaveMemoryINTEL";
     case OpRestoreMemoryINTEL: return "OpRestoreMemoryINTEL";
+    case OpArbitraryFloatConvertFromSIntINTEL: return "OpArbitraryFloatConvertFromSIntINTEL";
+    case OpArbitraryFloatConvertToSIntINTEL: return "OpArbitraryFloatConvertToSIntINTEL";
     case OpArbitraryFloatSinCosPiINTEL: return "OpArbitraryFloatSinCosPiINTEL";
-    case OpArbitraryFloatCastINTEL: return "OpArbitraryFloatCastINTEL";
-    case OpArbitraryFloatCastFromIntINTEL: return "OpArbitraryFloatCastFromIntINTEL";
-    case OpArbitraryFloatCastToIntINTEL: return "OpArbitraryFloatCastToIntINTEL";
+    case OpArbitraryFloatConvertINTEL: return "OpArbitraryFloatConvertINTEL";
+    case OpArbitraryFloatConvertFromUIntINTEL: return "OpArbitraryFloatConvertFromUIntINTEL";
+    case OpArbitraryFloatConvertToUIntINTEL: return "OpArbitraryFloatConvertToUIntINTEL";
     case OpArbitraryFloatAddINTEL: return "OpArbitraryFloatAddINTEL";
     case OpArbitraryFloatSubINTEL: return "OpArbitraryFloatSubINTEL";
     case OpArbitraryFloatMulINTEL: return "OpArbitraryFloatMulINTEL";

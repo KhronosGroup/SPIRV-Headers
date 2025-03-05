@@ -2255,10 +2255,12 @@ enum class Op : unsigned {
     OpVariableLengthArrayINTEL = 5818,
     OpSaveMemoryINTEL = 5819,
     OpRestoreMemoryINTEL = 5820,
+    OpArbitraryFloatConvertFromSIntINTEL = 5838,
+    OpArbitraryFloatConvertToSIntINTEL = 5839,
     OpArbitraryFloatSinCosPiINTEL = 5840,
-    OpArbitraryFloatCastINTEL = 5841,
-    OpArbitraryFloatCastFromIntINTEL = 5842,
-    OpArbitraryFloatCastToIntINTEL = 5843,
+    OpArbitraryFloatConvertINTEL = 5841,
+    OpArbitraryFloatConvertFromUIntINTEL = 5842,
+    OpArbitraryFloatConvertToUIntINTEL = 5843,
     OpArbitraryFloatAddINTEL = 5846,
     OpArbitraryFloatSubINTEL = 5847,
     OpArbitraryFloatMulINTEL = 5848,
@@ -3053,10 +3055,12 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpVariableLengthArrayINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpSaveMemoryINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpRestoreMemoryINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpArbitraryFloatConvertFromSIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatConvertToSIntINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpArbitraryFloatSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatCastINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatCastFromIntINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatCastToIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatConvertINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatConvertFromUIntINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatConvertToUIntINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpArbitraryFloatAddINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpArbitraryFloatSubINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpArbitraryFloatMulINTEL: *hasResult = true; *hasResultType = true; break;
@@ -4973,10 +4977,12 @@ inline const char* OpToString(Op value) {
     case Op::OpVariableLengthArrayINTEL: return "OpVariableLengthArrayINTEL";
     case Op::OpSaveMemoryINTEL: return "OpSaveMemoryINTEL";
     case Op::OpRestoreMemoryINTEL: return "OpRestoreMemoryINTEL";
+    case Op::OpArbitraryFloatConvertFromSIntINTEL: return "OpArbitraryFloatConvertFromSIntINTEL";
+    case Op::OpArbitraryFloatConvertToSIntINTEL: return "OpArbitraryFloatConvertToSIntINTEL";
     case Op::OpArbitraryFloatSinCosPiINTEL: return "OpArbitraryFloatSinCosPiINTEL";
-    case Op::OpArbitraryFloatCastINTEL: return "OpArbitraryFloatCastINTEL";
-    case Op::OpArbitraryFloatCastFromIntINTEL: return "OpArbitraryFloatCastFromIntINTEL";
-    case Op::OpArbitraryFloatCastToIntINTEL: return "OpArbitraryFloatCastToIntINTEL";
+    case Op::OpArbitraryFloatConvertINTEL: return "OpArbitraryFloatConvertINTEL";
+    case Op::OpArbitraryFloatConvertFromUIntINTEL: return "OpArbitraryFloatConvertFromUIntINTEL";
+    case Op::OpArbitraryFloatConvertToUIntINTEL: return "OpArbitraryFloatConvertToUIntINTEL";
     case Op::OpArbitraryFloatAddINTEL: return "OpArbitraryFloatAddINTEL";
     case Op::OpArbitraryFloatSubINTEL: return "OpArbitraryFloatSubINTEL";
     case Op::OpArbitraryFloatMulINTEL: return "OpArbitraryFloatMulINTEL";

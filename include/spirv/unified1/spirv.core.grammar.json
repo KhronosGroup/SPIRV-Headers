@@ -9001,6 +9001,34 @@
       "version" : "None"
     },
     {
+      "opname" : "OpArbitraryFloatConvertFromSIntINTEL",
+      "class"  : "@exclude",
+      "opcode" : 5838,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'A'" },
+        { "kind" : "LiteralInteger", "name" : "'Mresult'" },
+        { "kind" : "LiteralInteger", "name" : "'Rounding'" }
+      ],
+      "capabilities" : [ "ArbitraryPrecisionFloatingPointINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpArbitraryFloatConvertToSIntINTEL",
+      "class"  : "@exclude",
+      "opcode" : 5839,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'A'" },
+        { "kind" : "LiteralInteger", "name" : "'Ma'" },
+        { "kind" : "LiteralInteger", "name" : "'Rounding'" }
+      ],
+      "capabilities" : [ "ArbitraryPrecisionFloatingPointINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpArbitraryFloatSinCosPiINTEL",
       "class"  : "@exclude",
       "opcode" : 5840,
@@ -9019,51 +9047,45 @@
       "version" : "None"
     },
     {
-      "opname" : "OpArbitraryFloatCastINTEL",
+      "opname" : "OpArbitraryFloatConvertINTEL",
       "class"  : "@exclude",
       "opcode" : 5841,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "'A'" },
-        { "kind" : "LiteralInteger", "name" : "'M1'" },
-        { "kind" : "LiteralInteger", "name" : "'Mout'" },
-        { "kind" : "LiteralInteger", "name" : "'EnableSubnormals'" },
-        { "kind" : "LiteralInteger", "name" : "'RoundingMode'" },
-        { "kind" : "LiteralInteger", "name" : "'RoundingAccuracy'" }
+        { "kind" : "LiteralInteger", "name" : "'Ma'" },
+        { "kind" : "LiteralInteger", "name" : "'Mresult'" },
+        { "kind" : "LiteralInteger", "name" : "'Subnormal'" },
+        { "kind" : "LiteralInteger", "name" : "'Rounding'" }
       ],
       "capabilities" : [ "ArbitraryPrecisionFloatingPointINTEL" ],
       "version" : "None"
     },
     {
-      "opname" : "OpArbitraryFloatCastFromIntINTEL",
+      "opname" : "OpArbitraryFloatConvertFromUIntINTEL",
       "class"  : "@exclude",
       "opcode" : 5842,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "'A'" },
-        { "kind" : "LiteralInteger", "name" : "'Mout'" },
-        { "kind" : "LiteralInteger", "name" : "'FromSign'" },
-        { "kind" : "LiteralInteger", "name" : "'EnableSubnormals'" },
-        { "kind" : "LiteralInteger", "name" : "'RoundingMode'" },
-        { "kind" : "LiteralInteger", "name" : "'RoundingAccuracy'" }
+        { "kind" : "LiteralInteger", "name" : "'Mresult'" },
+        { "kind" : "LiteralInteger", "name" : "'Rounding'" }
       ],
       "capabilities" : [ "ArbitraryPrecisionFloatingPointINTEL" ],
       "version" : "None"
     },
     {
-      "opname" : "OpArbitraryFloatCastToIntINTEL",
+      "opname" : "OpArbitraryFloatConvertToUIntINTEL",
       "class"  : "@exclude",
       "opcode" : 5843,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "'A'" },
-        { "kind" : "LiteralInteger", "name" : "'M1'" },
-        { "kind" : "LiteralInteger", "name" : "'EnableSubnormals'" },
-        { "kind" : "LiteralInteger", "name" : "'RoundingMode'" },
-        { "kind" : "LiteralInteger", "name" : "'RoundingAccuracy'" }
+        { "kind" : "LiteralInteger", "name" : "'Ma'" },
+        { "kind" : "LiteralInteger", "name" : "'Rounding'" }
       ],
       "capabilities" : [ "ArbitraryPrecisionFloatingPointINTEL" ],
       "version" : "None"
