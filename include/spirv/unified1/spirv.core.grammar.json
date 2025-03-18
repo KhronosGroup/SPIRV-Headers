@@ -10692,6 +10692,18 @@
       "version" : "None"
     },
     {
+      "opname" : "OpRoundFToTF32INTEL",
+      "class"  : "Conversion",
+      "opcode" : 6426,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "'Float Value'" }
+      ],
+      "capabilities" : [ "TensorFloat32RoundingINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpMaskedGatherINTEL",
       "class"  : "Memory",
       "opcode" : 6428,
@@ -17152,6 +17164,12 @@
           "enumerant" : "GroupUniformArithmeticKHR",
           "value" : 6400,
           "extensions" : [ "SPV_KHR_uniform_group_instructions"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TensorFloat32RoundingINTEL",
+          "value" : 6425,
+          "extensions" : [ "SPV_INTEL_tensor_float32_conversion" ],
           "version" : "None"
         },
         {
