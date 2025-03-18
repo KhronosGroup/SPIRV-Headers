@@ -1100,6 +1100,9 @@ spv = {
         ShaderClockKHR = 5055,
         ShaderEnqueueAMDX = 5067,
         QuadControlKHR = 5087,
+        BFloat16TypeKHR = 5116,
+        BFloat16DotProductKHR = 5117,
+        BFloat16CooperativeMatrixKHR = 5118,
         SampleMaskOverrideCoverageNV = 5249,
         GeometryShaderPassthroughNV = 5251,
         ShaderViewportIndexLayerEXT = 5254,
@@ -1523,6 +1526,7 @@ spv = {
     },
 
     FPEncoding = {
+        BFloat16KHR = 0,
         Max = 0x7fffffff,
     },
 

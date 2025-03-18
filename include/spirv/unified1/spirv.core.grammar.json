@@ -16282,6 +16282,26 @@
           "version" : "None"
         },
         {
+          "enumerant" : "BFloat16TypeKHR",
+          "value" : 5116,
+          "extensions" : [ "SPV_KHR_bfloat16" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BFloat16DotProductKHR",
+          "value" : 5117,
+          "capabilities" : [ "BFloat16TypeKHR" ],
+          "extensions" : [ "SPV_KHR_bfloat16" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BFloat16CooperativeMatrixKHR",
+          "value" : 5118,
+          "capabilities" : [ "BFloat16TypeKHR", "CooperativeMatrixKHR" ],
+          "extensions" : [ "SPV_KHR_bfloat16" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "SampleMaskOverrideCoverageNV",
           "value" : 5249,
           "capabilities" : [ "SampleRateShading" ],
@@ -17592,6 +17612,12 @@
       "category" : "ValueEnum",
       "kind" : "FPEncoding",
       "enumerants" : [
+        {
+          "enumerant" : "BFloat16KHR",
+          "value" : 0,
+          "capabilities" : [ "BFloat16TypeKHR" ],
+          "version" : "None"
+        }
       ]
     },
     {

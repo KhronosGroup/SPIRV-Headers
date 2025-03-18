@@ -1113,6 +1113,9 @@ typedef enum SpvCapability_ {
     SpvCapabilityShaderClockKHR = 5055,
     SpvCapabilityShaderEnqueueAMDX = 5067,
     SpvCapabilityQuadControlKHR = 5087,
+    SpvCapabilityBFloat16TypeKHR = 5116,
+    SpvCapabilityBFloat16DotProductKHR = 5117,
+    SpvCapabilityBFloat16CooperativeMatrixKHR = 5118,
     SpvCapabilitySampleMaskOverrideCoverageNV = 5249,
     SpvCapabilityGeometryShaderPassthroughNV = 5251,
     SpvCapabilityShaderViewportIndexLayerEXT = 5254,
@@ -1536,6 +1539,7 @@ typedef enum SpvRawAccessChainOperandsMask_ {
 } SpvRawAccessChainOperandsMask;
 
 typedef enum SpvFPEncoding_ {
+    SpvFPEncodingBFloat16KHR = 0,
     SpvFPEncodingMax = 0x7fffffff,
 } SpvFPEncoding;
 
@@ -3969,6 +3973,9 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityShaderClockKHR: return "ShaderClockKHR";
     case SpvCapabilityShaderEnqueueAMDX: return "ShaderEnqueueAMDX";
     case SpvCapabilityQuadControlKHR: return "QuadControlKHR";
+    case SpvCapabilityBFloat16TypeKHR: return "BFloat16TypeKHR";
+    case SpvCapabilityBFloat16DotProductKHR: return "BFloat16DotProductKHR";
+    case SpvCapabilityBFloat16CooperativeMatrixKHR: return "BFloat16CooperativeMatrixKHR";
     case SpvCapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case SpvCapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case SpvCapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -4259,6 +4266,7 @@ inline const char* SpvNamedMaximumNumberOfRegistersToString(SpvNamedMaximumNumbe
 
 inline const char* SpvFPEncodingToString(SpvFPEncoding value) {
     switch (value) {
+    case SpvFPEncodingBFloat16KHR: return "BFloat16KHR";
     default: return "Unknown";
     }
 }

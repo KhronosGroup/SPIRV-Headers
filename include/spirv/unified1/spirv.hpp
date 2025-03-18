@@ -1109,6 +1109,9 @@ enum Capability {
     CapabilityShaderClockKHR = 5055,
     CapabilityShaderEnqueueAMDX = 5067,
     CapabilityQuadControlKHR = 5087,
+    CapabilityBFloat16TypeKHR = 5116,
+    CapabilityBFloat16DotProductKHR = 5117,
+    CapabilityBFloat16CooperativeMatrixKHR = 5118,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
     CapabilityGeometryShaderPassthroughNV = 5251,
     CapabilityShaderViewportIndexLayerEXT = 5254,
@@ -1532,6 +1535,7 @@ enum RawAccessChainOperandsMask {
 };
 
 enum FPEncoding {
+    FPEncodingBFloat16KHR = 0,
     FPEncodingMax = 0x7fffffff,
 };
 
@@ -3965,6 +3969,9 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityShaderClockKHR: return "ShaderClockKHR";
     case CapabilityShaderEnqueueAMDX: return "ShaderEnqueueAMDX";
     case CapabilityQuadControlKHR: return "QuadControlKHR";
+    case CapabilityBFloat16TypeKHR: return "BFloat16TypeKHR";
+    case CapabilityBFloat16DotProductKHR: return "BFloat16DotProductKHR";
+    case CapabilityBFloat16CooperativeMatrixKHR: return "BFloat16CooperativeMatrixKHR";
     case CapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case CapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case CapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -4255,6 +4262,7 @@ inline const char* NamedMaximumNumberOfRegistersToString(NamedMaximumNumberOfReg
 
 inline const char* FPEncodingToString(FPEncoding value) {
     switch (value) {
+    case FPEncodingBFloat16KHR: return "BFloat16KHR";
     default: return "Unknown";
     }
 }
