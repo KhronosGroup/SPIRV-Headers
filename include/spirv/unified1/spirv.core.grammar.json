@@ -10458,6 +10458,65 @@
       "version" : "None"
     },
     {
+      "opname" : "OpTaskSequenceCreateINTEL",
+      "class"  : "Reserved",
+      "opcode" : 6163,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",          "name" : "'Function'" },
+        { "kind" : "LiteralInteger",  "name" : "'Pipelined'" },
+        { "kind" : "LiteralInteger",  "name" : "'UseStallEnableClusters'" },
+        { "kind" : "LiteralInteger",  "name" : "'GetCapacity'" },
+        { "kind" : "LiteralInteger",  "name" : "'AsyncCapacity'" }
+      ],
+      "capabilities" : [ "TaskSequenceINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTaskSequenceAsyncINTEL",
+      "class"  : "Reserved",
+      "opcode" : 6164,
+      "operands" : [
+        { "kind" : "IdRef",          "name" : "'Sequence'" },
+        { "kind" : "IdRef", "quantifier" : "*",  "name" : "'Arguments'" }
+      ],
+      "capabilities" : [ "TaskSequenceINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTaskSequenceGetINTEL",
+      "class"  : "Reserved",
+      "opcode" : 6165,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",          "name" : "'Sequence'" }
+      ],
+      "capabilities" : [ "TaskSequenceINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTaskSequenceReleaseINTEL",
+      "class"  : "Reserved",
+      "opcode" : 6166,
+      "operands" : [
+        { "kind" : "IdRef",          "name" : "'Sequence'" }
+      ],
+      "capabilities" : [ "TaskSequenceINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTypeTaskSequenceINTEL",
+      "class"  : "Type-Declaration",
+      "opcode" : 6199,
+      "operands" : [
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "TaskSequenceINTEL" ],
+      "version": "None"
+    },
+    {
       "opname" : "OpSubgroupBlockPrefetchINTEL",
       "class"  : "Group",
       "opcode" : 6221,
@@ -17116,6 +17175,12 @@
           "value" : 6161,
           "capabilities" : [ "FPGAKernelAttributesINTEL" ],
           "extensions" : [ "SPV_INTEL_kernel_attributes" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TaskSequenceINTEL",
+          "value" : 6162,
+          "extensions" : [ "SPV_INTEL_task_sequence" ],
           "version" : "None"
         },
         {

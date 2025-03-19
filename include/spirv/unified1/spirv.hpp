@@ -1260,6 +1260,7 @@ enum Capability {
     CapabilityArithmeticFenceEXT = 6144,
     CapabilityFPGAClusterAttributesV2INTEL = 6150,
     CapabilityFPGAKernelAttributesv2INTEL = 6161,
+    CapabilityTaskSequenceINTEL = 6162,
     CapabilityFPMaxErrorINTEL = 6169,
     CapabilityFPGALatencyControlINTEL = 6171,
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
@@ -2349,6 +2350,11 @@ enum Op {
     OpControlBarrierArriveINTEL = 6142,
     OpControlBarrierWaitINTEL = 6143,
     OpArithmeticFenceEXT = 6145,
+    OpTaskSequenceCreateINTEL = 6163,
+    OpTaskSequenceAsyncINTEL = 6164,
+    OpTaskSequenceGetINTEL = 6165,
+    OpTaskSequenceReleaseINTEL = 6166,
+    OpTypeTaskSequenceINTEL = 6199,
     OpSubgroupBlockPrefetchINTEL = 6221,
     OpSubgroup2DBlockLoadINTEL = 6231,
     OpSubgroup2DBlockLoadTransformINTEL = 6232,
@@ -3148,6 +3154,11 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
     case OpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
     case OpArithmeticFenceEXT: *hasResult = true; *hasResultType = true; break;
+    case OpTaskSequenceCreateINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpTaskSequenceAsyncINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpTaskSequenceGetINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpTaskSequenceReleaseINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpTypeTaskSequenceINTEL: *hasResult = true; *hasResultType = false; break;
     case OpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockLoadINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockLoadTransformINTEL: *hasResult = false; *hasResultType = false; break;
@@ -4097,6 +4108,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityArithmeticFenceEXT: return "ArithmeticFenceEXT";
     case CapabilityFPGAClusterAttributesV2INTEL: return "FPGAClusterAttributesV2INTEL";
     case CapabilityFPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
+    case CapabilityTaskSequenceINTEL: return "TaskSequenceINTEL";
     case CapabilityFPMaxErrorINTEL: return "FPMaxErrorINTEL";
     case CapabilityFPGALatencyControlINTEL: return "FPGALatencyControlINTEL";
     case CapabilityFPGAArgumentInterfacesINTEL: return "FPGAArgumentInterfacesINTEL";
@@ -5074,6 +5086,11 @@ inline const char* OpToString(Op value) {
     case OpControlBarrierArriveINTEL: return "OpControlBarrierArriveINTEL";
     case OpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
     case OpArithmeticFenceEXT: return "OpArithmeticFenceEXT";
+    case OpTaskSequenceCreateINTEL: return "OpTaskSequenceCreateINTEL";
+    case OpTaskSequenceAsyncINTEL: return "OpTaskSequenceAsyncINTEL";
+    case OpTaskSequenceGetINTEL: return "OpTaskSequenceGetINTEL";
+    case OpTaskSequenceReleaseINTEL: return "OpTaskSequenceReleaseINTEL";
+    case OpTypeTaskSequenceINTEL: return "OpTypeTaskSequenceINTEL";
     case OpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case OpSubgroup2DBlockLoadINTEL: return "OpSubgroup2DBlockLoadINTEL";
     case OpSubgroup2DBlockLoadTransformINTEL: return "OpSubgroup2DBlockLoadTransformINTEL";

@@ -1260,6 +1260,7 @@ enum class Capability : unsigned {
     ArithmeticFenceEXT = 6144,
     FPGAClusterAttributesV2INTEL = 6150,
     FPGAKernelAttributesv2INTEL = 6161,
+    TaskSequenceINTEL = 6162,
     FPMaxErrorINTEL = 6169,
     FPGALatencyControlINTEL = 6171,
     FPGAArgumentInterfacesINTEL = 6174,
@@ -2349,6 +2350,11 @@ enum class Op : unsigned {
     OpControlBarrierArriveINTEL = 6142,
     OpControlBarrierWaitINTEL = 6143,
     OpArithmeticFenceEXT = 6145,
+    OpTaskSequenceCreateINTEL = 6163,
+    OpTaskSequenceAsyncINTEL = 6164,
+    OpTaskSequenceGetINTEL = 6165,
+    OpTaskSequenceReleaseINTEL = 6166,
+    OpTypeTaskSequenceINTEL = 6199,
     OpSubgroupBlockPrefetchINTEL = 6221,
     OpSubgroup2DBlockLoadINTEL = 6231,
     OpSubgroup2DBlockLoadTransformINTEL = 6232,
@@ -3148,6 +3154,11 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpArithmeticFenceEXT: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTaskSequenceCreateINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTaskSequenceAsyncINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpTaskSequenceGetINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpTaskSequenceReleaseINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpTypeTaskSequenceINTEL: *hasResult = true; *hasResultType = false; break;
     case Op::OpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpSubgroup2DBlockLoadINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpSubgroup2DBlockLoadTransformINTEL: *hasResult = false; *hasResultType = false; break;
@@ -4097,6 +4108,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::ArithmeticFenceEXT: return "ArithmeticFenceEXT";
     case Capability::FPGAClusterAttributesV2INTEL: return "FPGAClusterAttributesV2INTEL";
     case Capability::FPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
+    case Capability::TaskSequenceINTEL: return "TaskSequenceINTEL";
     case Capability::FPMaxErrorINTEL: return "FPMaxErrorINTEL";
     case Capability::FPGALatencyControlINTEL: return "FPGALatencyControlINTEL";
     case Capability::FPGAArgumentInterfacesINTEL: return "FPGAArgumentInterfacesINTEL";
@@ -5074,6 +5086,11 @@ inline const char* OpToString(Op value) {
     case Op::OpControlBarrierArriveINTEL: return "OpControlBarrierArriveINTEL";
     case Op::OpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
     case Op::OpArithmeticFenceEXT: return "OpArithmeticFenceEXT";
+    case Op::OpTaskSequenceCreateINTEL: return "OpTaskSequenceCreateINTEL";
+    case Op::OpTaskSequenceAsyncINTEL: return "OpTaskSequenceAsyncINTEL";
+    case Op::OpTaskSequenceGetINTEL: return "OpTaskSequenceGetINTEL";
+    case Op::OpTaskSequenceReleaseINTEL: return "OpTaskSequenceReleaseINTEL";
+    case Op::OpTypeTaskSequenceINTEL: return "OpTypeTaskSequenceINTEL";
     case Op::OpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case Op::OpSubgroup2DBlockLoadINTEL: return "OpSubgroup2DBlockLoadINTEL";
     case Op::OpSubgroup2DBlockLoadTransformINTEL: return "OpSubgroup2DBlockLoadTransformINTEL";
