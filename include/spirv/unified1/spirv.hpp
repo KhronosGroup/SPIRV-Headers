@@ -1271,6 +1271,7 @@ enum Capability {
     CapabilitySubgroup2DBlockTransformINTEL = 6229,
     CapabilitySubgroup2DBlockTransposeINTEL = 6230,
     CapabilitySubgroupMatrixMultiplyAccumulateINTEL = 6236,
+    CapabilityTernaryBitwiseFunctionINTEL = 6241,
     CapabilityGroupUniformArithmeticKHR = 6400,
     CapabilityTensorFloat32RoundingINTEL = 6425,
     CapabilityMaskedGatherScatterINTEL = 6427,
@@ -2362,6 +2363,7 @@ enum Op {
     OpSubgroup2DBlockPrefetchINTEL = 6234,
     OpSubgroup2DBlockStoreINTEL = 6235,
     OpSubgroupMatrixMultiplyAccumulateINTEL = 6237,
+    OpBitwiseFunctionINTEL = 6242,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -3166,6 +3168,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpSubgroup2DBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockStoreINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroupMatrixMultiplyAccumulateINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpBitwiseFunctionINTEL: *hasResult = true; *hasResultType = true; break;
     case OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -4119,6 +4122,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilitySubgroup2DBlockTransformINTEL: return "Subgroup2DBlockTransformINTEL";
     case CapabilitySubgroup2DBlockTransposeINTEL: return "Subgroup2DBlockTransposeINTEL";
     case CapabilitySubgroupMatrixMultiplyAccumulateINTEL: return "SubgroupMatrixMultiplyAccumulateINTEL";
+    case CapabilityTernaryBitwiseFunctionINTEL: return "TernaryBitwiseFunctionINTEL";
     case CapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case CapabilityTensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";
     case CapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
@@ -5098,6 +5102,7 @@ inline const char* OpToString(Op value) {
     case OpSubgroup2DBlockPrefetchINTEL: return "OpSubgroup2DBlockPrefetchINTEL";
     case OpSubgroup2DBlockStoreINTEL: return "OpSubgroup2DBlockStoreINTEL";
     case OpSubgroupMatrixMultiplyAccumulateINTEL: return "OpSubgroupMatrixMultiplyAccumulateINTEL";
+    case OpBitwiseFunctionINTEL: return "OpBitwiseFunctionINTEL";
     case OpGroupIMulKHR: return "OpGroupIMulKHR";
     case OpGroupFMulKHR: return "OpGroupFMulKHR";
     case OpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";
