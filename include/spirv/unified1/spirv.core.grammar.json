@@ -9999,7 +9999,6 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdRef", "name" : "'Result'" },
         { "kind" : "IdRef", "name" : "'Input'" }
       ],
       "capabilities" : [ "FPGARegINTEL" ],
