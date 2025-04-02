@@ -383,9 +383,15 @@ typedef enum SpvImageChannelDataType_ {
     SpvImageChannelDataTypeFloat = 14,
     SpvImageChannelDataTypeUnormInt24 = 15,
     SpvImageChannelDataTypeUnormInt101010_2 = 16,
+    SpvImageChannelDataTypeUnormInt10X6EXT = 17,
     SpvImageChannelDataTypeUnsignedIntRaw10EXT = 19,
     SpvImageChannelDataTypeUnsignedIntRaw12EXT = 20,
     SpvImageChannelDataTypeUnormInt2_101010EXT = 21,
+    SpvImageChannelDataTypeUnsignedInt10X6EXT = 22,
+    SpvImageChannelDataTypeUnsignedInt12X4EXT = 23,
+    SpvImageChannelDataTypeUnsignedInt14X2EXT = 24,
+    SpvImageChannelDataTypeUnormInt12X4EXT = 25,
+    SpvImageChannelDataTypeUnormInt14X2EXT = 26,
     SpvImageChannelDataTypeMax = 0x7fffffff,
 } SpvImageChannelDataType;
 
@@ -3508,9 +3514,15 @@ inline const char* SpvImageChannelDataTypeToString(SpvImageChannelDataType value
     case SpvImageChannelDataTypeFloat: return "Float";
     case SpvImageChannelDataTypeUnormInt24: return "UnormInt24";
     case SpvImageChannelDataTypeUnormInt101010_2: return "UnormInt101010_2";
+    case SpvImageChannelDataTypeUnormInt10X6EXT: return "UnormInt10X6EXT";
     case SpvImageChannelDataTypeUnsignedIntRaw10EXT: return "UnsignedIntRaw10EXT";
     case SpvImageChannelDataTypeUnsignedIntRaw12EXT: return "UnsignedIntRaw12EXT";
     case SpvImageChannelDataTypeUnormInt2_101010EXT: return "UnormInt2_101010EXT";
+    case SpvImageChannelDataTypeUnsignedInt10X6EXT: return "UnsignedInt10X6EXT";
+    case SpvImageChannelDataTypeUnsignedInt12X4EXT: return "UnsignedInt12X4EXT";
+    case SpvImageChannelDataTypeUnsignedInt14X2EXT: return "UnsignedInt14X2EXT";
+    case SpvImageChannelDataTypeUnormInt12X4EXT: return "UnormInt12X4EXT";
+    case SpvImageChannelDataTypeUnormInt14X2EXT: return "UnormInt14X2EXT";
     default: return "Unknown";
     }
 }
