@@ -389,9 +389,15 @@ enum ImageChannelDataType : uint
     Float = 14,
     UnormInt24 = 15,
     UnormInt101010_2 = 16,
+    UnormInt10X6EXT = 17,
     UnsignedIntRaw10EXT = 19,
     UnsignedIntRaw12EXT = 20,
     UnormInt2_101010EXT = 21,
+    UnsignedInt10X6EXT = 22,
+    UnsignedInt12X4EXT = 23,
+    UnsignedInt14X2EXT = 24,
+    UnormInt12X4EXT = 25,
+    UnormInt14X2EXT = 26,
     Max = 0x7fffffff,
 }
 

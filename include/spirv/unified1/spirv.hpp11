@@ -379,9 +379,15 @@ enum class ImageChannelDataType : unsigned {
     Float = 14,
     UnormInt24 = 15,
     UnormInt101010_2 = 16,
+    UnormInt10X6EXT = 17,
     UnsignedIntRaw10EXT = 19,
     UnsignedIntRaw12EXT = 20,
     UnormInt2_101010EXT = 21,
+    UnsignedInt10X6EXT = 22,
+    UnsignedInt12X4EXT = 23,
+    UnsignedInt14X2EXT = 24,
+    UnormInt12X4EXT = 25,
+    UnormInt14X2EXT = 26,
     Max = 0x7fffffff,
 };
 
@@ -3504,9 +3510,15 @@ inline const char* ImageChannelDataTypeToString(ImageChannelDataType value) {
     case ImageChannelDataType::Float: return "Float";
     case ImageChannelDataType::UnormInt24: return "UnormInt24";
     case ImageChannelDataType::UnormInt101010_2: return "UnormInt101010_2";
+    case ImageChannelDataType::UnormInt10X6EXT: return "UnormInt10X6EXT";
     case ImageChannelDataType::UnsignedIntRaw10EXT: return "UnsignedIntRaw10EXT";
     case ImageChannelDataType::UnsignedIntRaw12EXT: return "UnsignedIntRaw12EXT";
     case ImageChannelDataType::UnormInt2_101010EXT: return "UnormInt2_101010EXT";
+    case ImageChannelDataType::UnsignedInt10X6EXT: return "UnsignedInt10X6EXT";
+    case ImageChannelDataType::UnsignedInt12X4EXT: return "UnsignedInt12X4EXT";
+    case ImageChannelDataType::UnsignedInt14X2EXT: return "UnsignedInt14X2EXT";
+    case ImageChannelDataType::UnormInt12X4EXT: return "UnormInt12X4EXT";
+    case ImageChannelDataType::UnormInt14X2EXT: return "UnormInt14X2EXT";
     default: return "Unknown";
     }
 }

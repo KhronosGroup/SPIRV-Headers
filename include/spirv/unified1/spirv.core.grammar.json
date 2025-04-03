@@ -13280,6 +13280,11 @@
           "version": "1.0"
         },
         {
+          "enumerant" : "UnormInt10X6EXT",
+          "value" : 17,
+          "version": "1.0"
+        },
+        {
           "enumerant" : "UnsignedIntRaw10EXT",
           "value" : 19,
           "version": "1.0"
@@ -13292,6 +13297,31 @@
         {
           "enumerant" : "UnormInt2_101010EXT",
           "value" : 21,
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "UnsignedInt10X6EXT",
+          "value" : 22,
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "UnsignedInt12X4EXT",
+          "value" : 23,
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "UnsignedInt14X2EXT",
+          "value" : 24,
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "UnormInt12X4EXT",
+          "value" : 25,
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "UnormInt14X2EXT",
+          "value" : 26,
           "version": "1.0"
         }
       ]
