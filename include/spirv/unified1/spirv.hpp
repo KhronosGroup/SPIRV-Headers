@@ -379,9 +379,15 @@ enum ImageChannelDataType {
     ImageChannelDataTypeFloat = 14,
     ImageChannelDataTypeUnormInt24 = 15,
     ImageChannelDataTypeUnormInt101010_2 = 16,
+    ImageChannelDataTypeUnormInt10X6EXT = 17,
     ImageChannelDataTypeUnsignedIntRaw10EXT = 19,
     ImageChannelDataTypeUnsignedIntRaw12EXT = 20,
     ImageChannelDataTypeUnormInt2_101010EXT = 21,
+    ImageChannelDataTypeUnsignedInt10X6EXT = 22,
+    ImageChannelDataTypeUnsignedInt12X4EXT = 23,
+    ImageChannelDataTypeUnsignedInt14X2EXT = 24,
+    ImageChannelDataTypeUnormInt12X4EXT = 25,
+    ImageChannelDataTypeUnormInt14X2EXT = 26,
     ImageChannelDataTypeMax = 0x7fffffff,
 };
 
@@ -3504,9 +3510,15 @@ inline const char* ImageChannelDataTypeToString(ImageChannelDataType value) {
     case ImageChannelDataTypeFloat: return "Float";
     case ImageChannelDataTypeUnormInt24: return "UnormInt24";
     case ImageChannelDataTypeUnormInt101010_2: return "UnormInt101010_2";
+    case ImageChannelDataTypeUnormInt10X6EXT: return "UnormInt10X6EXT";
     case ImageChannelDataTypeUnsignedIntRaw10EXT: return "UnsignedIntRaw10EXT";
     case ImageChannelDataTypeUnsignedIntRaw12EXT: return "UnsignedIntRaw12EXT";
     case ImageChannelDataTypeUnormInt2_101010EXT: return "UnormInt2_101010EXT";
+    case ImageChannelDataTypeUnsignedInt10X6EXT: return "UnsignedInt10X6EXT";
+    case ImageChannelDataTypeUnsignedInt12X4EXT: return "UnsignedInt12X4EXT";
+    case ImageChannelDataTypeUnsignedInt14X2EXT: return "UnsignedInt14X2EXT";
+    case ImageChannelDataTypeUnormInt12X4EXT: return "UnormInt12X4EXT";
+    case ImageChannelDataTypeUnormInt14X2EXT: return "UnormInt14X2EXT";
     default: return "Unknown";
     }
 }
