@@ -6300,8 +6300,8 @@
       "operands" : [
         { "kind" : "IdResult" }
       ],
-      "capabilities" : [ "RayTracingNV" , "RayTracingKHR", "RayQueryKHR" ],
-      "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing", "SPV_KHR_ray_query" ],
+      "capabilities" : [ "RayTracingNV" , "RayTracingKHR", "RayQueryKHR", "DisplacementMicromapNV" ],
+      "extensions" : [ "SPV_NV_ray_tracing" , "SPV_KHR_ray_tracing", "SPV_KHR_ray_query", "SPV_NV_displacement_micromap" ],
       "version" : "None"
     },
     {
