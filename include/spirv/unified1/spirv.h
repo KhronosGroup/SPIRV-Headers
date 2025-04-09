@@ -541,6 +541,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationMaxByteOffset = 45,
     SpvDecorationAlignmentId = 46,
     SpvDecorationMaxByteOffsetId = 47,
+    SpvDecorationSaturatedToLargestFloat8NormalConversionEXT = 4216,
     SpvDecorationNoSignedWrap = 4469,
     SpvDecorationNoUnsignedWrap = 4470,
     SpvDecorationWeightTextureQCOM = 4487,
@@ -1067,6 +1068,8 @@ typedef enum SpvCapability_ {
     SpvCapabilityStorageTensorArrayDynamicIndexingARM = 4175,
     SpvCapabilityStorageTensorArrayNonUniformIndexingARM = 4176,
     SpvCapabilityCooperativeMatrixLayoutsARM = 4201,
+    SpvCapabilityFloat8EXT = 4212,
+    SpvCapabilityFloat8CooperativeMatrixEXT = 4213,
     SpvCapabilityFragmentShadingRateKHR = 4422,
     SpvCapabilitySubgroupBallotKHR = 4423,
     SpvCapabilityDrawParameters = 4427,
@@ -1564,6 +1567,8 @@ typedef enum SpvRawAccessChainOperandsMask_ {
 
 typedef enum SpvFPEncoding_ {
     SpvFPEncodingBFloat16KHR = 0,
+    SpvFPEncodingFloat8E4M3EXT = 4214,
+    SpvFPEncodingFloat8E5M2EXT = 4215,
     SpvFPEncodingMax = 0x7fffffff,
 } SpvFPEncoding;
 
@@ -3651,6 +3656,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationMaxByteOffset: return "MaxByteOffset";
     case SpvDecorationAlignmentId: return "AlignmentId";
     case SpvDecorationMaxByteOffsetId: return "MaxByteOffsetId";
+    case SpvDecorationSaturatedToLargestFloat8NormalConversionEXT: return "SaturatedToLargestFloat8NormalConversionEXT";
     case SpvDecorationNoSignedWrap: return "NoSignedWrap";
     case SpvDecorationNoUnsignedWrap: return "NoUnsignedWrap";
     case SpvDecorationWeightTextureQCOM: return "WeightTextureQCOM";
@@ -3997,6 +4003,8 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityStorageTensorArrayDynamicIndexingARM: return "StorageTensorArrayDynamicIndexingARM";
     case SpvCapabilityStorageTensorArrayNonUniformIndexingARM: return "StorageTensorArrayNonUniformIndexingARM";
     case SpvCapabilityCooperativeMatrixLayoutsARM: return "CooperativeMatrixLayoutsARM";
+    case SpvCapabilityFloat8EXT: return "Float8EXT";
+    case SpvCapabilityFloat8CooperativeMatrixEXT: return "Float8CooperativeMatrixEXT";
     case SpvCapabilityFragmentShadingRateKHR: return "FragmentShadingRateKHR";
     case SpvCapabilitySubgroupBallotKHR: return "SubgroupBallotKHR";
     case SpvCapabilityDrawParameters: return "DrawParameters";
@@ -4341,6 +4349,8 @@ inline const char* SpvNamedMaximumNumberOfRegistersToString(SpvNamedMaximumNumbe
 inline const char* SpvFPEncodingToString(SpvFPEncoding value) {
     switch (value) {
     case SpvFPEncodingBFloat16KHR: return "BFloat16KHR";
+    case SpvFPEncodingFloat8E4M3EXT: return "Float8E4M3EXT";
+    case SpvFPEncodingFloat8E5M2EXT: return "Float8E5M2EXT";
     default: return "Unknown";
     }
 }
