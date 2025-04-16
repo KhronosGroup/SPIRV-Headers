@@ -176,6 +176,8 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeSignedZeroInfNanPreserve = 4461,
     SpvExecutionModeRoundingModeRTE = 4462,
     SpvExecutionModeRoundingModeRTZ = 4463,
+    SpvExecutionModeNonCoherentTileAttachmentReadQCOM = 4489,
+    SpvExecutionModeTileShadingRateQCOM = 4490,
     SpvExecutionModeEarlyAndLateFragmentTestsAMD = 5017,
     SpvExecutionModeStencilRefReplacingEXT = 5027,
     SpvExecutionModeCoalescingAMDX = 5069,
@@ -245,6 +247,7 @@ typedef enum SpvStorageClass_ {
     SpvStorageClassImage = 11,
     SpvStorageClassStorageBuffer = 12,
     SpvStorageClassTileImageEXT = 4172,
+    SpvStorageClassTileAttachmentQCOM = 4491,
     SpvStorageClassNodePayloadAMDX = 5068,
     SpvStorageClassCallableDataKHR = 5328,
     SpvStorageClassCallableDataNV = 5328,
@@ -723,6 +726,9 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInDeviceIndex = 4438,
     SpvBuiltInViewIndex = 4440,
     SpvBuiltInShadingRateKHR = 4444,
+    SpvBuiltInTileOffsetQCOM = 4492,
+    SpvBuiltInTileDimensionQCOM = 4493,
+    SpvBuiltInTileApronSizeQCOM = 4494,
     SpvBuiltInBaryCoordNoPerspAMD = 4992,
     SpvBuiltInBaryCoordNoPerspCentroidAMD = 4993,
     SpvBuiltInBaryCoordNoPerspSampleAMD = 4994,
@@ -1109,6 +1115,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityTextureSampleWeightedQCOM = 4484,
     SpvCapabilityTextureBoxFilterQCOM = 4485,
     SpvCapabilityTextureBlockMatchQCOM = 4486,
+    SpvCapabilityTileShadingQCOM = 4495,
     SpvCapabilityTextureBlockMatch2QCOM = 4498,
     SpvCapabilityFloat16ImageAMD = 5008,
     SpvCapabilityImageGatherBiasLodAMD = 5009,
@@ -3305,6 +3312,8 @@ inline const char* SpvExecutionModeToString(SpvExecutionMode value) {
     case SpvExecutionModeSignedZeroInfNanPreserve: return "SignedZeroInfNanPreserve";
     case SpvExecutionModeRoundingModeRTE: return "RoundingModeRTE";
     case SpvExecutionModeRoundingModeRTZ: return "RoundingModeRTZ";
+    case SpvExecutionModeNonCoherentTileAttachmentReadQCOM: return "NonCoherentTileAttachmentReadQCOM";
+    case SpvExecutionModeTileShadingRateQCOM: return "TileShadingRateQCOM";
     case SpvExecutionModeEarlyAndLateFragmentTestsAMD: return "EarlyAndLateFragmentTestsAMD";
     case SpvExecutionModeStencilRefReplacingEXT: return "StencilRefReplacingEXT";
     case SpvExecutionModeCoalescingAMDX: return "CoalescingAMDX";
@@ -3371,6 +3380,7 @@ inline const char* SpvStorageClassToString(SpvStorageClass value) {
     case SpvStorageClassImage: return "Image";
     case SpvStorageClassStorageBuffer: return "StorageBuffer";
     case SpvStorageClassTileImageEXT: return "TileImageEXT";
+    case SpvStorageClassTileAttachmentQCOM: return "TileAttachmentQCOM";
     case SpvStorageClassNodePayloadAMDX: return "NodePayloadAMDX";
     case SpvStorageClassCallableDataKHR: return "CallableDataKHR";
     case SpvStorageClassIncomingCallableDataKHR: return "IncomingCallableDataKHR";
@@ -3778,6 +3788,9 @@ inline const char* SpvBuiltInToString(SpvBuiltIn value) {
     case SpvBuiltInDeviceIndex: return "DeviceIndex";
     case SpvBuiltInViewIndex: return "ViewIndex";
     case SpvBuiltInShadingRateKHR: return "ShadingRateKHR";
+    case SpvBuiltInTileOffsetQCOM: return "TileOffsetQCOM";
+    case SpvBuiltInTileDimensionQCOM: return "TileDimensionQCOM";
+    case SpvBuiltInTileApronSizeQCOM: return "TileApronSizeQCOM";
     case SpvBuiltInBaryCoordNoPerspAMD: return "BaryCoordNoPerspAMD";
     case SpvBuiltInBaryCoordNoPerspCentroidAMD: return "BaryCoordNoPerspCentroidAMD";
     case SpvBuiltInBaryCoordNoPerspSampleAMD: return "BaryCoordNoPerspSampleAMD";
@@ -3992,6 +4005,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityTextureSampleWeightedQCOM: return "TextureSampleWeightedQCOM";
     case SpvCapabilityTextureBoxFilterQCOM: return "TextureBoxFilterQCOM";
     case SpvCapabilityTextureBlockMatchQCOM: return "TextureBlockMatchQCOM";
+    case SpvCapabilityTileShadingQCOM: return "TileShadingQCOM";
     case SpvCapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
     case SpvCapabilityFloat16ImageAMD: return "Float16ImageAMD";
     case SpvCapabilityImageGatherBiasLodAMD: return "ImageGatherBiasLodAMD";

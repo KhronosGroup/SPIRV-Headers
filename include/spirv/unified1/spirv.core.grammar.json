@@ -12149,6 +12149,23 @@
           "version" : "1.4"
         },
         {
+          "enumerant" : "NonCoherentTileAttachmentReadQCOM",
+          "value" : 4489,
+          "capabilities" : [ "TileShadingQCOM" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TileShadingRateQCOM",
+          "value" : 4490,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "'x rate'" },
+            { "kind" : "LiteralInteger", "name" : "'y rate'" },
+            { "kind" : "LiteralInteger", "name" : "'z rate'" }
+          ],
+          "capabilities" : [ "TileShadingQCOM" ],
+          "version": "None"
+        },
+        {
           "enumerant": "EarlyAndLateFragmentTestsAMD",
           "value": 5017,
           "capabilities": [ "Shader" ],
@@ -12623,6 +12640,12 @@
           "enumerant" : "TileImageEXT",
           "value" : 4172,
           "capabilities" : [ "TileImageColorReadAccessEXT" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TileAttachmentQCOM",
+          "value" : 4491,
+          "capabilities" : [ "TileShadingQCOM" ],
           "version" : "None"
         },
         {
@@ -15094,6 +15117,24 @@
           "version" : "None"
         },
         {
+          "enumerant" : "TileOffsetQCOM",
+          "value" : 4492,
+          "capabilities" : [ "TileShadingQCOM" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TileDimensionQCOM",
+          "value" : 4493,
+          "capabilities" : [ "TileShadingQCOM" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TileApronSizeQCOM",
+          "value" : 4494,
+          "capabilities" : [ "TileShadingQCOM" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "BaryCoordNoPerspAMD",
           "value" : 4992,
           "extensions" : [ "SPV_AMD_shader_explicit_vertex_parameter" ],
@@ -16327,6 +16368,13 @@
           "enumerant" : "TextureBlockMatchQCOM",
           "value" : 4486,
           "extensions" : [ "SPV_QCOM_image_processing" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "TileShadingQCOM",
+          "value" : 4495,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_QCOM_tile_shading" ],
           "version" : "None"
         },
         {
