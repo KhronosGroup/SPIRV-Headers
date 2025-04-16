@@ -172,6 +172,8 @@ enum ExecutionMode {
     ExecutionModeSignedZeroInfNanPreserve = 4461,
     ExecutionModeRoundingModeRTE = 4462,
     ExecutionModeRoundingModeRTZ = 4463,
+    ExecutionModeNonCoherentTileAttachmentReadQCOM = 4489,
+    ExecutionModeTileShadingRateQCOM = 4490,
     ExecutionModeEarlyAndLateFragmentTestsAMD = 5017,
     ExecutionModeStencilRefReplacingEXT = 5027,
     ExecutionModeCoalescingAMDX = 5069,
@@ -241,6 +243,7 @@ enum StorageClass {
     StorageClassImage = 11,
     StorageClassStorageBuffer = 12,
     StorageClassTileImageEXT = 4172,
+    StorageClassTileAttachmentQCOM = 4491,
     StorageClassNodePayloadAMDX = 5068,
     StorageClassCallableDataKHR = 5328,
     StorageClassCallableDataNV = 5328,
@@ -719,6 +722,9 @@ enum BuiltIn {
     BuiltInDeviceIndex = 4438,
     BuiltInViewIndex = 4440,
     BuiltInShadingRateKHR = 4444,
+    BuiltInTileOffsetQCOM = 4492,
+    BuiltInTileDimensionQCOM = 4493,
+    BuiltInTileApronSizeQCOM = 4494,
     BuiltInBaryCoordNoPerspAMD = 4992,
     BuiltInBaryCoordNoPerspCentroidAMD = 4993,
     BuiltInBaryCoordNoPerspSampleAMD = 4994,
@@ -1105,6 +1111,7 @@ enum Capability {
     CapabilityTextureSampleWeightedQCOM = 4484,
     CapabilityTextureBoxFilterQCOM = 4485,
     CapabilityTextureBlockMatchQCOM = 4486,
+    CapabilityTileShadingQCOM = 4495,
     CapabilityTextureBlockMatch2QCOM = 4498,
     CapabilityFloat16ImageAMD = 5008,
     CapabilityImageGatherBiasLodAMD = 5009,
@@ -3301,6 +3308,8 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeSignedZeroInfNanPreserve: return "SignedZeroInfNanPreserve";
     case ExecutionModeRoundingModeRTE: return "RoundingModeRTE";
     case ExecutionModeRoundingModeRTZ: return "RoundingModeRTZ";
+    case ExecutionModeNonCoherentTileAttachmentReadQCOM: return "NonCoherentTileAttachmentReadQCOM";
+    case ExecutionModeTileShadingRateQCOM: return "TileShadingRateQCOM";
     case ExecutionModeEarlyAndLateFragmentTestsAMD: return "EarlyAndLateFragmentTestsAMD";
     case ExecutionModeStencilRefReplacingEXT: return "StencilRefReplacingEXT";
     case ExecutionModeCoalescingAMDX: return "CoalescingAMDX";
@@ -3367,6 +3376,7 @@ inline const char* StorageClassToString(StorageClass value) {
     case StorageClassImage: return "Image";
     case StorageClassStorageBuffer: return "StorageBuffer";
     case StorageClassTileImageEXT: return "TileImageEXT";
+    case StorageClassTileAttachmentQCOM: return "TileAttachmentQCOM";
     case StorageClassNodePayloadAMDX: return "NodePayloadAMDX";
     case StorageClassCallableDataKHR: return "CallableDataKHR";
     case StorageClassIncomingCallableDataKHR: return "IncomingCallableDataKHR";
@@ -3774,6 +3784,9 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltInDeviceIndex: return "DeviceIndex";
     case BuiltInViewIndex: return "ViewIndex";
     case BuiltInShadingRateKHR: return "ShadingRateKHR";
+    case BuiltInTileOffsetQCOM: return "TileOffsetQCOM";
+    case BuiltInTileDimensionQCOM: return "TileDimensionQCOM";
+    case BuiltInTileApronSizeQCOM: return "TileApronSizeQCOM";
     case BuiltInBaryCoordNoPerspAMD: return "BaryCoordNoPerspAMD";
     case BuiltInBaryCoordNoPerspCentroidAMD: return "BaryCoordNoPerspCentroidAMD";
     case BuiltInBaryCoordNoPerspSampleAMD: return "BaryCoordNoPerspSampleAMD";
@@ -3988,6 +4001,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityTextureSampleWeightedQCOM: return "TextureSampleWeightedQCOM";
     case CapabilityTextureBoxFilterQCOM: return "TextureBoxFilterQCOM";
     case CapabilityTextureBlockMatchQCOM: return "TextureBlockMatchQCOM";
+    case CapabilityTileShadingQCOM: return "TileShadingQCOM";
     case CapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
     case CapabilityFloat16ImageAMD: return "Float16ImageAMD";
     case CapabilityImageGatherBiasLodAMD: return "ImageGatherBiasLodAMD";
