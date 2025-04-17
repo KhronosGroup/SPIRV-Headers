@@ -14138,8 +14138,8 @@
         {
           "enumerant" : "PerTaskNV",
           "value" : 5273,
-          "capabilities" : [ "MeshShadingNV", "MeshShadingEXT" ],
-          "extensions" : [ "SPV_NV_mesh_shader", "SPV_EXT_mesh_shader" ],
+          "capabilities" : [ "MeshShadingNV" ],
+          "extensions" : [ "SPV_NV_mesh_shader" ],
           "version" : "None"
         },
         {
