@@ -172,6 +172,8 @@ enum ExecutionMode {
     ExecutionModeSignedZeroInfNanPreserve = 4461,
     ExecutionModeRoundingModeRTE = 4462,
     ExecutionModeRoundingModeRTZ = 4463,
+    ExecutionModeNonCoherentTileAttachmentReadQCOM = 4489,
+    ExecutionModeTileShadingRateQCOM = 4490,
     ExecutionModeEarlyAndLateFragmentTestsAMD = 5017,
     ExecutionModeStencilRefReplacingEXT = 5027,
     ExecutionModeCoalescingAMDX = 5069,
@@ -241,6 +243,7 @@ enum StorageClass {
     StorageClassImage = 11,
     StorageClassStorageBuffer = 12,
     StorageClassTileImageEXT = 4172,
+    StorageClassTileAttachmentQCOM = 4491,
     StorageClassNodePayloadAMDX = 5068,
     StorageClassCallableDataKHR = 5328,
     StorageClassCallableDataNV = 5328,
@@ -379,9 +382,15 @@ enum ImageChannelDataType {
     ImageChannelDataTypeFloat = 14,
     ImageChannelDataTypeUnormInt24 = 15,
     ImageChannelDataTypeUnormInt101010_2 = 16,
+    ImageChannelDataTypeUnormInt10X6EXT = 17,
     ImageChannelDataTypeUnsignedIntRaw10EXT = 19,
     ImageChannelDataTypeUnsignedIntRaw12EXT = 20,
     ImageChannelDataTypeUnormInt2_101010EXT = 21,
+    ImageChannelDataTypeUnsignedInt10X6EXT = 22,
+    ImageChannelDataTypeUnsignedInt12X4EXT = 23,
+    ImageChannelDataTypeUnsignedInt14X2EXT = 24,
+    ImageChannelDataTypeUnormInt12X4EXT = 25,
+    ImageChannelDataTypeUnormInt14X2EXT = 26,
     ImageChannelDataTypeMax = 0x7fffffff,
 };
 
@@ -713,6 +722,9 @@ enum BuiltIn {
     BuiltInDeviceIndex = 4438,
     BuiltInViewIndex = 4440,
     BuiltInShadingRateKHR = 4444,
+    BuiltInTileOffsetQCOM = 4492,
+    BuiltInTileDimensionQCOM = 4493,
+    BuiltInTileApronSizeQCOM = 4494,
     BuiltInBaryCoordNoPerspAMD = 4992,
     BuiltInBaryCoordNoPerspCentroidAMD = 4993,
     BuiltInBaryCoordNoPerspSampleAMD = 4994,
@@ -1099,6 +1111,7 @@ enum Capability {
     CapabilityTextureSampleWeightedQCOM = 4484,
     CapabilityTextureBoxFilterQCOM = 4485,
     CapabilityTextureBlockMatchQCOM = 4486,
+    CapabilityTileShadingQCOM = 4495,
     CapabilityTextureBlockMatch2QCOM = 4498,
     CapabilityFloat16ImageAMD = 5008,
     CapabilityImageGatherBiasLodAMD = 5009,
@@ -1109,6 +1122,9 @@ enum Capability {
     CapabilityShaderClockKHR = 5055,
     CapabilityShaderEnqueueAMDX = 5067,
     CapabilityQuadControlKHR = 5087,
+    CapabilityBFloat16TypeKHR = 5116,
+    CapabilityBFloat16DotProductKHR = 5117,
+    CapabilityBFloat16CooperativeMatrixKHR = 5118,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
     CapabilityGeometryShaderPassthroughNV = 5251,
     CapabilityShaderViewportIndexLayerEXT = 5254,
@@ -1257,6 +1273,7 @@ enum Capability {
     CapabilityArithmeticFenceEXT = 6144,
     CapabilityFPGAClusterAttributesV2INTEL = 6150,
     CapabilityFPGAKernelAttributesv2INTEL = 6161,
+    CapabilityTaskSequenceINTEL = 6162,
     CapabilityFPMaxErrorINTEL = 6169,
     CapabilityFPGALatencyControlINTEL = 6171,
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
@@ -1267,7 +1284,9 @@ enum Capability {
     CapabilitySubgroup2DBlockTransformINTEL = 6229,
     CapabilitySubgroup2DBlockTransposeINTEL = 6230,
     CapabilitySubgroupMatrixMultiplyAccumulateINTEL = 6236,
+    CapabilityTernaryBitwiseFunctionINTEL = 6241,
     CapabilityGroupUniformArithmeticKHR = 6400,
+    CapabilityTensorFloat32RoundingINTEL = 6425,
     CapabilityMaskedGatherScatterINTEL = 6427,
     CapabilityCacheControlsINTEL = 6441,
     CapabilityRegisterLimitsINTEL = 6460,
@@ -1532,6 +1551,7 @@ enum RawAccessChainOperandsMask {
 };
 
 enum FPEncoding {
+    FPEncodingBFloat16KHR = 0,
     FPEncodingMax = 0x7fffffff,
 };
 
@@ -2344,6 +2364,11 @@ enum Op {
     OpControlBarrierArriveINTEL = 6142,
     OpControlBarrierWaitINTEL = 6143,
     OpArithmeticFenceEXT = 6145,
+    OpTaskSequenceCreateINTEL = 6163,
+    OpTaskSequenceAsyncINTEL = 6164,
+    OpTaskSequenceGetINTEL = 6165,
+    OpTaskSequenceReleaseINTEL = 6166,
+    OpTypeTaskSequenceINTEL = 6199,
     OpSubgroupBlockPrefetchINTEL = 6221,
     OpSubgroup2DBlockLoadINTEL = 6231,
     OpSubgroup2DBlockLoadTransformINTEL = 6232,
@@ -2351,6 +2376,7 @@ enum Op {
     OpSubgroup2DBlockPrefetchINTEL = 6234,
     OpSubgroup2DBlockStoreINTEL = 6235,
     OpSubgroupMatrixMultiplyAccumulateINTEL = 6237,
+    OpBitwiseFunctionINTEL = 6242,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -2359,6 +2385,7 @@ enum Op {
     OpGroupLogicalAndKHR = 6406,
     OpGroupLogicalOrKHR = 6407,
     OpGroupLogicalXorKHR = 6408,
+    OpRoundFToTF32INTEL = 6426,
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
     OpMax = 0x7fffffff,
@@ -3142,6 +3169,11 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
     case OpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
     case OpArithmeticFenceEXT: *hasResult = true; *hasResultType = true; break;
+    case OpTaskSequenceCreateINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpTaskSequenceAsyncINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpTaskSequenceGetINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpTaskSequenceReleaseINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpTypeTaskSequenceINTEL: *hasResult = true; *hasResultType = false; break;
     case OpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockLoadINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockLoadTransformINTEL: *hasResult = false; *hasResultType = false; break;
@@ -3149,6 +3181,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpSubgroup2DBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockStoreINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroupMatrixMultiplyAccumulateINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpBitwiseFunctionINTEL: *hasResult = true; *hasResultType = true; break;
     case OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -3157,6 +3190,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpGroupLogicalAndKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupLogicalOrKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
+    case OpRoundFToTF32INTEL: *hasResult = true; *hasResultType = true; break;
     case OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
     }
@@ -3274,6 +3308,8 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeSignedZeroInfNanPreserve: return "SignedZeroInfNanPreserve";
     case ExecutionModeRoundingModeRTE: return "RoundingModeRTE";
     case ExecutionModeRoundingModeRTZ: return "RoundingModeRTZ";
+    case ExecutionModeNonCoherentTileAttachmentReadQCOM: return "NonCoherentTileAttachmentReadQCOM";
+    case ExecutionModeTileShadingRateQCOM: return "TileShadingRateQCOM";
     case ExecutionModeEarlyAndLateFragmentTestsAMD: return "EarlyAndLateFragmentTestsAMD";
     case ExecutionModeStencilRefReplacingEXT: return "StencilRefReplacingEXT";
     case ExecutionModeCoalescingAMDX: return "CoalescingAMDX";
@@ -3340,6 +3376,7 @@ inline const char* StorageClassToString(StorageClass value) {
     case StorageClassImage: return "Image";
     case StorageClassStorageBuffer: return "StorageBuffer";
     case StorageClassTileImageEXT: return "TileImageEXT";
+    case StorageClassTileAttachmentQCOM: return "TileAttachmentQCOM";
     case StorageClassNodePayloadAMDX: return "NodePayloadAMDX";
     case StorageClassCallableDataKHR: return "CallableDataKHR";
     case StorageClassIncomingCallableDataKHR: return "IncomingCallableDataKHR";
@@ -3483,9 +3520,15 @@ inline const char* ImageChannelDataTypeToString(ImageChannelDataType value) {
     case ImageChannelDataTypeFloat: return "Float";
     case ImageChannelDataTypeUnormInt24: return "UnormInt24";
     case ImageChannelDataTypeUnormInt101010_2: return "UnormInt101010_2";
+    case ImageChannelDataTypeUnormInt10X6EXT: return "UnormInt10X6EXT";
     case ImageChannelDataTypeUnsignedIntRaw10EXT: return "UnsignedIntRaw10EXT";
     case ImageChannelDataTypeUnsignedIntRaw12EXT: return "UnsignedIntRaw12EXT";
     case ImageChannelDataTypeUnormInt2_101010EXT: return "UnormInt2_101010EXT";
+    case ImageChannelDataTypeUnsignedInt10X6EXT: return "UnsignedInt10X6EXT";
+    case ImageChannelDataTypeUnsignedInt12X4EXT: return "UnsignedInt12X4EXT";
+    case ImageChannelDataTypeUnsignedInt14X2EXT: return "UnsignedInt14X2EXT";
+    case ImageChannelDataTypeUnormInt12X4EXT: return "UnormInt12X4EXT";
+    case ImageChannelDataTypeUnormInt14X2EXT: return "UnormInt14X2EXT";
     default: return "Unknown";
     }
 }
@@ -3741,6 +3784,9 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltInDeviceIndex: return "DeviceIndex";
     case BuiltInViewIndex: return "ViewIndex";
     case BuiltInShadingRateKHR: return "ShadingRateKHR";
+    case BuiltInTileOffsetQCOM: return "TileOffsetQCOM";
+    case BuiltInTileDimensionQCOM: return "TileDimensionQCOM";
+    case BuiltInTileApronSizeQCOM: return "TileApronSizeQCOM";
     case BuiltInBaryCoordNoPerspAMD: return "BaryCoordNoPerspAMD";
     case BuiltInBaryCoordNoPerspCentroidAMD: return "BaryCoordNoPerspCentroidAMD";
     case BuiltInBaryCoordNoPerspSampleAMD: return "BaryCoordNoPerspSampleAMD";
@@ -3955,6 +4001,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityTextureSampleWeightedQCOM: return "TextureSampleWeightedQCOM";
     case CapabilityTextureBoxFilterQCOM: return "TextureBoxFilterQCOM";
     case CapabilityTextureBlockMatchQCOM: return "TextureBlockMatchQCOM";
+    case CapabilityTileShadingQCOM: return "TileShadingQCOM";
     case CapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
     case CapabilityFloat16ImageAMD: return "Float16ImageAMD";
     case CapabilityImageGatherBiasLodAMD: return "ImageGatherBiasLodAMD";
@@ -3965,6 +4012,9 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityShaderClockKHR: return "ShaderClockKHR";
     case CapabilityShaderEnqueueAMDX: return "ShaderEnqueueAMDX";
     case CapabilityQuadControlKHR: return "QuadControlKHR";
+    case CapabilityBFloat16TypeKHR: return "BFloat16TypeKHR";
+    case CapabilityBFloat16DotProductKHR: return "BFloat16DotProductKHR";
+    case CapabilityBFloat16CooperativeMatrixKHR: return "BFloat16CooperativeMatrixKHR";
     case CapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case CapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case CapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -4087,6 +4137,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityArithmeticFenceEXT: return "ArithmeticFenceEXT";
     case CapabilityFPGAClusterAttributesV2INTEL: return "FPGAClusterAttributesV2INTEL";
     case CapabilityFPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
+    case CapabilityTaskSequenceINTEL: return "TaskSequenceINTEL";
     case CapabilityFPMaxErrorINTEL: return "FPMaxErrorINTEL";
     case CapabilityFPGALatencyControlINTEL: return "FPGALatencyControlINTEL";
     case CapabilityFPGAArgumentInterfacesINTEL: return "FPGAArgumentInterfacesINTEL";
@@ -4097,7 +4148,9 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilitySubgroup2DBlockTransformINTEL: return "Subgroup2DBlockTransformINTEL";
     case CapabilitySubgroup2DBlockTransposeINTEL: return "Subgroup2DBlockTransposeINTEL";
     case CapabilitySubgroupMatrixMultiplyAccumulateINTEL: return "SubgroupMatrixMultiplyAccumulateINTEL";
+    case CapabilityTernaryBitwiseFunctionINTEL: return "TernaryBitwiseFunctionINTEL";
     case CapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
+    case CapabilityTensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";
     case CapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case CapabilityCacheControlsINTEL: return "CacheControlsINTEL";
     case CapabilityRegisterLimitsINTEL: return "RegisterLimitsINTEL";
@@ -4255,6 +4308,7 @@ inline const char* NamedMaximumNumberOfRegistersToString(NamedMaximumNumberOfReg
 
 inline const char* FPEncodingToString(FPEncoding value) {
     switch (value) {
+    case FPEncodingBFloat16KHR: return "BFloat16KHR";
     default: return "Unknown";
     }
 }
@@ -5062,6 +5116,11 @@ inline const char* OpToString(Op value) {
     case OpControlBarrierArriveINTEL: return "OpControlBarrierArriveINTEL";
     case OpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
     case OpArithmeticFenceEXT: return "OpArithmeticFenceEXT";
+    case OpTaskSequenceCreateINTEL: return "OpTaskSequenceCreateINTEL";
+    case OpTaskSequenceAsyncINTEL: return "OpTaskSequenceAsyncINTEL";
+    case OpTaskSequenceGetINTEL: return "OpTaskSequenceGetINTEL";
+    case OpTaskSequenceReleaseINTEL: return "OpTaskSequenceReleaseINTEL";
+    case OpTypeTaskSequenceINTEL: return "OpTypeTaskSequenceINTEL";
     case OpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case OpSubgroup2DBlockLoadINTEL: return "OpSubgroup2DBlockLoadINTEL";
     case OpSubgroup2DBlockLoadTransformINTEL: return "OpSubgroup2DBlockLoadTransformINTEL";
@@ -5069,6 +5128,7 @@ inline const char* OpToString(Op value) {
     case OpSubgroup2DBlockPrefetchINTEL: return "OpSubgroup2DBlockPrefetchINTEL";
     case OpSubgroup2DBlockStoreINTEL: return "OpSubgroup2DBlockStoreINTEL";
     case OpSubgroupMatrixMultiplyAccumulateINTEL: return "OpSubgroupMatrixMultiplyAccumulateINTEL";
+    case OpBitwiseFunctionINTEL: return "OpBitwiseFunctionINTEL";
     case OpGroupIMulKHR: return "OpGroupIMulKHR";
     case OpGroupFMulKHR: return "OpGroupFMulKHR";
     case OpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";
@@ -5077,6 +5137,7 @@ inline const char* OpToString(Op value) {
     case OpGroupLogicalAndKHR: return "OpGroupLogicalAndKHR";
     case OpGroupLogicalOrKHR: return "OpGroupLogicalOrKHR";
     case OpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
+    case OpRoundFToTF32INTEL: return "OpRoundFToTF32INTEL";
     case OpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case OpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
     default: return "Unknown";
