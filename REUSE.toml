@@ -1,0 +1,46 @@
+version = 1
+SPDX-PackageName = "SPIRV-Headers"
+SPDX-PackageSupplier = "The Khronos Group, Inc."
+SPDX-PackageDownloadLocation = "https://github.com/KhronosGroup/SPIRV-Headers"
+
+[[annotations]]
+path = ["**.md", "WORKSPACE", ".github/dependabot.yml"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "The Khronos Group, Inc."
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["include/**", "BUILD.bazel", "BUILD.gn", "CMakeLists.txt", "cmake/**", "tests/**", ".github/workflows/presubmit.yml", ".gitignore", ".gitattributes"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2015-2025 The Khronos Group, Inc."
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "tests/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2016-2025 The Khronos Group, Inc."
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "tools/buildHeaders/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2015-2025 The Khronos Group, Inc."
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "tools/buildHeaders/bin/generate_language_headers.py"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2017-2024 Google LLC"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "tools/buildHeaders/jsoncpp/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2007-2010 by Baptiste Lepilleur"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "include/spirv/spir-v.xml"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2015-2025 The Khronos Group, Inc."
+SPDX-License-Identifier = "MIT"
