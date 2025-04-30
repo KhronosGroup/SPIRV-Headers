@@ -21,7 +21,9 @@ path = [
     "cmake/SPIRV-Headers.pc.in",
     "tools/buildHeaders/CMakeLists.txt",
     "tools/buildHeaders/bin/makeExtinstHeaders.py",
-    "tools/buildHeaders/bin/makeHeaders"
+    "tools/buildHeaders/bin/makeHeaders",
+    "include/spirv/unified1/OpenCLDebugInfo100.h",
+    "include/spirv/unified1/DebugInfo.h"
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "The Khronos Group, Inc."

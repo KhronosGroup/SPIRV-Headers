@@ -5,6 +5,8 @@
 // KHRONOS STANDARDS. THE UNMODIFIED, NORMATIVE VERSIONS OF KHRONOS
 // SPECIFICATIONS AND HEADER INFORMATION ARE LOCATED AT
 //    https://www.khronos.org/registry/
+// 
+// 
 
 #ifndef SPIRV_UNIFIED1_NonSemanticClspvReflection_H_
 #define SPIRV_UNIFIED1_NonSemanticClspvReflection_H_
