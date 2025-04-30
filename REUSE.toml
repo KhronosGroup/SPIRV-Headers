@@ -15,6 +15,11 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = "The Khronos Group, Inc."
 SPDX-License-Identifier = "MIT"
 
+[[annotations]]
+path = ["include/spirv/1.0/spir*", "include/spirv/1.1/spir*", "include/spirv/1.2/spir*"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2014-2018 The Khronos Group, Inc."
+SPDX-License-Identifier = "MIT"
 
 [[annotations]]
 path = ["include/spirv/unified1/spir*", "include/spirv/unified1/spv.d"]
