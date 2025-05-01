@@ -16446,6 +16446,18 @@
           "version" : "None"
         },
         {
+          "enumerant" : "Int4TypeINTEL",
+          "value" : 5112,
+          "extensions" : [ "SPV_INTEL_int4" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Int4CooperativeMatrixINTEL",
+          "value" : 5114,
+          "extensions" : [ "SPV_INTEL_int4" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "BFloat16TypeKHR",
           "value" : 5116,
           "extensions" : [ "SPV_KHR_bfloat16" ],

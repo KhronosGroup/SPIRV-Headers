@@ -1122,6 +1122,8 @@ enum class Capability : unsigned {
     ShaderClockKHR = 5055,
     ShaderEnqueueAMDX = 5067,
     QuadControlKHR = 5087,
+    Int4TypeINTEL = 5112,
+    Int4CooperativeMatrixINTEL = 5114,
     BFloat16TypeKHR = 5116,
     BFloat16DotProductKHR = 5117,
     BFloat16CooperativeMatrixKHR = 5118,
@@ -4012,6 +4014,8 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::ShaderClockKHR: return "ShaderClockKHR";
     case Capability::ShaderEnqueueAMDX: return "ShaderEnqueueAMDX";
     case Capability::QuadControlKHR: return "QuadControlKHR";
+    case Capability::Int4TypeINTEL: return "Int4TypeINTEL";
+    case Capability::Int4CooperativeMatrixINTEL: return "Int4CooperativeMatrixINTEL";
     case Capability::BFloat16TypeKHR: return "BFloat16TypeKHR";
     case Capability::BFloat16DotProductKHR: return "BFloat16DotProductKHR";
     case Capability::BFloat16CooperativeMatrixKHR: return "BFloat16CooperativeMatrixKHR";
