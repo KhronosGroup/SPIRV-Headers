@@ -16454,6 +16454,7 @@
         {
           "enumerant" : "Int4CooperativeMatrixINTEL",
           "value" : 5114,
+          "capabilities" : [ "Int4TypeINTEL", "CooperativeMatrixKHR" ],
           "extensions" : [ "SPV_INTEL_int4" ],
           "version" : "None"
         },
