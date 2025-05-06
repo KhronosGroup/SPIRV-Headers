@@ -277,6 +277,8 @@ EnumValues NamedMaximumNumberOfRegistersParams;
 EnumValues MatrixMultiplyAccumulateOperandsParams;
 EnumValues RawAccessChainOperandsParams;
 EnumValues FPEncodingParams;
+EnumValues CooperativeVectorMatrixLayoutParams;
+EnumValues ComponentTypeParams;
 
 std::pair<bool, std::string> ReadFile(const std::string& path)
 {
@@ -453,6 +455,10 @@ ClassOptionality ToOperandClassAndOptionality(const std::string& operandKind, co
             type = OperandRawAccessChainOperands;
         } else if (operandKind == "FPEncoding") {
             type = OperandFPEncoding;
+        } else if (operandKind == "CooperativeVectorMatrixLayout") {
+            type = OperandCooperativeVectorMatrixLayout;
+        } else if (operandKind == "ComponentType") {
+            type = OperandComponentType;
         }
 
         if (type == OperandNone) {
@@ -845,6 +851,10 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             establishOperandClass(enumName, OperandRawAccessChainOperands, &RawAccessChainOperandsParams, operandEnum, category);
         } else if (enumName == "FPEncoding") {
             establishOperandClass(enumName, OperandFPEncoding, &FPEncodingParams, operandEnum, category);
+        } else if (enumName == "CooperativeVectorMatrixLayout") {
+            establishOperandClass(enumName, OperandCooperativeVectorMatrixLayout, &CooperativeVectorMatrixLayoutParams, operandEnum, category);
+        } else if (enumName == "ComponentType") {
+            establishOperandClass(enumName, OperandComponentType, &ComponentTypeParams, operandEnum, category);
         }
     }
 
