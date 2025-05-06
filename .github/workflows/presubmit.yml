@@ -43,7 +43,7 @@ jobs:
         run: |
           grep \"\'".*"\'\" include/spirv/unified1/*.json >build/bad-asciidoc.txt || true
           if [ 0 -lt $(cat build/bad-asciidoc.txt | wc -l) ]; then
-            echo "Legacy asciidoc italics detected, like \"'foo'\". Use _foo_ instead"
+            echo "Legacy asciidoc italics detected, like \"'foo'\". Text formating aren't used anymore. Please use \"foo\" instead."
             head -10 build/bad-asciidoc.txt
             exit 1
           fi
