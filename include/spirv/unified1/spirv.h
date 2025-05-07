@@ -1126,6 +1126,8 @@ typedef enum SpvCapability_ {
     SpvCapabilityShaderClockKHR = 5055,
     SpvCapabilityShaderEnqueueAMDX = 5067,
     SpvCapabilityQuadControlKHR = 5087,
+    SpvCapabilityInt4TypeINTEL = 5112,
+    SpvCapabilityInt4CooperativeMatrixINTEL = 5114,
     SpvCapabilityBFloat16TypeKHR = 5116,
     SpvCapabilityBFloat16DotProductKHR = 5117,
     SpvCapabilityBFloat16CooperativeMatrixKHR = 5118,
@@ -4016,6 +4018,8 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityShaderClockKHR: return "ShaderClockKHR";
     case SpvCapabilityShaderEnqueueAMDX: return "ShaderEnqueueAMDX";
     case SpvCapabilityQuadControlKHR: return "QuadControlKHR";
+    case SpvCapabilityInt4TypeINTEL: return "Int4TypeINTEL";
+    case SpvCapabilityInt4CooperativeMatrixINTEL: return "Int4CooperativeMatrixINTEL";
     case SpvCapabilityBFloat16TypeKHR: return "BFloat16TypeKHR";
     case SpvCapabilityBFloat16DotProductKHR: return "BFloat16DotProductKHR";
     case SpvCapabilityBFloat16CooperativeMatrixKHR: return "BFloat16CooperativeMatrixKHR";

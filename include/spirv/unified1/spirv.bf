@@ -1156,6 +1156,8 @@ namespace Spv
             ShaderClockKHR = 5055,
             ShaderEnqueueAMDX = 5067,
             QuadControlKHR = 5087,
+            Int4TypeINTEL = 5112,
+            Int4CooperativeMatrixINTEL = 5114,
             BFloat16TypeKHR = 5116,
             BFloat16DotProductKHR = 5117,
             BFloat16CooperativeMatrixKHR = 5118,
