@@ -102,6 +102,7 @@ enum OperandClass {
     OperandCooperativeMatrixReduce,
     OperandTensorClampMode,
     OperandTensorAddressingOperands,
+    OperandTensorOperands,
     OperandInitializationModeQualifier,
     OperandHostAccessQualifier,
     OperandLoadCacheControl,

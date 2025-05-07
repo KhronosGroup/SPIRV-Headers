@@ -269,6 +269,7 @@ EnumValues CooperativeMatrixUseParams;
 EnumValues CooperativeMatrixReduceParams;
 EnumValues TensorClampModeParams;
 EnumValues TensorAddressingOperandsParams;
+EnumValues TensorOperandsParams;
 EnumValues InitializationModeQualifierParams;
 EnumValues HostAccessQualifierParams;
 EnumValues LoadCacheControlParams;
@@ -439,6 +440,8 @@ ClassOptionality ToOperandClassAndOptionality(const std::string& operandKind, co
             type = OperandCooperativeMatrixReduce;
         } else if (operandKind == "TensorClampMode") {
             type = OperandTensorClampMode;
+        } else if (operandKind == "TensorOperands") {
+            type = OperandTensorOperands;
         } else if (operandKind == "InitializationModeQualifier") {
             type = OperandInitializationModeQualifier;
         } else if (operandKind == "HostAccessQualifier") {
@@ -835,6 +838,8 @@ void jsonToSpirv(const std::string& jsonPath, bool buildingHeaders)
             establishOperandClass(enumName, OperandCooperativeMatrixReduce, &CooperativeMatrixReduceParams, operandEnum, category);
         } else if (enumName == "TensorClampMode") {
             establishOperandClass(enumName, OperandTensorClampMode, &TensorClampModeParams, operandEnum, category);
+        } else if (enumName == "TensorOperands") {
+            establishOperandClass(enumName, OperandTensorOperands, &TensorOperandsParams, operandEnum, category);
         } else if (enumName == "InitializationModeQualifier") {
             establishOperandClass(enumName, OperandInitializationModeQualifier, &InitializationModeQualifierParams, operandEnum, category);
         } else if (enumName == "HostAccessQualifier") {
