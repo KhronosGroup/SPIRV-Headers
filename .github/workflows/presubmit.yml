@@ -38,6 +38,16 @@ jobs:
           ./bin/makeHeaders
       - name: Check generated headers
         run: git diff --exit-code
+      - name: Check for legacy asciidoc in JSON
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          grep \"\'".*"\'\" include/spirv/unified1/*.json >build/bad-asciidoc.txt || true
+          if [ 0 -lt $(cat build/bad-asciidoc.txt | wc -l) ]; then
+            echo "Legacy asciidoc italics detected, like \"'foo'\". Text formating aren't used anymore. Please use \"foo\" instead."
+            head -10 build/bad-asciidoc.txt
+            exit 1
+          fi
+
 
   test_cmake_min_required:
     runs-on: ubuntu-latest
