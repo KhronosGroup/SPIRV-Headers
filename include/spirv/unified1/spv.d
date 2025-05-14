@@ -1111,6 +1111,9 @@ enum Capability : uint
     TileImageColorReadAccessEXT = 4166,
     TileImageDepthReadAccessEXT = 4167,
     TileImageStencilReadAccessEXT = 4168,
+    TensorsARM = 4174,
+    StorageTensorArrayDynamicIndexingARM = 4175,
+    StorageTensorArrayNonUniformIndexingARM = 4176,
     CooperativeMatrixLayoutsARM = 4201,
     FragmentShadingRateKHR = 4422,
     SubgroupBallotKHR = 4423,
@@ -1523,6 +1526,26 @@ enum TensorAddressingOperandsMask : uint
     MaskNone = 0,
     TensorView = 0x00000001,
     DecodeFunc = 0x00000002,
+}
+
+enum TensorOperandsShift : uint
+{
+    NontemporalARM = 0,
+    OutOfBoundsValueARM = 1,
+    MakeElementAvailableARM = 2,
+    MakeElementVisibleARM = 3,
+    NonPrivateElementARM = 4,
+    Max = 0x7fffffff,
+}
+
+enum TensorOperandsMask : uint
+{
+    MaskNone = 0,
+    NontemporalARM = 0x00000001,
+    OutOfBoundsValueARM = 0x00000002,
+    MakeElementAvailableARM = 0x00000004,
+    MakeElementVisibleARM = 0x00000008,
+    NonPrivateElementARM = 0x00000010,
 }
 
 enum InitializationModeQualifier : uint
@@ -2002,6 +2025,10 @@ enum Op : uint
     OpColorAttachmentReadEXT = 4160,
     OpDepthAttachmentReadEXT = 4161,
     OpStencilAttachmentReadEXT = 4162,
+    OpTypeTensorARM = 4163,
+    OpTensorReadARM = 4164,
+    OpTensorWriteARM = 4165,
+    OpTensorQuerySizeARM = 4166,
     OpTerminateInvocation = 4416,
     OpTypeUntypedPointerKHR = 4417,
     OpUntypedVariableKHR = 4418,
