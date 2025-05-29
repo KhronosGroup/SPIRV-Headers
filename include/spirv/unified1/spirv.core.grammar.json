@@ -17489,6 +17489,7 @@
           "enumerant" : "BindlessImagesINTEL",
           "value" : 6528,
           "extensions" : [ "SPV_INTEL_bindless_images" ],
+          "provisional" : true,
           "version" : "None"
         }
       ]
