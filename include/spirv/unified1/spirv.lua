@@ -1270,6 +1270,7 @@ spv = {
         MaskedGatherScatterINTEL = 6427,
         CacheControlsINTEL = 6441,
         RegisterLimitsINTEL = 6460,
+        BindlessImagesINTEL = 6528,
         Max = 0x7fffffff,
     },
 
@@ -2390,6 +2391,9 @@ spv = {
         OpRoundFToTF32INTEL = 6426,
         OpMaskedGatherINTEL = 6428,
         OpMaskedScatterINTEL = 6429,
+        OpConvertHandleToImageINTEL = 6529,
+        OpConvertHandleToSamplerINTEL = 6530,
+        OpConvertHandleToSampledImageINTEL = 6531,
         Max = 0x7fffffff,
     },
 

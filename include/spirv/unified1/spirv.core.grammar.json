@@ -10845,6 +10845,42 @@
       ],
       "capabilities" : [ "MaskedGatherScatterINTEL" ],
       "version" : "None"
+    },
+    {
+      "opname" : "OpConvertHandleToImageINTEL",
+      "class"  : "Image",
+      "opcode" : 6529,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",           "name" : "Operand" }
+      ],
+      "capabilities" : [ "BindlessImagesINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConvertHandleToSamplerINTEL",
+      "class"  : "Image",
+      "opcode" : 6530,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",           "name" : "Operand" }
+      ],
+      "capabilities" : [ "BindlessImagesINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConvertHandleToSampledImageINTEL",
+      "class"  : "Image",
+      "opcode" : 6531,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",           "name" : "Operand" }
+      ],
+      "capabilities" : [ "BindlessImagesINTEL" ],
+      "version" : "None"
     }
   ],
   "operand_kinds" : [
@@ -17444,6 +17480,12 @@
           "enumerant" : "RegisterLimitsINTEL",
           "value" : 6460,
           "extensions" : [ "SPV_INTEL_maximum_registers" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BindlessImagesINTEL",
+          "value" : 6528,
+          "extensions" : [ "SPV_INTEL_bindless_images" ],
           "version" : "None"
         }
       ]

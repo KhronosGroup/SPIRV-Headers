@@ -1279,6 +1279,7 @@ enum class Capability : unsigned {
     MaskedGatherScatterINTEL = 6427,
     CacheControlsINTEL = 6441,
     RegisterLimitsINTEL = 6460,
+    BindlessImagesINTEL = 6528,
     Max = 0x7fffffff,
 };
 
@@ -2399,6 +2400,9 @@ enum class Op : unsigned {
     OpRoundFToTF32INTEL = 6426,
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
+    OpConvertHandleToImageINTEL = 6529,
+    OpConvertHandleToSamplerINTEL = 6530,
+    OpConvertHandleToSampledImageINTEL = 6531,
     Max = 0x7fffffff,
 };
 
@@ -3208,6 +3212,9 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpRoundFToTF32INTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpConvertHandleToImageINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpConvertHandleToSamplerINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpConvertHandleToSampledImageINTEL: *hasResult = true; *hasResultType = true; break;
     }
 }
 inline const char* SourceLanguageToString(SourceLanguage value) {
@@ -4174,6 +4181,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::MaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case Capability::CacheControlsINTEL: return "CacheControlsINTEL";
     case Capability::RegisterLimitsINTEL: return "RegisterLimitsINTEL";
+    case Capability::BindlessImagesINTEL: return "BindlessImagesINTEL";
     default: return "Unknown";
     }
 }
@@ -5164,6 +5172,9 @@ inline const char* OpToString(Op value) {
     case Op::OpRoundFToTF32INTEL: return "OpRoundFToTF32INTEL";
     case Op::OpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case Op::OpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
+    case Op::OpConvertHandleToImageINTEL: return "OpConvertHandleToImageINTEL";
+    case Op::OpConvertHandleToSamplerINTEL: return "OpConvertHandleToSamplerINTEL";
+    case Op::OpConvertHandleToSampledImageINTEL: return "OpConvertHandleToSampledImageINTEL";
     default: return "Unknown";
     }
 }
