@@ -10869,6 +10869,7 @@
         { "kind" : "IdRef",           "name" : "Operand" }
       ],
       "capabilities" : [ "BindlessImagesINTEL" ],
+      "provisional"  : true,
       "version" : "None"
     },
     {
