@@ -3212,9 +3212,9 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpRoundFToTF32INTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
-    case OpConvertHandleToImageINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpConvertHandleToSamplerINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpConvertHandleToSampledImageINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpConvertHandleToImageINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpConvertHandleToSamplerINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpConvertHandleToSampledImageINTEL: *hasResult = true; *hasResultType = true; break;
     }
 }
 inline const char* SourceLanguageToString(SourceLanguage value) {
