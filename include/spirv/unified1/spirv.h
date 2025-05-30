@@ -1283,6 +1283,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityMaskedGatherScatterINTEL = 6427,
     SpvCapabilityCacheControlsINTEL = 6441,
     SpvCapabilityRegisterLimitsINTEL = 6460,
+    SpvCapabilityBindlessImagesINTEL = 6528,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
 
@@ -2403,6 +2404,9 @@ typedef enum SpvOp_ {
     SpvOpRoundFToTF32INTEL = 6426,
     SpvOpMaskedGatherINTEL = 6428,
     SpvOpMaskedScatterINTEL = 6429,
+    SpvOpConvertHandleToImageINTEL = 6529,
+    SpvOpConvertHandleToSamplerINTEL = 6530,
+    SpvOpConvertHandleToSampledImageINTEL = 6531,
     SpvOpMax = 0x7fffffff,
 } SpvOp;
 
@@ -3212,6 +3216,9 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpRoundFToTF32INTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpConvertHandleToImageINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpConvertHandleToSamplerINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpConvertHandleToSampledImageINTEL: *hasResult = true; *hasResultType = true; break;
     }
 }
 inline const char* SpvSourceLanguageToString(SpvSourceLanguage value) {
@@ -4178,6 +4185,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case SpvCapabilityCacheControlsINTEL: return "CacheControlsINTEL";
     case SpvCapabilityRegisterLimitsINTEL: return "RegisterLimitsINTEL";
+    case SpvCapabilityBindlessImagesINTEL: return "BindlessImagesINTEL";
     default: return "Unknown";
     }
 }
@@ -5168,6 +5176,9 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpRoundFToTF32INTEL: return "OpRoundFToTF32INTEL";
     case SpvOpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case SpvOpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
+    case SpvOpConvertHandleToImageINTEL: return "OpConvertHandleToImageINTEL";
+    case SpvOpConvertHandleToSamplerINTEL: return "OpConvertHandleToSamplerINTEL";
+    case SpvOpConvertHandleToSampledImageINTEL: return "OpConvertHandleToSampledImageINTEL";
     default: return "Unknown";
     }
 }

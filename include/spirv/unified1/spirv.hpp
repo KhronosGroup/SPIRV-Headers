@@ -1279,6 +1279,7 @@ enum Capability {
     CapabilityMaskedGatherScatterINTEL = 6427,
     CapabilityCacheControlsINTEL = 6441,
     CapabilityRegisterLimitsINTEL = 6460,
+    CapabilityBindlessImagesINTEL = 6528,
     CapabilityMax = 0x7fffffff,
 };
 
@@ -2399,6 +2400,9 @@ enum Op {
     OpRoundFToTF32INTEL = 6426,
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
+    OpConvertHandleToImageINTEL = 6529,
+    OpConvertHandleToSamplerINTEL = 6530,
+    OpConvertHandleToSampledImageINTEL = 6531,
     OpMax = 0x7fffffff,
 };
 
@@ -3208,6 +3212,9 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpRoundFToTF32INTEL: *hasResult = true; *hasResultType = true; break;
     case OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpConvertHandleToImageINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpConvertHandleToSamplerINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpConvertHandleToSampledImageINTEL: *hasResult = true; *hasResultType = true; break;
     }
 }
 inline const char* SourceLanguageToString(SourceLanguage value) {
@@ -4174,6 +4181,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
     case CapabilityCacheControlsINTEL: return "CacheControlsINTEL";
     case CapabilityRegisterLimitsINTEL: return "RegisterLimitsINTEL";
+    case CapabilityBindlessImagesINTEL: return "BindlessImagesINTEL";
     default: return "Unknown";
     }
 }
@@ -5164,6 +5172,9 @@ inline const char* OpToString(Op value) {
     case OpRoundFToTF32INTEL: return "OpRoundFToTF32INTEL";
     case OpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case OpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
+    case OpConvertHandleToImageINTEL: return "OpConvertHandleToImageINTEL";
+    case OpConvertHandleToSamplerINTEL: return "OpConvertHandleToSamplerINTEL";
+    case OpConvertHandleToSampledImageINTEL: return "OpConvertHandleToSampledImageINTEL";
     default: return "Unknown";
     }
 }
