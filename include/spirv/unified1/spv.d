@@ -556,6 +556,7 @@ enum Decoration : uint
     MaxByteOffset = 45,
     AlignmentId = 46,
     MaxByteOffsetId = 47,
+    SaturatedToLargestFloat8NormalConversionEXT = 4216,
     NoSignedWrap = 4469,
     NoUnsignedWrap = 4470,
     WeightTextureQCOM = 4487,
@@ -1099,6 +1100,8 @@ enum Capability : uint
     StorageTensorArrayDynamicIndexingARM = 4175,
     StorageTensorArrayNonUniformIndexingARM = 4176,
     CooperativeMatrixLayoutsARM = 4201,
+    Float8EXT = 4212,
+    Float8CooperativeMatrixEXT = 4213,
     FragmentShadingRateKHR = 4422,
     SubgroupBallotKHR = 4423,
     DrawParameters = 4427,
@@ -1629,6 +1632,8 @@ enum RawAccessChainOperandsMask : uint
 enum FPEncoding : uint
 {
     BFloat16KHR = 0,
+    Float8E4M3EXT = 4214,
+    Float8E5M2EXT = 4215,
     Max = 0x7fffffff,
 }
 
