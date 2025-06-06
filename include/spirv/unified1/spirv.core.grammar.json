@@ -16267,6 +16267,7 @@
         {
           "enumerant" : "Float8CooperativeMatrixEXT",
           "value" : 4213,
+          "capabilities" : [ "Float8EXT", "CooperativeMatrixKHR" ],
           "extensions" : [ "SPV_EXT_float8"],
           "version" : "None"
         },
