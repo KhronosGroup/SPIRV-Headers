@@ -117,6 +117,10 @@
       "heading" : "Tensor Instructions"
     },
     {
+      "tag"     : "Graph",
+      "heading" : "Graph Instructions"
+    },
+    {
       "tag"     : "Reserved",
       "heading" : "Reserved Instructions"
     }
@@ -4472,6 +4476,85 @@
         { "kind" : "IdRef",        "name" : "Dimension" }
       ],
       "capabilities" : [ "TensorsARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphConstantARM",
+      "class"  : "Graph",
+      "opcode" : 4181,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralInteger", "name" : "GraphConstantID" }
+      ],
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphEntryPointARM",
+      "class"  : "Graph",
+      "opcode" : 4182,
+      "operands" : [
+        { "kind" : "IdRef",                              "name" : "Graph" },
+        { "kind" : "LiteralString",                      "name" : "Name" },
+        { "kind" : "IdRef",          "quantifier" : "*", "name" : "Interface" }
+      ],
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphARM",
+      "class"  : "Graph",
+      "opcode" : 4183,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphInputARM",
+      "class"  : "Graph",
+      "opcode" : 4184,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",          "name" : "InputIndex" },
+        { "kind" : "IdRef",          "quantifier" : "*", "name" : "ElementIndex" }
+      ],
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphSetOutputARM",
+      "class"  : "Graph",
+      "opcode" : 4185,
+      "operands" : [
+        { "kind" : "IdRef", "name": "Value" },
+        { "kind" : "IdRef", "name" : "OutputIndex" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "ElementIndex" }
+      ],
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGraphEndARM",
+      "class"  : "Graph",
+      "opcode" : 4186,
+      "capabilities" : [ "GraphARM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTypeGraphARM",
+      "class"  : "Type-Declaration",
+      "opcode" : 4190,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralInteger",               "name" : "NumInputs" },
+        { "kind" : "IdRef",    "quantifier" : "*", "name" : "InOutTypes" }
+      ],
+      "capabilities" : [ "GraphARM" ],
       "version" : "None"
     },
     {
@@ -16250,6 +16333,12 @@
           "enumerant" : "StorageTensorArrayNonUniformIndexingARM",
           "value" : 4176,
           "extensions" : [ "SPV_ARM_tensors"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GraphARM",
+          "value" : 4191,
+          "extensions" : [ "SPV_ARM_graph"],
           "version" : "None"
         },
         {

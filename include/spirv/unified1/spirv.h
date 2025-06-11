@@ -1067,6 +1067,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityTensorsARM = 4174,
     SpvCapabilityStorageTensorArrayDynamicIndexingARM = 4175,
     SpvCapabilityStorageTensorArrayNonUniformIndexingARM = 4176,
+    SpvCapabilityGraphARM = 4191,
     SpvCapabilityCooperativeMatrixLayoutsARM = 4201,
     SpvCapabilityFloat8EXT = 4212,
     SpvCapabilityFloat8CooperativeMatrixEXT = 4213,
@@ -1951,6 +1952,13 @@ typedef enum SpvOp_ {
     SpvOpTensorReadARM = 4164,
     SpvOpTensorWriteARM = 4165,
     SpvOpTensorQuerySizeARM = 4166,
+    SpvOpGraphConstantARM = 4181,
+    SpvOpGraphEntryPointARM = 4182,
+    SpvOpGraphARM = 4183,
+    SpvOpGraphInputARM = 4184,
+    SpvOpGraphSetOutputARM = 4185,
+    SpvOpGraphEndARM = 4186,
+    SpvOpTypeGraphARM = 4190,
     SpvOpTerminateInvocation = 4416,
     SpvOpTypeUntypedPointerKHR = 4417,
     SpvOpUntypedVariableKHR = 4418,
@@ -2774,6 +2782,13 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpTensorReadARM: *hasResult = true; *hasResultType = true; break;
     case SpvOpTensorWriteARM: *hasResult = false; *hasResultType = false; break;
     case SpvOpTensorQuerySizeARM: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGraphConstantARM: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGraphEntryPointARM: *hasResult = false; *hasResultType = false; break;
+    case SpvOpGraphARM: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGraphInputARM: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGraphSetOutputARM: *hasResult = false; *hasResultType = false; break;
+    case SpvOpGraphEndARM: *hasResult = false; *hasResultType = false; break;
+    case SpvOpTypeGraphARM: *hasResult = true; *hasResultType = false; break;
     case SpvOpTerminateInvocation: *hasResult = false; *hasResultType = false; break;
     case SpvOpTypeUntypedPointerKHR: *hasResult = true; *hasResultType = false; break;
     case SpvOpUntypedVariableKHR: *hasResult = true; *hasResultType = true; break;
@@ -4002,6 +4017,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityTensorsARM: return "TensorsARM";
     case SpvCapabilityStorageTensorArrayDynamicIndexingARM: return "StorageTensorArrayDynamicIndexingARM";
     case SpvCapabilityStorageTensorArrayNonUniformIndexingARM: return "StorageTensorArrayNonUniformIndexingARM";
+    case SpvCapabilityGraphARM: return "GraphARM";
     case SpvCapabilityCooperativeMatrixLayoutsARM: return "CooperativeMatrixLayoutsARM";
     case SpvCapabilityFloat8EXT: return "Float8EXT";
     case SpvCapabilityFloat8CooperativeMatrixEXT: return "Float8CooperativeMatrixEXT";
@@ -4739,6 +4755,13 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpTensorReadARM: return "OpTensorReadARM";
     case SpvOpTensorWriteARM: return "OpTensorWriteARM";
     case SpvOpTensorQuerySizeARM: return "OpTensorQuerySizeARM";
+    case SpvOpGraphConstantARM: return "OpGraphConstantARM";
+    case SpvOpGraphEntryPointARM: return "OpGraphEntryPointARM";
+    case SpvOpGraphARM: return "OpGraphARM";
+    case SpvOpGraphInputARM: return "OpGraphInputARM";
+    case SpvOpGraphSetOutputARM: return "OpGraphSetOutputARM";
+    case SpvOpGraphEndARM: return "OpGraphEndARM";
+    case SpvOpTypeGraphARM: return "OpTypeGraphARM";
     case SpvOpTerminateInvocation: return "OpTerminateInvocation";
     case SpvOpTypeUntypedPointerKHR: return "OpTypeUntypedPointerKHR";
     case SpvOpUntypedVariableKHR: return "OpUntypedVariableKHR";

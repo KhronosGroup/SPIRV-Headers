@@ -1063,6 +1063,7 @@ enum Capability {
     CapabilityTensorsARM = 4174,
     CapabilityStorageTensorArrayDynamicIndexingARM = 4175,
     CapabilityStorageTensorArrayNonUniformIndexingARM = 4176,
+    CapabilityGraphARM = 4191,
     CapabilityCooperativeMatrixLayoutsARM = 4201,
     CapabilityFloat8EXT = 4212,
     CapabilityFloat8CooperativeMatrixEXT = 4213,
@@ -1947,6 +1948,13 @@ enum Op {
     OpTensorReadARM = 4164,
     OpTensorWriteARM = 4165,
     OpTensorQuerySizeARM = 4166,
+    OpGraphConstantARM = 4181,
+    OpGraphEntryPointARM = 4182,
+    OpGraphARM = 4183,
+    OpGraphInputARM = 4184,
+    OpGraphSetOutputARM = 4185,
+    OpGraphEndARM = 4186,
+    OpTypeGraphARM = 4190,
     OpTerminateInvocation = 4416,
     OpTypeUntypedPointerKHR = 4417,
     OpUntypedVariableKHR = 4418,
@@ -2770,6 +2778,13 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpTensorReadARM: *hasResult = true; *hasResultType = true; break;
     case OpTensorWriteARM: *hasResult = false; *hasResultType = false; break;
     case OpTensorQuerySizeARM: *hasResult = true; *hasResultType = true; break;
+    case OpGraphConstantARM: *hasResult = true; *hasResultType = true; break;
+    case OpGraphEntryPointARM: *hasResult = false; *hasResultType = false; break;
+    case OpGraphARM: *hasResult = true; *hasResultType = true; break;
+    case OpGraphInputARM: *hasResult = true; *hasResultType = true; break;
+    case OpGraphSetOutputARM: *hasResult = false; *hasResultType = false; break;
+    case OpGraphEndARM: *hasResult = false; *hasResultType = false; break;
+    case OpTypeGraphARM: *hasResult = true; *hasResultType = false; break;
     case OpTerminateInvocation: *hasResult = false; *hasResultType = false; break;
     case OpTypeUntypedPointerKHR: *hasResult = true; *hasResultType = false; break;
     case OpUntypedVariableKHR: *hasResult = true; *hasResultType = true; break;
@@ -3998,6 +4013,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityTensorsARM: return "TensorsARM";
     case CapabilityStorageTensorArrayDynamicIndexingARM: return "StorageTensorArrayDynamicIndexingARM";
     case CapabilityStorageTensorArrayNonUniformIndexingARM: return "StorageTensorArrayNonUniformIndexingARM";
+    case CapabilityGraphARM: return "GraphARM";
     case CapabilityCooperativeMatrixLayoutsARM: return "CooperativeMatrixLayoutsARM";
     case CapabilityFloat8EXT: return "Float8EXT";
     case CapabilityFloat8CooperativeMatrixEXT: return "Float8CooperativeMatrixEXT";
@@ -4735,6 +4751,13 @@ inline const char* OpToString(Op value) {
     case OpTensorReadARM: return "OpTensorReadARM";
     case OpTensorWriteARM: return "OpTensorWriteARM";
     case OpTensorQuerySizeARM: return "OpTensorQuerySizeARM";
+    case OpGraphConstantARM: return "OpGraphConstantARM";
+    case OpGraphEntryPointARM: return "OpGraphEntryPointARM";
+    case OpGraphARM: return "OpGraphARM";
+    case OpGraphInputARM: return "OpGraphInputARM";
+    case OpGraphSetOutputARM: return "OpGraphSetOutputARM";
+    case OpGraphEndARM: return "OpGraphEndARM";
+    case OpTypeGraphARM: return "OpTypeGraphARM";
     case OpTerminateInvocation: return "OpTerminateInvocation";
     case OpTypeUntypedPointerKHR: return "OpTypeUntypedPointerKHR";
     case OpUntypedVariableKHR: return "OpUntypedVariableKHR";
