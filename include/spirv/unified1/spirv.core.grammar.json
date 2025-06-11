@@ -4485,7 +4485,7 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "LiteralInteger", "name" : "'GraphConstantID'" }
+        { "kind" : "LiteralInteger", "name" : "GraphConstantID" }
       ],
       "capabilities" : [ "GraphARM" ],
       "version" : "None"
@@ -4495,9 +4495,9 @@
       "class"  : "Graph",
       "opcode" : 4182,
       "operands" : [
-        { "kind" : "IdRef",                              "name" : "'Graph'" },
-        { "kind" : "LiteralString",                      "name" : "'Name'" },
-        { "kind" : "IdRef",          "quantifier" : "*", "name" : "'Interface'" }
+        { "kind" : "IdRef",                              "name" : "Graph" },
+        { "kind" : "LiteralString",                      "name" : "Name" },
+        { "kind" : "IdRef",          "quantifier" : "*", "name" : "Interface" }
       ],
       "capabilities" : [ "GraphARM" ],
       "version" : "None"
@@ -4520,8 +4520,8 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdRef",          "name" : "'InputIndex'" },
-        { "kind" : "IdRef",          "quantifier" : "*", "name" : "'ElementIndex'" }
+        { "kind" : "IdRef",          "name" : "InputIndex" },
+        { "kind" : "IdRef",          "quantifier" : "*", "name" : "ElementIndex" }
       ],
       "capabilities" : [ "GraphARM" ],
       "version" : "None"
@@ -4531,9 +4531,9 @@
       "class"  : "Graph",
       "opcode" : 4185,
       "operands" : [
-        { "kind" : "IdRef", "name": "'Value'" },
-        { "kind" : "IdRef", "name" : "'OutputIndex'" },
-        { "kind" : "IdRef", "quantifier" : "*", "name" : "'ElementIndex'" }
+        { "kind" : "IdRef", "name": "Value" },
+        { "kind" : "IdRef", "name" : "OutputIndex" },
+        { "kind" : "IdRef", "quantifier" : "*", "name" : "ElementIndex" }
       ],
       "capabilities" : [ "GraphARM" ],
       "version" : "None"
@@ -4551,8 +4551,8 @@
       "opcode" : 4190,
       "operands" : [
         { "kind" : "IdResult" },
-        { "kind" : "LiteralInteger",               "name" : "'NumInputs'" },
-        { "kind" : "IdRef",    "quantifier" : "*", "name" : "'InOut 0 Type', +\n'InOut 1 Type', +\n..." }
+        { "kind" : "LiteralInteger",               "name" : "NumInputs" },
+        { "kind" : "IdRef",    "quantifier" : "*", "name" : "InOutTypes" }
       ],
       "capabilities" : [ "GraphARM" ],
       "version" : "None"
