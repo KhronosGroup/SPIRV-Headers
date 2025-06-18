@@ -43,8 +43,9 @@ def make_path_to_file(f):
 class ExtInstGrammar:
     """The grammar for an extended instruction set"""
 
-    def __init__(self, name, copyright, instructions, operand_kinds, version = None, revision = None):
+    def __init__(self, name, guard_name, copyright, instructions, operand_kinds, version = None, revision = None):
        self.name = name
+       self.guard_name = guard_name
        self.copyright = copyright
        self.instructions = instructions
        self.operand_kinds = operand_kinds
@@ -90,7 +91,7 @@ class LangGenerator:
             parts.extend(["{}{}".format(self.comment_prefix(), f) for f in grammar.copyright])
         parts.append('')
 
-        guard = 'SPIRV_UNIFIED1_{}_H_'.format(grammar.name)
+        guard = 'SPIRV_UNIFIED1_{}_H_'.format(grammar.guard_name)
         if self.uses_guards:
             parts.append('#ifndef {}'.format(guard))
             parts.append('#define {}'.format(guard))
@@ -192,7 +193,10 @@ def main():
         else:
           operand_kinds = []
 
+        sanitized_guard_name = args.extinst_output_base.replace('.', '_')
+
         grammar = ExtInstGrammar(name = args.extinst_name,
+                                 guard_name = sanitized_guard_name,
                                  copyright = copyright,
                                  instructions = grammar_json['instructions'],
                                  operand_kinds = operand_kinds,
