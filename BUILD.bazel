@@ -123,6 +123,11 @@ filegroup(
     srcs = ["include/spirv/unified1/extinst.spv-amd-shader-trinary-minmax.grammar.json"],
 )
 
+filegroup(
+    name = "spirv_ext_inst_tosa_001000_1",
+    srcs = ["include/spirv/unified1/extinst.tosa.001000.1.grammar.json"],
+)
+
 cc_library(
     name = "spirv_common_headers",
     hdrs = [
