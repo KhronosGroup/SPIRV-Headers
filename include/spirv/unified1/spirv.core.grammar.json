@@ -10786,6 +10786,7 @@
         { "kind" : "LiteralString", "name" : "Name" }
       ],
       "capabilities" : [ "SpecConditionalINTEL" ],
+      "provisional" : true,
       "version" : "None"
     },
     {
@@ -10800,6 +10801,7 @@
         { "kind" : "IdRef",          "quantifier" : "*", "name" : "Interface" }
       ],
       "capabilities" : [ "SpecConditionalINTEL" ],
+      "provisional" : true,
       "version" : "None"
     },
     {
@@ -10811,6 +10813,7 @@
         { "kind" : "Capability", "name" : "Capability" }
       ],
       "capabilities" : [ "SpecConditionalINTEL" ],
+      "provisional" : true,
       "version" : "None"
     },
     {
@@ -10824,6 +10827,7 @@
         { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "Features" }
       ],
       "capabilities" : [ "FunctionVariantsINTEL" ],
+      "provisional" : true,
       "version": "None"
     },
     {
@@ -10839,6 +10843,7 @@
         { "kind" : "LiteralInteger", "name" : "Architecture" }
       ],
       "capabilities" : [ "FunctionVariantsINTEL" ],
+      "provisional" : true,
       "version": "None"
     },
     {
@@ -10851,6 +10856,7 @@
         { "kind" : "Capability", "quantifier" : "*", "name" : "Capabilities" }
       ],
       "capabilities" : [ "FunctionVariantsINTEL" ],
+      "provisional" : true,
       "version": "None"
     },
     {
@@ -10863,6 +10869,7 @@
         { "kind" : "IdRef", "quantifier" : "*", "name" : "Condition 0, Operand 0, +\nCondition 1, Operand 1, +\n..." }
       ],
       "capabilities" : [ "SpecConditionalINTEL" ],
+      "provisional" : true,
       "version" : "None"
     },
     {
@@ -14995,6 +15002,7 @@
             { "kind" : "IdRef", "name" : "Condition" }
           ],
           "capabilities" : [ "SpecConditionalINTEL" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
@@ -17664,12 +17672,15 @@
           "enumerant" : "SpecConditionalINTEL",
           "value" : 6245,
           "extensions" : [ "SPV_INTEL_function_variants" ],
+          "provisional" : true,
           "version": "None"
         },
         {
           "enumerant" : "FunctionVariantsINTEL",
           "value" : 6246,
+          "capabilities" : [ "SpecConditionalINTEL" ],
           "extensions" : [ "SPV_INTEL_function_variants" ],
+          "provisional" : true,
           "version": "None"
         },
         {
