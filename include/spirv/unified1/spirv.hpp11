@@ -638,6 +638,7 @@ enum class Decoration : unsigned {
     HostAccessINTEL = 6188,
     InitModeINTEL = 6190,
     ImplementInRegisterMapINTEL = 6191,
+    ConditionalINTEL = 6247,
     CacheControlLoadINTEL = 6442,
     CacheControlStoreINTEL = 6443,
     Max = 0x7fffffff,
@@ -1278,6 +1279,8 @@ enum class Capability : unsigned {
     Subgroup2DBlockTransposeINTEL = 6230,
     SubgroupMatrixMultiplyAccumulateINTEL = 6236,
     TernaryBitwiseFunctionINTEL = 6241,
+    SpecConditionalINTEL = 6245,
+    FunctionVariantsINTEL = 6246,
     GroupUniformArithmeticKHR = 6400,
     TensorFloat32RoundingINTEL = 6425,
     MaskedGatherScatterINTEL = 6427,
@@ -2402,6 +2405,13 @@ enum class Op : unsigned {
     OpSubgroup2DBlockStoreINTEL = 6235,
     OpSubgroupMatrixMultiplyAccumulateINTEL = 6237,
     OpBitwiseFunctionINTEL = 6242,
+    OpConditionalExtensionINTEL = 6248,
+    OpConditionalEntryPointINTEL = 6249,
+    OpConditionalCapabilityINTEL = 6250,
+    OpSpecConstantTargetINTEL = 6251,
+    OpSpecConstantArchitectureINTEL = 6252,
+    OpSpecConstantCapabilitiesINTEL = 6253,
+    OpConditionalCopyObjectINTEL = 6254,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -3221,6 +3231,13 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpSubgroup2DBlockStoreINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpSubgroupMatrixMultiplyAccumulateINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpBitwiseFunctionINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpConditionalExtensionINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpConditionalEntryPointINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpConditionalCapabilityINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpSpecConstantTargetINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpSpecConstantArchitectureINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpSpecConstantCapabilitiesINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpConditionalCopyObjectINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -3761,6 +3778,7 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::HostAccessINTEL: return "HostAccessINTEL";
     case Decoration::InitModeINTEL: return "InitModeINTEL";
     case Decoration::ImplementInRegisterMapINTEL: return "ImplementInRegisterMapINTEL";
+    case Decoration::ConditionalINTEL: return "ConditionalINTEL";
     case Decoration::CacheControlLoadINTEL: return "CacheControlLoadINTEL";
     case Decoration::CacheControlStoreINTEL: return "CacheControlStoreINTEL";
     default: return "Unknown";
@@ -4200,6 +4218,8 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::Subgroup2DBlockTransposeINTEL: return "Subgroup2DBlockTransposeINTEL";
     case Capability::SubgroupMatrixMultiplyAccumulateINTEL: return "SubgroupMatrixMultiplyAccumulateINTEL";
     case Capability::TernaryBitwiseFunctionINTEL: return "TernaryBitwiseFunctionINTEL";
+    case Capability::SpecConditionalINTEL: return "SpecConditionalINTEL";
+    case Capability::FunctionVariantsINTEL: return "FunctionVariantsINTEL";
     case Capability::GroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case Capability::TensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";
     case Capability::MaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
@@ -5194,6 +5214,13 @@ inline const char* OpToString(Op value) {
     case Op::OpSubgroup2DBlockStoreINTEL: return "OpSubgroup2DBlockStoreINTEL";
     case Op::OpSubgroupMatrixMultiplyAccumulateINTEL: return "OpSubgroupMatrixMultiplyAccumulateINTEL";
     case Op::OpBitwiseFunctionINTEL: return "OpBitwiseFunctionINTEL";
+    case Op::OpConditionalExtensionINTEL: return "OpConditionalExtensionINTEL";
+    case Op::OpConditionalEntryPointINTEL: return "OpConditionalEntryPointINTEL";
+    case Op::OpConditionalCapabilityINTEL: return "OpConditionalCapabilityINTEL";
+    case Op::OpSpecConstantTargetINTEL: return "OpSpecConstantTargetINTEL";
+    case Op::OpSpecConstantArchitectureINTEL: return "OpSpecConstantArchitectureINTEL";
+    case Op::OpSpecConstantCapabilitiesINTEL: return "OpSpecConstantCapabilitiesINTEL";
+    case Op::OpConditionalCopyObjectINTEL: return "OpConditionalCopyObjectINTEL";
     case Op::OpGroupIMulKHR: return "OpGroupIMulKHR";
     case Op::OpGroupFMulKHR: return "OpGroupFMulKHR";
     case Op::OpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";
