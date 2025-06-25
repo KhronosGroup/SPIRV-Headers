@@ -1969,16 +1969,14 @@ enum Op {
     OpUntypedPtrAccessChainKHR = 4423,
     OpUntypedInBoundsPtrAccessChainKHR = 4424,
     OpUntypedArrayLengthKHR = 4425,
-<<<<<<< HEAD
     OpUntypedPrefetchKHR = 4426,
-=======
->>>>>>> 13f21a2 (Support for SPV_KHR_untyped_pointers)
     OpSubgroupAllKHR = 4428,
     OpSubgroupAnyKHR = 4429,
     OpSubgroupAllEqualKHR = 4430,
     OpGroupNonUniformRotateKHR = 4431,
     OpSubgroupReadInvocationKHR = 4432,
     OpExtInstWithForwardRefsKHR = 4433,
+    OpUntypedGroupAsyncCopyKHR = 4434,
     OpTraceRayKHR = 4445,
     OpExecuteCallableKHR = 4446,
     OpConvertUToAccelerationStructureKHR = 4447,
@@ -2813,16 +2811,14 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpUntypedPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case OpUntypedInBoundsPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case OpUntypedArrayLengthKHR: *hasResult = true; *hasResultType = true; break;
-<<<<<<< HEAD
     case OpUntypedPrefetchKHR: *hasResult = false; *hasResultType = false; break;
-=======
->>>>>>> 13f21a2 (Support for SPV_KHR_untyped_pointers)
     case OpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupNonUniformRotateKHR: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupReadInvocationKHR: *hasResult = true; *hasResultType = true; break;
     case OpExtInstWithForwardRefsKHR: *hasResult = true; *hasResultType = true; break;
+    case OpUntypedGroupAsyncCopyKHR: *hasResult = true; *hasResultType = true; break;
     case OpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
     case OpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;
     case OpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
@@ -4811,6 +4807,7 @@ inline const char* OpToString(Op value) {
     case OpGroupNonUniformRotateKHR: return "OpGroupNonUniformRotateKHR";
     case OpSubgroupReadInvocationKHR: return "OpSubgroupReadInvocationKHR";
     case OpExtInstWithForwardRefsKHR: return "OpExtInstWithForwardRefsKHR";
+    case OpUntypedGroupAsyncCopyKHR: return "OpUntypedGroupAsyncCopyKHR";
     case OpTraceRayKHR: return "OpTraceRayKHR";
     case OpExecuteCallableKHR: return "OpExecuteCallableKHR";
     case OpConvertUToAccelerationStructureKHR: return "OpConvertUToAccelerationStructureKHR";

@@ -1969,16 +1969,14 @@ enum class Op : unsigned {
     OpUntypedPtrAccessChainKHR = 4423,
     OpUntypedInBoundsPtrAccessChainKHR = 4424,
     OpUntypedArrayLengthKHR = 4425,
-<<<<<<< HEAD
     OpUntypedPrefetchKHR = 4426,
-=======
->>>>>>> 13f21a2 (Support for SPV_KHR_untyped_pointers)
     OpSubgroupAllKHR = 4428,
     OpSubgroupAnyKHR = 4429,
     OpSubgroupAllEqualKHR = 4430,
     OpGroupNonUniformRotateKHR = 4431,
     OpSubgroupReadInvocationKHR = 4432,
     OpExtInstWithForwardRefsKHR = 4433,
+    OpUntypedGroupAsyncCopyKHR = 4434,
     OpTraceRayKHR = 4445,
     OpExecuteCallableKHR = 4446,
     OpConvertUToAccelerationStructureKHR = 4447,
@@ -2813,16 +2811,14 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpUntypedPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpUntypedInBoundsPtrAccessChainKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpUntypedArrayLengthKHR: *hasResult = true; *hasResultType = true; break;
-<<<<<<< HEAD
     case Op::OpUntypedPrefetchKHR: *hasResult = false; *hasResultType = false; break;
-=======
->>>>>>> 13f21a2 (Support for SPV_KHR_untyped_pointers)
     case Op::OpSubgroupAllKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupAnyKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupAllEqualKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupNonUniformRotateKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupReadInvocationKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpExtInstWithForwardRefsKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpUntypedGroupAsyncCopyKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpTraceRayKHR: *hasResult = false; *hasResultType = false; break;
     case Op::OpExecuteCallableKHR: *hasResult = false; *hasResultType = false; break;
     case Op::OpConvertUToAccelerationStructureKHR: *hasResult = true; *hasResultType = true; break;
@@ -4811,6 +4807,7 @@ inline const char* OpToString(Op value) {
     case Op::OpGroupNonUniformRotateKHR: return "OpGroupNonUniformRotateKHR";
     case Op::OpSubgroupReadInvocationKHR: return "OpSubgroupReadInvocationKHR";
     case Op::OpExtInstWithForwardRefsKHR: return "OpExtInstWithForwardRefsKHR";
+    case Op::OpUntypedGroupAsyncCopyKHR: return "OpUntypedGroupAsyncCopyKHR";
     case Op::OpTraceRayKHR: return "OpTraceRayKHR";
     case Op::OpExecuteCallableKHR: return "OpExecuteCallableKHR";
     case Op::OpConvertUToAccelerationStructureKHR: return "OpConvertUToAccelerationStructureKHR";

@@ -2039,16 +2039,14 @@ namespace Spv
             OpUntypedPtrAccessChainKHR = 4423,
             OpUntypedInBoundsPtrAccessChainKHR = 4424,
             OpUntypedArrayLengthKHR = 4425,
-<<<<<<< HEAD
             OpUntypedPrefetchKHR = 4426,
-=======
->>>>>>> 13f21a2 (Support for SPV_KHR_untyped_pointers)
             OpSubgroupAllKHR = 4428,
             OpSubgroupAnyKHR = 4429,
             OpSubgroupAllEqualKHR = 4430,
             OpGroupNonUniformRotateKHR = 4431,
             OpSubgroupReadInvocationKHR = 4432,
             OpExtInstWithForwardRefsKHR = 4433,
+            OpUntypedGroupAsyncCopyKHR = 4434,
             OpTraceRayKHR = 4445,
             OpExecuteCallableKHR = 4446,
             OpConvertUToAccelerationStructureKHR = 4447,
