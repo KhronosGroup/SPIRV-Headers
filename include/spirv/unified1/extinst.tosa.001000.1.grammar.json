@@ -1,6 +1,7 @@
 {
   "copyright": [
-    "(c) 2022-2025 Arm Ltd."
+    "(c) 2022-2025 Arm Ltd.",
+    "License: MIT"
   ],
   "version": 1000000,
   "revision": 1,
