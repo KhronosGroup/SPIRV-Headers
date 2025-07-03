@@ -5269,6 +5269,18 @@
       "version" : "None"
     },
     {
+      "opname" : "OpBitCastArrayQCOM",
+      "class"  : "Conversion",
+      "opcode" : 4497,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Source Array" }
+      ],
+      "capabilities" : [ "CooperativeMatrixConversionQCOM" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpImageBlockMatchWindowSSDQCOM",
       "class"  : "Image",
       "opcode" : 4500,
@@ -5330,6 +5342,43 @@
         { "kind" : "IdRef", "name" : "Block Size" }
       ],
       "capabilities" : [ "TextureBlockMatch2QCOM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCompositeConstructCoopMatQCOM",
+      "class"  : "Composite",
+      "opcode" : 4540,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Source Array" }
+      ],
+      "capabilities" : [ "CooperativeMatrixConversionQCOM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpCompositeExtractCoopMatQCOM",
+      "class"  : "Composite",
+      "opcode" : 4541,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Source Cooperative Matrix" }
+      ],
+      "capabilities" : [ "CooperativeMatrixConversionQCOM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpExtractSubArrayQCOM",
+      "class"  : "Composite",
+      "opcode" : 4542,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Source Array" },
+        { "kind" : "IdRef", "name" : "index" }
+      ],
+      "capabilities" : [ "CooperativeMatrixConversionQCOM" ],
       "version" : "None"
     },
     {
@@ -16686,6 +16735,13 @@
           "value" : 4495,
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_QCOM_tile_shading" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CooperativeMatrixConversionQCOM",
+          "value" : 4496,
+          "capabilities" : [ "CooperativeMatrixKHR" ],
+          "extensions" : [ "SPV_QCOM_cooperative_matrix_conversion" ],
           "version" : "None"
         },
         {
