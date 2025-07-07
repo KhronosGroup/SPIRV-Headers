@@ -12739,6 +12739,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "Shader64BitIndexingEXT",
+          "value" : 5427,
+          "capabilities" : [ "Shader64BitIndexingEXT" ],
+          "extensions" : [ "SPV_EXT_shader_64bit_indexing" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "SharedLocalMemorySizeINTEL",
           "value" : 5618,
           "parameters" : [
@@ -17250,6 +17257,12 @@
           "enumerant" : "RayTracingLinearSweptSpheresGeometryNV",
           "value" : 5419,
           "extensions" : [ "SPV_NV_linear_swept_spheres" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Shader64BitIndexingEXT",
+          "value" : 5426,
+          "extensions" : [ "SPV_EXT_shader_64bit_indexing" ],
           "version" : "None"
         },
         {
