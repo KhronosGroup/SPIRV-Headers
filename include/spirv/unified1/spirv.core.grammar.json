@@ -3918,7 +3918,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdScope", "name" : "Execution" },
         { "kind" : "IdRef", "name" : "Value" },
-        { "kind" : "IdRef", "name" : "Id" }
+        { "kind" : "IdRef", "name" : "Invocation Id" }
       ],
       "capabilities" : [ "GroupNonUniformBallot" ],
       "version" : "1.3"
@@ -4025,7 +4025,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdScope", "name" : "Execution" },
         { "kind" : "IdRef", "name" : "Value" },
-        { "kind" : "IdRef", "name" : "Id" }
+        { "kind" : "IdRef", "name" : "Invocation Id" }
       ],
       "capabilities" : [ "GroupNonUniformShuffle" ],
       "version" : "1.3"
