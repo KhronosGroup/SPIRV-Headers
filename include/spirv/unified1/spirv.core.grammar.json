@@ -8225,7 +8225,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "Fwd Ref Offset" },
         { "kind" : "IdRef", "name" : "Bwd Ref Offset" },
-        { "kind" : "IdRef", "name" : "id> Search Window Config" },
+        { "kind" : "IdRef", "name" : "Search Window Config" },
         { "kind" : "IdRef", "name" : "Payload" }
       ],
       "capabilities" : [ "SubgroupAvcMotionEstimationINTEL" ],
