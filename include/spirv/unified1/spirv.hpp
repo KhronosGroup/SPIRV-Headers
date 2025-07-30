@@ -212,7 +212,7 @@ enum ExecutionMode {
     ExecutionModeMax = 0x7fffffff,
 };
 
-enum StorageClass {
+enum StorageClass : unsigned {
     StorageClassUniformConstant = 0,
     StorageClassInput = 1,
     StorageClassUniform = 2,
