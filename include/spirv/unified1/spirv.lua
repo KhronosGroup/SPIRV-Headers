@@ -1967,6 +1967,7 @@ spv = {
         OpGroupNonUniformRotateKHR = 4431,
         OpSubgroupReadInvocationKHR = 4432,
         OpExtInstWithForwardRefsKHR = 4433,
+        OpUntypedGroupAsyncCopyKHR = 4434,
         OpTraceRayKHR = 4445,
         OpExecuteCallableKHR = 4446,
         OpConvertUToAccelerationStructureKHR = 4447,
