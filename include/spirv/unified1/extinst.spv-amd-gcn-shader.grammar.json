@@ -11,7 +11,7 @@
     },
     {
       "opname" : "CubeFaceCoordAMD",
-      "opcode" : 3,
+      "opcode" : 2,
       "operands" : [
         { "kind" : "IdRef", "name" : "P" }
       ],
