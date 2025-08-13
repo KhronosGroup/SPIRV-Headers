@@ -12647,7 +12647,7 @@
           "enumerant" : "DerivativeGroupQuadsKHR",
           "aliases" : ["DerivativeGroupQuadsNV"],
           "value" : 5289,
-          "capabilities" : [ "ComputeDerivativeGroupQuadsNV", "ComputeDerivativeGroupQuadsKHR" ],
+          "capabilities" : [ "ComputeDerivativeGroupQuadsKHR" ],
           "extensions" : [ "SPV_NV_compute_shader_derivatives", "SPV_KHR_compute_shader_derivatives" ],
           "version" : "None"
         },
@@ -12655,7 +12655,7 @@
           "enumerant" : "DerivativeGroupLinearKHR",
           "aliases" : ["DerivativeGroupLinearNV"],
           "value" : 5290,
-          "capabilities" : [ "ComputeDerivativeGroupLinearNV", "ComputeDerivativeGroupLinearKHR" ],
+          "capabilities" : [ "ComputeDerivativeGroupLinearKHR" ],
           "extensions" : [ "SPV_NV_compute_shader_derivatives", "SPV_KHR_compute_shader_derivatives" ],
           "version" : "None"
         },
