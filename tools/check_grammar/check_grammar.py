@@ -33,6 +33,7 @@ from collections import OrderedDict
 
 
 class Checker:
+
     def __init__(self, file_name, capabilities):
         self._file_name = file_name
         self._capabilities = capabilities
@@ -146,7 +147,7 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(
         description=
-        'Check JSON grammar is well formed. The tool assumes the first grammar is the main one containing the capabilities.'
+        'Check JSON grammars are well formed. The capabilities are aggregated from all files before performing checks.'
     )
 
     parser.add_argument('grammars',
@@ -156,20 +157,24 @@ def main():
     args = parser.parse_args()
 
     error = False
-    capabilities = None
+    capabilities = {}
 
-    for grammar_file in args.grammars:
-        with open(grammar_file) as json_file:
-            grammar_json = json.loads(json_file.read(),
+    def load_json_and_register_capabilities(grammar_file):
+        with open(grammar_file) as json_fd:
+            grammar_json = json.loads(json_fd.read(),
                                       object_pairs_hook=OrderedDict)
-        if capabilities == None:
-          capabilities = {}
-          if "operand_kinds" in grammar_json:
-              for kind in grammar_json["operand_kinds"]:
-                  if kind["kind"] == "Capability":
-                      for enum in kind["enumerants"]:
-                          capabilities[enum["enumerant"]] = kind
+        if "operand_kinds" in grammar_json:
+            for kind in grammar_json["operand_kinds"]:
+                if kind["kind"] == "Capability":
+                    for enum in kind["enumerants"]:
+                        capabilities[enum["enumerant"]] = kind
+        return grammar_json
 
+    grammar_list = list([(grammar_file,
+                          load_json_and_register_capabilities(grammar_file))
+                         for grammar_file in args.grammars])
+
+    for grammar_file, grammar_json in grammar_list:
         checker = Checker(grammar_file, capabilities)
         error = checker.check(grammar_json) or error
 

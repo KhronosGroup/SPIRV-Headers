@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate
-        run: python3 tools/check_grammar/check_grammar.py include/spirv/unified1/spirv.core.grammar.json include/spirv/unified1/extinst.*
+        run: python3 tools/check_grammar/check_grammar.py include/spirv/unified1/*.json
 
   build:
     name: Build ${{ matrix.os }}
