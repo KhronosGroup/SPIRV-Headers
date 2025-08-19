@@ -5,6 +5,13 @@ permissions:
   contents: read
 
 jobs:
+  validate_json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate
+        run: python3 tools/check_grammar/check_grammar.py include/spirv/unified1/*.json
+
   build:
     name: Build ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
