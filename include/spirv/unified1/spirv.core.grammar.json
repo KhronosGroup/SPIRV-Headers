@@ -10839,6 +10839,18 @@
       "version" : "None"
     },
     {
+      "opname" : "OpUntypedVariableLengthArrayINTEL",
+      "class"  : "@exclude",
+      "opcode" : 6244,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Lenght" }
+      ],
+      "capabilities" : [ "UntypedVariableLengthArrayINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpConditionalExtensionINTEL",
       "class"  : "Extension",
       "opcode" : 6248,
@@ -17733,6 +17745,13 @@
           "enumerant" : "TernaryBitwiseFunctionINTEL",
           "value" : 6241,
           "extensions" : [ "SPV_INTEL_ternary_bitwise_function"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "UntypedVariableLengthArrayINTEL",
+          "value" : 6244,
+          "capabilities" : [ "VariableLengthArrayINTEL", "UntypedPointersKHR" ],
+          "extensions" : [ "SPV_INTEL_variable_length_array" ],
           "version" : "None"
         },
         {

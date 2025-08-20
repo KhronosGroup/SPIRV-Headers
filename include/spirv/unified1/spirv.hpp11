@@ -1280,6 +1280,7 @@ enum class Capability : unsigned {
     Subgroup2DBlockTransposeINTEL = 6230,
     SubgroupMatrixMultiplyAccumulateINTEL = 6236,
     TernaryBitwiseFunctionINTEL = 6241,
+    UntypedVariableLengthArrayINTEL = 6244,
     SpecConditionalINTEL = 6245,
     FunctionVariantsINTEL = 6246,
     GroupUniformArithmeticKHR = 6400,
@@ -2411,6 +2412,7 @@ enum class Op : unsigned {
     OpSubgroup2DBlockStoreINTEL = 6235,
     OpSubgroupMatrixMultiplyAccumulateINTEL = 6237,
     OpBitwiseFunctionINTEL = 6242,
+    OpUntypedVariableLengthArrayINTEL = 6244,
     OpConditionalExtensionINTEL = 6248,
     OpConditionalEntryPointINTEL = 6249,
     OpConditionalCapabilityINTEL = 6250,
@@ -3242,6 +3244,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpSubgroup2DBlockStoreINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpSubgroupMatrixMultiplyAccumulateINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpBitwiseFunctionINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpUntypedVariableLengthArrayINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpConditionalExtensionINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpConditionalEntryPointINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpConditionalCapabilityINTEL: *hasResult = false; *hasResultType = false; break;
@@ -4230,6 +4233,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::Subgroup2DBlockTransposeINTEL: return "Subgroup2DBlockTransposeINTEL";
     case Capability::SubgroupMatrixMultiplyAccumulateINTEL: return "SubgroupMatrixMultiplyAccumulateINTEL";
     case Capability::TernaryBitwiseFunctionINTEL: return "TernaryBitwiseFunctionINTEL";
+    case Capability::UntypedVariableLengthArrayINTEL: return "UntypedVariableLengthArrayINTEL";
     case Capability::SpecConditionalINTEL: return "SpecConditionalINTEL";
     case Capability::FunctionVariantsINTEL: return "FunctionVariantsINTEL";
     case Capability::GroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
@@ -5231,6 +5235,7 @@ inline const char* OpToString(Op value) {
     case Op::OpSubgroup2DBlockStoreINTEL: return "OpSubgroup2DBlockStoreINTEL";
     case Op::OpSubgroupMatrixMultiplyAccumulateINTEL: return "OpSubgroupMatrixMultiplyAccumulateINTEL";
     case Op::OpBitwiseFunctionINTEL: return "OpBitwiseFunctionINTEL";
+    case Op::OpUntypedVariableLengthArrayINTEL: return "OpUntypedVariableLengthArrayINTEL";
     case Op::OpConditionalExtensionINTEL: return "OpConditionalExtensionINTEL";
     case Op::OpConditionalEntryPointINTEL: return "OpConditionalEntryPointINTEL";
     case Op::OpConditionalCapabilityINTEL: return "OpConditionalCapabilityINTEL";
