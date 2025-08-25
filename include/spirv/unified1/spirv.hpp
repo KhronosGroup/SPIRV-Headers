@@ -1280,7 +1280,7 @@ enum Capability {
     CapabilitySubgroup2DBlockTransposeINTEL = 6230,
     CapabilitySubgroupMatrixMultiplyAccumulateINTEL = 6236,
     CapabilityTernaryBitwiseFunctionINTEL = 6241,
-    CapabilityUntypedVariableLengthArrayINTEL = 6244,
+    CapabilityUntypedVariableLengthArrayINTEL = 6243,
     CapabilitySpecConditionalINTEL = 6245,
     CapabilityFunctionVariantsINTEL = 6246,
     CapabilityGroupUniformArithmeticKHR = 6400,

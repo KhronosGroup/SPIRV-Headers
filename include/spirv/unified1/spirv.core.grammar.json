@@ -9154,7 +9154,7 @@
     },
     {
       "opname" : "OpVariableLengthArrayINTEL",
-      "class"  : "@exclude",
+      "class"  : "Memory",
       "opcode" : 5818,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -9166,7 +9166,7 @@
     },
     {
       "opname" : "OpSaveMemoryINTEL",
-      "class"  : "@exclude",
+      "class"  : "Memory",
       "opcode" : 5819,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -9177,7 +9177,7 @@
     },
     {
       "opname" : "OpRestoreMemoryINTEL",
-      "class"  : "@exclude",
+      "class"  : "Memory",
       "opcode" : 5820,
       "operands" : [
         { "kind" : "IdRef", "name" : "Ptr" }
@@ -10840,11 +10840,12 @@
     },
     {
       "opname" : "OpUntypedVariableLengthArrayINTEL",
-      "class"  : "@exclude",
+      "class"  : "Memory",
       "opcode" : 6244,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Element Type" },
         { "kind" : "IdRef", "name" : "Lenght" }
       ],
       "capabilities" : [ "UntypedVariableLengthArrayINTEL" ],
@@ -17749,7 +17750,7 @@
         },
         {
           "enumerant" : "UntypedVariableLengthArrayINTEL",
-          "value" : 6244,
+          "value" : 6243,
           "capabilities" : [ "VariableLengthArrayINTEL", "UntypedPointersKHR" ],
           "extensions" : [ "SPV_INTEL_variable_length_array" ],
           "version" : "None"

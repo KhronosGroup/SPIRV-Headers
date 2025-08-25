@@ -1316,7 +1316,7 @@ enum Capability : uint
     Subgroup2DBlockTransposeINTEL = 6230,
     SubgroupMatrixMultiplyAccumulateINTEL = 6236,
     TernaryBitwiseFunctionINTEL = 6241,
-    UntypedVariableLengthArrayINTEL = 6244,
+    UntypedVariableLengthArrayINTEL = 6243,
     SpecConditionalINTEL = 6245,
     FunctionVariantsINTEL = 6246,
     GroupUniformArithmeticKHR = 6400,

@@ -1284,7 +1284,7 @@ typedef enum SpvCapability_ {
     SpvCapabilitySubgroup2DBlockTransposeINTEL = 6230,
     SpvCapabilitySubgroupMatrixMultiplyAccumulateINTEL = 6236,
     SpvCapabilityTernaryBitwiseFunctionINTEL = 6241,
-    SpvCapabilityUntypedVariableLengthArrayINTEL = 6244,
+    SpvCapabilityUntypedVariableLengthArrayINTEL = 6243,
     SpvCapabilitySpecConditionalINTEL = 6245,
     SpvCapabilityFunctionVariantsINTEL = 6246,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,
