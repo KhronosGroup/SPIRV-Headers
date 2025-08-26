@@ -9159,7 +9159,7 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdRef", "name" : "Lenght" }
+        { "kind" : "IdRef", "name" : "Length" }
       ],
       "capabilities" : [ "VariableLengthArrayINTEL" ],
       "version" : "None"
@@ -10846,7 +10846,7 @@
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "Element Type" },
-        { "kind" : "IdRef", "name" : "Lenght" }
+        { "kind" : "IdRef", "name" : "Length" }
       ],
       "capabilities" : [ "UntypedVariableLengthArrayINTEL" ],
       "version" : "None"
