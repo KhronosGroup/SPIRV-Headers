@@ -9154,19 +9154,19 @@
     },
     {
       "opname" : "OpVariableLengthArrayINTEL",
-      "class"  : "@exclude",
+      "class"  : "Memory",
       "opcode" : 5818,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdRef", "name" : "Lenght" }
+        { "kind" : "IdRef", "name" : "Length" }
       ],
       "capabilities" : [ "VariableLengthArrayINTEL" ],
       "version" : "None"
     },
     {
       "opname" : "OpSaveMemoryINTEL",
-      "class"  : "@exclude",
+      "class"  : "Memory",
       "opcode" : 5819,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -9177,7 +9177,7 @@
     },
     {
       "opname" : "OpRestoreMemoryINTEL",
-      "class"  : "@exclude",
+      "class"  : "Memory",
       "opcode" : 5820,
       "operands" : [
         { "kind" : "IdRef", "name" : "Ptr" }
@@ -10836,6 +10836,19 @@
         { "kind" : "IdRef", "name" : "LUTIndex" }
       ],
       "capabilities" : [ "TernaryBitwiseFunctionINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpUntypedVariableLengthArrayINTEL",
+      "class"  : "Memory",
+      "opcode" : 6244,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Element Type" },
+        { "kind" : "IdRef", "name" : "Length" }
+      ],
+      "capabilities" : [ "UntypedVariableLengthArrayINTEL" ],
       "version" : "None"
     },
     {
@@ -17733,6 +17746,13 @@
           "enumerant" : "TernaryBitwiseFunctionINTEL",
           "value" : 6241,
           "extensions" : [ "SPV_INTEL_ternary_bitwise_function"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "UntypedVariableLengthArrayINTEL",
+          "value" : 6243,
+          "capabilities" : [ "VariableLengthArrayINTEL", "UntypedPointersKHR" ],
+          "extensions" : [ "SPV_INTEL_variable_length_array" ],
           "version" : "None"
         },
         {
