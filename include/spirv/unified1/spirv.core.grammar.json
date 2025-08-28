@@ -1359,6 +1359,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "Value" }
       ],
+      "capabilities" : [ "Shader" ],
       "version": "1.0"
     },
     {
