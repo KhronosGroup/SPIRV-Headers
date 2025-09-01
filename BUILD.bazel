@@ -128,6 +128,11 @@ filegroup(
     srcs = ["include/spirv/unified1/extinst.tosa.001000.1.grammar.json"],
 )
 
+filegroup(
+    name = "spirv_ext_inst_arm_motion_engine_100",
+    srcs = ["include/spirv/unified1/extinst.arm.motion-engine.100.grammar.json"],
+)
+
 cc_library(
     name = "spirv_common_headers",
     hdrs = [
