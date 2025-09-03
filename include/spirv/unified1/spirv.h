@@ -2107,6 +2107,7 @@ typedef enum SpvOp_ {
     SpvOpTypeAccelerationStructureNV = 5341,
     SpvOpExecuteCallableNV = 5344,
     SpvOpRayQueryGetClusterIdNV = 5345,
+    SpvOpRayQueryGetIntersectionClusterIdNV = 5345,
     SpvOpHitObjectGetClusterIdNV = 5346,
     SpvOpTypeCooperativeMatrixNV = 5358,
     SpvOpCooperativeMatrixLoadNV = 5359,
@@ -2941,7 +2942,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpRayQueryGetIntersectionTriangleVertexPositionsKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpTypeAccelerationStructureKHR: *hasResult = true; *hasResultType = false; break;
     case SpvOpExecuteCallableNV: *hasResult = false; *hasResultType = false; break;
-    case SpvOpRayQueryGetClusterIdNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionClusterIdNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpHitObjectGetClusterIdNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpTypeCooperativeMatrixNV: *hasResult = true; *hasResultType = false; break;
     case SpvOpCooperativeMatrixLoadNV: *hasResult = true; *hasResultType = true; break;

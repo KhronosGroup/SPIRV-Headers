@@ -2037,6 +2037,7 @@ spv = {
         'OpTypeAccelerationStructureNV' : 5341,
         'OpExecuteCallableNV' : 5344,
         'OpRayQueryGetClusterIdNV' : 5345,
+        'OpRayQueryGetIntersectionClusterIdNV' : 5345,
         'OpHitObjectGetClusterIdNV' : 5346,
         'OpTypeCooperativeMatrixNV' : 5358,
         'OpCooperativeMatrixLoadNV' : 5359,
