@@ -6504,8 +6504,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpRayQueryGetClusterIdNV",
+      "opname" : "OpRayQueryGetIntersectionClusterIdNV",
       "class" : "Reserved",
+      "aliases" : ["OpRayQueryGetClusterIdNV"],
       "opcode" : 5345,
       "operands" : [
           { "kind" : "IdResultType" },
