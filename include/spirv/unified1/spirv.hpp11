@@ -1225,6 +1225,7 @@ enum class Capability : unsigned {
     FPFastMathModeINTEL = 5837,
     ArbitraryPrecisionIntegersALTERA = 5844,
     ArbitraryPrecisionIntegersINTEL = 5844,
+    ArbitraryPrecisionFloatingPointALTERA = 5845,
     ArbitraryPrecisionFloatingPointINTEL = 5845,
     UnstructuredLoopControlsINTEL = 5886,
     FPGALoopControlsINTEL = 5888,
@@ -2312,23 +2313,41 @@ enum class Op : unsigned {
     OpVariableLengthArrayINTEL = 5818,
     OpSaveMemoryINTEL = 5819,
     OpRestoreMemoryINTEL = 5820,
+    OpArbitraryFloatSinCosPiALTERA = 5840,
     OpArbitraryFloatSinCosPiINTEL = 5840,
+    OpArbitraryFloatCastALTERA = 5841,
     OpArbitraryFloatCastINTEL = 5841,
+    OpArbitraryFloatCastFromIntALTERA = 5842,
     OpArbitraryFloatCastFromIntINTEL = 5842,
+    OpArbitraryFloatCastToIntALTERA = 5843,
     OpArbitraryFloatCastToIntINTEL = 5843,
+    OpArbitraryFloatAddALTERA = 5846,
     OpArbitraryFloatAddINTEL = 5846,
+    OpArbitraryFloatSubALTERA = 5847,
     OpArbitraryFloatSubINTEL = 5847,
+    OpArbitraryFloatMulALTERA = 5848,
     OpArbitraryFloatMulINTEL = 5848,
+    OpArbitraryFloatDivALTERA = 5849,
     OpArbitraryFloatDivINTEL = 5849,
+    OpArbitraryFloatGTALTERA = 5850,
     OpArbitraryFloatGTINTEL = 5850,
+    OpArbitraryFloatGEALTERA = 5851,
     OpArbitraryFloatGEINTEL = 5851,
+    OpArbitraryFloatLTALTERA = 5852,
     OpArbitraryFloatLTINTEL = 5852,
+    OpArbitraryFloatLEALTERA = 5853,
     OpArbitraryFloatLEINTEL = 5853,
+    OpArbitraryFloatEQALTERA = 5854,
     OpArbitraryFloatEQINTEL = 5854,
+    OpArbitraryFloatRecipALTERA = 5855,
     OpArbitraryFloatRecipINTEL = 5855,
+    OpArbitraryFloatRSqrtALTERA = 5856,
     OpArbitraryFloatRSqrtINTEL = 5856,
+    OpArbitraryFloatCbrtALTERA = 5857,
     OpArbitraryFloatCbrtINTEL = 5857,
+    OpArbitraryFloatHypotALTERA = 5858,
     OpArbitraryFloatHypotINTEL = 5858,
+    OpArbitraryFloatSqrtALTERA = 5859,
     OpArbitraryFloatSqrtINTEL = 5859,
     OpArbitraryFloatLogINTEL = 5860,
     OpArbitraryFloatLog2INTEL = 5861,
@@ -3144,24 +3163,24 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpVariableLengthArrayINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpSaveMemoryINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpRestoreMemoryINTEL: *hasResult = false; *hasResultType = false; break;
-    case Op::OpArbitraryFloatSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatCastINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatCastFromIntINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatCastToIntINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatAddINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatSubINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatMulINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatDivINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatGTINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatGEINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatLTINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatLEINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatEQINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatRecipINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatRSqrtINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatCbrtINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatHypotINTEL: *hasResult = true; *hasResultType = true; break;
-    case Op::OpArbitraryFloatSqrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatSinCosPiALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatCastALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatCastFromIntALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatCastToIntALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatAddALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatSubALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatMulALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatDivALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatGTALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatGEALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatLTALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatLEALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatEQALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatRecipALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatRSqrtALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatCbrtALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatHypotALTERA: *hasResult = true; *hasResultType = true; break;
+    case Op::OpArbitraryFloatSqrtALTERA: *hasResult = true; *hasResultType = true; break;
     case Op::OpArbitraryFloatLogINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpArbitraryFloatLog2INTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpArbitraryFloatLog10INTEL: *hasResult = true; *hasResultType = true; break;
@@ -4184,7 +4203,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::FPGAMemoryAttributesINTEL: return "FPGAMemoryAttributesINTEL";
     case Capability::FPFastMathModeINTEL: return "FPFastMathModeINTEL";
     case Capability::ArbitraryPrecisionIntegersALTERA: return "ArbitraryPrecisionIntegersALTERA";
-    case Capability::ArbitraryPrecisionFloatingPointINTEL: return "ArbitraryPrecisionFloatingPointINTEL";
+    case Capability::ArbitraryPrecisionFloatingPointALTERA: return "ArbitraryPrecisionFloatingPointALTERA";
     case Capability::UnstructuredLoopControlsINTEL: return "UnstructuredLoopControlsINTEL";
     case Capability::FPGALoopControlsINTEL: return "FPGALoopControlsINTEL";
     case Capability::KernelAttributesINTEL: return "KernelAttributesINTEL";
@@ -5135,24 +5154,24 @@ inline const char* OpToString(Op value) {
     case Op::OpVariableLengthArrayINTEL: return "OpVariableLengthArrayINTEL";
     case Op::OpSaveMemoryINTEL: return "OpSaveMemoryINTEL";
     case Op::OpRestoreMemoryINTEL: return "OpRestoreMemoryINTEL";
-    case Op::OpArbitraryFloatSinCosPiINTEL: return "OpArbitraryFloatSinCosPiINTEL";
-    case Op::OpArbitraryFloatCastINTEL: return "OpArbitraryFloatCastINTEL";
-    case Op::OpArbitraryFloatCastFromIntINTEL: return "OpArbitraryFloatCastFromIntINTEL";
-    case Op::OpArbitraryFloatCastToIntINTEL: return "OpArbitraryFloatCastToIntINTEL";
-    case Op::OpArbitraryFloatAddINTEL: return "OpArbitraryFloatAddINTEL";
-    case Op::OpArbitraryFloatSubINTEL: return "OpArbitraryFloatSubINTEL";
-    case Op::OpArbitraryFloatMulINTEL: return "OpArbitraryFloatMulINTEL";
-    case Op::OpArbitraryFloatDivINTEL: return "OpArbitraryFloatDivINTEL";
-    case Op::OpArbitraryFloatGTINTEL: return "OpArbitraryFloatGTINTEL";
-    case Op::OpArbitraryFloatGEINTEL: return "OpArbitraryFloatGEINTEL";
-    case Op::OpArbitraryFloatLTINTEL: return "OpArbitraryFloatLTINTEL";
-    case Op::OpArbitraryFloatLEINTEL: return "OpArbitraryFloatLEINTEL";
-    case Op::OpArbitraryFloatEQINTEL: return "OpArbitraryFloatEQINTEL";
-    case Op::OpArbitraryFloatRecipINTEL: return "OpArbitraryFloatRecipINTEL";
-    case Op::OpArbitraryFloatRSqrtINTEL: return "OpArbitraryFloatRSqrtINTEL";
-    case Op::OpArbitraryFloatCbrtINTEL: return "OpArbitraryFloatCbrtINTEL";
-    case Op::OpArbitraryFloatHypotINTEL: return "OpArbitraryFloatHypotINTEL";
-    case Op::OpArbitraryFloatSqrtINTEL: return "OpArbitraryFloatSqrtINTEL";
+    case Op::OpArbitraryFloatSinCosPiALTERA: return "OpArbitraryFloatSinCosPiALTERA";
+    case Op::OpArbitraryFloatCastALTERA: return "OpArbitraryFloatCastALTERA";
+    case Op::OpArbitraryFloatCastFromIntALTERA: return "OpArbitraryFloatCastFromIntALTERA";
+    case Op::OpArbitraryFloatCastToIntALTERA: return "OpArbitraryFloatCastToIntALTERA";
+    case Op::OpArbitraryFloatAddALTERA: return "OpArbitraryFloatAddALTERA";
+    case Op::OpArbitraryFloatSubALTERA: return "OpArbitraryFloatSubALTERA";
+    case Op::OpArbitraryFloatMulALTERA: return "OpArbitraryFloatMulALTERA";
+    case Op::OpArbitraryFloatDivALTERA: return "OpArbitraryFloatDivALTERA";
+    case Op::OpArbitraryFloatGTALTERA: return "OpArbitraryFloatGTALTERA";
+    case Op::OpArbitraryFloatGEALTERA: return "OpArbitraryFloatGEALTERA";
+    case Op::OpArbitraryFloatLTALTERA: return "OpArbitraryFloatLTALTERA";
+    case Op::OpArbitraryFloatLEALTERA: return "OpArbitraryFloatLEALTERA";
+    case Op::OpArbitraryFloatEQALTERA: return "OpArbitraryFloatEQALTERA";
+    case Op::OpArbitraryFloatRecipALTERA: return "OpArbitraryFloatRecipALTERA";
+    case Op::OpArbitraryFloatRSqrtALTERA: return "OpArbitraryFloatRSqrtALTERA";
+    case Op::OpArbitraryFloatCbrtALTERA: return "OpArbitraryFloatCbrtALTERA";
+    case Op::OpArbitraryFloatHypotALTERA: return "OpArbitraryFloatHypotALTERA";
+    case Op::OpArbitraryFloatSqrtALTERA: return "OpArbitraryFloatSqrtALTERA";
     case Op::OpArbitraryFloatLogINTEL: return "OpArbitraryFloatLogINTEL";
     case Op::OpArbitraryFloatLog2INTEL: return "OpArbitraryFloatLog2INTEL";
     case Op::OpArbitraryFloatLog10INTEL: return "OpArbitraryFloatLog10INTEL";

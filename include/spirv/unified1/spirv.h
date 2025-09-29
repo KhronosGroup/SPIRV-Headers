@@ -1229,6 +1229,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPFastMathModeINTEL = 5837,
     SpvCapabilityArbitraryPrecisionIntegersALTERA = 5844,
     SpvCapabilityArbitraryPrecisionIntegersINTEL = 5844,
+    SpvCapabilityArbitraryPrecisionFloatingPointALTERA = 5845,
     SpvCapabilityArbitraryPrecisionFloatingPointINTEL = 5845,
     SpvCapabilityUnstructuredLoopControlsINTEL = 5886,
     SpvCapabilityFPGALoopControlsINTEL = 5888,
@@ -2316,23 +2317,41 @@ typedef enum SpvOp_ {
     SpvOpVariableLengthArrayINTEL = 5818,
     SpvOpSaveMemoryINTEL = 5819,
     SpvOpRestoreMemoryINTEL = 5820,
+    SpvOpArbitraryFloatSinCosPiALTERA = 5840,
     SpvOpArbitraryFloatSinCosPiINTEL = 5840,
+    SpvOpArbitraryFloatCastALTERA = 5841,
     SpvOpArbitraryFloatCastINTEL = 5841,
+    SpvOpArbitraryFloatCastFromIntALTERA = 5842,
     SpvOpArbitraryFloatCastFromIntINTEL = 5842,
+    SpvOpArbitraryFloatCastToIntALTERA = 5843,
     SpvOpArbitraryFloatCastToIntINTEL = 5843,
+    SpvOpArbitraryFloatAddALTERA = 5846,
     SpvOpArbitraryFloatAddINTEL = 5846,
+    SpvOpArbitraryFloatSubALTERA = 5847,
     SpvOpArbitraryFloatSubINTEL = 5847,
+    SpvOpArbitraryFloatMulALTERA = 5848,
     SpvOpArbitraryFloatMulINTEL = 5848,
+    SpvOpArbitraryFloatDivALTERA = 5849,
     SpvOpArbitraryFloatDivINTEL = 5849,
+    SpvOpArbitraryFloatGTALTERA = 5850,
     SpvOpArbitraryFloatGTINTEL = 5850,
+    SpvOpArbitraryFloatGEALTERA = 5851,
     SpvOpArbitraryFloatGEINTEL = 5851,
+    SpvOpArbitraryFloatLTALTERA = 5852,
     SpvOpArbitraryFloatLTINTEL = 5852,
+    SpvOpArbitraryFloatLEALTERA = 5853,
     SpvOpArbitraryFloatLEINTEL = 5853,
+    SpvOpArbitraryFloatEQALTERA = 5854,
     SpvOpArbitraryFloatEQINTEL = 5854,
+    SpvOpArbitraryFloatRecipALTERA = 5855,
     SpvOpArbitraryFloatRecipINTEL = 5855,
+    SpvOpArbitraryFloatRSqrtALTERA = 5856,
     SpvOpArbitraryFloatRSqrtINTEL = 5856,
+    SpvOpArbitraryFloatCbrtALTERA = 5857,
     SpvOpArbitraryFloatCbrtINTEL = 5857,
+    SpvOpArbitraryFloatHypotALTERA = 5858,
     SpvOpArbitraryFloatHypotINTEL = 5858,
+    SpvOpArbitraryFloatSqrtALTERA = 5859,
     SpvOpArbitraryFloatSqrtINTEL = 5859,
     SpvOpArbitraryFloatLogINTEL = 5860,
     SpvOpArbitraryFloatLog2INTEL = 5861,
@@ -3148,24 +3167,24 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpVariableLengthArrayINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSaveMemoryINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpRestoreMemoryINTEL: *hasResult = false; *hasResultType = false; break;
-    case SpvOpArbitraryFloatSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatCastINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatCastFromIntINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatCastToIntINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatAddINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatSubINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatMulINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatDivINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatGTINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatGEINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatLTINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatLEINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatEQINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatRecipINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatRSqrtINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatCbrtINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatHypotINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpArbitraryFloatSqrtINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatSinCosPiALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCastALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCastFromIntALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCastToIntALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatAddALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatSubALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatMulALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatDivALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatGTALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatGEALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatLTALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatLEALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatEQALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatRecipALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatRSqrtALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatCbrtALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatHypotALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpArbitraryFloatSqrtALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpArbitraryFloatLogINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpArbitraryFloatLog2INTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpArbitraryFloatLog10INTEL: *hasResult = true; *hasResultType = true; break;
@@ -4188,7 +4207,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPGAMemoryAttributesINTEL: return "FPGAMemoryAttributesINTEL";
     case SpvCapabilityFPFastMathModeINTEL: return "FPFastMathModeINTEL";
     case SpvCapabilityArbitraryPrecisionIntegersALTERA: return "ArbitraryPrecisionIntegersALTERA";
-    case SpvCapabilityArbitraryPrecisionFloatingPointINTEL: return "ArbitraryPrecisionFloatingPointINTEL";
+    case SpvCapabilityArbitraryPrecisionFloatingPointALTERA: return "ArbitraryPrecisionFloatingPointALTERA";
     case SpvCapabilityUnstructuredLoopControlsINTEL: return "UnstructuredLoopControlsINTEL";
     case SpvCapabilityFPGALoopControlsINTEL: return "FPGALoopControlsINTEL";
     case SpvCapabilityKernelAttributesINTEL: return "KernelAttributesINTEL";
@@ -5139,24 +5158,24 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpVariableLengthArrayINTEL: return "OpVariableLengthArrayINTEL";
     case SpvOpSaveMemoryINTEL: return "OpSaveMemoryINTEL";
     case SpvOpRestoreMemoryINTEL: return "OpRestoreMemoryINTEL";
-    case SpvOpArbitraryFloatSinCosPiINTEL: return "OpArbitraryFloatSinCosPiINTEL";
-    case SpvOpArbitraryFloatCastINTEL: return "OpArbitraryFloatCastINTEL";
-    case SpvOpArbitraryFloatCastFromIntINTEL: return "OpArbitraryFloatCastFromIntINTEL";
-    case SpvOpArbitraryFloatCastToIntINTEL: return "OpArbitraryFloatCastToIntINTEL";
-    case SpvOpArbitraryFloatAddINTEL: return "OpArbitraryFloatAddINTEL";
-    case SpvOpArbitraryFloatSubINTEL: return "OpArbitraryFloatSubINTEL";
-    case SpvOpArbitraryFloatMulINTEL: return "OpArbitraryFloatMulINTEL";
-    case SpvOpArbitraryFloatDivINTEL: return "OpArbitraryFloatDivINTEL";
-    case SpvOpArbitraryFloatGTINTEL: return "OpArbitraryFloatGTINTEL";
-    case SpvOpArbitraryFloatGEINTEL: return "OpArbitraryFloatGEINTEL";
-    case SpvOpArbitraryFloatLTINTEL: return "OpArbitraryFloatLTINTEL";
-    case SpvOpArbitraryFloatLEINTEL: return "OpArbitraryFloatLEINTEL";
-    case SpvOpArbitraryFloatEQINTEL: return "OpArbitraryFloatEQINTEL";
-    case SpvOpArbitraryFloatRecipINTEL: return "OpArbitraryFloatRecipINTEL";
-    case SpvOpArbitraryFloatRSqrtINTEL: return "OpArbitraryFloatRSqrtINTEL";
-    case SpvOpArbitraryFloatCbrtINTEL: return "OpArbitraryFloatCbrtINTEL";
-    case SpvOpArbitraryFloatHypotINTEL: return "OpArbitraryFloatHypotINTEL";
-    case SpvOpArbitraryFloatSqrtINTEL: return "OpArbitraryFloatSqrtINTEL";
+    case SpvOpArbitraryFloatSinCosPiALTERA: return "OpArbitraryFloatSinCosPiALTERA";
+    case SpvOpArbitraryFloatCastALTERA: return "OpArbitraryFloatCastALTERA";
+    case SpvOpArbitraryFloatCastFromIntALTERA: return "OpArbitraryFloatCastFromIntALTERA";
+    case SpvOpArbitraryFloatCastToIntALTERA: return "OpArbitraryFloatCastToIntALTERA";
+    case SpvOpArbitraryFloatAddALTERA: return "OpArbitraryFloatAddALTERA";
+    case SpvOpArbitraryFloatSubALTERA: return "OpArbitraryFloatSubALTERA";
+    case SpvOpArbitraryFloatMulALTERA: return "OpArbitraryFloatMulALTERA";
+    case SpvOpArbitraryFloatDivALTERA: return "OpArbitraryFloatDivALTERA";
+    case SpvOpArbitraryFloatGTALTERA: return "OpArbitraryFloatGTALTERA";
+    case SpvOpArbitraryFloatGEALTERA: return "OpArbitraryFloatGEALTERA";
+    case SpvOpArbitraryFloatLTALTERA: return "OpArbitraryFloatLTALTERA";
+    case SpvOpArbitraryFloatLEALTERA: return "OpArbitraryFloatLEALTERA";
+    case SpvOpArbitraryFloatEQALTERA: return "OpArbitraryFloatEQALTERA";
+    case SpvOpArbitraryFloatRecipALTERA: return "OpArbitraryFloatRecipALTERA";
+    case SpvOpArbitraryFloatRSqrtALTERA: return "OpArbitraryFloatRSqrtALTERA";
+    case SpvOpArbitraryFloatCbrtALTERA: return "OpArbitraryFloatCbrtALTERA";
+    case SpvOpArbitraryFloatHypotALTERA: return "OpArbitraryFloatHypotALTERA";
+    case SpvOpArbitraryFloatSqrtALTERA: return "OpArbitraryFloatSqrtALTERA";
     case SpvOpArbitraryFloatLogINTEL: return "OpArbitraryFloatLogINTEL";
     case SpvOpArbitraryFloatLog2INTEL: return "OpArbitraryFloatLog2INTEL";
     case SpvOpArbitraryFloatLog10INTEL: return "OpArbitraryFloatLog10INTEL";
