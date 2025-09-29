@@ -9959,8 +9959,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpFixedSqrtINTEL",
+      "opname" : "OpFixedSqrtALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedSqrtINTEL" ],
       "opcode" : 5923,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -9972,12 +9973,13 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpFixedRecipINTEL",
+      "opname" : "OpFixedRecipALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedRecipINTEL" ],
       "opcode" : 5924,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -9989,12 +9991,13 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpFixedRsqrtINTEL",
+      "opname" : "OpFixedRsqrtALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedRsqrtINTEL" ],
       "opcode" : 5925,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10006,12 +10009,13 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpFixedSinINTEL",
+      "opname" : "OpFixedSinALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedSinINTEL" ],
       "opcode" : 5926,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10023,12 +10027,13 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpFixedCosINTEL",
+      "opname" : "OpFixedCosALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedCosINTEL" ],
       "opcode" : 5927,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10040,12 +10045,13 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpFixedSinCosINTEL",
+      "opname" : "OpFixedSinCosALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedSinCosINTEL" ],
       "opcode" : 5928,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10057,12 +10063,13 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpFixedSinPiINTEL",
+      "opname" : "OpFixedSinPiALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedSinPiINTEL" ],
       "opcode" : 5929,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10074,12 +10081,13 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpFixedCosPiINTEL",
+      "opname" : "OpFixedCosPiALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedCosPiINTEL" ],
       "opcode" : 5930,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10091,12 +10099,13 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpFixedSinCosPiINTEL",
+      "opname" : "OpFixedSinCosPiALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedSinCosPiINTEL" ],
       "opcode" : 5931,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10108,12 +10117,13 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpFixedLogINTEL",
+      "opname" : "OpFixedLogALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedLogINTEL" ],
       "opcode" : 5932,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10125,12 +10135,13 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpFixedExpINTEL",
+      "opname" : "OpFixedExpALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpFixedExpINTEL" ],
       "opcode" : 5933,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10142,7 +10153,7 @@
         { "kind" : "LiteralInteger", "name" : "Q" },
         { "kind" : "LiteralInteger", "name" : "O" }
       ],
-      "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL" ],
+      "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA" ],
       "version" : "None"
     },
     {
@@ -13752,49 +13763,49 @@
         {
           "enumerant" : "TRN",
           "value" : 0,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         },
         {
           "enumerant" : "TRN_ZERO",
           "value" : 1,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         },
         {
           "enumerant" : "RND",
           "value" : 2,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         },
         {
           "enumerant" : "RND_ZERO",
           "value" : 3,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         },
         {
           "enumerant" : "RND_INF",
           "value" : 4,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         },
         {
           "enumerant" : "RND_MIN_INF",
           "value" : 5,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         },
         {
           "enumerant" : "RND_CONV",
           "value" : 6,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         },
         {
           "enumerant" : "RND_CONV_ODD",
           "value" : 7,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         }
       ]
@@ -13824,25 +13835,25 @@
         {
           "enumerant" : "WRAP",
           "value" : 0,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         },
         {
           "enumerant" : "SAT",
           "value" : 1,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         },
         {
           "enumerant" : "SAT_ZERO",
           "value" : 2,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         },
         {
           "enumerant" : "SAT_SYM",
           "value" : 3,
-          "capabilities" : [ "ArbitraryPrecisionFixedPointINTEL"],
+          "capabilities" : [ "ArbitraryPrecisionFixedPointALTERA"],
           "version" : "None"
         }
       ]
@@ -17526,9 +17537,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "ArbitraryPrecisionFixedPointINTEL",
+          "enumerant" : "ArbitraryPrecisionFixedPointALTERA",
+          "aliases" : [ "ArbitraryPrecisionFixedPointINTEL" ],
           "value" : 5922,
-          "extensions" : [ "SPV_INTEL_arbitrary_precision_fixed_point" ],
+          "extensions" : [ "SPV_ALTERA_arbitrary_precision_fixed_point", "SPV_INTEL_arbitrary_precision_fixed_point" ],
           "version" : "None"
         },
         {

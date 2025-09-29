@@ -1242,6 +1242,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityMemoryAccessAliasingINTEL = 5910,
     SpvCapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
     SpvCapabilityFPGABufferLocationINTEL = 5920,
+    SpvCapabilityArbitraryPrecisionFixedPointALTERA = 5922,
     SpvCapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     SpvCapabilityUSMStorageClassesINTEL = 5935,
     SpvCapabilityRuntimeAlignedAttributeINTEL = 5939,
@@ -2380,16 +2381,27 @@ typedef enum SpvOp_ {
     SpvOpAliasDomainDeclINTEL = 5911,
     SpvOpAliasScopeDeclINTEL = 5912,
     SpvOpAliasScopeListDeclINTEL = 5913,
+    SpvOpFixedSqrtALTERA = 5923,
     SpvOpFixedSqrtINTEL = 5923,
+    SpvOpFixedRecipALTERA = 5924,
     SpvOpFixedRecipINTEL = 5924,
+    SpvOpFixedRsqrtALTERA = 5925,
     SpvOpFixedRsqrtINTEL = 5925,
+    SpvOpFixedSinALTERA = 5926,
     SpvOpFixedSinINTEL = 5926,
+    SpvOpFixedCosALTERA = 5927,
     SpvOpFixedCosINTEL = 5927,
+    SpvOpFixedSinCosALTERA = 5928,
     SpvOpFixedSinCosINTEL = 5928,
+    SpvOpFixedSinPiALTERA = 5929,
     SpvOpFixedSinPiINTEL = 5929,
+    SpvOpFixedCosPiALTERA = 5930,
     SpvOpFixedCosPiINTEL = 5930,
+    SpvOpFixedSinCosPiALTERA = 5931,
     SpvOpFixedSinCosPiINTEL = 5931,
+    SpvOpFixedLogALTERA = 5932,
     SpvOpFixedLogINTEL = 5932,
+    SpvOpFixedExpALTERA = 5933,
     SpvOpFixedExpINTEL = 5933,
     SpvOpPtrCastToCrossWorkgroupINTEL = 5934,
     SpvOpCrossWorkgroupCastToPtrINTEL = 5938,
@@ -3212,17 +3224,17 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpAliasDomainDeclINTEL: *hasResult = true; *hasResultType = false; break;
     case SpvOpAliasScopeDeclINTEL: *hasResult = true; *hasResultType = false; break;
     case SpvOpAliasScopeListDeclINTEL: *hasResult = true; *hasResultType = false; break;
-    case SpvOpFixedSqrtINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFixedRecipINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFixedRsqrtINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFixedSinINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFixedCosINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFixedSinCosINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFixedSinPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFixedCosPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFixedSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFixedLogINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpFixedExpINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedSqrtALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedRecipALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedRsqrtALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedSinALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedCosALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedSinCosALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedSinPiALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedCosPiALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedSinCosPiALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedLogALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpFixedExpALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpReadPipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
@@ -4219,7 +4231,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
     case SpvCapabilityFPGAInvocationPipeliningAttributesINTEL: return "FPGAInvocationPipeliningAttributesINTEL";
     case SpvCapabilityFPGABufferLocationINTEL: return "FPGABufferLocationINTEL";
-    case SpvCapabilityArbitraryPrecisionFixedPointINTEL: return "ArbitraryPrecisionFixedPointINTEL";
+    case SpvCapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case SpvCapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
     case SpvCapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";
     case SpvCapabilityIOPipesINTEL: return "IOPipesINTEL";
@@ -5203,17 +5215,17 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpAliasDomainDeclINTEL: return "OpAliasDomainDeclINTEL";
     case SpvOpAliasScopeDeclINTEL: return "OpAliasScopeDeclINTEL";
     case SpvOpAliasScopeListDeclINTEL: return "OpAliasScopeListDeclINTEL";
-    case SpvOpFixedSqrtINTEL: return "OpFixedSqrtINTEL";
-    case SpvOpFixedRecipINTEL: return "OpFixedRecipINTEL";
-    case SpvOpFixedRsqrtINTEL: return "OpFixedRsqrtINTEL";
-    case SpvOpFixedSinINTEL: return "OpFixedSinINTEL";
-    case SpvOpFixedCosINTEL: return "OpFixedCosINTEL";
-    case SpvOpFixedSinCosINTEL: return "OpFixedSinCosINTEL";
-    case SpvOpFixedSinPiINTEL: return "OpFixedSinPiINTEL";
-    case SpvOpFixedCosPiINTEL: return "OpFixedCosPiINTEL";
-    case SpvOpFixedSinCosPiINTEL: return "OpFixedSinCosPiINTEL";
-    case SpvOpFixedLogINTEL: return "OpFixedLogINTEL";
-    case SpvOpFixedExpINTEL: return "OpFixedExpINTEL";
+    case SpvOpFixedSqrtALTERA: return "OpFixedSqrtALTERA";
+    case SpvOpFixedRecipALTERA: return "OpFixedRecipALTERA";
+    case SpvOpFixedRsqrtALTERA: return "OpFixedRsqrtALTERA";
+    case SpvOpFixedSinALTERA: return "OpFixedSinALTERA";
+    case SpvOpFixedCosALTERA: return "OpFixedCosALTERA";
+    case SpvOpFixedSinCosALTERA: return "OpFixedSinCosALTERA";
+    case SpvOpFixedSinPiALTERA: return "OpFixedSinPiALTERA";
+    case SpvOpFixedCosPiALTERA: return "OpFixedCosPiALTERA";
+    case SpvOpFixedSinCosPiALTERA: return "OpFixedSinCosPiALTERA";
+    case SpvOpFixedLogALTERA: return "OpFixedLogALTERA";
+    case SpvOpFixedExpALTERA: return "OpFixedExpALTERA";
     case SpvOpPtrCastToCrossWorkgroupINTEL: return "OpPtrCastToCrossWorkgroupINTEL";
     case SpvOpCrossWorkgroupCastToPtrINTEL: return "OpCrossWorkgroupCastToPtrINTEL";
     case SpvOpReadPipeBlockingINTEL: return "OpReadPipeBlockingINTEL";

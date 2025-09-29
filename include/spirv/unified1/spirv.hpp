@@ -1238,6 +1238,7 @@ enum Capability {
     CapabilityMemoryAccessAliasingINTEL = 5910,
     CapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
     CapabilityFPGABufferLocationINTEL = 5920,
+    CapabilityArbitraryPrecisionFixedPointALTERA = 5922,
     CapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     CapabilityUSMStorageClassesINTEL = 5935,
     CapabilityRuntimeAlignedAttributeINTEL = 5939,
@@ -2376,16 +2377,27 @@ enum Op {
     OpAliasDomainDeclINTEL = 5911,
     OpAliasScopeDeclINTEL = 5912,
     OpAliasScopeListDeclINTEL = 5913,
+    OpFixedSqrtALTERA = 5923,
     OpFixedSqrtINTEL = 5923,
+    OpFixedRecipALTERA = 5924,
     OpFixedRecipINTEL = 5924,
+    OpFixedRsqrtALTERA = 5925,
     OpFixedRsqrtINTEL = 5925,
+    OpFixedSinALTERA = 5926,
     OpFixedSinINTEL = 5926,
+    OpFixedCosALTERA = 5927,
     OpFixedCosINTEL = 5927,
+    OpFixedSinCosALTERA = 5928,
     OpFixedSinCosINTEL = 5928,
+    OpFixedSinPiALTERA = 5929,
     OpFixedSinPiINTEL = 5929,
+    OpFixedCosPiALTERA = 5930,
     OpFixedCosPiINTEL = 5930,
+    OpFixedSinCosPiALTERA = 5931,
     OpFixedSinCosPiINTEL = 5931,
+    OpFixedLogALTERA = 5932,
     OpFixedLogINTEL = 5932,
+    OpFixedExpALTERA = 5933,
     OpFixedExpINTEL = 5933,
     OpPtrCastToCrossWorkgroupINTEL = 5934,
     OpCrossWorkgroupCastToPtrINTEL = 5938,
@@ -3208,17 +3220,17 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpAliasDomainDeclINTEL: *hasResult = true; *hasResultType = false; break;
     case OpAliasScopeDeclINTEL: *hasResult = true; *hasResultType = false; break;
     case OpAliasScopeListDeclINTEL: *hasResult = true; *hasResultType = false; break;
-    case OpFixedSqrtINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpFixedRecipINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpFixedRsqrtINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpFixedSinINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpFixedCosINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpFixedSinCosINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpFixedSinPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpFixedCosPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpFixedSinCosPiINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpFixedLogINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpFixedExpINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFixedSqrtALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpFixedRecipALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpFixedRsqrtALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpFixedSinALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpFixedCosALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpFixedSinCosALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpFixedSinPiALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpFixedCosPiALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpFixedSinCosPiALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpFixedLogALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpFixedExpALTERA: *hasResult = true; *hasResultType = true; break;
     case OpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
     case OpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
     case OpReadPipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
@@ -4215,7 +4227,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
     case CapabilityFPGAInvocationPipeliningAttributesINTEL: return "FPGAInvocationPipeliningAttributesINTEL";
     case CapabilityFPGABufferLocationINTEL: return "FPGABufferLocationINTEL";
-    case CapabilityArbitraryPrecisionFixedPointINTEL: return "ArbitraryPrecisionFixedPointINTEL";
+    case CapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case CapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
     case CapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";
     case CapabilityIOPipesINTEL: return "IOPipesINTEL";
@@ -5199,17 +5211,17 @@ inline const char* OpToString(Op value) {
     case OpAliasDomainDeclINTEL: return "OpAliasDomainDeclINTEL";
     case OpAliasScopeDeclINTEL: return "OpAliasScopeDeclINTEL";
     case OpAliasScopeListDeclINTEL: return "OpAliasScopeListDeclINTEL";
-    case OpFixedSqrtINTEL: return "OpFixedSqrtINTEL";
-    case OpFixedRecipINTEL: return "OpFixedRecipINTEL";
-    case OpFixedRsqrtINTEL: return "OpFixedRsqrtINTEL";
-    case OpFixedSinINTEL: return "OpFixedSinINTEL";
-    case OpFixedCosINTEL: return "OpFixedCosINTEL";
-    case OpFixedSinCosINTEL: return "OpFixedSinCosINTEL";
-    case OpFixedSinPiINTEL: return "OpFixedSinPiINTEL";
-    case OpFixedCosPiINTEL: return "OpFixedCosPiINTEL";
-    case OpFixedSinCosPiINTEL: return "OpFixedSinCosPiINTEL";
-    case OpFixedLogINTEL: return "OpFixedLogINTEL";
-    case OpFixedExpINTEL: return "OpFixedExpINTEL";
+    case OpFixedSqrtALTERA: return "OpFixedSqrtALTERA";
+    case OpFixedRecipALTERA: return "OpFixedRecipALTERA";
+    case OpFixedRsqrtALTERA: return "OpFixedRsqrtALTERA";
+    case OpFixedSinALTERA: return "OpFixedSinALTERA";
+    case OpFixedCosALTERA: return "OpFixedCosALTERA";
+    case OpFixedSinCosALTERA: return "OpFixedSinCosALTERA";
+    case OpFixedSinPiALTERA: return "OpFixedSinPiALTERA";
+    case OpFixedCosPiALTERA: return "OpFixedCosPiALTERA";
+    case OpFixedSinCosPiALTERA: return "OpFixedSinCosPiALTERA";
+    case OpFixedLogALTERA: return "OpFixedLogALTERA";
+    case OpFixedExpALTERA: return "OpFixedExpALTERA";
     case OpPtrCastToCrossWorkgroupINTEL: return "OpPtrCastToCrossWorkgroupINTEL";
     case OpCrossWorkgroupCastToPtrINTEL: return "OpCrossWorkgroupCastToPtrINTEL";
     case OpReadPipeBlockingINTEL: return "OpReadPipeBlockingINTEL";
