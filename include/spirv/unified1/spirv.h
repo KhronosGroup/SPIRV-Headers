@@ -1227,6 +1227,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFunctionFloatControlINTEL = 5821,
     SpvCapabilityFPGAMemoryAttributesINTEL = 5824,
     SpvCapabilityFPFastMathModeINTEL = 5837,
+    SpvCapabilityArbitraryPrecisionIntegersALTERA = 5844,
     SpvCapabilityArbitraryPrecisionIntegersINTEL = 5844,
     SpvCapabilityArbitraryPrecisionFloatingPointINTEL = 5845,
     SpvCapabilityUnstructuredLoopControlsINTEL = 5886,
@@ -4186,7 +4187,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFunctionFloatControlINTEL: return "FunctionFloatControlINTEL";
     case SpvCapabilityFPGAMemoryAttributesINTEL: return "FPGAMemoryAttributesINTEL";
     case SpvCapabilityFPFastMathModeINTEL: return "FPFastMathModeINTEL";
-    case SpvCapabilityArbitraryPrecisionIntegersINTEL: return "ArbitraryPrecisionIntegersINTEL";
+    case SpvCapabilityArbitraryPrecisionIntegersALTERA: return "ArbitraryPrecisionIntegersALTERA";
     case SpvCapabilityArbitraryPrecisionFloatingPointINTEL: return "ArbitraryPrecisionFloatingPointINTEL";
     case SpvCapabilityUnstructuredLoopControlsINTEL: return "UnstructuredLoopControlsINTEL";
     case SpvCapabilityFPGALoopControlsINTEL: return "FPGALoopControlsINTEL";

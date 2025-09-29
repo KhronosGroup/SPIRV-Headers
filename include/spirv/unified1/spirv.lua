@@ -1214,6 +1214,7 @@ spv = {
         FunctionFloatControlINTEL = 5821,
         FPGAMemoryAttributesINTEL = 5824,
         FPFastMathModeINTEL = 5837,
+        ArbitraryPrecisionIntegersALTERA = 5844,
         ArbitraryPrecisionIntegersINTEL = 5844,
         ArbitraryPrecisionFloatingPointINTEL = 5845,
         UnstructuredLoopControlsINTEL = 5886,

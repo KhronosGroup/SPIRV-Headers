@@ -1223,6 +1223,7 @@ enum class Capability : unsigned {
     FunctionFloatControlINTEL = 5821,
     FPGAMemoryAttributesINTEL = 5824,
     FPFastMathModeINTEL = 5837,
+    ArbitraryPrecisionIntegersALTERA = 5844,
     ArbitraryPrecisionIntegersINTEL = 5844,
     ArbitraryPrecisionFloatingPointINTEL = 5845,
     UnstructuredLoopControlsINTEL = 5886,
@@ -4182,7 +4183,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::FunctionFloatControlINTEL: return "FunctionFloatControlINTEL";
     case Capability::FPGAMemoryAttributesINTEL: return "FPGAMemoryAttributesINTEL";
     case Capability::FPFastMathModeINTEL: return "FPFastMathModeINTEL";
-    case Capability::ArbitraryPrecisionIntegersINTEL: return "ArbitraryPrecisionIntegersINTEL";
+    case Capability::ArbitraryPrecisionIntegersALTERA: return "ArbitraryPrecisionIntegersALTERA";
     case Capability::ArbitraryPrecisionFloatingPointINTEL: return "ArbitraryPrecisionFloatingPointINTEL";
     case Capability::UnstructuredLoopControlsINTEL: return "UnstructuredLoopControlsINTEL";
     case Capability::FPGALoopControlsINTEL: return "FPGALoopControlsINTEL";

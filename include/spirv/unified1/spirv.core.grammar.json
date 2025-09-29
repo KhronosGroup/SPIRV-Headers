@@ -17428,9 +17428,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "ArbitraryPrecisionIntegersINTEL",
+          "enumerant" : "ArbitraryPrecisionIntegersALTERA",
+          "aliases" : [ "ArbitraryPrecisionIntegersINTEL" ],
           "value" : 5844,
-          "extensions" : [ "SPV_INTEL_arbitrary_precision_integers" ],
+          "extensions" : [ "SPV_ALTERA_arbitrary_precision_integers", "SPV_INTEL_arbitrary_precision_integers" ],
           "version" : "None"
         },
         {
