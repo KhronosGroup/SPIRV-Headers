@@ -4559,6 +4559,19 @@
       "version" : "None"
     },
     {
+      "opname" : "OpBitcastExtractEXT",
+      "class"  : "Conversion",
+      "opcode" : 4195,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "Base" },
+        { "kind" : "IdRef",        "name" : "Offset" }
+      ],
+      "capabilities" : [ "BitcastExtractEXT" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpTerminateInvocation",
       "class"  : "Control-Flow",
       "opcode" : 4416,
@@ -17404,6 +17417,36 @@
           "version" : "None"
         },
         {
+          "enumerant" : "Float6EXT",
+          "value" : 4228,
+          "extensions" : [ "SPV_EXT_ocp_microscaling_types"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float4EXT",
+          "value" : 4229,
+          "extensions" : [ "SPV_EXT_ocp_microscaling_types"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float8UnsignedE8M0EXT",
+          "value" : 4230,
+          "extensions" : [ "SPV_EXT_ocp_microscaling_types"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MXInt8EXT",
+          "value" : 4231,
+          "extensions" : [ "SPV_EXT_ocp_microscaling_types"],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BitcastExtractEXT",
+          "value" : 4232,
+          "extensions" : [ "SPV_EXT_ocp_microscaling_types"],
+          "version" : "None"
+        },
+        {
           "enumerant" : "FragmentShadingRateKHR",
           "value" : 4422,
           "capabilities" : [ "Shader" ],
@@ -19263,6 +19306,36 @@
           "enumerant" : "Float8E5M2EXT",
           "value" : 4215,
           "capabilities" : [ "Float8EXT" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float6E2M3EXT",
+          "value" : 4223,
+          "capabilities" : [ "Float6EXT" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float6E3M2EXT",
+          "value" : 4224,
+          "capabilities" : [ "Float6EXT" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float4E2M1EXT",
+          "value" : 4225,
+          "capabilities" : [ "Float4EXT" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float8UnsignedE8M0EXT",
+          "value" : 4226,
+          "capabilities" : [ "Float8UnsignedE8M0EXT" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MXInt8EXT",
+          "value" : 4227,
+          "capabilities" : [ "MXInt8EXT" ],
           "version" : "None"
         }
       ]

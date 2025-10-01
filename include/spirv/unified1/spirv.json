@@ -1116,6 +1116,11 @@
                     "CooperativeMatrixLayoutsARM": 4201,
                     "Float8EXT": 4212,
                     "Float8CooperativeMatrixEXT": 4213,
+                    "Float6EXT": 4228,
+                    "Float4EXT": 4229,
+                    "Float8UnsignedE8M0EXT": 4230,
+                    "MXInt8EXT": 4231,
+                    "BitcastExtractEXT": 4232,
                     "FragmentShadingRateKHR": 4422,
                     "SubgroupBallotKHR": 4423,
                     "DrawParameters": 4427,
@@ -1660,7 +1665,12 @@
                 {
                     "BFloat16KHR": 0,
                     "Float8E4M3EXT": 4214,
-                    "Float8E5M2EXT": 4215
+                    "Float8E5M2EXT": 4215,
+                    "Float6E2M3EXT": 4223,
+                    "Float6E3M2EXT": 4224,
+                    "Float4E2M1EXT": 4225,
+                    "Float8UnsignedE8M0EXT": 4226,
+                    "MXInt8EXT": 4227
                 }
             },
             {
@@ -2059,6 +2069,7 @@
                     "OpGraphSetOutputARM": 4185,
                     "OpGraphEndARM": 4186,
                     "OpTypeGraphARM": 4190,
+                    "OpBitcastExtractEXT": 4195,
                     "OpTerminateInvocation": 4416,
                     "OpTypeUntypedPointerKHR": 4417,
                     "OpUntypedVariableKHR": 4418,

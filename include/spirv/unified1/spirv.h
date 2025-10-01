@@ -1154,6 +1154,11 @@ typedef enum SpvCapability_ {
     SpvCapabilityCooperativeMatrixLayoutsARM = 4201,
     SpvCapabilityFloat8EXT = 4212,
     SpvCapabilityFloat8CooperativeMatrixEXT = 4213,
+    SpvCapabilityFloat6EXT = 4228,
+    SpvCapabilityFloat4EXT = 4229,
+    SpvCapabilityFloat8UnsignedE8M0EXT = 4230,
+    SpvCapabilityMXInt8EXT = 4231,
+    SpvCapabilityBitcastExtractEXT = 4232,
     SpvCapabilityFragmentShadingRateKHR = 4422,
     SpvCapabilitySubgroupBallotKHR = 4423,
     SpvCapabilityDrawParameters = 4427,
@@ -1705,6 +1710,11 @@ typedef enum SpvFPEncoding_ {
     SpvFPEncodingBFloat16KHR = 0,
     SpvFPEncodingFloat8E4M3EXT = 4214,
     SpvFPEncodingFloat8E5M2EXT = 4215,
+    SpvFPEncodingFloat6E2M3EXT = 4223,
+    SpvFPEncodingFloat6E3M2EXT = 4224,
+    SpvFPEncodingFloat4E2M1EXT = 4225,
+    SpvFPEncodingFloat8UnsignedE8M0EXT = 4226,
+    SpvFPEncodingMXInt8EXT = 4227,
     SpvFPEncodingMax = 0x7fffffff,
 } SpvFPEncoding;
 
@@ -2094,6 +2104,7 @@ typedef enum SpvOp_ {
     SpvOpGraphSetOutputARM = 4185,
     SpvOpGraphEndARM = 4186,
     SpvOpTypeGraphARM = 4190,
+    SpvOpBitcastExtractEXT = 4195,
     SpvOpTerminateInvocation = 4416,
     SpvOpTypeUntypedPointerKHR = 4417,
     SpvOpUntypedVariableKHR = 4418,
@@ -3033,6 +3044,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpGraphSetOutputARM: *hasResult = false; *hasResultType = false; break;
     case SpvOpGraphEndARM: *hasResult = false; *hasResultType = false; break;
     case SpvOpTypeGraphARM: *hasResult = true; *hasResultType = false; break;
+    case SpvOpBitcastExtractEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpTerminateInvocation: *hasResult = false; *hasResultType = false; break;
     case SpvOpTypeUntypedPointerKHR: *hasResult = true; *hasResultType = false; break;
     case SpvOpUntypedVariableKHR: *hasResult = true; *hasResultType = true; break;
@@ -4346,6 +4358,11 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityCooperativeMatrixLayoutsARM: return "CooperativeMatrixLayoutsARM";
     case SpvCapabilityFloat8EXT: return "Float8EXT";
     case SpvCapabilityFloat8CooperativeMatrixEXT: return "Float8CooperativeMatrixEXT";
+    case SpvCapabilityFloat6EXT: return "Float6EXT";
+    case SpvCapabilityFloat4EXT: return "Float4EXT";
+    case SpvCapabilityFloat8UnsignedE8M0EXT: return "Float8UnsignedE8M0EXT";
+    case SpvCapabilityMXInt8EXT: return "MXInt8EXT";
+    case SpvCapabilityBitcastExtractEXT: return "BitcastExtractEXT";
     case SpvCapabilityFragmentShadingRateKHR: return "FragmentShadingRateKHR";
     case SpvCapabilitySubgroupBallotKHR: return "SubgroupBallotKHR";
     case SpvCapabilityDrawParameters: return "DrawParameters";
@@ -4714,6 +4731,11 @@ inline const char* SpvFPEncodingToString(SpvFPEncoding value) {
     case SpvFPEncodingBFloat16KHR: return "BFloat16KHR";
     case SpvFPEncodingFloat8E4M3EXT: return "Float8E4M3EXT";
     case SpvFPEncodingFloat8E5M2EXT: return "Float8E5M2EXT";
+    case SpvFPEncodingFloat6E2M3EXT: return "Float6E2M3EXT";
+    case SpvFPEncodingFloat6E3M2EXT: return "Float6E3M2EXT";
+    case SpvFPEncodingFloat4E2M1EXT: return "Float4E2M1EXT";
+    case SpvFPEncodingFloat8UnsignedE8M0EXT: return "Float8UnsignedE8M0EXT";
+    case SpvFPEncodingMXInt8EXT: return "MXInt8EXT";
     default: return "Unknown";
     }
 }
@@ -5109,6 +5131,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpGraphSetOutputARM: return "OpGraphSetOutputARM";
     case SpvOpGraphEndARM: return "OpGraphEndARM";
     case SpvOpTypeGraphARM: return "OpTypeGraphARM";
+    case SpvOpBitcastExtractEXT: return "OpBitcastExtractEXT";
     case SpvOpTerminateInvocation: return "OpTerminateInvocation";
     case SpvOpTypeUntypedPointerKHR: return "OpTypeUntypedPointerKHR";
     case SpvOpUntypedVariableKHR: return "OpUntypedVariableKHR";
