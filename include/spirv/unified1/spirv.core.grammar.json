@@ -14952,12 +14952,13 @@
           "version" : "None"
         },
         {
-          "enumerant" : "IOPipeStorageINTEL",
+          "enumerant" : "IOPipeStorageALTERA",
+          "aliases" : [ "IOPipeStorageINTEL" ],
           "value" : 5944,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "IO Pipe ID" }
           ],
-          "capabilities" : [ "IOPipesINTEL" ],
+          "capabilities" : [ "IOPipesALTERA" ],
           "version" : "None"
         },
         {
@@ -17600,9 +17601,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "IOPipesINTEL",
+          "enumerant" : "IOPipesALTERA",
+          "aliases" : [ "IOPipesINTEL" ],
           "value" : 5943,
-          "extensions" : [ "SPV_INTEL_io_pipes" ],
+          "extensions" : [ "SPV_ALTERA_io_pipes", "SPV_INTEL_io_pipes" ],
           "version" : "None"
         },
         {

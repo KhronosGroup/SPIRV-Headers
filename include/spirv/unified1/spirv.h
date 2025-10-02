@@ -646,6 +646,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationPipelineEnableINTEL = 5919,
     SpvDecorationBufferLocationALTERA = 5921,
     SpvDecorationBufferLocationINTEL = 5921,
+    SpvDecorationIOPipeStorageALTERA = 5944,
     SpvDecorationIOPipeStorageINTEL = 5944,
     SpvDecorationFunctionFloatingPointModeINTEL = 6080,
     SpvDecorationSingleElementVectorINTEL = 6085,
@@ -1312,6 +1313,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     SpvCapabilityUSMStorageClassesINTEL = 5935,
     SpvCapabilityRuntimeAlignedAttributeINTEL = 5939,
+    SpvCapabilityIOPipesALTERA = 5943,
     SpvCapabilityIOPipesINTEL = 5943,
     SpvCapabilityBlockingPipesALTERA = 5945,
     SpvCapabilityBlockingPipesINTEL = 5945,
@@ -3885,7 +3887,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationMaxConcurrencyALTERA: return "MaxConcurrencyALTERA";
     case SpvDecorationPipelineEnableALTERA: return "PipelineEnableALTERA";
     case SpvDecorationBufferLocationALTERA: return "BufferLocationALTERA";
-    case SpvDecorationIOPipeStorageINTEL: return "IOPipeStorageINTEL";
+    case SpvDecorationIOPipeStorageALTERA: return "IOPipeStorageALTERA";
     case SpvDecorationFunctionFloatingPointModeINTEL: return "FunctionFloatingPointModeINTEL";
     case SpvDecorationSingleElementVectorINTEL: return "SingleElementVectorINTEL";
     case SpvDecorationVectorComputeCallableFunctionINTEL: return "VectorComputeCallableFunctionINTEL";
@@ -4311,7 +4313,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case SpvCapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
     case SpvCapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";
-    case SpvCapabilityIOPipesINTEL: return "IOPipesINTEL";
+    case SpvCapabilityIOPipesALTERA: return "IOPipesALTERA";
     case SpvCapabilityBlockingPipesALTERA: return "BlockingPipesALTERA";
     case SpvCapabilityFPGARegALTERA: return "FPGARegALTERA";
     case SpvCapabilityDotProductInputAll: return "DotProductInputAll";

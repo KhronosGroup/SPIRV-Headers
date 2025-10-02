@@ -642,6 +642,7 @@ enum Decoration {
     DecorationPipelineEnableINTEL = 5919,
     DecorationBufferLocationALTERA = 5921,
     DecorationBufferLocationINTEL = 5921,
+    DecorationIOPipeStorageALTERA = 5944,
     DecorationIOPipeStorageINTEL = 5944,
     DecorationFunctionFloatingPointModeINTEL = 6080,
     DecorationSingleElementVectorINTEL = 6085,
@@ -1308,6 +1309,7 @@ enum Capability {
     CapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     CapabilityUSMStorageClassesINTEL = 5935,
     CapabilityRuntimeAlignedAttributeINTEL = 5939,
+    CapabilityIOPipesALTERA = 5943,
     CapabilityIOPipesINTEL = 5943,
     CapabilityBlockingPipesALTERA = 5945,
     CapabilityBlockingPipesINTEL = 5945,
@@ -3881,7 +3883,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationMaxConcurrencyALTERA: return "MaxConcurrencyALTERA";
     case DecorationPipelineEnableALTERA: return "PipelineEnableALTERA";
     case DecorationBufferLocationALTERA: return "BufferLocationALTERA";
-    case DecorationIOPipeStorageINTEL: return "IOPipeStorageINTEL";
+    case DecorationIOPipeStorageALTERA: return "IOPipeStorageALTERA";
     case DecorationFunctionFloatingPointModeINTEL: return "FunctionFloatingPointModeINTEL";
     case DecorationSingleElementVectorINTEL: return "SingleElementVectorINTEL";
     case DecorationVectorComputeCallableFunctionINTEL: return "VectorComputeCallableFunctionINTEL";
@@ -4307,7 +4309,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case CapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
     case CapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";
-    case CapabilityIOPipesINTEL: return "IOPipesINTEL";
+    case CapabilityIOPipesALTERA: return "IOPipesALTERA";
     case CapabilityBlockingPipesALTERA: return "BlockingPipesALTERA";
     case CapabilityFPGARegALTERA: return "FPGARegALTERA";
     case CapabilityDotProductInputAll: return "DotProductInputAll";
