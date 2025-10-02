@@ -589,20 +589,35 @@ enum class Decoration : unsigned {
     UserTypeGOOGLE = 5636,
     FunctionRoundingModeINTEL = 5822,
     FunctionDenormModeINTEL = 5823,
+    RegisterALTERA = 5825,
     RegisterINTEL = 5825,
+    MemoryALTERA = 5826,
     MemoryINTEL = 5826,
+    NumbanksALTERA = 5827,
     NumbanksINTEL = 5827,
+    BankwidthALTERA = 5828,
     BankwidthINTEL = 5828,
+    MaxPrivateCopiesALTERA = 5829,
     MaxPrivateCopiesINTEL = 5829,
+    SinglepumpALTERA = 5830,
     SinglepumpINTEL = 5830,
+    DoublepumpALTERA = 5831,
     DoublepumpINTEL = 5831,
+    MaxReplicatesALTERA = 5832,
     MaxReplicatesINTEL = 5832,
+    SimpleDualPortALTERA = 5833,
     SimpleDualPortINTEL = 5833,
+    MergeALTERA = 5834,
     MergeINTEL = 5834,
+    BankBitsALTERA = 5835,
     BankBitsINTEL = 5835,
+    ForcePow2DepthALTERA = 5836,
     ForcePow2DepthINTEL = 5836,
+    StridesizeALTERA = 5883,
     StridesizeINTEL = 5883,
+    WordsizeALTERA = 5884,
     WordsizeINTEL = 5884,
+    TrueDualPortALTERA = 5885,
     TrueDualPortINTEL = 5885,
     BurstCoalesceALTERA = 5899,
     BurstCoalesceINTEL = 5899,
@@ -1263,6 +1278,7 @@ enum class Capability : unsigned {
     SubgroupAvcMotionEstimationChromaINTEL = 5698,
     VariableLengthArrayINTEL = 5817,
     FunctionFloatControlINTEL = 5821,
+    FPGAMemoryAttributesALTERA = 5824,
     FPGAMemoryAttributesINTEL = 5824,
     FPFastMathModeINTEL = 5837,
     ArbitraryPrecisionIntegersALTERA = 5844,
@@ -3830,21 +3846,21 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::UserTypeGOOGLE: return "UserTypeGOOGLE";
     case Decoration::FunctionRoundingModeINTEL: return "FunctionRoundingModeINTEL";
     case Decoration::FunctionDenormModeINTEL: return "FunctionDenormModeINTEL";
-    case Decoration::RegisterINTEL: return "RegisterINTEL";
-    case Decoration::MemoryINTEL: return "MemoryINTEL";
-    case Decoration::NumbanksINTEL: return "NumbanksINTEL";
-    case Decoration::BankwidthINTEL: return "BankwidthINTEL";
-    case Decoration::MaxPrivateCopiesINTEL: return "MaxPrivateCopiesINTEL";
-    case Decoration::SinglepumpINTEL: return "SinglepumpINTEL";
-    case Decoration::DoublepumpINTEL: return "DoublepumpINTEL";
-    case Decoration::MaxReplicatesINTEL: return "MaxReplicatesINTEL";
-    case Decoration::SimpleDualPortINTEL: return "SimpleDualPortINTEL";
-    case Decoration::MergeINTEL: return "MergeINTEL";
-    case Decoration::BankBitsINTEL: return "BankBitsINTEL";
-    case Decoration::ForcePow2DepthINTEL: return "ForcePow2DepthINTEL";
-    case Decoration::StridesizeINTEL: return "StridesizeINTEL";
-    case Decoration::WordsizeINTEL: return "WordsizeINTEL";
-    case Decoration::TrueDualPortINTEL: return "TrueDualPortINTEL";
+    case Decoration::RegisterALTERA: return "RegisterALTERA";
+    case Decoration::MemoryALTERA: return "MemoryALTERA";
+    case Decoration::NumbanksALTERA: return "NumbanksALTERA";
+    case Decoration::BankwidthALTERA: return "BankwidthALTERA";
+    case Decoration::MaxPrivateCopiesALTERA: return "MaxPrivateCopiesALTERA";
+    case Decoration::SinglepumpALTERA: return "SinglepumpALTERA";
+    case Decoration::DoublepumpALTERA: return "DoublepumpALTERA";
+    case Decoration::MaxReplicatesALTERA: return "MaxReplicatesALTERA";
+    case Decoration::SimpleDualPortALTERA: return "SimpleDualPortALTERA";
+    case Decoration::MergeALTERA: return "MergeALTERA";
+    case Decoration::BankBitsALTERA: return "BankBitsALTERA";
+    case Decoration::ForcePow2DepthALTERA: return "ForcePow2DepthALTERA";
+    case Decoration::StridesizeALTERA: return "StridesizeALTERA";
+    case Decoration::WordsizeALTERA: return "WordsizeALTERA";
+    case Decoration::TrueDualPortALTERA: return "TrueDualPortALTERA";
     case Decoration::BurstCoalesceALTERA: return "BurstCoalesceALTERA";
     case Decoration::CacheSizeALTERA: return "CacheSizeALTERA";
     case Decoration::DontStaticallyCoalesceALTERA: return "DontStaticallyCoalesceALTERA";
@@ -4266,7 +4282,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::SubgroupAvcMotionEstimationChromaINTEL: return "SubgroupAvcMotionEstimationChromaINTEL";
     case Capability::VariableLengthArrayINTEL: return "VariableLengthArrayINTEL";
     case Capability::FunctionFloatControlINTEL: return "FunctionFloatControlINTEL";
-    case Capability::FPGAMemoryAttributesINTEL: return "FPGAMemoryAttributesINTEL";
+    case Capability::FPGAMemoryAttributesALTERA: return "FPGAMemoryAttributesALTERA";
     case Capability::FPFastMathModeINTEL: return "FPFastMathModeINTEL";
     case Capability::ArbitraryPrecisionIntegersALTERA: return "ArbitraryPrecisionIntegersALTERA";
     case Capability::ArbitraryPrecisionFloatingPointALTERA: return "ArbitraryPrecisionFloatingPointALTERA";

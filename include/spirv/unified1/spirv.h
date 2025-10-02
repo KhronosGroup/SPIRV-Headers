@@ -593,20 +593,35 @@ typedef enum SpvDecoration_ {
     SpvDecorationUserTypeGOOGLE = 5636,
     SpvDecorationFunctionRoundingModeINTEL = 5822,
     SpvDecorationFunctionDenormModeINTEL = 5823,
+    SpvDecorationRegisterALTERA = 5825,
     SpvDecorationRegisterINTEL = 5825,
+    SpvDecorationMemoryALTERA = 5826,
     SpvDecorationMemoryINTEL = 5826,
+    SpvDecorationNumbanksALTERA = 5827,
     SpvDecorationNumbanksINTEL = 5827,
+    SpvDecorationBankwidthALTERA = 5828,
     SpvDecorationBankwidthINTEL = 5828,
+    SpvDecorationMaxPrivateCopiesALTERA = 5829,
     SpvDecorationMaxPrivateCopiesINTEL = 5829,
+    SpvDecorationSinglepumpALTERA = 5830,
     SpvDecorationSinglepumpINTEL = 5830,
+    SpvDecorationDoublepumpALTERA = 5831,
     SpvDecorationDoublepumpINTEL = 5831,
+    SpvDecorationMaxReplicatesALTERA = 5832,
     SpvDecorationMaxReplicatesINTEL = 5832,
+    SpvDecorationSimpleDualPortALTERA = 5833,
     SpvDecorationSimpleDualPortINTEL = 5833,
+    SpvDecorationMergeALTERA = 5834,
     SpvDecorationMergeINTEL = 5834,
+    SpvDecorationBankBitsALTERA = 5835,
     SpvDecorationBankBitsINTEL = 5835,
+    SpvDecorationForcePow2DepthALTERA = 5836,
     SpvDecorationForcePow2DepthINTEL = 5836,
+    SpvDecorationStridesizeALTERA = 5883,
     SpvDecorationStridesizeINTEL = 5883,
+    SpvDecorationWordsizeALTERA = 5884,
     SpvDecorationWordsizeINTEL = 5884,
+    SpvDecorationTrueDualPortALTERA = 5885,
     SpvDecorationTrueDualPortINTEL = 5885,
     SpvDecorationBurstCoalesceALTERA = 5899,
     SpvDecorationBurstCoalesceINTEL = 5899,
@@ -1267,6 +1282,7 @@ typedef enum SpvCapability_ {
     SpvCapabilitySubgroupAvcMotionEstimationChromaINTEL = 5698,
     SpvCapabilityVariableLengthArrayINTEL = 5817,
     SpvCapabilityFunctionFloatControlINTEL = 5821,
+    SpvCapabilityFPGAMemoryAttributesALTERA = 5824,
     SpvCapabilityFPGAMemoryAttributesINTEL = 5824,
     SpvCapabilityFPFastMathModeINTEL = 5837,
     SpvCapabilityArbitraryPrecisionIntegersALTERA = 5844,
@@ -3834,21 +3850,21 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationUserTypeGOOGLE: return "UserTypeGOOGLE";
     case SpvDecorationFunctionRoundingModeINTEL: return "FunctionRoundingModeINTEL";
     case SpvDecorationFunctionDenormModeINTEL: return "FunctionDenormModeINTEL";
-    case SpvDecorationRegisterINTEL: return "RegisterINTEL";
-    case SpvDecorationMemoryINTEL: return "MemoryINTEL";
-    case SpvDecorationNumbanksINTEL: return "NumbanksINTEL";
-    case SpvDecorationBankwidthINTEL: return "BankwidthINTEL";
-    case SpvDecorationMaxPrivateCopiesINTEL: return "MaxPrivateCopiesINTEL";
-    case SpvDecorationSinglepumpINTEL: return "SinglepumpINTEL";
-    case SpvDecorationDoublepumpINTEL: return "DoublepumpINTEL";
-    case SpvDecorationMaxReplicatesINTEL: return "MaxReplicatesINTEL";
-    case SpvDecorationSimpleDualPortINTEL: return "SimpleDualPortINTEL";
-    case SpvDecorationMergeINTEL: return "MergeINTEL";
-    case SpvDecorationBankBitsINTEL: return "BankBitsINTEL";
-    case SpvDecorationForcePow2DepthINTEL: return "ForcePow2DepthINTEL";
-    case SpvDecorationStridesizeINTEL: return "StridesizeINTEL";
-    case SpvDecorationWordsizeINTEL: return "WordsizeINTEL";
-    case SpvDecorationTrueDualPortINTEL: return "TrueDualPortINTEL";
+    case SpvDecorationRegisterALTERA: return "RegisterALTERA";
+    case SpvDecorationMemoryALTERA: return "MemoryALTERA";
+    case SpvDecorationNumbanksALTERA: return "NumbanksALTERA";
+    case SpvDecorationBankwidthALTERA: return "BankwidthALTERA";
+    case SpvDecorationMaxPrivateCopiesALTERA: return "MaxPrivateCopiesALTERA";
+    case SpvDecorationSinglepumpALTERA: return "SinglepumpALTERA";
+    case SpvDecorationDoublepumpALTERA: return "DoublepumpALTERA";
+    case SpvDecorationMaxReplicatesALTERA: return "MaxReplicatesALTERA";
+    case SpvDecorationSimpleDualPortALTERA: return "SimpleDualPortALTERA";
+    case SpvDecorationMergeALTERA: return "MergeALTERA";
+    case SpvDecorationBankBitsALTERA: return "BankBitsALTERA";
+    case SpvDecorationForcePow2DepthALTERA: return "ForcePow2DepthALTERA";
+    case SpvDecorationStridesizeALTERA: return "StridesizeALTERA";
+    case SpvDecorationWordsizeALTERA: return "WordsizeALTERA";
+    case SpvDecorationTrueDualPortALTERA: return "TrueDualPortALTERA";
     case SpvDecorationBurstCoalesceALTERA: return "BurstCoalesceALTERA";
     case SpvDecorationCacheSizeALTERA: return "CacheSizeALTERA";
     case SpvDecorationDontStaticallyCoalesceALTERA: return "DontStaticallyCoalesceALTERA";
@@ -4270,7 +4286,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilitySubgroupAvcMotionEstimationChromaINTEL: return "SubgroupAvcMotionEstimationChromaINTEL";
     case SpvCapabilityVariableLengthArrayINTEL: return "VariableLengthArrayINTEL";
     case SpvCapabilityFunctionFloatControlINTEL: return "FunctionFloatControlINTEL";
-    case SpvCapabilityFPGAMemoryAttributesINTEL: return "FPGAMemoryAttributesINTEL";
+    case SpvCapabilityFPGAMemoryAttributesALTERA: return "FPGAMemoryAttributesALTERA";
     case SpvCapabilityFPFastMathModeINTEL: return "FPFastMathModeINTEL";
     case SpvCapabilityArbitraryPrecisionIntegersALTERA: return "ArbitraryPrecisionIntegersALTERA";
     case SpvCapabilityArbitraryPrecisionFloatingPointALTERA: return "ArbitraryPrecisionFloatingPointALTERA";

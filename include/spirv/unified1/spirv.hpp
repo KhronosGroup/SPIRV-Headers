@@ -589,20 +589,35 @@ enum Decoration {
     DecorationUserTypeGOOGLE = 5636,
     DecorationFunctionRoundingModeINTEL = 5822,
     DecorationFunctionDenormModeINTEL = 5823,
+    DecorationRegisterALTERA = 5825,
     DecorationRegisterINTEL = 5825,
+    DecorationMemoryALTERA = 5826,
     DecorationMemoryINTEL = 5826,
+    DecorationNumbanksALTERA = 5827,
     DecorationNumbanksINTEL = 5827,
+    DecorationBankwidthALTERA = 5828,
     DecorationBankwidthINTEL = 5828,
+    DecorationMaxPrivateCopiesALTERA = 5829,
     DecorationMaxPrivateCopiesINTEL = 5829,
+    DecorationSinglepumpALTERA = 5830,
     DecorationSinglepumpINTEL = 5830,
+    DecorationDoublepumpALTERA = 5831,
     DecorationDoublepumpINTEL = 5831,
+    DecorationMaxReplicatesALTERA = 5832,
     DecorationMaxReplicatesINTEL = 5832,
+    DecorationSimpleDualPortALTERA = 5833,
     DecorationSimpleDualPortINTEL = 5833,
+    DecorationMergeALTERA = 5834,
     DecorationMergeINTEL = 5834,
+    DecorationBankBitsALTERA = 5835,
     DecorationBankBitsINTEL = 5835,
+    DecorationForcePow2DepthALTERA = 5836,
     DecorationForcePow2DepthINTEL = 5836,
+    DecorationStridesizeALTERA = 5883,
     DecorationStridesizeINTEL = 5883,
+    DecorationWordsizeALTERA = 5884,
     DecorationWordsizeINTEL = 5884,
+    DecorationTrueDualPortALTERA = 5885,
     DecorationTrueDualPortINTEL = 5885,
     DecorationBurstCoalesceALTERA = 5899,
     DecorationBurstCoalesceINTEL = 5899,
@@ -1263,6 +1278,7 @@ enum Capability {
     CapabilitySubgroupAvcMotionEstimationChromaINTEL = 5698,
     CapabilityVariableLengthArrayINTEL = 5817,
     CapabilityFunctionFloatControlINTEL = 5821,
+    CapabilityFPGAMemoryAttributesALTERA = 5824,
     CapabilityFPGAMemoryAttributesINTEL = 5824,
     CapabilityFPFastMathModeINTEL = 5837,
     CapabilityArbitraryPrecisionIntegersALTERA = 5844,
@@ -3830,21 +3846,21 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationUserTypeGOOGLE: return "UserTypeGOOGLE";
     case DecorationFunctionRoundingModeINTEL: return "FunctionRoundingModeINTEL";
     case DecorationFunctionDenormModeINTEL: return "FunctionDenormModeINTEL";
-    case DecorationRegisterINTEL: return "RegisterINTEL";
-    case DecorationMemoryINTEL: return "MemoryINTEL";
-    case DecorationNumbanksINTEL: return "NumbanksINTEL";
-    case DecorationBankwidthINTEL: return "BankwidthINTEL";
-    case DecorationMaxPrivateCopiesINTEL: return "MaxPrivateCopiesINTEL";
-    case DecorationSinglepumpINTEL: return "SinglepumpINTEL";
-    case DecorationDoublepumpINTEL: return "DoublepumpINTEL";
-    case DecorationMaxReplicatesINTEL: return "MaxReplicatesINTEL";
-    case DecorationSimpleDualPortINTEL: return "SimpleDualPortINTEL";
-    case DecorationMergeINTEL: return "MergeINTEL";
-    case DecorationBankBitsINTEL: return "BankBitsINTEL";
-    case DecorationForcePow2DepthINTEL: return "ForcePow2DepthINTEL";
-    case DecorationStridesizeINTEL: return "StridesizeINTEL";
-    case DecorationWordsizeINTEL: return "WordsizeINTEL";
-    case DecorationTrueDualPortINTEL: return "TrueDualPortINTEL";
+    case DecorationRegisterALTERA: return "RegisterALTERA";
+    case DecorationMemoryALTERA: return "MemoryALTERA";
+    case DecorationNumbanksALTERA: return "NumbanksALTERA";
+    case DecorationBankwidthALTERA: return "BankwidthALTERA";
+    case DecorationMaxPrivateCopiesALTERA: return "MaxPrivateCopiesALTERA";
+    case DecorationSinglepumpALTERA: return "SinglepumpALTERA";
+    case DecorationDoublepumpALTERA: return "DoublepumpALTERA";
+    case DecorationMaxReplicatesALTERA: return "MaxReplicatesALTERA";
+    case DecorationSimpleDualPortALTERA: return "SimpleDualPortALTERA";
+    case DecorationMergeALTERA: return "MergeALTERA";
+    case DecorationBankBitsALTERA: return "BankBitsALTERA";
+    case DecorationForcePow2DepthALTERA: return "ForcePow2DepthALTERA";
+    case DecorationStridesizeALTERA: return "StridesizeALTERA";
+    case DecorationWordsizeALTERA: return "WordsizeALTERA";
+    case DecorationTrueDualPortALTERA: return "TrueDualPortALTERA";
     case DecorationBurstCoalesceALTERA: return "BurstCoalesceALTERA";
     case DecorationCacheSizeALTERA: return "CacheSizeALTERA";
     case DecorationDontStaticallyCoalesceALTERA: return "DontStaticallyCoalesceALTERA";
@@ -4266,7 +4282,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilitySubgroupAvcMotionEstimationChromaINTEL: return "SubgroupAvcMotionEstimationChromaINTEL";
     case CapabilityVariableLengthArrayINTEL: return "VariableLengthArrayINTEL";
     case CapabilityFunctionFloatControlINTEL: return "FunctionFloatControlINTEL";
-    case CapabilityFPGAMemoryAttributesINTEL: return "FPGAMemoryAttributesINTEL";
+    case CapabilityFPGAMemoryAttributesALTERA: return "FPGAMemoryAttributesALTERA";
     case CapabilityFPFastMathModeINTEL: return "FPFastMathModeINTEL";
     case CapabilityArbitraryPrecisionIntegersALTERA: return "ArbitraryPrecisionIntegersALTERA";
     case CapabilityArbitraryPrecisionFloatingPointALTERA: return "ArbitraryPrecisionFloatingPointALTERA";

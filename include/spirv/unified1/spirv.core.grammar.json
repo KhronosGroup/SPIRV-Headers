@@ -14700,136 +14700,139 @@
           "version" : "None"
         },
         {
-          "enumerant" : "RegisterINTEL",
+          "enumerant" : "RegisterALTERA",
+          "aliases" : [ "RegisterINTEL" ],
           "value" : 5825,
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MemoryINTEL",
+          "enumerant" : "MemoryALTERA",
+          "aliases" : [ "MemoryINTEL" ],
           "value" : 5826,
           "parameters" : [
             { "kind" : "LiteralString", "name" : "Memory Type" }
           ],
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "NumbanksINTEL",
+          "enumerant" : "NumbanksALTERA",
+          "aliases" : [ "NumbanksINTEL" ],
           "value" : 5827,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Banks" }
           ],
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "BankwidthINTEL",
+          "enumerant" : "BankwidthALTERA",
+          "aliases" : [ "BankwidthINTEL" ],
           "value" : 5828,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Bank Width" }
           ],
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MaxPrivateCopiesINTEL",
+          "enumerant" : "MaxPrivateCopiesALTERA",
+          "aliases" : [ "MaxPrivateCopiesINTEL" ],
           "value" : 5829,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Maximum Copies" }
           ],
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "SinglepumpINTEL",
+          "enumerant" : "SinglepumpALTERA",
+          "aliases" : [ "SinglepumpINTEL" ],
           "value" : 5830,
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "DoublepumpINTEL",
+          "enumerant" : "DoublepumpALTERA",
+          "aliases" : [ "DoublepumpINTEL" ],
           "value" : 5831,
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MaxReplicatesINTEL",
+          "enumerant" : "MaxReplicatesALTERA",
+          "aliases" : [ "MaxReplicatesINTEL" ],
           "value" : 5832,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Maximum Replicates" }
           ],
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "SimpleDualPortINTEL",
+          "enumerant" : "SimpleDualPortALTERA",
+          "aliases" : [ "SimpleDualPortINTEL" ],
           "value" : 5833,
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MergeINTEL",
+          "enumerant" : "MergeALTERA",
+          "aliases" : [ "MergeINTEL" ],
           "value" : 5834,
           "parameters" : [
             { "kind" : "LiteralString", "name" : "Merge Key" },
             { "kind" : "LiteralString", "name" : "Merge Type" }
           ],
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "BankBitsINTEL",
+          "enumerant" : "BankBitsALTERA",
+          "aliases" : [ "BankBitsINTEL" ],
           "value" : 5835,
           "parameters" : [
             { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "Bank Bits" }
           ],
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "ForcePow2DepthINTEL",
+          "enumerant" : "ForcePow2DepthALTERA",
+          "aliases" : [ "ForcePow2DepthINTEL" ],
           "value" : 5836,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Force Key" }
           ],
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "StridesizeINTEL",
+          "enumerant" : "StridesizeALTERA",
+          "aliases" : [ "StridesizeINTEL" ],
           "value" : 5883,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Stride Size" }
           ],
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "WordsizeINTEL",
+          "enumerant" : "WordsizeALTERA",
+          "aliases" : [ "WordsizeINTEL" ],
           "value" : 5884,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Word Size" }
           ],
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "TrueDualPortINTEL",
+          "enumerant" : "TrueDualPortALTERA",
+          "aliases" : [ "TrueDualPortINTEL" ],
           "value" : 5885,
-          "capabilities" : [ "FPGAMemoryAttributesINTEL" ],
+          "capabilities" : [ "FPGAMemoryAttributesALTERA" ],
           "version" : "None"
         },
         {
@@ -17476,9 +17479,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGAMemoryAttributesINTEL",
+          "enumerant" : "FPGAMemoryAttributesALTERA",
+          "aliases" : [ "FPGAMemoryAttributesINTEL" ],
           "value" : 5824,
-          "extensions" : [ "SPV_INTEL_fpga_memory_attributes" ],
+          "extensions" : [ "SPV_ALTERA_fpga_memory_attributes", "SPV_INTEL_fpga_memory_attributes" ],
           "version" : "None"
         },
         {
