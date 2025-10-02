@@ -10157,27 +10157,29 @@
       "version" : "None"
     },
     {
-      "opname" : "OpPtrCastToCrossWorkgroupINTEL",
+      "opname" : "OpPtrCastToCrossWorkgroupALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpPtrCastToCrossWorkgroupINTEL" ],
       "opcode" : 5934,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "Pointer" }
       ],
-      "capabilities" : [ "USMStorageClassesINTEL" ],
+      "capabilities" : [ "USMStorageClassesALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpCrossWorkgroupCastToPtrINTEL",
+      "opname" : "OpCrossWorkgroupCastToPtrALTERA",
       "class"  : "@exclude",
+      "aliases" : [ "OpCrossWorkgroupCastToPtrINTEL" ],
       "opcode" : 5938,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "Pointer" }
       ],
-      "capabilities" : [ "USMStorageClassesINTEL" ],
+      "capabilities" : [ "USMStorageClassesALTERA" ],
       "version" : "None"
     },
     {
@@ -13110,21 +13112,17 @@
           "version" : "None"
         },
         {
-          "enumerant" : "DeviceOnlyINTEL",
+          "enumerant" : "DeviceOnlyALTERA",
+          "aliases" : [ "DeviceOnlyINTEL" ],
           "value" : 5936,
-          "extensions" : [
-            "SPV_INTEL_usm_storage_classes"
-          ],
-          "capabilities" : [ "USMStorageClassesINTEL" ],
+          "capabilities" : [ "USMStorageClassesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "HostOnlyINTEL",
+          "enumerant" : "HostOnlyALTERA",
+          "aliases" : [ "HostOnlyINTEL" ],
           "value" : 5937,
-          "extensions" : [
-            "SPV_INTEL_usm_storage_classes"
-          ],
-          "capabilities" : [ "USMStorageClassesINTEL" ],
+          "capabilities" : [ "USMStorageClassesALTERA" ],
           "version" : "None"
         }
       ]
@@ -17597,9 +17595,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "USMStorageClassesINTEL",
+          "enumerant" : "USMStorageClassesALTERA",
+          "aliases" : [ "USMStorageClassesINTEL" ],
           "value" : 5935,
-          "extensions" : [ "SPV_INTEL_usm_storage_classes" ],
+          "extensions" : [ "SPV_ALTERA_usm_storage_classes", "SPV_INTEL_usm_storage_classes" ],
           "version" : "None"
         },
         {

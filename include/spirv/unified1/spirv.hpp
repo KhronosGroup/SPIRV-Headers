@@ -246,7 +246,9 @@ enum StorageClass {
     StorageClassHitObjectAttributeNV = 5385,
     StorageClassTaskPayloadWorkgroupEXT = 5402,
     StorageClassCodeSectionINTEL = 5605,
+    StorageClassDeviceOnlyALTERA = 5936,
     StorageClassDeviceOnlyINTEL = 5936,
+    StorageClassHostOnlyALTERA = 5937,
     StorageClassHostOnlyINTEL = 5937,
     StorageClassMax = 0x7fffffff,
 };
@@ -1310,6 +1312,7 @@ enum Capability {
     CapabilityFPGABufferLocationINTEL = 5920,
     CapabilityArbitraryPrecisionFixedPointALTERA = 5922,
     CapabilityArbitraryPrecisionFixedPointINTEL = 5922,
+    CapabilityUSMStorageClassesALTERA = 5935,
     CapabilityUSMStorageClassesINTEL = 5935,
     CapabilityRuntimeAlignedAttributeALTERA = 5939,
     CapabilityRuntimeAlignedAttributeINTEL = 5939,
@@ -2480,7 +2483,9 @@ enum Op {
     OpFixedLogINTEL = 5932,
     OpFixedExpALTERA = 5933,
     OpFixedExpINTEL = 5933,
+    OpPtrCastToCrossWorkgroupALTERA = 5934,
     OpPtrCastToCrossWorkgroupINTEL = 5934,
+    OpCrossWorkgroupCastToPtrALTERA = 5938,
     OpCrossWorkgroupCastToPtrINTEL = 5938,
     OpReadPipeBlockingALTERA = 5946,
     OpReadPipeBlockingINTEL = 5946,
@@ -3320,8 +3325,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFixedSinCosPiALTERA: *hasResult = true; *hasResultType = true; break;
     case OpFixedLogALTERA: *hasResult = true; *hasResultType = true; break;
     case OpFixedExpALTERA: *hasResult = true; *hasResultType = true; break;
-    case OpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpPtrCastToCrossWorkgroupALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpCrossWorkgroupCastToPtrALTERA: *hasResult = true; *hasResultType = true; break;
     case OpReadPipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
     case OpWritePipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
     case OpFPGARegALTERA: *hasResult = true; *hasResultType = true; break;
@@ -3583,8 +3588,8 @@ inline const char* StorageClassToString(StorageClass value) {
     case StorageClassHitObjectAttributeNV: return "HitObjectAttributeNV";
     case StorageClassTaskPayloadWorkgroupEXT: return "TaskPayloadWorkgroupEXT";
     case StorageClassCodeSectionINTEL: return "CodeSectionINTEL";
-    case StorageClassDeviceOnlyINTEL: return "DeviceOnlyINTEL";
-    case StorageClassHostOnlyINTEL: return "HostOnlyINTEL";
+    case StorageClassDeviceOnlyALTERA: return "DeviceOnlyALTERA";
+    case StorageClassHostOnlyALTERA: return "HostOnlyALTERA";
     default: return "Unknown";
     }
 }
@@ -4317,7 +4322,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFPGAInvocationPipeliningAttributesALTERA: return "FPGAInvocationPipeliningAttributesALTERA";
     case CapabilityFPGABufferLocationALTERA: return "FPGABufferLocationALTERA";
     case CapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
-    case CapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
+    case CapabilityUSMStorageClassesALTERA: return "USMStorageClassesALTERA";
     case CapabilityRuntimeAlignedAttributeALTERA: return "RuntimeAlignedAttributeALTERA";
     case CapabilityIOPipesALTERA: return "IOPipesALTERA";
     case CapabilityBlockingPipesALTERA: return "BlockingPipesALTERA";
@@ -5311,8 +5316,8 @@ inline const char* OpToString(Op value) {
     case OpFixedSinCosPiALTERA: return "OpFixedSinCosPiALTERA";
     case OpFixedLogALTERA: return "OpFixedLogALTERA";
     case OpFixedExpALTERA: return "OpFixedExpALTERA";
-    case OpPtrCastToCrossWorkgroupINTEL: return "OpPtrCastToCrossWorkgroupINTEL";
-    case OpCrossWorkgroupCastToPtrINTEL: return "OpCrossWorkgroupCastToPtrINTEL";
+    case OpPtrCastToCrossWorkgroupALTERA: return "OpPtrCastToCrossWorkgroupALTERA";
+    case OpCrossWorkgroupCastToPtrALTERA: return "OpCrossWorkgroupCastToPtrALTERA";
     case OpReadPipeBlockingALTERA: return "OpReadPipeBlockingALTERA";
     case OpWritePipeBlockingALTERA: return "OpWritePipeBlockingALTERA";
     case OpFPGARegALTERA: return "OpFPGARegALTERA";

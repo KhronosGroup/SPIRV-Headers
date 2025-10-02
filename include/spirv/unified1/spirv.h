@@ -250,7 +250,9 @@ typedef enum SpvStorageClass_ {
     SpvStorageClassHitObjectAttributeNV = 5385,
     SpvStorageClassTaskPayloadWorkgroupEXT = 5402,
     SpvStorageClassCodeSectionINTEL = 5605,
+    SpvStorageClassDeviceOnlyALTERA = 5936,
     SpvStorageClassDeviceOnlyINTEL = 5936,
+    SpvStorageClassHostOnlyALTERA = 5937,
     SpvStorageClassHostOnlyINTEL = 5937,
     SpvStorageClassMax = 0x7fffffff,
 } SpvStorageClass;
@@ -1314,6 +1316,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGABufferLocationINTEL = 5920,
     SpvCapabilityArbitraryPrecisionFixedPointALTERA = 5922,
     SpvCapabilityArbitraryPrecisionFixedPointINTEL = 5922,
+    SpvCapabilityUSMStorageClassesALTERA = 5935,
     SpvCapabilityUSMStorageClassesINTEL = 5935,
     SpvCapabilityRuntimeAlignedAttributeALTERA = 5939,
     SpvCapabilityRuntimeAlignedAttributeINTEL = 5939,
@@ -2484,7 +2487,9 @@ typedef enum SpvOp_ {
     SpvOpFixedLogINTEL = 5932,
     SpvOpFixedExpALTERA = 5933,
     SpvOpFixedExpINTEL = 5933,
+    SpvOpPtrCastToCrossWorkgroupALTERA = 5934,
     SpvOpPtrCastToCrossWorkgroupINTEL = 5934,
+    SpvOpCrossWorkgroupCastToPtrALTERA = 5938,
     SpvOpCrossWorkgroupCastToPtrINTEL = 5938,
     SpvOpReadPipeBlockingALTERA = 5946,
     SpvOpReadPipeBlockingINTEL = 5946,
@@ -3324,8 +3329,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpFixedSinCosPiALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpFixedLogALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpFixedExpALTERA: *hasResult = true; *hasResultType = true; break;
-    case SpvOpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpPtrCastToCrossWorkgroupALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCrossWorkgroupCastToPtrALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpReadPipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpWritePipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpFPGARegALTERA: *hasResult = true; *hasResultType = true; break;
@@ -3587,8 +3592,8 @@ inline const char* SpvStorageClassToString(SpvStorageClass value) {
     case SpvStorageClassHitObjectAttributeNV: return "HitObjectAttributeNV";
     case SpvStorageClassTaskPayloadWorkgroupEXT: return "TaskPayloadWorkgroupEXT";
     case SpvStorageClassCodeSectionINTEL: return "CodeSectionINTEL";
-    case SpvStorageClassDeviceOnlyINTEL: return "DeviceOnlyINTEL";
-    case SpvStorageClassHostOnlyINTEL: return "HostOnlyINTEL";
+    case SpvStorageClassDeviceOnlyALTERA: return "DeviceOnlyALTERA";
+    case SpvStorageClassHostOnlyALTERA: return "HostOnlyALTERA";
     default: return "Unknown";
     }
 }
@@ -4321,7 +4326,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPGAInvocationPipeliningAttributesALTERA: return "FPGAInvocationPipeliningAttributesALTERA";
     case SpvCapabilityFPGABufferLocationALTERA: return "FPGABufferLocationALTERA";
     case SpvCapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
-    case SpvCapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
+    case SpvCapabilityUSMStorageClassesALTERA: return "USMStorageClassesALTERA";
     case SpvCapabilityRuntimeAlignedAttributeALTERA: return "RuntimeAlignedAttributeALTERA";
     case SpvCapabilityIOPipesALTERA: return "IOPipesALTERA";
     case SpvCapabilityBlockingPipesALTERA: return "BlockingPipesALTERA";
@@ -5315,8 +5320,8 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpFixedSinCosPiALTERA: return "OpFixedSinCosPiALTERA";
     case SpvOpFixedLogALTERA: return "OpFixedLogALTERA";
     case SpvOpFixedExpALTERA: return "OpFixedExpALTERA";
-    case SpvOpPtrCastToCrossWorkgroupINTEL: return "OpPtrCastToCrossWorkgroupINTEL";
-    case SpvOpCrossWorkgroupCastToPtrINTEL: return "OpCrossWorkgroupCastToPtrINTEL";
+    case SpvOpPtrCastToCrossWorkgroupALTERA: return "OpPtrCastToCrossWorkgroupALTERA";
+    case SpvOpCrossWorkgroupCastToPtrALTERA: return "OpCrossWorkgroupCastToPtrALTERA";
     case SpvOpReadPipeBlockingALTERA: return "OpReadPipeBlockingALTERA";
     case SpvOpWritePipeBlockingALTERA: return "OpWritePipeBlockingALTERA";
     case SpvOpFPGARegALTERA: return "OpFPGARegALTERA";

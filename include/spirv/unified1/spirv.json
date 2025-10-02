@@ -268,7 +268,9 @@
                     "HitObjectAttributeNV": 5385,
                     "TaskPayloadWorkgroupEXT": 5402,
                     "CodeSectionINTEL": 5605,
+                    "DeviceOnlyALTERA": 5936,
                     "DeviceOnlyINTEL": 5936,
+                    "HostOnlyALTERA": 5937,
                     "HostOnlyINTEL": 5937
                 }
             },
@@ -1276,6 +1278,7 @@
                     "FPGABufferLocationINTEL": 5920,
                     "ArbitraryPrecisionFixedPointALTERA": 5922,
                     "ArbitraryPrecisionFixedPointINTEL": 5922,
+                    "USMStorageClassesALTERA": 5935,
                     "USMStorageClassesINTEL": 5935,
                     "RuntimeAlignedAttributeALTERA": 5939,
                     "RuntimeAlignedAttributeINTEL": 5939,
@@ -2451,7 +2454,9 @@
                     "OpFixedLogINTEL": 5932,
                     "OpFixedExpALTERA": 5933,
                     "OpFixedExpINTEL": 5933,
+                    "OpPtrCastToCrossWorkgroupALTERA": 5934,
                     "OpPtrCastToCrossWorkgroupINTEL": 5934,
+                    "OpCrossWorkgroupCastToPtrALTERA": 5938,
                     "OpCrossWorkgroupCastToPtrINTEL": 5938,
                     "OpReadPipeBlockingALTERA": 5946,
                     "OpReadPipeBlockingINTEL": 5946,
