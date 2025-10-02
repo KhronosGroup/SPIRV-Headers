@@ -631,7 +631,9 @@ enum class Decoration : unsigned {
     StallFreeALTERA = 6151,
     StallFreeINTEL = 6151,
     FPMaxErrorDecorationINTEL = 6170,
+    LatencyControlLabelALTERA = 6172,
     LatencyControlLabelINTEL = 6172,
+    LatencyControlConstraintALTERA = 6173,
     LatencyControlConstraintINTEL = 6173,
     ConduitKernelArgumentALTERA = 6175,
     ConduitKernelArgumentINTEL = 6175,
@@ -1295,6 +1297,7 @@ enum class Capability : unsigned {
     FPGAKernelAttributesv2INTEL = 6161,
     TaskSequenceINTEL = 6162,
     FPMaxErrorINTEL = 6169,
+    FPGALatencyControlALTERA = 6171,
     FPGALatencyControlINTEL = 6171,
     FPGAArgumentInterfacesALTERA = 6174,
     FPGAArgumentInterfacesINTEL = 6174,
@@ -3836,8 +3839,8 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::MediaBlockIOINTEL: return "MediaBlockIOINTEL";
     case Decoration::StallFreeALTERA: return "StallFreeALTERA";
     case Decoration::FPMaxErrorDecorationINTEL: return "FPMaxErrorDecorationINTEL";
-    case Decoration::LatencyControlLabelINTEL: return "LatencyControlLabelINTEL";
-    case Decoration::LatencyControlConstraintINTEL: return "LatencyControlConstraintINTEL";
+    case Decoration::LatencyControlLabelALTERA: return "LatencyControlLabelALTERA";
+    case Decoration::LatencyControlConstraintALTERA: return "LatencyControlConstraintALTERA";
     case Decoration::ConduitKernelArgumentALTERA: return "ConduitKernelArgumentALTERA";
     case Decoration::RegisterMapKernelArgumentALTERA: return "RegisterMapKernelArgumentALTERA";
     case Decoration::MMHostInterfaceAddressWidthALTERA: return "MMHostInterfaceAddressWidthALTERA";
@@ -4281,7 +4284,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::FPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
     case Capability::TaskSequenceINTEL: return "TaskSequenceINTEL";
     case Capability::FPMaxErrorINTEL: return "FPMaxErrorINTEL";
-    case Capability::FPGALatencyControlINTEL: return "FPGALatencyControlINTEL";
+    case Capability::FPGALatencyControlALTERA: return "FPGALatencyControlALTERA";
     case Capability::FPGAArgumentInterfacesALTERA: return "FPGAArgumentInterfacesALTERA";
     case Capability::GlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case Capability::GlobalVariableFPGADecorationsINTEL: return "GlobalVariableFPGADecorationsINTEL";

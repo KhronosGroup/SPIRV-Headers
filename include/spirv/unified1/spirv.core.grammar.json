@@ -14988,23 +14988,25 @@
           "version" : "None"
         },
         {
-          "enumerant" : "LatencyControlLabelINTEL",
+          "enumerant" : "LatencyControlLabelALTERA",
+          "aliases" : [ "LatencyControlLabelINTEL" ],
           "value" : 6172,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Latency Label" }
           ],
-          "capabilities" : [ "FPGALatencyControlINTEL" ],
+          "capabilities" : [ "FPGALatencyControlALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "LatencyControlConstraintINTEL",
+          "enumerant" : "LatencyControlConstraintALTERA",
+          "aliases" : [ "LatencyControlConstraintINTEL" ],
           "value" : 6173,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Relative To" },
             { "kind" : "LiteralInteger", "name" : "Control Type" },
             { "kind" : "LiteralInteger", "name" : "Relative Cycle" }
           ],
-          "capabilities" : [ "FPGALatencyControlINTEL" ],
+          "capabilities" : [ "FPGALatencyControlALTERA" ],
           "version" : "None"
         },
         {
@@ -17743,9 +17745,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGALatencyControlINTEL",
+          "enumerant" : "FPGALatencyControlALTERA",
+          "aliases" : [ "FPGALatencyControlINTEL" ],
           "value" : 6171,
-          "extensions" : [ "SPV_INTEL_fpga_latency_control" ],
+          "extensions" : [ "SPV_ALTERA_fpga_latency_control", "SPV_INTEL_fpga_latency_control" ],
           "version" : "None"
         },
         {
