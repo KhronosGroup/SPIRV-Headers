@@ -14877,9 +14877,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FuseLoopsInFunctionINTEL",
+          "enumerant" : "FuseLoopsInFunctionALTERA",
+          "aliases" : [ "FuseLoopsInFunctionINTEL" ],
           "value" : 5907,
-          "capabilities" : [ "LoopFuseINTEL" ],
+          "capabilities" : [ "LoopFuseALTERA" ],
           "version" : "None"
         },
         {
@@ -17549,9 +17550,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "LoopFuseINTEL",
+          "enumerant" : "LoopFuseALTERA",
+          "aliases" : [ "LoopFuseINTEL" ],
           "value" : 5906,
-          "extensions" : [ "SPV_INTEL_loop_fuse" ],
+          "extensions" : [ "SPV_ALTERA_loop_fuse", "SPV_INTEL_loop_fuse" ],
           "version" : "None"
         },
         {

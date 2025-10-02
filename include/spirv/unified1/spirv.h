@@ -633,6 +633,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationPrefetchINTEL = 5902,
     SpvDecorationStallEnableALTERA = 5905,
     SpvDecorationStallEnableINTEL = 5905,
+    SpvDecorationFuseLoopsInFunctionALTERA = 5907,
     SpvDecorationFuseLoopsInFunctionINTEL = 5907,
     SpvDecorationMathOpDSPModeALTERA = 5909,
     SpvDecorationMathOpDSPModeINTEL = 5909,
@@ -1301,6 +1302,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGAMemoryAccessesINTEL = 5898,
     SpvCapabilityFPGAClusterAttributesALTERA = 5904,
     SpvCapabilityFPGAClusterAttributesINTEL = 5904,
+    SpvCapabilityLoopFuseALTERA = 5906,
     SpvCapabilityLoopFuseINTEL = 5906,
     SpvCapabilityFPGADSPControlALTERA = 5908,
     SpvCapabilityFPGADSPControlINTEL = 5908,
@@ -3879,7 +3881,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationDontStaticallyCoalesceALTERA: return "DontStaticallyCoalesceALTERA";
     case SpvDecorationPrefetchALTERA: return "PrefetchALTERA";
     case SpvDecorationStallEnableALTERA: return "StallEnableALTERA";
-    case SpvDecorationFuseLoopsInFunctionINTEL: return "FuseLoopsInFunctionINTEL";
+    case SpvDecorationFuseLoopsInFunctionALTERA: return "FuseLoopsInFunctionALTERA";
     case SpvDecorationMathOpDSPModeALTERA: return "MathOpDSPModeALTERA";
     case SpvDecorationAliasScopeINTEL: return "AliasScopeINTEL";
     case SpvDecorationNoAliasINTEL: return "NoAliasINTEL";
@@ -4305,7 +4307,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPGAKernelAttributesINTEL: return "FPGAKernelAttributesINTEL";
     case SpvCapabilityFPGAMemoryAccessesALTERA: return "FPGAMemoryAccessesALTERA";
     case SpvCapabilityFPGAClusterAttributesALTERA: return "FPGAClusterAttributesALTERA";
-    case SpvCapabilityLoopFuseINTEL: return "LoopFuseINTEL";
+    case SpvCapabilityLoopFuseALTERA: return "LoopFuseALTERA";
     case SpvCapabilityFPGADSPControlALTERA: return "FPGADSPControlALTERA";
     case SpvCapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
     case SpvCapabilityFPGAInvocationPipeliningAttributesALTERA: return "FPGAInvocationPipeliningAttributesALTERA";

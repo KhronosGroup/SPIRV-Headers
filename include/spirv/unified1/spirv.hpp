@@ -629,6 +629,7 @@ enum Decoration {
     DecorationPrefetchINTEL = 5902,
     DecorationStallEnableALTERA = 5905,
     DecorationStallEnableINTEL = 5905,
+    DecorationFuseLoopsInFunctionALTERA = 5907,
     DecorationFuseLoopsInFunctionINTEL = 5907,
     DecorationMathOpDSPModeALTERA = 5909,
     DecorationMathOpDSPModeINTEL = 5909,
@@ -1297,6 +1298,7 @@ enum Capability {
     CapabilityFPGAMemoryAccessesINTEL = 5898,
     CapabilityFPGAClusterAttributesALTERA = 5904,
     CapabilityFPGAClusterAttributesINTEL = 5904,
+    CapabilityLoopFuseALTERA = 5906,
     CapabilityLoopFuseINTEL = 5906,
     CapabilityFPGADSPControlALTERA = 5908,
     CapabilityFPGADSPControlINTEL = 5908,
@@ -3875,7 +3877,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationDontStaticallyCoalesceALTERA: return "DontStaticallyCoalesceALTERA";
     case DecorationPrefetchALTERA: return "PrefetchALTERA";
     case DecorationStallEnableALTERA: return "StallEnableALTERA";
-    case DecorationFuseLoopsInFunctionINTEL: return "FuseLoopsInFunctionINTEL";
+    case DecorationFuseLoopsInFunctionALTERA: return "FuseLoopsInFunctionALTERA";
     case DecorationMathOpDSPModeALTERA: return "MathOpDSPModeALTERA";
     case DecorationAliasScopeINTEL: return "AliasScopeINTEL";
     case DecorationNoAliasINTEL: return "NoAliasINTEL";
@@ -4301,7 +4303,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFPGAKernelAttributesINTEL: return "FPGAKernelAttributesINTEL";
     case CapabilityFPGAMemoryAccessesALTERA: return "FPGAMemoryAccessesALTERA";
     case CapabilityFPGAClusterAttributesALTERA: return "FPGAClusterAttributesALTERA";
-    case CapabilityLoopFuseINTEL: return "LoopFuseINTEL";
+    case CapabilityLoopFuseALTERA: return "LoopFuseALTERA";
     case CapabilityFPGADSPControlALTERA: return "FPGADSPControlALTERA";
     case CapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
     case CapabilityFPGAInvocationPipeliningAttributesALTERA: return "FPGAInvocationPipeliningAttributesALTERA";
