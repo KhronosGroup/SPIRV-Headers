@@ -1309,6 +1309,7 @@ enum Capability {
     CapabilityIOPipesINTEL = 5943,
     CapabilityBlockingPipesALTERA = 5945,
     CapabilityBlockingPipesINTEL = 5945,
+    CapabilityFPGARegALTERA = 5948,
     CapabilityFPGARegINTEL = 5948,
     CapabilityDotProductInputAll = 6016,
     CapabilityDotProductInputAllKHR = 6016,
@@ -2473,6 +2474,7 @@ enum Op {
     OpReadPipeBlockingINTEL = 5946,
     OpWritePipeBlockingALTERA = 5947,
     OpWritePipeBlockingINTEL = 5947,
+    OpFPGARegALTERA = 5949,
     OpFPGARegINTEL = 5949,
     OpRayQueryGetRayTMinKHR = 6016,
     OpRayQueryGetRayFlagsKHR = 6017,
@@ -3305,7 +3307,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
     case OpReadPipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
     case OpWritePipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
-    case OpFPGARegINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpFPGARegALTERA: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetRayTMinKHR: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetRayFlagsKHR: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetIntersectionTKHR: *hasResult = true; *hasResultType = true; break;
@@ -4302,7 +4304,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";
     case CapabilityIOPipesINTEL: return "IOPipesINTEL";
     case CapabilityBlockingPipesALTERA: return "BlockingPipesALTERA";
-    case CapabilityFPGARegINTEL: return "FPGARegINTEL";
+    case CapabilityFPGARegALTERA: return "FPGARegALTERA";
     case CapabilityDotProductInputAll: return "DotProductInputAll";
     case CapabilityDotProductInput4x8Bit: return "DotProductInput4x8Bit";
     case CapabilityDotProductInput4x8BitPacked: return "DotProductInput4x8BitPacked";
@@ -5296,7 +5298,7 @@ inline const char* OpToString(Op value) {
     case OpCrossWorkgroupCastToPtrINTEL: return "OpCrossWorkgroupCastToPtrINTEL";
     case OpReadPipeBlockingALTERA: return "OpReadPipeBlockingALTERA";
     case OpWritePipeBlockingALTERA: return "OpWritePipeBlockingALTERA";
-    case OpFPGARegINTEL: return "OpFPGARegINTEL";
+    case OpFPGARegALTERA: return "OpFPGARegALTERA";
     case OpRayQueryGetRayTMinKHR: return "OpRayQueryGetRayTMinKHR";
     case OpRayQueryGetRayFlagsKHR: return "OpRayQueryGetRayFlagsKHR";
     case OpRayQueryGetIntersectionTKHR: return "OpRayQueryGetIntersectionTKHR";

@@ -10209,16 +10209,16 @@
       "version" : "None"
     },
     {
-      "opname" : "OpFPGARegINTEL",
+      "opname" : "OpFPGARegALTERA",
       "class"  : "Reserved",
+      "aliases" : [ "OpFPGARegINTEL" ],
       "opcode" : 5949,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "Input" }
       ],
-      "capabilities" : [ "FPGARegINTEL" ],
-      "extensions" : [ "SPV_INTEL_fpga_reg" ],
+      "capabilities" : [ "FPGARegALTERA" ],
       "version" : "None"
     },
     {
@@ -17611,9 +17611,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGARegINTEL",
+          "enumerant" : "FPGARegALTERA",
+          "aliases" : [ "FPGARegINTEL" ],
           "value" : 5948,
-          "extensions" : [ "SPV_INTEL_fpga_reg" ],
+          "extensions" : [ "SPV_ALTERA_fpga_reg", "SPV_INTEL_fpga_reg" ],
           "version" : "None"
         },
         {

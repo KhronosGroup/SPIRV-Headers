@@ -99,7 +99,6 @@ bool IsLegacyDoublyEnabledInstruction(const std::string& instruction) {
       "OpAliasDomainDeclINTEL",
       "OpAliasScopeDeclINTEL",
       "OpAliasScopeListDeclINTEL",
-      "OpFPGARegINTEL",
       "OpRayQueryGetRayTMinKHR",
       "OpRayQueryGetRayFlagsKHR",
       "OpRayQueryGetIntersectionTKHR",
