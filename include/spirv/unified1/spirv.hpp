@@ -616,6 +616,7 @@ enum Decoration {
     DecorationInitiationIntervalINTEL = 5917,
     DecorationMaxConcurrencyINTEL = 5918,
     DecorationPipelineEnableINTEL = 5919,
+    DecorationBufferLocationALTERA = 5921,
     DecorationBufferLocationINTEL = 5921,
     DecorationIOPipeStorageINTEL = 5944,
     DecorationFunctionFloatingPointModeINTEL = 6080,
@@ -1246,6 +1247,7 @@ enum Capability {
     CapabilityFPGADSPControlINTEL = 5908,
     CapabilityMemoryAccessAliasingINTEL = 5910,
     CapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
+    CapabilityFPGABufferLocationALTERA = 5920,
     CapabilityFPGABufferLocationINTEL = 5920,
     CapabilityArbitraryPrecisionFixedPointALTERA = 5922,
     CapabilityArbitraryPrecisionFixedPointINTEL = 5922,
@@ -3816,7 +3818,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationInitiationIntervalINTEL: return "InitiationIntervalINTEL";
     case DecorationMaxConcurrencyINTEL: return "MaxConcurrencyINTEL";
     case DecorationPipelineEnableINTEL: return "PipelineEnableINTEL";
-    case DecorationBufferLocationINTEL: return "BufferLocationINTEL";
+    case DecorationBufferLocationALTERA: return "BufferLocationALTERA";
     case DecorationIOPipeStorageINTEL: return "IOPipeStorageINTEL";
     case DecorationFunctionFloatingPointModeINTEL: return "FunctionFloatingPointModeINTEL";
     case DecorationSingleElementVectorINTEL: return "SingleElementVectorINTEL";
@@ -4239,7 +4241,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFPGADSPControlINTEL: return "FPGADSPControlINTEL";
     case CapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
     case CapabilityFPGAInvocationPipeliningAttributesINTEL: return "FPGAInvocationPipeliningAttributesINTEL";
-    case CapabilityFPGABufferLocationINTEL: return "FPGABufferLocationINTEL";
+    case CapabilityFPGABufferLocationALTERA: return "FPGABufferLocationALTERA";
     case CapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case CapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
     case CapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";

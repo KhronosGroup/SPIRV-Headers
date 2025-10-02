@@ -14920,12 +14920,13 @@
           "version" : "None"
         },
         {
-          "enumerant" : "BufferLocationINTEL",
+          "enumerant" : "BufferLocationALTERA",
+          "aliases" : [ "BufferLocationINTEL" ],
           "value" : 5921,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Buffer Location ID" }
           ],
-          "capabilities" : [ "FPGABufferLocationINTEL" ],
+          "capabilities" : [ "FPGABufferLocationALTERA" ],
           "version" : "None"
         },
         {
@@ -17540,9 +17541,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGABufferLocationINTEL",
+          "enumerant" : "FPGABufferLocationALTERA",
+          "aliases" : [ "FPGABufferLocationINTEL" ],
           "value" : 5920,
-          "extensions" : [ "SPV_INTEL_fpga_buffer_location" ],
+          "extensions" : [ "SPV_ALTERA_fpga_buffer_location", "SPV_INTEL_fpga_buffer_location" ],
           "version" : "None"
         },
         {

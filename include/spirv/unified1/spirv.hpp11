@@ -616,6 +616,7 @@ enum class Decoration : unsigned {
     InitiationIntervalINTEL = 5917,
     MaxConcurrencyINTEL = 5918,
     PipelineEnableINTEL = 5919,
+    BufferLocationALTERA = 5921,
     BufferLocationINTEL = 5921,
     IOPipeStorageINTEL = 5944,
     FunctionFloatingPointModeINTEL = 6080,
@@ -1246,6 +1247,7 @@ enum class Capability : unsigned {
     FPGADSPControlINTEL = 5908,
     MemoryAccessAliasingINTEL = 5910,
     FPGAInvocationPipeliningAttributesINTEL = 5916,
+    FPGABufferLocationALTERA = 5920,
     FPGABufferLocationINTEL = 5920,
     ArbitraryPrecisionFixedPointALTERA = 5922,
     ArbitraryPrecisionFixedPointINTEL = 5922,
@@ -3816,7 +3818,7 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::InitiationIntervalINTEL: return "InitiationIntervalINTEL";
     case Decoration::MaxConcurrencyINTEL: return "MaxConcurrencyINTEL";
     case Decoration::PipelineEnableINTEL: return "PipelineEnableINTEL";
-    case Decoration::BufferLocationINTEL: return "BufferLocationINTEL";
+    case Decoration::BufferLocationALTERA: return "BufferLocationALTERA";
     case Decoration::IOPipeStorageINTEL: return "IOPipeStorageINTEL";
     case Decoration::FunctionFloatingPointModeINTEL: return "FunctionFloatingPointModeINTEL";
     case Decoration::SingleElementVectorINTEL: return "SingleElementVectorINTEL";
@@ -4239,7 +4241,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::FPGADSPControlINTEL: return "FPGADSPControlINTEL";
     case Capability::MemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
     case Capability::FPGAInvocationPipeliningAttributesINTEL: return "FPGAInvocationPipeliningAttributesINTEL";
-    case Capability::FPGABufferLocationINTEL: return "FPGABufferLocationINTEL";
+    case Capability::FPGABufferLocationALTERA: return "FPGABufferLocationALTERA";
     case Capability::ArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case Capability::USMStorageClassesINTEL: return "USMStorageClassesINTEL";
     case Capability::RuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";

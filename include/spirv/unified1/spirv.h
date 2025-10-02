@@ -620,6 +620,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationInitiationIntervalINTEL = 5917,
     SpvDecorationMaxConcurrencyINTEL = 5918,
     SpvDecorationPipelineEnableINTEL = 5919,
+    SpvDecorationBufferLocationALTERA = 5921,
     SpvDecorationBufferLocationINTEL = 5921,
     SpvDecorationIOPipeStorageINTEL = 5944,
     SpvDecorationFunctionFloatingPointModeINTEL = 6080,
@@ -1250,6 +1251,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGADSPControlINTEL = 5908,
     SpvCapabilityMemoryAccessAliasingINTEL = 5910,
     SpvCapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
+    SpvCapabilityFPGABufferLocationALTERA = 5920,
     SpvCapabilityFPGABufferLocationINTEL = 5920,
     SpvCapabilityArbitraryPrecisionFixedPointALTERA = 5922,
     SpvCapabilityArbitraryPrecisionFixedPointINTEL = 5922,
@@ -3820,7 +3822,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationInitiationIntervalINTEL: return "InitiationIntervalINTEL";
     case SpvDecorationMaxConcurrencyINTEL: return "MaxConcurrencyINTEL";
     case SpvDecorationPipelineEnableINTEL: return "PipelineEnableINTEL";
-    case SpvDecorationBufferLocationINTEL: return "BufferLocationINTEL";
+    case SpvDecorationBufferLocationALTERA: return "BufferLocationALTERA";
     case SpvDecorationIOPipeStorageINTEL: return "IOPipeStorageINTEL";
     case SpvDecorationFunctionFloatingPointModeINTEL: return "FunctionFloatingPointModeINTEL";
     case SpvDecorationSingleElementVectorINTEL: return "SingleElementVectorINTEL";
@@ -4243,7 +4245,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPGADSPControlINTEL: return "FPGADSPControlINTEL";
     case SpvCapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
     case SpvCapabilityFPGAInvocationPipeliningAttributesINTEL: return "FPGAInvocationPipeliningAttributesINTEL";
-    case SpvCapabilityFPGABufferLocationINTEL: return "FPGABufferLocationINTEL";
+    case SpvCapabilityFPGABufferLocationALTERA: return "FPGABufferLocationALTERA";
     case SpvCapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case SpvCapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
     case SpvCapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";
