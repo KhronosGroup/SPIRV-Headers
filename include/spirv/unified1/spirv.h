@@ -1247,6 +1247,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityUSMStorageClassesINTEL = 5935,
     SpvCapabilityRuntimeAlignedAttributeINTEL = 5939,
     SpvCapabilityIOPipesINTEL = 5943,
+    SpvCapabilityBlockingPipesALTERA = 5945,
     SpvCapabilityBlockingPipesINTEL = 5945,
     SpvCapabilityFPGARegINTEL = 5948,
     SpvCapabilityDotProductInputAll = 6016,
@@ -2405,7 +2406,9 @@ typedef enum SpvOp_ {
     SpvOpFixedExpINTEL = 5933,
     SpvOpPtrCastToCrossWorkgroupINTEL = 5934,
     SpvOpCrossWorkgroupCastToPtrINTEL = 5938,
+    SpvOpReadPipeBlockingALTERA = 5946,
     SpvOpReadPipeBlockingINTEL = 5946,
+    SpvOpWritePipeBlockingALTERA = 5947,
     SpvOpWritePipeBlockingINTEL = 5947,
     SpvOpFPGARegINTEL = 5949,
     SpvOpRayQueryGetRayTMinKHR = 6016,
@@ -3237,8 +3240,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpFixedExpALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpReadPipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpWritePipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpReadPipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpWritePipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpFPGARegINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpRayQueryGetRayTMinKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpRayQueryGetRayFlagsKHR: *hasResult = true; *hasResultType = true; break;
@@ -4235,7 +4238,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
     case SpvCapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";
     case SpvCapabilityIOPipesINTEL: return "IOPipesINTEL";
-    case SpvCapabilityBlockingPipesINTEL: return "BlockingPipesINTEL";
+    case SpvCapabilityBlockingPipesALTERA: return "BlockingPipesALTERA";
     case SpvCapabilityFPGARegINTEL: return "FPGARegINTEL";
     case SpvCapabilityDotProductInputAll: return "DotProductInputAll";
     case SpvCapabilityDotProductInput4x8Bit: return "DotProductInput4x8Bit";
@@ -5228,8 +5231,8 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpFixedExpALTERA: return "OpFixedExpALTERA";
     case SpvOpPtrCastToCrossWorkgroupINTEL: return "OpPtrCastToCrossWorkgroupINTEL";
     case SpvOpCrossWorkgroupCastToPtrINTEL: return "OpCrossWorkgroupCastToPtrINTEL";
-    case SpvOpReadPipeBlockingINTEL: return "OpReadPipeBlockingINTEL";
-    case SpvOpWritePipeBlockingINTEL: return "OpWritePipeBlockingINTEL";
+    case SpvOpReadPipeBlockingALTERA: return "OpReadPipeBlockingALTERA";
+    case SpvOpWritePipeBlockingALTERA: return "OpWritePipeBlockingALTERA";
     case SpvOpFPGARegINTEL: return "OpFPGARegINTEL";
     case SpvOpRayQueryGetRayTMinKHR: return "OpRayQueryGetRayTMinKHR";
     case SpvOpRayQueryGetRayFlagsKHR: return "OpRayQueryGetRayFlagsKHR";

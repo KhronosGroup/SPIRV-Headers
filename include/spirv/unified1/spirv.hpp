@@ -1243,6 +1243,7 @@ enum Capability {
     CapabilityUSMStorageClassesINTEL = 5935,
     CapabilityRuntimeAlignedAttributeINTEL = 5939,
     CapabilityIOPipesINTEL = 5943,
+    CapabilityBlockingPipesALTERA = 5945,
     CapabilityBlockingPipesINTEL = 5945,
     CapabilityFPGARegINTEL = 5948,
     CapabilityDotProductInputAll = 6016,
@@ -2401,7 +2402,9 @@ enum Op {
     OpFixedExpINTEL = 5933,
     OpPtrCastToCrossWorkgroupINTEL = 5934,
     OpCrossWorkgroupCastToPtrINTEL = 5938,
+    OpReadPipeBlockingALTERA = 5946,
     OpReadPipeBlockingINTEL = 5946,
+    OpWritePipeBlockingALTERA = 5947,
     OpWritePipeBlockingINTEL = 5947,
     OpFPGARegINTEL = 5949,
     OpRayQueryGetRayTMinKHR = 6016,
@@ -3233,8 +3236,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFixedExpALTERA: *hasResult = true; *hasResultType = true; break;
     case OpPtrCastToCrossWorkgroupINTEL: *hasResult = true; *hasResultType = true; break;
     case OpCrossWorkgroupCastToPtrINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpReadPipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpWritePipeBlockingINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpReadPipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpWritePipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
     case OpFPGARegINTEL: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetRayTMinKHR: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetRayFlagsKHR: *hasResult = true; *hasResultType = true; break;
@@ -4231,7 +4234,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
     case CapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";
     case CapabilityIOPipesINTEL: return "IOPipesINTEL";
-    case CapabilityBlockingPipesINTEL: return "BlockingPipesINTEL";
+    case CapabilityBlockingPipesALTERA: return "BlockingPipesALTERA";
     case CapabilityFPGARegINTEL: return "FPGARegINTEL";
     case CapabilityDotProductInputAll: return "DotProductInputAll";
     case CapabilityDotProductInput4x8Bit: return "DotProductInput4x8Bit";
@@ -5224,8 +5227,8 @@ inline const char* OpToString(Op value) {
     case OpFixedExpALTERA: return "OpFixedExpALTERA";
     case OpPtrCastToCrossWorkgroupINTEL: return "OpPtrCastToCrossWorkgroupINTEL";
     case OpCrossWorkgroupCastToPtrINTEL: return "OpCrossWorkgroupCastToPtrINTEL";
-    case OpReadPipeBlockingINTEL: return "OpReadPipeBlockingINTEL";
-    case OpWritePipeBlockingINTEL: return "OpWritePipeBlockingINTEL";
+    case OpReadPipeBlockingALTERA: return "OpReadPipeBlockingALTERA";
+    case OpWritePipeBlockingALTERA: return "OpWritePipeBlockingALTERA";
     case OpFPGARegINTEL: return "OpFPGARegINTEL";
     case OpRayQueryGetRayTMinKHR: return "OpRayQueryGetRayTMinKHR";
     case OpRayQueryGetRayFlagsKHR: return "OpRayQueryGetRayFlagsKHR";

@@ -10181,8 +10181,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpReadPipeBlockingINTEL",
+      "opname" : "OpReadPipeBlockingALTERA",
       "class"  : "Pipe",
+      "aliases" : [ "OpReadPipeBlockingINTEL" ],
       "opcode" : 5946,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10190,13 +10191,13 @@
         { "kind" : "IdRef", "name" : "Packet Size" },
         { "kind" : "IdRef", "name" : "Packet Alignment" }
       ],
-      "capabilities" : [ "BlockingPipesINTEL" ],
-      "extensions" : [ "SPV_INTEL_blocking_pipes" ],
+      "capabilities" : [ "BlockingPipesALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpWritePipeBlockingINTEL",
+      "opname" : "OpWritePipeBlockingALTERA",
       "class"  : "Pipe",
+      "aliases" : [ "OpWritePipeBlockingINTEL" ],
       "opcode" : 5947,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10204,8 +10205,7 @@
         { "kind" : "IdRef", "name" : "Packet Size" },
         { "kind" : "IdRef", "name" : "Packet Alignment" }
       ],
-      "capabilities" : [ "BlockingPipesINTEL" ],
-      "extensions" : [ "SPV_INTEL_blocking_pipes" ],
+      "capabilities" : [ "BlockingPipesALTERA" ],
       "version" : "None"
     },
     {
@@ -17562,9 +17562,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "BlockingPipesINTEL",
+          "enumerant" : "BlockingPipesALTERA",
+          "aliases" : [ "BlockingPipesINTEL" ],
           "value" : 5945,
-          "extensions" : [ "SPV_INTEL_blocking_pipes" ],
+          "extensions" : [ "SPV_ALTERA_blocking_pipes", "SPV_INTEL_blocking_pipes" ],
           "version" : "None"
         },
         {
