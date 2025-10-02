@@ -619,8 +619,11 @@ typedef enum SpvDecoration_ {
     SpvDecorationMathOpDSPModeINTEL = 5909,
     SpvDecorationAliasScopeINTEL = 5914,
     SpvDecorationNoAliasINTEL = 5915,
+    SpvDecorationInitiationIntervalALTERA = 5917,
     SpvDecorationInitiationIntervalINTEL = 5917,
+    SpvDecorationMaxConcurrencyALTERA = 5918,
     SpvDecorationMaxConcurrencyINTEL = 5918,
+    SpvDecorationPipelineEnableALTERA = 5919,
     SpvDecorationPipelineEnableINTEL = 5919,
     SpvDecorationBufferLocationALTERA = 5921,
     SpvDecorationBufferLocationINTEL = 5921,
@@ -1255,6 +1258,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGADSPControlALTERA = 5908,
     SpvCapabilityFPGADSPControlINTEL = 5908,
     SpvCapabilityMemoryAccessAliasingINTEL = 5910,
+    SpvCapabilityFPGAInvocationPipeliningAttributesALTERA = 5916,
     SpvCapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
     SpvCapabilityFPGABufferLocationALTERA = 5920,
     SpvCapabilityFPGABufferLocationINTEL = 5920,
@@ -3825,9 +3829,9 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationMathOpDSPModeALTERA: return "MathOpDSPModeALTERA";
     case SpvDecorationAliasScopeINTEL: return "AliasScopeINTEL";
     case SpvDecorationNoAliasINTEL: return "NoAliasINTEL";
-    case SpvDecorationInitiationIntervalINTEL: return "InitiationIntervalINTEL";
-    case SpvDecorationMaxConcurrencyINTEL: return "MaxConcurrencyINTEL";
-    case SpvDecorationPipelineEnableINTEL: return "PipelineEnableINTEL";
+    case SpvDecorationInitiationIntervalALTERA: return "InitiationIntervalALTERA";
+    case SpvDecorationMaxConcurrencyALTERA: return "MaxConcurrencyALTERA";
+    case SpvDecorationPipelineEnableALTERA: return "PipelineEnableALTERA";
     case SpvDecorationBufferLocationALTERA: return "BufferLocationALTERA";
     case SpvDecorationIOPipeStorageINTEL: return "IOPipeStorageINTEL";
     case SpvDecorationFunctionFloatingPointModeINTEL: return "FunctionFloatingPointModeINTEL";
@@ -4250,7 +4254,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityLoopFuseINTEL: return "LoopFuseINTEL";
     case SpvCapabilityFPGADSPControlALTERA: return "FPGADSPControlALTERA";
     case SpvCapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
-    case SpvCapabilityFPGAInvocationPipeliningAttributesINTEL: return "FPGAInvocationPipeliningAttributesINTEL";
+    case SpvCapabilityFPGAInvocationPipeliningAttributesALTERA: return "FPGAInvocationPipeliningAttributesALTERA";
     case SpvCapabilityFPGABufferLocationALTERA: return "FPGABufferLocationALTERA";
     case SpvCapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case SpvCapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";

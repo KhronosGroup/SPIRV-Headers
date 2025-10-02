@@ -615,8 +615,11 @@ enum Decoration {
     DecorationMathOpDSPModeINTEL = 5909,
     DecorationAliasScopeINTEL = 5914,
     DecorationNoAliasINTEL = 5915,
+    DecorationInitiationIntervalALTERA = 5917,
     DecorationInitiationIntervalINTEL = 5917,
+    DecorationMaxConcurrencyALTERA = 5918,
     DecorationMaxConcurrencyINTEL = 5918,
+    DecorationPipelineEnableALTERA = 5919,
     DecorationPipelineEnableINTEL = 5919,
     DecorationBufferLocationALTERA = 5921,
     DecorationBufferLocationINTEL = 5921,
@@ -1251,6 +1254,7 @@ enum Capability {
     CapabilityFPGADSPControlALTERA = 5908,
     CapabilityFPGADSPControlINTEL = 5908,
     CapabilityMemoryAccessAliasingINTEL = 5910,
+    CapabilityFPGAInvocationPipeliningAttributesALTERA = 5916,
     CapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
     CapabilityFPGABufferLocationALTERA = 5920,
     CapabilityFPGABufferLocationINTEL = 5920,
@@ -3821,9 +3825,9 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationMathOpDSPModeALTERA: return "MathOpDSPModeALTERA";
     case DecorationAliasScopeINTEL: return "AliasScopeINTEL";
     case DecorationNoAliasINTEL: return "NoAliasINTEL";
-    case DecorationInitiationIntervalINTEL: return "InitiationIntervalINTEL";
-    case DecorationMaxConcurrencyINTEL: return "MaxConcurrencyINTEL";
-    case DecorationPipelineEnableINTEL: return "PipelineEnableINTEL";
+    case DecorationInitiationIntervalALTERA: return "InitiationIntervalALTERA";
+    case DecorationMaxConcurrencyALTERA: return "MaxConcurrencyALTERA";
+    case DecorationPipelineEnableALTERA: return "PipelineEnableALTERA";
     case DecorationBufferLocationALTERA: return "BufferLocationALTERA";
     case DecorationIOPipeStorageINTEL: return "IOPipeStorageINTEL";
     case DecorationFunctionFloatingPointModeINTEL: return "FunctionFloatingPointModeINTEL";
@@ -4246,7 +4250,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityLoopFuseINTEL: return "LoopFuseINTEL";
     case CapabilityFPGADSPControlALTERA: return "FPGADSPControlALTERA";
     case CapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
-    case CapabilityFPGAInvocationPipeliningAttributesINTEL: return "FPGAInvocationPipeliningAttributesINTEL";
+    case CapabilityFPGAInvocationPipeliningAttributesALTERA: return "FPGAInvocationPipeliningAttributesALTERA";
     case CapabilityFPGABufferLocationALTERA: return "FPGABufferLocationALTERA";
     case CapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case CapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";

@@ -14895,30 +14895,33 @@
           "version" : "None"
         },
         {
-          "enumerant" : "InitiationIntervalINTEL",
+          "enumerant" : "InitiationIntervalALTERA",
+          "aliases" : [ "InitiationIntervalINTEL" ],
           "value" : 5917,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Cycles" }
           ],
-          "capabilities" : [ "FPGAInvocationPipeliningAttributesINTEL" ],
+          "capabilities" : [ "FPGAInvocationPipeliningAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MaxConcurrencyINTEL",
+          "enumerant" : "MaxConcurrencyALTERA",
+          "aliases" : [ "MaxConcurrencyINTEL" ],
           "value" : 5918,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Invocations" }
           ],
-          "capabilities" : [ "FPGAInvocationPipeliningAttributesINTEL" ],
+          "capabilities" : [ "FPGAInvocationPipeliningAttributesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "PipelineEnableINTEL",
+          "enumerant" : "PipelineEnableALTERA",
+          "aliases" : [ "PipelineEnableINTEL" ],
           "value" : 5919,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Enable" }
           ],
-          "capabilities" : [ "FPGAInvocationPipeliningAttributesINTEL" ],
+          "capabilities" : [ "FPGAInvocationPipeliningAttributesALTERA" ],
           "version" : "None"
         },
         {
@@ -17540,9 +17543,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGAInvocationPipeliningAttributesINTEL",
+          "enumerant" : "FPGAInvocationPipeliningAttributesALTERA",
+          "aliases" : [ "FPGAInvocationPipeliningAttributesINTEL" ],
           "value" : 5916,
-          "extensions" : [ "SPV_INTEL_fpga_invocation_pipelining_attributes" ],
+          "extensions" : [ "SPV_ALTERA_fpga_invocation_pipelining_attributes", "SPV_INTEL_fpga_invocation_pipelining_attributes" ],
           "version" : "None"
         },
         {
