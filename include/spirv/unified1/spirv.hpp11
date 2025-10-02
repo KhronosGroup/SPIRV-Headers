@@ -608,6 +608,7 @@ enum class Decoration : unsigned {
     CacheSizeINTEL = 5900,
     DontStaticallyCoalesceINTEL = 5901,
     PrefetchINTEL = 5902,
+    StallEnableALTERA = 5905,
     StallEnableINTEL = 5905,
     FuseLoopsInFunctionINTEL = 5907,
     MathOpDSPModeINTEL = 5909,
@@ -623,6 +624,7 @@ enum class Decoration : unsigned {
     SingleElementVectorINTEL = 6085,
     VectorComputeCallableFunctionINTEL = 6087,
     MediaBlockIOINTEL = 6140,
+    StallFreeALTERA = 6151,
     StallFreeINTEL = 6151,
     FPMaxErrorDecorationINTEL = 6170,
     LatencyControlLabelINTEL = 6172,
@@ -1242,6 +1244,7 @@ enum class Capability : unsigned {
     KernelAttributesINTEL = 5892,
     FPGAKernelAttributesINTEL = 5897,
     FPGAMemoryAccessesINTEL = 5898,
+    FPGAClusterAttributesALTERA = 5904,
     FPGAClusterAttributesINTEL = 5904,
     LoopFuseINTEL = 5906,
     FPGADSPControlINTEL = 5908,
@@ -1281,6 +1284,7 @@ enum class Capability : unsigned {
     BFloat16ConversionINTEL = 6115,
     SplitBarrierINTEL = 6141,
     ArithmeticFenceEXT = 6144,
+    FPGAClusterAttributesV2ALTERA = 6150,
     FPGAClusterAttributesV2INTEL = 6150,
     FPGAKernelAttributesv2INTEL = 6161,
     TaskSequenceINTEL = 6162,
@@ -3810,7 +3814,7 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::CacheSizeINTEL: return "CacheSizeINTEL";
     case Decoration::DontStaticallyCoalesceINTEL: return "DontStaticallyCoalesceINTEL";
     case Decoration::PrefetchINTEL: return "PrefetchINTEL";
-    case Decoration::StallEnableINTEL: return "StallEnableINTEL";
+    case Decoration::StallEnableALTERA: return "StallEnableALTERA";
     case Decoration::FuseLoopsInFunctionINTEL: return "FuseLoopsInFunctionINTEL";
     case Decoration::MathOpDSPModeINTEL: return "MathOpDSPModeINTEL";
     case Decoration::AliasScopeINTEL: return "AliasScopeINTEL";
@@ -3824,7 +3828,7 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::SingleElementVectorINTEL: return "SingleElementVectorINTEL";
     case Decoration::VectorComputeCallableFunctionINTEL: return "VectorComputeCallableFunctionINTEL";
     case Decoration::MediaBlockIOINTEL: return "MediaBlockIOINTEL";
-    case Decoration::StallFreeINTEL: return "StallFreeINTEL";
+    case Decoration::StallFreeALTERA: return "StallFreeALTERA";
     case Decoration::FPMaxErrorDecorationINTEL: return "FPMaxErrorDecorationINTEL";
     case Decoration::LatencyControlLabelINTEL: return "LatencyControlLabelINTEL";
     case Decoration::LatencyControlConstraintINTEL: return "LatencyControlConstraintINTEL";
@@ -4236,7 +4240,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::KernelAttributesINTEL: return "KernelAttributesINTEL";
     case Capability::FPGAKernelAttributesINTEL: return "FPGAKernelAttributesINTEL";
     case Capability::FPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";
-    case Capability::FPGAClusterAttributesINTEL: return "FPGAClusterAttributesINTEL";
+    case Capability::FPGAClusterAttributesALTERA: return "FPGAClusterAttributesALTERA";
     case Capability::LoopFuseINTEL: return "LoopFuseINTEL";
     case Capability::FPGADSPControlINTEL: return "FPGADSPControlINTEL";
     case Capability::MemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
@@ -4267,7 +4271,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::BFloat16ConversionINTEL: return "BFloat16ConversionINTEL";
     case Capability::SplitBarrierINTEL: return "SplitBarrierINTEL";
     case Capability::ArithmeticFenceEXT: return "ArithmeticFenceEXT";
-    case Capability::FPGAClusterAttributesV2INTEL: return "FPGAClusterAttributesV2INTEL";
+    case Capability::FPGAClusterAttributesV2ALTERA: return "FPGAClusterAttributesV2ALTERA";
     case Capability::FPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
     case Capability::TaskSequenceINTEL: return "TaskSequenceINTEL";
     case Capability::FPMaxErrorINTEL: return "FPMaxErrorINTEL";

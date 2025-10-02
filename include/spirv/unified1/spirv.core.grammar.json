@@ -14853,9 +14853,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "StallEnableINTEL",
+          "enumerant" : "StallEnableALTERA",
+          "aliases" : [ "StallEnableINTEL" ],
           "value" : 5905,
-          "capabilities" : [ "FPGAClusterAttributesINTEL" ],
+          "capabilities" : [ "FPGAClusterAttributesALTERA" ],
           "version" : "None"
         },
         {
@@ -14967,7 +14968,8 @@
           "version" : "None"
         },
         {
-          "enumerant" : "StallFreeINTEL",
+          "enumerant" : "StallFreeALTERA",
+          "aliases" : [ "StallFreeINTEL" ],
           "value" : 6151,
           "capabilities" : [ "FPGAClusterAttributesV2INTEL" ],
           "version" : "None"
@@ -17511,9 +17513,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGAClusterAttributesINTEL",
+          "enumerant" : "FPGAClusterAttributesALTERA",
+          "aliases" : [ "FPGAClusterAttributesINTEL" ],
           "value" : 5904,
-          "extensions" : [ "SPV_INTEL_fpga_cluster_attributes" ],
+          "extensions" : [ "SPV_ALTERA_fpga_cluster_attributes", "SPV_INTEL_fpga_cluster_attributes" ],
           "version" : "None"
         },
         {
@@ -17707,10 +17710,11 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGAClusterAttributesV2INTEL",
+          "enumerant" : "FPGAClusterAttributesV2ALTERA",
+          "aliases" : [ "FPGAClusterAttributesV2INTEL" ],
           "value" : 6150,
-          "capabilities" : [ "FPGAClusterAttributesINTEL" ],
-          "extensions" : [ "SPV_INTEL_fpga_cluster_attributes" ],
+          "capabilities" : [ "FPGAClusterAttributesALTERA" ],
+          "extensions" : [ "SPV_ALTERA_fpga_cluster_attributes", "SPV_INTEL_fpga_cluster_attributes" ],
           "version" : "None"
         },
         {

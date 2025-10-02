@@ -608,6 +608,7 @@ enum Decoration {
     DecorationCacheSizeINTEL = 5900,
     DecorationDontStaticallyCoalesceINTEL = 5901,
     DecorationPrefetchINTEL = 5902,
+    DecorationStallEnableALTERA = 5905,
     DecorationStallEnableINTEL = 5905,
     DecorationFuseLoopsInFunctionINTEL = 5907,
     DecorationMathOpDSPModeINTEL = 5909,
@@ -623,6 +624,7 @@ enum Decoration {
     DecorationSingleElementVectorINTEL = 6085,
     DecorationVectorComputeCallableFunctionINTEL = 6087,
     DecorationMediaBlockIOINTEL = 6140,
+    DecorationStallFreeALTERA = 6151,
     DecorationStallFreeINTEL = 6151,
     DecorationFPMaxErrorDecorationINTEL = 6170,
     DecorationLatencyControlLabelINTEL = 6172,
@@ -1242,6 +1244,7 @@ enum Capability {
     CapabilityKernelAttributesINTEL = 5892,
     CapabilityFPGAKernelAttributesINTEL = 5897,
     CapabilityFPGAMemoryAccessesINTEL = 5898,
+    CapabilityFPGAClusterAttributesALTERA = 5904,
     CapabilityFPGAClusterAttributesINTEL = 5904,
     CapabilityLoopFuseINTEL = 5906,
     CapabilityFPGADSPControlINTEL = 5908,
@@ -1281,6 +1284,7 @@ enum Capability {
     CapabilityBFloat16ConversionINTEL = 6115,
     CapabilitySplitBarrierINTEL = 6141,
     CapabilityArithmeticFenceEXT = 6144,
+    CapabilityFPGAClusterAttributesV2ALTERA = 6150,
     CapabilityFPGAClusterAttributesV2INTEL = 6150,
     CapabilityFPGAKernelAttributesv2INTEL = 6161,
     CapabilityTaskSequenceINTEL = 6162,
@@ -3810,7 +3814,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationCacheSizeINTEL: return "CacheSizeINTEL";
     case DecorationDontStaticallyCoalesceINTEL: return "DontStaticallyCoalesceINTEL";
     case DecorationPrefetchINTEL: return "PrefetchINTEL";
-    case DecorationStallEnableINTEL: return "StallEnableINTEL";
+    case DecorationStallEnableALTERA: return "StallEnableALTERA";
     case DecorationFuseLoopsInFunctionINTEL: return "FuseLoopsInFunctionINTEL";
     case DecorationMathOpDSPModeINTEL: return "MathOpDSPModeINTEL";
     case DecorationAliasScopeINTEL: return "AliasScopeINTEL";
@@ -3824,7 +3828,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationSingleElementVectorINTEL: return "SingleElementVectorINTEL";
     case DecorationVectorComputeCallableFunctionINTEL: return "VectorComputeCallableFunctionINTEL";
     case DecorationMediaBlockIOINTEL: return "MediaBlockIOINTEL";
-    case DecorationStallFreeINTEL: return "StallFreeINTEL";
+    case DecorationStallFreeALTERA: return "StallFreeALTERA";
     case DecorationFPMaxErrorDecorationINTEL: return "FPMaxErrorDecorationINTEL";
     case DecorationLatencyControlLabelINTEL: return "LatencyControlLabelINTEL";
     case DecorationLatencyControlConstraintINTEL: return "LatencyControlConstraintINTEL";
@@ -4236,7 +4240,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityKernelAttributesINTEL: return "KernelAttributesINTEL";
     case CapabilityFPGAKernelAttributesINTEL: return "FPGAKernelAttributesINTEL";
     case CapabilityFPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";
-    case CapabilityFPGAClusterAttributesINTEL: return "FPGAClusterAttributesINTEL";
+    case CapabilityFPGAClusterAttributesALTERA: return "FPGAClusterAttributesALTERA";
     case CapabilityLoopFuseINTEL: return "LoopFuseINTEL";
     case CapabilityFPGADSPControlINTEL: return "FPGADSPControlINTEL";
     case CapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
@@ -4267,7 +4271,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityBFloat16ConversionINTEL: return "BFloat16ConversionINTEL";
     case CapabilitySplitBarrierINTEL: return "SplitBarrierINTEL";
     case CapabilityArithmeticFenceEXT: return "ArithmeticFenceEXT";
-    case CapabilityFPGAClusterAttributesV2INTEL: return "FPGAClusterAttributesV2INTEL";
+    case CapabilityFPGAClusterAttributesV2ALTERA: return "FPGAClusterAttributesV2ALTERA";
     case CapabilityFPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
     case CapabilityTaskSequenceINTEL: return "TaskSequenceINTEL";
     case CapabilityFPMaxErrorINTEL: return "FPMaxErrorINTEL";

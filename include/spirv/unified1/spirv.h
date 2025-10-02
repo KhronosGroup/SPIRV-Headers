@@ -612,6 +612,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationCacheSizeINTEL = 5900,
     SpvDecorationDontStaticallyCoalesceINTEL = 5901,
     SpvDecorationPrefetchINTEL = 5902,
+    SpvDecorationStallEnableALTERA = 5905,
     SpvDecorationStallEnableINTEL = 5905,
     SpvDecorationFuseLoopsInFunctionINTEL = 5907,
     SpvDecorationMathOpDSPModeINTEL = 5909,
@@ -627,6 +628,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationSingleElementVectorINTEL = 6085,
     SpvDecorationVectorComputeCallableFunctionINTEL = 6087,
     SpvDecorationMediaBlockIOINTEL = 6140,
+    SpvDecorationStallFreeALTERA = 6151,
     SpvDecorationStallFreeINTEL = 6151,
     SpvDecorationFPMaxErrorDecorationINTEL = 6170,
     SpvDecorationLatencyControlLabelINTEL = 6172,
@@ -1246,6 +1248,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityKernelAttributesINTEL = 5892,
     SpvCapabilityFPGAKernelAttributesINTEL = 5897,
     SpvCapabilityFPGAMemoryAccessesINTEL = 5898,
+    SpvCapabilityFPGAClusterAttributesALTERA = 5904,
     SpvCapabilityFPGAClusterAttributesINTEL = 5904,
     SpvCapabilityLoopFuseINTEL = 5906,
     SpvCapabilityFPGADSPControlINTEL = 5908,
@@ -1285,6 +1288,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityBFloat16ConversionINTEL = 6115,
     SpvCapabilitySplitBarrierINTEL = 6141,
     SpvCapabilityArithmeticFenceEXT = 6144,
+    SpvCapabilityFPGAClusterAttributesV2ALTERA = 6150,
     SpvCapabilityFPGAClusterAttributesV2INTEL = 6150,
     SpvCapabilityFPGAKernelAttributesv2INTEL = 6161,
     SpvCapabilityTaskSequenceINTEL = 6162,
@@ -3814,7 +3818,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationCacheSizeINTEL: return "CacheSizeINTEL";
     case SpvDecorationDontStaticallyCoalesceINTEL: return "DontStaticallyCoalesceINTEL";
     case SpvDecorationPrefetchINTEL: return "PrefetchINTEL";
-    case SpvDecorationStallEnableINTEL: return "StallEnableINTEL";
+    case SpvDecorationStallEnableALTERA: return "StallEnableALTERA";
     case SpvDecorationFuseLoopsInFunctionINTEL: return "FuseLoopsInFunctionINTEL";
     case SpvDecorationMathOpDSPModeINTEL: return "MathOpDSPModeINTEL";
     case SpvDecorationAliasScopeINTEL: return "AliasScopeINTEL";
@@ -3828,7 +3832,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationSingleElementVectorINTEL: return "SingleElementVectorINTEL";
     case SpvDecorationVectorComputeCallableFunctionINTEL: return "VectorComputeCallableFunctionINTEL";
     case SpvDecorationMediaBlockIOINTEL: return "MediaBlockIOINTEL";
-    case SpvDecorationStallFreeINTEL: return "StallFreeINTEL";
+    case SpvDecorationStallFreeALTERA: return "StallFreeALTERA";
     case SpvDecorationFPMaxErrorDecorationINTEL: return "FPMaxErrorDecorationINTEL";
     case SpvDecorationLatencyControlLabelINTEL: return "LatencyControlLabelINTEL";
     case SpvDecorationLatencyControlConstraintINTEL: return "LatencyControlConstraintINTEL";
@@ -4240,7 +4244,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityKernelAttributesINTEL: return "KernelAttributesINTEL";
     case SpvCapabilityFPGAKernelAttributesINTEL: return "FPGAKernelAttributesINTEL";
     case SpvCapabilityFPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";
-    case SpvCapabilityFPGAClusterAttributesINTEL: return "FPGAClusterAttributesINTEL";
+    case SpvCapabilityFPGAClusterAttributesALTERA: return "FPGAClusterAttributesALTERA";
     case SpvCapabilityLoopFuseINTEL: return "LoopFuseINTEL";
     case SpvCapabilityFPGADSPControlINTEL: return "FPGADSPControlINTEL";
     case SpvCapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
@@ -4271,7 +4275,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityBFloat16ConversionINTEL: return "BFloat16ConversionINTEL";
     case SpvCapabilitySplitBarrierINTEL: return "SplitBarrierINTEL";
     case SpvCapabilityArithmeticFenceEXT: return "ArithmeticFenceEXT";
-    case SpvCapabilityFPGAClusterAttributesV2INTEL: return "FPGAClusterAttributesV2INTEL";
+    case SpvCapabilityFPGAClusterAttributesV2ALTERA: return "FPGAClusterAttributesV2ALTERA";
     case SpvCapabilityFPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
     case SpvCapabilityTaskSequenceINTEL: return "TaskSequenceINTEL";
     case SpvCapabilityFPMaxErrorINTEL: return "FPMaxErrorINTEL";
