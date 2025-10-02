@@ -836,15 +836,25 @@ enum LoopControlShift {
     LoopControlIterationMultipleShift = 6,
     LoopControlPeelCountShift = 7,
     LoopControlPartialCountShift = 8,
+    LoopControlInitiationIntervalALTERAShift = 16,
     LoopControlInitiationIntervalINTELShift = 16,
+    LoopControlMaxConcurrencyALTERAShift = 17,
     LoopControlMaxConcurrencyINTELShift = 17,
+    LoopControlDependencyArrayALTERAShift = 18,
     LoopControlDependencyArrayINTELShift = 18,
+    LoopControlPipelineEnableALTERAShift = 19,
     LoopControlPipelineEnableINTELShift = 19,
+    LoopControlLoopCoalesceALTERAShift = 20,
     LoopControlLoopCoalesceINTELShift = 20,
+    LoopControlMaxInterleavingALTERAShift = 21,
     LoopControlMaxInterleavingINTELShift = 21,
+    LoopControlSpeculatedIterationsALTERAShift = 22,
     LoopControlSpeculatedIterationsINTELShift = 22,
+    LoopControlNoFusionALTERAShift = 23,
     LoopControlNoFusionINTELShift = 23,
+    LoopControlLoopCountALTERAShift = 24,
     LoopControlLoopCountINTELShift = 24,
+    LoopControlMaxReinvocationDelayALTERAShift = 25,
     LoopControlMaxReinvocationDelayINTELShift = 25,
     LoopControlMax = 0x7fffffff,
 };
@@ -860,15 +870,25 @@ enum LoopControlMask {
     LoopControlIterationMultipleMask = 0x00000040,
     LoopControlPeelCountMask = 0x00000080,
     LoopControlPartialCountMask = 0x00000100,
+    LoopControlInitiationIntervalALTERAMask = 0x00010000,
     LoopControlInitiationIntervalINTELMask = 0x00010000,
+    LoopControlMaxConcurrencyALTERAMask = 0x00020000,
     LoopControlMaxConcurrencyINTELMask = 0x00020000,
+    LoopControlDependencyArrayALTERAMask = 0x00040000,
     LoopControlDependencyArrayINTELMask = 0x00040000,
+    LoopControlPipelineEnableALTERAMask = 0x00080000,
     LoopControlPipelineEnableINTELMask = 0x00080000,
+    LoopControlLoopCoalesceALTERAMask = 0x00100000,
     LoopControlLoopCoalesceINTELMask = 0x00100000,
+    LoopControlMaxInterleavingALTERAMask = 0x00200000,
     LoopControlMaxInterleavingINTELMask = 0x00200000,
+    LoopControlSpeculatedIterationsALTERAMask = 0x00400000,
     LoopControlSpeculatedIterationsINTELMask = 0x00400000,
+    LoopControlNoFusionALTERAMask = 0x00800000,
     LoopControlNoFusionINTELMask = 0x00800000,
+    LoopControlLoopCountALTERAMask = 0x01000000,
     LoopControlLoopCountINTELMask = 0x01000000,
+    LoopControlMaxReinvocationDelayALTERAMask = 0x02000000,
     LoopControlMaxReinvocationDelayINTELMask = 0x02000000,
 };
 
@@ -1246,6 +1266,7 @@ enum Capability {
     CapabilityArbitraryPrecisionFloatingPointALTERA = 5845,
     CapabilityArbitraryPrecisionFloatingPointINTEL = 5845,
     CapabilityUnstructuredLoopControlsINTEL = 5886,
+    CapabilityFPGALoopControlsALTERA = 5888,
     CapabilityFPGALoopControlsINTEL = 5888,
     CapabilityKernelAttributesINTEL = 5892,
     CapabilityFPGAKernelAttributesINTEL = 5897,
@@ -4245,7 +4266,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityArbitraryPrecisionIntegersALTERA: return "ArbitraryPrecisionIntegersALTERA";
     case CapabilityArbitraryPrecisionFloatingPointALTERA: return "ArbitraryPrecisionFloatingPointALTERA";
     case CapabilityUnstructuredLoopControlsINTEL: return "UnstructuredLoopControlsINTEL";
-    case CapabilityFPGALoopControlsINTEL: return "FPGALoopControlsINTEL";
+    case CapabilityFPGALoopControlsALTERA: return "FPGALoopControlsALTERA";
     case CapabilityKernelAttributesINTEL: return "KernelAttributesINTEL";
     case CapabilityFPGAKernelAttributesINTEL: return "FPGAKernelAttributesINTEL";
     case CapabilityFPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";

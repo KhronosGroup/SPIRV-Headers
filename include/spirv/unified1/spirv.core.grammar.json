@@ -11460,90 +11460,100 @@
           "version" : "1.4"
         },
         {
-          "enumerant" : "InitiationIntervalINTEL",
+          "enumerant" : "InitiationIntervalALTERA",
+          "aliases" : [ "InitiationIntervalINTEL" ],
           "value" : "0x10000",
           "parameters" : [
             { "kind" : "LiteralInteger" }
           ],
-          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MaxConcurrencyINTEL",
+          "enumerant" : "MaxConcurrencyALTERA",
+          "aliases" : [ "MaxConcurrencyINTEL" ],
           "value" : "0x20000",
           "parameters" : [
             { "kind" : "LiteralInteger" }
           ],
-          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "DependencyArrayINTEL",
+          "enumerant" : "DependencyArrayALTERA",
+          "aliases" : [ "DependencyArrayINTEL" ],
           "value" : "0x40000",
           "parameters" : [
             { "kind" : "LiteralInteger" }
           ],
-          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "PipelineEnableINTEL",
+          "enumerant" : "PipelineEnableALTERA",
+          "aliases" : [ "PipelineEnableINTEL" ],
           "value" : "0x80000",
           "parameters" : [
             { "kind" : "LiteralInteger" }
           ],
-          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "LoopCoalesceINTEL",
+          "enumerant" : "LoopCoalesceALTERA",
+          "aliases" : [ "LoopCoalesceINTEL" ],
           "value" : "0x100000",
           "parameters" : [
             { "kind" : "LiteralInteger" }
           ],
-          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MaxInterleavingINTEL",
+          "enumerant" : "MaxInterleavingALTERA",
+          "aliases" : [ "MaxInterleavingINTEL" ],
           "value" : "0x200000",
           "parameters" : [
             { "kind" : "LiteralInteger" }
           ],
-          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "SpeculatedIterationsINTEL",
+          "enumerant" : "SpeculatedIterationsALTERA",
+          "aliases" : [ "SpeculatedIterationsINTEL" ],
           "value" : "0x400000",
           "parameters" : [
             { "kind" : "LiteralInteger" }
           ],
-          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "NoFusionINTEL",
+          "enumerant" : "NoFusionALTERA",
+          "aliases" : [ "NoFusionINTEL" ],
           "value" : "0x800000",
-          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "LoopCountINTEL",
+          "enumerant" : "LoopCountALTERA",
+          "aliases" : [ "LoopCountINTEL" ],
           "value" : "0x1000000",
           "parameters" : [
             { "kind" : "LiteralInteger" }
           ],
-          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MaxReinvocationDelayINTEL",
+          "enumerant" : "MaxReinvocationDelayALTERA",
+          "aliases" : [ "MaxReinvocationDelayINTEL" ],
           "value" : "0x2000000",
           "parameters" : [
             { "kind" : "LiteralInteger" }
           ],
-          "capabilities" : [ "FPGALoopControlsINTEL" ],
+          "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
         }
       ]
@@ -17495,9 +17505,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGALoopControlsINTEL",
+          "enumerant" : "FPGALoopControlsALTERA",
+          "aliases" : [ "FPGALoopControlsINTEL" ],
           "value" : 5888,
-          "extensions" : [ "SPV_INTEL_fpga_loop_controls" ],
+          "extensions" : [ "SPV_ALTERA_fpga_loop_controls", "SPV_INTEL_fpga_loop_controls" ],
           "version" : "None"
         },
         {

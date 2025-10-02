@@ -836,15 +836,25 @@ enum class LoopControlShift : unsigned {
     IterationMultiple = 6,
     PeelCount = 7,
     PartialCount = 8,
+    InitiationIntervalALTERA = 16,
     InitiationIntervalINTEL = 16,
+    MaxConcurrencyALTERA = 17,
     MaxConcurrencyINTEL = 17,
+    DependencyArrayALTERA = 18,
     DependencyArrayINTEL = 18,
+    PipelineEnableALTERA = 19,
     PipelineEnableINTEL = 19,
+    LoopCoalesceALTERA = 20,
     LoopCoalesceINTEL = 20,
+    MaxInterleavingALTERA = 21,
     MaxInterleavingINTEL = 21,
+    SpeculatedIterationsALTERA = 22,
     SpeculatedIterationsINTEL = 22,
+    NoFusionALTERA = 23,
     NoFusionINTEL = 23,
+    LoopCountALTERA = 24,
     LoopCountINTEL = 24,
+    MaxReinvocationDelayALTERA = 25,
     MaxReinvocationDelayINTEL = 25,
     Max = 0x7fffffff,
 };
@@ -860,15 +870,25 @@ enum class LoopControlMask : unsigned {
     IterationMultiple = 0x00000040,
     PeelCount = 0x00000080,
     PartialCount = 0x00000100,
+    InitiationIntervalALTERA = 0x00010000,
     InitiationIntervalINTEL = 0x00010000,
+    MaxConcurrencyALTERA = 0x00020000,
     MaxConcurrencyINTEL = 0x00020000,
+    DependencyArrayALTERA = 0x00040000,
     DependencyArrayINTEL = 0x00040000,
+    PipelineEnableALTERA = 0x00080000,
     PipelineEnableINTEL = 0x00080000,
+    LoopCoalesceALTERA = 0x00100000,
     LoopCoalesceINTEL = 0x00100000,
+    MaxInterleavingALTERA = 0x00200000,
     MaxInterleavingINTEL = 0x00200000,
+    SpeculatedIterationsALTERA = 0x00400000,
     SpeculatedIterationsINTEL = 0x00400000,
+    NoFusionALTERA = 0x00800000,
     NoFusionINTEL = 0x00800000,
+    LoopCountALTERA = 0x01000000,
     LoopCountINTEL = 0x01000000,
+    MaxReinvocationDelayALTERA = 0x02000000,
     MaxReinvocationDelayINTEL = 0x02000000,
 };
 
@@ -1246,6 +1266,7 @@ enum class Capability : unsigned {
     ArbitraryPrecisionFloatingPointALTERA = 5845,
     ArbitraryPrecisionFloatingPointINTEL = 5845,
     UnstructuredLoopControlsINTEL = 5886,
+    FPGALoopControlsALTERA = 5888,
     FPGALoopControlsINTEL = 5888,
     KernelAttributesINTEL = 5892,
     FPGAKernelAttributesINTEL = 5897,
@@ -4245,7 +4266,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::ArbitraryPrecisionIntegersALTERA: return "ArbitraryPrecisionIntegersALTERA";
     case Capability::ArbitraryPrecisionFloatingPointALTERA: return "ArbitraryPrecisionFloatingPointALTERA";
     case Capability::UnstructuredLoopControlsINTEL: return "UnstructuredLoopControlsINTEL";
-    case Capability::FPGALoopControlsINTEL: return "FPGALoopControlsINTEL";
+    case Capability::FPGALoopControlsALTERA: return "FPGALoopControlsALTERA";
     case Capability::KernelAttributesINTEL: return "KernelAttributesINTEL";
     case Capability::FPGAKernelAttributesINTEL: return "FPGAKernelAttributesINTEL";
     case Capability::FPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";

@@ -840,15 +840,25 @@ typedef enum SpvLoopControlShift_ {
     SpvLoopControlIterationMultipleShift = 6,
     SpvLoopControlPeelCountShift = 7,
     SpvLoopControlPartialCountShift = 8,
+    SpvLoopControlInitiationIntervalALTERAShift = 16,
     SpvLoopControlInitiationIntervalINTELShift = 16,
+    SpvLoopControlMaxConcurrencyALTERAShift = 17,
     SpvLoopControlMaxConcurrencyINTELShift = 17,
+    SpvLoopControlDependencyArrayALTERAShift = 18,
     SpvLoopControlDependencyArrayINTELShift = 18,
+    SpvLoopControlPipelineEnableALTERAShift = 19,
     SpvLoopControlPipelineEnableINTELShift = 19,
+    SpvLoopControlLoopCoalesceALTERAShift = 20,
     SpvLoopControlLoopCoalesceINTELShift = 20,
+    SpvLoopControlMaxInterleavingALTERAShift = 21,
     SpvLoopControlMaxInterleavingINTELShift = 21,
+    SpvLoopControlSpeculatedIterationsALTERAShift = 22,
     SpvLoopControlSpeculatedIterationsINTELShift = 22,
+    SpvLoopControlNoFusionALTERAShift = 23,
     SpvLoopControlNoFusionINTELShift = 23,
+    SpvLoopControlLoopCountALTERAShift = 24,
     SpvLoopControlLoopCountINTELShift = 24,
+    SpvLoopControlMaxReinvocationDelayALTERAShift = 25,
     SpvLoopControlMaxReinvocationDelayINTELShift = 25,
     SpvLoopControlMax = 0x7fffffff,
 } SpvLoopControlShift;
@@ -864,15 +874,25 @@ typedef enum SpvLoopControlMask_ {
     SpvLoopControlIterationMultipleMask = 0x00000040,
     SpvLoopControlPeelCountMask = 0x00000080,
     SpvLoopControlPartialCountMask = 0x00000100,
+    SpvLoopControlInitiationIntervalALTERAMask = 0x00010000,
     SpvLoopControlInitiationIntervalINTELMask = 0x00010000,
+    SpvLoopControlMaxConcurrencyALTERAMask = 0x00020000,
     SpvLoopControlMaxConcurrencyINTELMask = 0x00020000,
+    SpvLoopControlDependencyArrayALTERAMask = 0x00040000,
     SpvLoopControlDependencyArrayINTELMask = 0x00040000,
+    SpvLoopControlPipelineEnableALTERAMask = 0x00080000,
     SpvLoopControlPipelineEnableINTELMask = 0x00080000,
+    SpvLoopControlLoopCoalesceALTERAMask = 0x00100000,
     SpvLoopControlLoopCoalesceINTELMask = 0x00100000,
+    SpvLoopControlMaxInterleavingALTERAMask = 0x00200000,
     SpvLoopControlMaxInterleavingINTELMask = 0x00200000,
+    SpvLoopControlSpeculatedIterationsALTERAMask = 0x00400000,
     SpvLoopControlSpeculatedIterationsINTELMask = 0x00400000,
+    SpvLoopControlNoFusionALTERAMask = 0x00800000,
     SpvLoopControlNoFusionINTELMask = 0x00800000,
+    SpvLoopControlLoopCountALTERAMask = 0x01000000,
     SpvLoopControlLoopCountINTELMask = 0x01000000,
+    SpvLoopControlMaxReinvocationDelayALTERAMask = 0x02000000,
     SpvLoopControlMaxReinvocationDelayINTELMask = 0x02000000,
 } SpvLoopControlMask;
 
@@ -1250,6 +1270,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityArbitraryPrecisionFloatingPointALTERA = 5845,
     SpvCapabilityArbitraryPrecisionFloatingPointINTEL = 5845,
     SpvCapabilityUnstructuredLoopControlsINTEL = 5886,
+    SpvCapabilityFPGALoopControlsALTERA = 5888,
     SpvCapabilityFPGALoopControlsINTEL = 5888,
     SpvCapabilityKernelAttributesINTEL = 5892,
     SpvCapabilityFPGAKernelAttributesINTEL = 5897,
@@ -4249,7 +4270,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityArbitraryPrecisionIntegersALTERA: return "ArbitraryPrecisionIntegersALTERA";
     case SpvCapabilityArbitraryPrecisionFloatingPointALTERA: return "ArbitraryPrecisionFloatingPointALTERA";
     case SpvCapabilityUnstructuredLoopControlsINTEL: return "UnstructuredLoopControlsINTEL";
-    case SpvCapabilityFPGALoopControlsINTEL: return "FPGALoopControlsINTEL";
+    case SpvCapabilityFPGALoopControlsALTERA: return "FPGALoopControlsALTERA";
     case SpvCapabilityKernelAttributesINTEL: return "KernelAttributesINTEL";
     case SpvCapabilityFPGAKernelAttributesINTEL: return "FPGAKernelAttributesINTEL";
     case SpvCapabilityFPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";
