@@ -17802,7 +17802,7 @@
           "enumerant" : "GlobalVariableFPGADecorationsALTERA",
           "aliases" : [ "GlobalVariableFPGADecorationsINTEL" ],
           "value" : 6189,
-          "extensions": [ "SPV_ALTERA_global_variable_fpga_decorations", "SPV_INTEL_global_variable_fpga_decorations" ],
+          "extensions" : [ "SPV_ALTERA_global_variable_fpga_decorations", "SPV_INTEL_global_variable_fpga_decorations" ],
           "version" : "None"
         },
         {
