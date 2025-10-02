@@ -485,6 +485,7 @@ enum FunctionParameterAttribute {
     FunctionParameterAttributeNoCapture = 5,
     FunctionParameterAttributeNoWrite = 6,
     FunctionParameterAttributeNoReadWrite = 7,
+    FunctionParameterAttributeRuntimeAlignedALTERA = 5940,
     FunctionParameterAttributeRuntimeAlignedINTEL = 5940,
     FunctionParameterAttributeMax = 0x7fffffff,
 };
@@ -1310,6 +1311,7 @@ enum Capability {
     CapabilityArbitraryPrecisionFixedPointALTERA = 5922,
     CapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     CapabilityUSMStorageClassesINTEL = 5935,
+    CapabilityRuntimeAlignedAttributeALTERA = 5939,
     CapabilityRuntimeAlignedAttributeINTEL = 5939,
     CapabilityIOPipesALTERA = 5943,
     CapabilityIOPipesINTEL = 5943,
@@ -3758,7 +3760,7 @@ inline const char* FunctionParameterAttributeToString(FunctionParameterAttribute
     case FunctionParameterAttributeNoCapture: return "NoCapture";
     case FunctionParameterAttributeNoWrite: return "NoWrite";
     case FunctionParameterAttributeNoReadWrite: return "NoReadWrite";
-    case FunctionParameterAttributeRuntimeAlignedINTEL: return "RuntimeAlignedINTEL";
+    case FunctionParameterAttributeRuntimeAlignedALTERA: return "RuntimeAlignedALTERA";
     default: return "Unknown";
     }
 }
@@ -4310,7 +4312,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFPGABufferLocationALTERA: return "FPGABufferLocationALTERA";
     case CapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case CapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
-    case CapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";
+    case CapabilityRuntimeAlignedAttributeALTERA: return "RuntimeAlignedAttributeALTERA";
     case CapabilityIOPipesALTERA: return "IOPipesALTERA";
     case CapabilityBlockingPipesALTERA: return "BlockingPipesALTERA";
     case CapabilityFPGARegALTERA: return "FPGARegALTERA";

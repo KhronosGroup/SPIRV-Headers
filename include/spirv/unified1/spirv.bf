@@ -501,6 +501,7 @@ namespace Spv
             NoCapture = 5,
             NoWrite = 6,
             NoReadWrite = 7,
+            RuntimeAlignedALTERA = 5940,
             RuntimeAlignedINTEL = 5940,
             Max = 0x7fffffff,
         }
@@ -1344,6 +1345,7 @@ namespace Spv
             ArbitraryPrecisionFixedPointALTERA = 5922,
             ArbitraryPrecisionFixedPointINTEL = 5922,
             USMStorageClassesINTEL = 5935,
+            RuntimeAlignedAttributeALTERA = 5939,
             RuntimeAlignedAttributeINTEL = 5939,
             IOPipesALTERA = 5943,
             IOPipesINTEL = 5943,

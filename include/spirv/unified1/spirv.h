@@ -489,6 +489,7 @@ typedef enum SpvFunctionParameterAttribute_ {
     SpvFunctionParameterAttributeNoCapture = 5,
     SpvFunctionParameterAttributeNoWrite = 6,
     SpvFunctionParameterAttributeNoReadWrite = 7,
+    SpvFunctionParameterAttributeRuntimeAlignedALTERA = 5940,
     SpvFunctionParameterAttributeRuntimeAlignedINTEL = 5940,
     SpvFunctionParameterAttributeMax = 0x7fffffff,
 } SpvFunctionParameterAttribute;
@@ -1314,6 +1315,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityArbitraryPrecisionFixedPointALTERA = 5922,
     SpvCapabilityArbitraryPrecisionFixedPointINTEL = 5922,
     SpvCapabilityUSMStorageClassesINTEL = 5935,
+    SpvCapabilityRuntimeAlignedAttributeALTERA = 5939,
     SpvCapabilityRuntimeAlignedAttributeINTEL = 5939,
     SpvCapabilityIOPipesALTERA = 5943,
     SpvCapabilityIOPipesINTEL = 5943,
@@ -3762,7 +3764,7 @@ inline const char* SpvFunctionParameterAttributeToString(SpvFunctionParameterAtt
     case SpvFunctionParameterAttributeNoCapture: return "NoCapture";
     case SpvFunctionParameterAttributeNoWrite: return "NoWrite";
     case SpvFunctionParameterAttributeNoReadWrite: return "NoReadWrite";
-    case SpvFunctionParameterAttributeRuntimeAlignedINTEL: return "RuntimeAlignedINTEL";
+    case SpvFunctionParameterAttributeRuntimeAlignedALTERA: return "RuntimeAlignedALTERA";
     default: return "Unknown";
     }
 }
@@ -4314,7 +4316,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPGABufferLocationALTERA: return "FPGABufferLocationALTERA";
     case SpvCapabilityArbitraryPrecisionFixedPointALTERA: return "ArbitraryPrecisionFixedPointALTERA";
     case SpvCapabilityUSMStorageClassesINTEL: return "USMStorageClassesINTEL";
-    case SpvCapabilityRuntimeAlignedAttributeINTEL: return "RuntimeAlignedAttributeINTEL";
+    case SpvCapabilityRuntimeAlignedAttributeALTERA: return "RuntimeAlignedAttributeALTERA";
     case SpvCapabilityIOPipesALTERA: return "IOPipesALTERA";
     case SpvCapabilityBlockingPipesALTERA: return "BlockingPipesALTERA";
     case SpvCapabilityFPGARegALTERA: return "FPGARegALTERA";

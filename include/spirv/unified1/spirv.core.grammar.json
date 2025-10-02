@@ -14000,9 +14000,10 @@
           "version": "1.0"
         },
         {
-          "enumerant" : "RuntimeAlignedINTEL",
+          "enumerant" : "RuntimeAlignedALTERA",
+          "aliases" : [ "RuntimeAlignedINTEL" ],
           "value" : 5940,
-          "capabilities" : [ "RuntimeAlignedAttributeINTEL" ],
+          "capabilities" : [ "RuntimeAlignedAttributeALTERA" ],
           "version": "1.0"
         }
       ]
@@ -17597,9 +17598,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "RuntimeAlignedAttributeINTEL",
+          "enumerant" : "RuntimeAlignedAttributeALTERA",
+          "aliases" : [ "RuntimeAlignedAttributeINTEL" ],
           "value" : 5939,
-          "extensions" : [ "SPV_INTEL_runtime_aligned" ],
+          "extensions" : [ "SPV_ALTERA_runtime_aligned", "SPV_INTEL_runtime_aligned" ],
           "version" : "None"
         },
         {
