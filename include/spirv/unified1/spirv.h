@@ -615,6 +615,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationStallEnableALTERA = 5905,
     SpvDecorationStallEnableINTEL = 5905,
     SpvDecorationFuseLoopsInFunctionINTEL = 5907,
+    SpvDecorationMathOpDSPModeALTERA = 5909,
     SpvDecorationMathOpDSPModeINTEL = 5909,
     SpvDecorationAliasScopeINTEL = 5914,
     SpvDecorationNoAliasINTEL = 5915,
@@ -1251,6 +1252,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGAClusterAttributesALTERA = 5904,
     SpvCapabilityFPGAClusterAttributesINTEL = 5904,
     SpvCapabilityLoopFuseINTEL = 5906,
+    SpvCapabilityFPGADSPControlALTERA = 5908,
     SpvCapabilityFPGADSPControlINTEL = 5908,
     SpvCapabilityMemoryAccessAliasingINTEL = 5910,
     SpvCapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
@@ -3820,7 +3822,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationPrefetchINTEL: return "PrefetchINTEL";
     case SpvDecorationStallEnableALTERA: return "StallEnableALTERA";
     case SpvDecorationFuseLoopsInFunctionINTEL: return "FuseLoopsInFunctionINTEL";
-    case SpvDecorationMathOpDSPModeINTEL: return "MathOpDSPModeINTEL";
+    case SpvDecorationMathOpDSPModeALTERA: return "MathOpDSPModeALTERA";
     case SpvDecorationAliasScopeINTEL: return "AliasScopeINTEL";
     case SpvDecorationNoAliasINTEL: return "NoAliasINTEL";
     case SpvDecorationInitiationIntervalINTEL: return "InitiationIntervalINTEL";
@@ -4246,7 +4248,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";
     case SpvCapabilityFPGAClusterAttributesALTERA: return "FPGAClusterAttributesALTERA";
     case SpvCapabilityLoopFuseINTEL: return "LoopFuseINTEL";
-    case SpvCapabilityFPGADSPControlINTEL: return "FPGADSPControlINTEL";
+    case SpvCapabilityFPGADSPControlALTERA: return "FPGADSPControlALTERA";
     case SpvCapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
     case SpvCapabilityFPGAInvocationPipeliningAttributesINTEL: return "FPGAInvocationPipeliningAttributesINTEL";
     case SpvCapabilityFPGABufferLocationALTERA: return "FPGABufferLocationALTERA";

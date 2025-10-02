@@ -14866,13 +14866,14 @@
           "version" : "None"
         },
         {
-          "enumerant" : "MathOpDSPModeINTEL",
+          "enumerant" : "MathOpDSPModeALTERA",
+          "aliases" : [ "MathOpDSPModeINTEL" ],
           "value" : 5909,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Mode" },
             { "kind" : "LiteralInteger", "name" : "Propagate" }
           ],
-          "capabilities" : [ "FPGADSPControlINTEL" ],
+          "capabilities" : [ "FPGADSPControlALTERA" ],
           "version" : "None"
         },
         {
@@ -17526,9 +17527,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGADSPControlINTEL",
+          "enumerant" : "FPGADSPControlALTERA",
+          "aliases" : [ "FPGADSPControlINTEL" ],
           "value" : 5908,
-          "extensions" : [ "SPV_INTEL_fpga_dsp_control" ],
+          "extensions" : [ "SPV_ALTERA_fpga_dsp_control", "SPV_INTEL_fpga_dsp_control" ],
           "version" : "None"
         },
         {

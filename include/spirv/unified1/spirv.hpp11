@@ -611,6 +611,7 @@ enum class Decoration : unsigned {
     StallEnableALTERA = 5905,
     StallEnableINTEL = 5905,
     FuseLoopsInFunctionINTEL = 5907,
+    MathOpDSPModeALTERA = 5909,
     MathOpDSPModeINTEL = 5909,
     AliasScopeINTEL = 5914,
     NoAliasINTEL = 5915,
@@ -1247,6 +1248,7 @@ enum class Capability : unsigned {
     FPGAClusterAttributesALTERA = 5904,
     FPGAClusterAttributesINTEL = 5904,
     LoopFuseINTEL = 5906,
+    FPGADSPControlALTERA = 5908,
     FPGADSPControlINTEL = 5908,
     MemoryAccessAliasingINTEL = 5910,
     FPGAInvocationPipeliningAttributesINTEL = 5916,
@@ -3816,7 +3818,7 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::PrefetchINTEL: return "PrefetchINTEL";
     case Decoration::StallEnableALTERA: return "StallEnableALTERA";
     case Decoration::FuseLoopsInFunctionINTEL: return "FuseLoopsInFunctionINTEL";
-    case Decoration::MathOpDSPModeINTEL: return "MathOpDSPModeINTEL";
+    case Decoration::MathOpDSPModeALTERA: return "MathOpDSPModeALTERA";
     case Decoration::AliasScopeINTEL: return "AliasScopeINTEL";
     case Decoration::NoAliasINTEL: return "NoAliasINTEL";
     case Decoration::InitiationIntervalINTEL: return "InitiationIntervalINTEL";
@@ -4242,7 +4244,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::FPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";
     case Capability::FPGAClusterAttributesALTERA: return "FPGAClusterAttributesALTERA";
     case Capability::LoopFuseINTEL: return "LoopFuseINTEL";
-    case Capability::FPGADSPControlINTEL: return "FPGADSPControlINTEL";
+    case Capability::FPGADSPControlALTERA: return "FPGADSPControlALTERA";
     case Capability::MemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
     case Capability::FPGAInvocationPipeliningAttributesINTEL: return "FPGAInvocationPipeliningAttributesINTEL";
     case Capability::FPGABufferLocationALTERA: return "FPGABufferLocationALTERA";

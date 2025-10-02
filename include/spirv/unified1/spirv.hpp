@@ -611,6 +611,7 @@ enum Decoration {
     DecorationStallEnableALTERA = 5905,
     DecorationStallEnableINTEL = 5905,
     DecorationFuseLoopsInFunctionINTEL = 5907,
+    DecorationMathOpDSPModeALTERA = 5909,
     DecorationMathOpDSPModeINTEL = 5909,
     DecorationAliasScopeINTEL = 5914,
     DecorationNoAliasINTEL = 5915,
@@ -1247,6 +1248,7 @@ enum Capability {
     CapabilityFPGAClusterAttributesALTERA = 5904,
     CapabilityFPGAClusterAttributesINTEL = 5904,
     CapabilityLoopFuseINTEL = 5906,
+    CapabilityFPGADSPControlALTERA = 5908,
     CapabilityFPGADSPControlINTEL = 5908,
     CapabilityMemoryAccessAliasingINTEL = 5910,
     CapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
@@ -3816,7 +3818,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationPrefetchINTEL: return "PrefetchINTEL";
     case DecorationStallEnableALTERA: return "StallEnableALTERA";
     case DecorationFuseLoopsInFunctionINTEL: return "FuseLoopsInFunctionINTEL";
-    case DecorationMathOpDSPModeINTEL: return "MathOpDSPModeINTEL";
+    case DecorationMathOpDSPModeALTERA: return "MathOpDSPModeALTERA";
     case DecorationAliasScopeINTEL: return "AliasScopeINTEL";
     case DecorationNoAliasINTEL: return "NoAliasINTEL";
     case DecorationInitiationIntervalINTEL: return "InitiationIntervalINTEL";
@@ -4242,7 +4244,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";
     case CapabilityFPGAClusterAttributesALTERA: return "FPGAClusterAttributesALTERA";
     case CapabilityLoopFuseINTEL: return "LoopFuseINTEL";
-    case CapabilityFPGADSPControlINTEL: return "FPGADSPControlINTEL";
+    case CapabilityFPGADSPControlALTERA: return "FPGADSPControlALTERA";
     case CapabilityMemoryAccessAliasingINTEL: return "MemoryAccessAliasingINTEL";
     case CapabilityFPGAInvocationPipeliningAttributesINTEL: return "FPGAInvocationPipeliningAttributesINTEL";
     case CapabilityFPGABufferLocationALTERA: return "FPGABufferLocationALTERA";
