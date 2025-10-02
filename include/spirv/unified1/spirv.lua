@@ -664,7 +664,9 @@ spv = {
         StableKernelArgumentALTERA = 6183,
         StableKernelArgumentINTEL = 6183,
         HostAccessINTEL = 6188,
+        InitModeALTERA = 6190,
         InitModeINTEL = 6190,
+        ImplementInRegisterMapALTERA = 6191,
         ImplementInRegisterMapINTEL = 6191,
         ConditionalINTEL = 6247,
         CacheControlLoadINTEL = 6442,
@@ -1336,6 +1338,7 @@ spv = {
         FPGAArgumentInterfacesALTERA = 6174,
         FPGAArgumentInterfacesINTEL = 6174,
         GlobalVariableHostAccessINTEL = 6187,
+        GlobalVariableFPGADecorationsALTERA = 6189,
         GlobalVariableFPGADecorationsINTEL = 6189,
         SubgroupBufferPrefetchINTEL = 6220,
         Subgroup2DBlockIOINTEL = 6228,
@@ -1547,7 +1550,9 @@ spv = {
     },
 
     InitializationModeQualifier = {
+        InitOnDeviceReprogramALTERA = 0,
         InitOnDeviceReprogramINTEL = 0,
+        InitOnDeviceResetALTERA = 1,
         InitOnDeviceResetINTEL = 1,
         Max = 0x7fffffff,
     },

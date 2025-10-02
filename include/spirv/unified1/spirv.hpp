@@ -673,7 +673,9 @@ enum Decoration {
     DecorationStableKernelArgumentALTERA = 6183,
     DecorationStableKernelArgumentINTEL = 6183,
     DecorationHostAccessINTEL = 6188,
+    DecorationInitModeALTERA = 6190,
     DecorationInitModeINTEL = 6190,
+    DecorationImplementInRegisterMapALTERA = 6191,
     DecorationImplementInRegisterMapINTEL = 6191,
     DecorationConditionalINTEL = 6247,
     DecorationCacheControlLoadINTEL = 6442,
@@ -1345,6 +1347,7 @@ enum Capability {
     CapabilityFPGAArgumentInterfacesALTERA = 6174,
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
     CapabilityGlobalVariableHostAccessINTEL = 6187,
+    CapabilityGlobalVariableFPGADecorationsALTERA = 6189,
     CapabilityGlobalVariableFPGADecorationsINTEL = 6189,
     CapabilitySubgroupBufferPrefetchINTEL = 6220,
     CapabilitySubgroup2DBlockIOINTEL = 6228,
@@ -1556,7 +1559,9 @@ enum TensorOperandsMask {
 };
 
 enum InitializationModeQualifier {
+    InitializationModeQualifierInitOnDeviceReprogramALTERA = 0,
     InitializationModeQualifierInitOnDeviceReprogramINTEL = 0,
+    InitializationModeQualifierInitOnDeviceResetALTERA = 1,
     InitializationModeQualifierInitOnDeviceResetINTEL = 1,
     InitializationModeQualifierMax = 0x7fffffff,
 };
@@ -3895,8 +3900,8 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationMMHostInterfaceWaitRequestALTERA: return "MMHostInterfaceWaitRequestALTERA";
     case DecorationStableKernelArgumentALTERA: return "StableKernelArgumentALTERA";
     case DecorationHostAccessINTEL: return "HostAccessINTEL";
-    case DecorationInitModeINTEL: return "InitModeINTEL";
-    case DecorationImplementInRegisterMapINTEL: return "ImplementInRegisterMapINTEL";
+    case DecorationInitModeALTERA: return "InitModeALTERA";
+    case DecorationImplementInRegisterMapALTERA: return "ImplementInRegisterMapALTERA";
     case DecorationConditionalINTEL: return "ConditionalINTEL";
     case DecorationCacheControlLoadINTEL: return "CacheControlLoadINTEL";
     case DecorationCacheControlStoreINTEL: return "CacheControlStoreINTEL";
@@ -4331,7 +4336,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFPGALatencyControlALTERA: return "FPGALatencyControlALTERA";
     case CapabilityFPGAArgumentInterfacesALTERA: return "FPGAArgumentInterfacesALTERA";
     case CapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
-    case CapabilityGlobalVariableFPGADecorationsINTEL: return "GlobalVariableFPGADecorationsINTEL";
+    case CapabilityGlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
     case CapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
     case CapabilitySubgroup2DBlockIOINTEL: return "Subgroup2DBlockIOINTEL";
     case CapabilitySubgroup2DBlockTransformINTEL: return "Subgroup2DBlockTransformINTEL";
@@ -4455,8 +4460,8 @@ inline const char* TensorClampModeToString(TensorClampMode value) {
 
 inline const char* InitializationModeQualifierToString(InitializationModeQualifier value) {
     switch (value) {
-    case InitializationModeQualifierInitOnDeviceReprogramINTEL: return "InitOnDeviceReprogramINTEL";
-    case InitializationModeQualifierInitOnDeviceResetINTEL: return "InitOnDeviceResetINTEL";
+    case InitializationModeQualifierInitOnDeviceReprogramALTERA: return "InitOnDeviceReprogramALTERA";
+    case InitializationModeQualifierInitOnDeviceResetALTERA: return "InitOnDeviceResetALTERA";
     default: return "Unknown";
     }
 }

@@ -15118,21 +15118,23 @@
           "version" : "None"
         },
         {
-          "enumerant" : "InitModeINTEL",
+          "enumerant" : "InitModeALTERA",
+          "aliases" : [ "InitModeINTEL" ],
           "value" : 6190,
           "parameters": [
             { "kind" : "InitializationModeQualifier", "name" : "Trigger" }
           ],
-          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "capabilities" : [ "GlobalVariableFPGADecorationsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "ImplementInRegisterMapINTEL",
+          "enumerant" : "ImplementInRegisterMapALTERA",
+          "aliases" : [ "ImplementInRegisterMapINTEL" ],
           "value" : 6191,
           "parameters": [
             { "kind" : "LiteralInteger", "name" : "Value" }
           ],
-          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "capabilities" : [ "GlobalVariableFPGADecorationsALTERA" ],
           "version" : "None"
         },
         {
@@ -17786,9 +17788,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "GlobalVariableFPGADecorationsINTEL",
+          "enumerant" : "GlobalVariableFPGADecorationsALTERA",
+          "aliases" : [ "GlobalVariableFPGADecorationsINTEL" ],
           "value" : 6189,
-          "extensions": [ "SPV_INTEL_global_variable_fpga_decorations" ],
+          "extensions": [ "SPV_ALTERA_global_variable_fpga_decorations", "SPV_INTEL_global_variable_fpga_decorations" ],
           "version" : "None"
         },
         {
@@ -18132,15 +18135,17 @@
       "kind" : "InitializationModeQualifier",
       "enumerants" : [
         {
-          "enumerant" : "InitOnDeviceReprogramINTEL",
+          "enumerant" : "InitOnDeviceReprogramALTERA",
+          "aliases" : [ "InitOnDeviceReprogramINTEL" ],
           "value" : 0,
-          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "capabilities" : [ "GlobalVariableFPGADecorationsALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "InitOnDeviceResetINTEL",
+          "enumerant" : "InitOnDeviceResetALTERA",
+          "aliases" : [ "InitOnDeviceResetINTEL" ],
           "value" : 1,
-          "capabilities" : [ "GlobalVariableFPGADecorationsINTEL" ],
+          "capabilities" : [ "GlobalVariableFPGADecorationsALTERA" ],
           "version" : "None"
         }
       ]

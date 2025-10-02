@@ -677,7 +677,9 @@ typedef enum SpvDecoration_ {
     SpvDecorationStableKernelArgumentALTERA = 6183,
     SpvDecorationStableKernelArgumentINTEL = 6183,
     SpvDecorationHostAccessINTEL = 6188,
+    SpvDecorationInitModeALTERA = 6190,
     SpvDecorationInitModeINTEL = 6190,
+    SpvDecorationImplementInRegisterMapALTERA = 6191,
     SpvDecorationImplementInRegisterMapINTEL = 6191,
     SpvDecorationConditionalINTEL = 6247,
     SpvDecorationCacheControlLoadINTEL = 6442,
@@ -1349,6 +1351,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGAArgumentInterfacesALTERA = 6174,
     SpvCapabilityFPGAArgumentInterfacesINTEL = 6174,
     SpvCapabilityGlobalVariableHostAccessINTEL = 6187,
+    SpvCapabilityGlobalVariableFPGADecorationsALTERA = 6189,
     SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6189,
     SpvCapabilitySubgroupBufferPrefetchINTEL = 6220,
     SpvCapabilitySubgroup2DBlockIOINTEL = 6228,
@@ -1560,7 +1563,9 @@ typedef enum SpvTensorOperandsMask_ {
 } SpvTensorOperandsMask;
 
 typedef enum SpvInitializationModeQualifier_ {
+    SpvInitializationModeQualifierInitOnDeviceReprogramALTERA = 0,
     SpvInitializationModeQualifierInitOnDeviceReprogramINTEL = 0,
+    SpvInitializationModeQualifierInitOnDeviceResetALTERA = 1,
     SpvInitializationModeQualifierInitOnDeviceResetINTEL = 1,
     SpvInitializationModeQualifierMax = 0x7fffffff,
 } SpvInitializationModeQualifier;
@@ -3899,8 +3904,8 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationMMHostInterfaceWaitRequestALTERA: return "MMHostInterfaceWaitRequestALTERA";
     case SpvDecorationStableKernelArgumentALTERA: return "StableKernelArgumentALTERA";
     case SpvDecorationHostAccessINTEL: return "HostAccessINTEL";
-    case SpvDecorationInitModeINTEL: return "InitModeINTEL";
-    case SpvDecorationImplementInRegisterMapINTEL: return "ImplementInRegisterMapINTEL";
+    case SpvDecorationInitModeALTERA: return "InitModeALTERA";
+    case SpvDecorationImplementInRegisterMapALTERA: return "ImplementInRegisterMapALTERA";
     case SpvDecorationConditionalINTEL: return "ConditionalINTEL";
     case SpvDecorationCacheControlLoadINTEL: return "CacheControlLoadINTEL";
     case SpvDecorationCacheControlStoreINTEL: return "CacheControlStoreINTEL";
@@ -4335,7 +4340,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPGALatencyControlALTERA: return "FPGALatencyControlALTERA";
     case SpvCapabilityFPGAArgumentInterfacesALTERA: return "FPGAArgumentInterfacesALTERA";
     case SpvCapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
-    case SpvCapabilityGlobalVariableFPGADecorationsINTEL: return "GlobalVariableFPGADecorationsINTEL";
+    case SpvCapabilityGlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
     case SpvCapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
     case SpvCapabilitySubgroup2DBlockIOINTEL: return "Subgroup2DBlockIOINTEL";
     case SpvCapabilitySubgroup2DBlockTransformINTEL: return "Subgroup2DBlockTransformINTEL";
@@ -4459,8 +4464,8 @@ inline const char* SpvTensorClampModeToString(SpvTensorClampMode value) {
 
 inline const char* SpvInitializationModeQualifierToString(SpvInitializationModeQualifier value) {
     switch (value) {
-    case SpvInitializationModeQualifierInitOnDeviceReprogramINTEL: return "InitOnDeviceReprogramINTEL";
-    case SpvInitializationModeQualifierInitOnDeviceResetINTEL: return "InitOnDeviceResetINTEL";
+    case SpvInitializationModeQualifierInitOnDeviceReprogramALTERA: return "InitOnDeviceReprogramALTERA";
+    case SpvInitializationModeQualifierInitOnDeviceResetALTERA: return "InitOnDeviceResetALTERA";
     default: return "Unknown";
     }
 }
