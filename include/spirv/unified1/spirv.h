@@ -630,14 +630,23 @@ typedef enum SpvDecoration_ {
     SpvDecorationFPMaxErrorDecorationINTEL = 6170,
     SpvDecorationLatencyControlLabelINTEL = 6172,
     SpvDecorationLatencyControlConstraintINTEL = 6173,
+    SpvDecorationConduitKernelArgumentALTERA = 6175,
     SpvDecorationConduitKernelArgumentINTEL = 6175,
+    SpvDecorationRegisterMapKernelArgumentALTERA = 6176,
     SpvDecorationRegisterMapKernelArgumentINTEL = 6176,
+    SpvDecorationMMHostInterfaceAddressWidthALTERA = 6177,
     SpvDecorationMMHostInterfaceAddressWidthINTEL = 6177,
+    SpvDecorationMMHostInterfaceDataWidthALTERA = 6178,
     SpvDecorationMMHostInterfaceDataWidthINTEL = 6178,
+    SpvDecorationMMHostInterfaceLatencyALTERA = 6179,
     SpvDecorationMMHostInterfaceLatencyINTEL = 6179,
+    SpvDecorationMMHostInterfaceReadWriteModeALTERA = 6180,
     SpvDecorationMMHostInterfaceReadWriteModeINTEL = 6180,
+    SpvDecorationMMHostInterfaceMaxBurstALTERA = 6181,
     SpvDecorationMMHostInterfaceMaxBurstINTEL = 6181,
+    SpvDecorationMMHostInterfaceWaitRequestALTERA = 6182,
     SpvDecorationMMHostInterfaceWaitRequestINTEL = 6182,
+    SpvDecorationStableKernelArgumentALTERA = 6183,
     SpvDecorationStableKernelArgumentINTEL = 6183,
     SpvDecorationHostAccessINTEL = 6188,
     SpvDecorationInitModeINTEL = 6190,
@@ -1279,6 +1288,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityTaskSequenceINTEL = 6162,
     SpvCapabilityFPMaxErrorINTEL = 6169,
     SpvCapabilityFPGALatencyControlINTEL = 6171,
+    SpvCapabilityFPGAArgumentInterfacesALTERA = 6174,
     SpvCapabilityFPGAArgumentInterfacesINTEL = 6174,
     SpvCapabilityGlobalVariableHostAccessINTEL = 6187,
     SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6189,
@@ -3820,15 +3830,15 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationFPMaxErrorDecorationINTEL: return "FPMaxErrorDecorationINTEL";
     case SpvDecorationLatencyControlLabelINTEL: return "LatencyControlLabelINTEL";
     case SpvDecorationLatencyControlConstraintINTEL: return "LatencyControlConstraintINTEL";
-    case SpvDecorationConduitKernelArgumentINTEL: return "ConduitKernelArgumentINTEL";
-    case SpvDecorationRegisterMapKernelArgumentINTEL: return "RegisterMapKernelArgumentINTEL";
-    case SpvDecorationMMHostInterfaceAddressWidthINTEL: return "MMHostInterfaceAddressWidthINTEL";
-    case SpvDecorationMMHostInterfaceDataWidthINTEL: return "MMHostInterfaceDataWidthINTEL";
-    case SpvDecorationMMHostInterfaceLatencyINTEL: return "MMHostInterfaceLatencyINTEL";
-    case SpvDecorationMMHostInterfaceReadWriteModeINTEL: return "MMHostInterfaceReadWriteModeINTEL";
-    case SpvDecorationMMHostInterfaceMaxBurstINTEL: return "MMHostInterfaceMaxBurstINTEL";
-    case SpvDecorationMMHostInterfaceWaitRequestINTEL: return "MMHostInterfaceWaitRequestINTEL";
-    case SpvDecorationStableKernelArgumentINTEL: return "StableKernelArgumentINTEL";
+    case SpvDecorationConduitKernelArgumentALTERA: return "ConduitKernelArgumentALTERA";
+    case SpvDecorationRegisterMapKernelArgumentALTERA: return "RegisterMapKernelArgumentALTERA";
+    case SpvDecorationMMHostInterfaceAddressWidthALTERA: return "MMHostInterfaceAddressWidthALTERA";
+    case SpvDecorationMMHostInterfaceDataWidthALTERA: return "MMHostInterfaceDataWidthALTERA";
+    case SpvDecorationMMHostInterfaceLatencyALTERA: return "MMHostInterfaceLatencyALTERA";
+    case SpvDecorationMMHostInterfaceReadWriteModeALTERA: return "MMHostInterfaceReadWriteModeALTERA";
+    case SpvDecorationMMHostInterfaceMaxBurstALTERA: return "MMHostInterfaceMaxBurstALTERA";
+    case SpvDecorationMMHostInterfaceWaitRequestALTERA: return "MMHostInterfaceWaitRequestALTERA";
+    case SpvDecorationStableKernelArgumentALTERA: return "StableKernelArgumentALTERA";
     case SpvDecorationHostAccessINTEL: return "HostAccessINTEL";
     case SpvDecorationInitModeINTEL: return "InitModeINTEL";
     case SpvDecorationImplementInRegisterMapINTEL: return "ImplementInRegisterMapINTEL";
@@ -4264,7 +4274,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityTaskSequenceINTEL: return "TaskSequenceINTEL";
     case SpvCapabilityFPMaxErrorINTEL: return "FPMaxErrorINTEL";
     case SpvCapabilityFPGALatencyControlINTEL: return "FPGALatencyControlINTEL";
-    case SpvCapabilityFPGAArgumentInterfacesINTEL: return "FPGAArgumentInterfacesINTEL";
+    case SpvCapabilityFPGAArgumentInterfacesALTERA: return "FPGAArgumentInterfacesALTERA";
     case SpvCapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case SpvCapabilityGlobalVariableFPGADecorationsINTEL: return "GlobalVariableFPGADecorationsINTEL";
     case SpvCapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";

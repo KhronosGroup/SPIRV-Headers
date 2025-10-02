@@ -15001,75 +15001,84 @@
           "version" : "None"
         },
         {
-          "enumerant" : "ConduitKernelArgumentINTEL",
+          "enumerant" : "ConduitKernelArgumentALTERA",
+          "aliases" : [ "ConduitKernelArgumentINTEL" ],
           "value" : 6175,
-          "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
+          "capabilities" : [ "FPGAArgumentInterfacesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "RegisterMapKernelArgumentINTEL",
+          "enumerant" : "RegisterMapKernelArgumentALTERA",
+          "aliases" : [ "RegisterMapKernelArgumentINTEL" ],
           "value" : 6176,
-          "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
+          "capabilities" : [ "FPGAArgumentInterfacesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "MMHostInterfaceAddressWidthINTEL",
+          "enumerant" : "MMHostInterfaceAddressWidthALTERA",
+          "aliases" : [ "MMHostInterfaceAddressWidthINTEL" ],
           "value" : 6177,
-          "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
+          "capabilities" : [ "FPGAArgumentInterfacesALTERA" ],
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "AddressWidth" }
           ],
           "version" : "None"
         },
         {
-          "enumerant" : "MMHostInterfaceDataWidthINTEL",
+          "enumerant" : "MMHostInterfaceDataWidthALTERA",
+          "aliases" : [ "MMHostInterfaceDataWidthINTEL" ],
           "value" : 6178,
-          "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
+          "capabilities" : [ "FPGAArgumentInterfacesALTERA" ],
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "DataWidth" }
           ],
           "version" : "None"
         },
         {
-          "enumerant" : "MMHostInterfaceLatencyINTEL",
+          "enumerant" : "MMHostInterfaceLatencyALTERA",
+          "aliases" : [ "MMHostInterfaceLatencyINTEL" ],
           "value" : 6179,
-          "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
+          "capabilities" : [ "FPGAArgumentInterfacesALTERA" ],
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Latency" }
           ],
           "version" : "None"
         },
         {
-          "enumerant" : "MMHostInterfaceReadWriteModeINTEL",
+          "enumerant" : "MMHostInterfaceReadWriteModeALTERA",
+          "aliases" : [ "MMHostInterfaceReadWriteModeINTEL" ],
           "value" : 6180,
-          "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
+          "capabilities" : [ "FPGAArgumentInterfacesALTERA" ],
           "parameters" : [
             { "kind" : "AccessQualifier", "name" : "ReadWriteMode" }
           ],
           "version" : "None"
         },
         {
-          "enumerant" : "MMHostInterfaceMaxBurstINTEL",
+          "enumerant" : "MMHostInterfaceMaxBurstALTERA",
+          "aliases" : [ "MMHostInterfaceMaxBurstINTEL" ],
           "value" : 6181,
-          "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
+          "capabilities" : [ "FPGAArgumentInterfacesALTERA" ],
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "MaxBurstCount" }
           ],
           "version" : "None"
         },
         {
-          "enumerant" : "MMHostInterfaceWaitRequestINTEL",
+          "enumerant" : "MMHostInterfaceWaitRequestALTERA",
+          "aliases" : [ "MMHostInterfaceWaitRequestINTEL" ],
           "value" : 6182,
-          "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
+          "capabilities" : [ "FPGAArgumentInterfacesALTERA" ],
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Waitrequest" }
           ],
           "version" : "None"
         },
         {
-          "enumerant" : "StableKernelArgumentINTEL",
+          "enumerant" : "StableKernelArgumentALTERA",
+          "aliases" : [ "StableKernelArgumentINTEL" ],
           "value" : 6183,
-          "capabilities" : [ "FPGAArgumentInterfacesINTEL" ],
+          "capabilities" : [ "FPGAArgumentInterfacesALTERA" ],
           "version" : "None"
         },
         {
@@ -17728,9 +17737,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGAArgumentInterfacesINTEL",
+          "enumerant" : "FPGAArgumentInterfacesALTERA",
+          "aliases" : [ "FPGAArgumentInterfacesINTEL" ],
           "value" : 6174,
-          "extensions" : [ "SPV_INTEL_fpga_argument_interfaces" ],
+          "extensions" : [ "SPV_ALTERA_fpga_argument_interfaces", "SPV_INTEL_fpga_argument_interfaces" ],
           "version" : "None"
         },
         {

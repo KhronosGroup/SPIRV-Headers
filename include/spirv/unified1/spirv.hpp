@@ -626,14 +626,23 @@ enum Decoration {
     DecorationFPMaxErrorDecorationINTEL = 6170,
     DecorationLatencyControlLabelINTEL = 6172,
     DecorationLatencyControlConstraintINTEL = 6173,
+    DecorationConduitKernelArgumentALTERA = 6175,
     DecorationConduitKernelArgumentINTEL = 6175,
+    DecorationRegisterMapKernelArgumentALTERA = 6176,
     DecorationRegisterMapKernelArgumentINTEL = 6176,
+    DecorationMMHostInterfaceAddressWidthALTERA = 6177,
     DecorationMMHostInterfaceAddressWidthINTEL = 6177,
+    DecorationMMHostInterfaceDataWidthALTERA = 6178,
     DecorationMMHostInterfaceDataWidthINTEL = 6178,
+    DecorationMMHostInterfaceLatencyALTERA = 6179,
     DecorationMMHostInterfaceLatencyINTEL = 6179,
+    DecorationMMHostInterfaceReadWriteModeALTERA = 6180,
     DecorationMMHostInterfaceReadWriteModeINTEL = 6180,
+    DecorationMMHostInterfaceMaxBurstALTERA = 6181,
     DecorationMMHostInterfaceMaxBurstINTEL = 6181,
+    DecorationMMHostInterfaceWaitRequestALTERA = 6182,
     DecorationMMHostInterfaceWaitRequestINTEL = 6182,
+    DecorationStableKernelArgumentALTERA = 6183,
     DecorationStableKernelArgumentINTEL = 6183,
     DecorationHostAccessINTEL = 6188,
     DecorationInitModeINTEL = 6190,
@@ -1275,6 +1284,7 @@ enum Capability {
     CapabilityTaskSequenceINTEL = 6162,
     CapabilityFPMaxErrorINTEL = 6169,
     CapabilityFPGALatencyControlINTEL = 6171,
+    CapabilityFPGAArgumentInterfacesALTERA = 6174,
     CapabilityFPGAArgumentInterfacesINTEL = 6174,
     CapabilityGlobalVariableHostAccessINTEL = 6187,
     CapabilityGlobalVariableFPGADecorationsINTEL = 6189,
@@ -3816,15 +3826,15 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationFPMaxErrorDecorationINTEL: return "FPMaxErrorDecorationINTEL";
     case DecorationLatencyControlLabelINTEL: return "LatencyControlLabelINTEL";
     case DecorationLatencyControlConstraintINTEL: return "LatencyControlConstraintINTEL";
-    case DecorationConduitKernelArgumentINTEL: return "ConduitKernelArgumentINTEL";
-    case DecorationRegisterMapKernelArgumentINTEL: return "RegisterMapKernelArgumentINTEL";
-    case DecorationMMHostInterfaceAddressWidthINTEL: return "MMHostInterfaceAddressWidthINTEL";
-    case DecorationMMHostInterfaceDataWidthINTEL: return "MMHostInterfaceDataWidthINTEL";
-    case DecorationMMHostInterfaceLatencyINTEL: return "MMHostInterfaceLatencyINTEL";
-    case DecorationMMHostInterfaceReadWriteModeINTEL: return "MMHostInterfaceReadWriteModeINTEL";
-    case DecorationMMHostInterfaceMaxBurstINTEL: return "MMHostInterfaceMaxBurstINTEL";
-    case DecorationMMHostInterfaceWaitRequestINTEL: return "MMHostInterfaceWaitRequestINTEL";
-    case DecorationStableKernelArgumentINTEL: return "StableKernelArgumentINTEL";
+    case DecorationConduitKernelArgumentALTERA: return "ConduitKernelArgumentALTERA";
+    case DecorationRegisterMapKernelArgumentALTERA: return "RegisterMapKernelArgumentALTERA";
+    case DecorationMMHostInterfaceAddressWidthALTERA: return "MMHostInterfaceAddressWidthALTERA";
+    case DecorationMMHostInterfaceDataWidthALTERA: return "MMHostInterfaceDataWidthALTERA";
+    case DecorationMMHostInterfaceLatencyALTERA: return "MMHostInterfaceLatencyALTERA";
+    case DecorationMMHostInterfaceReadWriteModeALTERA: return "MMHostInterfaceReadWriteModeALTERA";
+    case DecorationMMHostInterfaceMaxBurstALTERA: return "MMHostInterfaceMaxBurstALTERA";
+    case DecorationMMHostInterfaceWaitRequestALTERA: return "MMHostInterfaceWaitRequestALTERA";
+    case DecorationStableKernelArgumentALTERA: return "StableKernelArgumentALTERA";
     case DecorationHostAccessINTEL: return "HostAccessINTEL";
     case DecorationInitModeINTEL: return "InitModeINTEL";
     case DecorationImplementInRegisterMapINTEL: return "ImplementInRegisterMapINTEL";
@@ -4260,7 +4270,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityTaskSequenceINTEL: return "TaskSequenceINTEL";
     case CapabilityFPMaxErrorINTEL: return "FPMaxErrorINTEL";
     case CapabilityFPGALatencyControlINTEL: return "FPGALatencyControlINTEL";
-    case CapabilityFPGAArgumentInterfacesINTEL: return "FPGAArgumentInterfacesINTEL";
+    case CapabilityFPGAArgumentInterfacesALTERA: return "FPGAArgumentInterfacesALTERA";
     case CapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case CapabilityGlobalVariableFPGADecorationsINTEL: return "GlobalVariableFPGADecorationsINTEL";
     case CapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
