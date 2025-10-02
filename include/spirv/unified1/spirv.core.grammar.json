@@ -10184,7 +10184,7 @@
     },
     {
       "opname" : "OpReadPipeBlockingALTERA",
-      "class"  : "Pipe",
+      "class"  : "@exclude",
       "aliases" : [ "OpReadPipeBlockingINTEL" ],
       "opcode" : 5946,
       "operands" : [
@@ -10198,7 +10198,7 @@
     },
     {
       "opname" : "OpWritePipeBlockingALTERA",
-      "class"  : "Pipe",
+      "class"  : "@exclude",
       "aliases" : [ "OpWritePipeBlockingINTEL" ],
       "opcode" : 5947,
       "operands" : [
@@ -10212,7 +10212,7 @@
     },
     {
       "opname" : "OpFPGARegALTERA",
-      "class"  : "Reserved",
+      "class"  : "@exclude",
       "aliases" : [ "OpFPGARegINTEL" ],
       "opcode" : 5949,
       "operands" : [
@@ -10677,7 +10677,7 @@
     },
     {
       "opname" : "OpTaskSequenceCreateALTERA",
-      "class"  : "Reserved",
+      "class"  : "@exclude",
       "aliases" : [ "OpTaskSequenceCreateINTEL" ],
       "opcode" : 6163,
       "operands" : [
@@ -10694,7 +10694,7 @@
     },
     {
       "opname" : "OpTaskSequenceAsyncALTERA",
-      "class"  : "Reserved",
+      "class"  : "@exclude",
       "aliases" : [ "OpTaskSequenceAsyncINTEL" ],
       "opcode" : 6164,
       "operands" : [
@@ -10706,7 +10706,7 @@
     },
     {
       "opname" : "OpTaskSequenceGetALTERA",
-      "class"  : "Reserved",
+      "class"  : "@exclude",
       "aliases" : [ "OpTaskSequenceGetINTEL" ],
       "opcode" : 6165,
       "operands" : [
@@ -10719,7 +10719,7 @@
     },
     {
       "opname" : "OpTaskSequenceReleaseALTERA",
-      "class"  : "Reserved",
+      "class"  : "@exclude",
       "aliases" : [ "OpTaskSequenceReleaseINTEL" ],
       "opcode" : 6166,
       "operands" : [
