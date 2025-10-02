@@ -1346,6 +1346,7 @@ enum Capability {
     CapabilityFPGAClusterAttributesV2ALTERA = 6150,
     CapabilityFPGAClusterAttributesV2INTEL = 6150,
     CapabilityFPGAKernelAttributesv2INTEL = 6161,
+    CapabilityTaskSequenceALTERA = 6162,
     CapabilityTaskSequenceINTEL = 6162,
     CapabilityFPMaxErrorINTEL = 6169,
     CapabilityFPGALatencyControlALTERA = 6171,
@@ -2515,10 +2516,15 @@ enum Op {
     OpControlBarrierArriveINTEL = 6142,
     OpControlBarrierWaitINTEL = 6143,
     OpArithmeticFenceEXT = 6145,
+    OpTaskSequenceCreateALTERA = 6163,
     OpTaskSequenceCreateINTEL = 6163,
+    OpTaskSequenceAsyncALTERA = 6164,
     OpTaskSequenceAsyncINTEL = 6164,
+    OpTaskSequenceGetALTERA = 6165,
     OpTaskSequenceGetINTEL = 6165,
+    OpTaskSequenceReleaseALTERA = 6166,
     OpTaskSequenceReleaseINTEL = 6166,
+    OpTypeTaskSequenceALTERA = 6199,
     OpTypeTaskSequenceINTEL = 6199,
     OpSubgroupBlockPrefetchINTEL = 6221,
     OpSubgroup2DBlockLoadINTEL = 6231,
@@ -3347,11 +3353,11 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
     case OpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
     case OpArithmeticFenceEXT: *hasResult = true; *hasResultType = true; break;
-    case OpTaskSequenceCreateINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpTaskSequenceAsyncINTEL: *hasResult = false; *hasResultType = false; break;
-    case OpTaskSequenceGetINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpTaskSequenceReleaseINTEL: *hasResult = false; *hasResultType = false; break;
-    case OpTypeTaskSequenceINTEL: *hasResult = true; *hasResultType = false; break;
+    case OpTaskSequenceCreateALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpTaskSequenceAsyncALTERA: *hasResult = false; *hasResultType = false; break;
+    case OpTaskSequenceGetALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpTaskSequenceReleaseALTERA: *hasResult = false; *hasResultType = false; break;
+    case OpTypeTaskSequenceALTERA: *hasResult = true; *hasResultType = false; break;
     case OpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockLoadINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockLoadTransformINTEL: *hasResult = false; *hasResultType = false; break;
@@ -4337,7 +4343,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityArithmeticFenceEXT: return "ArithmeticFenceEXT";
     case CapabilityFPGAClusterAttributesV2ALTERA: return "FPGAClusterAttributesV2ALTERA";
     case CapabilityFPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
-    case CapabilityTaskSequenceINTEL: return "TaskSequenceINTEL";
+    case CapabilityTaskSequenceALTERA: return "TaskSequenceALTERA";
     case CapabilityFPMaxErrorINTEL: return "FPMaxErrorINTEL";
     case CapabilityFPGALatencyControlALTERA: return "FPGALatencyControlALTERA";
     case CapabilityFPGAArgumentInterfacesALTERA: return "FPGAArgumentInterfacesALTERA";
@@ -5338,11 +5344,11 @@ inline const char* OpToString(Op value) {
     case OpControlBarrierArriveINTEL: return "OpControlBarrierArriveINTEL";
     case OpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
     case OpArithmeticFenceEXT: return "OpArithmeticFenceEXT";
-    case OpTaskSequenceCreateINTEL: return "OpTaskSequenceCreateINTEL";
-    case OpTaskSequenceAsyncINTEL: return "OpTaskSequenceAsyncINTEL";
-    case OpTaskSequenceGetINTEL: return "OpTaskSequenceGetINTEL";
-    case OpTaskSequenceReleaseINTEL: return "OpTaskSequenceReleaseINTEL";
-    case OpTypeTaskSequenceINTEL: return "OpTypeTaskSequenceINTEL";
+    case OpTaskSequenceCreateALTERA: return "OpTaskSequenceCreateALTERA";
+    case OpTaskSequenceAsyncALTERA: return "OpTaskSequenceAsyncALTERA";
+    case OpTaskSequenceGetALTERA: return "OpTaskSequenceGetALTERA";
+    case OpTaskSequenceReleaseALTERA: return "OpTaskSequenceReleaseALTERA";
+    case OpTypeTaskSequenceALTERA: return "OpTypeTaskSequenceALTERA";
     case OpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case OpSubgroup2DBlockLoadINTEL: return "OpSubgroup2DBlockLoadINTEL";
     case OpSubgroup2DBlockLoadTransformINTEL: return "OpSubgroup2DBlockLoadTransformINTEL";

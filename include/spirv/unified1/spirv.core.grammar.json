@@ -10674,8 +10674,9 @@
       "version" : "None"
     },
     {
-      "opname" : "OpTaskSequenceCreateINTEL",
+      "opname" : "OpTaskSequenceCreateALTERA",
       "class"  : "Reserved",
+      "aliases" : [ "OpTaskSequenceCreateINTEL" ],
       "opcode" : 6163,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10686,50 +10687,54 @@
         { "kind" : "LiteralInteger",  "name" : "GetCapacity" },
         { "kind" : "LiteralInteger",  "name" : "AsyncCapacity" }
       ],
-      "capabilities" : [ "TaskSequenceINTEL" ],
+      "capabilities" : [ "TaskSequenceALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpTaskSequenceAsyncINTEL",
+      "opname" : "OpTaskSequenceAsyncALTERA",
       "class"  : "Reserved",
+      "aliases" : [ "OpTaskSequenceAsyncINTEL" ],
       "opcode" : 6164,
       "operands" : [
         { "kind" : "IdRef",          "name" : "Sequence" },
         { "kind" : "IdRef", "quantifier" : "*",  "name" : "Arguments" }
       ],
-      "capabilities" : [ "TaskSequenceINTEL" ],
+      "capabilities" : [ "TaskSequenceALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpTaskSequenceGetINTEL",
+      "opname" : "OpTaskSequenceGetALTERA",
       "class"  : "Reserved",
+      "aliases" : [ "OpTaskSequenceGetINTEL" ],
       "opcode" : 6165,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef",          "name" : "Sequence" }
       ],
-      "capabilities" : [ "TaskSequenceINTEL" ],
+      "capabilities" : [ "TaskSequenceALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpTaskSequenceReleaseINTEL",
+      "opname" : "OpTaskSequenceReleaseALTERA",
       "class"  : "Reserved",
+      "aliases" : [ "OpTaskSequenceReleaseINTEL" ],
       "opcode" : 6166,
       "operands" : [
         { "kind" : "IdRef",          "name" : "Sequence" }
       ],
-      "capabilities" : [ "TaskSequenceINTEL" ],
+      "capabilities" : [ "TaskSequenceALTERA" ],
       "version" : "None"
     },
     {
-      "opname" : "OpTypeTaskSequenceINTEL",
+      "opname" : "OpTypeTaskSequenceALTERA",
       "class"  : "Type-Declaration",
+      "aliases" : [ "OpTypeTaskSequenceINTEL" ],
       "opcode" : 6199,
       "operands" : [
         { "kind" : "IdResult" }
       ],
-      "capabilities" : [ "TaskSequenceINTEL" ],
+      "capabilities" : [ "TaskSequenceALTERA" ],
       "version": "None"
     },
     {
@@ -17762,9 +17767,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "TaskSequenceINTEL",
+          "enumerant" : "TaskSequenceALTERA",
+          "aliases" : [ "TaskSequenceINTEL" ],
           "value" : 6162,
-          "extensions" : [ "SPV_INTEL_task_sequence" ],
+          "extensions" : [ "SPV_ALTERA_task_sequence", "SPV_INTEL_task_sequence" ],
           "version" : "None"
         },
         {
