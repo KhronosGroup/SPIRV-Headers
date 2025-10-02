@@ -608,9 +608,13 @@ typedef enum SpvDecoration_ {
     SpvDecorationStridesizeINTEL = 5883,
     SpvDecorationWordsizeINTEL = 5884,
     SpvDecorationTrueDualPortINTEL = 5885,
+    SpvDecorationBurstCoalesceALTERA = 5899,
     SpvDecorationBurstCoalesceINTEL = 5899,
+    SpvDecorationCacheSizeALTERA = 5900,
     SpvDecorationCacheSizeINTEL = 5900,
+    SpvDecorationDontStaticallyCoalesceALTERA = 5901,
     SpvDecorationDontStaticallyCoalesceINTEL = 5901,
+    SpvDecorationPrefetchALTERA = 5902,
     SpvDecorationPrefetchINTEL = 5902,
     SpvDecorationStallEnableALTERA = 5905,
     SpvDecorationStallEnableINTEL = 5905,
@@ -1274,6 +1278,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGALoopControlsINTEL = 5888,
     SpvCapabilityKernelAttributesINTEL = 5892,
     SpvCapabilityFPGAKernelAttributesINTEL = 5897,
+    SpvCapabilityFPGAMemoryAccessesALTERA = 5898,
     SpvCapabilityFPGAMemoryAccessesINTEL = 5898,
     SpvCapabilityFPGAClusterAttributesALTERA = 5904,
     SpvCapabilityFPGAClusterAttributesINTEL = 5904,
@@ -3844,10 +3849,10 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationStridesizeINTEL: return "StridesizeINTEL";
     case SpvDecorationWordsizeINTEL: return "WordsizeINTEL";
     case SpvDecorationTrueDualPortINTEL: return "TrueDualPortINTEL";
-    case SpvDecorationBurstCoalesceINTEL: return "BurstCoalesceINTEL";
-    case SpvDecorationCacheSizeINTEL: return "CacheSizeINTEL";
-    case SpvDecorationDontStaticallyCoalesceINTEL: return "DontStaticallyCoalesceINTEL";
-    case SpvDecorationPrefetchINTEL: return "PrefetchINTEL";
+    case SpvDecorationBurstCoalesceALTERA: return "BurstCoalesceALTERA";
+    case SpvDecorationCacheSizeALTERA: return "CacheSizeALTERA";
+    case SpvDecorationDontStaticallyCoalesceALTERA: return "DontStaticallyCoalesceALTERA";
+    case SpvDecorationPrefetchALTERA: return "PrefetchALTERA";
     case SpvDecorationStallEnableALTERA: return "StallEnableALTERA";
     case SpvDecorationFuseLoopsInFunctionINTEL: return "FuseLoopsInFunctionINTEL";
     case SpvDecorationMathOpDSPModeALTERA: return "MathOpDSPModeALTERA";
@@ -4273,7 +4278,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPGALoopControlsALTERA: return "FPGALoopControlsALTERA";
     case SpvCapabilityKernelAttributesINTEL: return "KernelAttributesINTEL";
     case SpvCapabilityFPGAKernelAttributesINTEL: return "FPGAKernelAttributesINTEL";
-    case SpvCapabilityFPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";
+    case SpvCapabilityFPGAMemoryAccessesALTERA: return "FPGAMemoryAccessesALTERA";
     case SpvCapabilityFPGAClusterAttributesALTERA: return "FPGAClusterAttributesALTERA";
     case SpvCapabilityLoopFuseINTEL: return "LoopFuseINTEL";
     case SpvCapabilityFPGADSPControlALTERA: return "FPGADSPControlALTERA";

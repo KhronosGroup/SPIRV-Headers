@@ -604,9 +604,13 @@ enum Decoration {
     DecorationStridesizeINTEL = 5883,
     DecorationWordsizeINTEL = 5884,
     DecorationTrueDualPortINTEL = 5885,
+    DecorationBurstCoalesceALTERA = 5899,
     DecorationBurstCoalesceINTEL = 5899,
+    DecorationCacheSizeALTERA = 5900,
     DecorationCacheSizeINTEL = 5900,
+    DecorationDontStaticallyCoalesceALTERA = 5901,
     DecorationDontStaticallyCoalesceINTEL = 5901,
+    DecorationPrefetchALTERA = 5902,
     DecorationPrefetchINTEL = 5902,
     DecorationStallEnableALTERA = 5905,
     DecorationStallEnableINTEL = 5905,
@@ -1270,6 +1274,7 @@ enum Capability {
     CapabilityFPGALoopControlsINTEL = 5888,
     CapabilityKernelAttributesINTEL = 5892,
     CapabilityFPGAKernelAttributesINTEL = 5897,
+    CapabilityFPGAMemoryAccessesALTERA = 5898,
     CapabilityFPGAMemoryAccessesINTEL = 5898,
     CapabilityFPGAClusterAttributesALTERA = 5904,
     CapabilityFPGAClusterAttributesINTEL = 5904,
@@ -3840,10 +3845,10 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationStridesizeINTEL: return "StridesizeINTEL";
     case DecorationWordsizeINTEL: return "WordsizeINTEL";
     case DecorationTrueDualPortINTEL: return "TrueDualPortINTEL";
-    case DecorationBurstCoalesceINTEL: return "BurstCoalesceINTEL";
-    case DecorationCacheSizeINTEL: return "CacheSizeINTEL";
-    case DecorationDontStaticallyCoalesceINTEL: return "DontStaticallyCoalesceINTEL";
-    case DecorationPrefetchINTEL: return "PrefetchINTEL";
+    case DecorationBurstCoalesceALTERA: return "BurstCoalesceALTERA";
+    case DecorationCacheSizeALTERA: return "CacheSizeALTERA";
+    case DecorationDontStaticallyCoalesceALTERA: return "DontStaticallyCoalesceALTERA";
+    case DecorationPrefetchALTERA: return "PrefetchALTERA";
     case DecorationStallEnableALTERA: return "StallEnableALTERA";
     case DecorationFuseLoopsInFunctionINTEL: return "FuseLoopsInFunctionINTEL";
     case DecorationMathOpDSPModeALTERA: return "MathOpDSPModeALTERA";
@@ -4269,7 +4274,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFPGALoopControlsALTERA: return "FPGALoopControlsALTERA";
     case CapabilityKernelAttributesINTEL: return "KernelAttributesINTEL";
     case CapabilityFPGAKernelAttributesINTEL: return "FPGAKernelAttributesINTEL";
-    case CapabilityFPGAMemoryAccessesINTEL: return "FPGAMemoryAccessesINTEL";
+    case CapabilityFPGAMemoryAccessesALTERA: return "FPGAMemoryAccessesALTERA";
     case CapabilityFPGAClusterAttributesALTERA: return "FPGAClusterAttributesALTERA";
     case CapabilityLoopFuseINTEL: return "LoopFuseINTEL";
     case CapabilityFPGADSPControlALTERA: return "FPGADSPControlALTERA";

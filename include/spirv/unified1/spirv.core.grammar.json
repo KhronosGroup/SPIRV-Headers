@@ -14833,33 +14833,37 @@
           "version" : "None"
         },
         {
-          "enumerant" : "BurstCoalesceINTEL",
+          "enumerant" : "BurstCoalesceALTERA",
+          "aliases" : [ "BurstCoalesceINTEL" ],
           "value" : 5899,
-          "capabilities" : [ "FPGAMemoryAccessesINTEL" ],
+          "capabilities" : [ "FPGAMemoryAccessesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "CacheSizeINTEL",
+          "enumerant" : "CacheSizeALTERA",
+          "aliases" : [ "CacheSizeINTEL" ],
           "value" : 5900,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Cache Size in bytes" }
           ],
-          "capabilities" : [ "FPGAMemoryAccessesINTEL" ],
+          "capabilities" : [ "FPGAMemoryAccessesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "DontStaticallyCoalesceINTEL",
+          "enumerant" : "DontStaticallyCoalesceALTERA",
+          "aliases" : [ "DontStaticallyCoalesceINTEL" ],
           "value" : 5901,
-          "capabilities" : [ "FPGAMemoryAccessesINTEL" ],
+          "capabilities" : [ "FPGAMemoryAccessesALTERA" ],
           "version" : "None"
         },
         {
-          "enumerant" : "PrefetchINTEL",
+          "enumerant" : "PrefetchALTERA",
+          "aliases" : [ "PrefetchINTEL" ],
           "value" : 5902,
           "parameters" : [
             { "kind" : "LiteralInteger", "name" : "Prefetcher Size in bytes" }
           ],
-          "capabilities" : [ "FPGAMemoryAccessesINTEL" ],
+          "capabilities" : [ "FPGAMemoryAccessesALTERA" ],
           "version" : "None"
         },
         {
@@ -17524,9 +17528,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "FPGAMemoryAccessesINTEL",
+          "enumerant" : "FPGAMemoryAccessesALTERA",
+          "aliases" : [ "FPGAMemoryAccessesINTEL" ],
           "value" : 5898,
-          "extensions" : [ "SPV_INTEL_fpga_memory_accesses" ],
+          "extensions" : [ "SPV_ALTERA_fpga_memory_accesses", "SPV_INTEL_fpga_memory_accesses" ],
           "version" : "None"
         },
         {
