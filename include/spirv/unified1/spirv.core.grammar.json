@@ -14998,7 +14998,7 @@
           "enumerant" : "StallFreeALTERA",
           "aliases" : [ "StallFreeINTEL" ],
           "value" : 6151,
-          "capabilities" : [ "FPGAClusterAttributesV2INTEL" ],
+          "capabilities" : [ "FPGAClusterAttributesV2ALTERA" ],
           "version" : "None"
         },
         {
