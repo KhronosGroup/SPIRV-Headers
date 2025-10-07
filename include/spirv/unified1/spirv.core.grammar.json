@@ -10730,7 +10730,7 @@
     },
     {
       "opname" : "OpTypeTaskSequenceALTERA",
-      "class"  : "Type-Declaration",
+      "class"  : "@exclude",
       "aliases" : [ "OpTypeTaskSequenceINTEL" ],
       "opcode" : 6199,
       "operands" : [
