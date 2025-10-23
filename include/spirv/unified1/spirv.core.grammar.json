@@ -12742,7 +12742,6 @@
           "enumerant" : "Shader64BitIndexingEXT",
           "value" : 5427,
           "capabilities" : [ "Shader64BitIndexingEXT" ],
-          "extensions" : [ "SPV_EXT_shader_64bit_indexing" ],
           "version" : "None"
         },
         {
