@@ -191,6 +191,7 @@ enum ExecutionMode {
     ExecutionModeSampleInterlockUnorderedEXT = 5369,
     ExecutionModeShadingRateInterlockOrderedEXT = 5370,
     ExecutionModeShadingRateInterlockUnorderedEXT = 5371,
+    ExecutionModeShader64BitIndexingEXT = 5427,
     ExecutionModeSharedLocalMemorySizeINTEL = 5618,
     ExecutionModeRoundingModeRTPINTEL = 5620,
     ExecutionModeRoundingModeRTNINTEL = 5621,
@@ -1192,6 +1193,7 @@ enum Capability {
     CapabilityRawAccessChainsNV = 5414,
     CapabilityRayTracingSpheresGeometryNV = 5418,
     CapabilityRayTracingLinearSweptSpheresGeometryNV = 5419,
+    CapabilityShader64BitIndexingEXT = 5426,
     CapabilityCooperativeMatrixReductionsNV = 5430,
     CapabilityCooperativeMatrixConversionsNV = 5431,
     CapabilityCooperativeMatrixPerElementOperationsNV = 5432,
@@ -3415,6 +3417,7 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeSampleInterlockUnorderedEXT: return "SampleInterlockUnorderedEXT";
     case ExecutionModeShadingRateInterlockOrderedEXT: return "ShadingRateInterlockOrderedEXT";
     case ExecutionModeShadingRateInterlockUnorderedEXT: return "ShadingRateInterlockUnorderedEXT";
+    case ExecutionModeShader64BitIndexingEXT: return "Shader64BitIndexingEXT";
     case ExecutionModeSharedLocalMemorySizeINTEL: return "SharedLocalMemorySizeINTEL";
     case ExecutionModeRoundingModeRTPINTEL: return "RoundingModeRTPINTEL";
     case ExecutionModeRoundingModeRTNINTEL: return "RoundingModeRTNINTEL";
@@ -4154,6 +4157,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityRawAccessChainsNV: return "RawAccessChainsNV";
     case CapabilityRayTracingSpheresGeometryNV: return "RayTracingSpheresGeometryNV";
     case CapabilityRayTracingLinearSweptSpheresGeometryNV: return "RayTracingLinearSweptSpheresGeometryNV";
+    case CapabilityShader64BitIndexingEXT: return "Shader64BitIndexingEXT";
     case CapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
     case CapabilityCooperativeMatrixConversionsNV: return "CooperativeMatrixConversionsNV";
     case CapabilityCooperativeMatrixPerElementOperationsNV: return "CooperativeMatrixPerElementOperationsNV";

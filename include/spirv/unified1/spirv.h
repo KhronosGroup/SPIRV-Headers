@@ -195,6 +195,7 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeSampleInterlockUnorderedEXT = 5369,
     SpvExecutionModeShadingRateInterlockOrderedEXT = 5370,
     SpvExecutionModeShadingRateInterlockUnorderedEXT = 5371,
+    SpvExecutionModeShader64BitIndexingEXT = 5427,
     SpvExecutionModeSharedLocalMemorySizeINTEL = 5618,
     SpvExecutionModeRoundingModeRTPINTEL = 5620,
     SpvExecutionModeRoundingModeRTNINTEL = 5621,
@@ -1196,6 +1197,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityRawAccessChainsNV = 5414,
     SpvCapabilityRayTracingSpheresGeometryNV = 5418,
     SpvCapabilityRayTracingLinearSweptSpheresGeometryNV = 5419,
+    SpvCapabilityShader64BitIndexingEXT = 5426,
     SpvCapabilityCooperativeMatrixReductionsNV = 5430,
     SpvCapabilityCooperativeMatrixConversionsNV = 5431,
     SpvCapabilityCooperativeMatrixPerElementOperationsNV = 5432,
@@ -3419,6 +3421,7 @@ inline const char* SpvExecutionModeToString(SpvExecutionMode value) {
     case SpvExecutionModeSampleInterlockUnorderedEXT: return "SampleInterlockUnorderedEXT";
     case SpvExecutionModeShadingRateInterlockOrderedEXT: return "ShadingRateInterlockOrderedEXT";
     case SpvExecutionModeShadingRateInterlockUnorderedEXT: return "ShadingRateInterlockUnorderedEXT";
+    case SpvExecutionModeShader64BitIndexingEXT: return "Shader64BitIndexingEXT";
     case SpvExecutionModeSharedLocalMemorySizeINTEL: return "SharedLocalMemorySizeINTEL";
     case SpvExecutionModeRoundingModeRTPINTEL: return "RoundingModeRTPINTEL";
     case SpvExecutionModeRoundingModeRTNINTEL: return "RoundingModeRTNINTEL";
@@ -4158,6 +4161,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityRawAccessChainsNV: return "RawAccessChainsNV";
     case SpvCapabilityRayTracingSpheresGeometryNV: return "RayTracingSpheresGeometryNV";
     case SpvCapabilityRayTracingLinearSweptSpheresGeometryNV: return "RayTracingLinearSweptSpheresGeometryNV";
+    case SpvCapabilityShader64BitIndexingEXT: return "Shader64BitIndexingEXT";
     case SpvCapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
     case SpvCapabilityCooperativeMatrixConversionsNV: return "CooperativeMatrixConversionsNV";
     case SpvCapabilityCooperativeMatrixPerElementOperationsNV: return "CooperativeMatrixPerElementOperationsNV";
