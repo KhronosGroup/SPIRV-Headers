@@ -16899,6 +16899,12 @@
           "capabilities" : [ "RayCullMaskKHR" ],
           "extensions" : [ "SPV_KHR_ray_cull_mask" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "DeviceBarrierValidINTEL",
+          "value"  : 6186,
+          "capabilities" : [ "DeviceBarrierINTEL" ],
+          "version" : "None"
         }
       ]
     },
@@ -18830,6 +18836,12 @@
           "aliases" : [ "FPGAArgumentInterfacesINTEL" ],
           "value" : 6174,
           "extensions" : [ "SPV_ALTERA_fpga_argument_interfaces", "SPV_INTEL_fpga_argument_interfaces" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DeviceBarrierINTEL",
+          "value" : 6185,
+          "extensions": [ "SPV_INTEL_device_barrier" ],
           "version" : "None"
         },
         {

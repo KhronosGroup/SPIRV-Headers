@@ -977,6 +977,7 @@ public class Spv {
         HitLSSRadiiNV(5421),
         ClusterIDNV(5436),
         CullMaskKHR(6021),
+        DeviceBarrierValidINTEL(6186),
         Max(0x7fffffff);
 
         public final int value;
@@ -1626,6 +1627,7 @@ public class Spv {
         FPGALatencyControlINTEL(6171),
         FPGAArgumentInterfacesALTERA(6174),
         FPGAArgumentInterfacesINTEL(6174),
+        DeviceBarrierINTEL(6185),
         GlobalVariableHostAccessINTEL(6187),
         GlobalVariableFPGADecorationsALTERA(6189),
         GlobalVariableFPGADecorationsINTEL(6189),
