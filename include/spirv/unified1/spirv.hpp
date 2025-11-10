@@ -246,6 +246,7 @@ enum StorageClass {
     StorageClassPhysicalStorageBufferEXT = 5349,
     StorageClassHitObjectAttributeNV = 5385,
     StorageClassTaskPayloadWorkgroupEXT = 5402,
+    StorageClassHitObjectAttributeEXT = 5411,
     StorageClassCodeSectionINTEL = 5605,
     StorageClassDeviceOnlyALTERA = 5936,
     StorageClassDeviceOnlyINTEL = 5936,
@@ -573,6 +574,7 @@ enum Decoration {
     DecorationAliasedPointer = 5356,
     DecorationAliasedPointerEXT = 5356,
     DecorationHitObjectShaderRecordBufferNV = 5386,
+    DecorationHitObjectShaderRecordBufferEXT = 5389,
     DecorationBindlessSamplerNV = 5398,
     DecorationBindlessImageNV = 5399,
     DecorationBoundSamplerNV = 5400,
@@ -1249,6 +1251,7 @@ enum Capability {
     CapabilityDisplacementMicromapNV = 5380,
     CapabilityRayTracingOpacityMicromapEXT = 5381,
     CapabilityShaderInvocationReorderNV = 5383,
+    CapabilityShaderInvocationReorderEXT = 5388,
     CapabilityBindlessTextureNV = 5390,
     CapabilityRayQueryPositionFetchKHR = 5391,
     CapabilityCooperativeVectorNV = 5394,
@@ -2182,6 +2185,36 @@ enum Op {
     OpFetchMicroTriangleVertexBarycentricNV = 5301,
     OpCooperativeVectorLoadNV = 5302,
     OpCooperativeVectorStoreNV = 5303,
+    OpHitObjectRecordFromQueryEXT = 5304,
+    OpHitObjectRecordMissEXT = 5305,
+    OpHitObjectRecordMissMotionEXT = 5306,
+    OpHitObjectGetIntersectionTriangleVertexPositionsEXT = 5307,
+    OpHitObjectGetRayFlagsEXT = 5308,
+    OpHitObjectSetShaderBindingTableRecordIndexEXT = 5309,
+    OpHitObjectReorderExecuteShaderEXT = 5310,
+    OpHitObjectTraceReorderExecuteEXT = 5311,
+    OpHitObjectTraceMotionReorderExecuteEXT = 5312,
+    OpTypeHitObjectEXT = 5313,
+    OpReorderThreadWithHintEXT = 5314,
+    OpReorderThreadWithHitObjectEXT = 5315,
+    OpHitObjectTraceRayEXT = 5316,
+    OpHitObjectTraceRayMotionEXT = 5317,
+    OpHitObjectRecordEmptyEXT = 5318,
+    OpHitObjectExecuteShaderEXT = 5319,
+    OpHitObjectGetCurrentTimeEXT = 5320,
+    OpHitObjectGetAttributesEXT = 5321,
+    OpHitObjectGetHitKindEXT = 5322,
+    OpHitObjectGetPrimitiveIndexEXT = 5323,
+    OpHitObjectGetGeometryIndexEXT = 5324,
+    OpHitObjectGetInstanceIdEXT = 5325,
+    OpHitObjectGetInstanceCustomIndexEXT = 5326,
+    OpHitObjectGetObjectRayOriginEXT = 5327,
+    OpHitObjectGetObjectRayDirectionEXT = 5328,
+    OpHitObjectGetWorldRayDirectionEXT = 5329,
+    OpHitObjectGetWorldRayOriginEXT = 5330,
+    OpHitObjectGetObjectToWorldEXT = 5331,
+    OpHitObjectGetWorldToObjectEXT = 5332,
+    OpHitObjectGetRayTMaxEXT = 5333,
     OpReportIntersectionKHR = 5334,
     OpReportIntersectionNV = 5334,
     OpIgnoreIntersectionNV = 5335,
@@ -2196,6 +2229,12 @@ enum Op {
     OpRayQueryGetClusterIdNV = 5345,
     OpRayQueryGetIntersectionClusterIdNV = 5345,
     OpHitObjectGetClusterIdNV = 5346,
+    OpHitObjectGetRayTMinEXT = 5347,
+    OpHitObjectGetShaderBindingTableRecordIndexEXT = 5348,
+    OpHitObjectGetShaderRecordBufferHandleEXT = 5349,
+    OpHitObjectIsEmptyEXT = 5350,
+    OpHitObjectIsHitEXT = 5351,
+    OpHitObjectIsMissEXT = 5352,
     OpTypeCooperativeMatrixNV = 5358,
     OpCooperativeMatrixLoadNV = 5359,
     OpCooperativeMatrixStoreNV = 5360,
@@ -3060,6 +3099,36 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
     case OpCooperativeVectorLoadNV: *hasResult = true; *hasResultType = true; break;
     case OpCooperativeVectorStoreNV: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectRecordFromQueryEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectRecordMissEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectRecordMissMotionEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectGetIntersectionTriangleVertexPositionsEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetRayFlagsEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectSetShaderBindingTableRecordIndexEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectReorderExecuteShaderEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectTraceReorderExecuteEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectTraceMotionReorderExecuteEXT: *hasResult = false; *hasResultType = false; break;
+    case OpTypeHitObjectEXT: *hasResult = true; *hasResultType = false; break;
+    case OpReorderThreadWithHintEXT: *hasResult = false; *hasResultType = false; break;
+    case OpReorderThreadWithHitObjectEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectTraceRayEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectTraceRayMotionEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectRecordEmptyEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectExecuteShaderEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectGetCurrentTimeEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetAttributesEXT: *hasResult = false; *hasResultType = false; break;
+    case OpHitObjectGetHitKindEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetPrimitiveIndexEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetGeometryIndexEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetInstanceIdEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetInstanceCustomIndexEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetObjectRayOriginEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetObjectRayDirectionEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetWorldRayDirectionEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetWorldRayOriginEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetObjectToWorldEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetWorldToObjectEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetRayTMaxEXT: *hasResult = true; *hasResultType = true; break;
     case OpReportIntersectionKHR: *hasResult = true; *hasResultType = true; break;
     case OpIgnoreIntersectionNV: *hasResult = false; *hasResultType = false; break;
     case OpTerminateRayNV: *hasResult = false; *hasResultType = false; break;
@@ -3071,6 +3140,12 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpExecuteCallableNV: *hasResult = false; *hasResultType = false; break;
     case OpRayQueryGetIntersectionClusterIdNV: *hasResult = true; *hasResultType = true; break;
     case OpHitObjectGetClusterIdNV: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetRayTMinEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetShaderBindingTableRecordIndexEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectGetShaderRecordBufferHandleEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectIsEmptyEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectIsHitEXT: *hasResult = true; *hasResultType = true; break;
+    case OpHitObjectIsMissEXT: *hasResult = true; *hasResultType = true; break;
     case OpTypeCooperativeMatrixNV: *hasResult = true; *hasResultType = false; break;
     case OpCooperativeMatrixLoadNV: *hasResult = true; *hasResultType = true; break;
     case OpCooperativeMatrixStoreNV: *hasResult = false; *hasResultType = false; break;
@@ -3593,6 +3668,7 @@ inline const char* StorageClassToString(StorageClass value) {
     case StorageClassPhysicalStorageBuffer: return "PhysicalStorageBuffer";
     case StorageClassHitObjectAttributeNV: return "HitObjectAttributeNV";
     case StorageClassTaskPayloadWorkgroupEXT: return "TaskPayloadWorkgroupEXT";
+    case StorageClassHitObjectAttributeEXT: return "HitObjectAttributeEXT";
     case StorageClassCodeSectionINTEL: return "CodeSectionINTEL";
     case StorageClassDeviceOnlyALTERA: return "DeviceOnlyALTERA";
     case StorageClassHostOnlyALTERA: return "HostOnlyALTERA";
@@ -3858,6 +3934,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationRestrictPointer: return "RestrictPointer";
     case DecorationAliasedPointer: return "AliasedPointer";
     case DecorationHitObjectShaderRecordBufferNV: return "HitObjectShaderRecordBufferNV";
+    case DecorationHitObjectShaderRecordBufferEXT: return "HitObjectShaderRecordBufferEXT";
     case DecorationBindlessSamplerNV: return "BindlessSamplerNV";
     case DecorationBindlessImageNV: return "BindlessImageNV";
     case DecorationBoundSamplerNV: return "BoundSamplerNV";
@@ -4275,6 +4352,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityDisplacementMicromapNV: return "DisplacementMicromapNV";
     case CapabilityRayTracingOpacityMicromapEXT: return "RayTracingOpacityMicromapEXT";
     case CapabilityShaderInvocationReorderNV: return "ShaderInvocationReorderNV";
+    case CapabilityShaderInvocationReorderEXT: return "ShaderInvocationReorderEXT";
     case CapabilityBindlessTextureNV: return "BindlessTextureNV";
     case CapabilityRayQueryPositionFetchKHR: return "RayQueryPositionFetchKHR";
     case CapabilityCooperativeVectorNV: return "CooperativeVectorNV";
@@ -5055,6 +5133,36 @@ inline const char* OpToString(Op value) {
     case OpFetchMicroTriangleVertexBarycentricNV: return "OpFetchMicroTriangleVertexBarycentricNV";
     case OpCooperativeVectorLoadNV: return "OpCooperativeVectorLoadNV";
     case OpCooperativeVectorStoreNV: return "OpCooperativeVectorStoreNV";
+    case OpHitObjectRecordFromQueryEXT: return "OpHitObjectRecordFromQueryEXT";
+    case OpHitObjectRecordMissEXT: return "OpHitObjectRecordMissEXT";
+    case OpHitObjectRecordMissMotionEXT: return "OpHitObjectRecordMissMotionEXT";
+    case OpHitObjectGetIntersectionTriangleVertexPositionsEXT: return "OpHitObjectGetIntersectionTriangleVertexPositionsEXT";
+    case OpHitObjectGetRayFlagsEXT: return "OpHitObjectGetRayFlagsEXT";
+    case OpHitObjectSetShaderBindingTableRecordIndexEXT: return "OpHitObjectSetShaderBindingTableRecordIndexEXT";
+    case OpHitObjectReorderExecuteShaderEXT: return "OpHitObjectReorderExecuteShaderEXT";
+    case OpHitObjectTraceReorderExecuteEXT: return "OpHitObjectTraceReorderExecuteEXT";
+    case OpHitObjectTraceMotionReorderExecuteEXT: return "OpHitObjectTraceMotionReorderExecuteEXT";
+    case OpTypeHitObjectEXT: return "OpTypeHitObjectEXT";
+    case OpReorderThreadWithHintEXT: return "OpReorderThreadWithHintEXT";
+    case OpReorderThreadWithHitObjectEXT: return "OpReorderThreadWithHitObjectEXT";
+    case OpHitObjectTraceRayEXT: return "OpHitObjectTraceRayEXT";
+    case OpHitObjectTraceRayMotionEXT: return "OpHitObjectTraceRayMotionEXT";
+    case OpHitObjectRecordEmptyEXT: return "OpHitObjectRecordEmptyEXT";
+    case OpHitObjectExecuteShaderEXT: return "OpHitObjectExecuteShaderEXT";
+    case OpHitObjectGetCurrentTimeEXT: return "OpHitObjectGetCurrentTimeEXT";
+    case OpHitObjectGetAttributesEXT: return "OpHitObjectGetAttributesEXT";
+    case OpHitObjectGetHitKindEXT: return "OpHitObjectGetHitKindEXT";
+    case OpHitObjectGetPrimitiveIndexEXT: return "OpHitObjectGetPrimitiveIndexEXT";
+    case OpHitObjectGetGeometryIndexEXT: return "OpHitObjectGetGeometryIndexEXT";
+    case OpHitObjectGetInstanceIdEXT: return "OpHitObjectGetInstanceIdEXT";
+    case OpHitObjectGetInstanceCustomIndexEXT: return "OpHitObjectGetInstanceCustomIndexEXT";
+    case OpHitObjectGetObjectRayOriginEXT: return "OpHitObjectGetObjectRayOriginEXT";
+    case OpHitObjectGetObjectRayDirectionEXT: return "OpHitObjectGetObjectRayDirectionEXT";
+    case OpHitObjectGetWorldRayDirectionEXT: return "OpHitObjectGetWorldRayDirectionEXT";
+    case OpHitObjectGetWorldRayOriginEXT: return "OpHitObjectGetWorldRayOriginEXT";
+    case OpHitObjectGetObjectToWorldEXT: return "OpHitObjectGetObjectToWorldEXT";
+    case OpHitObjectGetWorldToObjectEXT: return "OpHitObjectGetWorldToObjectEXT";
+    case OpHitObjectGetRayTMaxEXT: return "OpHitObjectGetRayTMaxEXT";
     case OpReportIntersectionKHR: return "OpReportIntersectionKHR";
     case OpIgnoreIntersectionNV: return "OpIgnoreIntersectionNV";
     case OpTerminateRayNV: return "OpTerminateRayNV";
@@ -5066,6 +5174,12 @@ inline const char* OpToString(Op value) {
     case OpExecuteCallableNV: return "OpExecuteCallableNV";
     case OpRayQueryGetClusterIdNV: return "OpRayQueryGetClusterIdNV";
     case OpHitObjectGetClusterIdNV: return "OpHitObjectGetClusterIdNV";
+    case OpHitObjectGetRayTMinEXT: return "OpHitObjectGetRayTMinEXT";
+    case OpHitObjectGetShaderBindingTableRecordIndexEXT: return "OpHitObjectGetShaderBindingTableRecordIndexEXT";
+    case OpHitObjectGetShaderRecordBufferHandleEXT: return "OpHitObjectGetShaderRecordBufferHandleEXT";
+    case OpHitObjectIsEmptyEXT: return "OpHitObjectIsEmptyEXT";
+    case OpHitObjectIsHitEXT: return "OpHitObjectIsHitEXT";
+    case OpHitObjectIsMissEXT: return "OpHitObjectIsMissEXT";
     case OpTypeCooperativeMatrixNV: return "OpTypeCooperativeMatrixNV";
     case OpCooperativeMatrixLoadNV: return "OpCooperativeMatrixLoadNV";
     case OpCooperativeMatrixStoreNV: return "OpCooperativeMatrixStoreNV";

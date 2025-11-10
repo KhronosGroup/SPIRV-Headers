@@ -250,6 +250,7 @@ typedef enum SpvStorageClass_ {
     SpvStorageClassPhysicalStorageBufferEXT = 5349,
     SpvStorageClassHitObjectAttributeNV = 5385,
     SpvStorageClassTaskPayloadWorkgroupEXT = 5402,
+    SpvStorageClassHitObjectAttributeEXT = 5411,
     SpvStorageClassCodeSectionINTEL = 5605,
     SpvStorageClassDeviceOnlyALTERA = 5936,
     SpvStorageClassDeviceOnlyINTEL = 5936,
@@ -577,6 +578,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationAliasedPointer = 5356,
     SpvDecorationAliasedPointerEXT = 5356,
     SpvDecorationHitObjectShaderRecordBufferNV = 5386,
+    SpvDecorationHitObjectShaderRecordBufferEXT = 5389,
     SpvDecorationBindlessSamplerNV = 5398,
     SpvDecorationBindlessImageNV = 5399,
     SpvDecorationBoundSamplerNV = 5400,
@@ -1253,6 +1255,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityDisplacementMicromapNV = 5380,
     SpvCapabilityRayTracingOpacityMicromapEXT = 5381,
     SpvCapabilityShaderInvocationReorderNV = 5383,
+    SpvCapabilityShaderInvocationReorderEXT = 5388,
     SpvCapabilityBindlessTextureNV = 5390,
     SpvCapabilityRayQueryPositionFetchKHR = 5391,
     SpvCapabilityCooperativeVectorNV = 5394,
@@ -2186,6 +2189,36 @@ typedef enum SpvOp_ {
     SpvOpFetchMicroTriangleVertexBarycentricNV = 5301,
     SpvOpCooperativeVectorLoadNV = 5302,
     SpvOpCooperativeVectorStoreNV = 5303,
+    SpvOpHitObjectRecordFromQueryEXT = 5304,
+    SpvOpHitObjectRecordMissEXT = 5305,
+    SpvOpHitObjectRecordMissMotionEXT = 5306,
+    SpvOpHitObjectGetIntersectionTriangleVertexPositionsEXT = 5307,
+    SpvOpHitObjectGetRayFlagsEXT = 5308,
+    SpvOpHitObjectSetShaderBindingTableRecordIndexEXT = 5309,
+    SpvOpHitObjectReorderExecuteShaderEXT = 5310,
+    SpvOpHitObjectTraceReorderExecuteEXT = 5311,
+    SpvOpHitObjectTraceMotionReorderExecuteEXT = 5312,
+    SpvOpTypeHitObjectEXT = 5313,
+    SpvOpReorderThreadWithHintEXT = 5314,
+    SpvOpReorderThreadWithHitObjectEXT = 5315,
+    SpvOpHitObjectTraceRayEXT = 5316,
+    SpvOpHitObjectTraceRayMotionEXT = 5317,
+    SpvOpHitObjectRecordEmptyEXT = 5318,
+    SpvOpHitObjectExecuteShaderEXT = 5319,
+    SpvOpHitObjectGetCurrentTimeEXT = 5320,
+    SpvOpHitObjectGetAttributesEXT = 5321,
+    SpvOpHitObjectGetHitKindEXT = 5322,
+    SpvOpHitObjectGetPrimitiveIndexEXT = 5323,
+    SpvOpHitObjectGetGeometryIndexEXT = 5324,
+    SpvOpHitObjectGetInstanceIdEXT = 5325,
+    SpvOpHitObjectGetInstanceCustomIndexEXT = 5326,
+    SpvOpHitObjectGetObjectRayOriginEXT = 5327,
+    SpvOpHitObjectGetObjectRayDirectionEXT = 5328,
+    SpvOpHitObjectGetWorldRayDirectionEXT = 5329,
+    SpvOpHitObjectGetWorldRayOriginEXT = 5330,
+    SpvOpHitObjectGetObjectToWorldEXT = 5331,
+    SpvOpHitObjectGetWorldToObjectEXT = 5332,
+    SpvOpHitObjectGetRayTMaxEXT = 5333,
     SpvOpReportIntersectionKHR = 5334,
     SpvOpReportIntersectionNV = 5334,
     SpvOpIgnoreIntersectionNV = 5335,
@@ -2200,6 +2233,12 @@ typedef enum SpvOp_ {
     SpvOpRayQueryGetClusterIdNV = 5345,
     SpvOpRayQueryGetIntersectionClusterIdNV = 5345,
     SpvOpHitObjectGetClusterIdNV = 5346,
+    SpvOpHitObjectGetRayTMinEXT = 5347,
+    SpvOpHitObjectGetShaderBindingTableRecordIndexEXT = 5348,
+    SpvOpHitObjectGetShaderRecordBufferHandleEXT = 5349,
+    SpvOpHitObjectIsEmptyEXT = 5350,
+    SpvOpHitObjectIsHitEXT = 5351,
+    SpvOpHitObjectIsMissEXT = 5352,
     SpvOpTypeCooperativeMatrixNV = 5358,
     SpvOpCooperativeMatrixLoadNV = 5359,
     SpvOpCooperativeMatrixStoreNV = 5360,
@@ -3064,6 +3103,36 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorLoadNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorStoreNV: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectRecordFromQueryEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectRecordMissEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectRecordMissMotionEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectGetIntersectionTriangleVertexPositionsEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetRayFlagsEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectSetShaderBindingTableRecordIndexEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectReorderExecuteShaderEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectTraceReorderExecuteEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectTraceMotionReorderExecuteEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpTypeHitObjectEXT: *hasResult = true; *hasResultType = false; break;
+    case SpvOpReorderThreadWithHintEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpReorderThreadWithHitObjectEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectTraceRayEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectTraceRayMotionEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectRecordEmptyEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectExecuteShaderEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectGetCurrentTimeEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetAttributesEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpHitObjectGetHitKindEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetPrimitiveIndexEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetGeometryIndexEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetInstanceIdEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetInstanceCustomIndexEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetObjectRayOriginEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetObjectRayDirectionEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetWorldRayDirectionEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetWorldRayOriginEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetObjectToWorldEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetWorldToObjectEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetRayTMaxEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpReportIntersectionKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpIgnoreIntersectionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpTerminateRayNV: *hasResult = false; *hasResultType = false; break;
@@ -3075,6 +3144,12 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpExecuteCallableNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpRayQueryGetIntersectionClusterIdNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpHitObjectGetClusterIdNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetRayTMinEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetShaderBindingTableRecordIndexEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectGetShaderRecordBufferHandleEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectIsEmptyEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectIsHitEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpHitObjectIsMissEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpTypeCooperativeMatrixNV: *hasResult = true; *hasResultType = false; break;
     case SpvOpCooperativeMatrixLoadNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixStoreNV: *hasResult = false; *hasResultType = false; break;
@@ -3597,6 +3672,7 @@ inline const char* SpvStorageClassToString(SpvStorageClass value) {
     case SpvStorageClassPhysicalStorageBuffer: return "PhysicalStorageBuffer";
     case SpvStorageClassHitObjectAttributeNV: return "HitObjectAttributeNV";
     case SpvStorageClassTaskPayloadWorkgroupEXT: return "TaskPayloadWorkgroupEXT";
+    case SpvStorageClassHitObjectAttributeEXT: return "HitObjectAttributeEXT";
     case SpvStorageClassCodeSectionINTEL: return "CodeSectionINTEL";
     case SpvStorageClassDeviceOnlyALTERA: return "DeviceOnlyALTERA";
     case SpvStorageClassHostOnlyALTERA: return "HostOnlyALTERA";
@@ -3862,6 +3938,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationRestrictPointer: return "RestrictPointer";
     case SpvDecorationAliasedPointer: return "AliasedPointer";
     case SpvDecorationHitObjectShaderRecordBufferNV: return "HitObjectShaderRecordBufferNV";
+    case SpvDecorationHitObjectShaderRecordBufferEXT: return "HitObjectShaderRecordBufferEXT";
     case SpvDecorationBindlessSamplerNV: return "BindlessSamplerNV";
     case SpvDecorationBindlessImageNV: return "BindlessImageNV";
     case SpvDecorationBoundSamplerNV: return "BoundSamplerNV";
@@ -4279,6 +4356,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityDisplacementMicromapNV: return "DisplacementMicromapNV";
     case SpvCapabilityRayTracingOpacityMicromapEXT: return "RayTracingOpacityMicromapEXT";
     case SpvCapabilityShaderInvocationReorderNV: return "ShaderInvocationReorderNV";
+    case SpvCapabilityShaderInvocationReorderEXT: return "ShaderInvocationReorderEXT";
     case SpvCapabilityBindlessTextureNV: return "BindlessTextureNV";
     case SpvCapabilityRayQueryPositionFetchKHR: return "RayQueryPositionFetchKHR";
     case SpvCapabilityCooperativeVectorNV: return "CooperativeVectorNV";
@@ -5059,6 +5137,36 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpFetchMicroTriangleVertexBarycentricNV: return "OpFetchMicroTriangleVertexBarycentricNV";
     case SpvOpCooperativeVectorLoadNV: return "OpCooperativeVectorLoadNV";
     case SpvOpCooperativeVectorStoreNV: return "OpCooperativeVectorStoreNV";
+    case SpvOpHitObjectRecordFromQueryEXT: return "OpHitObjectRecordFromQueryEXT";
+    case SpvOpHitObjectRecordMissEXT: return "OpHitObjectRecordMissEXT";
+    case SpvOpHitObjectRecordMissMotionEXT: return "OpHitObjectRecordMissMotionEXT";
+    case SpvOpHitObjectGetIntersectionTriangleVertexPositionsEXT: return "OpHitObjectGetIntersectionTriangleVertexPositionsEXT";
+    case SpvOpHitObjectGetRayFlagsEXT: return "OpHitObjectGetRayFlagsEXT";
+    case SpvOpHitObjectSetShaderBindingTableRecordIndexEXT: return "OpHitObjectSetShaderBindingTableRecordIndexEXT";
+    case SpvOpHitObjectReorderExecuteShaderEXT: return "OpHitObjectReorderExecuteShaderEXT";
+    case SpvOpHitObjectTraceReorderExecuteEXT: return "OpHitObjectTraceReorderExecuteEXT";
+    case SpvOpHitObjectTraceMotionReorderExecuteEXT: return "OpHitObjectTraceMotionReorderExecuteEXT";
+    case SpvOpTypeHitObjectEXT: return "OpTypeHitObjectEXT";
+    case SpvOpReorderThreadWithHintEXT: return "OpReorderThreadWithHintEXT";
+    case SpvOpReorderThreadWithHitObjectEXT: return "OpReorderThreadWithHitObjectEXT";
+    case SpvOpHitObjectTraceRayEXT: return "OpHitObjectTraceRayEXT";
+    case SpvOpHitObjectTraceRayMotionEXT: return "OpHitObjectTraceRayMotionEXT";
+    case SpvOpHitObjectRecordEmptyEXT: return "OpHitObjectRecordEmptyEXT";
+    case SpvOpHitObjectExecuteShaderEXT: return "OpHitObjectExecuteShaderEXT";
+    case SpvOpHitObjectGetCurrentTimeEXT: return "OpHitObjectGetCurrentTimeEXT";
+    case SpvOpHitObjectGetAttributesEXT: return "OpHitObjectGetAttributesEXT";
+    case SpvOpHitObjectGetHitKindEXT: return "OpHitObjectGetHitKindEXT";
+    case SpvOpHitObjectGetPrimitiveIndexEXT: return "OpHitObjectGetPrimitiveIndexEXT";
+    case SpvOpHitObjectGetGeometryIndexEXT: return "OpHitObjectGetGeometryIndexEXT";
+    case SpvOpHitObjectGetInstanceIdEXT: return "OpHitObjectGetInstanceIdEXT";
+    case SpvOpHitObjectGetInstanceCustomIndexEXT: return "OpHitObjectGetInstanceCustomIndexEXT";
+    case SpvOpHitObjectGetObjectRayOriginEXT: return "OpHitObjectGetObjectRayOriginEXT";
+    case SpvOpHitObjectGetObjectRayDirectionEXT: return "OpHitObjectGetObjectRayDirectionEXT";
+    case SpvOpHitObjectGetWorldRayDirectionEXT: return "OpHitObjectGetWorldRayDirectionEXT";
+    case SpvOpHitObjectGetWorldRayOriginEXT: return "OpHitObjectGetWorldRayOriginEXT";
+    case SpvOpHitObjectGetObjectToWorldEXT: return "OpHitObjectGetObjectToWorldEXT";
+    case SpvOpHitObjectGetWorldToObjectEXT: return "OpHitObjectGetWorldToObjectEXT";
+    case SpvOpHitObjectGetRayTMaxEXT: return "OpHitObjectGetRayTMaxEXT";
     case SpvOpReportIntersectionKHR: return "OpReportIntersectionKHR";
     case SpvOpIgnoreIntersectionNV: return "OpIgnoreIntersectionNV";
     case SpvOpTerminateRayNV: return "OpTerminateRayNV";
@@ -5070,6 +5178,12 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpExecuteCallableNV: return "OpExecuteCallableNV";
     case SpvOpRayQueryGetClusterIdNV: return "OpRayQueryGetClusterIdNV";
     case SpvOpHitObjectGetClusterIdNV: return "OpHitObjectGetClusterIdNV";
+    case SpvOpHitObjectGetRayTMinEXT: return "OpHitObjectGetRayTMinEXT";
+    case SpvOpHitObjectGetShaderBindingTableRecordIndexEXT: return "OpHitObjectGetShaderBindingTableRecordIndexEXT";
+    case SpvOpHitObjectGetShaderRecordBufferHandleEXT: return "OpHitObjectGetShaderRecordBufferHandleEXT";
+    case SpvOpHitObjectIsEmptyEXT: return "OpHitObjectIsEmptyEXT";
+    case SpvOpHitObjectIsHitEXT: return "OpHitObjectIsHitEXT";
+    case SpvOpHitObjectIsMissEXT: return "OpHitObjectIsMissEXT";
     case SpvOpTypeCooperativeMatrixNV: return "OpTypeCooperativeMatrixNV";
     case SpvOpCooperativeMatrixLoadNV: return "OpCooperativeMatrixLoadNV";
     case SpvOpCooperativeMatrixStoreNV: return "OpCooperativeMatrixStoreNV";
