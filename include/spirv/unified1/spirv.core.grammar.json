@@ -6375,6 +6375,411 @@
       "version" : "None"
     },
     {
+      "opname" : "OpHitObjectRecordFromQueryEXT",
+      "class"  : "Reserved",
+      "opcode" : 5304,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "SBT Record Index" },
+        { "kind" : "IdRef", "name" : "Hit Object Attributes" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectRecordMissEXT",
+      "class"  : "Reserved",
+      "opcode" : 5305,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "Ray Flags" },
+        { "kind" : "IdRef", "name" : "Miss Index" },
+        { "kind" : "IdRef", "name" : "Ray Origin" },
+        { "kind" : "IdRef", "name" : "Ray Tmin" },
+        { "kind" : "IdRef", "name" : "Ray Direction" },
+        { "kind" : "IdRef", "name" : "Ray Tmax" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectRecordMissMotionEXT",
+      "class"  : "Reserved",
+      "opcode" : 5306,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "Ray Flags" },
+        { "kind" : "IdRef", "name" : "Miss Index" },
+        { "kind" : "IdRef", "name" : "Ray Origin" },
+        { "kind" : "IdRef", "name" : "Ray Tmin" },
+        { "kind" : "IdRef", "name" : "Ray Direction" },
+        { "kind" : "IdRef", "name" : "Ray Tmax" },
+        { "kind" : "IdRef", "name" : "Current Time" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT", "RayTracingMotionBlurNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetIntersectionTriangleVertexPositionsEXT",
+      "class"  : "Reserved",
+      "opcode" : 5307,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetRayFlagsEXT",
+      "class"  : "Reserved",
+      "opcode" : 5308,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectSetShaderBindingTableRecordIndexEXT",
+      "class"  : "Reserved",
+      "opcode" : 5309,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "SBT Record Index" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectReorderExecuteShaderEXT",
+      "class"  : "Reserved",
+      "opcode" : 5310,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "Payload" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Hint" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Bits" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectTraceReorderExecuteEXT",
+      "class"  : "Reserved",
+      "opcode" : 5311,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "Acceleration Structure"},
+        { "kind" : "IdRef", "name" : "Ray Flags"},
+        { "kind" : "IdRef", "name" : "Cull Mask"},
+        { "kind" : "IdRef", "name" : "SBT Offset"},
+        { "kind" : "IdRef", "name" : "SBT Stride"},
+        { "kind" : "IdRef", "name" : "Miss Index"},
+        { "kind" : "IdRef", "name" : "Ray Origin"},
+        { "kind" : "IdRef", "name" : "Ray Tmin"},
+        { "kind" : "IdRef", "name" : "Ray Direction"},
+        { "kind" : "IdRef", "name" : "Ray Tmax"},
+        { "kind" : "IdRef", "name" : "Payload"},
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Hint" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Bits" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectTraceMotionReorderExecuteEXT",
+      "class"  : "Reserved",
+      "opcode" : 5312,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "Acceleration Structure"},
+        { "kind" : "IdRef", "name" : "Ray Flags"},
+        { "kind" : "IdRef", "name" : "Cull Mask"},
+        { "kind" : "IdRef", "name" : "SBT Offset"},
+        { "kind" : "IdRef", "name" : "SBT Stride"},
+        { "kind" : "IdRef", "name" : "Miss Index"},
+        { "kind" : "IdRef", "name" : "Ray Origin"},
+        { "kind" : "IdRef", "name" : "Ray Tmin"},
+        { "kind" : "IdRef", "name" : "Ray Direction"},
+        { "kind" : "IdRef", "name" : "Ray Tmax"},
+        { "kind" : "IdRef", "name" : "Current Time"},
+        { "kind" : "IdRef", "name" : "Payload"},
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Hint" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Bits" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT", "RayTracingMotionBlurNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpTypeHitObjectEXT",
+      "class"  : "Type-Declaration",
+      "opcode" : 5313,
+      "operands" : [
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpReorderThreadWithHintEXT",
+      "class"  : "Reserved",
+      "opcode" : 5314,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hint" },
+        { "kind" : "IdRef", "name" : "Bits" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpReorderThreadWithHitObjectEXT",
+      "class"  : "Reserved",
+      "opcode" : 5315,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Hint" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Bits" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectTraceRayEXT",
+      "class"  : "Reserved",
+      "opcode" : 5316,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "Acceleration Structure"},
+        { "kind" : "IdRef", "name" : "Ray Flags"},
+        { "kind" : "IdRef", "name" : "Cull Mask"},
+        { "kind" : "IdRef", "name" : "SBT Offset"},
+        { "kind" : "IdRef", "name" : "SBT Stride"},
+        { "kind" : "IdRef", "name" : "Miss Index"},
+        { "kind" : "IdRef", "name" : "Ray Origin"},
+        { "kind" : "IdRef", "name" : "Ray Tmin"},
+        { "kind" : "IdRef", "name" : "Ray Direction"},
+        { "kind" : "IdRef", "name" : "Ray Tmax"},
+        { "kind" : "IdRef", "name" : "Payload"}
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectTraceRayMotionEXT",
+      "class"  : "Reserved",
+      "opcode" : 5317,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "Acceleration Structure"},
+        { "kind" : "IdRef", "name" : "Ray Flags"},
+        { "kind" : "IdRef", "name" : "Cull Mask"},
+        { "kind" : "IdRef", "name" : "SBT Offset"},
+        { "kind" : "IdRef", "name" : "SBT Stride"},
+        { "kind" : "IdRef", "name" : "Miss Index"},
+        { "kind" : "IdRef", "name" : "Ray Origin"},
+        { "kind" : "IdRef", "name" : "Ray Tmin"},
+        { "kind" : "IdRef", "name" : "Ray Direction"},
+        { "kind" : "IdRef", "name" : "Ray Tmax"},
+        { "kind" : "IdRef", "name" : "Current Time"},
+        { "kind" : "IdRef", "name" : "Payload"}
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT", "RayTracingMotionBlurNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectRecordEmptyEXT",
+      "class"  : "Reserved",
+      "opcode" : 5318,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectExecuteShaderEXT",
+      "class"  : "Reserved",
+      "opcode" : 5319,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "Payload" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetCurrentTimeEXT",
+      "class"  : "Reserved",
+      "opcode" : 5320,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" , "RayTracingMotionBlurNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetAttributesEXT",
+      "class"  : "Reserved",
+      "opcode" : 5321,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Hit Object" },
+        { "kind" : "IdRef", "name" : "Hit Object Attribute" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetHitKindEXT",
+      "class"  : "Reserved",
+      "opcode" : 5322,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetPrimitiveIndexEXT",
+      "class"  : "Reserved",
+      "opcode" : 5323,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetGeometryIndexEXT",
+      "class"  : "Reserved",
+      "opcode" : 5324,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetInstanceIdEXT",
+      "class"  : "Reserved",
+      "opcode" : 5325,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetInstanceCustomIndexEXT",
+      "class"  : "Reserved",
+      "opcode" : 5326,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetObjectRayOriginEXT",
+      "class"  : "Reserved",
+      "opcode" : 5327,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetObjectRayDirectionEXT",
+      "class"  : "Reserved",
+      "opcode" : 5328,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetWorldRayDirectionEXT",
+      "class"  : "Reserved",
+      "opcode" : 5329,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetWorldRayOriginEXT",
+      "class"  : "Reserved",
+      "opcode" : 5330,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetObjectToWorldEXT",
+      "class"  : "Reserved",
+      "opcode" : 5331,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetWorldToObjectEXT",
+      "class"  : "Reserved",
+      "opcode" : 5332,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetRayTMaxEXT",
+      "class"  : "Reserved",
+      "opcode" : 5333,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpReportIntersectionKHR",
       "class"  : "Reserved",
       "aliases" : ["OpReportIntersectionNV"],
@@ -6547,6 +6952,78 @@
           { "kind" : "IdRef", "name" : "Hit Object" }
       ],
       "capabilities" : [ "RayTracingClusterAccelerationStructureNV" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetRayTMinEXT",
+      "class"  : "Reserved",
+      "opcode" : 5347,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetShaderBindingTableRecordIndexEXT",
+      "class"  : "Reserved",
+      "opcode" : 5348,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectGetShaderRecordBufferHandleEXT",
+      "class"  : "Reserved",
+      "opcode" : 5349,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectIsEmptyEXT",
+      "class"  : "Reserved",
+      "opcode" : 5350,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectIsHitEXT",
+      "class"  : "Reserved",
+      "opcode" : 5351,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpHitObjectIsMissEXT",
+      "class"  : "Reserved",
+      "opcode" : 5352,
+      "operands" : [
+        { "kind" : "IdResultType"},
+        { "kind" : "IdResult"},
+        { "kind" : "IdRef", "name" : "Hit Object" }
+      ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
       "version" : "None"
     },
     {
@@ -13125,6 +13602,12 @@
           "version" : "1.4"
         },
         {
+          "enumerant" : "HitObjectAttributeEXT",
+          "value" : 5411,
+          "capabilities" : [ "ShaderInvocationReorderEXT" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "CodeSectionINTEL",
           "value" : 5605,
           "extensions" : [ "SPV_INTEL_function_pointers" ],
@@ -14581,6 +15064,12 @@
           "enumerant" : "HitObjectShaderRecordBufferNV",
           "value" : 5386,
           "capabilities" : [ "ShaderInvocationReorderNV" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "HitObjectShaderRecordBufferEXT",
+          "value" : 5389,
+          "capabilities" : [ "ShaderInvocationReorderEXT" ],
           "version" : "None"
         },
         {
@@ -17278,6 +17767,13 @@
           "value" : 5383,
           "capabilities" : [ "RayTracingKHR" ],
           "extensions" : [ "SPV_NV_shader_invocation_reorder" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ShaderInvocationReorderEXT",
+          "value" : 5388,
+          "capabilities" : [ "RayTracingKHR" ],
+          "extensions" : [ "SPV_EXT_shader_invocation_reorder" ],
           "version" : "None"
         },
         {
