@@ -18558,11 +18558,13 @@
         {
           "enumerant" : "RowBlockedInterleavedARM",
           "value" : 4202,
+          "capabilities" : [ "CooperativeMatrixLayoutsARM" ],
           "version" : "None"
         },
         {
           "enumerant" : "ColumnBlockedInterleavedARM",
           "value" : 4203,
+          "capabilities" : [ "CooperativeMatrixLayoutsARM" ],
           "version" : "None"
         }
       ]
