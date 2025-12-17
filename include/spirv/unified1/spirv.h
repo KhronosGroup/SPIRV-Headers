@@ -579,8 +579,10 @@ typedef enum SpvDecoration_ {
     SpvDecorationRestrictPointerEXT = 5355,
     SpvDecorationAliasedPointer = 5356,
     SpvDecorationAliasedPointerEXT = 5356,
+    SpvDecorationMemberOffsetNV = 5358,
     SpvDecorationHitObjectShaderRecordBufferNV = 5386,
     SpvDecorationHitObjectShaderRecordBufferEXT = 5389,
+    SpvDecorationBankNV = 5397,
     SpvDecorationBindlessSamplerNV = 5398,
     SpvDecorationBindlessImageNV = 5399,
     SpvDecorationBoundSamplerNV = 5400,
@@ -1269,6 +1271,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityRawAccessChainsNV = 5414,
     SpvCapabilityRayTracingSpheresGeometryNV = 5418,
     SpvCapabilityRayTracingLinearSweptSpheresGeometryNV = 5419,
+    SpvCapabilityPushConstantBanksNV = 5423,
     SpvCapabilityLongVectorEXT = 5425,
     SpvCapabilityShader64BitIndexingEXT = 5426,
     SpvCapabilityCooperativeMatrixReductionsNV = 5430,
@@ -3956,8 +3959,10 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationNonUniform: return "NonUniform";
     case SpvDecorationRestrictPointer: return "RestrictPointer";
     case SpvDecorationAliasedPointer: return "AliasedPointer";
+    case SpvDecorationMemberOffsetNV: return "MemberOffsetNV";
     case SpvDecorationHitObjectShaderRecordBufferNV: return "HitObjectShaderRecordBufferNV";
     case SpvDecorationHitObjectShaderRecordBufferEXT: return "HitObjectShaderRecordBufferEXT";
+    case SpvDecorationBankNV: return "BankNV";
     case SpvDecorationBindlessSamplerNV: return "BindlessSamplerNV";
     case SpvDecorationBindlessImageNV: return "BindlessImageNV";
     case SpvDecorationBoundSamplerNV: return "BoundSamplerNV";
@@ -4387,6 +4392,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityRawAccessChainsNV: return "RawAccessChainsNV";
     case SpvCapabilityRayTracingSpheresGeometryNV: return "RayTracingSpheresGeometryNV";
     case SpvCapabilityRayTracingLinearSweptSpheresGeometryNV: return "RayTracingLinearSweptSpheresGeometryNV";
+    case SpvCapabilityPushConstantBanksNV: return "PushConstantBanksNV";
     case SpvCapabilityLongVectorEXT: return "LongVectorEXT";
     case SpvCapabilityShader64BitIndexingEXT: return "Shader64BitIndexingEXT";
     case SpvCapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";

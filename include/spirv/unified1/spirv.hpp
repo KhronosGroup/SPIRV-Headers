@@ -575,8 +575,10 @@ enum Decoration {
     DecorationRestrictPointerEXT = 5355,
     DecorationAliasedPointer = 5356,
     DecorationAliasedPointerEXT = 5356,
+    DecorationMemberOffsetNV = 5358,
     DecorationHitObjectShaderRecordBufferNV = 5386,
     DecorationHitObjectShaderRecordBufferEXT = 5389,
+    DecorationBankNV = 5397,
     DecorationBindlessSamplerNV = 5398,
     DecorationBindlessImageNV = 5399,
     DecorationBoundSamplerNV = 5400,
@@ -1265,6 +1267,7 @@ enum Capability {
     CapabilityRawAccessChainsNV = 5414,
     CapabilityRayTracingSpheresGeometryNV = 5418,
     CapabilityRayTracingLinearSweptSpheresGeometryNV = 5419,
+    CapabilityPushConstantBanksNV = 5423,
     CapabilityLongVectorEXT = 5425,
     CapabilityShader64BitIndexingEXT = 5426,
     CapabilityCooperativeMatrixReductionsNV = 5430,
@@ -3952,8 +3955,10 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationNonUniform: return "NonUniform";
     case DecorationRestrictPointer: return "RestrictPointer";
     case DecorationAliasedPointer: return "AliasedPointer";
+    case DecorationMemberOffsetNV: return "MemberOffsetNV";
     case DecorationHitObjectShaderRecordBufferNV: return "HitObjectShaderRecordBufferNV";
     case DecorationHitObjectShaderRecordBufferEXT: return "HitObjectShaderRecordBufferEXT";
+    case DecorationBankNV: return "BankNV";
     case DecorationBindlessSamplerNV: return "BindlessSamplerNV";
     case DecorationBindlessImageNV: return "BindlessImageNV";
     case DecorationBoundSamplerNV: return "BoundSamplerNV";
@@ -4383,6 +4388,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityRawAccessChainsNV: return "RawAccessChainsNV";
     case CapabilityRayTracingSpheresGeometryNV: return "RayTracingSpheresGeometryNV";
     case CapabilityRayTracingLinearSweptSpheresGeometryNV: return "RayTracingLinearSweptSpheresGeometryNV";
+    case CapabilityPushConstantBanksNV: return "PushConstantBanksNV";
     case CapabilityLongVectorEXT: return "LongVectorEXT";
     case CapabilityShader64BitIndexingEXT: return "Shader64BitIndexingEXT";
     case CapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
