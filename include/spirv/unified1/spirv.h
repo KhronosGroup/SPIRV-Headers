@@ -3091,7 +3091,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpReorderThreadWithHintNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpTypeHitObjectNV: *hasResult = true; *hasResultType = false; break;
     case SpvOpImageSampleFootprintNV: *hasResult = true; *hasResultType = true; break;
-    case SpvOpTypeCooperativeVectorNV: *hasResult = true; *hasResultType = false; break;
+    case SpvOpTypeVectorIdEXT: *hasResult = true; *hasResultType = false; break;
     case SpvOpCooperativeVectorMatrixMulNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeVectorOuterProductAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeVectorReduceSumAccumulateNV: *hasResult = false; *hasResultType = false; break;
