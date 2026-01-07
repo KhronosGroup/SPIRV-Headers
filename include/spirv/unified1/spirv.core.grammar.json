@@ -6168,10 +6168,10 @@
       "version" : "None"
     },
     {
-      "opname" : "OpTypeCooperativeVectorNV",
+      "opname" : "OpTypeVectorIdEXT",
       "class"  : "Type-Declaration",
       "opcode" : 5288,
-      "aliases" : ["OpTypeVectorIdEXT"],
+      "aliases" : ["OpTypeCooperativeVectorNV"],
       "operands" : [
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "Component Type" },
