@@ -17945,6 +17945,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "PushConstantBanksNV",
+          "value" : 5423,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_NV_push_constant_bank" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "LongVectorEXT",
           "value" : 5425,
           "extensions" : [ "SPV_EXT_long_vector" ],
@@ -17954,13 +17961,6 @@
           "enumerant" : "Shader64BitIndexingEXT",
           "value" : 5426,
           "extensions" : [ "SPV_EXT_shader_64bit_indexing" ],
-          "version" : "None"
-        },
-        {
-          "enumerant" : "PushConstantBanksNV",
-          "value" : 5423,
-          "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_NV_push_constant_bank" ],
           "version" : "None"
         },
         {
