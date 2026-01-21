@@ -15142,6 +15142,15 @@
           "version" : "1.5"
         },
         {
+          "enumerant": "MemberOffsetNV",
+          "value": 5358,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "memberOffset" }
+          ],
+          "capabilities": [ "PushConstantBanksNV" ],
+          "version": "None"
+        },
+        {
           "enumerant" : "HitObjectShaderRecordBufferNV",
           "value" : 5386,
           "capabilities" : [ "ShaderInvocationReorderNV" ],
@@ -15151,6 +15160,15 @@
           "enumerant" : "HitObjectShaderRecordBufferEXT",
           "value" : 5389,
           "capabilities" : [ "ShaderInvocationReorderEXT" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BankNV",
+          "value" : 5397,
+          "parameters" : [
+            { "kind" : "LiteralInteger", "name" : "Bank" }
+          ],
+          "capabilities" : [ "PushConstantBanksNV" ],
           "version" : "None"
         },
         {
@@ -17925,6 +17943,13 @@
           "enumerant" : "RayTracingLinearSweptSpheresGeometryNV",
           "value" : 5419,
           "extensions" : [ "SPV_NV_linear_swept_spheres" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PushConstantBanksNV",
+          "value" : 5423,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_NV_push_constant_bank" ],
           "version" : "None"
         },
         {
