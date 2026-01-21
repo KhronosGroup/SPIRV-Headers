@@ -575,8 +575,10 @@ enum Decoration {
     DecorationRestrictPointerEXT = 5355,
     DecorationAliasedPointer = 5356,
     DecorationAliasedPointerEXT = 5356,
+    DecorationMemberOffsetNV = 5358,
     DecorationHitObjectShaderRecordBufferNV = 5386,
     DecorationHitObjectShaderRecordBufferEXT = 5389,
+    DecorationBankNV = 5397,
     DecorationBindlessSamplerNV = 5398,
     DecorationBindlessImageNV = 5399,
     DecorationBoundSamplerNV = 5400,
@@ -1034,11 +1036,8 @@ enum GroupOperation {
     GroupOperationInclusiveScan = 1,
     GroupOperationExclusiveScan = 2,
     GroupOperationClusteredReduce = 3,
-    GroupOperationPartitionedReduceEXT = 6,
     GroupOperationPartitionedReduceNV = 6,
-    GroupOperationPartitionedInclusiveScanEXT = 7,
     GroupOperationPartitionedInclusiveScanNV = 7,
-    GroupOperationPartitionedExclusiveScanEXT = 8,
     GroupOperationPartitionedExclusiveScanNV = 8,
     GroupOperationMax = 0x7fffffff,
 };
@@ -1212,7 +1211,6 @@ enum Capability {
     CapabilityComputeDerivativeGroupQuadsNV = 5288,
     CapabilityFragmentDensityEXT = 5291,
     CapabilityShadingRateNV = 5291,
-    CapabilityGroupNonUniformPartitionedEXT = 5297,
     CapabilityGroupNonUniformPartitionedNV = 5297,
     CapabilityShaderNonUniform = 5301,
     CapabilityShaderNonUniformEXT = 5301,
@@ -1269,6 +1267,7 @@ enum Capability {
     CapabilityRawAccessChainsNV = 5414,
     CapabilityRayTracingSpheresGeometryNV = 5418,
     CapabilityRayTracingLinearSweptSpheresGeometryNV = 5419,
+    CapabilityPushConstantBanksNV = 5423,
     CapabilityLongVectorEXT = 5425,
     CapabilityShader64BitIndexingEXT = 5426,
     CapabilityCooperativeMatrixReductionsNV = 5430,
@@ -2195,7 +2194,6 @@ enum Op {
     OpCooperativeMatrixConvertNV = 5293,
     OpEmitMeshTasksEXT = 5294,
     OpSetMeshOutputsEXT = 5295,
-    OpGroupNonUniformPartitionEXT = 5296,
     OpGroupNonUniformPartitionNV = 5296,
     OpWritePackedPrimitiveIndices4x8NV = 5299,
     OpFetchMicroTriangleVertexPositionNV = 5300,
@@ -3115,7 +3113,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
     case OpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case OpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
-    case OpGroupNonUniformPartitionEXT: *hasResult = true; *hasResultType = true; break;
+    case OpGroupNonUniformPartitionNV: *hasResult = true; *hasResultType = true; break;
     case OpWritePackedPrimitiveIndices4x8NV: *hasResult = false; *hasResultType = false; break;
     case OpFetchMicroTriangleVertexPositionNV: *hasResult = true; *hasResultType = true; break;
     case OpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
@@ -3957,8 +3955,10 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationNonUniform: return "NonUniform";
     case DecorationRestrictPointer: return "RestrictPointer";
     case DecorationAliasedPointer: return "AliasedPointer";
+    case DecorationMemberOffsetNV: return "MemberOffsetNV";
     case DecorationHitObjectShaderRecordBufferNV: return "HitObjectShaderRecordBufferNV";
     case DecorationHitObjectShaderRecordBufferEXT: return "HitObjectShaderRecordBufferEXT";
+    case DecorationBankNV: return "BankNV";
     case DecorationBindlessSamplerNV: return "BindlessSamplerNV";
     case DecorationBindlessImageNV: return "BindlessImageNV";
     case DecorationBoundSamplerNV: return "BoundSamplerNV";
@@ -4186,9 +4186,9 @@ inline const char* GroupOperationToString(GroupOperation value) {
     case GroupOperationInclusiveScan: return "InclusiveScan";
     case GroupOperationExclusiveScan: return "ExclusiveScan";
     case GroupOperationClusteredReduce: return "ClusteredReduce";
-    case GroupOperationPartitionedReduceEXT: return "PartitionedReduceEXT";
-    case GroupOperationPartitionedInclusiveScanEXT: return "PartitionedInclusiveScanEXT";
-    case GroupOperationPartitionedExclusiveScanEXT: return "PartitionedExclusiveScanEXT";
+    case GroupOperationPartitionedReduceNV: return "PartitionedReduceNV";
+    case GroupOperationPartitionedInclusiveScanNV: return "PartitionedInclusiveScanNV";
+    case GroupOperationPartitionedExclusiveScanNV: return "PartitionedExclusiveScanNV";
     default: return "Unknown";
     }
 }
@@ -4349,7 +4349,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFragmentBarycentricKHR: return "FragmentBarycentricKHR";
     case CapabilityComputeDerivativeGroupQuadsKHR: return "ComputeDerivativeGroupQuadsKHR";
     case CapabilityFragmentDensityEXT: return "FragmentDensityEXT";
-    case CapabilityGroupNonUniformPartitionedEXT: return "GroupNonUniformPartitionedEXT";
+    case CapabilityGroupNonUniformPartitionedNV: return "GroupNonUniformPartitionedNV";
     case CapabilityShaderNonUniform: return "ShaderNonUniform";
     case CapabilityRuntimeDescriptorArray: return "RuntimeDescriptorArray";
     case CapabilityInputAttachmentArrayDynamicIndexing: return "InputAttachmentArrayDynamicIndexing";
@@ -4388,6 +4388,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityRawAccessChainsNV: return "RawAccessChainsNV";
     case CapabilityRayTracingSpheresGeometryNV: return "RayTracingSpheresGeometryNV";
     case CapabilityRayTracingLinearSweptSpheresGeometryNV: return "RayTracingLinearSweptSpheresGeometryNV";
+    case CapabilityPushConstantBanksNV: return "PushConstantBanksNV";
     case CapabilityLongVectorEXT: return "LongVectorEXT";
     case CapabilityShader64BitIndexingEXT: return "Shader64BitIndexingEXT";
     case CapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
@@ -5160,7 +5161,7 @@ inline const char* OpToString(Op value) {
     case OpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
     case OpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case OpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
-    case OpGroupNonUniformPartitionEXT: return "OpGroupNonUniformPartitionEXT";
+    case OpGroupNonUniformPartitionNV: return "OpGroupNonUniformPartitionNV";
     case OpWritePackedPrimitiveIndices4x8NV: return "OpWritePackedPrimitiveIndices4x8NV";
     case OpFetchMicroTriangleVertexPositionNV: return "OpFetchMicroTriangleVertexPositionNV";
     case OpFetchMicroTriangleVertexBarycentricNV: return "OpFetchMicroTriangleVertexBarycentricNV";

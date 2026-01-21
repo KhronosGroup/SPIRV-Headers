@@ -579,8 +579,10 @@ typedef enum SpvDecoration_ {
     SpvDecorationRestrictPointerEXT = 5355,
     SpvDecorationAliasedPointer = 5356,
     SpvDecorationAliasedPointerEXT = 5356,
+    SpvDecorationMemberOffsetNV = 5358,
     SpvDecorationHitObjectShaderRecordBufferNV = 5386,
     SpvDecorationHitObjectShaderRecordBufferEXT = 5389,
+    SpvDecorationBankNV = 5397,
     SpvDecorationBindlessSamplerNV = 5398,
     SpvDecorationBindlessImageNV = 5399,
     SpvDecorationBoundSamplerNV = 5400,
@@ -1038,11 +1040,8 @@ typedef enum SpvGroupOperation_ {
     SpvGroupOperationInclusiveScan = 1,
     SpvGroupOperationExclusiveScan = 2,
     SpvGroupOperationClusteredReduce = 3,
-    SpvGroupOperationPartitionedReduceEXT = 6,
     SpvGroupOperationPartitionedReduceNV = 6,
-    SpvGroupOperationPartitionedInclusiveScanEXT = 7,
     SpvGroupOperationPartitionedInclusiveScanNV = 7,
-    SpvGroupOperationPartitionedExclusiveScanEXT = 8,
     SpvGroupOperationPartitionedExclusiveScanNV = 8,
     SpvGroupOperationMax = 0x7fffffff,
 } SpvGroupOperation;
@@ -1216,7 +1215,6 @@ typedef enum SpvCapability_ {
     SpvCapabilityComputeDerivativeGroupQuadsNV = 5288,
     SpvCapabilityFragmentDensityEXT = 5291,
     SpvCapabilityShadingRateNV = 5291,
-    SpvCapabilityGroupNonUniformPartitionedEXT = 5297,
     SpvCapabilityGroupNonUniformPartitionedNV = 5297,
     SpvCapabilityShaderNonUniform = 5301,
     SpvCapabilityShaderNonUniformEXT = 5301,
@@ -1273,6 +1271,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityRawAccessChainsNV = 5414,
     SpvCapabilityRayTracingSpheresGeometryNV = 5418,
     SpvCapabilityRayTracingLinearSweptSpheresGeometryNV = 5419,
+    SpvCapabilityPushConstantBanksNV = 5423,
     SpvCapabilityLongVectorEXT = 5425,
     SpvCapabilityShader64BitIndexingEXT = 5426,
     SpvCapabilityCooperativeMatrixReductionsNV = 5430,
@@ -2199,7 +2198,6 @@ typedef enum SpvOp_ {
     SpvOpCooperativeMatrixConvertNV = 5293,
     SpvOpEmitMeshTasksEXT = 5294,
     SpvOpSetMeshOutputsEXT = 5295,
-    SpvOpGroupNonUniformPartitionEXT = 5296,
     SpvOpGroupNonUniformPartitionNV = 5296,
     SpvOpWritePackedPrimitiveIndices4x8NV = 5299,
     SpvOpFetchMicroTriangleVertexPositionNV = 5300,
@@ -3119,7 +3117,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
-    case SpvOpGroupNonUniformPartitionEXT: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupNonUniformPartitionNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpWritePackedPrimitiveIndices4x8NV: *hasResult = false; *hasResultType = false; break;
     case SpvOpFetchMicroTriangleVertexPositionNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
@@ -3961,8 +3959,10 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationNonUniform: return "NonUniform";
     case SpvDecorationRestrictPointer: return "RestrictPointer";
     case SpvDecorationAliasedPointer: return "AliasedPointer";
+    case SpvDecorationMemberOffsetNV: return "MemberOffsetNV";
     case SpvDecorationHitObjectShaderRecordBufferNV: return "HitObjectShaderRecordBufferNV";
     case SpvDecorationHitObjectShaderRecordBufferEXT: return "HitObjectShaderRecordBufferEXT";
+    case SpvDecorationBankNV: return "BankNV";
     case SpvDecorationBindlessSamplerNV: return "BindlessSamplerNV";
     case SpvDecorationBindlessImageNV: return "BindlessImageNV";
     case SpvDecorationBoundSamplerNV: return "BoundSamplerNV";
@@ -4190,9 +4190,9 @@ inline const char* SpvGroupOperationToString(SpvGroupOperation value) {
     case SpvGroupOperationInclusiveScan: return "InclusiveScan";
     case SpvGroupOperationExclusiveScan: return "ExclusiveScan";
     case SpvGroupOperationClusteredReduce: return "ClusteredReduce";
-    case SpvGroupOperationPartitionedReduceEXT: return "PartitionedReduceEXT";
-    case SpvGroupOperationPartitionedInclusiveScanEXT: return "PartitionedInclusiveScanEXT";
-    case SpvGroupOperationPartitionedExclusiveScanEXT: return "PartitionedExclusiveScanEXT";
+    case SpvGroupOperationPartitionedReduceNV: return "PartitionedReduceNV";
+    case SpvGroupOperationPartitionedInclusiveScanNV: return "PartitionedInclusiveScanNV";
+    case SpvGroupOperationPartitionedExclusiveScanNV: return "PartitionedExclusiveScanNV";
     default: return "Unknown";
     }
 }
@@ -4353,7 +4353,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFragmentBarycentricKHR: return "FragmentBarycentricKHR";
     case SpvCapabilityComputeDerivativeGroupQuadsKHR: return "ComputeDerivativeGroupQuadsKHR";
     case SpvCapabilityFragmentDensityEXT: return "FragmentDensityEXT";
-    case SpvCapabilityGroupNonUniformPartitionedEXT: return "GroupNonUniformPartitionedEXT";
+    case SpvCapabilityGroupNonUniformPartitionedNV: return "GroupNonUniformPartitionedNV";
     case SpvCapabilityShaderNonUniform: return "ShaderNonUniform";
     case SpvCapabilityRuntimeDescriptorArray: return "RuntimeDescriptorArray";
     case SpvCapabilityInputAttachmentArrayDynamicIndexing: return "InputAttachmentArrayDynamicIndexing";
@@ -4392,6 +4392,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityRawAccessChainsNV: return "RawAccessChainsNV";
     case SpvCapabilityRayTracingSpheresGeometryNV: return "RayTracingSpheresGeometryNV";
     case SpvCapabilityRayTracingLinearSweptSpheresGeometryNV: return "RayTracingLinearSweptSpheresGeometryNV";
+    case SpvCapabilityPushConstantBanksNV: return "PushConstantBanksNV";
     case SpvCapabilityLongVectorEXT: return "LongVectorEXT";
     case SpvCapabilityShader64BitIndexingEXT: return "Shader64BitIndexingEXT";
     case SpvCapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
@@ -5164,7 +5165,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
     case SpvOpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case SpvOpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
-    case SpvOpGroupNonUniformPartitionEXT: return "OpGroupNonUniformPartitionEXT";
+    case SpvOpGroupNonUniformPartitionNV: return "OpGroupNonUniformPartitionNV";
     case SpvOpWritePackedPrimitiveIndices4x8NV: return "OpWritePackedPrimitiveIndices4x8NV";
     case SpvOpFetchMicroTriangleVertexPositionNV: return "OpFetchMicroTriangleVertexPositionNV";
     case SpvOpFetchMicroTriangleVertexBarycentricNV: return "OpFetchMicroTriangleVertexBarycentricNV";

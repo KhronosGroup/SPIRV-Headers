@@ -575,8 +575,10 @@ enum class Decoration : unsigned {
     RestrictPointerEXT = 5355,
     AliasedPointer = 5356,
     AliasedPointerEXT = 5356,
+    MemberOffsetNV = 5358,
     HitObjectShaderRecordBufferNV = 5386,
     HitObjectShaderRecordBufferEXT = 5389,
+    BankNV = 5397,
     BindlessSamplerNV = 5398,
     BindlessImageNV = 5399,
     BoundSamplerNV = 5400,
@@ -1034,11 +1036,8 @@ enum class GroupOperation : unsigned {
     InclusiveScan = 1,
     ExclusiveScan = 2,
     ClusteredReduce = 3,
-    PartitionedReduceEXT = 6,
     PartitionedReduceNV = 6,
-    PartitionedInclusiveScanEXT = 7,
     PartitionedInclusiveScanNV = 7,
-    PartitionedExclusiveScanEXT = 8,
     PartitionedExclusiveScanNV = 8,
     Max = 0x7fffffff,
 };
@@ -1212,7 +1211,6 @@ enum class Capability : unsigned {
     ComputeDerivativeGroupQuadsNV = 5288,
     FragmentDensityEXT = 5291,
     ShadingRateNV = 5291,
-    GroupNonUniformPartitionedEXT = 5297,
     GroupNonUniformPartitionedNV = 5297,
     ShaderNonUniform = 5301,
     ShaderNonUniformEXT = 5301,
@@ -1269,6 +1267,7 @@ enum class Capability : unsigned {
     RawAccessChainsNV = 5414,
     RayTracingSpheresGeometryNV = 5418,
     RayTracingLinearSweptSpheresGeometryNV = 5419,
+    PushConstantBanksNV = 5423,
     LongVectorEXT = 5425,
     Shader64BitIndexingEXT = 5426,
     CooperativeMatrixReductionsNV = 5430,
@@ -2195,7 +2194,6 @@ enum class Op : unsigned {
     OpCooperativeMatrixConvertNV = 5293,
     OpEmitMeshTasksEXT = 5294,
     OpSetMeshOutputsEXT = 5295,
-    OpGroupNonUniformPartitionEXT = 5296,
     OpGroupNonUniformPartitionNV = 5296,
     OpWritePackedPrimitiveIndices4x8NV = 5299,
     OpFetchMicroTriangleVertexPositionNV = 5300,
@@ -3115,7 +3113,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
-    case Op::OpGroupNonUniformPartitionEXT: *hasResult = true; *hasResultType = true; break;
+    case Op::OpGroupNonUniformPartitionNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpWritePackedPrimitiveIndices4x8NV: *hasResult = false; *hasResultType = false; break;
     case Op::OpFetchMicroTriangleVertexPositionNV: *hasResult = true; *hasResultType = true; break;
     case Op::OpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
@@ -3957,8 +3955,10 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::NonUniform: return "NonUniform";
     case Decoration::RestrictPointer: return "RestrictPointer";
     case Decoration::AliasedPointer: return "AliasedPointer";
+    case Decoration::MemberOffsetNV: return "MemberOffsetNV";
     case Decoration::HitObjectShaderRecordBufferNV: return "HitObjectShaderRecordBufferNV";
     case Decoration::HitObjectShaderRecordBufferEXT: return "HitObjectShaderRecordBufferEXT";
+    case Decoration::BankNV: return "BankNV";
     case Decoration::BindlessSamplerNV: return "BindlessSamplerNV";
     case Decoration::BindlessImageNV: return "BindlessImageNV";
     case Decoration::BoundSamplerNV: return "BoundSamplerNV";
@@ -4186,9 +4186,9 @@ inline const char* GroupOperationToString(GroupOperation value) {
     case GroupOperation::InclusiveScan: return "InclusiveScan";
     case GroupOperation::ExclusiveScan: return "ExclusiveScan";
     case GroupOperation::ClusteredReduce: return "ClusteredReduce";
-    case GroupOperation::PartitionedReduceEXT: return "PartitionedReduceEXT";
-    case GroupOperation::PartitionedInclusiveScanEXT: return "PartitionedInclusiveScanEXT";
-    case GroupOperation::PartitionedExclusiveScanEXT: return "PartitionedExclusiveScanEXT";
+    case GroupOperation::PartitionedReduceNV: return "PartitionedReduceNV";
+    case GroupOperation::PartitionedInclusiveScanNV: return "PartitionedInclusiveScanNV";
+    case GroupOperation::PartitionedExclusiveScanNV: return "PartitionedExclusiveScanNV";
     default: return "Unknown";
     }
 }
@@ -4349,7 +4349,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::FragmentBarycentricKHR: return "FragmentBarycentricKHR";
     case Capability::ComputeDerivativeGroupQuadsKHR: return "ComputeDerivativeGroupQuadsKHR";
     case Capability::FragmentDensityEXT: return "FragmentDensityEXT";
-    case Capability::GroupNonUniformPartitionedEXT: return "GroupNonUniformPartitionedEXT";
+    case Capability::GroupNonUniformPartitionedNV: return "GroupNonUniformPartitionedNV";
     case Capability::ShaderNonUniform: return "ShaderNonUniform";
     case Capability::RuntimeDescriptorArray: return "RuntimeDescriptorArray";
     case Capability::InputAttachmentArrayDynamicIndexing: return "InputAttachmentArrayDynamicIndexing";
@@ -4388,6 +4388,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::RawAccessChainsNV: return "RawAccessChainsNV";
     case Capability::RayTracingSpheresGeometryNV: return "RayTracingSpheresGeometryNV";
     case Capability::RayTracingLinearSweptSpheresGeometryNV: return "RayTracingLinearSweptSpheresGeometryNV";
+    case Capability::PushConstantBanksNV: return "PushConstantBanksNV";
     case Capability::LongVectorEXT: return "LongVectorEXT";
     case Capability::Shader64BitIndexingEXT: return "Shader64BitIndexingEXT";
     case Capability::CooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
@@ -5160,7 +5161,7 @@ inline const char* OpToString(Op value) {
     case Op::OpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
     case Op::OpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case Op::OpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
-    case Op::OpGroupNonUniformPartitionEXT: return "OpGroupNonUniformPartitionEXT";
+    case Op::OpGroupNonUniformPartitionNV: return "OpGroupNonUniformPartitionNV";
     case Op::OpWritePackedPrimitiveIndices4x8NV: return "OpWritePackedPrimitiveIndices4x8NV";
     case Op::OpFetchMicroTriangleVertexPositionNV: return "OpFetchMicroTriangleVertexPositionNV";
     case Op::OpFetchMicroTriangleVertexBarycentricNV: return "OpFetchMicroTriangleVertexBarycentricNV";
