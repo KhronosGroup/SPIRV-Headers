@@ -6356,7 +6356,7 @@
     {
       "opname" : "OpGroupNonUniformPartitionEXT",
       "class"  : "Non-Uniform",
-      "aliases" : ["OpGroupNonUniformPartitionedNV"],
+      "aliases" : ["OpGroupNonUniformPartitionNV"],
       "opcode" : 5296,
       "operands" : [
         { "kind" : "IdResultType" },

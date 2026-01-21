@@ -2203,7 +2203,7 @@ typedef enum SpvOp_ {
     SpvOpEmitMeshTasksEXT = 5294,
     SpvOpSetMeshOutputsEXT = 5295,
     SpvOpGroupNonUniformPartitionEXT = 5296,
-    SpvOpGroupNonUniformPartitionedNV = 5296,
+    SpvOpGroupNonUniformPartitionNV = 5296,
     SpvOpWritePackedPrimitiveIndices4x8NV = 5299,
     SpvOpFetchMicroTriangleVertexPositionNV = 5300,
     SpvOpFetchMicroTriangleVertexBarycentricNV = 5301,
