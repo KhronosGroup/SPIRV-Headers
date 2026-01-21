@@ -5713,7 +5713,7 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdRef", "name" : "'Buffer'" }
+        { "kind" : "IdRef", "name" : "Buffer" }
       ],
       "capabilities": [ "DescriptorHeapEXT" ],
       "version" : "None"
@@ -5738,8 +5738,8 @@
       "class"  : "Annotation",
       "opcode" : 5127,
       "operands" : [
-        { "kind" : "IdRef",          "name" : "'Structure Type'" },
-        { "kind" : "LiteralInteger", "name" : "'Member'" },
+        { "kind" : "IdRef",          "name" : "Structure Type" },
+        { "kind" : "LiteralInteger", "name" : "Member" },
         { "kind" : "Decoration" }
       ],
       "capabilities": [ "DescriptorHeapEXT" ],
@@ -5752,7 +5752,7 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "IdRef", "name" : "'Type'" }
+        { "kind" : "IdRef", "name" : "Type" }
       ],
       "capabilities": [ "DescriptorHeapEXT" ],
       "version" : "None"
