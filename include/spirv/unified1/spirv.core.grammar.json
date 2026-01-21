@@ -17956,6 +17956,7 @@
           "extensions" : [ "SPV_EXT_shader_64bit_indexing" ],
           "version" : "None"
         },
+        {
           "enumerant" : "PushConstantBanksNV",
           "value" : 5423,
           "capabilities" : [ "Shader" ],
