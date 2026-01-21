@@ -5696,6 +5696,68 @@
       "version" : "None"
     },
     {
+      "opname" : "OpTypeBufferEXT",
+      "class"  : "Type-Declaration",
+      "opcode" : 5115,
+      "operands" : [
+        { "kind" : "IdResult" },
+        { "kind" : "StorageClass" }
+      ],
+      "capabilities": [ "DescriptorHeapEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpBufferPointerEXT",
+      "class"  : "Memory",
+      "opcode" : 5119,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Buffer'" }
+      ],
+      "capabilities": [ "DescriptorHeapEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpUntypedImageTexelPointerEXT",
+      "class"  : "Memory",
+      "opcode" : 5126,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "ImageType" },
+        { "kind" : "IdRef",        "name" : "Image" },
+        { "kind" : "IdRef",        "name" : "Coordinate" },
+        { "kind" : "IdRef",        "name" : "Sample" }
+      ],
+      "capabilities": [ "DescriptorHeapEXT" ],
+      "version": "None"
+    },
+    {
+      "opname" : "OpMemberDecorateIdEXT",
+      "class"  : "Annotation",
+      "opcode" : 5127,
+      "operands" : [
+        { "kind" : "IdRef",          "name" : "'Structure Type'" },
+        { "kind" : "LiteralInteger", "name" : "'Member'" },
+        { "kind" : "Decoration" }
+      ],
+      "capabilities": [ "DescriptorHeapEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConstantSizeOfEXT",
+      "class"  : "Constant-Creation",
+      "opcode" : 5129,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "'Type'" }
+      ],
+      "capabilities": [ "DescriptorHeapEXT" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpHitObjectRecordHitMotionNV",
       "class"  : "Reserved",
       "opcode" : 5249,
@@ -14978,6 +15040,24 @@
           "version" : "None"
         },
         {
+          "enumerant" : "ArrayStrideIdEXT",
+          "value" : 5124,
+          "capabilities": [ "DescriptorHeapEXT" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "Array Stride" }
+          ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "OffsetIdEXT",
+          "value" : 5125,
+          "capabilities": [ "DescriptorHeapEXT" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "Byte Offset" }
+          ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "OverrideCoverageNV",
           "value" : 5248,
           "capabilities" : [ "SampleMaskOverrideCoverageNV" ],
@@ -16127,6 +16207,18 @@
           "value" : 5073,
           "capabilities" : [ "ShaderEnqueueAMDX" ],
           "provisional" : true,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SamplerHeapEXT",
+          "value" : 5122,
+          "capabilities" : [ "DescriptorHeapEXT" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ResourceHeapEXT",
+          "value" : 5123,
+          "capabilities" : [ "DescriptorHeapEXT" ],
           "version" : "None"
         },
         {
@@ -17451,6 +17543,13 @@
           "value" : 5118,
           "capabilities" : [ "BFloat16TypeKHR", "CooperativeMatrixKHR" ],
           "extensions" : [ "SPV_KHR_bfloat16" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DescriptorHeapEXT",
+          "value": 5128,
+          "capabilities" : [ "UntypedPointersKHR" ],
+          "extensions" : [ "SPV_EXT_descriptor_heap" ],
           "version" : "None"
         },
         {
