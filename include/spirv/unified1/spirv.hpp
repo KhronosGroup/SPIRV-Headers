@@ -1036,8 +1036,11 @@ enum GroupOperation {
     GroupOperationInclusiveScan = 1,
     GroupOperationExclusiveScan = 2,
     GroupOperationClusteredReduce = 3,
+    GroupOperationPartitionedReduceEXT = 6,
     GroupOperationPartitionedReduceNV = 6,
+    GroupOperationPartitionedInclusiveScanEXT = 7,
     GroupOperationPartitionedInclusiveScanNV = 7,
+    GroupOperationPartitionedExclusiveScanEXT = 8,
     GroupOperationPartitionedExclusiveScanNV = 8,
     GroupOperationMax = 0x7fffffff,
 };
@@ -1211,6 +1214,7 @@ enum Capability {
     CapabilityComputeDerivativeGroupQuadsNV = 5288,
     CapabilityFragmentDensityEXT = 5291,
     CapabilityShadingRateNV = 5291,
+    CapabilityGroupNonUniformPartitionedEXT = 5297,
     CapabilityGroupNonUniformPartitionedNV = 5297,
     CapabilityShaderNonUniform = 5301,
     CapabilityShaderNonUniformEXT = 5301,
@@ -2194,7 +2198,8 @@ enum Op {
     OpCooperativeMatrixConvertNV = 5293,
     OpEmitMeshTasksEXT = 5294,
     OpSetMeshOutputsEXT = 5295,
-    OpGroupNonUniformPartitionNV = 5296,
+    OpGroupNonUniformPartitionEXT = 5296,
+    OpGroupNonUniformPartitionedNV = 5296,
     OpWritePackedPrimitiveIndices4x8NV = 5299,
     OpFetchMicroTriangleVertexPositionNV = 5300,
     OpFetchMicroTriangleVertexBarycentricNV = 5301,
@@ -3113,7 +3118,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
     case OpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case OpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
-    case OpGroupNonUniformPartitionNV: *hasResult = true; *hasResultType = true; break;
+    case OpGroupNonUniformPartitionEXT: *hasResult = true; *hasResultType = true; break;
     case OpWritePackedPrimitiveIndices4x8NV: *hasResult = false; *hasResultType = false; break;
     case OpFetchMicroTriangleVertexPositionNV: *hasResult = true; *hasResultType = true; break;
     case OpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
@@ -4186,9 +4191,9 @@ inline const char* GroupOperationToString(GroupOperation value) {
     case GroupOperationInclusiveScan: return "InclusiveScan";
     case GroupOperationExclusiveScan: return "ExclusiveScan";
     case GroupOperationClusteredReduce: return "ClusteredReduce";
-    case GroupOperationPartitionedReduceNV: return "PartitionedReduceNV";
-    case GroupOperationPartitionedInclusiveScanNV: return "PartitionedInclusiveScanNV";
-    case GroupOperationPartitionedExclusiveScanNV: return "PartitionedExclusiveScanNV";
+    case GroupOperationPartitionedReduceEXT: return "PartitionedReduceEXT";
+    case GroupOperationPartitionedInclusiveScanEXT: return "PartitionedInclusiveScanEXT";
+    case GroupOperationPartitionedExclusiveScanEXT: return "PartitionedExclusiveScanEXT";
     default: return "Unknown";
     }
 }
@@ -4349,7 +4354,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFragmentBarycentricKHR: return "FragmentBarycentricKHR";
     case CapabilityComputeDerivativeGroupQuadsKHR: return "ComputeDerivativeGroupQuadsKHR";
     case CapabilityFragmentDensityEXT: return "FragmentDensityEXT";
-    case CapabilityGroupNonUniformPartitionedNV: return "GroupNonUniformPartitionedNV";
+    case CapabilityGroupNonUniformPartitionedEXT: return "GroupNonUniformPartitionedEXT";
     case CapabilityShaderNonUniform: return "ShaderNonUniform";
     case CapabilityRuntimeDescriptorArray: return "RuntimeDescriptorArray";
     case CapabilityInputAttachmentArrayDynamicIndexing: return "InputAttachmentArrayDynamicIndexing";
@@ -5161,7 +5166,7 @@ inline const char* OpToString(Op value) {
     case OpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
     case OpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case OpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
-    case OpGroupNonUniformPartitionNV: return "OpGroupNonUniformPartitionNV";
+    case OpGroupNonUniformPartitionEXT: return "OpGroupNonUniformPartitionEXT";
     case OpWritePackedPrimitiveIndices4x8NV: return "OpWritePackedPrimitiveIndices4x8NV";
     case OpFetchMicroTriangleVertexPositionNV: return "OpFetchMicroTriangleVertexPositionNV";
     case OpFetchMicroTriangleVertexBarycentricNV: return "OpFetchMicroTriangleVertexBarycentricNV";

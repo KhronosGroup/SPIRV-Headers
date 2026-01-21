@@ -4085,7 +4085,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4100,7 +4100,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4115,7 +4115,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4130,7 +4130,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4145,7 +4145,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4160,7 +4160,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4175,7 +4175,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4190,7 +4190,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4205,7 +4205,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4220,7 +4220,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4235,7 +4235,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4250,7 +4250,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4265,7 +4265,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4280,7 +4280,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4295,7 +4295,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -4310,7 +4310,7 @@
         { "kind" : "IdRef", "name" : "Value" },
         { "kind" : "IdRef", "name" : "ClusterSize", "quantifier" : "?" }
       ],
-      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedNV" ],
+      "capabilities" : [ "GroupNonUniformArithmetic", "GroupNonUniformClustered", "GroupNonUniformPartitionedEXT" ],
       "version" : "1.3"
     },
     {
@@ -6354,16 +6354,16 @@
       "version" : "None"
     },
     {
-      "opname" : "OpGroupNonUniformPartitionNV",
+      "opname" : "OpGroupNonUniformPartitionEXT",
       "class"  : "Non-Uniform",
+      "aliases" : ["OpGroupNonUniformPartitionedNV"],
       "opcode" : 5296,
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
         { "kind" : "IdRef", "name" : "Value" }
       ],
-      "capabilities" : [ "GroupNonUniformPartitionedNV" ],
-      "extensions" : [ "SPV_NV_shader_subgroup_partitioned" ],
+      "capabilities" : [ "GroupNonUniformPartitionedEXT" ],
       "version" : "None"
     },
     {
@@ -16711,24 +16711,24 @@
           "version" : "1.3"
         },
         {
-          "enumerant" : "PartitionedReduceNV",
+          "enumerant" : "PartitionedReduceEXT",
+          "aliases" : ["PartitionedReduceNV"],
           "value" : 6,
-          "capabilities" : [ "GroupNonUniformPartitionedNV" ],
-          "extensions" : [ "SPV_NV_shader_subgroup_partitioned" ],
+          "capabilities" : [ "GroupNonUniformPartitionedEXT" ],
           "version" : "None"
         },
         {
-          "enumerant" : "PartitionedInclusiveScanNV",
+          "enumerant" : "PartitionedInclusiveScanEXT",
+          "aliases" : ["PartitionedInclusiveScanNV"],
           "value" : 7,
-          "capabilities" : [ "GroupNonUniformPartitionedNV" ],
-          "extensions" : [ "SPV_NV_shader_subgroup_partitioned" ],
+          "capabilities" : [ "GroupNonUniformPartitionedEXT" ],
           "version" : "None"
         },
         {
-          "enumerant" : "PartitionedExclusiveScanNV",
+          "enumerant" : "PartitionedExclusiveScanEXT",
+          "aliases" : ["PartitionedExclusiveScanNV"],
           "value" : 8,
-          "capabilities" : [ "GroupNonUniformPartitionedNV" ],
-          "extensions" : [ "SPV_NV_shader_subgroup_partitioned" ],
+          "capabilities" : [ "GroupNonUniformPartitionedEXT" ],
           "version" : "None"
         }
       ]
@@ -17664,9 +17664,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "GroupNonUniformPartitionedNV",
+          "enumerant" : "GroupNonUniformPartitionedEXT",
+          "aliases" : ["GroupNonUniformPartitionedNV"],
           "value" : 5297,
-          "extensions" : [ "SPV_NV_shader_subgroup_partitioned" ],
+          "extensions" : [ "SPV_NV_shader_subgroup_partitioned", "SPV_EXT_shader_subgroup_partitioned" ],
           "version" : "None"
         },
         {

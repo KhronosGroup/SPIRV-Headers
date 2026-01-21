@@ -1040,8 +1040,11 @@ typedef enum SpvGroupOperation_ {
     SpvGroupOperationInclusiveScan = 1,
     SpvGroupOperationExclusiveScan = 2,
     SpvGroupOperationClusteredReduce = 3,
+    SpvGroupOperationPartitionedReduceEXT = 6,
     SpvGroupOperationPartitionedReduceNV = 6,
+    SpvGroupOperationPartitionedInclusiveScanEXT = 7,
     SpvGroupOperationPartitionedInclusiveScanNV = 7,
+    SpvGroupOperationPartitionedExclusiveScanEXT = 8,
     SpvGroupOperationPartitionedExclusiveScanNV = 8,
     SpvGroupOperationMax = 0x7fffffff,
 } SpvGroupOperation;
@@ -1215,6 +1218,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityComputeDerivativeGroupQuadsNV = 5288,
     SpvCapabilityFragmentDensityEXT = 5291,
     SpvCapabilityShadingRateNV = 5291,
+    SpvCapabilityGroupNonUniformPartitionedEXT = 5297,
     SpvCapabilityGroupNonUniformPartitionedNV = 5297,
     SpvCapabilityShaderNonUniform = 5301,
     SpvCapabilityShaderNonUniformEXT = 5301,
@@ -2198,7 +2202,8 @@ typedef enum SpvOp_ {
     SpvOpCooperativeMatrixConvertNV = 5293,
     SpvOpEmitMeshTasksEXT = 5294,
     SpvOpSetMeshOutputsEXT = 5295,
-    SpvOpGroupNonUniformPartitionNV = 5296,
+    SpvOpGroupNonUniformPartitionEXT = 5296,
+    SpvOpGroupNonUniformPartitionedNV = 5296,
     SpvOpWritePackedPrimitiveIndices4x8NV = 5299,
     SpvOpFetchMicroTriangleVertexPositionNV = 5300,
     SpvOpFetchMicroTriangleVertexBarycentricNV = 5301,
@@ -3117,7 +3122,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
-    case SpvOpGroupNonUniformPartitionNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGroupNonUniformPartitionEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpWritePackedPrimitiveIndices4x8NV: *hasResult = false; *hasResultType = false; break;
     case SpvOpFetchMicroTriangleVertexPositionNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpFetchMicroTriangleVertexBarycentricNV: *hasResult = true; *hasResultType = true; break;
@@ -4190,9 +4195,9 @@ inline const char* SpvGroupOperationToString(SpvGroupOperation value) {
     case SpvGroupOperationInclusiveScan: return "InclusiveScan";
     case SpvGroupOperationExclusiveScan: return "ExclusiveScan";
     case SpvGroupOperationClusteredReduce: return "ClusteredReduce";
-    case SpvGroupOperationPartitionedReduceNV: return "PartitionedReduceNV";
-    case SpvGroupOperationPartitionedInclusiveScanNV: return "PartitionedInclusiveScanNV";
-    case SpvGroupOperationPartitionedExclusiveScanNV: return "PartitionedExclusiveScanNV";
+    case SpvGroupOperationPartitionedReduceEXT: return "PartitionedReduceEXT";
+    case SpvGroupOperationPartitionedInclusiveScanEXT: return "PartitionedInclusiveScanEXT";
+    case SpvGroupOperationPartitionedExclusiveScanEXT: return "PartitionedExclusiveScanEXT";
     default: return "Unknown";
     }
 }
@@ -4353,7 +4358,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFragmentBarycentricKHR: return "FragmentBarycentricKHR";
     case SpvCapabilityComputeDerivativeGroupQuadsKHR: return "ComputeDerivativeGroupQuadsKHR";
     case SpvCapabilityFragmentDensityEXT: return "FragmentDensityEXT";
-    case SpvCapabilityGroupNonUniformPartitionedNV: return "GroupNonUniformPartitionedNV";
+    case SpvCapabilityGroupNonUniformPartitionedEXT: return "GroupNonUniformPartitionedEXT";
     case SpvCapabilityShaderNonUniform: return "ShaderNonUniform";
     case SpvCapabilityRuntimeDescriptorArray: return "RuntimeDescriptorArray";
     case SpvCapabilityInputAttachmentArrayDynamicIndexing: return "InputAttachmentArrayDynamicIndexing";
@@ -5165,7 +5170,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
     case SpvOpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case SpvOpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
-    case SpvOpGroupNonUniformPartitionNV: return "OpGroupNonUniformPartitionNV";
+    case SpvOpGroupNonUniformPartitionEXT: return "OpGroupNonUniformPartitionEXT";
     case SpvOpWritePackedPrimitiveIndices4x8NV: return "OpWritePackedPrimitiveIndices4x8NV";
     case SpvOpFetchMicroTriangleVertexPositionNV: return "OpFetchMicroTriangleVertexPositionNV";
     case SpvOpFetchMicroTriangleVertexBarycentricNV: return "OpFetchMicroTriangleVertexBarycentricNV";
