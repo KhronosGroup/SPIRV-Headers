@@ -393,7 +393,7 @@
         { "kind" : "IdRef", "name" : "APINotesFile" },
         { "kind" : "LiteralInteger", "name" : "IsDeclaration" }
       ],
-      "capability" : "DebugInfoModuleINTEL"
+      "capability" : [ "DebugInfoModuleINTEL" ]
     }
   ],
   "operand_kinds" : [
