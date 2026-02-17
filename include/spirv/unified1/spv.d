@@ -1429,6 +1429,10 @@ enum Capability : uint
     CacheControlsINTEL = 6441,
     RegisterLimitsINTEL = 6460,
     BindlessImagesINTEL = 6528,
+    DotProductFloat16AccFloat32VALVE = 6912,
+    DotProductFloat16AccFloat16VALVE = 6913,
+    DotProductBFloat16AccVALVE = 6914,
+    DotProductFloat8AccFloat32VALVE = 6915,
     Max = 0x7fffffff,
 }
 
@@ -2696,6 +2700,9 @@ enum Op : uint
     OpConvertHandleToImageINTEL = 6529,
     OpConvertHandleToSamplerINTEL = 6530,
     OpConvertHandleToSampledImageINTEL = 6531,
+    OpFDot2MixAcc32VALVE = 6916,
+    OpFDot2MixAcc16VALVE = 6917,
+    OpFDot4MixAcc32VALVE = 6918,
     Max = 0x7fffffff,
 }
 
