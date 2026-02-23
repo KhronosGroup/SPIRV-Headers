@@ -1363,6 +1363,7 @@ enum Capability {
     CapabilityAtomicFloat16AddEXT = 6095,
     CapabilityDebugInfoModuleINTEL = 6114,
     CapabilityBFloat16ConversionINTEL = 6115,
+    CapabilitySplitBarrierEXT = 6141,
     CapabilitySplitBarrierINTEL = 6141,
     CapabilityArithmeticFenceEXT = 6144,
     CapabilityFPGAClusterAttributesV2ALTERA = 6150,
@@ -2585,7 +2586,9 @@ enum Op {
     OpCompositeConstructContinuedINTEL = 6096,
     OpConvertFToBF16INTEL = 6116,
     OpConvertBF16ToFINTEL = 6117,
+    OpControlBarrierArriveEXT = 6142,
     OpControlBarrierArriveINTEL = 6142,
+    OpControlBarrierWaitEXT = 6143,
     OpControlBarrierWaitINTEL = 6143,
     OpArithmeticFenceEXT = 6145,
     OpTaskSequenceCreateALTERA = 6163,
@@ -3467,8 +3470,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpCompositeConstructContinuedINTEL: *hasResult = true; *hasResultType = true; break;
     case OpConvertFToBF16INTEL: *hasResult = true; *hasResultType = true; break;
     case OpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
-    case OpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpControlBarrierArriveEXT: *hasResult = false; *hasResultType = false; break;
+    case OpControlBarrierWaitEXT: *hasResult = false; *hasResultType = false; break;
     case OpArithmeticFenceEXT: *hasResult = true; *hasResultType = true; break;
     case OpTaskSequenceCreateALTERA: *hasResult = true; *hasResultType = true; break;
     case OpTaskSequenceAsyncALTERA: *hasResult = false; *hasResultType = false; break;
@@ -4474,7 +4477,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityAtomicFloat16AddEXT: return "AtomicFloat16AddEXT";
     case CapabilityDebugInfoModuleINTEL: return "DebugInfoModuleINTEL";
     case CapabilityBFloat16ConversionINTEL: return "BFloat16ConversionINTEL";
-    case CapabilitySplitBarrierINTEL: return "SplitBarrierINTEL";
+    case CapabilitySplitBarrierEXT: return "SplitBarrierEXT";
     case CapabilityArithmeticFenceEXT: return "ArithmeticFenceEXT";
     case CapabilityFPGAClusterAttributesV2ALTERA: return "FPGAClusterAttributesV2ALTERA";
     case CapabilityFPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
@@ -5522,8 +5525,8 @@ inline const char* OpToString(Op value) {
     case OpCompositeConstructContinuedINTEL: return "OpCompositeConstructContinuedINTEL";
     case OpConvertFToBF16INTEL: return "OpConvertFToBF16INTEL";
     case OpConvertBF16ToFINTEL: return "OpConvertBF16ToFINTEL";
-    case OpControlBarrierArriveINTEL: return "OpControlBarrierArriveINTEL";
-    case OpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
+    case OpControlBarrierArriveEXT: return "OpControlBarrierArriveEXT";
+    case OpControlBarrierWaitEXT: return "OpControlBarrierWaitEXT";
     case OpArithmeticFenceEXT: return "OpArithmeticFenceEXT";
     case OpTaskSequenceCreateALTERA: return "OpTaskSequenceCreateALTERA";
     case OpTaskSequenceAsyncALTERA: return "OpTaskSequenceAsyncALTERA";

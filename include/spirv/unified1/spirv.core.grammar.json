@@ -11194,27 +11194,29 @@
       "version" : "None"
     },
     {
-      "opname" : "OpControlBarrierArriveINTEL",
+      "opname" : "OpControlBarrierArriveEXT",
       "class"  : "Barrier",
+      "aliases" : [ "OpControlBarrierArriveINTEL" ],
       "opcode" : 6142,
       "operands" : [
         { "kind" : "IdScope",           "name" : "Execution" },
         { "kind" : "IdScope",           "name" : "Memory" },
         { "kind" : "IdMemorySemantics", "name" : "Semantics" }
       ],
-      "capabilities" : [ "SplitBarrierINTEL" ],
+      "capabilities" : [ "SplitBarrierEXT", "SplitBarrierINTEL" ],
       "version" : "None"
     },
     {
-      "opname" : "OpControlBarrierWaitINTEL",
+      "opname" : "OpControlBarrierWaitEXT",
       "class"  : "Barrier",
+      "aliases" : [ "OpControlBarrierWaitINTEL" ],
       "opcode" : 6143,
       "operands" : [
         { "kind" : "IdScope",           "name" : "Execution" },
         { "kind" : "IdScope",           "name" : "Memory" },
         { "kind" : "IdMemorySemantics", "name" : "Semantics" }
       ],
-      "capabilities" : [ "SplitBarrierINTEL" ],
+      "capabilities" : [ "SplitBarrierEXT", "SplitBarrierINTEL" ],
       "version" : "None"
     },
     {
@@ -18441,9 +18443,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "SplitBarrierINTEL",
+          "enumerant" : "SplitBarrierEXT",
+          "aliases" : [ "SplitBarrierINTEL" ],
           "value" : 6141,
-          "extensions" : [ "SPV_INTEL_split_barrier" ],
+          "extensions" : [ "SPV_EXT_split_barrier", "SPV_INTEL_split_barrier" ],
           "version" : "None"
         },
         {

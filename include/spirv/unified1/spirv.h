@@ -1367,6 +1367,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityAtomicFloat16AddEXT = 6095,
     SpvCapabilityDebugInfoModuleINTEL = 6114,
     SpvCapabilityBFloat16ConversionINTEL = 6115,
+    SpvCapabilitySplitBarrierEXT = 6141,
     SpvCapabilitySplitBarrierINTEL = 6141,
     SpvCapabilityArithmeticFenceEXT = 6144,
     SpvCapabilityFPGAClusterAttributesV2ALTERA = 6150,
@@ -2589,7 +2590,9 @@ typedef enum SpvOp_ {
     SpvOpCompositeConstructContinuedINTEL = 6096,
     SpvOpConvertFToBF16INTEL = 6116,
     SpvOpConvertBF16ToFINTEL = 6117,
+    SpvOpControlBarrierArriveEXT = 6142,
     SpvOpControlBarrierArriveINTEL = 6142,
+    SpvOpControlBarrierWaitEXT = 6143,
     SpvOpControlBarrierWaitINTEL = 6143,
     SpvOpArithmeticFenceEXT = 6145,
     SpvOpTaskSequenceCreateALTERA = 6163,
@@ -3471,8 +3474,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpCompositeConstructContinuedINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpConvertFToBF16INTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
-    case SpvOpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
-    case SpvOpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpControlBarrierArriveEXT: *hasResult = false; *hasResultType = false; break;
+    case SpvOpControlBarrierWaitEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpArithmeticFenceEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpTaskSequenceCreateALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpTaskSequenceAsyncALTERA: *hasResult = false; *hasResultType = false; break;
@@ -4478,7 +4481,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityAtomicFloat16AddEXT: return "AtomicFloat16AddEXT";
     case SpvCapabilityDebugInfoModuleINTEL: return "DebugInfoModuleINTEL";
     case SpvCapabilityBFloat16ConversionINTEL: return "BFloat16ConversionINTEL";
-    case SpvCapabilitySplitBarrierINTEL: return "SplitBarrierINTEL";
+    case SpvCapabilitySplitBarrierEXT: return "SplitBarrierEXT";
     case SpvCapabilityArithmeticFenceEXT: return "ArithmeticFenceEXT";
     case SpvCapabilityFPGAClusterAttributesV2ALTERA: return "FPGAClusterAttributesV2ALTERA";
     case SpvCapabilityFPGAKernelAttributesv2INTEL: return "FPGAKernelAttributesv2INTEL";
@@ -5526,8 +5529,8 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpCompositeConstructContinuedINTEL: return "OpCompositeConstructContinuedINTEL";
     case SpvOpConvertFToBF16INTEL: return "OpConvertFToBF16INTEL";
     case SpvOpConvertBF16ToFINTEL: return "OpConvertBF16ToFINTEL";
-    case SpvOpControlBarrierArriveINTEL: return "OpControlBarrierArriveINTEL";
-    case SpvOpControlBarrierWaitINTEL: return "OpControlBarrierWaitINTEL";
+    case SpvOpControlBarrierArriveEXT: return "OpControlBarrierArriveEXT";
+    case SpvOpControlBarrierWaitEXT: return "OpControlBarrierWaitEXT";
     case SpvOpArithmeticFenceEXT: return "OpArithmeticFenceEXT";
     case SpvOpTaskSequenceCreateALTERA: return "OpTaskSequenceCreateALTERA";
     case SpvOpTaskSequenceAsyncALTERA: return "OpTaskSequenceAsyncALTERA";
