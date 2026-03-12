@@ -274,7 +274,7 @@ public:
     InstructionValue(EnumValue&& e, const std::string& printClass, bool has_type, bool has_result)
      : EnumValue(std::move(e)),
        printingClass(printClass),
-       opDesc("TBD."),
+       opDesc("Reserved."),
        typePresent(has_type),
        resultPresent(has_result) { }
     InstructionValue(const InstructionValue& v)
