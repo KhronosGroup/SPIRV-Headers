@@ -5719,6 +5719,17 @@
       "version" : "None"
     },
     {
+      "opname" : "OpAbortKHR",
+      "class"  : "Control-Flow",
+      "opcode" : 5121,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "'Message Type'" },
+        { "kind" : "IdRef", "name" : "'Message'" }
+      ],
+      "capabilities" : [ "AbortKHR" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpUntypedImageTexelPointerEXT",
       "class"  : "Memory",
       "opcode" : 5126,
@@ -5755,6 +5766,30 @@
         { "kind" : "IdRef", "name" : "Type" }
       ],
       "capabilities": [ "DescriptorHeapEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConstantDataKHR",
+      "class"  : "Constant-Creation",
+      "opcode" : 5147,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralString", "name" : "'Data'" }
+      ],
+      "capabilities" : [ "ConstantDataKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSpecConstantDataKHR",
+      "class"  : "Constant-Creation",
+      "opcode" : 5148,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralString", "name" : "'Data'" }
+      ],
+      "capabilities" : [ "ConstantDataKHR" ],
       "version" : "None"
     },
     {
@@ -15100,6 +15135,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "UTFCodePointsKHR",
+          "value" : 5145,
+          "capabilities" : [ "ConstantDataKHR" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "OverrideCoverageNV",
           "value" : 5248,
           "capabilities" : [ "SampleMaskOverrideCoverageNV" ],
@@ -17606,10 +17647,22 @@
           "version" : "None"
         },
         {
+          "enumerant" : "AbortKHR",
+          "value" : 5120,
+          "extensions" : [ "SPV_KHR_abort" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "DescriptorHeapEXT",
           "value": 5128,
           "capabilities" : [ "UntypedPointersKHR" ],
           "extensions" : [ "SPV_EXT_descriptor_heap" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ConstantDataKHR",
+          "value" : 5146,
+          "extensions" : [ "SPV_KHR_constant_data" ],
           "version" : "None"
         },
         {
