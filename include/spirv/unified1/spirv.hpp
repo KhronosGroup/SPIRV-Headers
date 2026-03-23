@@ -559,6 +559,7 @@ enum Decoration {
     DecorationPayloadDispatchIndirectAMDX = 5105,
     DecorationArrayStrideIdEXT = 5124,
     DecorationOffsetIdEXT = 5125,
+    DecorationUTFCodePointsKHR = 5145,
     DecorationOverrideCoverageNV = 5248,
     DecorationPassthroughNV = 5250,
     DecorationViewportRelativeNV = 5252,
@@ -1197,6 +1198,7 @@ enum Capability {
     CapabilityBFloat16DotProductKHR = 5117,
     CapabilityBFloat16CooperativeMatrixKHR = 5118,
     CapabilityDescriptorHeapEXT = 5128,
+    CapabilityConstantDataKHR = 5146,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
     CapabilityGeometryShaderPassthroughNV = 5251,
     CapabilityShaderViewportIndexLayerEXT = 5254,
@@ -2159,6 +2161,8 @@ enum Op {
     OpUntypedImageTexelPointerEXT = 5126,
     OpMemberDecorateIdEXT = 5127,
     OpConstantSizeOfEXT = 5129,
+    OpConstantDataKHR = 5147,
+    OpSpecConstantDataKHR = 5148,
     OpHitObjectRecordHitMotionNV = 5249,
     OpHitObjectRecordHitWithIndexMotionNV = 5250,
     OpHitObjectRecordMissMotionNV = 5251,
@@ -3083,6 +3087,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpUntypedImageTexelPointerEXT: *hasResult = true; *hasResultType = true; break;
     case OpMemberDecorateIdEXT: *hasResult = false; *hasResultType = false; break;
     case OpConstantSizeOfEXT: *hasResult = true; *hasResultType = true; break;
+    case OpConstantDataKHR: *hasResult = true; *hasResultType = true; break;
+    case OpSpecConstantDataKHR: *hasResult = true; *hasResultType = true; break;
     case OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -3959,6 +3965,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationPayloadDispatchIndirectAMDX: return "PayloadDispatchIndirectAMDX";
     case DecorationArrayStrideIdEXT: return "ArrayStrideIdEXT";
     case DecorationOffsetIdEXT: return "OffsetIdEXT";
+    case DecorationUTFCodePointsKHR: return "UTFCodePointsKHR";
     case DecorationOverrideCoverageNV: return "OverrideCoverageNV";
     case DecorationPassthroughNV: return "PassthroughNV";
     case DecorationViewportRelativeNV: return "ViewportRelativeNV";
@@ -4351,6 +4358,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityBFloat16DotProductKHR: return "BFloat16DotProductKHR";
     case CapabilityBFloat16CooperativeMatrixKHR: return "BFloat16CooperativeMatrixKHR";
     case CapabilityDescriptorHeapEXT: return "DescriptorHeapEXT";
+    case CapabilityConstantDataKHR: return "ConstantDataKHR";
     case CapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case CapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case CapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -5138,6 +5146,8 @@ inline const char* OpToString(Op value) {
     case OpUntypedImageTexelPointerEXT: return "OpUntypedImageTexelPointerEXT";
     case OpMemberDecorateIdEXT: return "OpMemberDecorateIdEXT";
     case OpConstantSizeOfEXT: return "OpConstantSizeOfEXT";
+    case OpConstantDataKHR: return "OpConstantDataKHR";
+    case OpSpecConstantDataKHR: return "OpSpecConstantDataKHR";
     case OpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";
     case OpHitObjectRecordHitWithIndexMotionNV: return "OpHitObjectRecordHitWithIndexMotionNV";
     case OpHitObjectRecordMissMotionNV: return "OpHitObjectRecordMissMotionNV";
