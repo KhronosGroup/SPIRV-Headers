@@ -5723,8 +5723,8 @@
       "class"  : "Control-Flow",
       "opcode" : 5121,
       "operands" : [
-        { "kind" : "IdRef", "name" : "'Message Type'" },
-        { "kind" : "IdRef", "name" : "'Message'" }
+        { "kind" : "IdRef", "name" : "Message Type" },
+        { "kind" : "IdRef", "name" : "Message'" }
       ],
       "capabilities" : [ "AbortKHR" ],
       "version" : "None"
