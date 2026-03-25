@@ -5782,6 +5782,31 @@
       "version" : "None"
     },
     {
+      "opname" : "OpPoisonKHR",
+      "class" : "Miscellaneous",
+      "opcode" : 5158,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "PoisonFreezeKHR" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpFreezeKHR",
+      "class" : "Miscellaneous",
+      "opcode" : 5159,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Value" }
+      ],
+      "capabilities" : [ "PoisonFreezeKHR" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
       "opname" : "OpHitObjectRecordHitMotionNV",
       "class"  : "Reserved",
       "opcode" : 5249,
@@ -13306,6 +13331,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "ArithmeticPoisonKHR",
+          "value" : 5157,
+          "capabilities" : [ "PoisonFreezeKHR" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
           "enumerant" : "OutputLinesEXT",
           "aliases" : ["OutputLinesNV"],
           "value" : 5269,
@@ -17646,6 +17678,13 @@
           "enumerant" : "ConstantDataKHR",
           "value" : 5146,
           "extensions" : [ "SPV_KHR_constant_data" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PoisonFreezeKHR",
+          "value" : 5156,
+          "extensions" : [ "SPV_KHR_poison_freeze" ],
+          "provisional" : true,
           "version" : "None"
         },
         {

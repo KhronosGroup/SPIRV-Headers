@@ -175,6 +175,7 @@ enum class ExecutionMode : unsigned {
     QuadDerivativesKHR = 5088,
     RequireFullQuadsKHR = 5089,
     SharesInputWithAMDX = 5102,
+    ArithmeticPoisonKHR = 5157,
     OutputLinesEXT = 5269,
     OutputLinesNV = 5269,
     OutputPrimitivesEXT = 5270,
@@ -1199,6 +1200,7 @@ enum class Capability : unsigned {
     BFloat16CooperativeMatrixKHR = 5118,
     DescriptorHeapEXT = 5128,
     ConstantDataKHR = 5146,
+    PoisonFreezeKHR = 5156,
     SampleMaskOverrideCoverageNV = 5249,
     GeometryShaderPassthroughNV = 5251,
     ShaderViewportIndexLayerEXT = 5254,
@@ -2163,6 +2165,8 @@ enum class Op : unsigned {
     OpConstantSizeOfEXT = 5129,
     OpConstantDataKHR = 5147,
     OpSpecConstantDataKHR = 5148,
+    OpPoisonKHR = 5158,
+    OpFreezeKHR = 5159,
     OpHitObjectRecordHitMotionNV = 5249,
     OpHitObjectRecordHitWithIndexMotionNV = 5250,
     OpHitObjectRecordMissMotionNV = 5251,
@@ -3089,6 +3093,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpConstantSizeOfEXT: *hasResult = true; *hasResultType = true; break;
     case Op::OpConstantDataKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpSpecConstantDataKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpPoisonKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpFreezeKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -3648,6 +3654,7 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionMode::QuadDerivativesKHR: return "QuadDerivativesKHR";
     case ExecutionMode::RequireFullQuadsKHR: return "RequireFullQuadsKHR";
     case ExecutionMode::SharesInputWithAMDX: return "SharesInputWithAMDX";
+    case ExecutionMode::ArithmeticPoisonKHR: return "ArithmeticPoisonKHR";
     case ExecutionMode::OutputLinesEXT: return "OutputLinesEXT";
     case ExecutionMode::OutputPrimitivesEXT: return "OutputPrimitivesEXT";
     case ExecutionMode::DerivativeGroupQuadsKHR: return "DerivativeGroupQuadsKHR";
@@ -4359,6 +4366,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::BFloat16CooperativeMatrixKHR: return "BFloat16CooperativeMatrixKHR";
     case Capability::DescriptorHeapEXT: return "DescriptorHeapEXT";
     case Capability::ConstantDataKHR: return "ConstantDataKHR";
+    case Capability::PoisonFreezeKHR: return "PoisonFreezeKHR";
     case Capability::SampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case Capability::GeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case Capability::ShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -5148,6 +5156,8 @@ inline const char* OpToString(Op value) {
     case Op::OpConstantSizeOfEXT: return "OpConstantSizeOfEXT";
     case Op::OpConstantDataKHR: return "OpConstantDataKHR";
     case Op::OpSpecConstantDataKHR: return "OpSpecConstantDataKHR";
+    case Op::OpPoisonKHR: return "OpPoisonKHR";
+    case Op::OpFreezeKHR: return "OpFreezeKHR";
     case Op::OpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";
     case Op::OpHitObjectRecordHitWithIndexMotionNV: return "OpHitObjectRecordHitWithIndexMotionNV";
     case Op::OpHitObjectRecordMissMotionNV: return "OpHitObjectRecordMissMotionNV";
