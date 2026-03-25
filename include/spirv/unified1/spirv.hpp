@@ -175,6 +175,7 @@ enum ExecutionMode {
     ExecutionModeQuadDerivativesKHR = 5088,
     ExecutionModeRequireFullQuadsKHR = 5089,
     ExecutionModeSharesInputWithAMDX = 5102,
+    ExecutionModeArithmeticPoisonKHR = 5157,
     ExecutionModeOutputLinesEXT = 5269,
     ExecutionModeOutputLinesNV = 5269,
     ExecutionModeOutputPrimitivesEXT = 5270,
@@ -1197,6 +1198,7 @@ enum Capability {
     CapabilityBFloat16DotProductKHR = 5117,
     CapabilityBFloat16CooperativeMatrixKHR = 5118,
     CapabilityDescriptorHeapEXT = 5128,
+    CapabilityPoisonFreezeKHR = 5156,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
     CapabilityGeometryShaderPassthroughNV = 5251,
     CapabilityShaderViewportIndexLayerEXT = 5254,
@@ -2159,6 +2161,8 @@ enum Op {
     OpUntypedImageTexelPointerEXT = 5126,
     OpMemberDecorateIdEXT = 5127,
     OpConstantSizeOfEXT = 5129,
+    OpPoisonKHR = 5158,
+    OpFreezeKHR = 5159,
     OpHitObjectRecordHitMotionNV = 5249,
     OpHitObjectRecordHitWithIndexMotionNV = 5250,
     OpHitObjectRecordMissMotionNV = 5251,
@@ -3083,6 +3087,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpUntypedImageTexelPointerEXT: *hasResult = true; *hasResultType = true; break;
     case OpMemberDecorateIdEXT: *hasResult = false; *hasResultType = false; break;
     case OpConstantSizeOfEXT: *hasResult = true; *hasResultType = true; break;
+    case OpPoisonKHR: *hasResult = true; *hasResultType = true; break;
+    case OpFreezeKHR: *hasResult = true; *hasResultType = true; break;
     case OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -3642,6 +3648,7 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeQuadDerivativesKHR: return "QuadDerivativesKHR";
     case ExecutionModeRequireFullQuadsKHR: return "RequireFullQuadsKHR";
     case ExecutionModeSharesInputWithAMDX: return "SharesInputWithAMDX";
+    case ExecutionModeArithmeticPoisonKHR: return "ArithmeticPoisonKHR";
     case ExecutionModeOutputLinesEXT: return "OutputLinesEXT";
     case ExecutionModeOutputPrimitivesEXT: return "OutputPrimitivesEXT";
     case ExecutionModeDerivativeGroupQuadsKHR: return "DerivativeGroupQuadsKHR";
@@ -4351,6 +4358,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityBFloat16DotProductKHR: return "BFloat16DotProductKHR";
     case CapabilityBFloat16CooperativeMatrixKHR: return "BFloat16CooperativeMatrixKHR";
     case CapabilityDescriptorHeapEXT: return "DescriptorHeapEXT";
+    case CapabilityPoisonFreezeKHR: return "PoisonFreezeKHR";
     case CapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case CapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case CapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -5138,6 +5146,8 @@ inline const char* OpToString(Op value) {
     case OpUntypedImageTexelPointerEXT: return "OpUntypedImageTexelPointerEXT";
     case OpMemberDecorateIdEXT: return "OpMemberDecorateIdEXT";
     case OpConstantSizeOfEXT: return "OpConstantSizeOfEXT";
+    case OpPoisonKHR: return "OpPoisonKHR";
+    case OpFreezeKHR: return "OpFreezeKHR";
     case OpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";
     case OpHitObjectRecordHitWithIndexMotionNV: return "OpHitObjectRecordHitWithIndexMotionNV";
     case OpHitObjectRecordMissMotionNV: return "OpHitObjectRecordMissMotionNV";
