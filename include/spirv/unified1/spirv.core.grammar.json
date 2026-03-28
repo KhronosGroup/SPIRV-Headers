@@ -5719,6 +5719,17 @@
       "version" : "None"
     },
     {
+      "opname" : "OpAbortKHR",
+      "class"  : "Control-Flow",
+      "opcode" : 5121,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Message Type" },
+        { "kind" : "IdRef", "name" : "Message'" }
+      ],
+      "capabilities" : [ "AbortKHR" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpUntypedImageTexelPointerEXT",
       "class"  : "Memory",
       "opcode" : 5126,
@@ -17635,6 +17646,12 @@
           "value" : 5118,
           "capabilities" : [ "BFloat16TypeKHR", "CooperativeMatrixKHR" ],
           "extensions" : [ "SPV_KHR_bfloat16" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AbortKHR",
+          "value" : 5120,
+          "extensions" : [ "SPV_KHR_abort" ],
           "version" : "None"
         },
         {

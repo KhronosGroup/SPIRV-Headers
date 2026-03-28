@@ -1197,6 +1197,7 @@ enum class Capability : unsigned {
     BFloat16TypeKHR = 5116,
     BFloat16DotProductKHR = 5117,
     BFloat16CooperativeMatrixKHR = 5118,
+    AbortKHR = 5120,
     DescriptorHeapEXT = 5128,
     PoisonFreezeKHR = 5156,
     SampleMaskOverrideCoverageNV = 5249,
@@ -2158,6 +2159,7 @@ enum class Op : unsigned {
     OpGroupNonUniformQuadAnyKHR = 5111,
     OpTypeBufferEXT = 5115,
     OpBufferPointerEXT = 5119,
+    OpAbortKHR = 5121,
     OpUntypedImageTexelPointerEXT = 5126,
     OpMemberDecorateIdEXT = 5127,
     OpConstantSizeOfEXT = 5129,
@@ -3084,6 +3086,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpGroupNonUniformQuadAnyKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpTypeBufferEXT: *hasResult = true; *hasResultType = false; break;
     case Op::OpBufferPointerEXT: *hasResult = true; *hasResultType = true; break;
+    case Op::OpAbortKHR: *hasResult = false; *hasResultType = false; break;
     case Op::OpUntypedImageTexelPointerEXT: *hasResult = true; *hasResultType = true; break;
     case Op::OpMemberDecorateIdEXT: *hasResult = false; *hasResultType = false; break;
     case Op::OpConstantSizeOfEXT: *hasResult = true; *hasResultType = true; break;
@@ -4357,6 +4360,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::BFloat16TypeKHR: return "BFloat16TypeKHR";
     case Capability::BFloat16DotProductKHR: return "BFloat16DotProductKHR";
     case Capability::BFloat16CooperativeMatrixKHR: return "BFloat16CooperativeMatrixKHR";
+    case Capability::AbortKHR: return "AbortKHR";
     case Capability::DescriptorHeapEXT: return "DescriptorHeapEXT";
     case Capability::PoisonFreezeKHR: return "PoisonFreezeKHR";
     case Capability::SampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
@@ -5143,6 +5147,7 @@ inline const char* OpToString(Op value) {
     case Op::OpGroupNonUniformQuadAnyKHR: return "OpGroupNonUniformQuadAnyKHR";
     case Op::OpTypeBufferEXT: return "OpTypeBufferEXT";
     case Op::OpBufferPointerEXT: return "OpBufferPointerEXT";
+    case Op::OpAbortKHR: return "OpAbortKHR";
     case Op::OpUntypedImageTexelPointerEXT: return "OpUntypedImageTexelPointerEXT";
     case Op::OpMemberDecorateIdEXT: return "OpMemberDecorateIdEXT";
     case Op::OpConstantSizeOfEXT: return "OpConstantSizeOfEXT";
