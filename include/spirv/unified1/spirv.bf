@@ -577,7 +577,7 @@ namespace Spv
             PayloadDispatchIndirectAMDX = 5105,
             ArrayStrideIdEXT = 5124,
             OffsetIdEXT = 5125,
-            UTFCodePointsKHR = 5145,
+            UTFEncodedKHR = 5145,
             OverrideCoverageNV = 5248,
             PassthroughNV = 5250,
             ViewportRelativeNV = 5252,

@@ -564,7 +564,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationPayloadDispatchIndirectAMDX = 5105,
     SpvDecorationArrayStrideIdEXT = 5124,
     SpvDecorationOffsetIdEXT = 5125,
-    SpvDecorationUTFCodePointsKHR = 5145,
+    SpvDecorationUTFEncodedKHR = 5145,
     SpvDecorationOverrideCoverageNV = 5248,
     SpvDecorationPassthroughNV = 5250,
     SpvDecorationViewportRelativeNV = 5252,
@@ -3976,7 +3976,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationPayloadDispatchIndirectAMDX: return "PayloadDispatchIndirectAMDX";
     case SpvDecorationArrayStrideIdEXT: return "ArrayStrideIdEXT";
     case SpvDecorationOffsetIdEXT: return "OffsetIdEXT";
-    case SpvDecorationUTFCodePointsKHR: return "UTFCodePointsKHR";
+    case SpvDecorationUTFEncodedKHR: return "UTFEncodedKHR";
     case SpvDecorationOverrideCoverageNV: return "OverrideCoverageNV";
     case SpvDecorationPassthroughNV: return "PassthroughNV";
     case SpvDecorationViewportRelativeNV: return "ViewportRelativeNV";

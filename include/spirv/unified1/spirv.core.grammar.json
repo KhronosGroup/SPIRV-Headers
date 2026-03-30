@@ -15156,7 +15156,7 @@
           "version" : "None"
         },
         {
-          "enumerant" : "UTFCodePointsKHR",
+          "enumerant" : "UTFEncodedKHR",
           "value" : 5145,
           "capabilities" : [ "ConstantDataKHR" ],
           "version" : "None"
