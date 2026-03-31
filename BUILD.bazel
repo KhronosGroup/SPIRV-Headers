@@ -94,6 +94,11 @@ filegroup(
 )
 
 filegroup(
+    name = "spirv_ext_inst_nonsemantic_debugdescriptor_grammar_unified1",
+    srcs = ["include/spirv/unified1/extinst.nonsemantic.debugdescriptor.grammar.json"],
+)
+
+filegroup(
     name = "spirv_ext_inst_opencl_debuginfo_100_grammar_unified1",
     srcs = ["include/spirv/unified1/extinst.opencl.debuginfo.100.grammar.json"],
 )
@@ -146,6 +151,7 @@ cc_library(
         "include/spirv/unified1/GLSL.std.450.h",
         "include/spirv/unified1/NonSemanticClspvReflection.h",
         "include/spirv/unified1/NonSemanticDebugPrintf.h",
+        "include/spirv/unified1/NonSemanticDebugDescriptor.h",
         "include/spirv/unified1/NonSemanticShaderDebugInfo100.h",
         "include/spirv/unified1/NonSemanticVkspReflection.h",
         "include/spirv/unified1/OpenCL.std.h",
