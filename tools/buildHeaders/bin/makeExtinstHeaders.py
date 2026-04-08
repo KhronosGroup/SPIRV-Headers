@@ -28,6 +28,7 @@ mk_extinst('AMD_shader_trinary_minmax', 'extinst.spv-amd-shader-trinary-minmax.g
 mk_extinst('NonSemanticDebugPrintf', 'extinst.nonsemantic.debugprintf.grammar.json')
 mk_extinst('NonSemanticClspvReflection', 'extinst.nonsemantic.clspvreflection.grammar.json')
 mk_extinst('NonSemanticDebugBreak', 'extinst.nonsemantic.debugbreak.grammar.json')
+mk_extinst('NonSemanticDebugDescriptor', 'extinst.nonsemantic.debugdescriptor.grammar.json')
 mk_extinst('NonSemanticVkspReflection', 'extinst.nonsemantic.vkspreflection.grammar.json')
 mk_extinst('TOSA', 'extinst.tosa.001000.1.grammar.json', 'TOSA.001000.1')
 mk_extinst('ArmMotionEngine', 'extinst.arm.motion-engine.100.grammar.json', 'ArmMotionEngine.100')

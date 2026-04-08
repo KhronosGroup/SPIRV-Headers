@@ -1,0 +1,45 @@
+{
+  "revision" : 1,
+  "instructions" : [
+    {
+      "opname" : "DebugDescriptor",
+      "opcode" : 1,
+      "operands" : [
+        { "kind" : "IdRef",        "name" : "Variable" },
+        { "kind" : "IdRef",        "name" : "Index" },
+        { "kind" : "IdRef",        "name" : "Option" }
+      ]
+    },
+    {
+      "opname" : "DebugDescriptorAll",
+      "opcode" : 2,
+      "operands" : [
+        { "kind" : "IdRef",        "name" : "Option" }
+      ]
+    }
+  ],
+  "operand_kinds" : [
+    {
+      "category" : "ValueEnum",
+      "kind" : "DebugOption",
+      "enumerants" : [
+        {
+          "enumerant" : "None",
+          "value" : 0
+        },
+        {
+          "enumerant" : "FunctionReturn",
+          "value" : 1
+        },
+        {
+          "enumerant" : "ShaderAbort",
+          "value" : 2
+        },
+        {
+          "enumerant" : "UseNullValue",
+          "value" : 3
+        }
+      ]
+    }
+  ]
+}
