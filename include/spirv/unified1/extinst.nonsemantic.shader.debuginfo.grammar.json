@@ -8,8 +8,8 @@
     "HEADER INFORMATION ARE LOCATED AT https://www.khronos.org/registry/ ",
     ""
   ],
-  "version" : 100,
-  "revision" : 6,
+  "version" : 101,
+  "revision" : 1,
   "instructions" : [
     {
       "opname" : "DebugInfoNone",
@@ -32,7 +32,8 @@
         { "kind" : "IdRef", "name" : "Name" },
         { "kind" : "IdRef", "name" : "Size" },
         { "kind" : "IdRef", "name" : "Encoding" },
-        { "kind" : "IdRef", "name" : "Flags" }
+        { "kind" : "IdRef", "name" : "Flags" },
+        { "kind" : "IdRef", "name" : "FPEncoding", "quantifier" : "?" }
       ]
     },
     {
@@ -441,6 +442,25 @@
         { "kind" : "IdRef", "name" : "Vector Type" },
         { "kind" : "IdRef", "name" : "Vector Count" },
         { "kind" : "IdRef", "name" : "Column Major" }
+      ]
+    },
+    {
+      "opname" : "DebugTypeVectorIdEXT",
+      "opcode" : 109,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Component Type" },
+        { "kind" : "IdRef", "name" : "Component Count" }
+      ]
+    },
+    {
+      "opname" : "DebugTypeCooperativeMatrixKHR",
+      "opcode" : 110,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Component Type" },
+        { "kind" : "IdRef", "name" : "Scope" },
+        { "kind" : "IdRef", "name" : "Rows" },
+        { "kind" : "IdRef", "name" : "Columns" },
+        { "kind" : "IdRef", "name" : "Use" }
       ]
     }
   ],
