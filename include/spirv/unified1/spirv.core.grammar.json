@@ -5775,7 +5775,7 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "LiteralString", "name" : "Data" }
+        { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "Data" }
       ],
       "capabilities" : [ "ConstantDataKHR" ],
       "version" : "None"
@@ -5787,7 +5787,7 @@
       "operands" : [
         { "kind" : "IdResultType" },
         { "kind" : "IdResult" },
-        { "kind" : "LiteralString", "name" : "Data" }
+        { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "Data" }
       ],
       "capabilities" : [ "ConstantDataKHR" ],
       "version" : "None"
