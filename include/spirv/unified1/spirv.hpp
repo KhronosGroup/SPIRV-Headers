@@ -471,6 +471,7 @@ enum LinkageType {
     LinkageTypeExport = 0,
     LinkageTypeImport = 1,
     LinkageTypeLinkOnceODR = 2,
+    LinkageTypeWeak = 3,
     LinkageTypeMax = 0x7fffffff,
 };
 
@@ -3881,6 +3882,7 @@ inline const char* LinkageTypeToString(LinkageType value) {
     case LinkageTypeExport: return "Export";
     case LinkageTypeImport: return "Import";
     case LinkageTypeLinkOnceODR: return "LinkOnceODR";
+    case LinkageTypeWeak: return "Weak";
     default: return "Unknown";
     }
 }

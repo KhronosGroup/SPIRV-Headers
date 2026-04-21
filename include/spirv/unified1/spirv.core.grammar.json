@@ -14568,6 +14568,13 @@
           "capabilities" : [ "Linkage" ],
           "extensions" : [ "SPV_KHR_linkonce_odr" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "Weak",
+          "value" : 3,
+          "capabilities" : [ "Linkage" ],
+          "extensions" : [ "SPV_AMD_weak_linkage" ],
+          "version" : "None"
         }
       ]
     },

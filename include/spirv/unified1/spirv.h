@@ -475,6 +475,7 @@ typedef enum SpvLinkageType_ {
     SpvLinkageTypeExport = 0,
     SpvLinkageTypeImport = 1,
     SpvLinkageTypeLinkOnceODR = 2,
+    SpvLinkageTypeWeak = 3,
     SpvLinkageTypeMax = 0x7fffffff,
 } SpvLinkageType;
 
@@ -3885,6 +3886,7 @@ inline const char* SpvLinkageTypeToString(SpvLinkageType value) {
     case SpvLinkageTypeExport: return "Export";
     case SpvLinkageTypeImport: return "Import";
     case SpvLinkageTypeLinkOnceODR: return "LinkOnceODR";
+    case SpvLinkageTypeWeak: return "Weak";
     default: return "Unknown";
     }
 }
