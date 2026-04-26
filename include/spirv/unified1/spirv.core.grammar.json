@@ -18201,6 +18201,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "CooperativeMatrixDecodeVectorNV",
+          "value" : 5447,
+          "capabilities" : [ "CooperativeMatrixBlockLoadsNV" ],
+          "extensions" : [ "SPV_NV_cooperative_matrix_decode_vector" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "SubgroupShuffleINTEL",
           "value" : 5568,
           "extensions" : [ "SPV_INTEL_subgroups" ],
@@ -19034,6 +19041,15 @@
             { "kind" : "IdRef" }
           ],
           "capabilities" : [ "CooperativeMatrixBlockLoadsNV" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DecodeVectorFunc",
+          "value" : "0x0004",
+          "parameters" : [
+            { "kind" : "IdRef" }
+          ],
+          "capabilities" : [ "CooperativeMatrixDecodeVectorNV" ],
           "version" : "None"
         }
       ]

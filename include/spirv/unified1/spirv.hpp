@@ -1291,6 +1291,7 @@ enum Capability {
     CapabilityCooperativeVectorTrainingNV = 5435,
     CapabilityRayTracingClusterAccelerationStructureNV = 5437,
     CapabilityTensorAddressingNV = 5439,
+    CapabilityCooperativeMatrixDecodeVectorNV = 5447,
     CapabilitySubgroupShuffleINTEL = 5568,
     CapabilitySubgroupBufferBlockIOINTEL = 5569,
     CapabilitySubgroupImageBlockIOINTEL = 5570,
@@ -1579,6 +1580,7 @@ enum TensorClampMode {
 enum TensorAddressingOperandsShift {
     TensorAddressingOperandsTensorViewShift = 0,
     TensorAddressingOperandsDecodeFuncShift = 1,
+    TensorAddressingOperandsDecodeVectorFuncShift = 2,
     TensorAddressingOperandsMax = 0x7fffffff,
 };
 
@@ -1586,6 +1588,7 @@ enum TensorAddressingOperandsMask {
     TensorAddressingOperandsMaskNone = 0,
     TensorAddressingOperandsTensorViewMask = 0x00000001,
     TensorAddressingOperandsDecodeFuncMask = 0x00000002,
+    TensorAddressingOperandsDecodeVectorFuncMask = 0x00000004,
 };
 
 enum TensorOperandsShift {
@@ -4453,6 +4456,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityCooperativeVectorTrainingNV: return "CooperativeVectorTrainingNV";
     case CapabilityRayTracingClusterAccelerationStructureNV: return "RayTracingClusterAccelerationStructureNV";
     case CapabilityTensorAddressingNV: return "TensorAddressingNV";
+    case CapabilityCooperativeMatrixDecodeVectorNV: return "CooperativeMatrixDecodeVectorNV";
     case CapabilitySubgroupShuffleINTEL: return "SubgroupShuffleINTEL";
     case CapabilitySubgroupBufferBlockIOINTEL: return "SubgroupBufferBlockIOINTEL";
     case CapabilitySubgroupImageBlockIOINTEL: return "SubgroupImageBlockIOINTEL";

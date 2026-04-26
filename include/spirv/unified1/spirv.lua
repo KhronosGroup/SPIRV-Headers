@@ -1282,6 +1282,7 @@ spv = {
         CooperativeVectorTrainingNV = 5435,
         RayTracingClusterAccelerationStructureNV = 5437,
         TensorAddressingNV = 5439,
+        CooperativeMatrixDecodeVectorNV = 5447,
         SubgroupShuffleINTEL = 5568,
         SubgroupBufferBlockIOINTEL = 5569,
         SubgroupImageBlockIOINTEL = 5570,
@@ -1570,6 +1571,7 @@ spv = {
     TensorAddressingOperandsShift = {
         TensorView = 0,
         DecodeFunc = 1,
+        DecodeVectorFunc = 2,
         Max = 0x7fffffff,
     },
 
@@ -1577,6 +1579,7 @@ spv = {
         MaskNone = 0,
         TensorView = 0x00000001,
         DecodeFunc = 0x00000002,
+        DecodeVectorFunc = 0x00000004,
     },
 
     TensorOperandsShift = {

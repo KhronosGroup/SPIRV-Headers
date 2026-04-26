@@ -1295,6 +1295,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityCooperativeVectorTrainingNV = 5435,
     SpvCapabilityRayTracingClusterAccelerationStructureNV = 5437,
     SpvCapabilityTensorAddressingNV = 5439,
+    SpvCapabilityCooperativeMatrixDecodeVectorNV = 5447,
     SpvCapabilitySubgroupShuffleINTEL = 5568,
     SpvCapabilitySubgroupBufferBlockIOINTEL = 5569,
     SpvCapabilitySubgroupImageBlockIOINTEL = 5570,
@@ -1583,6 +1584,7 @@ typedef enum SpvTensorClampMode_ {
 typedef enum SpvTensorAddressingOperandsShift_ {
     SpvTensorAddressingOperandsTensorViewShift = 0,
     SpvTensorAddressingOperandsDecodeFuncShift = 1,
+    SpvTensorAddressingOperandsDecodeVectorFuncShift = 2,
     SpvTensorAddressingOperandsMax = 0x7fffffff,
 } SpvTensorAddressingOperandsShift;
 
@@ -1590,6 +1592,7 @@ typedef enum SpvTensorAddressingOperandsMask_ {
     SpvTensorAddressingOperandsMaskNone = 0,
     SpvTensorAddressingOperandsTensorViewMask = 0x00000001,
     SpvTensorAddressingOperandsDecodeFuncMask = 0x00000002,
+    SpvTensorAddressingOperandsDecodeVectorFuncMask = 0x00000004,
 } SpvTensorAddressingOperandsMask;
 
 typedef enum SpvTensorOperandsShift_ {
@@ -4457,6 +4460,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityCooperativeVectorTrainingNV: return "CooperativeVectorTrainingNV";
     case SpvCapabilityRayTracingClusterAccelerationStructureNV: return "RayTracingClusterAccelerationStructureNV";
     case SpvCapabilityTensorAddressingNV: return "TensorAddressingNV";
+    case SpvCapabilityCooperativeMatrixDecodeVectorNV: return "CooperativeMatrixDecodeVectorNV";
     case SpvCapabilitySubgroupShuffleINTEL: return "SubgroupShuffleINTEL";
     case SpvCapabilitySubgroupBufferBlockIOINTEL: return "SubgroupBufferBlockIOINTEL";
     case SpvCapabilitySubgroupImageBlockIOINTEL: return "SubgroupImageBlockIOINTEL";
