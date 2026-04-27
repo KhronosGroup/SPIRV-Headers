@@ -1392,6 +1392,7 @@ enum class Capability : unsigned {
     UntypedVariableLengthArrayINTEL = 6243,
     SpecConditionalINTEL = 6245,
     FunctionVariantsINTEL = 6246,
+    PredicatedIOINTEL = 6257,
     GroupUniformArithmeticKHR = 6400,
     TensorFloat32RoundingINTEL = 6425,
     MaskedGatherScatterINTEL = 6427,
@@ -2624,6 +2625,8 @@ enum class Op : unsigned {
     OpSpecConstantArchitectureINTEL = 6252,
     OpSpecConstantCapabilitiesINTEL = 6253,
     OpConditionalCopyObjectINTEL = 6254,
+    OpPredicatedLoadINTEL = 6258,
+    OpPredicatedStoreINTEL = 6259,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -3506,6 +3509,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpSpecConstantArchitectureINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpSpecConstantCapabilitiesINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpConditionalCopyObjectINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpPredicatedLoadINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpPredicatedStoreINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -4513,6 +4518,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::UntypedVariableLengthArrayINTEL: return "UntypedVariableLengthArrayINTEL";
     case Capability::SpecConditionalINTEL: return "SpecConditionalINTEL";
     case Capability::FunctionVariantsINTEL: return "FunctionVariantsINTEL";
+    case Capability::PredicatedIOINTEL: return "PredicatedIOINTEL";
     case Capability::GroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case Capability::TensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";
     case Capability::MaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
@@ -5571,6 +5577,8 @@ inline const char* OpToString(Op value) {
     case Op::OpSpecConstantArchitectureINTEL: return "OpSpecConstantArchitectureINTEL";
     case Op::OpSpecConstantCapabilitiesINTEL: return "OpSpecConstantCapabilitiesINTEL";
     case Op::OpConditionalCopyObjectINTEL: return "OpConditionalCopyObjectINTEL";
+    case Op::OpPredicatedLoadINTEL: return "OpPredicatedLoadINTEL";
+    case Op::OpPredicatedStoreINTEL: return "OpPredicatedStoreINTEL";
     case Op::OpGroupIMulKHR: return "OpGroupIMulKHR";
     case Op::OpGroupFMulKHR: return "OpGroupFMulKHR";
     case Op::OpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";
