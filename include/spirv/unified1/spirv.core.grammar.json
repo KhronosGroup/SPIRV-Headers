@@ -11599,6 +11599,34 @@
       "version" : "None"
     },
     {
+      "opname" : "OpPredicatedLoadINTEL",
+      "class"  : "Memory",
+      "opcode" : 6258,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                          "name" : "Pointer" },
+        { "kind" : "IdRef",                          "name" : "Predicate" },
+        { "kind" : "IdRef",                          "name" : "Default Value" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "PredicatedIOINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpPredicatedStoreINTEL",
+      "class"  : "Memory",
+      "opcode" : 6259,
+      "operands" : [
+        { "kind" : "IdRef",                          "name" : "Pointer" },
+        { "kind" : "IdRef",                          "name" : "Object" },
+        { "kind" : "IdRef",                          "name" : "Predicate" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "PredicatedIOINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpGroupIMulKHR",
       "class"  : "Group",
       "opcode" : 6401,
@@ -18658,6 +18686,12 @@
           "extensions" : [ "SPV_INTEL_function_variants" ],
           "provisional" : true,
           "version": "None"
+        },
+        {
+          "enumerant" : "PredicatedIOINTEL",
+          "value" : 6257,
+          "extensions" : [ "SPV_INTEL_predicated_io" ],
+          "version" : "None"
         },
         {
           "enumerant" : "GroupUniformArithmeticKHR",

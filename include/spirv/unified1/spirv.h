@@ -1396,6 +1396,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityUntypedVariableLengthArrayINTEL = 6243,
     SpvCapabilitySpecConditionalINTEL = 6245,
     SpvCapabilityFunctionVariantsINTEL = 6246,
+    SpvCapabilityPredicatedIOINTEL = 6257,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,
     SpvCapabilityTensorFloat32RoundingINTEL = 6425,
     SpvCapabilityMaskedGatherScatterINTEL = 6427,
@@ -2628,6 +2629,8 @@ typedef enum SpvOp_ {
     SpvOpSpecConstantArchitectureINTEL = 6252,
     SpvOpSpecConstantCapabilitiesINTEL = 6253,
     SpvOpConditionalCopyObjectINTEL = 6254,
+    SpvOpPredicatedLoadINTEL = 6258,
+    SpvOpPredicatedStoreINTEL = 6259,
     SpvOpGroupIMulKHR = 6401,
     SpvOpGroupFMulKHR = 6402,
     SpvOpGroupBitwiseAndKHR = 6403,
@@ -3510,6 +3513,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpSpecConstantArchitectureINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSpecConstantCapabilitiesINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpConditionalCopyObjectINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpPredicatedLoadINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpPredicatedStoreINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -4517,6 +4522,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityUntypedVariableLengthArrayINTEL: return "UntypedVariableLengthArrayINTEL";
     case SpvCapabilitySpecConditionalINTEL: return "SpecConditionalINTEL";
     case SpvCapabilityFunctionVariantsINTEL: return "FunctionVariantsINTEL";
+    case SpvCapabilityPredicatedIOINTEL: return "PredicatedIOINTEL";
     case SpvCapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case SpvCapabilityTensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";
     case SpvCapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
@@ -5575,6 +5581,8 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpSpecConstantArchitectureINTEL: return "OpSpecConstantArchitectureINTEL";
     case SpvOpSpecConstantCapabilitiesINTEL: return "OpSpecConstantCapabilitiesINTEL";
     case SpvOpConditionalCopyObjectINTEL: return "OpConditionalCopyObjectINTEL";
+    case SpvOpPredicatedLoadINTEL: return "OpPredicatedLoadINTEL";
+    case SpvOpPredicatedStoreINTEL: return "OpPredicatedStoreINTEL";
     case SpvOpGroupIMulKHR: return "OpGroupIMulKHR";
     case SpvOpGroupFMulKHR: return "OpGroupFMulKHR";
     case SpvOpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";
