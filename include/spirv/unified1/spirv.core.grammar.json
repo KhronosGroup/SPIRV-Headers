@@ -6505,7 +6505,8 @@
         { "kind" : "IdRef", "name" : "Hit Object" },
         { "kind" : "IdRef", "name" : "Ray Query" },
         { "kind" : "IdRef", "name" : "SBT Record Index" },
-        { "kind" : "IdRef", "name" : "Hit Object Attributes" }
+        { "kind" : "IdRef", "name" : "Hit Object Attributes" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Hit Kind" }
       ],
       "capabilities" : [ "ShaderInvocationReorderEXT" ],
       "version" : "None"
