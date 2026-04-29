@@ -18694,6 +18694,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "RoundedDivideSqrtINTEL",
+          "value" : 6265,
+          "extensions" : [ "SPV_INTEL_rounded_divide_sqrt" ],
+          "version": "None"
+        },
+        {
           "enumerant" : "GroupUniformArithmeticKHR",
           "value" : 6400,
           "extensions" : [ "SPV_KHR_uniform_group_instructions"],

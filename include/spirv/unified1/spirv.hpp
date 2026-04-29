@@ -1393,6 +1393,7 @@ enum Capability {
     CapabilitySpecConditionalINTEL = 6245,
     CapabilityFunctionVariantsINTEL = 6246,
     CapabilityPredicatedIOINTEL = 6257,
+    CapabilityRoundedDivideSqrtINTEL = 6265,
     CapabilityGroupUniformArithmeticKHR = 6400,
     CapabilityTensorFloat32RoundingINTEL = 6425,
     CapabilityMaskedGatherScatterINTEL = 6427,
@@ -4519,6 +4520,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilitySpecConditionalINTEL: return "SpecConditionalINTEL";
     case CapabilityFunctionVariantsINTEL: return "FunctionVariantsINTEL";
     case CapabilityPredicatedIOINTEL: return "PredicatedIOINTEL";
+    case CapabilityRoundedDivideSqrtINTEL: return "RoundedDivideSqrtINTEL";
     case CapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case CapabilityTensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";
     case CapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";

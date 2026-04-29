@@ -1426,6 +1426,7 @@ namespace Spv
             SpecConditionalINTEL = 6245,
             FunctionVariantsINTEL = 6246,
             PredicatedIOINTEL = 6257,
+            RoundedDivideSqrtINTEL = 6265,
             GroupUniformArithmeticKHR = 6400,
             TensorFloat32RoundingINTEL = 6425,
             MaskedGatherScatterINTEL = 6427,
