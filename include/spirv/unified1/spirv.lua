@@ -462,6 +462,7 @@ spv = {
         Export = 0,
         Import = 1,
         LinkOnceODR = 2,
+        Weak = 3,
         Max = 0x7fffffff,
     },
 
