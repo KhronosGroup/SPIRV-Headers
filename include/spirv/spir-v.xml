@@ -179,13 +179,14 @@
     <ids type="enumerant" start="6784" end="6911" vendor="Intel" comment="Contact mariusz.merecki@intel.com"/>
     <ids type="enumerant" start="6912" end="6975" vendor="Valve" comment="Contact michael.blumenkrantz@gmail.com"/>
     <ids type="enumerant" start="6976" end="7039" vendor="Broadcom" comment="Contact gleese@broadcom.com"/>
+    <ids type="enumerant" start="7040" end="7103" vendor="Samsung" comment="Contact r.potter@samsung.com"/>
     <!-- Enumerants to reserve for future use. To get a block, allocate
          multiples of 64 starting at the lowest available point in this
          block and add a corresponding <ids> tag immediately above. Make
          sure to fill in the vendor attribute, and preferably add a contact
          person/address in a comment attribute. -->
     <!-- Example new block: <ids type="enumerant" start="XXXX" end="XXXX+64n-1" vendor="Add vendor" comment="Contact TBD"/> -->
-    <ids type="enumerant" start="7040" end="4294967295" comment="Enumerant range reservable for future use by vendors"/>
+    <ids type="enumerant" start="7104" end="4294967295" comment="Enumerant range reservable for future use by vendors"/>
     <!-- End reservations of enumerants -->
 
 
