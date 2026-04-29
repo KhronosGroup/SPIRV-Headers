@@ -743,6 +743,7 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInSubgroupLocalInvocationId = 41,
     SpvBuiltInVertexIndex = 42,
     SpvBuiltInInstanceIndex = 43,
+    SpvBuiltInFragmentCoverageMaskMESA = 4096,
     SpvBuiltInCoreIDARM = 4160,
     SpvBuiltInCoreCountARM = 4161,
     SpvBuiltInCoreMaxIDARM = 4162,
@@ -1139,6 +1140,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityShaderLayer = 69,
     SpvCapabilityShaderViewportIndex = 70,
     SpvCapabilityUniformDecoration = 71,
+    SpvCapabilityFragmentCoverageMESA = 4097,
     SpvCapabilityCoreBuiltinsARM = 4165,
     SpvCapabilityTileImageColorReadAccessEXT = 4166,
     SpvCapabilityTileImageDepthReadAccessEXT = 4167,
@@ -4118,6 +4120,7 @@ inline const char* SpvBuiltInToString(SpvBuiltIn value) {
     case SpvBuiltInSubgroupLocalInvocationId: return "SubgroupLocalInvocationId";
     case SpvBuiltInVertexIndex: return "VertexIndex";
     case SpvBuiltInInstanceIndex: return "InstanceIndex";
+    case SpvBuiltInFragmentCoverageMaskMESA: return "FragmentCoverageMaskMESA";
     case SpvBuiltInCoreIDARM: return "CoreIDARM";
     case SpvBuiltInCoreCountARM: return "CoreCountARM";
     case SpvBuiltInCoreMaxIDARM: return "CoreMaxIDARM";
@@ -4316,6 +4319,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityShaderLayer: return "ShaderLayer";
     case SpvCapabilityShaderViewportIndex: return "ShaderViewportIndex";
     case SpvCapabilityUniformDecoration: return "UniformDecoration";
+    case SpvCapabilityFragmentCoverageMESA: return "FragmentCoverageMESA";
     case SpvCapabilityCoreBuiltinsARM: return "CoreBuiltinsARM";
     case SpvCapabilityTileImageColorReadAccessEXT: return "TileImageColorReadAccessEXT";
     case SpvCapabilityTileImageDepthReadAccessEXT: return "TileImageDepthReadAccessEXT";
