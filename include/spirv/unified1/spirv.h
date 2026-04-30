@@ -3489,7 +3489,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpTypeStructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpSpecConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
-    case SpvOpCompositeConstructContinuedINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCompositeConstructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpConvertFToBF16INTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;

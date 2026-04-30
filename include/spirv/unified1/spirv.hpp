@@ -3485,7 +3485,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpTypeStructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case OpConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSpecConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
-    case OpCompositeConstructContinuedINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpCompositeConstructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case OpConvertFToBF16INTEL: *hasResult = true; *hasResultType = true; break;
     case OpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
     case OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
