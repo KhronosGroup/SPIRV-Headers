@@ -289,7 +289,8 @@
     <!-- Reserved image operand bits -->
     <ids type="ImageOperand" start="0" end="15" vendor="Khronos" comment="Reserved ImageOperand bits, not available to vendors - see the SPIR-V Specification"/>
     <ids type="ImageOperand" start="16" end="16" vendor="Nvidia" comment="Contact pmistry@nvidia.com"/>
-    <ids type="ImageOperand" start="17" end="30" comment="Unreserved bits reservable for use by vendors"/>
+    <ids type="ImageOperand" start="17" end="17" vendor="Google" comment="Contact syoussefi@google.com"/>
+    <ids type="ImageOperand" start="18" end="30" comment="Unreserved bits reservable for use by vendors"/>
     <ids type="ImageOperand" start="31" end="31" vendor="Khronos" comment="Reserved ImageOperand bit, not available to vendors"/>
 
 </registry>
