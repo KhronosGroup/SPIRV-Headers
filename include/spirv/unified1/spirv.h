@@ -3464,8 +3464,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpFixedExpALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpPtrCastToCrossWorkgroupALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpCrossWorkgroupCastToPtrALTERA: *hasResult = true; *hasResultType = true; break;
-    case SpvOpReadPipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
-    case SpvOpWritePipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
+    case SpvOpReadPipeBlockingALTERA: *hasResult = false; *hasResultType = false; break;
+    case SpvOpWritePipeBlockingALTERA: *hasResult = false; *hasResultType = false; break;
     case SpvOpFPGARegALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpRayQueryGetRayTMinKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpRayQueryGetRayFlagsKHR: *hasResult = true; *hasResultType = true; break;

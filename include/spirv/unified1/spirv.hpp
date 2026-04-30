@@ -3460,8 +3460,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFixedExpALTERA: *hasResult = true; *hasResultType = true; break;
     case OpPtrCastToCrossWorkgroupALTERA: *hasResult = true; *hasResultType = true; break;
     case OpCrossWorkgroupCastToPtrALTERA: *hasResult = true; *hasResultType = true; break;
-    case OpReadPipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
-    case OpWritePipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpReadPipeBlockingALTERA: *hasResult = false; *hasResultType = false; break;
+    case OpWritePipeBlockingALTERA: *hasResult = false; *hasResultType = false; break;
     case OpFPGARegALTERA: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetRayTMinKHR: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetRayFlagsKHR: *hasResult = true; *hasResultType = true; break;
