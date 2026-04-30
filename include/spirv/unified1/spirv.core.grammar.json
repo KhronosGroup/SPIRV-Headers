@@ -11223,8 +11223,6 @@
       "class"  : "Composite",
       "opcode" : 6096,
       "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
         { "kind" : "IdRef",        "quantifier" : "*", "name" : "Constituents" }
       ],
       "capabilities" : [ "LongCompositesINTEL" ],
