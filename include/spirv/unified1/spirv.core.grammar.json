@@ -12549,9 +12549,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "ForceOpacityMicromap2StateEXT",
+          "enumerant" : "ForceOpacityMicromap2StateKHR",
+          "aliases" : [ "ForceOpacityMicromap2StateEXT" ],
           "value" : "0x0400",
-          "capabilities" : [ "RayTracingOpacityMicromapEXT" ],
+          "capabilities" : [ "RayTracingOpacityMicromapKHR" ],
           "version" : "None"
         }
       ]
@@ -13574,6 +13575,15 @@
             { "kind" : "IdRef", "name" : "Fast-Math Mode" }
                 ],
           "capabilities" : [ "FloatControls2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "OpacityMicromapIdKHR",
+          "value" : 6031,
+          "capabilities" : [ "RayTracingOpacityMicromapExecutionModeKHR" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "Enable" }
+          ],
           "version" : "None"
         },
         {
@@ -18049,10 +18059,11 @@
           "version" : "None"
         },
         {
-          "enumerant" : "RayTracingOpacityMicromapEXT",
+          "enumerant" : "RayTracingOpacityMicromapKHR",
+          "aliases" : ["RayTracingOpacityMicromapEXT"],
           "value" : 5381,
           "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_EXT_opacity_micromap" ],
+          "extensions" : ["SPV_KHR_opacity_micromap", "SPV_EXT_opacity_micromap"],
           "version" : "None"
         },
         {
@@ -18527,6 +18538,13 @@
           "enumerant" : "FMAKHR",
           "value" : 6030,
           "extensions" : [ "SPV_KHR_fma" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RayTracingOpacityMicromapExecutionModeKHR",
+          "value" : 6032,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_KHR_opacity_micromap" ],
           "version" : "None"
         },
         {
