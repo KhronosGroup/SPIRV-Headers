@@ -14570,9 +14570,9 @@
           "version" : "None"
         },
         {
-          "enumerant" : "Weak",
+          "enumerant" : "WeakAMD",
           "value" : 3,
-          "capabilities" : [ "Linkage" ],
+          "capabilities" : [ "WeakLinkageAMD" ],
           "extensions" : [ "SPV_AMD_weak_linkage" ],
           "version" : "None"
         }
@@ -17644,6 +17644,13 @@
           "capabilities" : [ "Shader" ],
           "extensions" : [ "SPV_AMDX_shader_enqueue" ],
           "provisional" : true,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "WeakLinkageAMD",
+          "value" : 5085,
+          "capabilities" : [ "Linkage" ],
+          "extensions" : [ "SPV_AMD_weak_linkage" ],
           "version" : "None"
         },
         {

@@ -475,7 +475,7 @@ typedef enum SpvLinkageType_ {
     SpvLinkageTypeExport = 0,
     SpvLinkageTypeImport = 1,
     SpvLinkageTypeLinkOnceODR = 2,
-    SpvLinkageTypeWeak = 3,
+    SpvLinkageTypeWeakAMD = 3,
     SpvLinkageTypeMax = 0x7fffffff,
 } SpvLinkageType;
 
@@ -1197,6 +1197,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityInt64ImageEXT = 5016,
     SpvCapabilityShaderClockKHR = 5055,
     SpvCapabilityShaderEnqueueAMDX = 5067,
+    SpvCapabilityWeakLinkageAMD = 5085,
     SpvCapabilityQuadControlKHR = 5087,
     SpvCapabilityInt4TypeINTEL = 5112,
     SpvCapabilityInt4CooperativeMatrixINTEL = 5114,
@@ -3886,7 +3887,7 @@ inline const char* SpvLinkageTypeToString(SpvLinkageType value) {
     case SpvLinkageTypeExport: return "Export";
     case SpvLinkageTypeImport: return "Import";
     case SpvLinkageTypeLinkOnceODR: return "LinkOnceODR";
-    case SpvLinkageTypeWeak: return "Weak";
+    case SpvLinkageTypeWeakAMD: return "WeakAMD";
     default: return "Unknown";
     }
 }
@@ -4367,6 +4368,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityInt64ImageEXT: return "Int64ImageEXT";
     case SpvCapabilityShaderClockKHR: return "ShaderClockKHR";
     case SpvCapabilityShaderEnqueueAMDX: return "ShaderEnqueueAMDX";
+    case SpvCapabilityWeakLinkageAMD: return "WeakLinkageAMD";
     case SpvCapabilityQuadControlKHR: return "QuadControlKHR";
     case SpvCapabilityInt4TypeINTEL: return "Int4TypeINTEL";
     case SpvCapabilityInt4CooperativeMatrixINTEL: return "Int4CooperativeMatrixINTEL";

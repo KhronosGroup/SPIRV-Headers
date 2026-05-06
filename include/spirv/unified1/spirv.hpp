@@ -471,7 +471,7 @@ enum LinkageType {
     LinkageTypeExport = 0,
     LinkageTypeImport = 1,
     LinkageTypeLinkOnceODR = 2,
-    LinkageTypeWeak = 3,
+    LinkageTypeWeakAMD = 3,
     LinkageTypeMax = 0x7fffffff,
 };
 
@@ -1193,6 +1193,7 @@ enum Capability {
     CapabilityInt64ImageEXT = 5016,
     CapabilityShaderClockKHR = 5055,
     CapabilityShaderEnqueueAMDX = 5067,
+    CapabilityWeakLinkageAMD = 5085,
     CapabilityQuadControlKHR = 5087,
     CapabilityInt4TypeINTEL = 5112,
     CapabilityInt4CooperativeMatrixINTEL = 5114,
@@ -3882,7 +3883,7 @@ inline const char* LinkageTypeToString(LinkageType value) {
     case LinkageTypeExport: return "Export";
     case LinkageTypeImport: return "Import";
     case LinkageTypeLinkOnceODR: return "LinkOnceODR";
-    case LinkageTypeWeak: return "Weak";
+    case LinkageTypeWeakAMD: return "WeakAMD";
     default: return "Unknown";
     }
 }
@@ -4363,6 +4364,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityInt64ImageEXT: return "Int64ImageEXT";
     case CapabilityShaderClockKHR: return "ShaderClockKHR";
     case CapabilityShaderEnqueueAMDX: return "ShaderEnqueueAMDX";
+    case CapabilityWeakLinkageAMD: return "WeakLinkageAMD";
     case CapabilityQuadControlKHR: return "QuadControlKHR";
     case CapabilityInt4TypeINTEL: return "Int4TypeINTEL";
     case CapabilityInt4CooperativeMatrixINTEL: return "Int4CooperativeMatrixINTEL";

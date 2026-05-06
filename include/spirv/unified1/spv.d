@@ -487,7 +487,7 @@ enum LinkageType : uint
     Export = 0,
     Import = 1,
     LinkOnceODR = 2,
-    Weak = 3,
+    WeakAMD = 3,
     Max = 0x7fffffff,
 }
 
@@ -1229,6 +1229,7 @@ enum Capability : uint
     Int64ImageEXT = 5016,
     ShaderClockKHR = 5055,
     ShaderEnqueueAMDX = 5067,
+    WeakLinkageAMD = 5085,
     QuadControlKHR = 5087,
     Int4TypeINTEL = 5112,
     Int4CooperativeMatrixINTEL = 5114,
