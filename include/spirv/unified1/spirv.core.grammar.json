@@ -14573,7 +14573,6 @@
           "enumerant" : "WeakAMD",
           "value" : 3,
           "capabilities" : [ "WeakLinkageAMD" ],
-          "extensions" : [ "SPV_AMD_weak_linkage" ],
           "version" : "None"
         }
       ]
