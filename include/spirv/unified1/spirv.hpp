@@ -1186,6 +1186,8 @@ enum Capability {
     CapabilityTileShadingQCOM = 4495,
     CapabilityCooperativeMatrixConversionQCOM = 4496,
     CapabilityTextureBlockMatch2QCOM = 4498,
+    CapabilityImageGatherLinearQCOM = 4543,
+    CapabilityImageGatherExtendedModesQCOM = 4544,
     CapabilityFloat16ImageAMD = 5008,
     CapabilityImageGatherBiasLodAMD = 5009,
     CapabilityFragmentMaskAMD = 5010,
@@ -1720,6 +1722,14 @@ enum ComponentType {
     ComponentTypeMax = 0x7fffffff,
 };
 
+enum GatherModes {
+    GatherModesGather4x1QCOM = 0,
+    GatherModesGatherDQCOM = 1,
+    GatherModesGatherH2QCOM = 2,
+    GatherModesGatherV2QCOM = 3,
+    GatherModesMax = 0x7fffffff,
+};
+
 enum Op {
     OpNop = 0,
     OpUndef = 1,
@@ -2142,6 +2152,7 @@ enum Op {
     OpCompositeConstructCoopMatQCOM = 4540,
     OpCompositeExtractCoopMatQCOM = 4541,
     OpExtractSubArrayQCOM = 4542,
+    OpImageGatherQCOM = 4545,
     OpGroupIAddNonUniformAMD = 5000,
     OpGroupFAddNonUniformAMD = 5001,
     OpGroupFMinNonUniformAMD = 5002,
@@ -3073,6 +3084,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpCompositeConstructCoopMatQCOM: *hasResult = true; *hasResultType = true; break;
     case OpCompositeExtractCoopMatQCOM: *hasResult = true; *hasResultType = true; break;
     case OpExtractSubArrayQCOM: *hasResult = true; *hasResultType = true; break;
+    case OpImageGatherQCOM: *hasResult = true; *hasResultType = true; break;
     case OpGroupIAddNonUniformAMD: *hasResult = true; *hasResultType = true; break;
     case OpGroupFAddNonUniformAMD: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMinNonUniformAMD: *hasResult = true; *hasResultType = true; break;
@@ -4363,6 +4375,8 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityTileShadingQCOM: return "TileShadingQCOM";
     case CapabilityCooperativeMatrixConversionQCOM: return "CooperativeMatrixConversionQCOM";
     case CapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
+    case CapabilityImageGatherLinearQCOM: return "ImageGatherLinearQCOM";
+    case CapabilityImageGatherExtendedModesQCOM: return "ImageGatherExtendedModesQCOM";
     case CapabilityFloat16ImageAMD: return "Float16ImageAMD";
     case CapabilityImageGatherBiasLodAMD: return "ImageGatherBiasLodAMD";
     case CapabilityFragmentMaskAMD: return "FragmentMaskAMD";
@@ -4723,6 +4737,16 @@ inline const char* ComponentTypeToString(ComponentType value) {
     case ComponentTypeUnsignedInt8PackedNV: return "UnsignedInt8PackedNV";
     case ComponentTypeFloatE4M3NV: return "FloatE4M3NV";
     case ComponentTypeFloatE5M2NV: return "FloatE5M2NV";
+    default: return "Unknown";
+    }
+}
+
+inline const char* GatherModesToString(GatherModes value) {
+    switch (value) {
+    case GatherModesGather4x1QCOM: return "Gather4x1QCOM";
+    case GatherModesGatherDQCOM: return "GatherDQCOM";
+    case GatherModesGatherH2QCOM: return "GatherH2QCOM";
+    case GatherModesGatherV2QCOM: return "GatherV2QCOM";
     default: return "Unknown";
     }
 }
@@ -5144,6 +5168,7 @@ inline const char* OpToString(Op value) {
     case OpCompositeConstructCoopMatQCOM: return "OpCompositeConstructCoopMatQCOM";
     case OpCompositeExtractCoopMatQCOM: return "OpCompositeExtractCoopMatQCOM";
     case OpExtractSubArrayQCOM: return "OpExtractSubArrayQCOM";
+    case OpImageGatherQCOM: return "OpImageGatherQCOM";
     case OpGroupIAddNonUniformAMD: return "OpGroupIAddNonUniformAMD";
     case OpGroupFAddNonUniformAMD: return "OpGroupFAddNonUniformAMD";
     case OpGroupFMinNonUniformAMD: return "OpGroupFMinNonUniformAMD";

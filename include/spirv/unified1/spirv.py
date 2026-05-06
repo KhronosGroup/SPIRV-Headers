@@ -1148,6 +1148,8 @@ spv = {
         'TileShadingQCOM' : 4495,
         'CooperativeMatrixConversionQCOM' : 4496,
         'TextureBlockMatch2QCOM' : 4498,
+        'ImageGatherLinearQCOM' : 4543,
+        'ImageGatherExtendedModesQCOM' : 4544,
         'Float16ImageAMD' : 5008,
         'ImageGatherBiasLodAMD' : 5009,
         'FragmentMaskAMD' : 5010,
@@ -1654,6 +1656,13 @@ spv = {
         'FloatE5M2NV' : 1000491003,
     },
 
+    'GatherModes' : {
+        'Gather4x1QCOM' : 0,
+        'GatherDQCOM' : 1,
+        'GatherH2QCOM' : 2,
+        'GatherV2QCOM' : 3,
+    },
+
     'Op' : {
         'OpNop' : 0,
         'OpUndef' : 1,
@@ -2076,6 +2085,7 @@ spv = {
         'OpCompositeConstructCoopMatQCOM' : 4540,
         'OpCompositeExtractCoopMatQCOM' : 4541,
         'OpExtractSubArrayQCOM' : 4542,
+        'OpImageGatherQCOM' : 4545,
         'OpGroupIAddNonUniformAMD' : 5000,
         'OpGroupFAddNonUniformAMD' : 5001,
         'OpGroupFMinNonUniformAMD' : 5002,

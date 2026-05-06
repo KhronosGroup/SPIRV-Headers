@@ -1220,6 +1220,8 @@ namespace Spv
             TileShadingQCOM = 4495,
             CooperativeMatrixConversionQCOM = 4496,
             TextureBlockMatch2QCOM = 4498,
+            ImageGatherLinearQCOM = 4543,
+            ImageGatherExtendedModesQCOM = 4544,
             Float16ImageAMD = 5008,
             ImageGatherBiasLodAMD = 5009,
             FragmentMaskAMD = 5010,
@@ -1789,6 +1791,15 @@ namespace Spv
             Max = 0x7fffffff,
         }
 
+        [AllowDuplicates, CRepr] public enum GatherModes
+        {
+            Gather4x1QCOM = 0,
+            GatherDQCOM = 1,
+            GatherH2QCOM = 2,
+            GatherV2QCOM = 3,
+            Max = 0x7fffffff,
+        }
+
         [AllowDuplicates, CRepr] public enum Op
         {
             OpNop = 0,
@@ -2212,6 +2223,7 @@ namespace Spv
             OpCompositeConstructCoopMatQCOM = 4540,
             OpCompositeExtractCoopMatQCOM = 4541,
             OpExtractSubArrayQCOM = 4542,
+            OpImageGatherQCOM = 4545,
             OpGroupIAddNonUniformAMD = 5000,
             OpGroupFAddNonUniformAMD = 5001,
             OpGroupFMinNonUniformAMD = 5002,
