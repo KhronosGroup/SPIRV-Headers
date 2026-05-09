@@ -685,6 +685,7 @@ spv = {
         ConditionalINTEL = 6247,
         CacheControlLoadINTEL = 6442,
         CacheControlStoreINTEL = 6443,
+        IntrinsicSAMSUNG = 7040,
         Max = 0x7fffffff,
     },
 

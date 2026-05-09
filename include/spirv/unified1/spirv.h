@@ -698,6 +698,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationConditionalINTEL = 6247,
     SpvDecorationCacheControlLoadINTEL = 6442,
     SpvDecorationCacheControlStoreINTEL = 6443,
+    SpvDecorationIntrinsicSAMSUNG = 7040,
     SpvDecorationMax = 0x7fffffff,
 } SpvDecoration;
 
@@ -4073,6 +4074,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationConditionalINTEL: return "ConditionalINTEL";
     case SpvDecorationCacheControlLoadINTEL: return "CacheControlLoadINTEL";
     case SpvDecorationCacheControlStoreINTEL: return "CacheControlStoreINTEL";
+    case SpvDecorationIntrinsicSAMSUNG: return "IntrinsicSAMSUNG";
     default: return "Unknown";
     }
 }

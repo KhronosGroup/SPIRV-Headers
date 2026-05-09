@@ -15922,6 +15922,14 @@
             { "kind" : "StoreCacheControl", "name" : "Cache Control" }
           ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "IntrinsicSAMSUNG",
+          "value" : 7040,
+          "parameters": [
+            { "kind" : "LiteralInteger", "name" : "Intrinsic ID" }
+          ],
+          "version" : "None"
         }
       ]
     },

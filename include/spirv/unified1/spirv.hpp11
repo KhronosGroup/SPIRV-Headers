@@ -694,6 +694,7 @@ enum class Decoration : unsigned {
     ConditionalINTEL = 6247,
     CacheControlLoadINTEL = 6442,
     CacheControlStoreINTEL = 6443,
+    IntrinsicSAMSUNG = 7040,
     Max = 0x7fffffff,
 };
 
@@ -4069,6 +4070,7 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::ConditionalINTEL: return "ConditionalINTEL";
     case Decoration::CacheControlLoadINTEL: return "CacheControlLoadINTEL";
     case Decoration::CacheControlStoreINTEL: return "CacheControlStoreINTEL";
+    case Decoration::IntrinsicSAMSUNG: return "IntrinsicSAMSUNG";
     default: return "Unknown";
     }
 }
