@@ -10803,8 +10803,8 @@
       "aliases" : [ "OpReadPipeBlockingINTEL" ],
       "opcode" : 5946,
       "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Pipe" },
+        { "kind" : "IdRef", "name" : "Pointer" },
         { "kind" : "IdRef", "name" : "Packet Size" },
         { "kind" : "IdRef", "name" : "Packet Alignment" }
       ],
@@ -10817,8 +10817,8 @@
       "aliases" : [ "OpWritePipeBlockingINTEL" ],
       "opcode" : 5947,
       "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Pipe" },
+        { "kind" : "IdRef", "name" : "Pointer" },
         { "kind" : "IdRef", "name" : "Packet Size" },
         { "kind" : "IdRef", "name" : "Packet Alignment" }
       ],
