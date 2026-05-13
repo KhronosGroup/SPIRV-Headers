@@ -1193,7 +1193,6 @@ enum Capability {
     CapabilityInt64ImageEXT = 5016,
     CapabilityShaderClockKHR = 5055,
     CapabilityShaderEnqueueAMDX = 5067,
-    CapabilityWeakLinkageAMD = 5085,
     CapabilityQuadControlKHR = 5087,
     CapabilityInt4TypeINTEL = 5112,
     CapabilityInt4CooperativeMatrixINTEL = 5114,
@@ -1204,6 +1203,7 @@ enum Capability {
     CapabilityDescriptorHeapEXT = 5128,
     CapabilityConstantDataKHR = 5146,
     CapabilityPoisonFreezeKHR = 5156,
+    CapabilityWeakLinkageAMD = 5181,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
     CapabilityGeometryShaderPassthroughNV = 5251,
     CapabilityShaderViewportIndexLayerEXT = 5254,
@@ -4364,7 +4364,6 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityInt64ImageEXT: return "Int64ImageEXT";
     case CapabilityShaderClockKHR: return "ShaderClockKHR";
     case CapabilityShaderEnqueueAMDX: return "ShaderEnqueueAMDX";
-    case CapabilityWeakLinkageAMD: return "WeakLinkageAMD";
     case CapabilityQuadControlKHR: return "QuadControlKHR";
     case CapabilityInt4TypeINTEL: return "Int4TypeINTEL";
     case CapabilityInt4CooperativeMatrixINTEL: return "Int4CooperativeMatrixINTEL";
@@ -4375,6 +4374,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityDescriptorHeapEXT: return "DescriptorHeapEXT";
     case CapabilityConstantDataKHR: return "ConstantDataKHR";
     case CapabilityPoisonFreezeKHR: return "PoisonFreezeKHR";
+    case CapabilityWeakLinkageAMD: return "WeakLinkageAMD";
     case CapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case CapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case CapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";

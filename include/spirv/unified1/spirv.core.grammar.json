@@ -17646,13 +17646,6 @@
           "version" : "None"
         },
         {
-          "enumerant" : "WeakLinkageAMD",
-          "value" : 5085,
-          "capabilities" : [ "Linkage" ],
-          "extensions" : [ "SPV_AMD_weak_linkage" ],
-          "version" : "None"
-        },
-        {
           "enumerant" : "QuadControlKHR",
           "value" : 5087,
           "extensions" : [ "SPV_KHR_quad_control" ],
@@ -17715,6 +17708,13 @@
           "value" : 5156,
           "extensions" : [ "SPV_KHR_poison_freeze" ],
           "provisional" : true,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "WeakLinkageAMD",
+          "value" : 5181,
+          "capabilities" : [ "Linkage" ],
+          "extensions" : [ "SPV_AMD_weak_linkage" ],
           "version" : "None"
         },
         {

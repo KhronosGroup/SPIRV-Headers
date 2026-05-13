@@ -1197,7 +1197,6 @@ typedef enum SpvCapability_ {
     SpvCapabilityInt64ImageEXT = 5016,
     SpvCapabilityShaderClockKHR = 5055,
     SpvCapabilityShaderEnqueueAMDX = 5067,
-    SpvCapabilityWeakLinkageAMD = 5085,
     SpvCapabilityQuadControlKHR = 5087,
     SpvCapabilityInt4TypeINTEL = 5112,
     SpvCapabilityInt4CooperativeMatrixINTEL = 5114,
@@ -1208,6 +1207,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityDescriptorHeapEXT = 5128,
     SpvCapabilityConstantDataKHR = 5146,
     SpvCapabilityPoisonFreezeKHR = 5156,
+    SpvCapabilityWeakLinkageAMD = 5181,
     SpvCapabilitySampleMaskOverrideCoverageNV = 5249,
     SpvCapabilityGeometryShaderPassthroughNV = 5251,
     SpvCapabilityShaderViewportIndexLayerEXT = 5254,
@@ -4368,7 +4368,6 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityInt64ImageEXT: return "Int64ImageEXT";
     case SpvCapabilityShaderClockKHR: return "ShaderClockKHR";
     case SpvCapabilityShaderEnqueueAMDX: return "ShaderEnqueueAMDX";
-    case SpvCapabilityWeakLinkageAMD: return "WeakLinkageAMD";
     case SpvCapabilityQuadControlKHR: return "QuadControlKHR";
     case SpvCapabilityInt4TypeINTEL: return "Int4TypeINTEL";
     case SpvCapabilityInt4CooperativeMatrixINTEL: return "Int4CooperativeMatrixINTEL";
@@ -4379,6 +4378,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityDescriptorHeapEXT: return "DescriptorHeapEXT";
     case SpvCapabilityConstantDataKHR: return "ConstantDataKHR";
     case SpvCapabilityPoisonFreezeKHR: return "PoisonFreezeKHR";
+    case SpvCapabilityWeakLinkageAMD: return "WeakLinkageAMD";
     case SpvCapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case SpvCapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case SpvCapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
