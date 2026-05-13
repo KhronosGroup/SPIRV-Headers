@@ -740,7 +740,6 @@ enum BuiltIn {
     BuiltInSubgroupLocalInvocationId = 41,
     BuiltInVertexIndex = 42,
     BuiltInInstanceIndex = 43,
-    BuiltInFragmentCoverageMaskMESA = 4096,
     BuiltInCoreIDARM = 4160,
     BuiltInCoreCountARM = 4161,
     BuiltInCoreMaxIDARM = 4162,
@@ -1137,7 +1136,6 @@ enum Capability {
     CapabilityShaderLayer = 69,
     CapabilityShaderViewportIndex = 70,
     CapabilityUniformDecoration = 71,
-    CapabilityFragmentCoverageMESA = 4097,
     CapabilityCoreBuiltinsARM = 4165,
     CapabilityTileImageColorReadAccessEXT = 4166,
     CapabilityTileImageDepthReadAccessEXT = 4167,
@@ -4119,7 +4117,6 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltInSubgroupLocalInvocationId: return "SubgroupLocalInvocationId";
     case BuiltInVertexIndex: return "VertexIndex";
     case BuiltInInstanceIndex: return "InstanceIndex";
-    case BuiltInFragmentCoverageMaskMESA: return "FragmentCoverageMaskMESA";
     case BuiltInCoreIDARM: return "CoreIDARM";
     case BuiltInCoreCountARM: return "CoreCountARM";
     case BuiltInCoreMaxIDARM: return "CoreMaxIDARM";
@@ -4318,7 +4315,6 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityShaderLayer: return "ShaderLayer";
     case CapabilityShaderViewportIndex: return "ShaderViewportIndex";
     case CapabilityUniformDecoration: return "UniformDecoration";
-    case CapabilityFragmentCoverageMESA: return "FragmentCoverageMESA";
     case CapabilityCoreBuiltinsARM: return "CoreBuiltinsARM";
     case CapabilityTileImageColorReadAccessEXT: return "TileImageColorReadAccessEXT";
     case CapabilityTileImageDepthReadAccessEXT: return "TileImageDepthReadAccessEXT";

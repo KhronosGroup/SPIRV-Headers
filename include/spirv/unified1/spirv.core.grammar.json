@@ -16176,12 +16176,6 @@
           "version": "1.0"
         },
         {
-          "enumerant" : "FragmentCoverageMaskMESA",
-          "value" : 4096,
-          "capabilities" : [ "FragmentCoverageMESA" ],
-          "version" : "None"
-        },
-        {
           "enumerant" : "CoreIDARM",
           "value" : 4160,
           "capabilities" : [ "CoreBuiltinsARM" ],
@@ -17319,13 +17313,6 @@
           "enumerant" : "UniformDecoration",
           "value" : 71,
           "version" : "1.6"
-        },
-        {
-          "enumerant" : "FragmentCoverageMESA",
-          "value" : 4097,
-          "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_MESA_fragment_coverage_mask" ],
-          "version" : "None"
         },
         {
           "enumerant" : "CoreBuiltinsARM",
