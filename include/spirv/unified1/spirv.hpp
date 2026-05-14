@@ -175,6 +175,7 @@ enum ExecutionMode {
     ExecutionModeQuadDerivativesKHR = 5088,
     ExecutionModeRequireFullQuadsKHR = 5089,
     ExecutionModeSharesInputWithAMDX = 5102,
+    ExecutionModeArithmeticPoisonKHR = 5157,
     ExecutionModeOutputLinesEXT = 5269,
     ExecutionModeOutputLinesNV = 5269,
     ExecutionModeOutputPrimitivesEXT = 5270,
@@ -204,6 +205,7 @@ enum ExecutionMode {
     ExecutionModeSchedulerTargetFmaxMhzINTEL = 5903,
     ExecutionModeMaximallyReconvergesKHR = 6023,
     ExecutionModeFPFastMathDefault = 6028,
+    ExecutionModeOpacityMicromapIdKHR = 6031,
     ExecutionModeStreamingInterfaceINTEL = 6154,
     ExecutionModeRegisterMapInterfaceINTEL = 6160,
     ExecutionModeNamedBarrierCountINTEL = 6417,
@@ -470,6 +472,7 @@ enum LinkageType {
     LinkageTypeExport = 0,
     LinkageTypeImport = 1,
     LinkageTypeLinkOnceODR = 2,
+    LinkageTypeWeakAMD = 3,
     LinkageTypeMax = 0x7fffffff,
 };
 
@@ -559,6 +562,7 @@ enum Decoration {
     DecorationPayloadDispatchIndirectAMDX = 5105,
     DecorationArrayStrideIdEXT = 5124,
     DecorationOffsetIdEXT = 5125,
+    DecorationUTFEncodedKHR = 5145,
     DecorationOverrideCoverageNV = 5248,
     DecorationPassthroughNV = 5250,
     DecorationViewportRelativeNV = 5252,
@@ -1196,7 +1200,11 @@ enum Capability {
     CapabilityBFloat16TypeKHR = 5116,
     CapabilityBFloat16DotProductKHR = 5117,
     CapabilityBFloat16CooperativeMatrixKHR = 5118,
+    CapabilityAbortKHR = 5120,
     CapabilityDescriptorHeapEXT = 5128,
+    CapabilityConstantDataKHR = 5146,
+    CapabilityPoisonFreezeKHR = 5156,
+    CapabilityWeakLinkageAMD = 5181,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
     CapabilityGeometryShaderPassthroughNV = 5251,
     CapabilityShaderViewportIndexLayerEXT = 5254,
@@ -1261,6 +1269,7 @@ enum Capability {
     CapabilityDemoteToHelperInvocationEXT = 5379,
     CapabilityDisplacementMicromapNV = 5380,
     CapabilityRayTracingOpacityMicromapEXT = 5381,
+    CapabilityRayTracingOpacityMicromapKHR = 5381,
     CapabilityShaderInvocationReorderNV = 5383,
     CapabilityShaderInvocationReorderEXT = 5388,
     CapabilityBindlessTextureNV = 5390,
@@ -1355,6 +1364,7 @@ enum Capability {
     CapabilityGroupNonUniformRotateKHR = 6026,
     CapabilityFloatControls2 = 6029,
     CapabilityFMAKHR = 6030,
+    CapabilityRayTracingOpacityMicromapExecutionModeKHR = 6032,
     CapabilityAtomicFloat32AddEXT = 6033,
     CapabilityAtomicFloat64AddEXT = 6034,
     CapabilityLongCompositesINTEL = 6089,
@@ -1387,6 +1397,8 @@ enum Capability {
     CapabilityUntypedVariableLengthArrayINTEL = 6243,
     CapabilitySpecConditionalINTEL = 6245,
     CapabilityFunctionVariantsINTEL = 6246,
+    CapabilityPredicatedIOINTEL = 6257,
+    CapabilityRoundedDivideSqrtINTEL = 6265,
     CapabilityGroupUniformArithmeticKHR = 6400,
     CapabilityTensorFloat32RoundingINTEL = 6425,
     CapabilityMaskedGatherScatterINTEL = 6427,
@@ -1413,6 +1425,7 @@ enum RayFlagsShift {
     RayFlagsSkipTrianglesKHRShift = 8,
     RayFlagsSkipAABBsKHRShift = 9,
     RayFlagsForceOpacityMicromap2StateEXTShift = 10,
+    RayFlagsForceOpacityMicromap2StateKHRShift = 10,
     RayFlagsMax = 0x7fffffff,
 };
 
@@ -1430,6 +1443,7 @@ enum RayFlagsMask {
     RayFlagsSkipTrianglesKHRMask = 0x00000100,
     RayFlagsSkipAABBsKHRMask = 0x00000200,
     RayFlagsForceOpacityMicromap2StateEXTMask = 0x00000400,
+    RayFlagsForceOpacityMicromap2StateKHRMask = 0x00000400,
 };
 
 enum RayQueryIntersection {
@@ -2156,9 +2170,14 @@ enum Op {
     OpGroupNonUniformQuadAnyKHR = 5111,
     OpTypeBufferEXT = 5115,
     OpBufferPointerEXT = 5119,
+    OpAbortKHR = 5121,
     OpUntypedImageTexelPointerEXT = 5126,
     OpMemberDecorateIdEXT = 5127,
     OpConstantSizeOfEXT = 5129,
+    OpConstantDataKHR = 5147,
+    OpSpecConstantDataKHR = 5148,
+    OpPoisonKHR = 5158,
+    OpFreezeKHR = 5159,
     OpHitObjectRecordHitMotionNV = 5249,
     OpHitObjectRecordHitWithIndexMotionNV = 5250,
     OpHitObjectRecordMissMotionNV = 5251,
@@ -2614,6 +2633,8 @@ enum Op {
     OpSpecConstantArchitectureINTEL = 6252,
     OpSpecConstantCapabilitiesINTEL = 6253,
     OpConditionalCopyObjectINTEL = 6254,
+    OpPredicatedLoadINTEL = 6258,
+    OpPredicatedStoreINTEL = 6259,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -3080,9 +3101,14 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpGroupNonUniformQuadAnyKHR: *hasResult = true; *hasResultType = true; break;
     case OpTypeBufferEXT: *hasResult = true; *hasResultType = false; break;
     case OpBufferPointerEXT: *hasResult = true; *hasResultType = true; break;
+    case OpAbortKHR: *hasResult = false; *hasResultType = false; break;
     case OpUntypedImageTexelPointerEXT: *hasResult = true; *hasResultType = true; break;
     case OpMemberDecorateIdEXT: *hasResult = false; *hasResultType = false; break;
     case OpConstantSizeOfEXT: *hasResult = true; *hasResultType = true; break;
+    case OpConstantDataKHR: *hasResult = true; *hasResultType = true; break;
+    case OpSpecConstantDataKHR: *hasResult = true; *hasResultType = true; break;
+    case OpPoisonKHR: *hasResult = true; *hasResultType = true; break;
+    case OpFreezeKHR: *hasResult = true; *hasResultType = true; break;
     case OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -3439,8 +3465,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpFixedExpALTERA: *hasResult = true; *hasResultType = true; break;
     case OpPtrCastToCrossWorkgroupALTERA: *hasResult = true; *hasResultType = true; break;
     case OpCrossWorkgroupCastToPtrALTERA: *hasResult = true; *hasResultType = true; break;
-    case OpReadPipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
-    case OpWritePipeBlockingALTERA: *hasResult = true; *hasResultType = true; break;
+    case OpReadPipeBlockingALTERA: *hasResult = false; *hasResultType = false; break;
+    case OpWritePipeBlockingALTERA: *hasResult = false; *hasResultType = false; break;
     case OpFPGARegALTERA: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetRayTMinKHR: *hasResult = true; *hasResultType = true; break;
     case OpRayQueryGetRayFlagsKHR: *hasResult = true; *hasResultType = true; break;
@@ -3464,7 +3490,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpTypeStructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case OpConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSpecConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
-    case OpCompositeConstructContinuedINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpCompositeConstructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case OpConvertFToBF16INTEL: *hasResult = true; *hasResultType = true; break;
     case OpConvertBF16ToFINTEL: *hasResult = true; *hasResultType = true; break;
     case OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
@@ -3491,6 +3517,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpSpecConstantArchitectureINTEL: *hasResult = true; *hasResultType = true; break;
     case OpSpecConstantCapabilitiesINTEL: *hasResult = true; *hasResultType = true; break;
     case OpConditionalCopyObjectINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpPredicatedLoadINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpPredicatedStoreINTEL: *hasResult = false; *hasResultType = false; break;
     case OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -3642,6 +3670,7 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeQuadDerivativesKHR: return "QuadDerivativesKHR";
     case ExecutionModeRequireFullQuadsKHR: return "RequireFullQuadsKHR";
     case ExecutionModeSharesInputWithAMDX: return "SharesInputWithAMDX";
+    case ExecutionModeArithmeticPoisonKHR: return "ArithmeticPoisonKHR";
     case ExecutionModeOutputLinesEXT: return "OutputLinesEXT";
     case ExecutionModeOutputPrimitivesEXT: return "OutputPrimitivesEXT";
     case ExecutionModeDerivativeGroupQuadsKHR: return "DerivativeGroupQuadsKHR";
@@ -3666,6 +3695,7 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeSchedulerTargetFmaxMhzINTEL: return "SchedulerTargetFmaxMhzINTEL";
     case ExecutionModeMaximallyReconvergesKHR: return "MaximallyReconvergesKHR";
     case ExecutionModeFPFastMathDefault: return "FPFastMathDefault";
+    case ExecutionModeOpacityMicromapIdKHR: return "OpacityMicromapIdKHR";
     case ExecutionModeStreamingInterfaceINTEL: return "StreamingInterfaceINTEL";
     case ExecutionModeRegisterMapInterfaceINTEL: return "RegisterMapInterfaceINTEL";
     case ExecutionModeNamedBarrierCountINTEL: return "NamedBarrierCountINTEL";
@@ -3865,6 +3895,7 @@ inline const char* LinkageTypeToString(LinkageType value) {
     case LinkageTypeExport: return "Export";
     case LinkageTypeImport: return "Import";
     case LinkageTypeLinkOnceODR: return "LinkOnceODR";
+    case LinkageTypeWeakAMD: return "WeakAMD";
     default: return "Unknown";
     }
 }
@@ -3959,6 +3990,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationPayloadDispatchIndirectAMDX: return "PayloadDispatchIndirectAMDX";
     case DecorationArrayStrideIdEXT: return "ArrayStrideIdEXT";
     case DecorationOffsetIdEXT: return "OffsetIdEXT";
+    case DecorationUTFEncodedKHR: return "UTFEncodedKHR";
     case DecorationOverrideCoverageNV: return "OverrideCoverageNV";
     case DecorationPassthroughNV: return "PassthroughNV";
     case DecorationViewportRelativeNV: return "ViewportRelativeNV";
@@ -4350,7 +4382,11 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityBFloat16TypeKHR: return "BFloat16TypeKHR";
     case CapabilityBFloat16DotProductKHR: return "BFloat16DotProductKHR";
     case CapabilityBFloat16CooperativeMatrixKHR: return "BFloat16CooperativeMatrixKHR";
+    case CapabilityAbortKHR: return "AbortKHR";
     case CapabilityDescriptorHeapEXT: return "DescriptorHeapEXT";
+    case CapabilityConstantDataKHR: return "ConstantDataKHR";
+    case CapabilityPoisonFreezeKHR: return "PoisonFreezeKHR";
+    case CapabilityWeakLinkageAMD: return "WeakLinkageAMD";
     case CapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case CapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case CapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -4467,6 +4503,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityGroupNonUniformRotateKHR: return "GroupNonUniformRotateKHR";
     case CapabilityFloatControls2: return "FloatControls2";
     case CapabilityFMAKHR: return "FMAKHR";
+    case CapabilityRayTracingOpacityMicromapExecutionModeKHR: return "RayTracingOpacityMicromapExecutionModeKHR";
     case CapabilityAtomicFloat32AddEXT: return "AtomicFloat32AddEXT";
     case CapabilityAtomicFloat64AddEXT: return "AtomicFloat64AddEXT";
     case CapabilityLongCompositesINTEL: return "LongCompositesINTEL";
@@ -4493,6 +4530,8 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityUntypedVariableLengthArrayINTEL: return "UntypedVariableLengthArrayINTEL";
     case CapabilitySpecConditionalINTEL: return "SpecConditionalINTEL";
     case CapabilityFunctionVariantsINTEL: return "FunctionVariantsINTEL";
+    case CapabilityPredicatedIOINTEL: return "PredicatedIOINTEL";
+    case CapabilityRoundedDivideSqrtINTEL: return "RoundedDivideSqrtINTEL";
     case CapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case CapabilityTensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";
     case CapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
@@ -5135,9 +5174,14 @@ inline const char* OpToString(Op value) {
     case OpGroupNonUniformQuadAnyKHR: return "OpGroupNonUniformQuadAnyKHR";
     case OpTypeBufferEXT: return "OpTypeBufferEXT";
     case OpBufferPointerEXT: return "OpBufferPointerEXT";
+    case OpAbortKHR: return "OpAbortKHR";
     case OpUntypedImageTexelPointerEXT: return "OpUntypedImageTexelPointerEXT";
     case OpMemberDecorateIdEXT: return "OpMemberDecorateIdEXT";
     case OpConstantSizeOfEXT: return "OpConstantSizeOfEXT";
+    case OpConstantDataKHR: return "OpConstantDataKHR";
+    case OpSpecConstantDataKHR: return "OpSpecConstantDataKHR";
+    case OpPoisonKHR: return "OpPoisonKHR";
+    case OpFreezeKHR: return "OpFreezeKHR";
     case OpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";
     case OpHitObjectRecordHitWithIndexMotionNV: return "OpHitObjectRecordHitWithIndexMotionNV";
     case OpHitObjectRecordMissMotionNV: return "OpHitObjectRecordMissMotionNV";
@@ -5546,6 +5590,8 @@ inline const char* OpToString(Op value) {
     case OpSpecConstantArchitectureINTEL: return "OpSpecConstantArchitectureINTEL";
     case OpSpecConstantCapabilitiesINTEL: return "OpSpecConstantCapabilitiesINTEL";
     case OpConditionalCopyObjectINTEL: return "OpConditionalCopyObjectINTEL";
+    case OpPredicatedLoadINTEL: return "OpPredicatedLoadINTEL";
+    case OpPredicatedStoreINTEL: return "OpPredicatedStoreINTEL";
     case OpGroupIMulKHR: return "OpGroupIMulKHR";
     case OpGroupFMulKHR: return "OpGroupFMulKHR";
     case OpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";

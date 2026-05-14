@@ -11,7 +11,7 @@
   "magic_number" : "0x07230203",
   "major_version" : 1,
   "minor_version" : 6,
-  "revision" : 4,
+  "revision" : 7,
   "instruction_printing_class" : [
     {
       "tag"     : "@exclude"
@@ -5719,6 +5719,17 @@
       "version" : "None"
     },
     {
+      "opname" : "OpAbortKHR",
+      "class"  : "Control-Flow",
+      "opcode" : 5121,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Message Type" },
+        { "kind" : "IdRef", "name" : "Message'" }
+      ],
+      "capabilities" : [ "AbortKHR" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpUntypedImageTexelPointerEXT",
       "class"  : "Memory",
       "opcode" : 5126,
@@ -5755,6 +5766,55 @@
         { "kind" : "IdRef", "name" : "Type" }
       ],
       "capabilities": [ "DescriptorHeapEXT" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpConstantDataKHR",
+      "class"  : "Constant-Creation",
+      "opcode" : 5147,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "Data" }
+      ],
+      "capabilities" : [ "ConstantDataKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpSpecConstantDataKHR",
+      "class"  : "Constant-Creation",
+      "opcode" : 5148,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "Data" }
+      ],
+      "capabilities" : [ "ConstantDataKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpPoisonKHR",
+      "class" : "Miscellaneous",
+      "opcode" : 5158,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" }
+      ],
+      "capabilities" : [ "PoisonFreezeKHR" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpFreezeKHR",
+      "class" : "Miscellaneous",
+      "opcode" : 5159,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Value" }
+      ],
+      "capabilities" : [ "PoisonFreezeKHR" ],
+      "provisional" : true,
       "version" : "None"
     },
     {
@@ -6445,7 +6505,8 @@
         { "kind" : "IdRef", "name" : "Hit Object" },
         { "kind" : "IdRef", "name" : "Ray Query" },
         { "kind" : "IdRef", "name" : "SBT Record Index" },
-        { "kind" : "IdRef", "name" : "Hit Object Attributes" }
+        { "kind" : "IdRef", "name" : "Hit Object Attributes" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Hit Kind" }
       ],
       "capabilities" : [ "ShaderInvocationReorderEXT" ],
       "version" : "None"
@@ -10742,8 +10803,8 @@
       "aliases" : [ "OpReadPipeBlockingINTEL" ],
       "opcode" : 5946,
       "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Pipe" },
+        { "kind" : "IdRef", "name" : "Pointer" },
         { "kind" : "IdRef", "name" : "Packet Size" },
         { "kind" : "IdRef", "name" : "Packet Alignment" }
       ],
@@ -10756,8 +10817,8 @@
       "aliases" : [ "OpWritePipeBlockingINTEL" ],
       "opcode" : 5947,
       "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Pipe" },
+        { "kind" : "IdRef", "name" : "Pointer" },
         { "kind" : "IdRef", "name" : "Packet Size" },
         { "kind" : "IdRef", "name" : "Packet Alignment" }
       ],
@@ -11162,8 +11223,6 @@
       "class"  : "Composite",
       "opcode" : 6096,
       "operands" : [
-        { "kind" : "IdResultType" },
-        { "kind" : "IdResult" },
         { "kind" : "IdRef",        "quantifier" : "*", "name" : "Constituents" }
       ],
       "capabilities" : [ "LongCompositesINTEL" ],
@@ -11536,6 +11595,34 @@
       ],
       "capabilities" : [ "SpecConditionalINTEL" ],
       "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpPredicatedLoadINTEL",
+      "class"  : "Memory",
+      "opcode" : 6258,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                          "name" : "Pointer" },
+        { "kind" : "IdRef",                          "name" : "Predicate" },
+        { "kind" : "IdRef",                          "name" : "Default Value" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "PredicatedIOINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpPredicatedStoreINTEL",
+      "class"  : "Memory",
+      "opcode" : 6259,
+      "operands" : [
+        { "kind" : "IdRef",                          "name" : "Pointer" },
+        { "kind" : "IdRef",                          "name" : "Object" },
+        { "kind" : "IdRef",                          "name" : "Predicate" },
+        { "kind" : "MemoryAccess", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "PredicatedIOINTEL" ],
       "version" : "None"
     },
     {
@@ -12462,9 +12549,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "ForceOpacityMicromap2StateEXT",
+          "enumerant" : "ForceOpacityMicromap2StateKHR",
+          "aliases" : [ "ForceOpacityMicromap2StateEXT" ],
           "value" : "0x0400",
-          "capabilities" : [ "RayTracingOpacityMicromapEXT" ],
+          "capabilities" : [ "RayTracingOpacityMicromapKHR" ],
           "version" : "None"
         }
       ]
@@ -13282,6 +13370,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "ArithmeticPoisonKHR",
+          "value" : 5157,
+          "capabilities" : [ "PoisonFreezeKHR" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
           "enumerant" : "OutputLinesEXT",
           "aliases" : ["OutputLinesNV"],
           "value" : 5269,
@@ -13480,6 +13575,15 @@
             { "kind" : "IdRef", "name" : "Fast-Math Mode" }
                 ],
           "capabilities" : [ "FloatControls2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "OpacityMicromapIdKHR",
+          "value" : 6031,
+          "capabilities" : [ "RayTracingOpacityMicromapExecutionModeKHR" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "Enable" }
+          ],
           "version" : "None"
         },
         {
@@ -14501,6 +14605,12 @@
           "capabilities" : [ "Linkage" ],
           "extensions" : [ "SPV_KHR_linkonce_odr" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "WeakAMD",
+          "value" : 3,
+          "capabilities" : [ "WeakLinkageAMD" ],
+          "version" : "None"
         }
       ]
     },
@@ -15097,6 +15207,12 @@
           "parameters" : [
             { "kind" : "IdRef", "name" : "Byte Offset" }
           ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "UTFEncodedKHR",
+          "value" : 5145,
+          "capabilities" : [ "ConstantDataKHR" ],
           "version" : "None"
         },
         {
@@ -17606,10 +17722,36 @@
           "version" : "None"
         },
         {
+          "enumerant" : "AbortKHR",
+          "value" : 5120,
+          "extensions" : [ "SPV_KHR_abort" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "DescriptorHeapEXT",
           "value": 5128,
           "capabilities" : [ "UntypedPointersKHR" ],
           "extensions" : [ "SPV_EXT_descriptor_heap" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ConstantDataKHR",
+          "value" : 5146,
+          "extensions" : [ "SPV_KHR_constant_data" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "PoisonFreezeKHR",
+          "value" : 5156,
+          "extensions" : [ "SPV_KHR_poison_freeze" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "WeakLinkageAMD",
+          "value" : 5181,
+          "capabilities" : [ "Linkage" ],
+          "extensions" : [ "SPV_AMD_weak_linkage" ],
           "version" : "None"
         },
         {
@@ -17917,10 +18059,11 @@
           "version" : "None"
         },
         {
-          "enumerant" : "RayTracingOpacityMicromapEXT",
+          "enumerant" : "RayTracingOpacityMicromapKHR",
+          "aliases" : ["RayTracingOpacityMicromapEXT"],
           "value" : 5381,
           "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_EXT_opacity_micromap" ],
+          "extensions" : ["SPV_KHR_opacity_micromap", "SPV_EXT_opacity_micromap"],
           "version" : "None"
         },
         {
@@ -18398,6 +18541,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "RayTracingOpacityMicromapExecutionModeKHR",
+          "value" : 6032,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_KHR_opacity_micromap" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "AtomicFloat32AddEXT",
           "value" : 6033,
           "extensions" : [ "SPV_EXT_shader_atomic_float_add" ],
@@ -18565,6 +18715,18 @@
           "capabilities" : [ "SpecConditionalINTEL" ],
           "extensions" : [ "SPV_INTEL_function_variants" ],
           "provisional" : true,
+          "version": "None"
+        },
+        {
+          "enumerant" : "PredicatedIOINTEL",
+          "value" : 6257,
+          "extensions" : [ "SPV_INTEL_predicated_io" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RoundedDivideSqrtINTEL",
+          "value" : 6265,
+          "extensions" : [ "SPV_INTEL_rounded_divide_sqrt" ],
           "version": "None"
         },
         {
