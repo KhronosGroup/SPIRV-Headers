@@ -18728,9 +18728,49 @@
           "version": "None"
         },
         {
+          "enumerant" : "AtomicBFloat16AddINTEL",
+          "value" : 6255,
+          "capabilities" : [ "BFloat16TypeKHR" ],
+          "extensions" : [ "SPV_INTEL_16bit_atomics" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AtomicBFloat16MinMaxINTEL",
+          "value" : 6256,
+          "capabilities" : [ "BFloat16TypeKHR" ],
+          "extensions" : [ "SPV_INTEL_16bit_atomics" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
           "enumerant" : "PredicatedIOINTEL",
           "value" : 6257,
           "extensions" : [ "SPV_INTEL_predicated_io" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AtomicInt16CompareExchangeINTEL",
+          "value" : 6260,
+          "capabilities" : [ "Int16" ],
+          "extensions" : [ "SPV_INTEL_16bit_atomics" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Int16AtomicsINTEL",
+          "value" : 6261,
+          "capabilities" : [ "AtomicInt16CompareExchangeINTEL" ],
+          "extensions" : [ "SPV_INTEL_16bit_atomics" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AtomicBFloat16LoadStoreINTEL",
+          "value" : 6262,
+          "capabilities" : [ "BFloat16TypeKHR" ],
+          "extensions" : [ "SPV_INTEL_16bit_atomics" ],
+          "provisional" : true,
           "version" : "None"
         },
         {
