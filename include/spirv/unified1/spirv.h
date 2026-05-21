@@ -1415,6 +1415,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityGlobalVariableFPGADecorationsALTERA = 6189,
     SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6189,
     SpvCapabilitySubgroupBufferPrefetchINTEL = 6220,
+    SpvCapabilityBFloat16ArithmeticEXT = 6226,
     SpvCapabilitySubgroup2DBlockIOINTEL = 6228,
     SpvCapabilitySubgroup2DBlockTransformINTEL = 6229,
     SpvCapabilitySubgroup2DBlockTransposeINTEL = 6230,
@@ -4590,6 +4591,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case SpvCapabilityGlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
     case SpvCapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
+    case SpvCapabilityBFloat16ArithmeticEXT: return "BFloat16ArithmeticEXT";
     case SpvCapabilitySubgroup2DBlockIOINTEL: return "Subgroup2DBlockIOINTEL";
     case SpvCapabilitySubgroup2DBlockTransformINTEL: return "Subgroup2DBlockTransformINTEL";
     case SpvCapabilitySubgroup2DBlockTransposeINTEL: return "Subgroup2DBlockTransposeINTEL";
