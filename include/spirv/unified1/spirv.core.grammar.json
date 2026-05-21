@@ -18674,6 +18674,14 @@
           "version" : "None"
         },
         {
+          "enumerant" : "BFloat16ArithmeticINTEL",
+          "value" : 6226,
+          "capabilities" : [ "BFloat16TypeKHR" ],
+          "extensions" : [ "SPV_INTEL_bfloat16_arithmetic" ],
+          "version" : "None",
+          "provisional" : true
+        },
+        {
           "enumerant" : "Subgroup2DBlockIOINTEL",
           "value" : 6228,
           "extensions": [ "SPV_INTEL_2d_block_io" ],
