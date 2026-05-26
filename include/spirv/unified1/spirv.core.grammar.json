@@ -12684,6 +12684,11 @@
           "enumerant" : "Rust",
           "value" : 13,
           "version" : "1.0"
+        },
+        {
+          "enumerant" : "Pred",
+          "value" : 14,
+          "version" : "1.0"
         }
       ]
     },
