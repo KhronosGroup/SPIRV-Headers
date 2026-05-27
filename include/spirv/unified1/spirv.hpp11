@@ -59,6 +59,7 @@ enum class SourceLanguage : unsigned {
     Slang = 11,
     Zig = 12,
     Rust = 13,
+    Pred = 14,
     Max = 0x7fffffff,
 };
 
@@ -3560,6 +3561,7 @@ inline const char* SourceLanguageToString(SourceLanguage value) {
     case SourceLanguage::Slang: return "Slang";
     case SourceLanguage::Zig: return "Zig";
     case SourceLanguage::Rust: return "Rust";
+    case SourceLanguage::Pred: return "Pred";
     default: return "Unknown";
     }
 }

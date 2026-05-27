@@ -56,6 +56,7 @@ namespace Spv
             Slang = 11,
             Zig = 12,
             Rust = 13,
+            Pred = 14,
             Max = 0x7fffffff,
         }
 

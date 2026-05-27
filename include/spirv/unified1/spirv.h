@@ -63,6 +63,7 @@ typedef enum SpvSourceLanguage_ {
     SpvSourceLanguageSlang = 11,
     SpvSourceLanguageZig = 12,
     SpvSourceLanguageRust = 13,
+    SpvSourceLanguagePred = 14,
     SpvSourceLanguageMax = 0x7fffffff,
 } SpvSourceLanguage;
 
@@ -3564,6 +3565,7 @@ inline const char* SpvSourceLanguageToString(SpvSourceLanguage value) {
     case SpvSourceLanguageSlang: return "Slang";
     case SpvSourceLanguageZig: return "Zig";
     case SpvSourceLanguageRust: return "Rust";
+    case SpvSourceLanguagePred: return "Pred";
     default: return "Unknown";
     }
 }
