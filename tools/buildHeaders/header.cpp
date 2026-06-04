@@ -904,7 +904,7 @@ namespace spv {
         langInfo.push_back(std::make_pair(ELangLua,     "spirv.lua"));
         langInfo.push_back(std::make_pair(ELangPython,  "spirv.py"));
         langInfo.push_back(std::make_pair(ELangCSharp,  "spirv.cs"));
-        langInfo.push_back(std::make_pair(ELangJava,    "Spv.java"));
+        langInfo.push_back(std::make_pair(ELangJava,    "org/khronos/spv/Spv.java"));
         langInfo.push_back(std::make_pair(ELangD,       "spv.d"));
         langInfo.push_back(std::make_pair(ELangBeef,    "spirv.bf"));
 

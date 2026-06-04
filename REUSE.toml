@@ -22,7 +22,7 @@ SPDX-FileCopyrightText = "2014-2018 The Khronos Group, Inc."
 SPDX-License-Identifier = "MIT"
 
 [[annotations]]
-path = ["include/spirv/unified1/spir*", "include/spirv/unified1/spv.d", "include/spirv/unified1/Spv.java"]
+path = ["include/spirv/unified1/spir*", "include/spirv/unified1/spv.d", "include/spirv/unified1/org/khronos/spv/Spv.java"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2014-2024 The Khronos Group, Inc."
 SPDX-License-Identifier = "MIT"
