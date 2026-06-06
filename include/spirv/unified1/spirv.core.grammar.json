@@ -12247,6 +12247,14 @@
           ],
           "capabilities" : [ "FPGALoopControlsALTERA" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "MultipleWaitQueuesQCOM",
+          "value" : "0x10000000",
+          "parameters" : [
+            { "kind" : "LiteralInteger" }
+          ],
+          "version" : "1.0"
         }
       ]
     },
@@ -17631,6 +17639,12 @@
           "enumerant" : "TextureBlockMatch2QCOM",
           "value" : 4498,
           "extensions" : [ "SPV_QCOM_image_processing2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MultipleWaitQueuesQCOM",
+          "value" : 4539,
+          "extensions" : [ "SPV_QCOM_multiple_wait_queues" ],
           "version" : "None"
         },
         {

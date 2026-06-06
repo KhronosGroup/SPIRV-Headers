@@ -900,6 +900,7 @@ typedef enum SpvLoopControlShift_ {
     SpvLoopControlLoopCountINTELShift = 24,
     SpvLoopControlMaxReinvocationDelayALTERAShift = 25,
     SpvLoopControlMaxReinvocationDelayINTELShift = 25,
+    SpvLoopControlMultipleWaitQueuesQCOMShift = 28,
     SpvLoopControlMax = 0x7fffffff,
 } SpvLoopControlShift;
 
@@ -934,6 +935,7 @@ typedef enum SpvLoopControlMask_ {
     SpvLoopControlLoopCountINTELMask = 0x01000000,
     SpvLoopControlMaxReinvocationDelayALTERAMask = 0x02000000,
     SpvLoopControlMaxReinvocationDelayINTELMask = 0x02000000,
+    SpvLoopControlMultipleWaitQueuesQCOMMask = 0x10000000,
 } SpvLoopControlMask;
 
 typedef enum SpvFunctionControlShift_ {
@@ -1191,6 +1193,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityTileShadingQCOM = 4495,
     SpvCapabilityCooperativeMatrixConversionQCOM = 4496,
     SpvCapabilityTextureBlockMatch2QCOM = 4498,
+    SpvCapabilityMultipleWaitQueuesQCOM = 4539,
     SpvCapabilityFloat16ImageAMD = 5008,
     SpvCapabilityImageGatherBiasLodAMD = 5009,
     SpvCapabilityFragmentMaskAMD = 5010,
@@ -4380,6 +4383,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityTileShadingQCOM: return "TileShadingQCOM";
     case SpvCapabilityCooperativeMatrixConversionQCOM: return "CooperativeMatrixConversionQCOM";
     case SpvCapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
+    case SpvCapabilityMultipleWaitQueuesQCOM: return "MultipleWaitQueuesQCOM";
     case SpvCapabilityFloat16ImageAMD: return "Float16ImageAMD";
     case SpvCapabilityImageGatherBiasLodAMD: return "ImageGatherBiasLodAMD";
     case SpvCapabilityFragmentMaskAMD: return "FragmentMaskAMD";
