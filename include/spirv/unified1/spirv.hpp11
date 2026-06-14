@@ -60,6 +60,7 @@ enum class SourceLanguage : unsigned {
     Zig = 12,
     Rust = 13,
     Pred = 14,
+    ApilaJai = 15,
     Max = 0x7fffffff,
 };
 
@@ -3562,6 +3563,7 @@ inline const char* SourceLanguageToString(SourceLanguage value) {
     case SourceLanguage::Zig: return "Zig";
     case SourceLanguage::Rust: return "Rust";
     case SourceLanguage::Pred: return "Pred";
+    case SourceLanguage::ApilaJai: return "ApilaJai";
     default: return "Unknown";
     }
 }
