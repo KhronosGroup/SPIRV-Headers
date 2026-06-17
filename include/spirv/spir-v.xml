@@ -83,7 +83,8 @@
         <id value="48"  vendor="Goopax" comment="Contact Ingo Josopait, josopait@goopax.com"/>
         <id value="49"  vendor="Icyllis Milica" tool="Arc3D Shader Compiler" comment="Contact Icyllis Milica, https://github.com/BloCamLimb/Arc3D"/>
         <id value="50"  vendor="Isochron" tool="Pred" comment="Contact Justin Ead, jebrim@isochrontechnologies.com"/>
-        <unused start="51" end="0xFFFF" comment="Tool ID range reservable for future use by vendors"/>
+        <id value="51"  vendor="apilatosba" tool="Apila Jai Compiler" comment="https://github.com/apilatosba/jai_to_spirv_compiler"/>
+        <unused start="52" end="0xFFFF" comment="Tool ID range reservable for future use by vendors"/>
     </ids>
 
     <!-- SECTION: SPIR-V Opcodes and Enumerants -->

@@ -56,6 +56,7 @@ namespace Spv
             Zig = 12,
             Rust = 13,
             Pred = 14,
+            ApilaJai = 15,
             Max = 0x7fffffff,
         }
 
