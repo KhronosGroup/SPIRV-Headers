@@ -5,5 +5,6 @@ set -ex
 python3 bin/makeExtinstHeaders.py
 
 cd ../../include/spirv/unified1
+mkdir -p org/khronos/spv
 ../../../tools/buildHeaders/build/install/bin/buildSpvHeaders -H spirv.core.grammar.json
-dos2unix spirv.* spv.*
+dos2unix spirv.* spv.* org/khronos/spv/Spv.java
