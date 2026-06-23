@@ -11253,27 +11253,29 @@
       "version" : "None"
     },
     {
-      "opname" : "OpControlBarrierArriveINTEL",
+      "opname" : "OpControlBarrierArriveEXT",
       "class"  : "Barrier",
+      "aliases" : [ "OpControlBarrierArriveINTEL" ],
       "opcode" : 6142,
       "operands" : [
         { "kind" : "IdScope",           "name" : "Execution" },
         { "kind" : "IdScope",           "name" : "Memory" },
         { "kind" : "IdMemorySemantics", "name" : "Semantics" }
       ],
-      "capabilities" : [ "SplitBarrierINTEL" ],
+      "capabilities" : [ "SplitBarrierEXT" ],
       "version" : "None"
     },
     {
-      "opname" : "OpControlBarrierWaitINTEL",
+      "opname" : "OpControlBarrierWaitEXT",
       "class"  : "Barrier",
+      "aliases" : [ "OpControlBarrierWaitINTEL" ],
       "opcode" : 6143,
       "operands" : [
         { "kind" : "IdScope",           "name" : "Execution" },
         { "kind" : "IdScope",           "name" : "Memory" },
         { "kind" : "IdMemorySemantics", "name" : "Semantics" }
       ],
-      "capabilities" : [ "SplitBarrierINTEL" ],
+      "capabilities" : [ "SplitBarrierEXT" ],
       "version" : "None"
     },
     {
@@ -12549,9 +12551,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "ForceOpacityMicromap2StateEXT",
+          "enumerant" : "ForceOpacityMicromap2StateKHR",
+          "aliases" : [ "ForceOpacityMicromap2StateEXT" ],
           "value" : "0x0400",
-          "capabilities" : [ "RayTracingOpacityMicromapEXT" ],
+          "capabilities" : [ "RayTracingOpacityMicromapKHR" ],
           "version" : "None"
         }
       ]
@@ -12680,6 +12683,16 @@
         {
           "enumerant" : "Rust",
           "value" : 13,
+          "version" : "1.0"
+        },
+        {
+          "enumerant" : "Pred",
+          "value" : 14,
+          "version" : "1.0"
+        },
+        {
+          "enumerant" : "ApilaJai",
+          "value" : 15,
           "version" : "1.0"
         }
       ]
@@ -13574,6 +13587,15 @@
             { "kind" : "IdRef", "name" : "Fast-Math Mode" }
                 ],
           "capabilities" : [ "FloatControls2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "OpacityMicromapIdKHR",
+          "value" : 6031,
+          "capabilities" : [ "RayTracingOpacityMicromapExecutionModeKHR" ],
+          "parameters" : [
+            { "kind" : "IdRef", "name" : "Enable" }
+          ],
           "version" : "None"
         },
         {
@@ -14594,6 +14616,12 @@
           "value" : 2,
           "capabilities" : [ "Linkage" ],
           "extensions" : [ "SPV_KHR_linkonce_odr" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "WeakAMD",
+          "value" : 3,
+          "capabilities" : [ "WeakLinkageAMD" ],
           "version" : "None"
         }
       ]
@@ -16178,12 +16206,6 @@
           "version": "1.0"
         },
         {
-          "enumerant" : "FragmentCoverageMaskMESA",
-          "value" : 4096,
-          "capabilities" : [ "FragmentCoverageMESA" ],
-          "version" : "None"
-        },
-        {
           "enumerant" : "CoreIDARM",
           "value" : 4160,
           "capabilities" : [ "CoreBuiltinsARM" ],
@@ -17323,13 +17345,6 @@
           "version" : "1.6"
         },
         {
-          "enumerant" : "FragmentCoverageMESA",
-          "value" : 4097,
-          "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_MESA_fragment_coverage_mask" ],
-          "version" : "None"
-        },
-        {
           "enumerant" : "CoreBuiltinsARM",
           "value" : 4165,
           "extensions" : [ "SPV_ARM_core_builtins" ],
@@ -17753,6 +17768,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "WeakLinkageAMD",
+          "value" : 5181,
+          "capabilities" : [ "Linkage" ],
+          "extensions" : [ "SPV_AMD_weak_linkage" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "SampleMaskOverrideCoverageNV",
           "value" : 5249,
           "capabilities" : [ "SampleRateShading" ],
@@ -18057,10 +18079,11 @@
           "version" : "None"
         },
         {
-          "enumerant" : "RayTracingOpacityMicromapEXT",
+          "enumerant" : "RayTracingOpacityMicromapKHR",
+          "aliases" : ["RayTracingOpacityMicromapEXT"],
           "value" : 5381,
           "capabilities" : [ "Shader" ],
-          "extensions" : [ "SPV_EXT_opacity_micromap" ],
+          "extensions" : ["SPV_KHR_opacity_micromap", "SPV_EXT_opacity_micromap"],
           "version" : "None"
         },
         {
@@ -18193,6 +18216,13 @@
           "enumerant" : "TensorAddressingNV",
           "value" : 5439,
           "extensions" : [ "SPV_NV_tensor_addressing" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "CooperativeMatrixDecodeVectorNV",
+          "value" : 5447,
+          "capabilities" : [ "CooperativeMatrixBlockLoadsNV" ],
+          "extensions" : [ "SPV_NV_cooperative_matrix_decode_vector" ],
           "version" : "None"
         },
         {
@@ -18538,6 +18568,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "RayTracingOpacityMicromapExecutionModeKHR",
+          "value" : 6032,
+          "capabilities" : [ "Shader" ],
+          "extensions" : [ "SPV_KHR_opacity_micromap" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "AtomicFloat32AddEXT",
           "value" : 6033,
           "extensions" : [ "SPV_EXT_shader_atomic_float_add" ],
@@ -18581,9 +18618,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "SplitBarrierINTEL",
+          "enumerant" : "SplitBarrierEXT",
+          "aliases" : [ "SplitBarrierINTEL" ],
           "value" : 6141,
-          "extensions" : [ "SPV_INTEL_split_barrier" ],
+          "extensions" : [ "SPV_EXT_split_barrier", "SPV_INTEL_split_barrier" ],
           "version" : "None"
         },
         {
@@ -19021,6 +19059,15 @@
             { "kind" : "IdRef" }
           ],
           "capabilities" : [ "CooperativeMatrixBlockLoadsNV" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "DecodeVectorFunc",
+          "value" : "0x0004",
+          "parameters" : [
+            { "kind" : "IdRef" }
+          ],
+          "capabilities" : [ "CooperativeMatrixDecodeVectorNV" ],
           "version" : "None"
         }
       ]

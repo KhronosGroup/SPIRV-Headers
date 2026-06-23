@@ -56,6 +56,8 @@ namespace Spv
             Slang = 11,
             Zig = 12,
             Rust = 13,
+            Pred = 14,
+            ApilaJai = 15,
             Max = 0x7fffffff,
         }
 
@@ -206,6 +208,7 @@ namespace Spv
             SchedulerTargetFmaxMhzINTEL = 5903,
             MaximallyReconvergesKHR = 6023,
             FPFastMathDefault = 6028,
+            OpacityMicromapIdKHR = 6031,
             StreamingInterfaceINTEL = 6154,
             RegisterMapInterfaceINTEL = 6160,
             NamedBarrierCountINTEL = 6417,
@@ -485,6 +488,7 @@ namespace Spv
             Export = 0,
             Import = 1,
             LinkOnceODR = 2,
+            WeakAMD = 3,
             Max = 0x7fffffff,
         }
 
@@ -758,7 +762,6 @@ namespace Spv
             SubgroupLocalInvocationId = 41,
             VertexIndex = 42,
             InstanceIndex = 43,
-            FragmentCoverageMaskMESA = 4096,
             CoreIDARM = 4160,
             CoreCountARM = 4161,
             CoreMaxIDARM = 4162,
@@ -1171,7 +1174,6 @@ namespace Spv
             ShaderLayer = 69,
             ShaderViewportIndex = 70,
             UniformDecoration = 71,
-            FragmentCoverageMESA = 4097,
             CoreBuiltinsARM = 4165,
             TileImageColorReadAccessEXT = 4166,
             TileImageDepthReadAccessEXT = 4167,
@@ -1239,6 +1241,7 @@ namespace Spv
             DescriptorHeapEXT = 5128,
             ConstantDataKHR = 5146,
             PoisonFreezeKHR = 5156,
+            WeakLinkageAMD = 5181,
             SampleMaskOverrideCoverageNV = 5249,
             GeometryShaderPassthroughNV = 5251,
             ShaderViewportIndexLayerEXT = 5254,
@@ -1303,6 +1306,7 @@ namespace Spv
             DemoteToHelperInvocationEXT = 5379,
             DisplacementMicromapNV = 5380,
             RayTracingOpacityMicromapEXT = 5381,
+            RayTracingOpacityMicromapKHR = 5381,
             ShaderInvocationReorderNV = 5383,
             ShaderInvocationReorderEXT = 5388,
             BindlessTextureNV = 5390,
@@ -1324,6 +1328,7 @@ namespace Spv
             CooperativeVectorTrainingNV = 5435,
             RayTracingClusterAccelerationStructureNV = 5437,
             TensorAddressingNV = 5439,
+            CooperativeMatrixDecodeVectorNV = 5447,
             SubgroupShuffleINTEL = 5568,
             SubgroupBufferBlockIOINTEL = 5569,
             SubgroupImageBlockIOINTEL = 5570,
@@ -1397,6 +1402,7 @@ namespace Spv
             GroupNonUniformRotateKHR = 6026,
             FloatControls2 = 6029,
             FMAKHR = 6030,
+            RayTracingOpacityMicromapExecutionModeKHR = 6032,
             AtomicFloat32AddEXT = 6033,
             AtomicFloat64AddEXT = 6034,
             LongCompositesINTEL = 6089,
@@ -1405,6 +1411,7 @@ namespace Spv
             AtomicFloat16AddEXT = 6095,
             DebugInfoModuleINTEL = 6114,
             BFloat16ConversionINTEL = 6115,
+            SplitBarrierEXT = 6141,
             SplitBarrierINTEL = 6141,
             ArithmeticFenceEXT = 6144,
             FPGAClusterAttributesV2ALTERA = 6150,
@@ -1458,6 +1465,7 @@ namespace Spv
             SkipTrianglesKHR = 8,
             SkipAABBsKHR = 9,
             ForceOpacityMicromap2StateEXT = 10,
+            ForceOpacityMicromap2StateKHR = 10,
             Max = 0x7fffffff,
         }
 
@@ -1476,6 +1484,7 @@ namespace Spv
             SkipTrianglesKHR = 0x00000100,
             SkipAABBsKHR = 0x00000200,
             ForceOpacityMicromap2StateEXT = 0x00000400,
+            ForceOpacityMicromap2StateKHR = 0x00000400,
         }
 
         [AllowDuplicates, CRepr] public enum RayQueryIntersection
@@ -1628,6 +1637,7 @@ namespace Spv
         {
             TensorView = 0,
             DecodeFunc = 1,
+            DecodeVectorFunc = 2,
             Max = 0x7fffffff,
         }
 
@@ -1636,6 +1646,7 @@ namespace Spv
             MaskNone = 0,
             TensorView = 0x00000001,
             DecodeFunc = 0x00000002,
+            DecodeVectorFunc = 0x00000004,
         }
 
         [AllowDuplicates, CRepr] public enum TensorOperandsShift
@@ -2670,7 +2681,9 @@ namespace Spv
             OpCompositeConstructContinuedINTEL = 6096,
             OpConvertFToBF16INTEL = 6116,
             OpConvertBF16ToFINTEL = 6117,
+            OpControlBarrierArriveEXT = 6142,
             OpControlBarrierArriveINTEL = 6142,
+            OpControlBarrierWaitEXT = 6143,
             OpControlBarrierWaitINTEL = 6143,
             OpArithmeticFenceEXT = 6145,
             OpTaskSequenceCreateALTERA = 6163,
