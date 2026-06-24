@@ -698,6 +698,7 @@ enum class Decoration : unsigned {
     ConditionalINTEL = 6247,
     CacheControlLoadINTEL = 6442,
     CacheControlStoreINTEL = 6443,
+    IntrinsicSAMSUNG = 7040,
     Max = 0x7fffffff,
 };
 
@@ -1413,6 +1414,7 @@ enum class Capability : unsigned {
     DotProductFloat16AccFloat16VALVE = 6913,
     DotProductBFloat16AccVALVE = 6914,
     DotProductFloat8AccFloat32VALVE = 6915,
+    IntrinsicSAMSUNG = 7041,
     Max = 0x7fffffff,
 };
 
@@ -4086,6 +4088,7 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::ConditionalINTEL: return "ConditionalINTEL";
     case Decoration::CacheControlLoadINTEL: return "CacheControlLoadINTEL";
     case Decoration::CacheControlStoreINTEL: return "CacheControlStoreINTEL";
+    case Decoration::IntrinsicSAMSUNG: return "IntrinsicSAMSUNG";
     default: return "Unknown";
     }
 }
@@ -4553,6 +4556,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::DotProductFloat16AccFloat16VALVE: return "DotProductFloat16AccFloat16VALVE";
     case Capability::DotProductBFloat16AccVALVE: return "DotProductBFloat16AccVALVE";
     case Capability::DotProductFloat8AccFloat32VALVE: return "DotProductFloat8AccFloat32VALVE";
+    case Capability::IntrinsicSAMSUNG: return "IntrinsicSAMSUNG";
     default: return "Unknown";
     }
 }
