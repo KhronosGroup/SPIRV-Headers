@@ -18821,6 +18821,12 @@
           "capabilities" : [ "Float8EXT" ],
           "extensions" : [ "SPV_VALVE_mixed_float_dot_product" ],
           "version" : "None"
+        },
+        {
+          "enumerant" : "IntrinsicSAMSUNG",
+          "value" : 7041,
+          "extensions" : [ "SPV_SAMSUNG_intrinsic" ],
+          "version" : "None"
         }
       ]
     },

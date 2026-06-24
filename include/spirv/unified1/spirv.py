@@ -1376,6 +1376,7 @@ spv = {
         'DotProductFloat16AccFloat16VALVE' : 6913,
         'DotProductBFloat16AccVALVE' : 6914,
         'DotProductFloat8AccFloat32VALVE' : 6915,
+        'IntrinsicSAMSUNG' : 7041,
     },
 
     'RayFlagsShift' : {

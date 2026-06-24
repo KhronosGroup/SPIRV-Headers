@@ -1418,6 +1418,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityDotProductFloat16AccFloat16VALVE = 6913,
     SpvCapabilityDotProductBFloat16AccVALVE = 6914,
     SpvCapabilityDotProductFloat8AccFloat32VALVE = 6915,
+    SpvCapabilityIntrinsicSAMSUNG = 7041,
     SpvCapabilityMax = 0x7fffffff,
 } SpvCapability;
 
@@ -4559,6 +4560,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityDotProductFloat16AccFloat16VALVE: return "DotProductFloat16AccFloat16VALVE";
     case SpvCapabilityDotProductBFloat16AccVALVE: return "DotProductBFloat16AccVALVE";
     case SpvCapabilityDotProductFloat8AccFloat32VALVE: return "DotProductFloat8AccFloat32VALVE";
+    case SpvCapabilityIntrinsicSAMSUNG: return "IntrinsicSAMSUNG";
     default: return "Unknown";
     }
 }

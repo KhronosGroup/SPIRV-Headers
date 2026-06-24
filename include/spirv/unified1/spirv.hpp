@@ -1414,6 +1414,7 @@ enum Capability {
     CapabilityDotProductFloat16AccFloat16VALVE = 6913,
     CapabilityDotProductBFloat16AccVALVE = 6914,
     CapabilityDotProductFloat8AccFloat32VALVE = 6915,
+    CapabilityIntrinsicSAMSUNG = 7041,
     CapabilityMax = 0x7fffffff,
 };
 
@@ -4555,6 +4556,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityDotProductFloat16AccFloat16VALVE: return "DotProductFloat16AccFloat16VALVE";
     case CapabilityDotProductBFloat16AccVALVE: return "DotProductBFloat16AccVALVE";
     case CapabilityDotProductFloat8AccFloat32VALVE: return "DotProductFloat8AccFloat32VALVE";
+    case CapabilityIntrinsicSAMSUNG: return "IntrinsicSAMSUNG";
     default: return "Unknown";
     }
 }
