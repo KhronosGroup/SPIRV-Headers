@@ -897,6 +897,7 @@ enum LoopControlShift {
     LoopControlLoopCountINTELShift = 24,
     LoopControlMaxReinvocationDelayALTERAShift = 25,
     LoopControlMaxReinvocationDelayINTELShift = 25,
+    LoopControlMultipleWaitQueuesQCOMShift = 28,
     LoopControlMax = 0x7fffffff,
 };
 
@@ -931,6 +932,7 @@ enum LoopControlMask {
     LoopControlLoopCountINTELMask = 0x01000000,
     LoopControlMaxReinvocationDelayALTERAMask = 0x02000000,
     LoopControlMaxReinvocationDelayINTELMask = 0x02000000,
+    LoopControlMultipleWaitQueuesQCOMMask = 0x10000000,
 };
 
 enum FunctionControlShift {
@@ -1188,6 +1190,7 @@ enum Capability {
     CapabilityTileShadingQCOM = 4495,
     CapabilityCooperativeMatrixConversionQCOM = 4496,
     CapabilityTextureBlockMatch2QCOM = 4498,
+    CapabilityMultipleWaitQueuesQCOM = 4539,
     CapabilityFloat16ImageAMD = 5008,
     CapabilityImageGatherBiasLodAMD = 5009,
     CapabilityFragmentMaskAMD = 5010,
@@ -4378,6 +4381,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityTileShadingQCOM: return "TileShadingQCOM";
     case CapabilityCooperativeMatrixConversionQCOM: return "CooperativeMatrixConversionQCOM";
     case CapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
+    case CapabilityMultipleWaitQueuesQCOM: return "MultipleWaitQueuesQCOM";
     case CapabilityFloat16ImageAMD: return "Float16ImageAMD";
     case CapabilityImageGatherBiasLodAMD: return "ImageGatherBiasLodAMD";
     case CapabilityFragmentMaskAMD: return "FragmentMaskAMD";

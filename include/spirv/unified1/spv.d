@@ -920,6 +920,7 @@ enum LoopControlShift : uint
     LoopCountINTEL = 24,
     MaxReinvocationDelayALTERA = 25,
     MaxReinvocationDelayINTEL = 25,
+    MultipleWaitQueuesQCOM = 28,
     Max = 0x7fffffff,
 }
 
@@ -955,6 +956,7 @@ enum LoopControlMask : uint
     LoopCountINTEL = 0x01000000,
     MaxReinvocationDelayALTERA = 0x02000000,
     MaxReinvocationDelayINTEL = 0x02000000,
+    MultipleWaitQueuesQCOM = 0x10000000,
 }
 
 enum FunctionControlShift : uint
@@ -1224,6 +1226,7 @@ enum Capability : uint
     TileShadingQCOM = 4495,
     CooperativeMatrixConversionQCOM = 4496,
     TextureBlockMatch2QCOM = 4498,
+    MultipleWaitQueuesQCOM = 4539,
     Float16ImageAMD = 5008,
     ImageGatherBiasLodAMD = 5009,
     FragmentMaskAMD = 5010,
