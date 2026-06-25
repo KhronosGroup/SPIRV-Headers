@@ -5409,6 +5409,22 @@
       "version" : "None"
     },
     {
+      "opname" : "OpImageGatherQCOM",
+      "class"  : "Image",
+      "opcode" : 4545,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Sampled Image" },
+        { "kind" : "IdRef", "name" : "Coordinate" },
+        { "kind" : "IdRef", "name" : "Component" },
+        { "kind" : "IdRef", "name" : "Mode" },
+        { "kind" : "ImageOperands", "quantifier" : "?" }
+      ],
+      "capabilities" : [ "ImageGatherLinearQCOM", "ImageGatherExtendedModesQCOM" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpGroupIAddNonUniformAMD",
       "class"  : "Group",
       "opcode" : 5000,
@@ -17639,6 +17655,18 @@
           "version" : "None"
         },
         {
+          "enumerant" : "ImageGatherLinearQCOM",
+          "value" : 4543,
+          "extensions" : [ "SPV_QCOM_image_processing3" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "ImageGatherExtendedModesQCOM",
+          "value" : 4544,
+          "extensions" : [ "SPV_QCOM_image_processing3" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "Float16ImageAMD",
           "value" : 5008,
           "capabilities" : [ "Shader" ],
@@ -19370,6 +19398,32 @@
         {
           "enumerant" : "FloatE5M2NV",
           "value" : 1000491003,
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "GatherModes",
+      "enumerants" : [
+        {
+          "enumerant" : "Gather4x1QCOM",
+          "value" : 0,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GatherDQCOM",
+          "value" : 1,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GatherH2QCOM",
+          "value" : 2,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "GatherV2QCOM",
+          "value" : 3,
           "version" : "None"
         }
       ]
