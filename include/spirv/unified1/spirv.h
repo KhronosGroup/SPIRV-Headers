@@ -1405,7 +1405,12 @@ typedef enum SpvCapability_ {
     SpvCapabilityUntypedVariableLengthArrayINTEL = 6243,
     SpvCapabilitySpecConditionalINTEL = 6245,
     SpvCapabilityFunctionVariantsINTEL = 6246,
+    SpvCapabilityAtomicBFloat16AddINTEL = 6255,
+    SpvCapabilityAtomicBFloat16MinMaxINTEL = 6256,
     SpvCapabilityPredicatedIOINTEL = 6257,
+    SpvCapabilityAtomicInt16CompareExchangeINTEL = 6260,
+    SpvCapabilityInt16AtomicsINTEL = 6261,
+    SpvCapabilityAtomicBFloat16LoadStoreINTEL = 6262,
     SpvCapabilityRoundedDivideSqrtINTEL = 6265,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,
     SpvCapabilityTensorFloat32RoundingINTEL = 6425,
@@ -4545,7 +4550,12 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityUntypedVariableLengthArrayINTEL: return "UntypedVariableLengthArrayINTEL";
     case SpvCapabilitySpecConditionalINTEL: return "SpecConditionalINTEL";
     case SpvCapabilityFunctionVariantsINTEL: return "FunctionVariantsINTEL";
+    case SpvCapabilityAtomicBFloat16AddINTEL: return "AtomicBFloat16AddINTEL";
+    case SpvCapabilityAtomicBFloat16MinMaxINTEL: return "AtomicBFloat16MinMaxINTEL";
     case SpvCapabilityPredicatedIOINTEL: return "PredicatedIOINTEL";
+    case SpvCapabilityAtomicInt16CompareExchangeINTEL: return "AtomicInt16CompareExchangeINTEL";
+    case SpvCapabilityInt16AtomicsINTEL: return "Int16AtomicsINTEL";
+    case SpvCapabilityAtomicBFloat16LoadStoreINTEL: return "AtomicBFloat16LoadStoreINTEL";
     case SpvCapabilityRoundedDivideSqrtINTEL: return "RoundedDivideSqrtINTEL";
     case SpvCapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case SpvCapabilityTensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";

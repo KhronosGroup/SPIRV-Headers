@@ -1401,7 +1401,12 @@ enum Capability {
     CapabilityUntypedVariableLengthArrayINTEL = 6243,
     CapabilitySpecConditionalINTEL = 6245,
     CapabilityFunctionVariantsINTEL = 6246,
+    CapabilityAtomicBFloat16AddINTEL = 6255,
+    CapabilityAtomicBFloat16MinMaxINTEL = 6256,
     CapabilityPredicatedIOINTEL = 6257,
+    CapabilityAtomicInt16CompareExchangeINTEL = 6260,
+    CapabilityInt16AtomicsINTEL = 6261,
+    CapabilityAtomicBFloat16LoadStoreINTEL = 6262,
     CapabilityRoundedDivideSqrtINTEL = 6265,
     CapabilityGroupUniformArithmeticKHR = 6400,
     CapabilityTensorFloat32RoundingINTEL = 6425,
@@ -4541,7 +4546,12 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityUntypedVariableLengthArrayINTEL: return "UntypedVariableLengthArrayINTEL";
     case CapabilitySpecConditionalINTEL: return "SpecConditionalINTEL";
     case CapabilityFunctionVariantsINTEL: return "FunctionVariantsINTEL";
+    case CapabilityAtomicBFloat16AddINTEL: return "AtomicBFloat16AddINTEL";
+    case CapabilityAtomicBFloat16MinMaxINTEL: return "AtomicBFloat16MinMaxINTEL";
     case CapabilityPredicatedIOINTEL: return "PredicatedIOINTEL";
+    case CapabilityAtomicInt16CompareExchangeINTEL: return "AtomicInt16CompareExchangeINTEL";
+    case CapabilityInt16AtomicsINTEL: return "Int16AtomicsINTEL";
+    case CapabilityAtomicBFloat16LoadStoreINTEL: return "AtomicBFloat16LoadStoreINTEL";
     case CapabilityRoundedDivideSqrtINTEL: return "RoundedDivideSqrtINTEL";
     case CapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case CapabilityTensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";
