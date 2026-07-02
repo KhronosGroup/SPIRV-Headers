@@ -1150,6 +1150,11 @@ enum Capability {
     CapabilityCooperativeMatrixLayoutsARM = 4201,
     CapabilityFloat8EXT = 4212,
     CapabilityFloat8CooperativeMatrixEXT = 4213,
+    CapabilityFloat6EXT = 4228,
+    CapabilityFloat4EXT = 4229,
+    CapabilityFloat8UnsignedE8M0EXT = 4230,
+    CapabilityMXInt8EXT = 4231,
+    CapabilityBitcastExtractEXT = 4232,
     CapabilityFragmentShadingRateKHR = 4422,
     CapabilitySubgroupBallotKHR = 4423,
     CapabilityDrawParameters = 4427,
@@ -1701,6 +1706,11 @@ enum FPEncoding {
     FPEncodingBFloat16KHR = 0,
     FPEncodingFloat8E4M3EXT = 4214,
     FPEncodingFloat8E5M2EXT = 4215,
+    FPEncodingFloat6E2M3EXT = 4223,
+    FPEncodingFloat6E3M2EXT = 4224,
+    FPEncodingFloat4E2M1EXT = 4225,
+    FPEncodingFloat8UnsignedE8M0EXT = 4226,
+    FPEncodingMXInt8EXT = 4227,
     FPEncodingMax = 0x7fffffff,
 };
 
@@ -2090,6 +2100,7 @@ enum Op {
     OpGraphSetOutputARM = 4185,
     OpGraphEndARM = 4186,
     OpTypeGraphARM = 4190,
+    OpBitcastExtractEXT = 4195,
     OpTerminateInvocation = 4416,
     OpTypeUntypedPointerKHR = 4417,
     OpUntypedVariableKHR = 4418,
@@ -3029,6 +3040,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpGraphSetOutputARM: *hasResult = false; *hasResultType = false; break;
     case OpGraphEndARM: *hasResult = false; *hasResultType = false; break;
     case OpTypeGraphARM: *hasResult = true; *hasResultType = false; break;
+    case OpBitcastExtractEXT: *hasResult = true; *hasResultType = true; break;
     case OpTerminateInvocation: *hasResult = false; *hasResultType = false; break;
     case OpTypeUntypedPointerKHR: *hasResult = true; *hasResultType = false; break;
     case OpUntypedVariableKHR: *hasResult = true; *hasResultType = true; break;
@@ -4342,6 +4354,11 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityCooperativeMatrixLayoutsARM: return "CooperativeMatrixLayoutsARM";
     case CapabilityFloat8EXT: return "Float8EXT";
     case CapabilityFloat8CooperativeMatrixEXT: return "Float8CooperativeMatrixEXT";
+    case CapabilityFloat6EXT: return "Float6EXT";
+    case CapabilityFloat4EXT: return "Float4EXT";
+    case CapabilityFloat8UnsignedE8M0EXT: return "Float8UnsignedE8M0EXT";
+    case CapabilityMXInt8EXT: return "MXInt8EXT";
+    case CapabilityBitcastExtractEXT: return "BitcastExtractEXT";
     case CapabilityFragmentShadingRateKHR: return "FragmentShadingRateKHR";
     case CapabilitySubgroupBallotKHR: return "SubgroupBallotKHR";
     case CapabilityDrawParameters: return "DrawParameters";
@@ -4710,6 +4727,11 @@ inline const char* FPEncodingToString(FPEncoding value) {
     case FPEncodingBFloat16KHR: return "BFloat16KHR";
     case FPEncodingFloat8E4M3EXT: return "Float8E4M3EXT";
     case FPEncodingFloat8E5M2EXT: return "Float8E5M2EXT";
+    case FPEncodingFloat6E2M3EXT: return "Float6E2M3EXT";
+    case FPEncodingFloat6E3M2EXT: return "Float6E3M2EXT";
+    case FPEncodingFloat4E2M1EXT: return "Float4E2M1EXT";
+    case FPEncodingFloat8UnsignedE8M0EXT: return "Float8UnsignedE8M0EXT";
+    case FPEncodingMXInt8EXT: return "MXInt8EXT";
     default: return "Unknown";
     }
 }
@@ -5105,6 +5127,7 @@ inline const char* OpToString(Op value) {
     case OpGraphSetOutputARM: return "OpGraphSetOutputARM";
     case OpGraphEndARM: return "OpGraphEndARM";
     case OpTypeGraphARM: return "OpTypeGraphARM";
+    case OpBitcastExtractEXT: return "OpBitcastExtractEXT";
     case OpTerminateInvocation: return "OpTerminateInvocation";
     case OpTypeUntypedPointerKHR: return "OpTypeUntypedPointerKHR";
     case OpUntypedVariableKHR: return "OpUntypedVariableKHR";
