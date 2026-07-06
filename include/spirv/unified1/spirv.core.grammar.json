@@ -15954,6 +15954,7 @@
         {
           "enumerant" : "IntrinsicSAMSUNG",
           "value" : 7040,
+          "capabilities": [ "IntrinsicSAMSUNG" ],
           "parameters": [
             { "kind" : "LiteralInteger", "name" : "Intrinsic ID" }
           ],
