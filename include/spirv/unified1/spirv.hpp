@@ -162,6 +162,8 @@ enum ExecutionMode {
     ExecutionModeRoundingModeRTZ = 4463,
     ExecutionModeNonCoherentTileAttachmentReadQCOM = 4489,
     ExecutionModeTileShadingRateQCOM = 4490,
+    ExecutionModeSubgroupSizeHalfQCOM = 4507,
+    ExecutionModeSubgroupSizeFullQCOM = 4508,
     ExecutionModeEarlyAndLateFragmentTestsAMD = 5017,
     ExecutionModeStencilRefReplacingEXT = 5027,
     ExecutionModeCoalescingAMDX = 5069,
@@ -1200,6 +1202,7 @@ enum Capability {
     CapabilityCooperativeMatrixConversionQCOM = 4496,
     CapabilityTextureBlockMatch2QCOM = 4498,
     CapabilityBFloat16MulAddQCOM = 4504,
+    CapabilitySubgroupSizeQCOM = 4506,
     CapabilityMultipleWaitQueuesQCOM = 4539,
     CapabilityImageGatherLinearQCOM = 4543,
     CapabilityImageGatherExtendedModesQCOM = 4544,
@@ -3707,6 +3710,8 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionModeRoundingModeRTZ: return "RoundingModeRTZ";
     case ExecutionModeNonCoherentTileAttachmentReadQCOM: return "NonCoherentTileAttachmentReadQCOM";
     case ExecutionModeTileShadingRateQCOM: return "TileShadingRateQCOM";
+    case ExecutionModeSubgroupSizeHalfQCOM: return "SubgroupSizeHalfQCOM";
+    case ExecutionModeSubgroupSizeFullQCOM: return "SubgroupSizeFullQCOM";
     case ExecutionModeEarlyAndLateFragmentTestsAMD: return "EarlyAndLateFragmentTestsAMD";
     case ExecutionModeStencilRefReplacingEXT: return "StencilRefReplacingEXT";
     case ExecutionModeCoalescingAMDX: return "CoalescingAMDX";
@@ -4430,6 +4435,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityCooperativeMatrixConversionQCOM: return "CooperativeMatrixConversionQCOM";
     case CapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
     case CapabilityBFloat16MulAddQCOM: return "BFloat16MulAddQCOM";
+    case CapabilitySubgroupSizeQCOM: return "SubgroupSizeQCOM";
     case CapabilityMultipleWaitQueuesQCOM: return "MultipleWaitQueuesQCOM";
     case CapabilityImageGatherLinearQCOM: return "ImageGatherLinearQCOM";
     case CapabilityImageGatherExtendedModesQCOM: return "ImageGatherExtendedModesQCOM";

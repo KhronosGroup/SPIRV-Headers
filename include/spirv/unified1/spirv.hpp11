@@ -162,6 +162,8 @@ enum class ExecutionMode : unsigned {
     RoundingModeRTZ = 4463,
     NonCoherentTileAttachmentReadQCOM = 4489,
     TileShadingRateQCOM = 4490,
+    SubgroupSizeHalfQCOM = 4507,
+    SubgroupSizeFullQCOM = 4508,
     EarlyAndLateFragmentTestsAMD = 5017,
     StencilRefReplacingEXT = 5027,
     CoalescingAMDX = 5069,
@@ -1200,6 +1202,7 @@ enum class Capability : unsigned {
     CooperativeMatrixConversionQCOM = 4496,
     TextureBlockMatch2QCOM = 4498,
     BFloat16MulAddQCOM = 4504,
+    SubgroupSizeQCOM = 4506,
     MultipleWaitQueuesQCOM = 4539,
     ImageGatherLinearQCOM = 4543,
     ImageGatherExtendedModesQCOM = 4544,
@@ -3707,6 +3710,8 @@ inline const char* ExecutionModeToString(ExecutionMode value) {
     case ExecutionMode::RoundingModeRTZ: return "RoundingModeRTZ";
     case ExecutionMode::NonCoherentTileAttachmentReadQCOM: return "NonCoherentTileAttachmentReadQCOM";
     case ExecutionMode::TileShadingRateQCOM: return "TileShadingRateQCOM";
+    case ExecutionMode::SubgroupSizeHalfQCOM: return "SubgroupSizeHalfQCOM";
+    case ExecutionMode::SubgroupSizeFullQCOM: return "SubgroupSizeFullQCOM";
     case ExecutionMode::EarlyAndLateFragmentTestsAMD: return "EarlyAndLateFragmentTestsAMD";
     case ExecutionMode::StencilRefReplacingEXT: return "StencilRefReplacingEXT";
     case ExecutionMode::CoalescingAMDX: return "CoalescingAMDX";
@@ -4430,6 +4435,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::CooperativeMatrixConversionQCOM: return "CooperativeMatrixConversionQCOM";
     case Capability::TextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
     case Capability::BFloat16MulAddQCOM: return "BFloat16MulAddQCOM";
+    case Capability::SubgroupSizeQCOM: return "SubgroupSizeQCOM";
     case Capability::MultipleWaitQueuesQCOM: return "MultipleWaitQueuesQCOM";
     case Capability::ImageGatherLinearQCOM: return "ImageGatherLinearQCOM";
     case Capability::ImageGatherExtendedModesQCOM: return "ImageGatherExtendedModesQCOM";

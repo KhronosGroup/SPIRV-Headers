@@ -166,6 +166,8 @@ typedef enum SpvExecutionMode_ {
     SpvExecutionModeRoundingModeRTZ = 4463,
     SpvExecutionModeNonCoherentTileAttachmentReadQCOM = 4489,
     SpvExecutionModeTileShadingRateQCOM = 4490,
+    SpvExecutionModeSubgroupSizeHalfQCOM = 4507,
+    SpvExecutionModeSubgroupSizeFullQCOM = 4508,
     SpvExecutionModeEarlyAndLateFragmentTestsAMD = 5017,
     SpvExecutionModeStencilRefReplacingEXT = 5027,
     SpvExecutionModeCoalescingAMDX = 5069,
@@ -1204,6 +1206,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityCooperativeMatrixConversionQCOM = 4496,
     SpvCapabilityTextureBlockMatch2QCOM = 4498,
     SpvCapabilityBFloat16MulAddQCOM = 4504,
+    SpvCapabilitySubgroupSizeQCOM = 4506,
     SpvCapabilityMultipleWaitQueuesQCOM = 4539,
     SpvCapabilityImageGatherLinearQCOM = 4543,
     SpvCapabilityImageGatherExtendedModesQCOM = 4544,
@@ -3711,6 +3714,8 @@ inline const char* SpvExecutionModeToString(SpvExecutionMode value) {
     case SpvExecutionModeRoundingModeRTZ: return "RoundingModeRTZ";
     case SpvExecutionModeNonCoherentTileAttachmentReadQCOM: return "NonCoherentTileAttachmentReadQCOM";
     case SpvExecutionModeTileShadingRateQCOM: return "TileShadingRateQCOM";
+    case SpvExecutionModeSubgroupSizeHalfQCOM: return "SubgroupSizeHalfQCOM";
+    case SpvExecutionModeSubgroupSizeFullQCOM: return "SubgroupSizeFullQCOM";
     case SpvExecutionModeEarlyAndLateFragmentTestsAMD: return "EarlyAndLateFragmentTestsAMD";
     case SpvExecutionModeStencilRefReplacingEXT: return "StencilRefReplacingEXT";
     case SpvExecutionModeCoalescingAMDX: return "CoalescingAMDX";
@@ -4434,6 +4439,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityCooperativeMatrixConversionQCOM: return "CooperativeMatrixConversionQCOM";
     case SpvCapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
     case SpvCapabilityBFloat16MulAddQCOM: return "BFloat16MulAddQCOM";
+    case SpvCapabilitySubgroupSizeQCOM: return "SubgroupSizeQCOM";
     case SpvCapabilityMultipleWaitQueuesQCOM: return "MultipleWaitQueuesQCOM";
     case SpvCapabilityImageGatherLinearQCOM: return "ImageGatherLinearQCOM";
     case SpvCapabilityImageGatherExtendedModesQCOM: return "ImageGatherExtendedModesQCOM";
