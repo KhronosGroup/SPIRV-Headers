@@ -13295,6 +13295,18 @@
           "version": "None"
         },
         {
+          "enumerant" : "SubgroupSizeHalfQCOM",
+          "value" : 4507,
+          "capabilities" : [ "SubgroupSizeQCOM" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SubgroupSizeFullQCOM",
+          "value" : 4508,
+          "capabilities" : [ "SubgroupSizeQCOM" ],
+          "version" : "None"
+        },
+        {
           "enumerant": "EarlyAndLateFragmentTestsAMD",
           "value": 5017,
           "capabilities": [ "Shader" ],
@@ -17734,6 +17746,12 @@
           "enumerant" : "TextureBlockMatch2QCOM",
           "value" : 4498,
           "extensions" : [ "SPV_QCOM_image_processing2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SubgroupSizeQCOM",
+          "value" : 4506,
+          "extensions" : [ "SPV_QCOM_subgroup_size" ],
           "version" : "None"
         },
         {
