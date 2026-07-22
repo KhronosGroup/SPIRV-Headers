@@ -61,6 +61,8 @@ enum SourceLanguage {
     SourceLanguageSlang = 11,
     SourceLanguageZig = 12,
     SourceLanguageRust = 13,
+    SourceLanguagePred = 14,
+    SourceLanguageApilaJai = 15,
     SourceLanguageMax = 0x7fffffff,
 };
 
@@ -698,6 +700,7 @@ enum Decoration {
     DecorationConditionalINTEL = 6247,
     DecorationCacheControlLoadINTEL = 6442,
     DecorationCacheControlStoreINTEL = 6443,
+    DecorationIntrinsicSAMSUNG = 7040,
     DecorationMax = 0x7fffffff,
 };
 
@@ -897,6 +900,7 @@ enum LoopControlShift {
     LoopControlLoopCountINTELShift = 24,
     LoopControlMaxReinvocationDelayALTERAShift = 25,
     LoopControlMaxReinvocationDelayINTELShift = 25,
+    LoopControlMultipleWaitQueuesQCOMShift = 28,
     LoopControlMax = 0x7fffffff,
 };
 
@@ -931,6 +935,7 @@ enum LoopControlMask {
     LoopControlLoopCountINTELMask = 0x01000000,
     LoopControlMaxReinvocationDelayALTERAMask = 0x02000000,
     LoopControlMaxReinvocationDelayINTELMask = 0x02000000,
+    LoopControlMultipleWaitQueuesQCOMMask = 0x10000000,
 };
 
 enum FunctionControlShift {
@@ -1150,6 +1155,11 @@ enum Capability {
     CapabilityCooperativeMatrixLayoutsARM = 4201,
     CapabilityFloat8EXT = 4212,
     CapabilityFloat8CooperativeMatrixEXT = 4213,
+    CapabilityFloat6EXT = 4228,
+    CapabilityFloat4EXT = 4229,
+    CapabilityFloat8UnsignedE8M0EXT = 4230,
+    CapabilityMXInt8EXT = 4231,
+    CapabilityBitcastExtractEXT = 4232,
     CapabilityFragmentShadingRateKHR = 4422,
     CapabilitySubgroupBallotKHR = 4423,
     CapabilityDrawParameters = 4427,
@@ -1188,6 +1198,9 @@ enum Capability {
     CapabilityTileShadingQCOM = 4495,
     CapabilityCooperativeMatrixConversionQCOM = 4496,
     CapabilityTextureBlockMatch2QCOM = 4498,
+    CapabilityMultipleWaitQueuesQCOM = 4539,
+    CapabilityImageGatherLinearQCOM = 4543,
+    CapabilityImageGatherExtendedModesQCOM = 4544,
     CapabilityFloat16ImageAMD = 5008,
     CapabilityImageGatherBiasLodAMD = 5009,
     CapabilityFragmentMaskAMD = 5010,
@@ -1413,6 +1426,7 @@ enum Capability {
     CapabilityDotProductFloat16AccFloat16VALVE = 6913,
     CapabilityDotProductBFloat16AccVALVE = 6914,
     CapabilityDotProductFloat8AccFloat32VALVE = 6915,
+    CapabilityIntrinsicSAMSUNG = 7041,
     CapabilityMax = 0x7fffffff,
 };
 
@@ -1701,6 +1715,11 @@ enum FPEncoding {
     FPEncodingBFloat16KHR = 0,
     FPEncodingFloat8E4M3EXT = 4214,
     FPEncodingFloat8E5M2EXT = 4215,
+    FPEncodingFloat6E2M3EXT = 4223,
+    FPEncodingFloat6E3M2EXT = 4224,
+    FPEncodingFloat4E2M1EXT = 4225,
+    FPEncodingFloat8UnsignedE8M0EXT = 4226,
+    FPEncodingMXInt8EXT = 4227,
     FPEncodingMax = 0x7fffffff,
 };
 
@@ -1729,6 +1748,14 @@ enum ComponentType {
     ComponentTypeFloatE4M3NV = 1000491002,
     ComponentTypeFloatE5M2NV = 1000491003,
     ComponentTypeMax = 0x7fffffff,
+};
+
+enum GatherModes {
+    GatherModesGather4x1QCOM = 0,
+    GatherModesGatherDQCOM = 1,
+    GatherModesGatherH2QCOM = 2,
+    GatherModesGatherV2QCOM = 3,
+    GatherModesMax = 0x7fffffff,
 };
 
 enum Op {
@@ -2090,6 +2117,7 @@ enum Op {
     OpGraphSetOutputARM = 4185,
     OpGraphEndARM = 4186,
     OpTypeGraphARM = 4190,
+    OpBitcastExtractEXT = 4195,
     OpTerminateInvocation = 4416,
     OpTypeUntypedPointerKHR = 4417,
     OpUntypedVariableKHR = 4418,
@@ -2153,6 +2181,7 @@ enum Op {
     OpCompositeConstructCoopMatQCOM = 4540,
     OpCompositeExtractCoopMatQCOM = 4541,
     OpExtractSubArrayQCOM = 4542,
+    OpImageGatherQCOM = 4545,
     OpGroupIAddNonUniformAMD = 5000,
     OpGroupFAddNonUniformAMD = 5001,
     OpGroupFMinNonUniformAMD = 5002,
@@ -3029,6 +3058,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpGraphSetOutputARM: *hasResult = false; *hasResultType = false; break;
     case OpGraphEndARM: *hasResult = false; *hasResultType = false; break;
     case OpTypeGraphARM: *hasResult = true; *hasResultType = false; break;
+    case OpBitcastExtractEXT: *hasResult = true; *hasResultType = true; break;
     case OpTerminateInvocation: *hasResult = false; *hasResultType = false; break;
     case OpTypeUntypedPointerKHR: *hasResult = true; *hasResultType = false; break;
     case OpUntypedVariableKHR: *hasResult = true; *hasResultType = true; break;
@@ -3086,6 +3116,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpCompositeConstructCoopMatQCOM: *hasResult = true; *hasResultType = true; break;
     case OpCompositeExtractCoopMatQCOM: *hasResult = true; *hasResultType = true; break;
     case OpExtractSubArrayQCOM: *hasResult = true; *hasResultType = true; break;
+    case OpImageGatherQCOM: *hasResult = true; *hasResultType = true; break;
     case OpGroupIAddNonUniformAMD: *hasResult = true; *hasResultType = true; break;
     case OpGroupFAddNonUniformAMD: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMinNonUniformAMD: *hasResult = true; *hasResultType = true; break;
@@ -3562,6 +3593,8 @@ inline const char* SourceLanguageToString(SourceLanguage value) {
     case SourceLanguageSlang: return "Slang";
     case SourceLanguageZig: return "Zig";
     case SourceLanguageRust: return "Rust";
+    case SourceLanguagePred: return "Pred";
+    case SourceLanguageApilaJai: return "ApilaJai";
     default: return "Unknown";
     }
 }
@@ -4084,6 +4117,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationConditionalINTEL: return "ConditionalINTEL";
     case DecorationCacheControlLoadINTEL: return "CacheControlLoadINTEL";
     case DecorationCacheControlStoreINTEL: return "CacheControlStoreINTEL";
+    case DecorationIntrinsicSAMSUNG: return "IntrinsicSAMSUNG";
     default: return "Unknown";
     }
 }
@@ -4340,6 +4374,11 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityCooperativeMatrixLayoutsARM: return "CooperativeMatrixLayoutsARM";
     case CapabilityFloat8EXT: return "Float8EXT";
     case CapabilityFloat8CooperativeMatrixEXT: return "Float8CooperativeMatrixEXT";
+    case CapabilityFloat6EXT: return "Float6EXT";
+    case CapabilityFloat4EXT: return "Float4EXT";
+    case CapabilityFloat8UnsignedE8M0EXT: return "Float8UnsignedE8M0EXT";
+    case CapabilityMXInt8EXT: return "MXInt8EXT";
+    case CapabilityBitcastExtractEXT: return "BitcastExtractEXT";
     case CapabilityFragmentShadingRateKHR: return "FragmentShadingRateKHR";
     case CapabilitySubgroupBallotKHR: return "SubgroupBallotKHR";
     case CapabilityDrawParameters: return "DrawParameters";
@@ -4376,6 +4415,9 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityTileShadingQCOM: return "TileShadingQCOM";
     case CapabilityCooperativeMatrixConversionQCOM: return "CooperativeMatrixConversionQCOM";
     case CapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
+    case CapabilityMultipleWaitQueuesQCOM: return "MultipleWaitQueuesQCOM";
+    case CapabilityImageGatherLinearQCOM: return "ImageGatherLinearQCOM";
+    case CapabilityImageGatherExtendedModesQCOM: return "ImageGatherExtendedModesQCOM";
     case CapabilityFloat16ImageAMD: return "Float16ImageAMD";
     case CapabilityImageGatherBiasLodAMD: return "ImageGatherBiasLodAMD";
     case CapabilityFragmentMaskAMD: return "FragmentMaskAMD";
@@ -4551,6 +4593,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityDotProductFloat16AccFloat16VALVE: return "DotProductFloat16AccFloat16VALVE";
     case CapabilityDotProductBFloat16AccVALVE: return "DotProductBFloat16AccVALVE";
     case CapabilityDotProductFloat8AccFloat32VALVE: return "DotProductFloat8AccFloat32VALVE";
+    case CapabilityIntrinsicSAMSUNG: return "IntrinsicSAMSUNG";
     default: return "Unknown";
     }
 }
@@ -4708,6 +4751,11 @@ inline const char* FPEncodingToString(FPEncoding value) {
     case FPEncodingBFloat16KHR: return "BFloat16KHR";
     case FPEncodingFloat8E4M3EXT: return "Float8E4M3EXT";
     case FPEncodingFloat8E5M2EXT: return "Float8E5M2EXT";
+    case FPEncodingFloat6E2M3EXT: return "Float6E2M3EXT";
+    case FPEncodingFloat6E3M2EXT: return "Float6E3M2EXT";
+    case FPEncodingFloat4E2M1EXT: return "Float4E2M1EXT";
+    case FPEncodingFloat8UnsignedE8M0EXT: return "Float8UnsignedE8M0EXT";
+    case FPEncodingMXInt8EXT: return "MXInt8EXT";
     default: return "Unknown";
     }
 }
@@ -4739,6 +4787,16 @@ inline const char* ComponentTypeToString(ComponentType value) {
     case ComponentTypeUnsignedInt8PackedNV: return "UnsignedInt8PackedNV";
     case ComponentTypeFloatE4M3NV: return "FloatE4M3NV";
     case ComponentTypeFloatE5M2NV: return "FloatE5M2NV";
+    default: return "Unknown";
+    }
+}
+
+inline const char* GatherModesToString(GatherModes value) {
+    switch (value) {
+    case GatherModesGather4x1QCOM: return "Gather4x1QCOM";
+    case GatherModesGatherDQCOM: return "GatherDQCOM";
+    case GatherModesGatherH2QCOM: return "GatherH2QCOM";
+    case GatherModesGatherV2QCOM: return "GatherV2QCOM";
     default: return "Unknown";
     }
 }
@@ -5103,6 +5161,7 @@ inline const char* OpToString(Op value) {
     case OpGraphSetOutputARM: return "OpGraphSetOutputARM";
     case OpGraphEndARM: return "OpGraphEndARM";
     case OpTypeGraphARM: return "OpTypeGraphARM";
+    case OpBitcastExtractEXT: return "OpBitcastExtractEXT";
     case OpTerminateInvocation: return "OpTerminateInvocation";
     case OpTypeUntypedPointerKHR: return "OpTypeUntypedPointerKHR";
     case OpUntypedVariableKHR: return "OpUntypedVariableKHR";
@@ -5160,6 +5219,7 @@ inline const char* OpToString(Op value) {
     case OpCompositeConstructCoopMatQCOM: return "OpCompositeConstructCoopMatQCOM";
     case OpCompositeExtractCoopMatQCOM: return "OpCompositeExtractCoopMatQCOM";
     case OpExtractSubArrayQCOM: return "OpExtractSubArrayQCOM";
+    case OpImageGatherQCOM: return "OpImageGatherQCOM";
     case OpGroupIAddNonUniformAMD: return "OpGroupIAddNonUniformAMD";
     case OpGroupFAddNonUniformAMD: return "OpGroupFAddNonUniformAMD";
     case OpGroupFMinNonUniformAMD: return "OpGroupFMinNonUniformAMD";

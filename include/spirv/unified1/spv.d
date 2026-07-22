@@ -60,6 +60,8 @@ enum SourceLanguage : uint
     Slang = 11,
     Zig = 12,
     Rust = 13,
+    Pred = 14,
+    ApilaJai = 15,
     Max = 0x7fffffff,
 }
 
@@ -717,6 +719,7 @@ enum Decoration : uint
     ConditionalINTEL = 6247,
     CacheControlLoadINTEL = 6442,
     CacheControlStoreINTEL = 6443,
+    IntrinsicSAMSUNG = 7040,
     Max = 0x7fffffff,
 }
 
@@ -920,6 +923,7 @@ enum LoopControlShift : uint
     LoopCountINTEL = 24,
     MaxReinvocationDelayALTERA = 25,
     MaxReinvocationDelayINTEL = 25,
+    MultipleWaitQueuesQCOM = 28,
     Max = 0x7fffffff,
 }
 
@@ -955,6 +959,7 @@ enum LoopControlMask : uint
     LoopCountINTEL = 0x01000000,
     MaxReinvocationDelayALTERA = 0x02000000,
     MaxReinvocationDelayINTEL = 0x02000000,
+    MultipleWaitQueuesQCOM = 0x10000000,
 }
 
 enum FunctionControlShift : uint
@@ -1186,6 +1191,11 @@ enum Capability : uint
     CooperativeMatrixLayoutsARM = 4201,
     Float8EXT = 4212,
     Float8CooperativeMatrixEXT = 4213,
+    Float6EXT = 4228,
+    Float4EXT = 4229,
+    Float8UnsignedE8M0EXT = 4230,
+    MXInt8EXT = 4231,
+    BitcastExtractEXT = 4232,
     FragmentShadingRateKHR = 4422,
     SubgroupBallotKHR = 4423,
     DrawParameters = 4427,
@@ -1224,6 +1234,9 @@ enum Capability : uint
     TileShadingQCOM = 4495,
     CooperativeMatrixConversionQCOM = 4496,
     TextureBlockMatch2QCOM = 4498,
+    MultipleWaitQueuesQCOM = 4539,
+    ImageGatherLinearQCOM = 4543,
+    ImageGatherExtendedModesQCOM = 4544,
     Float16ImageAMD = 5008,
     ImageGatherBiasLodAMD = 5009,
     FragmentMaskAMD = 5010,
@@ -1449,6 +1462,7 @@ enum Capability : uint
     DotProductFloat16AccFloat16VALVE = 6913,
     DotProductBFloat16AccVALVE = 6914,
     DotProductFloat8AccFloat32VALVE = 6915,
+    IntrinsicSAMSUNG = 7041,
     Max = 0x7fffffff,
 }
 
@@ -1770,6 +1784,11 @@ enum FPEncoding : uint
     BFloat16KHR = 0,
     Float8E4M3EXT = 4214,
     Float8E5M2EXT = 4215,
+    Float6E2M3EXT = 4223,
+    Float6E3M2EXT = 4224,
+    Float4E2M1EXT = 4225,
+    Float8UnsignedE8M0EXT = 4226,
+    MXInt8EXT = 4227,
     Max = 0x7fffffff,
 }
 
@@ -1799,6 +1818,15 @@ enum ComponentType : uint
     UnsignedInt8PackedNV = 1000491001,
     FloatE4M3NV = 1000491002,
     FloatE5M2NV = 1000491003,
+    Max = 0x7fffffff,
+}
+
+enum GatherModes : uint
+{
+    Gather4x1QCOM = 0,
+    GatherDQCOM = 1,
+    GatherH2QCOM = 2,
+    GatherV2QCOM = 3,
     Max = 0x7fffffff,
 }
 
@@ -2162,6 +2190,7 @@ enum Op : uint
     OpGraphSetOutputARM = 4185,
     OpGraphEndARM = 4186,
     OpTypeGraphARM = 4190,
+    OpBitcastExtractEXT = 4195,
     OpTerminateInvocation = 4416,
     OpTypeUntypedPointerKHR = 4417,
     OpUntypedVariableKHR = 4418,
@@ -2225,6 +2254,7 @@ enum Op : uint
     OpCompositeConstructCoopMatQCOM = 4540,
     OpCompositeExtractCoopMatQCOM = 4541,
     OpExtractSubArrayQCOM = 4542,
+    OpImageGatherQCOM = 4545,
     OpGroupIAddNonUniformAMD = 5000,
     OpGroupFAddNonUniformAMD = 5001,
     OpGroupFMinNonUniformAMD = 5002,

@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 The Khronos Group Inc.
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # SPIR-V Headers
 
 This repository contains machine-readable files for the
