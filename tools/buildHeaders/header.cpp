@@ -21,6 +21,7 @@
 #include <fstream>
 #include <cstring>
 #include <cstdio>
+#include <cerrno>
 #include <algorithm>
 #include <memory>
 #include <cctype>
@@ -39,6 +40,13 @@
 #pragma warning(disable:4996)
 #define snprintf _snprintf
 #endif
+
+#ifdef _WIN32
+#include <direct.h>
+#else
+#include <sys/stat.h>
+#endif
+
 
 // This file converts SPIR-V definitions to an internal JSON
 // representation, and then generates language specific
@@ -889,6 +897,25 @@ https://www.khronos.org/registry/)";
         }
     };
 
+    bool makeDirectory(const std::string& path) {
+#ifdef _WIN32
+        const int result = _mkdir(path.c_str());
+#else
+        const int result = mkdir(path.c_str(), 0755);
+#endif
+        return result == 0 || errno == EEXIST;
+    }
+
+    bool ensureParentDirectories(const std::string& filename) {
+        std::string::size_type pos = 0;
+        while ((pos = filename.find("/", pos)) != std::string::npos) {
+            const std::string path = filename.substr(0, pos);
+            ++pos;
+            if (!path.empty() && !makeDirectory(path))
+                return false;
+        }
+        return true;
+    }
 } // namespace
 
 namespace spv {
@@ -909,6 +936,7 @@ namespace spv {
         langInfo.push_back(std::make_pair(ELangBeef,    "spirv.bf"));
 
         for (const auto& lang : langInfo) {
+            ensureParentDirectories(lang.second);
             std::ofstream out(lang.second, std::ios::out);
 
             if ((out.rdstate() & std::ifstream::failbit)) {
