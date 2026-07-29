@@ -10,7 +10,7 @@
 # the Binary Section of the SPIR-V specification.
 
 # Enumeration tokens for SPIR-V, in various styles:
-#   C, C++, C++11, JSON, Lua, Python, C#, D, Beef
+#   C, C++, C++11, JSON, Lua, Python, C#, Java, D, Beef
 # 
 # - C will have tokens with a "Spv" prefix, e.g.: SpvSourceLanguageGLSL
 # - C++ will have tokens in the "spv" name space, e.g.: spv::SourceLanguageGLSL
@@ -19,6 +19,8 @@
 # - Python will use dictionaries, e.g.: spv['SourceLanguage']['GLSL']
 # - C# will use enum classes in the Specification class located in the "Spv" namespace,
 #     e.g.: Spv.Specification.SourceLanguage.GLSL
+# - Java will use enum classes in the Spv class in the org.khronos.spv package,
+#     e.g.: Spv.SourceLanguage.GLSL
 # - D will have tokens under the "spv" module, e.g: spv.SourceLanguage.GLSL
 # - Beef will use enum classes in the Specification class located in the "Spv" namespace,
 #     e.g.: Spv.Specification.SourceLanguage.GLSL
