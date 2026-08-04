@@ -591,6 +591,7 @@ enum Decoration {
     DecorationBindlessImageNV = 5399,
     DecorationBoundSamplerNV = 5400,
     DecorationBoundImageNV = 5401,
+    DecorationCooperativeMatrixTransposeEXT = 5440,
     DecorationSIMTCallINTEL = 5599,
     DecorationReferencedIndirectlyINTEL = 5602,
     DecorationClobberINTEL = 5607,
@@ -1298,13 +1299,17 @@ enum Capability {
     CapabilityPushConstantBanksNV = 5423,
     CapabilityLongVectorEXT = 5425,
     CapabilityShader64BitIndexingEXT = 5426,
+    CapabilityCooperativeMatrixConversionsEXT = 5429,
+    CapabilityCooperativeMatrixReductionsEXT = 5430,
     CapabilityCooperativeMatrixReductionsNV = 5430,
     CapabilityCooperativeMatrixConversionsNV = 5431,
+    CapabilityCooperativeMatrixPerElementOperationsEXT = 5432,
     CapabilityCooperativeMatrixPerElementOperationsNV = 5432,
     CapabilityCooperativeMatrixTensorAddressingNV = 5433,
     CapabilityCooperativeMatrixBlockLoadsNV = 5434,
     CapabilityCooperativeVectorTrainingNV = 5435,
     CapabilityRayTracingClusterAccelerationStructureNV = 5437,
+    CapabilityCooperativeMatrixGetCoordinateEXT = 5438,
     CapabilityTensorAddressingNV = 5439,
     CapabilityCooperativeMatrixDecodeVectorNV = 5447,
     CapabilitySubgroupShuffleINTEL = 5568,
@@ -2254,6 +2259,7 @@ enum Op {
     OpCooperativeVectorReduceSumAccumulateNV = 5291,
     OpCooperativeVectorMatrixMulAddNV = 5292,
     OpCooperativeMatrixConvertNV = 5293,
+    OpCooperativeMatrixConvertUseEXT = 5293,
     OpEmitMeshTasksEXT = 5294,
     OpSetMeshOutputsEXT = 5295,
     OpGroupNonUniformPartitionEXT = 5296,
@@ -2318,11 +2324,14 @@ enum Op {
     OpCooperativeMatrixStoreNV = 5360,
     OpCooperativeMatrixMulAddNV = 5361,
     OpCooperativeMatrixLengthNV = 5362,
+    OpCooperativeMatrixGetCoordinateEXT = 5363,
     OpBeginInvocationInterlockEXT = 5364,
     OpEndInvocationInterlockEXT = 5365,
+    OpCooperativeMatrixReduceEXT = 5366,
     OpCooperativeMatrixReduceNV = 5366,
     OpCooperativeMatrixLoadTensorNV = 5367,
     OpCooperativeMatrixStoreTensorNV = 5368,
+    OpCooperativeMatrixPerElementOpEXT = 5369,
     OpCooperativeMatrixPerElementOpNV = 5369,
     OpTypeTensorLayoutNV = 5370,
     OpTypeTensorViewNV = 5371,
@@ -3187,7 +3196,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpCooperativeVectorOuterProductAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case OpCooperativeVectorReduceSumAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case OpCooperativeVectorMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
-    case OpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
+    case OpCooperativeMatrixConvertUseEXT: *hasResult = true; *hasResultType = true; break;
     case OpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case OpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
     case OpGroupNonUniformPartitionEXT: *hasResult = true; *hasResultType = true; break;
@@ -3248,12 +3257,13 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpCooperativeMatrixStoreNV: *hasResult = false; *hasResultType = false; break;
     case OpCooperativeMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
     case OpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
+    case OpCooperativeMatrixGetCoordinateEXT: *hasResult = true; *hasResultType = true; break;
     case OpBeginInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case OpEndInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
-    case OpCooperativeMatrixReduceNV: *hasResult = true; *hasResultType = true; break;
+    case OpCooperativeMatrixReduceEXT: *hasResult = true; *hasResultType = true; break;
     case OpCooperativeMatrixLoadTensorNV: *hasResult = true; *hasResultType = true; break;
     case OpCooperativeMatrixStoreTensorNV: *hasResult = false; *hasResultType = false; break;
-    case OpCooperativeMatrixPerElementOpNV: *hasResult = true; *hasResultType = true; break;
+    case OpCooperativeMatrixPerElementOpEXT: *hasResult = true; *hasResultType = true; break;
     case OpTypeTensorLayoutNV: *hasResult = true; *hasResultType = false; break;
     case OpTypeTensorViewNV: *hasResult = true; *hasResultType = false; break;
     case OpCreateTensorLayoutNV: *hasResult = true; *hasResultType = true; break;
@@ -4051,6 +4061,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationBindlessImageNV: return "BindlessImageNV";
     case DecorationBoundSamplerNV: return "BoundSamplerNV";
     case DecorationBoundImageNV: return "BoundImageNV";
+    case DecorationCooperativeMatrixTransposeEXT: return "CooperativeMatrixTransposeEXT";
     case DecorationSIMTCallINTEL: return "SIMTCallINTEL";
     case DecorationReferencedIndirectlyINTEL: return "ReferencedIndirectlyINTEL";
     case DecorationClobberINTEL: return "ClobberINTEL";
@@ -4492,13 +4503,15 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityPushConstantBanksNV: return "PushConstantBanksNV";
     case CapabilityLongVectorEXT: return "LongVectorEXT";
     case CapabilityShader64BitIndexingEXT: return "Shader64BitIndexingEXT";
-    case CapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
+    case CapabilityCooperativeMatrixConversionsEXT: return "CooperativeMatrixConversionsEXT";
+    case CapabilityCooperativeMatrixReductionsEXT: return "CooperativeMatrixReductionsEXT";
     case CapabilityCooperativeMatrixConversionsNV: return "CooperativeMatrixConversionsNV";
-    case CapabilityCooperativeMatrixPerElementOperationsNV: return "CooperativeMatrixPerElementOperationsNV";
+    case CapabilityCooperativeMatrixPerElementOperationsEXT: return "CooperativeMatrixPerElementOperationsEXT";
     case CapabilityCooperativeMatrixTensorAddressingNV: return "CooperativeMatrixTensorAddressingNV";
     case CapabilityCooperativeMatrixBlockLoadsNV: return "CooperativeMatrixBlockLoadsNV";
     case CapabilityCooperativeVectorTrainingNV: return "CooperativeVectorTrainingNV";
     case CapabilityRayTracingClusterAccelerationStructureNV: return "RayTracingClusterAccelerationStructureNV";
+    case CapabilityCooperativeMatrixGetCoordinateEXT: return "CooperativeMatrixGetCoordinateEXT";
     case CapabilityTensorAddressingNV: return "TensorAddressingNV";
     case CapabilityCooperativeMatrixDecodeVectorNV: return "CooperativeMatrixDecodeVectorNV";
     case CapabilitySubgroupShuffleINTEL: return "SubgroupShuffleINTEL";
@@ -5351,12 +5364,13 @@ inline const char* OpToString(Op value) {
     case OpCooperativeMatrixStoreNV: return "OpCooperativeMatrixStoreNV";
     case OpCooperativeMatrixMulAddNV: return "OpCooperativeMatrixMulAddNV";
     case OpCooperativeMatrixLengthNV: return "OpCooperativeMatrixLengthNV";
+    case OpCooperativeMatrixGetCoordinateEXT: return "OpCooperativeMatrixGetCoordinateEXT";
     case OpBeginInvocationInterlockEXT: return "OpBeginInvocationInterlockEXT";
     case OpEndInvocationInterlockEXT: return "OpEndInvocationInterlockEXT";
-    case OpCooperativeMatrixReduceNV: return "OpCooperativeMatrixReduceNV";
+    case OpCooperativeMatrixReduceEXT: return "OpCooperativeMatrixReduceEXT";
     case OpCooperativeMatrixLoadTensorNV: return "OpCooperativeMatrixLoadTensorNV";
     case OpCooperativeMatrixStoreTensorNV: return "OpCooperativeMatrixStoreTensorNV";
-    case OpCooperativeMatrixPerElementOpNV: return "OpCooperativeMatrixPerElementOpNV";
+    case OpCooperativeMatrixPerElementOpEXT: return "OpCooperativeMatrixPerElementOpEXT";
     case OpTypeTensorLayoutNV: return "OpTypeTensorLayoutNV";
     case OpTypeTensorViewNV: return "OpTypeTensorViewNV";
     case OpCreateTensorLayoutNV: return "OpCreateTensorLayoutNV";
