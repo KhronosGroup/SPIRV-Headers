@@ -48,7 +48,7 @@
         <id value="13"  vendor="Google" tool="Shaderc over Glslang" comment="Contact David Neto, dneto@google.com"/>
         <id value="14"  vendor="Google" tool="spiregg" comment="Contact Steven Perron, stevenperron@google.com"/>
         <id value="15"  vendor="Google" tool="rspirv" comment="Contact Lei Zhang, antiagainst@gmail.com"/>
-        <id value="16"  vendor="X-LEGEND"   tool="Mesa-IR/SPIR-V Translator" comment="Contact Metora Wang, github:metora/MesaGLSLCompiler"/>
+        <id value="16"  vendor="X-LEGEND"   tool="Mesa3D GLSL-IR/SPIR-V Translator" comment="https://github.com/X-LEGEND-RD/GLSLCompiler"/>
         <id value="17"  vendor="Khronos" tool="SPIR-V Tools Linker" comment="Contact David Neto, dneto@google.com"/>
         <id value="18"  vendor="Wine" tool="VKD3D Shader Compiler" comment="Contact wine-devel@winehq.org"/>
         <id value="19"  vendor="Tellusim" tool="Clay Shader Compiler" comment="Contact info@tellusim.com"/>
