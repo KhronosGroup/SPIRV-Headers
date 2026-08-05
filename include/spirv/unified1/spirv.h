@@ -595,6 +595,7 @@ typedef enum SpvDecoration_ {
     SpvDecorationBindlessImageNV = 5399,
     SpvDecorationBoundSamplerNV = 5400,
     SpvDecorationBoundImageNV = 5401,
+    SpvDecorationCooperativeMatrixTransposeEXT = 5440,
     SpvDecorationSIMTCallINTEL = 5599,
     SpvDecorationReferencedIndirectlyINTEL = 5602,
     SpvDecorationClobberINTEL = 5607,
@@ -1302,13 +1303,17 @@ typedef enum SpvCapability_ {
     SpvCapabilityPushConstantBanksNV = 5423,
     SpvCapabilityLongVectorEXT = 5425,
     SpvCapabilityShader64BitIndexingEXT = 5426,
+    SpvCapabilityCooperativeMatrixConversionsEXT = 5429,
+    SpvCapabilityCooperativeMatrixReductionsEXT = 5430,
     SpvCapabilityCooperativeMatrixReductionsNV = 5430,
     SpvCapabilityCooperativeMatrixConversionsNV = 5431,
+    SpvCapabilityCooperativeMatrixPerElementOperationsEXT = 5432,
     SpvCapabilityCooperativeMatrixPerElementOperationsNV = 5432,
     SpvCapabilityCooperativeMatrixTensorAddressingNV = 5433,
     SpvCapabilityCooperativeMatrixBlockLoadsNV = 5434,
     SpvCapabilityCooperativeVectorTrainingNV = 5435,
     SpvCapabilityRayTracingClusterAccelerationStructureNV = 5437,
+    SpvCapabilityCooperativeMatrixGetCoordinateEXT = 5438,
     SpvCapabilityTensorAddressingNV = 5439,
     SpvCapabilityCooperativeMatrixDecodeVectorNV = 5447,
     SpvCapabilitySubgroupShuffleINTEL = 5568,
@@ -2258,6 +2263,7 @@ typedef enum SpvOp_ {
     SpvOpCooperativeVectorReduceSumAccumulateNV = 5291,
     SpvOpCooperativeVectorMatrixMulAddNV = 5292,
     SpvOpCooperativeMatrixConvertNV = 5293,
+    SpvOpCooperativeMatrixConvertUseEXT = 5293,
     SpvOpEmitMeshTasksEXT = 5294,
     SpvOpSetMeshOutputsEXT = 5295,
     SpvOpGroupNonUniformPartitionEXT = 5296,
@@ -2322,11 +2328,14 @@ typedef enum SpvOp_ {
     SpvOpCooperativeMatrixStoreNV = 5360,
     SpvOpCooperativeMatrixMulAddNV = 5361,
     SpvOpCooperativeMatrixLengthNV = 5362,
+    SpvOpCooperativeMatrixGetCoordinateEXT = 5363,
     SpvOpBeginInvocationInterlockEXT = 5364,
     SpvOpEndInvocationInterlockEXT = 5365,
+    SpvOpCooperativeMatrixReduceEXT = 5366,
     SpvOpCooperativeMatrixReduceNV = 5366,
     SpvOpCooperativeMatrixLoadTensorNV = 5367,
     SpvOpCooperativeMatrixStoreTensorNV = 5368,
+    SpvOpCooperativeMatrixPerElementOpEXT = 5369,
     SpvOpCooperativeMatrixPerElementOpNV = 5369,
     SpvOpTypeTensorLayoutNV = 5370,
     SpvOpTypeTensorViewNV = 5371,
@@ -3191,7 +3200,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpCooperativeVectorOuterProductAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeVectorReduceSumAccumulateNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeVectorMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
-    case SpvOpCooperativeMatrixConvertNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixConvertUseEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpEmitMeshTasksEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpSetMeshOutputsEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpGroupNonUniformPartitionEXT: *hasResult = true; *hasResultType = true; break;
@@ -3252,12 +3261,13 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpCooperativeMatrixStoreNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpCooperativeMatrixMulAddNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixLengthNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixGetCoordinateEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpBeginInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
     case SpvOpEndInvocationInterlockEXT: *hasResult = false; *hasResultType = false; break;
-    case SpvOpCooperativeMatrixReduceNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixReduceEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixLoadTensorNV: *hasResult = true; *hasResultType = true; break;
     case SpvOpCooperativeMatrixStoreTensorNV: *hasResult = false; *hasResultType = false; break;
-    case SpvOpCooperativeMatrixPerElementOpNV: *hasResult = true; *hasResultType = true; break;
+    case SpvOpCooperativeMatrixPerElementOpEXT: *hasResult = true; *hasResultType = true; break;
     case SpvOpTypeTensorLayoutNV: *hasResult = true; *hasResultType = false; break;
     case SpvOpTypeTensorViewNV: *hasResult = true; *hasResultType = false; break;
     case SpvOpCreateTensorLayoutNV: *hasResult = true; *hasResultType = true; break;
@@ -4055,6 +4065,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationBindlessImageNV: return "BindlessImageNV";
     case SpvDecorationBoundSamplerNV: return "BoundSamplerNV";
     case SpvDecorationBoundImageNV: return "BoundImageNV";
+    case SpvDecorationCooperativeMatrixTransposeEXT: return "CooperativeMatrixTransposeEXT";
     case SpvDecorationSIMTCallINTEL: return "SIMTCallINTEL";
     case SpvDecorationReferencedIndirectlyINTEL: return "ReferencedIndirectlyINTEL";
     case SpvDecorationClobberINTEL: return "ClobberINTEL";
@@ -4496,13 +4507,15 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityPushConstantBanksNV: return "PushConstantBanksNV";
     case SpvCapabilityLongVectorEXT: return "LongVectorEXT";
     case SpvCapabilityShader64BitIndexingEXT: return "Shader64BitIndexingEXT";
-    case SpvCapabilityCooperativeMatrixReductionsNV: return "CooperativeMatrixReductionsNV";
+    case SpvCapabilityCooperativeMatrixConversionsEXT: return "CooperativeMatrixConversionsEXT";
+    case SpvCapabilityCooperativeMatrixReductionsEXT: return "CooperativeMatrixReductionsEXT";
     case SpvCapabilityCooperativeMatrixConversionsNV: return "CooperativeMatrixConversionsNV";
-    case SpvCapabilityCooperativeMatrixPerElementOperationsNV: return "CooperativeMatrixPerElementOperationsNV";
+    case SpvCapabilityCooperativeMatrixPerElementOperationsEXT: return "CooperativeMatrixPerElementOperationsEXT";
     case SpvCapabilityCooperativeMatrixTensorAddressingNV: return "CooperativeMatrixTensorAddressingNV";
     case SpvCapabilityCooperativeMatrixBlockLoadsNV: return "CooperativeMatrixBlockLoadsNV";
     case SpvCapabilityCooperativeVectorTrainingNV: return "CooperativeVectorTrainingNV";
     case SpvCapabilityRayTracingClusterAccelerationStructureNV: return "RayTracingClusterAccelerationStructureNV";
+    case SpvCapabilityCooperativeMatrixGetCoordinateEXT: return "CooperativeMatrixGetCoordinateEXT";
     case SpvCapabilityTensorAddressingNV: return "TensorAddressingNV";
     case SpvCapabilityCooperativeMatrixDecodeVectorNV: return "CooperativeMatrixDecodeVectorNV";
     case SpvCapabilitySubgroupShuffleINTEL: return "SubgroupShuffleINTEL";
@@ -5355,12 +5368,13 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpCooperativeMatrixStoreNV: return "OpCooperativeMatrixStoreNV";
     case SpvOpCooperativeMatrixMulAddNV: return "OpCooperativeMatrixMulAddNV";
     case SpvOpCooperativeMatrixLengthNV: return "OpCooperativeMatrixLengthNV";
+    case SpvOpCooperativeMatrixGetCoordinateEXT: return "OpCooperativeMatrixGetCoordinateEXT";
     case SpvOpBeginInvocationInterlockEXT: return "OpBeginInvocationInterlockEXT";
     case SpvOpEndInvocationInterlockEXT: return "OpEndInvocationInterlockEXT";
-    case SpvOpCooperativeMatrixReduceNV: return "OpCooperativeMatrixReduceNV";
+    case SpvOpCooperativeMatrixReduceEXT: return "OpCooperativeMatrixReduceEXT";
     case SpvOpCooperativeMatrixLoadTensorNV: return "OpCooperativeMatrixLoadTensorNV";
     case SpvOpCooperativeMatrixStoreTensorNV: return "OpCooperativeMatrixStoreTensorNV";
-    case SpvOpCooperativeMatrixPerElementOpNV: return "OpCooperativeMatrixPerElementOpNV";
+    case SpvOpCooperativeMatrixPerElementOpEXT: return "OpCooperativeMatrixPerElementOpEXT";
     case SpvOpTypeTensorLayoutNV: return "OpTypeTensorLayoutNV";
     case SpvOpTypeTensorViewNV: return "OpTypeTensorViewNV";
     case SpvOpCreateTensorLayoutNV: return "OpCreateTensorLayoutNV";
