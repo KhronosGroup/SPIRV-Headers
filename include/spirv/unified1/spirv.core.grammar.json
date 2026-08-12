@@ -18814,10 +18814,10 @@
           "version" : "None"
         },
         {
-          "enumerant" : "BFloat16ArithmeticINTEL",
+          "enumerant" : "BFloat16ArithmeticEXT",
           "value" : 6226,
           "capabilities" : [ "BFloat16TypeKHR" ],
-          "extensions" : [ "SPV_INTEL_bfloat16_arithmetic" ],
+          "extensions" : [ "SPV_EXT_bfloat16_arithmetic" ],
           "version" : "None",
           "provisional" : true
         },
