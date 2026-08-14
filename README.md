@@ -25,7 +25,7 @@ not tied to SPIR-V specification versions.
 ## How is this repository updated?
 
 When a new version or revision of the SPIR-V specification is published,
-the SPIR-V Working Group will push new commits onto master, updating
+the SPIR-V Working Group will push new commits onto the `main` branch, updating
 the files under [include](include).
 
 [The SPIR-V XML registry file](include/spirv/spir-v.xml)
@@ -92,9 +92,9 @@ See also the [example](example/) subdirectory.  But since that example is
 A Bazel-based project can use the headers without installing, as follows:
 
 1. Add SPIRV-Headers as a submodule of your project, and add a
-`local_repository` to your `WORKSPACE` file. For example, if you place
+`local_repository` to your `MODULE.bazel` file. For example, if you place
 SPIRV-Headers under `external/spirv-headers`, then add the following to your
-`WORKSPACE` file:
+`MODULE.bazel` file:
 
 ```
 local_repository(
