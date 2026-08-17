@@ -5385,6 +5385,20 @@
       "version" : "None"
     },
     {
+      "opname" : "OpBFloat16MulAddQCOM",
+      "class"  : "Arithmetic",
+      "opcode" : 4505,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Operand 1" },
+        { "kind" : "IdRef", "name" : "Operand 2" },
+        { "kind" : "IdRef", "name" : "Operand 3" }
+      ],
+      "capabilities" : [ "BFloat16MulAddQCOM" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpCompositeConstructCoopMatQCOM",
       "class"  : "Composite",
       "opcode" : 4540,
@@ -17734,6 +17748,12 @@
           "enumerant" : "TextureBlockMatch2QCOM",
           "value" : 4498,
           "extensions" : [ "SPV_QCOM_image_processing2" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "BFloat16MulAddQCOM",
+          "value" : 4504,
+          "extensions" : [ "SPV_QCOM_bfloat16_muladd" ],
           "version" : "None"
         },
         {
