@@ -1199,6 +1199,7 @@ enum Capability {
     CapabilityTileShadingQCOM = 4495,
     CapabilityCooperativeMatrixConversionQCOM = 4496,
     CapabilityTextureBlockMatch2QCOM = 4498,
+    CapabilityBFloat16MulAddQCOM = 4504,
     CapabilityMultipleWaitQueuesQCOM = 4539,
     CapabilityImageGatherLinearQCOM = 4543,
     CapabilityImageGatherExtendedModesQCOM = 4544,
@@ -2183,6 +2184,7 @@ enum Op {
     OpImageBlockMatchWindowSADQCOM = 4501,
     OpImageBlockMatchGatherSSDQCOM = 4502,
     OpImageBlockMatchGatherSADQCOM = 4503,
+    OpBFloat16MulAddQCOM = 4505,
     OpCompositeConstructCoopMatQCOM = 4540,
     OpCompositeExtractCoopMatQCOM = 4541,
     OpExtractSubArrayQCOM = 4542,
@@ -3122,6 +3124,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpImageBlockMatchWindowSADQCOM: *hasResult = true; *hasResultType = true; break;
     case OpImageBlockMatchGatherSSDQCOM: *hasResult = true; *hasResultType = true; break;
     case OpImageBlockMatchGatherSADQCOM: *hasResult = true; *hasResultType = true; break;
+    case OpBFloat16MulAddQCOM: *hasResult = true; *hasResultType = true; break;
     case OpCompositeConstructCoopMatQCOM: *hasResult = true; *hasResultType = true; break;
     case OpCompositeExtractCoopMatQCOM: *hasResult = true; *hasResultType = true; break;
     case OpExtractSubArrayQCOM: *hasResult = true; *hasResultType = true; break;
@@ -4426,6 +4429,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityTileShadingQCOM: return "TileShadingQCOM";
     case CapabilityCooperativeMatrixConversionQCOM: return "CooperativeMatrixConversionQCOM";
     case CapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
+    case CapabilityBFloat16MulAddQCOM: return "BFloat16MulAddQCOM";
     case CapabilityMultipleWaitQueuesQCOM: return "MultipleWaitQueuesQCOM";
     case CapabilityImageGatherLinearQCOM: return "ImageGatherLinearQCOM";
     case CapabilityImageGatherExtendedModesQCOM: return "ImageGatherExtendedModesQCOM";
@@ -5229,6 +5233,7 @@ inline const char* OpToString(Op value) {
     case OpImageBlockMatchWindowSADQCOM: return "OpImageBlockMatchWindowSADQCOM";
     case OpImageBlockMatchGatherSSDQCOM: return "OpImageBlockMatchGatherSSDQCOM";
     case OpImageBlockMatchGatherSADQCOM: return "OpImageBlockMatchGatherSADQCOM";
+    case OpBFloat16MulAddQCOM: return "OpBFloat16MulAddQCOM";
     case OpCompositeConstructCoopMatQCOM: return "OpCompositeConstructCoopMatQCOM";
     case OpCompositeExtractCoopMatQCOM: return "OpCompositeExtractCoopMatQCOM";
     case OpExtractSubArrayQCOM: return "OpExtractSubArrayQCOM";
