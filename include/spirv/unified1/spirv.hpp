@@ -1414,6 +1414,7 @@ enum Capability {
     CapabilityGlobalVariableHostAccessINTEL = 6187,
     CapabilityGlobalVariableFPGADecorationsALTERA = 6189,
     CapabilityGlobalVariableFPGADecorationsINTEL = 6189,
+    CapabilitySubgroupBitcastShuffleINTEL = 6207,
     CapabilitySubgroupBufferPrefetchINTEL = 6220,
     CapabilitySubgroup2DBlockIOINTEL = 6228,
     CapabilitySubgroup2DBlockTransformINTEL = 6229,
@@ -2668,6 +2669,7 @@ enum Op {
     OpTaskSequenceReleaseINTEL = 6166,
     OpTypeTaskSequenceALTERA = 6199,
     OpTypeTaskSequenceINTEL = 6199,
+    OpSubgroupBitcastShuffleINTEL = 6208,
     OpSubgroupBlockPrefetchINTEL = 6221,
     OpSubgroup2DBlockLoadINTEL = 6231,
     OpSubgroup2DBlockLoadTransformINTEL = 6232,
@@ -3556,6 +3558,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpTaskSequenceGetALTERA: *hasResult = true; *hasResultType = true; break;
     case OpTaskSequenceReleaseALTERA: *hasResult = false; *hasResultType = false; break;
     case OpTypeTaskSequenceALTERA: *hasResult = true; *hasResultType = false; break;
+    case OpSubgroupBitcastShuffleINTEL: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockLoadINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockLoadTransformINTEL: *hasResult = false; *hasResultType = false; break;
@@ -4595,6 +4598,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFPGAArgumentInterfacesALTERA: return "FPGAArgumentInterfacesALTERA";
     case CapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case CapabilityGlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
+    case CapabilitySubgroupBitcastShuffleINTEL: return "SubgroupBitcastShuffleINTEL";
     case CapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
     case CapabilitySubgroup2DBlockIOINTEL: return "Subgroup2DBlockIOINTEL";
     case CapabilitySubgroup2DBlockTransformINTEL: return "Subgroup2DBlockTransformINTEL";
@@ -5668,6 +5672,7 @@ inline const char* OpToString(Op value) {
     case OpTaskSequenceGetALTERA: return "OpTaskSequenceGetALTERA";
     case OpTaskSequenceReleaseALTERA: return "OpTaskSequenceReleaseALTERA";
     case OpTypeTaskSequenceALTERA: return "OpTypeTaskSequenceALTERA";
+    case OpSubgroupBitcastShuffleINTEL: return "OpSubgroupBitcastShuffleINTEL";
     case OpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case OpSubgroup2DBlockLoadINTEL: return "OpSubgroup2DBlockLoadINTEL";
     case OpSubgroup2DBlockLoadTransformINTEL: return "OpSubgroup2DBlockLoadTransformINTEL";

@@ -11414,6 +11414,18 @@
       "version": "None"
     },
     {
+      "opname" : "OpSubgroupBitcastShuffleINTEL",
+      "class"  : "Group",
+      "opcode" : 6208,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",          "name" : "Operand" }
+      ],
+      "capabilities" : [ "SubgroupBitcastShuffleINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpSubgroupBlockPrefetchINTEL",
       "class"  : "Group",
       "opcode" : 6221,
@@ -18843,6 +18855,12 @@
           "aliases" : [ "GlobalVariableFPGADecorationsINTEL" ],
           "value" : 6189,
           "extensions" : [ "SPV_ALTERA_global_variable_fpga_decorations", "SPV_INTEL_global_variable_fpga_decorations" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "SubgroupBitcastShuffleINTEL",
+          "value" : 6207,
+          "extensions": [ "SPV_INTEL_subgroup_bitcast_shuffle" ],
           "version" : "None"
         },
         {
