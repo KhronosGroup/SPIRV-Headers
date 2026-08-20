@@ -1,0 +1,16 @@
+{
+  "revision" : 1,
+  "instructions" : [
+    {
+      "opname" : "OpCooperativeMatrixConvertIMG",
+      "opcode" : 1,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",             "name" : "Matrix 0" },
+        { "kind" : "IdRef",             "name" : "Matrix 1" }
+      ],
+      "extensions" : [ "CooperativeMatrixKHR" ]
+    }
+  ]
+}

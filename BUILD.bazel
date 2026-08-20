@@ -148,6 +148,11 @@ filegroup(
     srcs = ["include/spirv/unified1/extinst.arm.experimental-ml-operations.grammar.json"],
 )
 
+filegroup(
+    name = "spirv_ext_inst_img_experimental_operations",
+    srcs = ["include/spirv/unified1/extinst.img.experimental-operations.grammar.json"],
+)
+
 cc_library(
     name = "spirv_common_headers",
     hdrs = [
@@ -160,6 +165,7 @@ cc_library(
         "include/spirv/unified1/ArmExperimentalMLOperations.h",
         "include/spirv/unified1/ArmMotionEngine.100.h",
         "include/spirv/unified1/GLSL.std.450.h",
+        "include/spirv/unified1/IMG.experimental-operations.h",
         "include/spirv/unified1/NonSemanticClspvReflection.h",
         "include/spirv/unified1/NonSemanticDebugBreak.h",
         "include/spirv/unified1/NonSemanticDebugPrintf.h",
