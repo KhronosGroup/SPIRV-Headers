@@ -1,0 +1,161 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://schema.khronos.org/spirv/grammar-1-6-2-0.json#",
+    "title": "SPIR-V Grammar Schema for SPIR-V 1.6.2 v0",
+    "type" : "object",
+    "additionalProperties": false,
+    "definitions": {
+        "stringArray": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "operands" : {
+            "description" : "array of operands",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "kind": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "quantifier": {
+                        "type": "string",
+                        "enum": [
+                            "*",
+                            "?"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "properties": {
+        "copyright": {
+            "$ref": "#/definitions/stringArray"
+        },
+        "magic_number": {
+            "type": "string"
+        },
+        "major_version": {
+            "description": "Major version of core grammar",
+            "type": "integer"
+        },
+        "minor_version": {
+            "description": "Minor version of core grammar",
+            "type": "integer"
+        },
+        "version": {
+            "description": "Version of extended instruction grammar",
+            "type": "integer"
+        },
+        "revision": {
+            "type": "integer"
+        },
+        "instruction_printing_class": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "tag": {
+                        "type": "string"
+                    },
+                    "heading": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "instructions" :  {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "opname": {
+                        "type": "string"
+                    },
+                    "class": {
+                        "type": "string"
+                    },
+                    "opcode": {
+                        "type": "integer"
+                    },
+                    "operands": {
+                        "$ref": "#/definitions/operands"
+                    },
+                    "capabilities": {
+                        "$ref": "#/definitions/stringArray"
+                    },
+                    "extensions": {
+                        "$ref": "#/definitions/stringArray"
+                    },
+                    "version": {
+                        "type": "string"
+                    },
+                    "lastVersion": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "operand_kinds" :  {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "category": {
+                        "type": "string"
+                    },
+                    "kind": {
+                        "type": "string"
+                    },
+                    "enumerants": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "enumerant": {
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "description": "integer or hex value as string",
+                                    "type": ["string", "number"]
+                                },
+                                "parameters": {
+                                    "$ref": "#/definitions/operands"
+                                },
+                                "capabilities": {
+                                    "$ref": "#/definitions/stringArray"
+                                },
+                                "extensions": {
+                                    "$ref": "#/definitions/stringArray"
+                                },
+                                "version": {
+                                    "type": "string"
+                                },
+                                "lastVersion": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "doc": {
+                        "type": "string"
+                    },
+                    "bases": {
+                        "$ref": "#/definitions/stringArray"
+                    }
+                }
+            }
+        }
+    }
+}
