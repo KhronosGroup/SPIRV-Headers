@@ -2,7 +2,7 @@
   "revision" : 1,
   "instructions" : [
     {
-      "opname" : "OpCooperativeMatrixConvertIMG",
+      "opname" : "CooperativeMatrixConvertIMG",
       "opcode" : 1,
       "operands" : [
         { "kind" : "IdResultType" },

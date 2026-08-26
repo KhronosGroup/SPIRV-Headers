@@ -14,7 +14,7 @@ enum {
 };
 
 enum IMGExperimentalOperationsInstructions {
-    IMGOpCooperativeMatrixConvertIMG = 1,
+    IMGCooperativeMatrixConvertIMG = 1,
     IMGMax = 0x7fffffff
 };
 
