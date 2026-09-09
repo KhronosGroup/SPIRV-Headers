@@ -7,7 +7,9 @@
 #    https://www.khronos.org/registry/
 
 cmake_minimum_required(VERSION 3.14)
-project(SPIRV-Headers LANGUAGES C CXX VERSION 1.5.5)
+project(SPIRV-Headers
+	LANGUAGES C CXX
+	VERSION 1.202609.1)
 
 if (CMAKE_VERSION VERSION_LESS "3.21")
     # https://cmake.org/cmake/help/latest/variable/PROJECT_IS_TOP_LEVEL.html
@@ -22,6 +24,7 @@ option(SPIRV_HEADERS_ENABLE_TESTS "Test SPIRV-Headers" ${PROJECT_IS_TOP_LEVEL})
 option(SPIRV_HEADERS_ENABLE_INSTALL "Install SPIRV-Headers" ${PROJECT_IS_TOP_LEVEL})
 
 if(SPIRV_HEADERS_ENABLE_TESTS)
+    enable_testing()
     add_subdirectory(tests)
 endif()
 

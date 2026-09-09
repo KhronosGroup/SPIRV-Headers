@@ -8,6 +8,8 @@
 
 #include <spirv/unified1/GLSL.std.450.h>
 #include <spirv/unified1/OpenCL.std.h>
+#include <stdio.h>
+
 #include <spirv/unified1/spirv.hpp11>
 
 namespace {
@@ -18,6 +20,19 @@ const spv::Op kNop = spv::Op::OpNop;
 
 }  // anonymous namespace
 
+#define CHECK(got, expect)                                  \
+  {                                                         \
+    if (static_cast<int>(got) != (expect)) {                \
+      printf("error: for " #got ", got %d instead of %d\n", \
+             static_cast<int>(got), expect);                \
+      err_count++;                                          \
+    }                                                       \
+  }
+
 int main() {
-  return 0;
+  int err_count = 0;
+  CHECK(kNop, 0);
+  CHECK(kNative_cos, 81);
+  CHECK(kSin, 13);
+  return err_count ? 1 : 0;
 }
