@@ -235,6 +235,50 @@ python3 bin/makeExtinstHeaders.py
   3. Other, older tagging conventions previously existed in this repo, but are
      no longer actively used.
 
+## How to cut a new release
+
+1. Tag the commit at the top of the `main` branch. Use the current version from
+   the [CMakeLists.txt](CMakeLists.txt) file.
+   Push that tag to GitHub.
+
+2. Immediately land a new commit with updated version numbers in
+   [CMakeLists.txt](CMakeLists.txt) and [MODULE.bazel](MODULE.bazel).
+
+   Use today's date to generate a CalVer version number. Use the lowest `R`
+   number to avoid collisions.
+
+### Example
+
+For example, if `CMakeLists.txt` has:
+
+       project(SPIRV-Headers
+               LANGUAGES C CXX
+               VERSION 1.202610.0)
+
+Then create the `v1.202610.0` tag:
+
+       git tag -a v1.202610.0 -m "SPIRV-Headers v1.202610.0"
+       git push origin v1.202610.0
+
+Update the version number to match the current date, and the lowest `R` that
+avoids a collision.
+
+If it's still October 2026, then bump the release number to 1:
+
+       sed -i -e s/1.202610.0/1.202610.1/ CMakeLists.txt MODULE.bazel
+
+If today is in February 2027 and this is the first release of the month, then
+use a tip version number of 0:
+
+       sed -i -e s/1.202610.0/1.202702.0/ CMakeLists.txt MODULE.bazel
+     
+Commit this change:
+
+       git add CMakeLists.txt MODULE.bazel
+       git commit -m "Start SPIRV-Headers v1.202702.0"
+
+Push this commit to main, not shown.
+
 ## License
 <a name="license"></a>
 ```
