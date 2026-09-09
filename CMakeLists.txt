@@ -7,7 +7,9 @@
 #    https://www.khronos.org/registry/
 
 cmake_minimum_required(VERSION 3.14)
-project(SPIRV-Headers LANGUAGES C CXX VERSION 1.5.5)
+project(SPIRV-Headers
+	LANGUAGES C CXX
+	VERSION 1.202609.1)
 
 if (CMAKE_VERSION VERSION_LESS "3.21")
     # https://cmake.org/cmake/help/latest/variable/PROJECT_IS_TOP_LEVEL.html
