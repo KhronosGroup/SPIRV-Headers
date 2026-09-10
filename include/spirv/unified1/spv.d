@@ -1451,6 +1451,7 @@ enum Capability : uint
     GlobalVariableFPGADecorationsALTERA = 6189,
     GlobalVariableFPGADecorationsINTEL = 6189,
     SubgroupBufferPrefetchINTEL = 6220,
+    BFloat16ArithmeticEXT = 6226,
     Subgroup2DBlockIOINTEL = 6228,
     Subgroup2DBlockTransformINTEL = 6229,
     Subgroup2DBlockTransposeINTEL = 6230,
