@@ -1418,6 +1418,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityGlobalVariableHostAccessINTEL = 6187,
     SpvCapabilityGlobalVariableFPGADecorationsALTERA = 6189,
     SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6189,
+    SpvCapabilitySubgroupBitcastShuffleINTEL = 6207,
     SpvCapabilitySubgroupBufferPrefetchINTEL = 6220,
     SpvCapabilitySubgroup2DBlockIOINTEL = 6228,
     SpvCapabilitySubgroup2DBlockTransformINTEL = 6229,
@@ -2672,6 +2673,7 @@ typedef enum SpvOp_ {
     SpvOpTaskSequenceReleaseINTEL = 6166,
     SpvOpTypeTaskSequenceALTERA = 6199,
     SpvOpTypeTaskSequenceINTEL = 6199,
+    SpvOpSubgroupBitcastShuffleINTEL = 6208,
     SpvOpSubgroupBlockPrefetchINTEL = 6221,
     SpvOpSubgroup2DBlockLoadINTEL = 6231,
     SpvOpSubgroup2DBlockLoadTransformINTEL = 6232,
@@ -3560,6 +3562,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpTaskSequenceGetALTERA: *hasResult = true; *hasResultType = true; break;
     case SpvOpTaskSequenceReleaseALTERA: *hasResult = false; *hasResultType = false; break;
     case SpvOpTypeTaskSequenceALTERA: *hasResult = true; *hasResultType = false; break;
+    case SpvOpSubgroupBitcastShuffleINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpSubgroup2DBlockLoadINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpSubgroup2DBlockLoadTransformINTEL: *hasResult = false; *hasResultType = false; break;
@@ -4599,6 +4602,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPGAArgumentInterfacesALTERA: return "FPGAArgumentInterfacesALTERA";
     case SpvCapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case SpvCapabilityGlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
+    case SpvCapabilitySubgroupBitcastShuffleINTEL: return "SubgroupBitcastShuffleINTEL";
     case SpvCapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
     case SpvCapabilitySubgroup2DBlockIOINTEL: return "Subgroup2DBlockIOINTEL";
     case SpvCapabilitySubgroup2DBlockTransformINTEL: return "Subgroup2DBlockTransformINTEL";
@@ -5672,6 +5676,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpTaskSequenceGetALTERA: return "OpTaskSequenceGetALTERA";
     case SpvOpTaskSequenceReleaseALTERA: return "OpTaskSequenceReleaseALTERA";
     case SpvOpTypeTaskSequenceALTERA: return "OpTypeTaskSequenceALTERA";
+    case SpvOpSubgroupBitcastShuffleINTEL: return "OpSubgroupBitcastShuffleINTEL";
     case SpvOpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case SpvOpSubgroup2DBlockLoadINTEL: return "OpSubgroup2DBlockLoadINTEL";
     case SpvOpSubgroup2DBlockLoadTransformINTEL: return "OpSubgroup2DBlockLoadTransformINTEL";
