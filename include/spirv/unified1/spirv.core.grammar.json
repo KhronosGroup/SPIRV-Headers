@@ -817,7 +817,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "Pointer" }
       ],
-      "capabilities" : [ "Kernel" ],
+      "capabilities" : [ "GenericPointer" ],
       "version": "1.0"
     },
     {
@@ -1425,7 +1425,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "Pointer" }
       ],
-      "capabilities" : [ "Kernel" ],
+      "capabilities" : [ "GenericPointer" ],
       "version": "1.0"
     },
     {
@@ -1437,7 +1437,7 @@
         { "kind" : "IdResult" },
         { "kind" : "IdRef",        "name" : "Pointer" }
       ],
-      "capabilities" : [ "Kernel" ],
+      "capabilities" : [ "GenericPointer" ],
       "version": "1.0"
     },
     {
@@ -1450,7 +1450,7 @@
         { "kind" : "IdRef",        "name" : "Pointer" },
         { "kind" : "StorageClass", "name" : "Storage" }
       ],
-      "capabilities" : [ "Kernel" ],
+      "capabilities" : [ "GenericPointer" ],
       "version": "1.0"
     },
     {
