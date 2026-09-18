@@ -1396,6 +1396,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityRayTracingOpacityMicromapExecutionModeKHR = 6032,
     SpvCapabilityAtomicFloat32AddEXT = 6033,
     SpvCapabilityAtomicFloat64AddEXT = 6034,
+    SpvCapabilityRelaxedPointerArgumentEXT = 6035,
     SpvCapabilityLongCompositesINTEL = 6089,
     SpvCapabilityOptNoneEXT = 6094,
     SpvCapabilityOptNoneINTEL = 6094,
@@ -4584,6 +4585,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityRayTracingOpacityMicromapExecutionModeKHR: return "RayTracingOpacityMicromapExecutionModeKHR";
     case SpvCapabilityAtomicFloat32AddEXT: return "AtomicFloat32AddEXT";
     case SpvCapabilityAtomicFloat64AddEXT: return "AtomicFloat64AddEXT";
+    case SpvCapabilityRelaxedPointerArgumentEXT: return "RelaxedPointerArgumentEXT";
     case SpvCapabilityLongCompositesINTEL: return "LongCompositesINTEL";
     case SpvCapabilityOptNoneEXT: return "OptNoneEXT";
     case SpvCapabilityAtomicFloat16AddEXT: return "AtomicFloat16AddEXT";

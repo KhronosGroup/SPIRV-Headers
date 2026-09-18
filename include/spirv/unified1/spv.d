@@ -1428,6 +1428,7 @@ enum Capability : uint
     RayTracingOpacityMicromapExecutionModeKHR = 6032,
     AtomicFloat32AddEXT = 6033,
     AtomicFloat64AddEXT = 6034,
+    RelaxedPointerArgumentEXT = 6035,
     LongCompositesINTEL = 6089,
     OptNoneEXT = 6094,
     OptNoneINTEL = 6094,

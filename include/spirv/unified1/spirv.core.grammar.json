@@ -18747,6 +18747,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "RelaxedPointerArgumentEXT",
+          "value" : 6035,
+          "extensions" : [ "SPV_EXT_relaxed_pointer_argument" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "LongCompositesINTEL",
           "value" : 6089,
           "extensions" : [ "SPV_INTEL_long_composites" ],
