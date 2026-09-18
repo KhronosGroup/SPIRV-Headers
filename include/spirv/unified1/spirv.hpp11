@@ -1392,6 +1392,7 @@ enum class Capability : unsigned {
     RayTracingOpacityMicromapExecutionModeKHR = 6032,
     AtomicFloat32AddEXT = 6033,
     AtomicFloat64AddEXT = 6034,
+    RelaxedPointerArgumentEXT = 6035,
     LongCompositesINTEL = 6089,
     OptNoneEXT = 6094,
     OptNoneINTEL = 6094,
@@ -4580,6 +4581,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::RayTracingOpacityMicromapExecutionModeKHR: return "RayTracingOpacityMicromapExecutionModeKHR";
     case Capability::AtomicFloat32AddEXT: return "AtomicFloat32AddEXT";
     case Capability::AtomicFloat64AddEXT: return "AtomicFloat64AddEXT";
+    case Capability::RelaxedPointerArgumentEXT: return "RelaxedPointerArgumentEXT";
     case Capability::LongCompositesINTEL: return "LongCompositesINTEL";
     case Capability::OptNoneEXT: return "OptNoneEXT";
     case Capability::AtomicFloat16AddEXT: return "AtomicFloat16AddEXT";
