@@ -862,6 +862,7 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInHitLSSRadiiNV = 5421,
     SpvBuiltInClusterIDNV = 5436,
     SpvBuiltInCullMaskKHR = 6021,
+    SpvBuiltInDeviceBarrierValidINTEL = 6186,
     SpvBuiltInMax = 0x7fffffff,
 } SpvBuiltIn;
 
@@ -1415,6 +1416,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFPGALatencyControlINTEL = 6171,
     SpvCapabilityFPGAArgumentInterfacesALTERA = 6174,
     SpvCapabilityFPGAArgumentInterfacesINTEL = 6174,
+    SpvCapabilityDeviceBarrierINTEL = 6185,
     SpvCapabilityGlobalVariableHostAccessINTEL = 6187,
     SpvCapabilityGlobalVariableFPGADecorationsALTERA = 6189,
     SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6189,
@@ -4275,6 +4277,7 @@ inline const char* SpvBuiltInToString(SpvBuiltIn value) {
     case SpvBuiltInHitLSSRadiiNV: return "HitLSSRadiiNV";
     case SpvBuiltInClusterIDNV: return "ClusterIDNV";
     case SpvBuiltInCullMaskKHR: return "CullMaskKHR";
+    case SpvBuiltInDeviceBarrierValidINTEL: return "DeviceBarrierValidINTEL";
     default: return "Unknown";
     }
 }
@@ -4597,6 +4600,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFPMaxErrorINTEL: return "FPMaxErrorINTEL";
     case SpvCapabilityFPGALatencyControlALTERA: return "FPGALatencyControlALTERA";
     case SpvCapabilityFPGAArgumentInterfacesALTERA: return "FPGAArgumentInterfacesALTERA";
+    case SpvCapabilityDeviceBarrierINTEL: return "DeviceBarrierINTEL";
     case SpvCapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case SpvCapabilityGlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
     case SpvCapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";

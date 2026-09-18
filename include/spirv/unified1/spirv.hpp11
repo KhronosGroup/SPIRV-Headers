@@ -858,6 +858,7 @@ enum class BuiltIn : unsigned {
     HitLSSRadiiNV = 5421,
     ClusterIDNV = 5436,
     CullMaskKHR = 6021,
+    DeviceBarrierValidINTEL = 6186,
     Max = 0x7fffffff,
 };
 
@@ -1411,6 +1412,7 @@ enum class Capability : unsigned {
     FPGALatencyControlINTEL = 6171,
     FPGAArgumentInterfacesALTERA = 6174,
     FPGAArgumentInterfacesINTEL = 6174,
+    DeviceBarrierINTEL = 6185,
     GlobalVariableHostAccessINTEL = 6187,
     GlobalVariableFPGADecorationsALTERA = 6189,
     GlobalVariableFPGADecorationsINTEL = 6189,
@@ -4271,6 +4273,7 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltIn::HitLSSRadiiNV: return "HitLSSRadiiNV";
     case BuiltIn::ClusterIDNV: return "ClusterIDNV";
     case BuiltIn::CullMaskKHR: return "CullMaskKHR";
+    case BuiltIn::DeviceBarrierValidINTEL: return "DeviceBarrierValidINTEL";
     default: return "Unknown";
     }
 }
@@ -4593,6 +4596,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::FPMaxErrorINTEL: return "FPMaxErrorINTEL";
     case Capability::FPGALatencyControlALTERA: return "FPGALatencyControlALTERA";
     case Capability::FPGAArgumentInterfacesALTERA: return "FPGAArgumentInterfacesALTERA";
+    case Capability::DeviceBarrierINTEL: return "DeviceBarrierINTEL";
     case Capability::GlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case Capability::GlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
     case Capability::SubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
