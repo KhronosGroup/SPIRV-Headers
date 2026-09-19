@@ -13899,7 +13899,7 @@
           "value" : 5402,
           "extensions" : [ "SPV_EXT_mesh_shader" ],
           "capabilities" : [ "MeshShadingEXT" ],
-          "version" : "1.4"
+          "version" : "None"
         },
         {
           "enumerant" : "HitObjectAttributeEXT",
