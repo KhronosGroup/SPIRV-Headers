@@ -10600,8 +10600,7 @@
       "class"  : "Annotation",
       "opcode" : 5911,
       "operands" : [
-        { "kind" : "IdResult"},
-        { "kind" : "IdRef", "quantifier" : "?", "name" : "Name" }
+        { "kind" : "IdResult" }
       ],
       "capabilities" : [ "MemoryAccessAliasingINTEL" ],
       "version" : "None"
@@ -10611,9 +10610,8 @@
       "class"  : "Annotation",
       "opcode" : 5912,
       "operands" : [
-        { "kind" : "IdResult"},
-        { "kind" : "IdRef", "name" : "Alias Domain"},
-        { "kind" : "IdRef", "quantifier" : "?", "name" : "Name" }
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Alias Domain" }
       ],
       "capabilities" : [ "MemoryAccessAliasingINTEL" ],
       "version" : "None"
@@ -10623,7 +10621,7 @@
       "class"  : "Annotation",
       "opcode" : 5913,
       "operands" : [
-        { "kind" : "IdResult"},
+        { "kind" : "IdResult" },
         { "kind" : "IdRef", "quantifier" : "*", "name" : "AliasScope 1, AliasScope 2, ..." }
       ],
       "capabilities" : [ "MemoryAccessAliasingINTEL" ],
