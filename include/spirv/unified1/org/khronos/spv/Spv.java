@@ -1633,6 +1633,7 @@ public class Spv {
         GlobalVariableFPGADecorationsINTEL(6189),
         SubgroupBitcastShuffleINTEL(6207),
         SubgroupBufferPrefetchINTEL(6220),
+        BFloat16ArithmeticEXT(6226),
         Subgroup2DBlockIOINTEL(6228),
         Subgroup2DBlockTransformINTEL(6229),
         Subgroup2DBlockTransposeINTEL(6230),
