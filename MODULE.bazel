@@ -4,7 +4,7 @@
 
 module(
     name = "spirv_headers",
-    version = "1.202609.0-pre.0",
+    version = "1.202609.1-pre.0",
 )
 
 bazel_dep(name = "rules_cc", version = "0.1.1")

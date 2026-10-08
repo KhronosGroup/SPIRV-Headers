@@ -9,11 +9,25 @@
 #include <spirv/unified1/GLSL.std.450.h>
 #include <spirv/unified1/OpenCL.std.h>
 #include <spirv/unified1/spirv.h>
+#include <stdio.h>
 
 const enum GLSLstd450 kSin = GLSLstd450Sin;
 const enum OpenCLstd_Entrypoints kNative_cos = OpenCLstd_Native_cos;
 const SpvOp kNop = SpvOpNop;
 
+#define CHECK(got, expect)                                              \
+  {                                                                     \
+    if ((int)(got) != (expect)) {                                       \
+      printf("error: for " #got ", got %d instead of %d\n", (int)(got), \
+             expect);                                                   \
+      err_count++;                                                      \
+    }                                                                   \
+  }
+
 int main() {
-  return 0;
+  int err_count = 0;
+  CHECK(kNop, 0);
+  CHECK(kNative_cos, 81);
+  CHECK(kSin, 13);
+  return err_count ? 1 : 0;
 }
