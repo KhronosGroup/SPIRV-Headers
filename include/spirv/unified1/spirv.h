@@ -1432,6 +1432,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityFunctionVariantsINTEL = 6246,
     SpvCapabilityPredicatedIOINTEL = 6257,
     SpvCapabilityRoundedDivideSqrtINTEL = 6265,
+    SpvCapabilityPauseINTEL = 6266,
     SpvCapabilityGroupUniformArithmeticKHR = 6400,
     SpvCapabilityTensorFloat32RoundingINTEL = 6425,
     SpvCapabilityMaskedGatherScatterINTEL = 6427,
@@ -2694,6 +2695,7 @@ typedef enum SpvOp_ {
     SpvOpConditionalCopyObjectINTEL = 6254,
     SpvOpPredicatedLoadINTEL = 6258,
     SpvOpPredicatedStoreINTEL = 6259,
+    SpvOpPauseINTEL = 6267,
     SpvOpGroupIMulKHR = 6401,
     SpvOpGroupFMulKHR = 6402,
     SpvOpGroupBitwiseAndKHR = 6403,
@@ -3583,6 +3585,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpConditionalCopyObjectINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpPredicatedLoadINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpPredicatedStoreINTEL: *hasResult = false; *hasResultType = false; break;
+    case SpvOpPauseINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -4618,6 +4621,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFunctionVariantsINTEL: return "FunctionVariantsINTEL";
     case SpvCapabilityPredicatedIOINTEL: return "PredicatedIOINTEL";
     case SpvCapabilityRoundedDivideSqrtINTEL: return "RoundedDivideSqrtINTEL";
+    case SpvCapabilityPauseINTEL: return "PauseINTEL";
     case SpvCapabilityGroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case SpvCapabilityTensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";
     case SpvCapabilityMaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
@@ -5699,6 +5703,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpConditionalCopyObjectINTEL: return "OpConditionalCopyObjectINTEL";
     case SpvOpPredicatedLoadINTEL: return "OpPredicatedLoadINTEL";
     case SpvOpPredicatedStoreINTEL: return "OpPredicatedStoreINTEL";
+    case SpvOpPauseINTEL: return "OpPauseINTEL";
     case SpvOpGroupIMulKHR: return "OpGroupIMulKHR";
     case SpvOpGroupFMulKHR: return "OpGroupFMulKHR";
     case SpvOpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";
