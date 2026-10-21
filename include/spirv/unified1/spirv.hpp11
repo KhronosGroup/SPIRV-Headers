@@ -1428,6 +1428,7 @@ enum class Capability : unsigned {
     FunctionVariantsINTEL = 6246,
     PredicatedIOINTEL = 6257,
     RoundedDivideSqrtINTEL = 6265,
+    PauseINTEL = 6266,
     GroupUniformArithmeticKHR = 6400,
     TensorFloat32RoundingINTEL = 6425,
     MaskedGatherScatterINTEL = 6427,
@@ -2690,6 +2691,7 @@ enum class Op : unsigned {
     OpConditionalCopyObjectINTEL = 6254,
     OpPredicatedLoadINTEL = 6258,
     OpPredicatedStoreINTEL = 6259,
+    OpPauseINTEL = 6267,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -3579,6 +3581,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpConditionalCopyObjectINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpPredicatedLoadINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpPredicatedStoreINTEL: *hasResult = false; *hasResultType = false; break;
+    case Op::OpPauseINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -4614,6 +4617,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::FunctionVariantsINTEL: return "FunctionVariantsINTEL";
     case Capability::PredicatedIOINTEL: return "PredicatedIOINTEL";
     case Capability::RoundedDivideSqrtINTEL: return "RoundedDivideSqrtINTEL";
+    case Capability::PauseINTEL: return "PauseINTEL";
     case Capability::GroupUniformArithmeticKHR: return "GroupUniformArithmeticKHR";
     case Capability::TensorFloat32RoundingINTEL: return "TensorFloat32RoundingINTEL";
     case Capability::MaskedGatherScatterINTEL: return "MaskedGatherScatterINTEL";
@@ -5695,6 +5699,7 @@ inline const char* OpToString(Op value) {
     case Op::OpConditionalCopyObjectINTEL: return "OpConditionalCopyObjectINTEL";
     case Op::OpPredicatedLoadINTEL: return "OpPredicatedLoadINTEL";
     case Op::OpPredicatedStoreINTEL: return "OpPredicatedStoreINTEL";
+    case Op::OpPauseINTEL: return "OpPauseINTEL";
     case Op::OpGroupIMulKHR: return "OpGroupIMulKHR";
     case Op::OpGroupFMulKHR: return "OpGroupFMulKHR";
     case Op::OpGroupBitwiseAndKHR: return "OpGroupBitwiseAndKHR";

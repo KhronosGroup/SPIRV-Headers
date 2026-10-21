@@ -11694,6 +11694,16 @@
       "version" : "None"
     },
     {
+      "opname" : "OpPauseINTEL",
+      "class"  : "Miscellaneous",
+      "opcode" : 6267,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Clocks" }
+      ],
+      "capabilities" : [ "PauseINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpGroupIMulKHR",
       "class"  : "Group",
       "opcode" : 6401,
@@ -18939,6 +18949,12 @@
           "value" : 6265,
           "extensions" : [ "SPV_INTEL_rounded_divide_sqrt" ],
           "version": "None"
+        },
+        {
+          "enumerant" : "PauseINTEL",
+          "value" : 6266,
+          "extensions" : [ "SPV_INTEL_pause" ],
+          "version" : "None"
         },
         {
           "enumerant" : "GroupUniformArithmeticKHR",
