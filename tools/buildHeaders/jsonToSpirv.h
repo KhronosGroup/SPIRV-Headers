@@ -97,6 +97,7 @@ enum OperandClass {
     OperandFPEncoding,
     OperandCooperativeVectorMatrixLayout,
     OperandComponentType,
+    OperandGatherModes,
 
     OperandOpcode,
 

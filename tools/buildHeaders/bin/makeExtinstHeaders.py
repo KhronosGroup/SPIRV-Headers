@@ -32,3 +32,4 @@ mk_extinst('NonSemanticVkspReflection', 'extinst.nonsemantic.vkspreflection.gram
 mk_extinst('TOSA', 'extinst.tosa.001000.1.grammar.json', 'TOSA.001000.1')
 mk_extinst('ArmMotionEngine', 'extinst.arm.motion-engine.100.grammar.json', 'ArmMotionEngine.100')
 mk_extinst('NonSemanticGraphDebugInfo', 'extinst.nonsemantic.graph.debuginfo.grammar.json')
+mk_extinst('ArmExperimentalMLOperations', 'extinst.arm.experimental-ml-operations.grammar.json')
