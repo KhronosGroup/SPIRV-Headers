@@ -4089,7 +4089,7 @@ inline const char* SpvDecorationToString(SpvDecoration value) {
     case SpvDecorationStackCallINTEL: return "StackCallINTEL";
     case SpvDecorationGlobalVariableOffsetINTEL: return "GlobalVariableOffsetINTEL";
     case SpvDecorationCounterBuffer: return "CounterBuffer";
-    case SpvDecorationHlslSemanticGOOGLE: return "HlslSemanticGOOGLE";
+    case SpvDecorationUserSemantic: return "UserSemantic";
     case SpvDecorationUserTypeGOOGLE: return "UserTypeGOOGLE";
     case SpvDecorationFunctionRoundingModeINTEL: return "FunctionRoundingModeINTEL";
     case SpvDecorationFunctionDenormModeINTEL: return "FunctionDenormModeINTEL";
@@ -4416,7 +4416,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityWorkgroupMemoryExplicitLayout16BitAccessKHR: return "WorkgroupMemoryExplicitLayout16BitAccessKHR";
     case SpvCapabilitySubgroupVoteKHR: return "SubgroupVoteKHR";
     case SpvCapabilityStorageBuffer16BitAccess: return "StorageBuffer16BitAccess";
-    case SpvCapabilityStorageUniform16: return "StorageUniform16";
+    case SpvCapabilityUniformAndStorageBuffer16BitAccess: return "UniformAndStorageBuffer16BitAccess";
     case SpvCapabilityStoragePushConstant16: return "StoragePushConstant16";
     case SpvCapabilityStorageInputOutput16: return "StorageInputOutput16";
     case SpvCapabilityDeviceGroup: return "DeviceGroup";
@@ -4509,7 +4509,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityFragmentShaderPixelInterlockEXT: return "FragmentShaderPixelInterlockEXT";
     case SpvCapabilityDemoteToHelperInvocation: return "DemoteToHelperInvocation";
     case SpvCapabilityDisplacementMicromapNV: return "DisplacementMicromapNV";
-    case SpvCapabilityRayTracingOpacityMicromapEXT: return "RayTracingOpacityMicromapEXT";
+    case SpvCapabilityRayTracingOpacityMicromapKHR: return "RayTracingOpacityMicromapKHR";
     case SpvCapabilityShaderInvocationReorderNV: return "ShaderInvocationReorderNV";
     case SpvCapabilityShaderInvocationReorderEXT: return "ShaderInvocationReorderEXT";
     case SpvCapabilityBindlessTextureNV: return "BindlessTextureNV";
@@ -5321,12 +5321,12 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpReorderThreadWithHintNV: return "OpReorderThreadWithHintNV";
     case SpvOpTypeHitObjectNV: return "OpTypeHitObjectNV";
     case SpvOpImageSampleFootprintNV: return "OpImageSampleFootprintNV";
-    case SpvOpTypeCooperativeVectorNV: return "OpTypeCooperativeVectorNV";
+    case SpvOpTypeVectorIdEXT: return "OpTypeVectorIdEXT";
     case SpvOpCooperativeVectorMatrixMulNV: return "OpCooperativeVectorMatrixMulNV";
     case SpvOpCooperativeVectorOuterProductAccumulateNV: return "OpCooperativeVectorOuterProductAccumulateNV";
     case SpvOpCooperativeVectorReduceSumAccumulateNV: return "OpCooperativeVectorReduceSumAccumulateNV";
     case SpvOpCooperativeVectorMatrixMulAddNV: return "OpCooperativeVectorMatrixMulAddNV";
-    case SpvOpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
+    case SpvOpCooperativeMatrixConvertUseEXT: return "OpCooperativeMatrixConvertUseEXT";
     case SpvOpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case SpvOpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
     case SpvOpGroupNonUniformPartitionEXT: return "OpGroupNonUniformPartitionEXT";
@@ -5374,7 +5374,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpRayQueryGetIntersectionTriangleVertexPositionsKHR: return "OpRayQueryGetIntersectionTriangleVertexPositionsKHR";
     case SpvOpTypeAccelerationStructureKHR: return "OpTypeAccelerationStructureKHR";
     case SpvOpExecuteCallableNV: return "OpExecuteCallableNV";
-    case SpvOpRayQueryGetClusterIdNV: return "OpRayQueryGetClusterIdNV";
+    case SpvOpRayQueryGetIntersectionClusterIdNV: return "OpRayQueryGetIntersectionClusterIdNV";
     case SpvOpHitObjectGetClusterIdNV: return "OpHitObjectGetClusterIdNV";
     case SpvOpHitObjectGetRayTMinEXT: return "OpHitObjectGetRayTMinEXT";
     case SpvOpHitObjectGetShaderBindingTableRecordIndexEXT: return "OpHitObjectGetShaderBindingTableRecordIndexEXT";

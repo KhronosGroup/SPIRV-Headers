@@ -4085,7 +4085,7 @@ inline const char* DecorationToString(Decoration value) {
     case DecorationStackCallINTEL: return "StackCallINTEL";
     case DecorationGlobalVariableOffsetINTEL: return "GlobalVariableOffsetINTEL";
     case DecorationCounterBuffer: return "CounterBuffer";
-    case DecorationHlslSemanticGOOGLE: return "HlslSemanticGOOGLE";
+    case DecorationUserSemantic: return "UserSemantic";
     case DecorationUserTypeGOOGLE: return "UserTypeGOOGLE";
     case DecorationFunctionRoundingModeINTEL: return "FunctionRoundingModeINTEL";
     case DecorationFunctionDenormModeINTEL: return "FunctionDenormModeINTEL";
@@ -4412,7 +4412,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityWorkgroupMemoryExplicitLayout16BitAccessKHR: return "WorkgroupMemoryExplicitLayout16BitAccessKHR";
     case CapabilitySubgroupVoteKHR: return "SubgroupVoteKHR";
     case CapabilityStorageBuffer16BitAccess: return "StorageBuffer16BitAccess";
-    case CapabilityStorageUniform16: return "StorageUniform16";
+    case CapabilityUniformAndStorageBuffer16BitAccess: return "UniformAndStorageBuffer16BitAccess";
     case CapabilityStoragePushConstant16: return "StoragePushConstant16";
     case CapabilityStorageInputOutput16: return "StorageInputOutput16";
     case CapabilityDeviceGroup: return "DeviceGroup";
@@ -4505,7 +4505,7 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityFragmentShaderPixelInterlockEXT: return "FragmentShaderPixelInterlockEXT";
     case CapabilityDemoteToHelperInvocation: return "DemoteToHelperInvocation";
     case CapabilityDisplacementMicromapNV: return "DisplacementMicromapNV";
-    case CapabilityRayTracingOpacityMicromapEXT: return "RayTracingOpacityMicromapEXT";
+    case CapabilityRayTracingOpacityMicromapKHR: return "RayTracingOpacityMicromapKHR";
     case CapabilityShaderInvocationReorderNV: return "ShaderInvocationReorderNV";
     case CapabilityShaderInvocationReorderEXT: return "ShaderInvocationReorderEXT";
     case CapabilityBindlessTextureNV: return "BindlessTextureNV";
@@ -5317,12 +5317,12 @@ inline const char* OpToString(Op value) {
     case OpReorderThreadWithHintNV: return "OpReorderThreadWithHintNV";
     case OpTypeHitObjectNV: return "OpTypeHitObjectNV";
     case OpImageSampleFootprintNV: return "OpImageSampleFootprintNV";
-    case OpTypeCooperativeVectorNV: return "OpTypeCooperativeVectorNV";
+    case OpTypeVectorIdEXT: return "OpTypeVectorIdEXT";
     case OpCooperativeVectorMatrixMulNV: return "OpCooperativeVectorMatrixMulNV";
     case OpCooperativeVectorOuterProductAccumulateNV: return "OpCooperativeVectorOuterProductAccumulateNV";
     case OpCooperativeVectorReduceSumAccumulateNV: return "OpCooperativeVectorReduceSumAccumulateNV";
     case OpCooperativeVectorMatrixMulAddNV: return "OpCooperativeVectorMatrixMulAddNV";
-    case OpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
+    case OpCooperativeMatrixConvertUseEXT: return "OpCooperativeMatrixConvertUseEXT";
     case OpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case OpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
     case OpGroupNonUniformPartitionEXT: return "OpGroupNonUniformPartitionEXT";
@@ -5370,7 +5370,7 @@ inline const char* OpToString(Op value) {
     case OpRayQueryGetIntersectionTriangleVertexPositionsKHR: return "OpRayQueryGetIntersectionTriangleVertexPositionsKHR";
     case OpTypeAccelerationStructureKHR: return "OpTypeAccelerationStructureKHR";
     case OpExecuteCallableNV: return "OpExecuteCallableNV";
-    case OpRayQueryGetClusterIdNV: return "OpRayQueryGetClusterIdNV";
+    case OpRayQueryGetIntersectionClusterIdNV: return "OpRayQueryGetIntersectionClusterIdNV";
     case OpHitObjectGetClusterIdNV: return "OpHitObjectGetClusterIdNV";
     case OpHitObjectGetRayTMinEXT: return "OpHitObjectGetRayTMinEXT";
     case OpHitObjectGetShaderBindingTableRecordIndexEXT: return "OpHitObjectGetShaderBindingTableRecordIndexEXT";

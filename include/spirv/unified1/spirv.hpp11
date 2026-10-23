@@ -4085,7 +4085,7 @@ inline const char* DecorationToString(Decoration value) {
     case Decoration::StackCallINTEL: return "StackCallINTEL";
     case Decoration::GlobalVariableOffsetINTEL: return "GlobalVariableOffsetINTEL";
     case Decoration::CounterBuffer: return "CounterBuffer";
-    case Decoration::HlslSemanticGOOGLE: return "HlslSemanticGOOGLE";
+    case Decoration::UserSemantic: return "UserSemantic";
     case Decoration::UserTypeGOOGLE: return "UserTypeGOOGLE";
     case Decoration::FunctionRoundingModeINTEL: return "FunctionRoundingModeINTEL";
     case Decoration::FunctionDenormModeINTEL: return "FunctionDenormModeINTEL";
@@ -4412,7 +4412,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::WorkgroupMemoryExplicitLayout16BitAccessKHR: return "WorkgroupMemoryExplicitLayout16BitAccessKHR";
     case Capability::SubgroupVoteKHR: return "SubgroupVoteKHR";
     case Capability::StorageBuffer16BitAccess: return "StorageBuffer16BitAccess";
-    case Capability::StorageUniform16: return "StorageUniform16";
+    case Capability::UniformAndStorageBuffer16BitAccess: return "UniformAndStorageBuffer16BitAccess";
     case Capability::StoragePushConstant16: return "StoragePushConstant16";
     case Capability::StorageInputOutput16: return "StorageInputOutput16";
     case Capability::DeviceGroup: return "DeviceGroup";
@@ -4505,7 +4505,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::FragmentShaderPixelInterlockEXT: return "FragmentShaderPixelInterlockEXT";
     case Capability::DemoteToHelperInvocation: return "DemoteToHelperInvocation";
     case Capability::DisplacementMicromapNV: return "DisplacementMicromapNV";
-    case Capability::RayTracingOpacityMicromapEXT: return "RayTracingOpacityMicromapEXT";
+    case Capability::RayTracingOpacityMicromapKHR: return "RayTracingOpacityMicromapKHR";
     case Capability::ShaderInvocationReorderNV: return "ShaderInvocationReorderNV";
     case Capability::ShaderInvocationReorderEXT: return "ShaderInvocationReorderEXT";
     case Capability::BindlessTextureNV: return "BindlessTextureNV";
@@ -5317,12 +5317,12 @@ inline const char* OpToString(Op value) {
     case Op::OpReorderThreadWithHintNV: return "OpReorderThreadWithHintNV";
     case Op::OpTypeHitObjectNV: return "OpTypeHitObjectNV";
     case Op::OpImageSampleFootprintNV: return "OpImageSampleFootprintNV";
-    case Op::OpTypeCooperativeVectorNV: return "OpTypeCooperativeVectorNV";
+    case Op::OpTypeVectorIdEXT: return "OpTypeVectorIdEXT";
     case Op::OpCooperativeVectorMatrixMulNV: return "OpCooperativeVectorMatrixMulNV";
     case Op::OpCooperativeVectorOuterProductAccumulateNV: return "OpCooperativeVectorOuterProductAccumulateNV";
     case Op::OpCooperativeVectorReduceSumAccumulateNV: return "OpCooperativeVectorReduceSumAccumulateNV";
     case Op::OpCooperativeVectorMatrixMulAddNV: return "OpCooperativeVectorMatrixMulAddNV";
-    case Op::OpCooperativeMatrixConvertNV: return "OpCooperativeMatrixConvertNV";
+    case Op::OpCooperativeMatrixConvertUseEXT: return "OpCooperativeMatrixConvertUseEXT";
     case Op::OpEmitMeshTasksEXT: return "OpEmitMeshTasksEXT";
     case Op::OpSetMeshOutputsEXT: return "OpSetMeshOutputsEXT";
     case Op::OpGroupNonUniformPartitionEXT: return "OpGroupNonUniformPartitionEXT";
@@ -5370,7 +5370,7 @@ inline const char* OpToString(Op value) {
     case Op::OpRayQueryGetIntersectionTriangleVertexPositionsKHR: return "OpRayQueryGetIntersectionTriangleVertexPositionsKHR";
     case Op::OpTypeAccelerationStructureKHR: return "OpTypeAccelerationStructureKHR";
     case Op::OpExecuteCallableNV: return "OpExecuteCallableNV";
-    case Op::OpRayQueryGetClusterIdNV: return "OpRayQueryGetClusterIdNV";
+    case Op::OpRayQueryGetIntersectionClusterIdNV: return "OpRayQueryGetIntersectionClusterIdNV";
     case Op::OpHitObjectGetClusterIdNV: return "OpHitObjectGetClusterIdNV";
     case Op::OpHitObjectGetRayTMinEXT: return "OpHitObjectGetRayTMinEXT";
     case Op::OpHitObjectGetShaderBindingTableRecordIndexEXT: return "OpHitObjectGetShaderBindingTableRecordIndexEXT";

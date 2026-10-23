@@ -28,6 +28,7 @@
 #include <vector>
 #include <utility>
 #include <set>
+#include <map>
 
 #include "jsoncpp/dist/json/json.h"
 
@@ -145,6 +146,9 @@ namespace {
         void addComment(Json::Value& node, const std::string& str);
 
         Json::Value spvRoot; // JSON SPIR-V data
+
+        // Per enum name, the enumerant names that are an alias of another enumerant
+        std::map<std::string, std::set<std::string>> aliasNames;
     };
 
     // Format value as mask or value
@@ -223,6 +227,7 @@ https://www.khronos.org/registry/)";
                 // Add aliases
                 for (auto& alias : enumRow.aliases) {
                     enums[e - spv::OperandSource]["Values"][alias] = enumRow.value;
+                    aliasNames[enumName].insert(alias);
                 }
             }
 
@@ -239,6 +244,7 @@ https://www.khronos.org/registry/)";
                 // Add aliases
                 for (auto& alias : enumRow.aliases) {
                     entry["Values"][alias] = enumRow.value;
+                    aliasNames["Op"].insert(alias);
                 }
             }
             entry["Type"] = "Value";
@@ -552,18 +558,17 @@ https://www.khronos.org/registry/)";
                 const auto name   = (*it)["Name"].asString();
                 const auto sorted = getSortedVals((*it)["Values"]);
 
-                std::set<unsigned> seenValues;
+                const auto aliasIt = aliasNames.find(name);
                 std::string fullName = pre() + name;
 
                 out << "inline const char* " << fullName << "ToString(" << fullName << " value) {" << std::endl;
                 out << "    switch (value) {" << std::endl;
                 for (const auto& v : sorted) {
-                    // Filter out duplicate enum values, which would break the switch statement.
-                    // These are probably just extension enums promoted to core.
-                    if (seenValues.count(v.first)) {
+                    // Only print the name from the grammar, not its aliases, so the newer name is used.
+                    // Each value has exactly one non-alias name, so this also avoids duplicate cases.
+                    if (aliasIt != aliasNames.end() && aliasIt->second.count(v.second)) {
                         continue;
                     }
-                    seenValues.insert(v.first);
 
                     out << "    " << "case ";
                     if (name == "Op") {
