@@ -5880,7 +5880,7 @@
         { "kind" : "IdRef", "name" : "Current Time" },
         { "kind" : "IdRef", "name" : "HitObject Attributes" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV", "RayTracingMotionBlurNV" ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
       "version" : "None"
     },
     {
@@ -5902,7 +5902,7 @@
         { "kind" : "IdRef", "name" : "Current Time" },
         { "kind" : "IdRef", "name" : "HitObject Attributes" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV", "RayTracingMotionBlurNV" ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
       "version" : "None"
     },
     {
@@ -5918,7 +5918,7 @@
         { "kind" : "IdRef", "name" : "TMax" },
         { "kind" : "IdRef", "name" : "Current Time" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV", "RayTracingMotionBlurNV" ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
       "version" : "None"
     },
     {
@@ -5988,7 +5988,7 @@
         { "kind" : "IdRef", "name" : "Time"},
         { "kind" : "IdRef", "name" : "Payload"}
       ],
-      "capabilities" : [ "ShaderInvocationReorderNV", "RayTracingMotionBlurNV" ],
+      "capabilities" : [ "ShaderInvocationReorderNV" ],
       "version" : "None"
     },
     {
@@ -6585,7 +6585,7 @@
         { "kind" : "IdRef", "name" : "Ray Tmax" },
         { "kind" : "IdRef", "name" : "Current Time" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderEXT", "RayTracingMotionBlurNV" ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
       "version" : "None"
     },
     {
@@ -6680,7 +6680,7 @@
         { "kind" : "IdRef", "quantifier" : "?", "name" : "Hint" },
         { "kind" : "IdRef", "quantifier" : "?", "name" : "Bits" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderEXT", "RayTracingMotionBlurNV" ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
       "version" : "None"
     },
     {
@@ -6756,7 +6756,7 @@
         { "kind" : "IdRef", "name" : "Current Time"},
         { "kind" : "IdRef", "name" : "Payload"}
       ],
-      "capabilities" : [ "ShaderInvocationReorderEXT", "RayTracingMotionBlurNV" ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
       "version" : "None"
     },
     {
