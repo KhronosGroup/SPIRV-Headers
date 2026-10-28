@@ -55,6 +55,16 @@ This includes:
 - when there are aliases, listing the preferred spelling first
 - adding the statement `"version" : "None"`
 
+## Downloading source archives
+
+Open the [Tags page](https://github.com/KhronosGroup/SPIRV-Headers/tags) and select
+**zip** or **tar.gz** for the version you want. The [FAQ](#faq) explains the
+tagging conventions.
+
+For scripted downloads, replace `<tag>` in
+`https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/<tag>.tar.gz`
+with a tag from that page. Use `.zip` instead of `.tar.gz` for a ZIP archive.
+
 ## How to install the headers
 
 ```
