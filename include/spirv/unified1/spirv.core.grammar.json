@@ -6789,7 +6789,7 @@
         { "kind" : "IdResult"},
         { "kind" : "IdRef", "name" : "Hit Object" }
       ],
-      "capabilities" : [ "ShaderInvocationReorderEXT" , "RayTracingMotionBlurNV" ],
+      "capabilities" : [ "ShaderInvocationReorderEXT" ],
       "version" : "None"
     },
     {
