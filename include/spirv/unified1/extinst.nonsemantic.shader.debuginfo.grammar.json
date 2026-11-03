@@ -8,7 +8,7 @@
     "HEADER INFORMATION ARE LOCATED AT https://www.khronos.org/registry/ ",
     ""
   ],
-  "version" : 101,
+  "version" : 102,
   "revision" : 1,
   "instructions" : [
     {
@@ -432,7 +432,8 @@
         { "kind" : "IdRef", "name" : "Entry Point" },
         { "kind" : "IdRef", "name" : "Compilation Unit" },
         { "kind" : "IdRef", "name" : "Compiler Signature" },
-        { "kind" : "IdRef", "name" : "Command-line Arguments" }
+        { "kind" : "IdRef", "name" : "Command-line Arguments" },
+        { "kind" : "IdRef", "name" : "Current Working Directory", "quantifier" : "?" }
       ]
     },
     {

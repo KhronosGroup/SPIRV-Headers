@@ -14,7 +14,7 @@ extern "C" {
 #endif
 
 enum {
-    NonSemanticShaderDebugInfoVersion = 101,
+    NonSemanticShaderDebugInfoVersion = 102,
     NonSemanticShaderDebugInfoVersion_BitWidthPadding = 0x7fffffff
 };
 enum {
