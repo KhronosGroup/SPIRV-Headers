@@ -11421,6 +11421,34 @@
       "version" : "None"
     },
     {
+      "opname" : "OpStochasticRoundFToFINTEL",
+      "class"  : "Conversion",
+      "opcode" : 6217,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "Value" },
+        { "kind" : "IdRef",                     "name" : "Seed" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Next Seed" }
+      ],
+      "capabilities" : [ "FloatConversionsFToFINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpClampStochasticRoundFToSINTEL",
+      "class"  : "Conversion",
+      "opcode" : 6219,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "Value" },
+        { "kind" : "IdRef",                     "name" : "Seed" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Next Seed" }
+      ],
+      "capabilities" : [ "FloatConversionsFToSINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpSubgroupBlockPrefetchINTEL",
       "class"  : "Group",
       "opcode" : 6221,
@@ -11813,6 +11841,18 @@
         { "kind" : "IdRef",          "name" : "X" }
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpClampConvertFToSINTEL",
+      "class"  : "Conversion",
+      "opcode" : 6424,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "Value" }
+      ],
+      "capabilities" : [ "FloatConversionsFToSINTEL" ],
       "version" : "None"
     },
     {
@@ -18876,6 +18916,18 @@
           "enumerant" : "SubgroupBitcastShuffleINTEL",
           "value" : 6207,
           "extensions": [ "SPV_INTEL_subgroup_bitcast_shuffle" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FloatConversionsFToFINTEL",
+          "value" : 6215,
+          "extensions": [ "SPV_INTEL_fp_conversions" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FloatConversionsFToSINTEL",
+          "value" : 6216,
+          "extensions": [ "SPV_INTEL_fp_conversions" ],
           "version" : "None"
         },
         {
