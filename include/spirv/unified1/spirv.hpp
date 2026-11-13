@@ -1697,6 +1697,12 @@ enum MatrixMultiplyAccumulateOperandsShift {
     MatrixMultiplyAccumulateOperandsMatrixBPackedFloat16INTELShift = 11,
     MatrixMultiplyAccumulateOperandsMatrixAPackedBFloat16INTELShift = 12,
     MatrixMultiplyAccumulateOperandsMatrixBPackedBFloat16INTELShift = 13,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E4M3INTELShift = 14,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E4M3INTELShift = 15,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E5M2INTELShift = 16,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E5M2INTELShift = 17,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedFloat4E2M1INTELShift = 18,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedFloat4E2M1INTELShift = 19,
     MatrixMultiplyAccumulateOperandsMax = 0x7fffffff,
 };
 
@@ -1716,6 +1722,12 @@ enum MatrixMultiplyAccumulateOperandsMask {
     MatrixMultiplyAccumulateOperandsMatrixBPackedFloat16INTELMask = 0x00000800,
     MatrixMultiplyAccumulateOperandsMatrixAPackedBFloat16INTELMask = 0x00001000,
     MatrixMultiplyAccumulateOperandsMatrixBPackedBFloat16INTELMask = 0x00002000,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E4M3INTELMask = 0x00004000,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E4M3INTELMask = 0x00008000,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E5M2INTELMask = 0x00010000,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E5M2INTELMask = 0x00020000,
+    MatrixMultiplyAccumulateOperandsMatrixAPackedFloat4E2M1INTELMask = 0x00040000,
+    MatrixMultiplyAccumulateOperandsMatrixBPackedFloat4E2M1INTELMask = 0x00080000,
 };
 
 enum RawAccessChainOperandsShift {

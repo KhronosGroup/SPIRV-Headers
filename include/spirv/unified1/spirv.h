@@ -1701,6 +1701,12 @@ typedef enum SpvMatrixMultiplyAccumulateOperandsShift_ {
     SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat16INTELShift = 11,
     SpvMatrixMultiplyAccumulateOperandsMatrixAPackedBFloat16INTELShift = 12,
     SpvMatrixMultiplyAccumulateOperandsMatrixBPackedBFloat16INTELShift = 13,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E4M3INTELShift = 14,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E4M3INTELShift = 15,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E5M2INTELShift = 16,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E5M2INTELShift = 17,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat4E2M1INTELShift = 18,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat4E2M1INTELShift = 19,
     SpvMatrixMultiplyAccumulateOperandsMax = 0x7fffffff,
 } SpvMatrixMultiplyAccumulateOperandsShift;
 
@@ -1720,6 +1726,12 @@ typedef enum SpvMatrixMultiplyAccumulateOperandsMask_ {
     SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat16INTELMask = 0x00000800,
     SpvMatrixMultiplyAccumulateOperandsMatrixAPackedBFloat16INTELMask = 0x00001000,
     SpvMatrixMultiplyAccumulateOperandsMatrixBPackedBFloat16INTELMask = 0x00002000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E4M3INTELMask = 0x00004000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E4M3INTELMask = 0x00008000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E5M2INTELMask = 0x00010000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E5M2INTELMask = 0x00020000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat4E2M1INTELMask = 0x00040000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat4E2M1INTELMask = 0x00080000,
 } SpvMatrixMultiplyAccumulateOperandsMask;
 
 typedef enum SpvRawAccessChainOperandsShift_ {
