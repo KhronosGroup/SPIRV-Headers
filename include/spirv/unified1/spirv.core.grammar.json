@@ -19495,6 +19495,36 @@
           "enumerant" : "MatrixBPackedBFloat16INTEL",
           "value" : "0x2000",
           "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAPackedFloat8E4M3INTEL",
+          "value" : "0x4000",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBPackedFloat8E4M3INTEL",
+          "value" : "0x8000",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAPackedFloat8E5M2INTEL",
+          "value" : "0x10000",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBPackedFloat8E5M2INTEL",
+          "value" : "0x20000",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAPackedFloat4E2M1INTEL",
+          "value" : "0x40000",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBPackedFloat4E2M1INTEL",
+          "value" : "0x80000",
+          "version" : "None"
         }
       ]
     },

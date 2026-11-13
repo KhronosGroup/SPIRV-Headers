@@ -1762,6 +1762,12 @@ enum MatrixMultiplyAccumulateOperandsShift : uint
     MatrixBPackedFloat16INTEL = 11,
     MatrixAPackedBFloat16INTEL = 12,
     MatrixBPackedBFloat16INTEL = 13,
+    MatrixAPackedFloat8E4M3INTEL = 14,
+    MatrixBPackedFloat8E4M3INTEL = 15,
+    MatrixAPackedFloat8E5M2INTEL = 16,
+    MatrixBPackedFloat8E5M2INTEL = 17,
+    MatrixAPackedFloat4E2M1INTEL = 18,
+    MatrixBPackedFloat4E2M1INTEL = 19,
     Max = 0x7fffffff,
 }
 
@@ -1782,6 +1788,12 @@ enum MatrixMultiplyAccumulateOperandsMask : uint
     MatrixBPackedFloat16INTEL = 0x00000800,
     MatrixAPackedBFloat16INTEL = 0x00001000,
     MatrixBPackedBFloat16INTEL = 0x00002000,
+    MatrixAPackedFloat8E4M3INTEL = 0x00004000,
+    MatrixBPackedFloat8E4M3INTEL = 0x00008000,
+    MatrixAPackedFloat8E5M2INTEL = 0x00010000,
+    MatrixBPackedFloat8E5M2INTEL = 0x00020000,
+    MatrixAPackedFloat4E2M1INTEL = 0x00040000,
+    MatrixBPackedFloat4E2M1INTEL = 0x00080000,
 }
 
 enum RawAccessChainOperandsShift : uint
