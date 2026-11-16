@@ -862,6 +862,7 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInHitLSSRadiiNV = 5421,
     SpvBuiltInClusterIDNV = 5436,
     SpvBuiltInCullMaskKHR = 6021,
+    SpvBuiltInDeviceBarrierExecutionValidINTEL = 6186,
     SpvBuiltInDeviceBarrierValidINTEL = 6186,
     SpvBuiltInMax = 0x7fffffff,
 } SpvBuiltIn;
@@ -4289,7 +4290,7 @@ inline const char* SpvBuiltInToString(SpvBuiltIn value) {
     case SpvBuiltInHitLSSRadiiNV: return "HitLSSRadiiNV";
     case SpvBuiltInClusterIDNV: return "ClusterIDNV";
     case SpvBuiltInCullMaskKHR: return "CullMaskKHR";
-    case SpvBuiltInDeviceBarrierValidINTEL: return "DeviceBarrierValidINTEL";
+    case SpvBuiltInDeviceBarrierExecutionValidINTEL: return "DeviceBarrierExecutionValidINTEL";
     default: return "Unknown";
     }
 }

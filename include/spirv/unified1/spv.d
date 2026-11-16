@@ -878,6 +878,7 @@ enum BuiltIn : uint
     HitLSSRadiiNV = 5421,
     ClusterIDNV = 5436,
     CullMaskKHR = 6021,
+    DeviceBarrierExecutionValidINTEL = 6186,
     DeviceBarrierValidINTEL = 6186,
     Max = 0x7fffffff,
 }
