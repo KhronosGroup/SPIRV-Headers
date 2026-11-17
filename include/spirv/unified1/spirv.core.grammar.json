@@ -5861,6 +5861,132 @@
       "version" : "None"
     },
     {
+      "opname" : "OpGetInstanceCustomIndexAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5193,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayTracingMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGetInstanceIdAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5194,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayTracingMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGetObjectToWorldAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5195,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayTracingMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGetWorldToObjectAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5196,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayTracingMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRayQueryGetIntersectionInstanceLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5197,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "Intersection" }
+      ],
+      "capabilities" : [ "RayQueryMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5198,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "Intersection" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayQueryMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRayQueryGetIntersectionInstanceIdAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5199,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "Intersection" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayQueryMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5200,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "Intersection" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayQueryMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5201,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "Intersection" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayQueryMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
       "opname" : "OpHitObjectRecordHitMotionNV",
       "class"  : "Reserved",
       "opcode" : 5249,
@@ -16519,6 +16645,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "HitInstanceLevelAMDX",
+          "value" : 5190,
+          "capabilities" : [ "RayTracingMultiLevelAccelerationStructureAMDX" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
           "enumerant" : "ViewportMaskNV",
           "value" : 5253,
           "capabilities" : [ "ShaderViewportMaskNV", "MeshShadingNV" ],
@@ -17939,6 +18072,22 @@
           "value" : 5181,
           "capabilities" : [ "Linkage" ],
           "extensions" : [ "SPV_AMD_weak_linkage" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RayTracingMultiLevelAccelerationStructureAMDX",
+          "value" : 5191,
+          "capabilities" : [ "RayTracingKHR" ],
+          "extensions" : [ "SPV_AMDX_multi_level_acceleration_structure" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RayQueryMultiLevelAccelerationStructureAMDX",
+          "value" : 5192,
+          "capabilities" : [ "RayQueryKHR" ],
+          "extensions" : [ "SPV_AMDX_multi_level_acceleration_structure" ],
+          "provisional" : true,
           "version" : "None"
         },
         {

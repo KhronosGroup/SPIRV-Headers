@@ -786,6 +786,7 @@ enum BuiltIn {
     BuiltInShaderIndexAMDX = 5073,
     BuiltInSamplerHeapEXT = 5122,
     BuiltInResourceHeapEXT = 5123,
+    BuiltInHitInstanceLevelAMDX = 5190,
     BuiltInViewportMaskNV = 5253,
     BuiltInSecondaryPositionNV = 5257,
     BuiltInSecondaryViewportMaskNV = 5258,
@@ -1226,6 +1227,8 @@ enum Capability {
     CapabilityConstantDataKHR = 5146,
     CapabilityPoisonFreezeKHR = 5156,
     CapabilityWeakLinkageAMD = 5181,
+    CapabilityRayTracingMultiLevelAccelerationStructureAMDX = 5191,
+    CapabilityRayQueryMultiLevelAccelerationStructureAMDX = 5192,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
     CapabilityGeometryShaderPassthroughNV = 5251,
     CapabilityShaderViewportIndexLayerEXT = 5254,
@@ -2233,6 +2236,15 @@ enum Op {
     OpSpecConstantDataKHR = 5148,
     OpPoisonKHR = 5158,
     OpFreezeKHR = 5159,
+    OpGetInstanceCustomIndexAtLevelAMDX = 5193,
+    OpGetInstanceIdAtLevelAMDX = 5194,
+    OpGetObjectToWorldAtLevelAMDX = 5195,
+    OpGetWorldToObjectAtLevelAMDX = 5196,
+    OpRayQueryGetIntersectionInstanceLevelAMDX = 5197,
+    OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX = 5198,
+    OpRayQueryGetIntersectionInstanceIdAtLevelAMDX = 5199,
+    OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX = 5200,
+    OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX = 5201,
     OpHitObjectRecordHitMotionNV = 5249,
     OpHitObjectRecordHitWithIndexMotionNV = 5250,
     OpHitObjectRecordMissMotionNV = 5251,
@@ -3175,6 +3187,15 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpSpecConstantDataKHR: *hasResult = true; *hasResultType = true; break;
     case OpPoisonKHR: *hasResult = true; *hasResultType = true; break;
     case OpFreezeKHR: *hasResult = true; *hasResultType = true; break;
+    case OpGetInstanceCustomIndexAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpGetInstanceIdAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpGetObjectToWorldAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpGetWorldToObjectAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryGetIntersectionInstanceLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryGetIntersectionInstanceIdAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
     case OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case OpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -4230,6 +4251,7 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltInShaderIndexAMDX: return "ShaderIndexAMDX";
     case BuiltInSamplerHeapEXT: return "SamplerHeapEXT";
     case BuiltInResourceHeapEXT: return "ResourceHeapEXT";
+    case BuiltInHitInstanceLevelAMDX: return "HitInstanceLevelAMDX";
     case BuiltInViewportMaskNV: return "ViewportMaskNV";
     case BuiltInSecondaryPositionNV: return "SecondaryPositionNV";
     case BuiltInSecondaryViewportMaskNV: return "SecondaryViewportMaskNV";
@@ -4473,6 +4495,8 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityConstantDataKHR: return "ConstantDataKHR";
     case CapabilityPoisonFreezeKHR: return "PoisonFreezeKHR";
     case CapabilityWeakLinkageAMD: return "WeakLinkageAMD";
+    case CapabilityRayTracingMultiLevelAccelerationStructureAMDX: return "RayTracingMultiLevelAccelerationStructureAMDX";
+    case CapabilityRayQueryMultiLevelAccelerationStructureAMDX: return "RayQueryMultiLevelAccelerationStructureAMDX";
     case CapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case CapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case CapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -5299,6 +5323,15 @@ inline const char* OpToString(Op value) {
     case OpSpecConstantDataKHR: return "OpSpecConstantDataKHR";
     case OpPoisonKHR: return "OpPoisonKHR";
     case OpFreezeKHR: return "OpFreezeKHR";
+    case OpGetInstanceCustomIndexAtLevelAMDX: return "OpGetInstanceCustomIndexAtLevelAMDX";
+    case OpGetInstanceIdAtLevelAMDX: return "OpGetInstanceIdAtLevelAMDX";
+    case OpGetObjectToWorldAtLevelAMDX: return "OpGetObjectToWorldAtLevelAMDX";
+    case OpGetWorldToObjectAtLevelAMDX: return "OpGetWorldToObjectAtLevelAMDX";
+    case OpRayQueryGetIntersectionInstanceLevelAMDX: return "OpRayQueryGetIntersectionInstanceLevelAMDX";
+    case OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX: return "OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX";
+    case OpRayQueryGetIntersectionInstanceIdAtLevelAMDX: return "OpRayQueryGetIntersectionInstanceIdAtLevelAMDX";
+    case OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX: return "OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX";
+    case OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX: return "OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX";
     case OpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";
     case OpHitObjectRecordHitWithIndexMotionNV: return "OpHitObjectRecordHitWithIndexMotionNV";
     case OpHitObjectRecordMissMotionNV: return "OpHitObjectRecordMissMotionNV";

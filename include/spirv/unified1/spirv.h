@@ -790,6 +790,7 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInShaderIndexAMDX = 5073,
     SpvBuiltInSamplerHeapEXT = 5122,
     SpvBuiltInResourceHeapEXT = 5123,
+    SpvBuiltInHitInstanceLevelAMDX = 5190,
     SpvBuiltInViewportMaskNV = 5253,
     SpvBuiltInSecondaryPositionNV = 5257,
     SpvBuiltInSecondaryViewportMaskNV = 5258,
@@ -1230,6 +1231,8 @@ typedef enum SpvCapability_ {
     SpvCapabilityConstantDataKHR = 5146,
     SpvCapabilityPoisonFreezeKHR = 5156,
     SpvCapabilityWeakLinkageAMD = 5181,
+    SpvCapabilityRayTracingMultiLevelAccelerationStructureAMDX = 5191,
+    SpvCapabilityRayQueryMultiLevelAccelerationStructureAMDX = 5192,
     SpvCapabilitySampleMaskOverrideCoverageNV = 5249,
     SpvCapabilityGeometryShaderPassthroughNV = 5251,
     SpvCapabilityShaderViewportIndexLayerEXT = 5254,
@@ -2237,6 +2240,15 @@ typedef enum SpvOp_ {
     SpvOpSpecConstantDataKHR = 5148,
     SpvOpPoisonKHR = 5158,
     SpvOpFreezeKHR = 5159,
+    SpvOpGetInstanceCustomIndexAtLevelAMDX = 5193,
+    SpvOpGetInstanceIdAtLevelAMDX = 5194,
+    SpvOpGetObjectToWorldAtLevelAMDX = 5195,
+    SpvOpGetWorldToObjectAtLevelAMDX = 5196,
+    SpvOpRayQueryGetIntersectionInstanceLevelAMDX = 5197,
+    SpvOpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX = 5198,
+    SpvOpRayQueryGetIntersectionInstanceIdAtLevelAMDX = 5199,
+    SpvOpRayQueryGetIntersectionObjectToWorldAtLevelAMDX = 5200,
+    SpvOpRayQueryGetIntersectionWorldToObjectAtLevelAMDX = 5201,
     SpvOpHitObjectRecordHitMotionNV = 5249,
     SpvOpHitObjectRecordHitWithIndexMotionNV = 5250,
     SpvOpHitObjectRecordMissMotionNV = 5251,
@@ -3179,6 +3191,15 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpSpecConstantDataKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpPoisonKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpFreezeKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGetInstanceCustomIndexAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGetInstanceIdAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGetObjectToWorldAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGetWorldToObjectAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionInstanceLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionInstanceIdAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionObjectToWorldAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionWorldToObjectAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
     case SpvOpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -4234,6 +4255,7 @@ inline const char* SpvBuiltInToString(SpvBuiltIn value) {
     case SpvBuiltInShaderIndexAMDX: return "ShaderIndexAMDX";
     case SpvBuiltInSamplerHeapEXT: return "SamplerHeapEXT";
     case SpvBuiltInResourceHeapEXT: return "ResourceHeapEXT";
+    case SpvBuiltInHitInstanceLevelAMDX: return "HitInstanceLevelAMDX";
     case SpvBuiltInViewportMaskNV: return "ViewportMaskNV";
     case SpvBuiltInSecondaryPositionNV: return "SecondaryPositionNV";
     case SpvBuiltInSecondaryViewportMaskNV: return "SecondaryViewportMaskNV";
@@ -4477,6 +4499,8 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityConstantDataKHR: return "ConstantDataKHR";
     case SpvCapabilityPoisonFreezeKHR: return "PoisonFreezeKHR";
     case SpvCapabilityWeakLinkageAMD: return "WeakLinkageAMD";
+    case SpvCapabilityRayTracingMultiLevelAccelerationStructureAMDX: return "RayTracingMultiLevelAccelerationStructureAMDX";
+    case SpvCapabilityRayQueryMultiLevelAccelerationStructureAMDX: return "RayQueryMultiLevelAccelerationStructureAMDX";
     case SpvCapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case SpvCapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case SpvCapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -5303,6 +5327,15 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpSpecConstantDataKHR: return "OpSpecConstantDataKHR";
     case SpvOpPoisonKHR: return "OpPoisonKHR";
     case SpvOpFreezeKHR: return "OpFreezeKHR";
+    case SpvOpGetInstanceCustomIndexAtLevelAMDX: return "OpGetInstanceCustomIndexAtLevelAMDX";
+    case SpvOpGetInstanceIdAtLevelAMDX: return "OpGetInstanceIdAtLevelAMDX";
+    case SpvOpGetObjectToWorldAtLevelAMDX: return "OpGetObjectToWorldAtLevelAMDX";
+    case SpvOpGetWorldToObjectAtLevelAMDX: return "OpGetWorldToObjectAtLevelAMDX";
+    case SpvOpRayQueryGetIntersectionInstanceLevelAMDX: return "OpRayQueryGetIntersectionInstanceLevelAMDX";
+    case SpvOpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX: return "OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX";
+    case SpvOpRayQueryGetIntersectionInstanceIdAtLevelAMDX: return "OpRayQueryGetIntersectionInstanceIdAtLevelAMDX";
+    case SpvOpRayQueryGetIntersectionObjectToWorldAtLevelAMDX: return "OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX";
+    case SpvOpRayQueryGetIntersectionWorldToObjectAtLevelAMDX: return "OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX";
     case SpvOpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";
     case SpvOpHitObjectRecordHitWithIndexMotionNV: return "OpHitObjectRecordHitWithIndexMotionNV";
     case SpvOpHitObjectRecordMissMotionNV: return "OpHitObjectRecordMissMotionNV";
