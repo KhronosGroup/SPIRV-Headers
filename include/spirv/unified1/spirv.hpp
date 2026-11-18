@@ -1418,6 +1418,8 @@ enum Capability {
     CapabilityGlobalVariableFPGADecorationsALTERA = 6189,
     CapabilityGlobalVariableFPGADecorationsINTEL = 6189,
     CapabilitySubgroupBitcastShuffleINTEL = 6207,
+    CapabilityFloatConversionsFToFINTEL = 6215,
+    CapabilityFloatConversionsFToSINTEL = 6216,
     CapabilitySubgroupBufferPrefetchINTEL = 6220,
     CapabilityBFloat16ArithmeticEXT = 6226,
     CapabilitySubgroup2DBlockIOINTEL = 6228,
@@ -2680,6 +2682,8 @@ enum Op {
     OpTypeTaskSequenceALTERA = 6199,
     OpTypeTaskSequenceINTEL = 6199,
     OpSubgroupBitcastShuffleINTEL = 6208,
+    OpStochasticRoundFToFINTEL = 6217,
+    OpClampStochasticRoundFToSINTEL = 6219,
     OpSubgroupBlockPrefetchINTEL = 6221,
     OpSubgroup2DBlockLoadINTEL = 6231,
     OpSubgroup2DBlockLoadTransformINTEL = 6232,
@@ -2707,6 +2711,7 @@ enum Op {
     OpGroupLogicalAndKHR = 6406,
     OpGroupLogicalOrKHR = 6407,
     OpGroupLogicalXorKHR = 6408,
+    OpClampConvertFToSINTEL = 6424,
     OpRoundFToTF32INTEL = 6426,
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
@@ -3570,6 +3575,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpTaskSequenceReleaseALTERA: *hasResult = false; *hasResultType = false; break;
     case OpTypeTaskSequenceALTERA: *hasResult = true; *hasResultType = false; break;
     case OpSubgroupBitcastShuffleINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpStochasticRoundFToFINTEL: *hasResult = true; *hasResultType = true; break;
+    case OpClampStochasticRoundFToSINTEL: *hasResult = true; *hasResultType = true; break;
     case OpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockLoadINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSubgroup2DBlockLoadTransformINTEL: *hasResult = false; *hasResultType = false; break;
@@ -3597,6 +3604,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpGroupLogicalAndKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupLogicalOrKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
+    case OpClampConvertFToSINTEL: *hasResult = true; *hasResultType = true; break;
     case OpRoundFToTF32INTEL: *hasResult = true; *hasResultType = true; break;
     case OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
@@ -4613,6 +4621,8 @@ inline const char* CapabilityToString(Capability value) {
     case CapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case CapabilityGlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
     case CapabilitySubgroupBitcastShuffleINTEL: return "SubgroupBitcastShuffleINTEL";
+    case CapabilityFloatConversionsFToFINTEL: return "FloatConversionsFToFINTEL";
+    case CapabilityFloatConversionsFToSINTEL: return "FloatConversionsFToSINTEL";
     case CapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
     case CapabilityBFloat16ArithmeticEXT: return "BFloat16ArithmeticEXT";
     case CapabilitySubgroup2DBlockIOINTEL: return "Subgroup2DBlockIOINTEL";
@@ -5694,6 +5704,8 @@ inline const char* OpToString(Op value) {
     case OpTaskSequenceReleaseALTERA: return "OpTaskSequenceReleaseALTERA";
     case OpTypeTaskSequenceALTERA: return "OpTypeTaskSequenceALTERA";
     case OpSubgroupBitcastShuffleINTEL: return "OpSubgroupBitcastShuffleINTEL";
+    case OpStochasticRoundFToFINTEL: return "OpStochasticRoundFToFINTEL";
+    case OpClampStochasticRoundFToSINTEL: return "OpClampStochasticRoundFToSINTEL";
     case OpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case OpSubgroup2DBlockLoadINTEL: return "OpSubgroup2DBlockLoadINTEL";
     case OpSubgroup2DBlockLoadTransformINTEL: return "OpSubgroup2DBlockLoadTransformINTEL";
@@ -5721,6 +5733,7 @@ inline const char* OpToString(Op value) {
     case OpGroupLogicalAndKHR: return "OpGroupLogicalAndKHR";
     case OpGroupLogicalOrKHR: return "OpGroupLogicalOrKHR";
     case OpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
+    case OpClampConvertFToSINTEL: return "OpClampConvertFToSINTEL";
     case OpRoundFToTF32INTEL: return "OpRoundFToTF32INTEL";
     case OpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case OpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
