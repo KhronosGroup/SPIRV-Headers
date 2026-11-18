@@ -858,6 +858,7 @@ enum class BuiltIn : unsigned {
     HitLSSRadiiNV = 5421,
     ClusterIDNV = 5436,
     CullMaskKHR = 6021,
+    DeviceBarrierExecutionValidINTEL = 6186,
     DeviceBarrierValidINTEL = 6186,
     Max = 0x7fffffff,
 };
@@ -4285,7 +4286,7 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltIn::HitLSSRadiiNV: return "HitLSSRadiiNV";
     case BuiltIn::ClusterIDNV: return "ClusterIDNV";
     case BuiltIn::CullMaskKHR: return "CullMaskKHR";
-    case BuiltIn::DeviceBarrierValidINTEL: return "DeviceBarrierValidINTEL";
+    case BuiltIn::DeviceBarrierExecutionValidINTEL: return "DeviceBarrierExecutionValidINTEL";
     default: return "Unknown";
     }
 }

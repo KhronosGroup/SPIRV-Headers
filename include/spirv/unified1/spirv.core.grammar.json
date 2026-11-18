@@ -16916,7 +16916,8 @@
           "version" : "None"
         },
         {
-          "enumerant" : "DeviceBarrierValidINTEL",
+          "enumerant" : "DeviceBarrierExecutionValidINTEL",
+          "aliases" : ["DeviceBarrierValidINTEL"],
           "value"  : 6186,
           "capabilities" : [ "DeviceBarrierINTEL" ],
           "version" : "None"
