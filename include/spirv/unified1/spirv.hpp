@@ -5749,6 +5749,7 @@ inline const char* OpToString(Op value) {
 
 #endif /* SPV_ENABLE_UTILITY_CODE */
 
+#ifndef __HLSL_VERSION
 // Overload bitwise operators for mask bit combining
 
 inline ImageOperandsMask operator|(ImageOperandsMask a, ImageOperandsMask b) { return ImageOperandsMask(unsigned(a) | unsigned(b)); }
@@ -5815,6 +5816,7 @@ inline RawAccessChainOperandsMask operator|(RawAccessChainOperandsMask a, RawAcc
 inline RawAccessChainOperandsMask operator&(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) & unsigned(b)); }
 inline RawAccessChainOperandsMask operator^(RawAccessChainOperandsMask a, RawAccessChainOperandsMask b) { return RawAccessChainOperandsMask(unsigned(a) ^ unsigned(b)); }
 inline RawAccessChainOperandsMask operator~(RawAccessChainOperandsMask a) { return RawAccessChainOperandsMask(~unsigned(a)); }
+#endif
 
 }  // end namespace spv
 
