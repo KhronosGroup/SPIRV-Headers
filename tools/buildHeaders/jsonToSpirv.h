@@ -98,6 +98,7 @@ enum OperandClass {
     OperandCooperativeVectorMatrixLayout,
     OperandComponentType,
     OperandGatherModes,
+    OperandAccessShape,
 
     OperandOpcode,
 
