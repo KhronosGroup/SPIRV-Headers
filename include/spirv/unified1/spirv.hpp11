@@ -786,6 +786,7 @@ enum class BuiltIn : unsigned {
     ShaderIndexAMDX = 5073,
     SamplerHeapEXT = 5122,
     ResourceHeapEXT = 5123,
+    HitInstanceLevelAMDX = 5190,
     ViewportMaskNV = 5253,
     SecondaryPositionNV = 5257,
     SecondaryViewportMaskNV = 5258,
@@ -858,6 +859,7 @@ enum class BuiltIn : unsigned {
     HitLSSRadiiNV = 5421,
     ClusterIDNV = 5436,
     CullMaskKHR = 6021,
+    DeviceBarrierExecutionValidINTEL = 6186,
     DeviceBarrierValidINTEL = 6186,
     Max = 0x7fffffff,
 };
@@ -1226,6 +1228,8 @@ enum class Capability : unsigned {
     ConstantDataKHR = 5146,
     PoisonFreezeKHR = 5156,
     WeakLinkageAMD = 5181,
+    RayTracingMultiLevelAccelerationStructureAMDX = 5191,
+    RayQueryMultiLevelAccelerationStructureAMDX = 5192,
     SampleMaskOverrideCoverageNV = 5249,
     GeometryShaderPassthroughNV = 5251,
     ShaderViewportIndexLayerEXT = 5254,
@@ -1417,6 +1421,8 @@ enum class Capability : unsigned {
     GlobalVariableFPGADecorationsALTERA = 6189,
     GlobalVariableFPGADecorationsINTEL = 6189,
     SubgroupBitcastShuffleINTEL = 6207,
+    FloatConversionsFToFINTEL = 6215,
+    FloatConversionsFToSINTEL = 6216,
     SubgroupBufferPrefetchINTEL = 6220,
     BFloat16ArithmeticEXT = 6226,
     Subgroup2DBlockIOINTEL = 6228,
@@ -2245,6 +2251,15 @@ enum class Op : unsigned {
     OpSpecConstantDataKHR = 5148,
     OpPoisonKHR = 5158,
     OpFreezeKHR = 5159,
+    OpGetInstanceCustomIndexAtLevelAMDX = 5193,
+    OpGetInstanceIdAtLevelAMDX = 5194,
+    OpGetObjectToWorldAtLevelAMDX = 5195,
+    OpGetWorldToObjectAtLevelAMDX = 5196,
+    OpRayQueryGetIntersectionInstanceLevelAMDX = 5197,
+    OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX = 5198,
+    OpRayQueryGetIntersectionInstanceIdAtLevelAMDX = 5199,
+    OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX = 5200,
+    OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX = 5201,
     OpHitObjectRecordHitMotionNV = 5249,
     OpHitObjectRecordHitWithIndexMotionNV = 5250,
     OpHitObjectRecordMissMotionNV = 5251,
@@ -2691,6 +2706,8 @@ enum class Op : unsigned {
     OpTypeTaskSequenceALTERA = 6199,
     OpTypeTaskSequenceINTEL = 6199,
     OpSubgroupBitcastShuffleINTEL = 6208,
+    OpStochasticRoundFToFINTEL = 6217,
+    OpClampStochasticRoundFToSINTEL = 6219,
     OpSubgroupBlockPrefetchINTEL = 6221,
     OpSubgroup2DBlockLoadINTEL = 6231,
     OpSubgroup2DBlockLoadTransformINTEL = 6232,
@@ -2718,6 +2735,7 @@ enum class Op : unsigned {
     OpGroupLogicalAndKHR = 6406,
     OpGroupLogicalOrKHR = 6407,
     OpGroupLogicalXorKHR = 6408,
+    OpClampConvertFToSINTEL = 6424,
     OpRoundFToTF32INTEL = 6426,
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
@@ -3187,6 +3205,15 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpSpecConstantDataKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpPoisonKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpFreezeKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpGetInstanceCustomIndexAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case Op::OpGetInstanceIdAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case Op::OpGetObjectToWorldAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case Op::OpGetWorldToObjectAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case Op::OpRayQueryGetIntersectionInstanceLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case Op::OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case Op::OpRayQueryGetIntersectionInstanceIdAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case Op::OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case Op::OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
     case Op::OpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case Op::OpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -3581,6 +3608,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpTaskSequenceReleaseALTERA: *hasResult = false; *hasResultType = false; break;
     case Op::OpTypeTaskSequenceALTERA: *hasResult = true; *hasResultType = false; break;
     case Op::OpSubgroupBitcastShuffleINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpStochasticRoundFToFINTEL: *hasResult = true; *hasResultType = true; break;
+    case Op::OpClampStochasticRoundFToSINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpSubgroup2DBlockLoadINTEL: *hasResult = false; *hasResultType = false; break;
     case Op::OpSubgroup2DBlockLoadTransformINTEL: *hasResult = false; *hasResultType = false; break;
@@ -3608,6 +3637,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpGroupLogicalAndKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupLogicalOrKHR: *hasResult = true; *hasResultType = true; break;
     case Op::OpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
+    case Op::OpClampConvertFToSINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpRoundFToTF32INTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case Op::OpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
@@ -4242,6 +4272,7 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltIn::ShaderIndexAMDX: return "ShaderIndexAMDX";
     case BuiltIn::SamplerHeapEXT: return "SamplerHeapEXT";
     case BuiltIn::ResourceHeapEXT: return "ResourceHeapEXT";
+    case BuiltIn::HitInstanceLevelAMDX: return "HitInstanceLevelAMDX";
     case BuiltIn::ViewportMaskNV: return "ViewportMaskNV";
     case BuiltIn::SecondaryPositionNV: return "SecondaryPositionNV";
     case BuiltIn::SecondaryViewportMaskNV: return "SecondaryViewportMaskNV";
@@ -4297,7 +4328,7 @@ inline const char* BuiltInToString(BuiltIn value) {
     case BuiltIn::HitLSSRadiiNV: return "HitLSSRadiiNV";
     case BuiltIn::ClusterIDNV: return "ClusterIDNV";
     case BuiltIn::CullMaskKHR: return "CullMaskKHR";
-    case BuiltIn::DeviceBarrierValidINTEL: return "DeviceBarrierValidINTEL";
+    case BuiltIn::DeviceBarrierExecutionValidINTEL: return "DeviceBarrierExecutionValidINTEL";
     default: return "Unknown";
     }
 }
@@ -4485,6 +4516,8 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::ConstantDataKHR: return "ConstantDataKHR";
     case Capability::PoisonFreezeKHR: return "PoisonFreezeKHR";
     case Capability::WeakLinkageAMD: return "WeakLinkageAMD";
+    case Capability::RayTracingMultiLevelAccelerationStructureAMDX: return "RayTracingMultiLevelAccelerationStructureAMDX";
+    case Capability::RayQueryMultiLevelAccelerationStructureAMDX: return "RayQueryMultiLevelAccelerationStructureAMDX";
     case Capability::SampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case Capability::GeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case Capability::ShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -4624,6 +4657,8 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::GlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case Capability::GlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
     case Capability::SubgroupBitcastShuffleINTEL: return "SubgroupBitcastShuffleINTEL";
+    case Capability::FloatConversionsFToFINTEL: return "FloatConversionsFToFINTEL";
+    case Capability::FloatConversionsFToSINTEL: return "FloatConversionsFToSINTEL";
     case Capability::SubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
     case Capability::BFloat16ArithmeticEXT: return "BFloat16ArithmeticEXT";
     case Capability::Subgroup2DBlockIOINTEL: return "Subgroup2DBlockIOINTEL";
@@ -5311,6 +5346,15 @@ inline const char* OpToString(Op value) {
     case Op::OpSpecConstantDataKHR: return "OpSpecConstantDataKHR";
     case Op::OpPoisonKHR: return "OpPoisonKHR";
     case Op::OpFreezeKHR: return "OpFreezeKHR";
+    case Op::OpGetInstanceCustomIndexAtLevelAMDX: return "OpGetInstanceCustomIndexAtLevelAMDX";
+    case Op::OpGetInstanceIdAtLevelAMDX: return "OpGetInstanceIdAtLevelAMDX";
+    case Op::OpGetObjectToWorldAtLevelAMDX: return "OpGetObjectToWorldAtLevelAMDX";
+    case Op::OpGetWorldToObjectAtLevelAMDX: return "OpGetWorldToObjectAtLevelAMDX";
+    case Op::OpRayQueryGetIntersectionInstanceLevelAMDX: return "OpRayQueryGetIntersectionInstanceLevelAMDX";
+    case Op::OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX: return "OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX";
+    case Op::OpRayQueryGetIntersectionInstanceIdAtLevelAMDX: return "OpRayQueryGetIntersectionInstanceIdAtLevelAMDX";
+    case Op::OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX: return "OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX";
+    case Op::OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX: return "OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX";
     case Op::OpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";
     case Op::OpHitObjectRecordHitWithIndexMotionNV: return "OpHitObjectRecordHitWithIndexMotionNV";
     case Op::OpHitObjectRecordMissMotionNV: return "OpHitObjectRecordMissMotionNV";
@@ -5705,6 +5749,8 @@ inline const char* OpToString(Op value) {
     case Op::OpTaskSequenceReleaseALTERA: return "OpTaskSequenceReleaseALTERA";
     case Op::OpTypeTaskSequenceALTERA: return "OpTypeTaskSequenceALTERA";
     case Op::OpSubgroupBitcastShuffleINTEL: return "OpSubgroupBitcastShuffleINTEL";
+    case Op::OpStochasticRoundFToFINTEL: return "OpStochasticRoundFToFINTEL";
+    case Op::OpClampStochasticRoundFToSINTEL: return "OpClampStochasticRoundFToSINTEL";
     case Op::OpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case Op::OpSubgroup2DBlockLoadINTEL: return "OpSubgroup2DBlockLoadINTEL";
     case Op::OpSubgroup2DBlockLoadTransformINTEL: return "OpSubgroup2DBlockLoadTransformINTEL";
@@ -5732,6 +5778,7 @@ inline const char* OpToString(Op value) {
     case Op::OpGroupLogicalAndKHR: return "OpGroupLogicalAndKHR";
     case Op::OpGroupLogicalOrKHR: return "OpGroupLogicalOrKHR";
     case Op::OpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
+    case Op::OpClampConvertFToSINTEL: return "OpClampConvertFToSINTEL";
     case Op::OpRoundFToTF32INTEL: return "OpRoundFToTF32INTEL";
     case Op::OpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case Op::OpMaskedScatterINTEL: return "OpMaskedScatterINTEL";

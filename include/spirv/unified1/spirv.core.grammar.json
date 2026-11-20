@@ -5861,6 +5861,132 @@
       "version" : "None"
     },
     {
+      "opname" : "OpGetInstanceCustomIndexAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5193,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayTracingMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGetInstanceIdAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5194,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayTracingMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGetObjectToWorldAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5195,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayTracingMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpGetWorldToObjectAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5196,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayTracingMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRayQueryGetIntersectionInstanceLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5197,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "Intersection" }
+      ],
+      "capabilities" : [ "RayQueryMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5198,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "Intersection" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayQueryMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRayQueryGetIntersectionInstanceIdAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5199,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "Intersection" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayQueryMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5200,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "Intersection" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayQueryMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
+      "opname" : "OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX",
+      "class"  : "Reserved",
+      "opcode" : 5201,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Ray Query" },
+        { "kind" : "IdRef", "name" : "Intersection" },
+        { "kind" : "IdRef", "name" : "Level" }
+      ],
+      "capabilities" : [ "RayQueryMultiLevelAccelerationStructureAMDX" ],
+      "provisional" : true,
+      "version" : "None"
+    },
+    {
       "opname" : "OpHitObjectRecordHitMotionNV",
       "class"  : "Reserved",
       "opcode" : 5249,
@@ -11421,6 +11547,34 @@
       "version" : "None"
     },
     {
+      "opname" : "OpStochasticRoundFToFINTEL",
+      "class"  : "Conversion",
+      "opcode" : 6217,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "Value" },
+        { "kind" : "IdRef",                     "name" : "Seed" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Next Seed" }
+      ],
+      "capabilities" : [ "FloatConversionsFToFINTEL" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpClampStochasticRoundFToSINTEL",
+      "class"  : "Conversion",
+      "opcode" : 6219,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",                     "name" : "Value" },
+        { "kind" : "IdRef",                     "name" : "Seed" },
+        { "kind" : "IdRef", "quantifier" : "?", "name" : "Next Seed" }
+      ],
+      "capabilities" : [ "FloatConversionsFToSINTEL" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpSubgroupBlockPrefetchINTEL",
       "class"  : "Group",
       "opcode" : 6221,
@@ -11813,6 +11967,18 @@
         { "kind" : "IdRef",          "name" : "X" }
       ],
       "capabilities" : [ "GroupUniformArithmeticKHR" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpClampConvertFToSINTEL",
+      "class"  : "Conversion",
+      "opcode" : 6424,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "Value" }
+      ],
+      "capabilities" : [ "FloatConversionsFToSINTEL" ],
       "version" : "None"
     },
     {
@@ -16519,6 +16685,13 @@
           "version" : "None"
         },
         {
+          "enumerant" : "HitInstanceLevelAMDX",
+          "value" : 5190,
+          "capabilities" : [ "RayTracingMultiLevelAccelerationStructureAMDX" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
           "enumerant" : "ViewportMaskNV",
           "value" : 5253,
           "capabilities" : [ "ShaderViewportMaskNV", "MeshShadingNV" ],
@@ -16916,7 +17089,8 @@
           "version" : "None"
         },
         {
-          "enumerant" : "DeviceBarrierValidINTEL",
+          "enumerant" : "DeviceBarrierExecutionValidINTEL",
+          "aliases" : ["DeviceBarrierValidINTEL"],
           "value"  : 6186,
           "capabilities" : [ "DeviceBarrierINTEL" ],
           "version" : "None"
@@ -17942,6 +18116,22 @@
           "version" : "None"
         },
         {
+          "enumerant" : "RayTracingMultiLevelAccelerationStructureAMDX",
+          "value" : 5191,
+          "capabilities" : [ "RayTracingKHR" ],
+          "extensions" : [ "SPV_AMDX_multi_level_acceleration_structure" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "RayQueryMultiLevelAccelerationStructureAMDX",
+          "value" : 5192,
+          "capabilities" : [ "RayQueryKHR" ],
+          "extensions" : [ "SPV_AMDX_multi_level_acceleration_structure" ],
+          "provisional" : true,
+          "version" : "None"
+        },
+        {
           "enumerant" : "SampleMaskOverrideCoverageNV",
           "value" : 5249,
           "capabilities" : [ "SampleRateShading" ],
@@ -18876,6 +19066,18 @@
           "enumerant" : "SubgroupBitcastShuffleINTEL",
           "value" : 6207,
           "extensions": [ "SPV_INTEL_subgroup_bitcast_shuffle" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FloatConversionsFToFINTEL",
+          "value" : 6215,
+          "extensions": [ "SPV_INTEL_fp_conversions" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "FloatConversionsFToSINTEL",
+          "value" : 6216,
+          "extensions": [ "SPV_INTEL_fp_conversions" ],
           "version" : "None"
         },
         {

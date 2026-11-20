@@ -790,6 +790,7 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInShaderIndexAMDX = 5073,
     SpvBuiltInSamplerHeapEXT = 5122,
     SpvBuiltInResourceHeapEXT = 5123,
+    SpvBuiltInHitInstanceLevelAMDX = 5190,
     SpvBuiltInViewportMaskNV = 5253,
     SpvBuiltInSecondaryPositionNV = 5257,
     SpvBuiltInSecondaryViewportMaskNV = 5258,
@@ -862,6 +863,7 @@ typedef enum SpvBuiltIn_ {
     SpvBuiltInHitLSSRadiiNV = 5421,
     SpvBuiltInClusterIDNV = 5436,
     SpvBuiltInCullMaskKHR = 6021,
+    SpvBuiltInDeviceBarrierExecutionValidINTEL = 6186,
     SpvBuiltInDeviceBarrierValidINTEL = 6186,
     SpvBuiltInMax = 0x7fffffff,
 } SpvBuiltIn;
@@ -1230,6 +1232,8 @@ typedef enum SpvCapability_ {
     SpvCapabilityConstantDataKHR = 5146,
     SpvCapabilityPoisonFreezeKHR = 5156,
     SpvCapabilityWeakLinkageAMD = 5181,
+    SpvCapabilityRayTracingMultiLevelAccelerationStructureAMDX = 5191,
+    SpvCapabilityRayQueryMultiLevelAccelerationStructureAMDX = 5192,
     SpvCapabilitySampleMaskOverrideCoverageNV = 5249,
     SpvCapabilityGeometryShaderPassthroughNV = 5251,
     SpvCapabilityShaderViewportIndexLayerEXT = 5254,
@@ -1421,6 +1425,8 @@ typedef enum SpvCapability_ {
     SpvCapabilityGlobalVariableFPGADecorationsALTERA = 6189,
     SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6189,
     SpvCapabilitySubgroupBitcastShuffleINTEL = 6207,
+    SpvCapabilityFloatConversionsFToFINTEL = 6215,
+    SpvCapabilityFloatConversionsFToSINTEL = 6216,
     SpvCapabilitySubgroupBufferPrefetchINTEL = 6220,
     SpvCapabilityBFloat16ArithmeticEXT = 6226,
     SpvCapabilitySubgroup2DBlockIOINTEL = 6228,
@@ -2249,6 +2255,15 @@ typedef enum SpvOp_ {
     SpvOpSpecConstantDataKHR = 5148,
     SpvOpPoisonKHR = 5158,
     SpvOpFreezeKHR = 5159,
+    SpvOpGetInstanceCustomIndexAtLevelAMDX = 5193,
+    SpvOpGetInstanceIdAtLevelAMDX = 5194,
+    SpvOpGetObjectToWorldAtLevelAMDX = 5195,
+    SpvOpGetWorldToObjectAtLevelAMDX = 5196,
+    SpvOpRayQueryGetIntersectionInstanceLevelAMDX = 5197,
+    SpvOpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX = 5198,
+    SpvOpRayQueryGetIntersectionInstanceIdAtLevelAMDX = 5199,
+    SpvOpRayQueryGetIntersectionObjectToWorldAtLevelAMDX = 5200,
+    SpvOpRayQueryGetIntersectionWorldToObjectAtLevelAMDX = 5201,
     SpvOpHitObjectRecordHitMotionNV = 5249,
     SpvOpHitObjectRecordHitWithIndexMotionNV = 5250,
     SpvOpHitObjectRecordMissMotionNV = 5251,
@@ -2695,6 +2710,8 @@ typedef enum SpvOp_ {
     SpvOpTypeTaskSequenceALTERA = 6199,
     SpvOpTypeTaskSequenceINTEL = 6199,
     SpvOpSubgroupBitcastShuffleINTEL = 6208,
+    SpvOpStochasticRoundFToFINTEL = 6217,
+    SpvOpClampStochasticRoundFToSINTEL = 6219,
     SpvOpSubgroupBlockPrefetchINTEL = 6221,
     SpvOpSubgroup2DBlockLoadINTEL = 6231,
     SpvOpSubgroup2DBlockLoadTransformINTEL = 6232,
@@ -2722,6 +2739,7 @@ typedef enum SpvOp_ {
     SpvOpGroupLogicalAndKHR = 6406,
     SpvOpGroupLogicalOrKHR = 6407,
     SpvOpGroupLogicalXorKHR = 6408,
+    SpvOpClampConvertFToSINTEL = 6424,
     SpvOpRoundFToTF32INTEL = 6426,
     SpvOpMaskedGatherINTEL = 6428,
     SpvOpMaskedScatterINTEL = 6429,
@@ -3191,6 +3209,15 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpSpecConstantDataKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpPoisonKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpFreezeKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGetInstanceCustomIndexAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGetInstanceIdAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGetObjectToWorldAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpGetWorldToObjectAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionInstanceLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionInstanceIdAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionObjectToWorldAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
+    case SpvOpRayQueryGetIntersectionWorldToObjectAtLevelAMDX: *hasResult = true; *hasResultType = true; break;
     case SpvOpHitObjectRecordHitMotionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpHitObjectRecordHitWithIndexMotionNV: *hasResult = false; *hasResultType = false; break;
     case SpvOpHitObjectRecordMissMotionNV: *hasResult = false; *hasResultType = false; break;
@@ -3585,6 +3612,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpTaskSequenceReleaseALTERA: *hasResult = false; *hasResultType = false; break;
     case SpvOpTypeTaskSequenceALTERA: *hasResult = true; *hasResultType = false; break;
     case SpvOpSubgroupBitcastShuffleINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpStochasticRoundFToFINTEL: *hasResult = true; *hasResultType = true; break;
+    case SpvOpClampStochasticRoundFToSINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpSubgroupBlockPrefetchINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpSubgroup2DBlockLoadINTEL: *hasResult = false; *hasResultType = false; break;
     case SpvOpSubgroup2DBlockLoadTransformINTEL: *hasResult = false; *hasResultType = false; break;
@@ -3612,6 +3641,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpGroupLogicalAndKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupLogicalOrKHR: *hasResult = true; *hasResultType = true; break;
     case SpvOpGroupLogicalXorKHR: *hasResult = true; *hasResultType = true; break;
+    case SpvOpClampConvertFToSINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpRoundFToTF32INTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpMaskedGatherINTEL: *hasResult = true; *hasResultType = true; break;
     case SpvOpMaskedScatterINTEL: *hasResult = false; *hasResultType = false; break;
@@ -4246,6 +4276,7 @@ inline const char* SpvBuiltInToString(SpvBuiltIn value) {
     case SpvBuiltInShaderIndexAMDX: return "ShaderIndexAMDX";
     case SpvBuiltInSamplerHeapEXT: return "SamplerHeapEXT";
     case SpvBuiltInResourceHeapEXT: return "ResourceHeapEXT";
+    case SpvBuiltInHitInstanceLevelAMDX: return "HitInstanceLevelAMDX";
     case SpvBuiltInViewportMaskNV: return "ViewportMaskNV";
     case SpvBuiltInSecondaryPositionNV: return "SecondaryPositionNV";
     case SpvBuiltInSecondaryViewportMaskNV: return "SecondaryViewportMaskNV";
@@ -4301,7 +4332,7 @@ inline const char* SpvBuiltInToString(SpvBuiltIn value) {
     case SpvBuiltInHitLSSRadiiNV: return "HitLSSRadiiNV";
     case SpvBuiltInClusterIDNV: return "ClusterIDNV";
     case SpvBuiltInCullMaskKHR: return "CullMaskKHR";
-    case SpvBuiltInDeviceBarrierValidINTEL: return "DeviceBarrierValidINTEL";
+    case SpvBuiltInDeviceBarrierExecutionValidINTEL: return "DeviceBarrierExecutionValidINTEL";
     default: return "Unknown";
     }
 }
@@ -4489,6 +4520,8 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityConstantDataKHR: return "ConstantDataKHR";
     case SpvCapabilityPoisonFreezeKHR: return "PoisonFreezeKHR";
     case SpvCapabilityWeakLinkageAMD: return "WeakLinkageAMD";
+    case SpvCapabilityRayTracingMultiLevelAccelerationStructureAMDX: return "RayTracingMultiLevelAccelerationStructureAMDX";
+    case SpvCapabilityRayQueryMultiLevelAccelerationStructureAMDX: return "RayQueryMultiLevelAccelerationStructureAMDX";
     case SpvCapabilitySampleMaskOverrideCoverageNV: return "SampleMaskOverrideCoverageNV";
     case SpvCapabilityGeometryShaderPassthroughNV: return "GeometryShaderPassthroughNV";
     case SpvCapabilityShaderViewportIndexLayerEXT: return "ShaderViewportIndexLayerEXT";
@@ -4628,6 +4661,8 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case SpvCapabilityGlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
     case SpvCapabilitySubgroupBitcastShuffleINTEL: return "SubgroupBitcastShuffleINTEL";
+    case SpvCapabilityFloatConversionsFToFINTEL: return "FloatConversionsFToFINTEL";
+    case SpvCapabilityFloatConversionsFToSINTEL: return "FloatConversionsFToSINTEL";
     case SpvCapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
     case SpvCapabilityBFloat16ArithmeticEXT: return "BFloat16ArithmeticEXT";
     case SpvCapabilitySubgroup2DBlockIOINTEL: return "Subgroup2DBlockIOINTEL";
@@ -5315,6 +5350,15 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpSpecConstantDataKHR: return "OpSpecConstantDataKHR";
     case SpvOpPoisonKHR: return "OpPoisonKHR";
     case SpvOpFreezeKHR: return "OpFreezeKHR";
+    case SpvOpGetInstanceCustomIndexAtLevelAMDX: return "OpGetInstanceCustomIndexAtLevelAMDX";
+    case SpvOpGetInstanceIdAtLevelAMDX: return "OpGetInstanceIdAtLevelAMDX";
+    case SpvOpGetObjectToWorldAtLevelAMDX: return "OpGetObjectToWorldAtLevelAMDX";
+    case SpvOpGetWorldToObjectAtLevelAMDX: return "OpGetWorldToObjectAtLevelAMDX";
+    case SpvOpRayQueryGetIntersectionInstanceLevelAMDX: return "OpRayQueryGetIntersectionInstanceLevelAMDX";
+    case SpvOpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX: return "OpRayQueryGetIntersectionInstanceCustomIndexAtLevelAMDX";
+    case SpvOpRayQueryGetIntersectionInstanceIdAtLevelAMDX: return "OpRayQueryGetIntersectionInstanceIdAtLevelAMDX";
+    case SpvOpRayQueryGetIntersectionObjectToWorldAtLevelAMDX: return "OpRayQueryGetIntersectionObjectToWorldAtLevelAMDX";
+    case SpvOpRayQueryGetIntersectionWorldToObjectAtLevelAMDX: return "OpRayQueryGetIntersectionWorldToObjectAtLevelAMDX";
     case SpvOpHitObjectRecordHitMotionNV: return "OpHitObjectRecordHitMotionNV";
     case SpvOpHitObjectRecordHitWithIndexMotionNV: return "OpHitObjectRecordHitWithIndexMotionNV";
     case SpvOpHitObjectRecordMissMotionNV: return "OpHitObjectRecordMissMotionNV";
@@ -5709,6 +5753,8 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpTaskSequenceReleaseALTERA: return "OpTaskSequenceReleaseALTERA";
     case SpvOpTypeTaskSequenceALTERA: return "OpTypeTaskSequenceALTERA";
     case SpvOpSubgroupBitcastShuffleINTEL: return "OpSubgroupBitcastShuffleINTEL";
+    case SpvOpStochasticRoundFToFINTEL: return "OpStochasticRoundFToFINTEL";
+    case SpvOpClampStochasticRoundFToSINTEL: return "OpClampStochasticRoundFToSINTEL";
     case SpvOpSubgroupBlockPrefetchINTEL: return "OpSubgroupBlockPrefetchINTEL";
     case SpvOpSubgroup2DBlockLoadINTEL: return "OpSubgroup2DBlockLoadINTEL";
     case SpvOpSubgroup2DBlockLoadTransformINTEL: return "OpSubgroup2DBlockLoadTransformINTEL";
@@ -5736,6 +5782,7 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpGroupLogicalAndKHR: return "OpGroupLogicalAndKHR";
     case SpvOpGroupLogicalOrKHR: return "OpGroupLogicalOrKHR";
     case SpvOpGroupLogicalXorKHR: return "OpGroupLogicalXorKHR";
+    case SpvOpClampConvertFToSINTEL: return "OpClampConvertFToSINTEL";
     case SpvOpRoundFToTF32INTEL: return "OpRoundFToTF32INTEL";
     case SpvOpMaskedGatherINTEL: return "OpMaskedGatherINTEL";
     case SpvOpMaskedScatterINTEL: return "OpMaskedScatterINTEL";
