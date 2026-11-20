@@ -19069,6 +19069,18 @@
           "version" : "None"
         },
         {
+          "enumerant" : "Float8MatrixMultiplyAccumulateINTEL",
+          "value" : 6209,
+          "extensions": [ "SPV_INTEL_subgroup_matrix_multiply_accumulate_float8" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "Float4MatrixMultiplyAccumulateINTEL",
+          "value" : 6210,
+          "extensions": [ "SPV_INTEL_subgroup_matrix_multiply_accumulate_float4" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "FloatConversionsFToFINTEL",
           "value" : 6215,
           "extensions": [ "SPV_INTEL_fp_conversions" ],
@@ -19696,6 +19708,42 @@
         {
           "enumerant" : "MatrixBPackedBFloat16INTEL",
           "value" : "0x2000",
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAPackedFloat8E4M3INTEL",
+          "value" : "0x4000",
+          "capabilities" : [ "Float8MatrixMultiplyAccumulateINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBPackedFloat8E4M3INTEL",
+          "value" : "0x8000",
+          "capabilities" : [ "Float8MatrixMultiplyAccumulateINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAPackedFloat8E5M2INTEL",
+          "value" : "0x10000",
+          "capabilities" : [ "Float8MatrixMultiplyAccumulateINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBPackedFloat8E5M2INTEL",
+          "value" : "0x20000",
+          "capabilities" : [ "Float8MatrixMultiplyAccumulateINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixAPackedFloat4E2M1INTEL",
+          "value" : "0x40000",
+          "capabilities" : [ "Float4MatrixMultiplyAccumulateINTEL" ],
+          "version" : "None"
+        },
+        {
+          "enumerant" : "MatrixBPackedFloat4E2M1INTEL",
+          "value" : "0x80000",
+          "capabilities" : [ "Float4MatrixMultiplyAccumulateINTEL" ],
           "version" : "None"
         }
       ]
