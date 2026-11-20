@@ -1455,6 +1455,8 @@ namespace Spv
             GlobalVariableFPGADecorationsALTERA = 6189,
             GlobalVariableFPGADecorationsINTEL = 6189,
             SubgroupBitcastShuffleINTEL = 6207,
+            Float8MatrixMultiplyAccumulateINTEL = 6209,
+            Float4MatrixMultiplyAccumulateINTEL = 6210,
             FloatConversionsFToFINTEL = 6215,
             FloatConversionsFToSINTEL = 6216,
             SubgroupBufferPrefetchINTEL = 6220,

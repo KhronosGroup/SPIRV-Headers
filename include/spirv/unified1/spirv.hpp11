@@ -1421,6 +1421,8 @@ enum class Capability : unsigned {
     GlobalVariableFPGADecorationsALTERA = 6189,
     GlobalVariableFPGADecorationsINTEL = 6189,
     SubgroupBitcastShuffleINTEL = 6207,
+    Float8MatrixMultiplyAccumulateINTEL = 6209,
+    Float4MatrixMultiplyAccumulateINTEL = 6210,
     FloatConversionsFToFINTEL = 6215,
     FloatConversionsFToSINTEL = 6216,
     SubgroupBufferPrefetchINTEL = 6220,
@@ -4657,6 +4659,8 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::GlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case Capability::GlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
     case Capability::SubgroupBitcastShuffleINTEL: return "SubgroupBitcastShuffleINTEL";
+    case Capability::Float8MatrixMultiplyAccumulateINTEL: return "Float8MatrixMultiplyAccumulateINTEL";
+    case Capability::Float4MatrixMultiplyAccumulateINTEL: return "Float4MatrixMultiplyAccumulateINTEL";
     case Capability::FloatConversionsFToFINTEL: return "FloatConversionsFToFINTEL";
     case Capability::FloatConversionsFToSINTEL: return "FloatConversionsFToSINTEL";
     case Capability::SubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
