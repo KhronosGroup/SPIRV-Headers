@@ -337,6 +337,33 @@ typedef enum SpvImageFormat_ {
     SpvImageFormatR8ui = 39,
     SpvImageFormatR64ui = 40,
     SpvImageFormatR64i = 41,
+    SpvImageFormatNV12QCOM = 4510,
+    SpvImageFormatNV12YQCOM = 4511,
+    SpvImageFormatNV12UVQCOM = 4512,
+    SpvImageFormatP010QCOM = 4513,
+    SpvImageFormatP010YQCOM = 4514,
+    SpvImageFormatP010UVQCOM = 4515,
+    SpvImageFormatTP10QCOM = 4516,
+    SpvImageFormatTP10YQCOM = 4517,
+    SpvImageFormatTP10UVQCOM = 4518,
+    SpvImageFormatUNORM_MIPI10QCOM = 4519,
+    SpvImageFormatUNORM_MIPI12QCOM = 4520,
+    SpvImageFormatUNSIGNED_MIPI10QCOM = 4521,
+    SpvImageFormatUNSIGNED_MIPI12QCOM = 4522,
+    SpvImageFormatCompressedRGBAQCOM = 4523,
+    SpvImageFormatCompressedRGBxQCOM = 4524,
+    SpvImageFormatCompressedNV12QCOM = 4525,
+    SpvImageFormatCompressedNV12YQCOM = 4526,
+    SpvImageFormatCompressedNV12UVQCOM = 4527,
+    SpvImageFormatCompressedP010QCOM = 4528,
+    SpvImageFormatCompressedP010YQCOM = 4529,
+    SpvImageFormatCompressedP010UVQCOM = 4530,
+    SpvImageFormatCompressedTP10QCOM = 4531,
+    SpvImageFormatCompressedTP10YQCOM = 4532,
+    SpvImageFormatCompressedTP10UVQCOM = 4533,
+    SpvImageFormatCompressedNV124RQCOM = 4534,
+    SpvImageFormatCompressedNV124RYQCOM = 4535,
+    SpvImageFormatCompressedNV124RUVQCOM = 4536,
     SpvImageFormatMax = 0x7fffffff,
 } SpvImageFormat;
 
@@ -1210,6 +1237,7 @@ typedef enum SpvCapability_ {
     SpvCapabilityTextureBlockMatch2QCOM = 4498,
     SpvCapabilityBFloat16MulAddQCOM = 4504,
     SpvCapabilitySubgroupSizeQCOM = 4506,
+    SpvCapabilityVectorImageOperationsQCOM = 4509,
     SpvCapabilityMultipleWaitQueuesQCOM = 4539,
     SpvCapabilityImageGatherLinearQCOM = 4543,
     SpvCapabilityImageGatherExtendedModesQCOM = 4544,
@@ -1787,6 +1815,14 @@ typedef enum SpvGatherModes_ {
     SpvGatherModesMax = 0x7fffffff,
 } SpvGatherModes;
 
+typedef enum SpvAccessShape_ {
+    SpvAccessShape2x1QCOM = 0,
+    SpvAccessShape3x1QCOM = 1,
+    SpvAccessShape4x1QCOM = 2,
+    SpvAccessShape2x2QCOM = 3,
+    SpvAccessShapeMax = 0x7fffffff,
+} SpvAccessShape;
+
 typedef enum SpvOp_ {
     SpvOpNop = 0,
     SpvOpUndef = 1,
@@ -2208,6 +2244,8 @@ typedef enum SpvOp_ {
     SpvOpImageBlockMatchGatherSSDQCOM = 4502,
     SpvOpImageBlockMatchGatherSADQCOM = 4503,
     SpvOpBFloat16MulAddQCOM = 4505,
+    SpvOpImageVectorReadQCOM = 4537,
+    SpvOpImageVectorWriteQCOM = 4538,
     SpvOpCompositeConstructCoopMatQCOM = 4540,
     SpvOpCompositeExtractCoopMatQCOM = 4541,
     SpvOpExtractSubArrayQCOM = 4542,
@@ -3162,6 +3200,8 @@ inline void SpvHasResultAndType(SpvOp opcode, bool *hasResult, bool *hasResultTy
     case SpvOpImageBlockMatchGatherSSDQCOM: *hasResult = true; *hasResultType = true; break;
     case SpvOpImageBlockMatchGatherSADQCOM: *hasResult = true; *hasResultType = true; break;
     case SpvOpBFloat16MulAddQCOM: *hasResult = true; *hasResultType = true; break;
+    case SpvOpImageVectorReadQCOM: *hasResult = true; *hasResultType = true; break;
+    case SpvOpImageVectorWriteQCOM: *hasResult = false; *hasResultType = false; break;
     case SpvOpCompositeConstructCoopMatQCOM: *hasResult = true; *hasResultType = true; break;
     case SpvOpCompositeExtractCoopMatQCOM: *hasResult = true; *hasResultType = true; break;
     case SpvOpExtractSubArrayQCOM: *hasResult = true; *hasResultType = true; break;
@@ -3925,6 +3965,33 @@ inline const char* SpvImageFormatToString(SpvImageFormat value) {
     case SpvImageFormatR8ui: return "R8ui";
     case SpvImageFormatR64ui: return "R64ui";
     case SpvImageFormatR64i: return "R64i";
+    case SpvImageFormatNV12QCOM: return "NV12QCOM";
+    case SpvImageFormatNV12YQCOM: return "NV12YQCOM";
+    case SpvImageFormatNV12UVQCOM: return "NV12UVQCOM";
+    case SpvImageFormatP010QCOM: return "P010QCOM";
+    case SpvImageFormatP010YQCOM: return "P010YQCOM";
+    case SpvImageFormatP010UVQCOM: return "P010UVQCOM";
+    case SpvImageFormatTP10QCOM: return "TP10QCOM";
+    case SpvImageFormatTP10YQCOM: return "TP10YQCOM";
+    case SpvImageFormatTP10UVQCOM: return "TP10UVQCOM";
+    case SpvImageFormatUNORM_MIPI10QCOM: return "UNORM_MIPI10QCOM";
+    case SpvImageFormatUNORM_MIPI12QCOM: return "UNORM_MIPI12QCOM";
+    case SpvImageFormatUNSIGNED_MIPI10QCOM: return "UNSIGNED_MIPI10QCOM";
+    case SpvImageFormatUNSIGNED_MIPI12QCOM: return "UNSIGNED_MIPI12QCOM";
+    case SpvImageFormatCompressedRGBAQCOM: return "CompressedRGBAQCOM";
+    case SpvImageFormatCompressedRGBxQCOM: return "CompressedRGBxQCOM";
+    case SpvImageFormatCompressedNV12QCOM: return "CompressedNV12QCOM";
+    case SpvImageFormatCompressedNV12YQCOM: return "CompressedNV12YQCOM";
+    case SpvImageFormatCompressedNV12UVQCOM: return "CompressedNV12UVQCOM";
+    case SpvImageFormatCompressedP010QCOM: return "CompressedP010QCOM";
+    case SpvImageFormatCompressedP010YQCOM: return "CompressedP010YQCOM";
+    case SpvImageFormatCompressedP010UVQCOM: return "CompressedP010UVQCOM";
+    case SpvImageFormatCompressedTP10QCOM: return "CompressedTP10QCOM";
+    case SpvImageFormatCompressedTP10YQCOM: return "CompressedTP10YQCOM";
+    case SpvImageFormatCompressedTP10UVQCOM: return "CompressedTP10UVQCOM";
+    case SpvImageFormatCompressedNV124RQCOM: return "CompressedNV124RQCOM";
+    case SpvImageFormatCompressedNV124RYQCOM: return "CompressedNV124RYQCOM";
+    case SpvImageFormatCompressedNV124RUVQCOM: return "CompressedNV124RUVQCOM";
     default: return "Unknown";
     }
 }
@@ -4486,6 +4553,7 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityTextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
     case SpvCapabilityBFloat16MulAddQCOM: return "BFloat16MulAddQCOM";
     case SpvCapabilitySubgroupSizeQCOM: return "SubgroupSizeQCOM";
+    case SpvCapabilityVectorImageOperationsQCOM: return "VectorImageOperationsQCOM";
     case SpvCapabilityMultipleWaitQueuesQCOM: return "MultipleWaitQueuesQCOM";
     case SpvCapabilityImageGatherLinearQCOM: return "ImageGatherLinearQCOM";
     case SpvCapabilityImageGatherExtendedModesQCOM: return "ImageGatherExtendedModesQCOM";
@@ -4883,6 +4951,16 @@ inline const char* SpvGatherModesToString(SpvGatherModes value) {
     case SpvGatherModesGatherDQCOM: return "GatherDQCOM";
     case SpvGatherModesGatherH2QCOM: return "GatherH2QCOM";
     case SpvGatherModesGatherV2QCOM: return "GatherV2QCOM";
+    default: return "Unknown";
+    }
+}
+
+inline const char* SpvAccessShapeToString(SpvAccessShape value) {
+    switch (value) {
+    case SpvAccessShape2x1QCOM: return "2x1QCOM";
+    case SpvAccessShape3x1QCOM: return "3x1QCOM";
+    case SpvAccessShape4x1QCOM: return "4x1QCOM";
+    case SpvAccessShape2x2QCOM: return "2x2QCOM";
     default: return "Unknown";
     }
 }
@@ -5303,6 +5381,8 @@ inline const char* SpvOpToString(SpvOp value) {
     case SpvOpImageBlockMatchGatherSSDQCOM: return "OpImageBlockMatchGatherSSDQCOM";
     case SpvOpImageBlockMatchGatherSADQCOM: return "OpImageBlockMatchGatherSADQCOM";
     case SpvOpBFloat16MulAddQCOM: return "OpBFloat16MulAddQCOM";
+    case SpvOpImageVectorReadQCOM: return "OpImageVectorReadQCOM";
+    case SpvOpImageVectorWriteQCOM: return "OpImageVectorWriteQCOM";
     case SpvOpCompositeConstructCoopMatQCOM: return "OpCompositeConstructCoopMatQCOM";
     case SpvOpCompositeExtractCoopMatQCOM: return "OpCompositeExtractCoopMatQCOM";
     case SpvOpExtractSubArrayQCOM: return "OpExtractSubArrayQCOM";
