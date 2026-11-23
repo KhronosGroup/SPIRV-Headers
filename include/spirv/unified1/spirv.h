@@ -4842,7 +4842,8 @@ inline const char* SpvFPEncodingToString(SpvFPEncoding value) {
     case SpvFPEncodingFloat4E2M1EXT: return "Float4E2M1EXT";
     case SpvFPEncodingFloat8UnsignedE8M0EXT: return "Float8UnsignedE8M0EXT";
     case SpvFPEncodingMXInt8EXT: return "MXInt8EXT";
-    default: return "Unknown";
+    // Absent encoding (OpTypeFloat without the optional operand) means IEEE 754
+    default: return "IEEE-754";
     }
 }
 

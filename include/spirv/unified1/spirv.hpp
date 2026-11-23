@@ -4838,7 +4838,8 @@ inline const char* FPEncodingToString(FPEncoding value) {
     case FPEncodingFloat4E2M1EXT: return "Float4E2M1EXT";
     case FPEncodingFloat8UnsignedE8M0EXT: return "Float8UnsignedE8M0EXT";
     case FPEncodingMXInt8EXT: return "MXInt8EXT";
-    default: return "Unknown";
+    // Absent encoding (OpTypeFloat without the optional operand) means IEEE 754
+    default: return "IEEE-754";
     }
 }
 
