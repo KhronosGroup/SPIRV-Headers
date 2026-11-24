@@ -333,6 +333,33 @@ enum class ImageFormat : unsigned {
     R8ui = 39,
     R64ui = 40,
     R64i = 41,
+    NV12QCOM = 4510,
+    NV12YQCOM = 4511,
+    NV12UVQCOM = 4512,
+    P010QCOM = 4513,
+    P010YQCOM = 4514,
+    P010UVQCOM = 4515,
+    TP10QCOM = 4516,
+    TP10YQCOM = 4517,
+    TP10UVQCOM = 4518,
+    UNORM_MIPI10QCOM = 4519,
+    UNORM_MIPI12QCOM = 4520,
+    UNSIGNED_MIPI10QCOM = 4521,
+    UNSIGNED_MIPI12QCOM = 4522,
+    CompressedRGBAQCOM = 4523,
+    CompressedRGBxQCOM = 4524,
+    CompressedNV12QCOM = 4525,
+    CompressedNV12YQCOM = 4526,
+    CompressedNV12UVQCOM = 4527,
+    CompressedP010QCOM = 4528,
+    CompressedP010YQCOM = 4529,
+    CompressedP010UVQCOM = 4530,
+    CompressedTP10QCOM = 4531,
+    CompressedTP10YQCOM = 4532,
+    CompressedTP10UVQCOM = 4533,
+    CompressedNV124RQCOM = 4534,
+    CompressedNV124RYQCOM = 4535,
+    CompressedNV124RUVQCOM = 4536,
     Max = 0x7fffffff,
 };
 
@@ -1205,6 +1232,7 @@ enum class Capability : unsigned {
     TextureBlockMatch2QCOM = 4498,
     BFloat16MulAddQCOM = 4504,
     SubgroupSizeQCOM = 4506,
+    VectorImageOperationsQCOM = 4509,
     MultipleWaitQueuesQCOM = 4539,
     ImageGatherLinearQCOM = 4543,
     ImageGatherExtendedModesQCOM = 4544,
@@ -1780,6 +1808,14 @@ enum class GatherModes : unsigned {
     Max = 0x7fffffff,
 };
 
+enum class AccessShape : unsigned {
+    AccessShape2x1QCOM = 0,
+    AccessShape3x1QCOM = 1,
+    AccessShape4x1QCOM = 2,
+    AccessShape2x2QCOM = 3,
+    Max = 0x7fffffff,
+};
+
 enum class Op : unsigned {
     OpNop = 0,
     OpUndef = 1,
@@ -2201,6 +2237,8 @@ enum class Op : unsigned {
     OpImageBlockMatchGatherSSDQCOM = 4502,
     OpImageBlockMatchGatherSADQCOM = 4503,
     OpBFloat16MulAddQCOM = 4505,
+    OpImageVectorReadQCOM = 4537,
+    OpImageVectorWriteQCOM = 4538,
     OpCompositeConstructCoopMatQCOM = 4540,
     OpCompositeExtractCoopMatQCOM = 4541,
     OpExtractSubArrayQCOM = 4542,
@@ -3146,6 +3184,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case Op::OpImageBlockMatchGatherSSDQCOM: *hasResult = true; *hasResultType = true; break;
     case Op::OpImageBlockMatchGatherSADQCOM: *hasResult = true; *hasResultType = true; break;
     case Op::OpBFloat16MulAddQCOM: *hasResult = true; *hasResultType = true; break;
+    case Op::OpImageVectorReadQCOM: *hasResult = true; *hasResultType = true; break;
+    case Op::OpImageVectorWriteQCOM: *hasResult = false; *hasResultType = false; break;
     case Op::OpCompositeConstructCoopMatQCOM: *hasResult = true; *hasResultType = true; break;
     case Op::OpCompositeExtractCoopMatQCOM: *hasResult = true; *hasResultType = true; break;
     case Op::OpExtractSubArrayQCOM: *hasResult = true; *hasResultType = true; break;
@@ -3900,6 +3940,33 @@ inline const char* ImageFormatToString(ImageFormat value) {
     case ImageFormat::R8ui: return "R8ui";
     case ImageFormat::R64ui: return "R64ui";
     case ImageFormat::R64i: return "R64i";
+    case ImageFormat::NV12QCOM: return "NV12QCOM";
+    case ImageFormat::NV12YQCOM: return "NV12YQCOM";
+    case ImageFormat::NV12UVQCOM: return "NV12UVQCOM";
+    case ImageFormat::P010QCOM: return "P010QCOM";
+    case ImageFormat::P010YQCOM: return "P010YQCOM";
+    case ImageFormat::P010UVQCOM: return "P010UVQCOM";
+    case ImageFormat::TP10QCOM: return "TP10QCOM";
+    case ImageFormat::TP10YQCOM: return "TP10YQCOM";
+    case ImageFormat::TP10UVQCOM: return "TP10UVQCOM";
+    case ImageFormat::UNORM_MIPI10QCOM: return "UNORM_MIPI10QCOM";
+    case ImageFormat::UNORM_MIPI12QCOM: return "UNORM_MIPI12QCOM";
+    case ImageFormat::UNSIGNED_MIPI10QCOM: return "UNSIGNED_MIPI10QCOM";
+    case ImageFormat::UNSIGNED_MIPI12QCOM: return "UNSIGNED_MIPI12QCOM";
+    case ImageFormat::CompressedRGBAQCOM: return "CompressedRGBAQCOM";
+    case ImageFormat::CompressedRGBxQCOM: return "CompressedRGBxQCOM";
+    case ImageFormat::CompressedNV12QCOM: return "CompressedNV12QCOM";
+    case ImageFormat::CompressedNV12YQCOM: return "CompressedNV12YQCOM";
+    case ImageFormat::CompressedNV12UVQCOM: return "CompressedNV12UVQCOM";
+    case ImageFormat::CompressedP010QCOM: return "CompressedP010QCOM";
+    case ImageFormat::CompressedP010YQCOM: return "CompressedP010YQCOM";
+    case ImageFormat::CompressedP010UVQCOM: return "CompressedP010UVQCOM";
+    case ImageFormat::CompressedTP10QCOM: return "CompressedTP10QCOM";
+    case ImageFormat::CompressedTP10YQCOM: return "CompressedTP10YQCOM";
+    case ImageFormat::CompressedTP10UVQCOM: return "CompressedTP10UVQCOM";
+    case ImageFormat::CompressedNV124RQCOM: return "CompressedNV124RQCOM";
+    case ImageFormat::CompressedNV124RYQCOM: return "CompressedNV124RYQCOM";
+    case ImageFormat::CompressedNV124RUVQCOM: return "CompressedNV124RUVQCOM";
     default: return "Unknown";
     }
 }
@@ -4460,6 +4527,7 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::TextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
     case Capability::BFloat16MulAddQCOM: return "BFloat16MulAddQCOM";
     case Capability::SubgroupSizeQCOM: return "SubgroupSizeQCOM";
+    case Capability::VectorImageOperationsQCOM: return "VectorImageOperationsQCOM";
     case Capability::MultipleWaitQueuesQCOM: return "MultipleWaitQueuesQCOM";
     case Capability::ImageGatherLinearQCOM: return "ImageGatherLinearQCOM";
     case Capability::ImageGatherExtendedModesQCOM: return "ImageGatherExtendedModesQCOM";
@@ -4855,6 +4923,16 @@ inline const char* GatherModesToString(GatherModes value) {
     case GatherModes::GatherDQCOM: return "GatherDQCOM";
     case GatherModes::GatherH2QCOM: return "GatherH2QCOM";
     case GatherModes::GatherV2QCOM: return "GatherV2QCOM";
+    default: return "Unknown";
+    }
+}
+
+inline const char* AccessShapeToString(AccessShape value) {
+    switch (value) {
+    case AccessShape::AccessShape2x1QCOM: return "AccessShape2x1QCOM";
+    case AccessShape::AccessShape3x1QCOM: return "AccessShape3x1QCOM";
+    case AccessShape::AccessShape4x1QCOM: return "AccessShape4x1QCOM";
+    case AccessShape::AccessShape2x2QCOM: return "AccessShape2x2QCOM";
     default: return "Unknown";
     }
 }
@@ -5275,6 +5353,8 @@ inline const char* OpToString(Op value) {
     case Op::OpImageBlockMatchGatherSSDQCOM: return "OpImageBlockMatchGatherSSDQCOM";
     case Op::OpImageBlockMatchGatherSADQCOM: return "OpImageBlockMatchGatherSADQCOM";
     case Op::OpBFloat16MulAddQCOM: return "OpBFloat16MulAddQCOM";
+    case Op::OpImageVectorReadQCOM: return "OpImageVectorReadQCOM";
+    case Op::OpImageVectorWriteQCOM: return "OpImageVectorWriteQCOM";
     case Op::OpCompositeConstructCoopMatQCOM: return "OpCompositeConstructCoopMatQCOM";
     case Op::OpCompositeExtractCoopMatQCOM: return "OpCompositeExtractCoopMatQCOM";
     case Op::OpExtractSubArrayQCOM: return "OpExtractSubArrayQCOM";

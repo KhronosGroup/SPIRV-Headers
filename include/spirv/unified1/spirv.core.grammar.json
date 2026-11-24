@@ -5399,6 +5399,36 @@
       "version" : "None"
     },
     {
+      "opname" : "OpImageVectorReadQCOM",
+      "class"  : "Image",
+      "opcode" : 4537,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef", "name" : "Texture Sampled Image" },
+        { "kind" : "IdRef", "name" : "Coordinate" },
+        { "kind" : "IdRef", "name" : "Component Id" },
+        { "kind" : "AccessShape", "name" : "Shape" }
+      ],
+      "capabilities" : [ "VectorImageOperationsQCOM" ],
+      "version" : "None"
+    },
+    {
+      "opname" : "OpImageVectorWriteQCOM",
+      "class"  : "Image",
+      "opcode" : 4538,
+      "operands" : [
+        { "kind" : "IdRef", "name" : "Image" },
+        { "kind" : "IdRef", "name" : "Coordinate" },
+        { "kind" : "AccessShape", "name" : "Shape" },
+        { "kind" : "ImageFormat", "name" : "Format" },
+        { "kind" : "IdRef", "name" : "Value 0" },
+        { "kind" : "IdRef", "name" : "Value 1" }
+      ],
+      "capabilities" : [ "VectorImageOperationsQCOM" ],
+      "version" : "None"
+    },
+    {
       "opname" : "OpCompositeConstructCoopMatQCOM",
       "class"  : "Composite",
       "opcode" : 4540,
@@ -14338,6 +14368,168 @@
           "value" : 41,
           "capabilities" : [ "Int64ImageEXT" ],
           "version": "1.0"
+        },
+        {
+          "enumerant" : "NV12QCOM",
+          "value" : 4510,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "NV12YQCOM",
+          "value" : 4511,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "NV12UVQCOM",
+          "value" : 4512,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "P010QCOM",
+          "value" : 4513,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "P010YQCOM",
+          "value" : 4514,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "P010UVQCOM",
+          "value" : 4515,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "TP10QCOM",
+          "value" : 4516,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "TP10YQCOM",
+          "value" : 4517,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "TP10UVQCOM",
+          "value" : 4518,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "UNORM_MIPI10QCOM",
+          "value" : 4519,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "UNORM_MIPI12QCOM",
+          "value" : 4520,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "UNSIGNED_MIPI10QCOM",
+          "value" : 4521,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "UNSIGNED_MIPI12QCOM",
+          "value" : 4522,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedRGBAQCOM",
+          "value" : 4523,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedRGBxQCOM",
+          "value" : 4524,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedNV12QCOM",
+          "value" : 4525,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedNV12YQCOM",
+          "value" : 4526,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedNV12UVQCOM",
+          "value" : 4527,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedP010QCOM",
+          "value" : 4528,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedP010YQCOM",
+          "value" : 4529,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedP010UVQCOM",
+          "value" : 4530,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedTP10QCOM",
+          "value" : 4531,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedTP10YQCOM",
+          "value" : 4532,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedTP10UVQCOM",
+          "value" : 4533,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedNV124RQCOM",
+          "value" : 4534,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedNV124RYQCOM",
+          "value" : 4535,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
+        },
+        {
+          "enumerant" : "CompressedNV124RUVQCOM",
+          "value" : 4536,
+          "capabilities" : [ "VectorImageOperationsQCOM" ],
+          "version": "1.0"
         }
       ]
     },
@@ -17837,6 +18029,12 @@
           "version" : "None"
         },
         {
+          "enumerant" : "VectorImageOperationsQCOM",
+          "value" : 4509,
+          "extensions" : [ "SPV_QCOM_image_vector_read_write" ],
+          "version" : "None"
+        },
+        {
           "enumerant" : "MultipleWaitQueuesQCOM",
           "value" : 4539,
           "extensions" : [ "SPV_QCOM_multiple_wait_queues" ],
@@ -19733,6 +19931,32 @@
         },
         {
           "enumerant" : "GatherV2QCOM",
+          "value" : 3,
+          "version" : "None"
+        }
+      ]
+    },
+    {
+      "category" : "ValueEnum",
+      "kind" : "AccessShape",
+      "enumerants" : [
+        {
+          "enumerant" : "AccessShape2x1QCOM",
+          "value" : 0,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AccessShape3x1QCOM",
+          "value" : 1,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AccessShape4x1QCOM",
+          "value" : 2,
+          "version" : "None"
+        },
+        {
+          "enumerant" : "AccessShape2x2QCOM",
           "value" : 3,
           "version" : "None"
         }
