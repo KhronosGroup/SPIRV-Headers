@@ -578,7 +578,14 @@ https://www.khronos.org/registry/)";
                         out << fmtEnumUse(name, name, v.second);
                     out << ": return " << "\"" << v.second << "\";" << std::endl;
                 }
-                out << "    default: return \"Unknown\";" << std::endl;
+                if (name == "FPEncoding") {
+                    // OpTypeFloat's Floating Point Encoding operand is optional. When it is absent the type uses
+                    // the IEEE 754 interchange format for its width
+                    out << "    // Absent encoding (OpTypeFloat without the optional operand) means IEEE 754" << std::endl;
+                    out << "    default: return \"IEEE-754\";" << std::endl;
+                } else {
+                    out << "    default: return \"Unknown\";" << std::endl;
+                }
                 out << "    }" << std::endl;
                 out << "}" << std::endl << std::endl;
             }
