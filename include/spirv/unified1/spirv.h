@@ -1425,6 +1425,8 @@ typedef enum SpvCapability_ {
     SpvCapabilityGlobalVariableFPGADecorationsALTERA = 6189,
     SpvCapabilityGlobalVariableFPGADecorationsINTEL = 6189,
     SpvCapabilitySubgroupBitcastShuffleINTEL = 6207,
+    SpvCapabilityFloat8MatrixMultiplyAccumulateINTEL = 6209,
+    SpvCapabilityFloat4MatrixMultiplyAccumulateINTEL = 6210,
     SpvCapabilityFloatConversionsFToFINTEL = 6215,
     SpvCapabilityFloatConversionsFToSINTEL = 6216,
     SpvCapabilitySubgroupBufferPrefetchINTEL = 6220,
@@ -1707,6 +1709,12 @@ typedef enum SpvMatrixMultiplyAccumulateOperandsShift_ {
     SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat16INTELShift = 11,
     SpvMatrixMultiplyAccumulateOperandsMatrixAPackedBFloat16INTELShift = 12,
     SpvMatrixMultiplyAccumulateOperandsMatrixBPackedBFloat16INTELShift = 13,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E4M3INTELShift = 14,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E4M3INTELShift = 15,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E5M2INTELShift = 16,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E5M2INTELShift = 17,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat4E2M1INTELShift = 18,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat4E2M1INTELShift = 19,
     SpvMatrixMultiplyAccumulateOperandsMax = 0x7fffffff,
 } SpvMatrixMultiplyAccumulateOperandsShift;
 
@@ -1726,6 +1734,12 @@ typedef enum SpvMatrixMultiplyAccumulateOperandsMask_ {
     SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat16INTELMask = 0x00000800,
     SpvMatrixMultiplyAccumulateOperandsMatrixAPackedBFloat16INTELMask = 0x00001000,
     SpvMatrixMultiplyAccumulateOperandsMatrixBPackedBFloat16INTELMask = 0x00002000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E4M3INTELMask = 0x00004000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E4M3INTELMask = 0x00008000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat8E5M2INTELMask = 0x00010000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat8E5M2INTELMask = 0x00020000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixAPackedFloat4E2M1INTELMask = 0x00040000,
+    SpvMatrixMultiplyAccumulateOperandsMatrixBPackedFloat4E2M1INTELMask = 0x00080000,
 } SpvMatrixMultiplyAccumulateOperandsMask;
 
 typedef enum SpvRawAccessChainOperandsShift_ {
@@ -4649,6 +4663,8 @@ inline const char* SpvCapabilityToString(SpvCapability value) {
     case SpvCapabilityGlobalVariableHostAccessINTEL: return "GlobalVariableHostAccessINTEL";
     case SpvCapabilityGlobalVariableFPGADecorationsALTERA: return "GlobalVariableFPGADecorationsALTERA";
     case SpvCapabilitySubgroupBitcastShuffleINTEL: return "SubgroupBitcastShuffleINTEL";
+    case SpvCapabilityFloat8MatrixMultiplyAccumulateINTEL: return "Float8MatrixMultiplyAccumulateINTEL";
+    case SpvCapabilityFloat4MatrixMultiplyAccumulateINTEL: return "Float4MatrixMultiplyAccumulateINTEL";
     case SpvCapabilityFloatConversionsFToFINTEL: return "FloatConversionsFToFINTEL";
     case SpvCapabilityFloatConversionsFToSINTEL: return "FloatConversionsFToSINTEL";
     case SpvCapabilitySubgroupBufferPrefetchINTEL: return "SubgroupBufferPrefetchINTEL";
