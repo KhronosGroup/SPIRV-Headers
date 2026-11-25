@@ -380,6 +380,33 @@ public class Spv {
         R8ui(39),
         R64ui(40),
         R64i(41),
+        NV12QCOM(4510),
+        NV12YQCOM(4511),
+        NV12UVQCOM(4512),
+        P010QCOM(4513),
+        P010YQCOM(4514),
+        P010UVQCOM(4515),
+        TP10QCOM(4516),
+        TP10YQCOM(4517),
+        TP10UVQCOM(4518),
+        UNORM_MIPI10QCOM(4519),
+        UNORM_MIPI12QCOM(4520),
+        UNSIGNED_MIPI10QCOM(4521),
+        UNSIGNED_MIPI12QCOM(4522),
+        CompressedRGBAQCOM(4523),
+        CompressedRGBxQCOM(4524),
+        CompressedNV12QCOM(4525),
+        CompressedNV12YQCOM(4526),
+        CompressedNV12UVQCOM(4527),
+        CompressedP010QCOM(4528),
+        CompressedP010YQCOM(4529),
+        CompressedP010UVQCOM(4530),
+        CompressedTP10QCOM(4531),
+        CompressedTP10YQCOM(4532),
+        CompressedTP10UVQCOM(4533),
+        CompressedNV124RQCOM(4534),
+        CompressedNV124RYQCOM(4535),
+        CompressedNV124RUVQCOM(4536),
         Max(0x7fffffff);
 
         public final int value;
@@ -1421,6 +1448,7 @@ public class Spv {
         TextureBlockMatch2QCOM(4498),
         BFloat16MulAddQCOM(4504),
         SubgroupSizeQCOM(4506),
+        VectorImageOperationsQCOM(4509),
         MultipleWaitQueuesQCOM(4539),
         ImageGatherLinearQCOM(4543),
         ImageGatherExtendedModesQCOM(4544),
@@ -2234,6 +2262,20 @@ public class Spv {
         }
     }
 
+    public enum AccessShape {
+        AccessShape2x1QCOM(0),
+        AccessShape3x1QCOM(1),
+        AccessShape4x1QCOM(2),
+        AccessShape2x2QCOM(3),
+        Max(0x7fffffff);
+
+        public final int value;
+
+        AccessShape(int value) {
+            this.value = value;
+        }
+    }
+
     public enum Op {
         OpNop(0),
         OpUndef(1),
@@ -2655,6 +2697,8 @@ public class Spv {
         OpImageBlockMatchGatherSSDQCOM(4502),
         OpImageBlockMatchGatherSADQCOM(4503),
         OpBFloat16MulAddQCOM(4505),
+        OpImageVectorReadQCOM(4537),
+        OpImageVectorWriteQCOM(4538),
         OpCompositeConstructCoopMatQCOM(4540),
         OpCompositeExtractCoopMatQCOM(4541),
         OpExtractSubArrayQCOM(4542),
