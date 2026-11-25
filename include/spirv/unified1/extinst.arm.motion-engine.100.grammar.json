@@ -4,7 +4,7 @@
     "SPDX-License-Identifier: MIT"
   ],
   "version": 100,
-  "revision": 1,
+  "revision": 2,
   "instructions": [
     {
       "opname": "MIN_SAD",
@@ -45,6 +45,11 @@
         {
           "kind": "IdRef",
           "name": "input1"
+        },
+        {
+          "kind": "IdRef",
+          "name": "radial_penalty",
+          "quantifier": "?"
         }
       ]
     },
@@ -87,6 +92,11 @@
         {
           "kind": "IdRef",
           "name": "input1"
+        },
+        {
+          "kind": "IdRef",
+          "name": "radial_penalty",
+          "quantifier": "?"
         }
       ]
     },

@@ -13,7 +13,7 @@ enum {
     ArmMotionEngineVersion_BitWidthPadding = 0x7fffffff
 };
 enum {
-    ArmMotionEngineRevision = 1,
+    ArmMotionEngineRevision = 2,
     ArmMotionEngineRevision_BitWidthPadding = 0x7fffffff
 };
 
