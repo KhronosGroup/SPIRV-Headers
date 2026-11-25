@@ -615,6 +615,7 @@ https://www.khronos.org/registry/)";
         void printMaskOperators(std::ostream& out, const std::string& specifiers) const {
             const Json::Value& enums = spvRoot["spv"]["enum"];
 
+            out << "#ifndef __HLSL_VERSION\n";
             out << "// Overload bitwise operators for mask bit combining\n\n";
 
             for (auto opClass = enums.begin(); opClass != enums.end(); ++opClass) {
@@ -638,6 +639,7 @@ https://www.khronos.org/registry/)";
                         typeName << "(~unsigned(a)); }\n";
                 }
             }
+            out << "#endif\n";
         }
     private:
         void printPrologue(std::ostream& out) const override {
