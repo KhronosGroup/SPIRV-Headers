@@ -8144,7 +8144,7 @@
     },
     {
       "opname" : "OpUCountLeadingZerosINTEL",
-      "class"  : "Reserved",
+      "class"  : "Bit",
       "opcode" : 5585,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8156,7 +8156,7 @@
     },
     {
       "opname" : "OpUCountTrailingZerosINTEL",
-      "class"  : "Reserved",
+      "class"  : "Bit",
       "opcode" : 5586,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8168,7 +8168,7 @@
     },
     {
       "opname" : "OpAbsISubINTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5587,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8181,7 +8181,7 @@
     },
     {
       "opname" : "OpAbsUSubINTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5588,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8194,7 +8194,7 @@
     },
     {
       "opname" : "OpIAddSatINTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5589,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8207,7 +8207,7 @@
     },
     {
       "opname" : "OpUAddSatINTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5590,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8220,7 +8220,7 @@
     },
     {
       "opname" : "OpIAverageINTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5591,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8233,7 +8233,7 @@
     },
     {
       "opname" : "OpUAverageINTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5592,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8246,7 +8246,7 @@
     },
     {
       "opname" : "OpIAverageRoundedINTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5593,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8259,7 +8259,7 @@
     },
     {
       "opname" : "OpUAverageRoundedINTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5594,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8272,7 +8272,7 @@
     },
     {
       "opname" : "OpISubSatINTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5595,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8285,7 +8285,7 @@
     },
     {
       "opname" : "OpUSubSatINTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5596,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8298,7 +8298,7 @@
     },
     {
       "opname" : "OpIMul32x16INTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5597,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -8311,7 +8311,7 @@
     },
     {
       "opname" : "OpUMul32x16INTEL",
-      "class"  : "Reserved",
+      "class"  : "Arithmetic",
       "opcode" : 5598,
       "operands" : [
         { "kind" : "IdResultType" },
@@ -10742,7 +10742,7 @@
     },
     {
       "opname" : "OpLoopControlINTEL",
-      "class"  : "Reserved",
+      "class"  : "Control-Flow",
       "opcode" : 5887,
       "operands" : [
         { "kind" : "LiteralInteger", "quantifier" : "*", "name" : "Loop Control Parameters" }
