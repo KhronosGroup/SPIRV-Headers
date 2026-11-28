@@ -5632,7 +5632,7 @@
     },
     {
       "opname" : "OpReadClockKHR",
-      "class"  : "Reserved",
+      "class"  : "Miscellaneous",
       "opcode" : 5056,
       "operands" : [
         { "kind" : "IdResultType" },
